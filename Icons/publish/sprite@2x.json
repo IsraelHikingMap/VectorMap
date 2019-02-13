@@ -313,5 +313,13 @@
 		"x": 150,
 		"y": 360,
 		"pixelRatio": 2
+	},
+	
+	"tree_pattern": {
+		"width": 80,
+		"height": 80,
+		"x": 80,
+		"y": 260,
+		"pixelRatio": 2
 	}
 }

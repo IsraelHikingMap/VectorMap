@@ -762,7 +762,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -793,7 +793,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -824,7 +824,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -855,7 +855,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -886,7 +886,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -946,7 +946,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": "",
         "text-font": ["Noto Sans Regular", "Noto Sans Bold"]
       },
@@ -978,7 +978,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -1033,7 +1033,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -1063,7 +1063,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -1125,7 +1125,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -1151,7 +1151,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -1177,7 +1177,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
@@ -1207,7 +1207,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 0.5,
+        "icon-size": 1,
         "text-field": ""
       },
       "paint": {
