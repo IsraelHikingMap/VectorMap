@@ -27,12 +27,28 @@
     }
   },
   "sprite": "https://raw.githubusercontent.com/IsraelHikingMap/Map/master/Icons/vector_icons/sprite",
-  "glyphs": "https://free.tilehosting.com/fonts/{fontstack}/{range}.pbf?key=undefined",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
       "type": "background",
       "paint": {"background-color": "hsl(47, 26%, 88%)"}
+    },
+    {
+      "id": "landuse-military",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["==", "class", "military"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(252, 6, 6, 0.11)",
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      }
     },
     {
       "id": "landuse-residential",
@@ -45,7 +61,11 @@
         ["==", "class", "residential"]
       ],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "hsl(47, 13%, 86%)", "fill-opacity": 0.7}
+      "paint": {
+        "fill-color": "rgba(197, 197, 197, 1)",
+        "fill-opacity": 0.7,
+        "fill-outline-color": "rgba(104, 103, 103, 1)"
+      }
     },
     {
       "id": "landcover_orchard",
@@ -58,7 +78,7 @@
         ["==", "subclass", "orchard"]
       ],
       "layout": {},
-      "paint": {"fill-color": "rgba(181, 201, 176, 1)"}
+      "paint": {"fill-color": "rgba(140, 201, 138, 0.34)"}
     },
     {
       "id": "landcover_agriculture",
@@ -168,14 +188,11 @@
     },
     {
       "id": "park_outline",
-      "type": "line",
+      "type": "symbol",
       "source": "IHM",
       "source-layer": "park",
-      "layout": {},
-      "paint": {
-        "line-color": "rgba(159, 183, 118, 0.69)",
-        "line-dasharray": [0.5, 1]
-      }
+      "layout": {"icon-image": "RTG", "text-field": "{name:he}"},
+      "paint": {}
     },
     {
       "id": "contour_label",
@@ -198,7 +215,7 @@
         "text-padding": 10,
         "text-rotation-alignment": "map",
         "text-field": "{height} m",
-        "text-font": ["Noto Sans Regular"]
+        "text-font": ["Open Sans Light"]
       },
       "paint": {
         "text-color": "hsl(0, 0%, 37%)",
@@ -314,7 +331,7 @@
       "layout": {
         "text-field": "{housenumber}",
         "text-size": 10,
-        "text-font": ["Noto Sans Regular"]
+        "text-font": ["Open Sans Light"]
       },
       "paint": {
         "text-color": "hsla(0, 14%, 57%, 0.51)",
@@ -554,6 +571,30 @@
       }
     },
     {
+      "id": "road_major_shield",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "filter": ["==", "$type", "LineString"],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Bold"],
+        "text-transform": "uppercase",
+        "text-letter-spacing": 0.15,
+        "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
+        "text-rotation-alignment": "map",
+        "visibility": "visible",
+        "icon-image": "",
+        "symbol-spacing": 2000
+      },
+      "paint": {
+        "text-color": "rgba(238, 10, 10, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 10
+      }
+    },
+    {
       "id": "road_major_label",
       "type": "symbol",
       "source": "IHM",
@@ -562,7 +603,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name:he}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Open Sans Light"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.1,
         "text-size": {"base": 1.4, "stops": [[10, 8], [20, 14]]},
@@ -930,10 +971,35 @@
       "source-layer": "poi",
       "minzoom": 14,
       "maxzoom": 20,
-      "filter": ["all", ["==", "$type", "Point"]],
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        [
+          "!in",
+          "subclass",
+          "bus_stop",
+          "supermarket",
+          "bank",
+          "clothes",
+          "fast_food"
+        ],
+        [
+          "!in",
+          "class",
+          "alcohol_shop",
+          "grocery",
+          "car",
+          "post",
+          "shop",
+          "veterinary",
+          "fuel",
+          "restaurant",
+          "cafe"
+        ]
+      ],
       "layout": {
         "text-size": 11,
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Open Sans Light"],
         "visibility": "visible",
         "text-offset": [0, 1.2],
         "icon-size": 1,
@@ -946,7 +1012,7 @@
         "icon-anchor": "top"
       },
       "paint": {
-        "text-color": "#666",
+        "text-color": "rgba(16, 16, 16, 1)",
         "text-halo-width": 1,
         "text-halo-color": "rgba(255,255,255,0.75)",
         "text-halo-blur": 1
@@ -973,7 +1039,7 @@
         "icon-offset": [0, 0],
         "icon-size": 1,
         "text-field": "",
-        "text-font": ["Noto Sans Regular", "Noto Sans Bold"]
+        "text-font": ["Open Sans Light", "Open Sans Bold"]
       },
       "paint": {
         "icon-color": "rgba(20, 19, 19, 1)",
@@ -1024,7 +1090,7 @@
       "filter": ["all", ["has", "iata"]],
       "layout": {
         "text-size": 11,
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Open Sans Light"],
         "visibility": "visible",
         "text-offset": [0, 0.5],
         "icon-size": 1,
@@ -1054,6 +1120,92 @@
       "layout": {
         "visibility": "visible",
         "icon-image": "viewpoint",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": 1,
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-playground",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "playground"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "playground",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": 1,
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-campsite",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "campsite"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "camping",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": 1,
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-picnic",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "picnic_site"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "picnic",
         "icon-rotate": 0,
         "icon-padding": 2,
         "icon-keep-upright": true,
@@ -1189,6 +1341,32 @@
       }
     },
     {
+      "id": "amenity-clinic",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "hospital"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "first_aid",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": 1,
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
       "id": "amenity-cafe",
       "type": "symbol",
       "source": "IHM",
@@ -1241,19 +1419,15 @@
       }
     },
     {
-      "id": "amenity-restaurant",
+      "id": "amenity-grocery",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "class", "restaurant"]
-      ],
+      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "grocery"]],
       "layout": {
         "visibility": "visible",
-        "icon-image": "food",
+        "icon-image": "shopping",
         "icon-rotate": 0,
         "icon-padding": 2,
         "icon-keep-upright": true,
@@ -1271,6 +1445,90 @@
       }
     },
     {
+      "id": "amenity-hotel",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": ["all", ["==", "$type", "Point"], ["in", "class", "lodging"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "hotel",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": 1,
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(255, 255, 255, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-restaurant",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["in", "class", "restaurant", "fast_food"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "food",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": 1,
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(255, 255, 255, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "peak-elevation",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "mountain_peak",
+      "filter": ["all", ["==", "$type", "Point"]],
+      "layout": {
+        "icon-image": "",
+        "text-size": {"stops": [[8, 5], [16, 15]]},
+        "icon-size": {"stops": [[9, 0.15], [12, 1]]},
+        "text-font": ["Open Sans Regular"],
+        "icon-offset": [0, 0],
+        "visibility": "visible",
+        "text-field": "{ele}",
+        "icon-anchor": "center",
+        "text-offset": [0, -1.4],
+        "text-anchor": "center",
+        "icon-padding": 0,
+        "text-padding": 0
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 1,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1,
+        "text-translate": [0, 0]
+      }
+    },
+    {
       "id": "peak",
       "type": "symbol",
       "source": "IHM",
@@ -1280,17 +1538,20 @@
         "icon-image": "dot",
         "text-size": {"stops": [[8, 5], [16, 15]]},
         "icon-size": {"stops": [[9, 0.15], [12, 1]]},
-        "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
-        "icon-offset": [0, 0],
+        "text-font": ["Open Sans Regular"],
+        "icon-offset": [0, -2],
         "visibility": "visible",
-        "text-field": "{ele}\n\n{name:he}"
+        "text-field": "{name:he}",
+        "icon-anchor": "center",
+        "text-padding": 0
       },
       "paint": {
         "text-color": "rgba(0, 0, 0, 1)",
         "text-halo-width": 1,
         "text-halo-color": "rgba(255,255,255,0.75)",
         "text-halo-blur": 1,
-        "text-translate": [0, 0]
+        "text-translate": [0, 15],
+        "text-translate-anchor": "viewport"
       }
     },
     {
@@ -1317,14 +1578,14 @@
       ],
       "layout": {
         "text-field": "{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Open Sans Light"],
         "text-max-width": 6,
         "text-size": {"stops": [[6, 10], [12, 14]]},
         "visibility": "visible",
         "text-anchor": "center"
       },
       "paint": {
-        "text-color": "hsl(0, 10%, 25%)",
+        "text-color": "rgba(17, 17, 17, 1)",
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-blur": 0,
         "text-halo-width": 2
@@ -1339,7 +1600,7 @@
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "city"]],
       "layout": {
         "text-field": "{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Open Sans Light"],
         "text-max-width": 10,
         "text-size": {"stops": [[3, 12], [8, 16]]}
       },
@@ -1364,7 +1625,7 @@
       ],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Open Sans Light"],
         "text-max-width": 10,
         "text-size": {"stops": [[3, 12], [8, 22]]},
         "visibility": "visible"
@@ -1390,7 +1651,7 @@
       ],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Noto Sans Bold"],
+        "text-font": ["Open Sans Bold"],
         "text-max-width": 10,
         "text-size": {"stops": [[3, 12], [8, 22]]}
       },
