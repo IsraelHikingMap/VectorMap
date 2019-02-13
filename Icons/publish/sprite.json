@@ -52,49 +52,49 @@
 		"width": 15,
 		"height": 15,
 		"x": 0,
-		"y": 60,
+		"y": 30,
 		"pixelRatio": 1
 	},
 	"cattle_grid": {
 		"width": 15,
 		"height": 15,
 		"x": 30,
-		"y": 60,
+		"y": 30,
 		"pixelRatio": 1
 	},
 	"airfield": {
 		"width": 15,
 		"height": 15,
 		"x": 60,
-		"y": 60,
+		"y": 30,
 		"pixelRatio": 1
 	},
 	"holy_place": {
 		"width": 15,
 		"height": 15,
 		"x": 90,
-		"y": 60,
+		"y": 30,
 		"pixelRatio": 1
 	},
 	"dot": {
 		"width": 15,
 		"height": 15,
 		"x": 120,
-		"y": 60,
+		"y": 30,
 		"pixelRatio": 1
 	},
 	"cave": {
 		"width": 15,
 		"height": 15,
 		"x": 150,
-		"y": 60,
+		"y": 30,
 		"pixelRatio": 1
 	},
 	"bollards": {
 		"width": 15,
 		"height": 15,
 		"x": 180,
-		"y": 60,
+		"y": 30,
 		"pixelRatio": 1
 	},
 	"gate_open": {
