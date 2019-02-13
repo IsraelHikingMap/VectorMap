@@ -1,0 +1,141 @@
+{
+  "version": 8,
+  "name": "IHM",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "sources": {
+    "IHM": {"type": "vector", "url": "http://31.154.215.180:8080/data/v3.json"}
+  },
+  "sprite": "https://raw.githubusercontent.com/IsraelHikingMap/VectorMap/master/Icons/publish/sprite",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "layout": {"visibility": "visible"},
+      "paint": {"background-color": "rgba(255, 255, 255, 1)"}
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "water",
+      "filter": ["all", ["!=", "intermittent", "yes"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(138, 192, 255, 0.7)", "fill-opacity": 1}
+    },
+    {
+      "id": "residential",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "filter": ["all", ["==", "class", "residential"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-outline-color": "rgba(102, 102, 102, 1)",
+        "fill-color": "rgba(229, 229, 229, 1)",
+        "fill-antialias": true,
+        "fill-translate": [0, 0]
+      }
+    },
+    {
+      "id": "plantation",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 0,
+      "filter": [
+        "all",
+        ["==", "class", "farmland"],
+        ["==", "subclass", "orchard"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(26, 155, 43, 0.56)",
+        "fill-opacity": 1,
+        "fill-antialias": true,
+        "fill-outline-color": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "id": "road-casing",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "maxzoom": 24,
+      "filter": ["all"],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": {"stops": [[7, 1], [9, 1.5], [16, 3.5]]}
+      }
+    },
+    {
+      "id": "road",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all"],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "rgba(255, 196, 0, 1)",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "Track-fill",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "track"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-width": 6, "line-color": "rgba(254, 218, 158, 1)"}
+    },
+    {
+      "id": "Track-right",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "track"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-dasharray": [3, 2],
+        "line-offset": 2.5,
+        "line-width": 2,
+        "line-color": "rgba(0, 0, 255, 1)"
+      }
+    },
+    {
+      "id": "Track-left",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "track"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-dasharray": [3, 2],
+        "line-offset": -2.5,
+        "line-width": 2,
+        "line-color": "rgba(255, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "Track-dash",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "track"]],
+      "layout": {"visibility": "none"},
+      "paint": {"line-dasharray": [1, 0.5], "line-offset": 0, "line-width": 5}
+    },
+    {
+      "id": "viewpoint",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "viewpoint"]],
+      "layout": {"icon-image": "viewpoint", "icon-size": 1}
+    }
+  ],
+  "id": "1kap5aglj"
+}
