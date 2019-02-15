@@ -794,19 +794,18 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "boundary",
+      "minzoom": 0,
+      "maxzoom": 20,
       "filter": [
         "all",
         ["<=", "admin_level", 2],
         ["==", "$type", "LineString"]
       ],
-      "layout": {
-        "line-cap": "round",
-        "line-join": "round",
-        "visibility": "visible"
-      },
+      "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "hsla(0, 8%, 22%, 0.51)",
-        "line-width": {"base": 1.3, "stops": [[3, 0.5], [22, 15]]}
+        "line-color": "rgba(47, 11, 67, 1)",
+        "line-pattern": "dot",
+        "line-width": 30
       }
     },
     {
@@ -912,7 +911,7 @@
         "all",
         ["==", "$type", "Point"],
         ["==", "class", "place_of_worship"],
-        ["!in", "subclass", "jewish", "christian", "muslim"]
+        ["!in", "subclass", "muslim", "christian", "jewish"]
       ],
       "layout": {
         "visibility": "visible",
@@ -1577,7 +1576,7 @@
         ["all", ["!in", "class", "city", "state", "country", "continent"]]
       ],
       "layout": {
-        "text-field": "{name:nonlatin}",
+        "text-field": "{name:he}",
         "text-font": ["Open Sans Light"],
         "text-max-width": 6,
         "text-size": {"stops": [[6, 10], [12, 14]]},
@@ -1650,10 +1649,10 @@
         ["has", "iso_a2"]
       ],
       "layout": {
-        "text-field": "{name:latin}",
+        "text-field": "{name:he}",
         "text-font": ["Open Sans Bold"],
         "text-max-width": 10,
-        "text-size": {"stops": [[3, 12], [8, 22]]}
+        "text-size": {"stops": [[3, 12], [8, 18]]}
       },
       "paint": {
         "text-color": "hsl(0, 0%, 13%)",
