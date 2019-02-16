@@ -35,6 +35,76 @@
       "paint": {"background-color": "hsl(47, 26%, 88%)"}
     },
     {
+      "id": "landcover_sand",
+      "type": "fill",
+      "metadata": {},
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": ["all", ["in", "class", "sand"]],
+      "paint": {
+        "fill-antialias": false,
+        "fill-color": "rgba(232, 214, 38, 1)",
+        "fill-opacity": 0.3
+      }
+    },
+    {
+      "id": "landcover_orchard",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": [
+        "all",
+        ["==", "class", "farmland"],
+        ["==", "subclass", "orchard"]
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": "rgba(140, 201, 138, 0.34)",
+        "fill-pattern": "orchard_pattern"
+      }
+    },
+    {
+      "id": "landcover-ice-shelf",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": ["==", "subclass", "ice_shelf"],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-opacity": 0.8}
+    },
+    {
+      "id": "landcover_grass",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": ["==", "class", "grass"],
+      "paint": {"fill-color": "hsl(82, 46%, 72%)", "fill-opacity": 0.45}
+    },
+    {
+      "id": "landcover_wood",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": ["==", "class", "wood"],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "hsl(82, 46%, 72%)",
+        "fill-opacity": {"base": 1, "stops": [[8, 0.6], [22, 1]]}
+      }
+    },
+    {
+      "id": "landcover-glacier",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": ["==", "subclass", "glacier"],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "hsl(47, 22%, 94%)",
+        "fill-opacity": {"base": 1, "stops": [[0, 1], [8, 0.5]]}
+      }
+    },
+    {
       "id": "landuse-military",
       "type": "fill",
       "source": "IHM",
@@ -97,100 +167,14 @@
       "filter": [
         "all",
         ["==", "$type", "Polygon"],
-        ["==", "class", "residential"]
+        ["in", "class", "residential", "commercial", "industrial"]
       ],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "rgba(197, 197, 197, 1)",
-        "fill-opacity": 0.7,
-        "fill-outline-color": "rgba(104, 103, 103, 1)"
+        "fill-color": "rgba(216, 216, 216, 1)",
+        "fill-opacity": 1,
+        "fill-outline-color": "rgba(187, 187, 187, 1)"
       }
-    },
-    {
-      "id": "landcover-glacier",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "subclass", "glacier"],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-color": "hsl(47, 22%, 94%)",
-        "fill-opacity": {"base": 1, "stops": [[0, 1], [8, 0.5]]}
-      }
-    },
-    {
-      "id": "landcover_grass",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "grass"],
-      "paint": {"fill-color": "hsl(82, 46%, 72%)", "fill-opacity": 0.45}
-    },
-    {
-      "id": "landcover-ice-shelf",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "subclass", "ice_shelf"],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-opacity": 0.8}
-    },
-    {
-      "id": "landcover_orchard",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": [
-        "all",
-        ["==", "class", "farmland"],
-        ["==", "subclass", "orchard"]
-      ],
-      "layout": {},
-      "paint": {
-        "fill-color": "rgba(140, 201, 138, 0.34)",
-        "fill-pattern": "orchard_pattern"
-      }
-    },
-    {
-      "id": "landcover_sand",
-      "type": "fill",
-      "metadata": {},
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["all", ["in", "class", "sand"]],
-      "paint": {
-        "fill-antialias": false,
-        "fill-color": "rgba(232, 214, 38, 1)",
-        "fill-opacity": 0.3
-      }
-    },
-    {
-      "id": "landcover_wood",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "wood"],
-      "paint": {
-        "fill-color": "hsl(82, 46%, 72%)",
-        "fill-opacity": {"base": 1, "stops": [[8, 0.6], [22, 1]]}
-      }
-    },
-    {
-      "id": "park_label",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "park",
-      "filter": [
-        "any",
-        ["==", "class", "national_park"],
-        ["==", "class", "nature_reserve"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "RTG",
-        "text-field": "name:he"
-      },
-      "paint": {}
     },
     {
       "id": "park_fill",
@@ -201,7 +185,35 @@
       "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "#E1EBB0",
-        "fill-opacity": {"base": 1, "stops": [[5, 0], [9, 0.75]]}
+        "fill-opacity": {"base": 1, "stops": [[5, 0], [9, 0.75]]},
+        "fill-pattern": "green_nesw_pattern",
+        "fill-outline-color": "rgba(56, 139, 29, 1)"
+      }
+    },
+    {
+      "id": "park_label",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "park",
+      "filter": ["all"],
+      "layout": {
+        "icon-image": "RTG",
+        "text-size": {"stops": [[8, 5], [16, 15]]},
+        "icon-size": {"stops": [[9, 0.15], [12, 1]]},
+        "text-font": ["Open Sans Regular"],
+        "icon-offset": [0, -2],
+        "visibility": "visible",
+        "text-field": "{name:he}",
+        "icon-anchor": "center",
+        "text-padding": 0
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 1,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1,
+        "text-translate": [0, 15],
+        "text-translate-anchor": "viewport"
       }
     },
     {
