@@ -53,6 +53,18 @@
       }
     },
     {
+      "id": "landuse_agriculture",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": [
+        "all",
+        ["==", "class", "farmland"],
+        ["in", "subclass", "farmland", " farm"]
+      ],
+      "paint": {"fill-color": "rgba(236, 203, 165, 1)", "fill-opacity": 0.45}
+    },
+    {
       "id": "landuse_fields",
       "type": "fill",
       "source": "IHM",
@@ -60,6 +72,22 @@
       "filter": ["==", "class", "agriculture"],
       "layout": {"visibility": "visible"},
       "paint": {"fill-color": "#eae0d0"}
+    },
+    {
+      "id": "landuse_vineyard",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": [
+        "all",
+        ["==", "class", "farmland"],
+        ["==", "subclass", "vineyard"]
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": "rgba(140, 201, 138, 0.34)",
+        "fill-pattern": "vines_pattern"
+      }
     },
     {
       "id": "landuse-residential",
@@ -77,18 +105,6 @@
         "fill-opacity": 0.7,
         "fill-outline-color": "rgba(104, 103, 103, 1)"
       }
-    },
-    {
-      "id": "landcover_agriculture",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": [
-        "all",
-        ["==", "class", "farmland"],
-        ["in", "subclass", "farmland", " farm"]
-      ],
-      "paint": {"fill-color": "rgba(236, 203, 165, 1)", "fill-opacity": 0.45}
     },
     {
       "id": "landcover-glacier",
@@ -149,22 +165,6 @@
       }
     },
     {
-      "id": "landcover_vineyard",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": [
-        "all",
-        ["==", "class", "farmland"],
-        ["==", "subclass", "orchard"]
-      ],
-      "layout": {},
-      "paint": {
-        "fill-color": "rgba(140, 201, 138, 0.34)",
-        "fill-pattern": "vines_pattern"
-      }
-    },
-    {
       "id": "landcover_wood",
       "type": "fill",
       "source": "IHM",
@@ -176,51 +176,33 @@
       }
     },
     {
-      "id": "park_outline",
-      "type": "line",
+      "id": "park_label",
+      "type": "symbol",
       "source": "IHM",
       "source-layer": "park",
-      "layout": {"visibility": "visible"},
-      "paint": {"line-pattern": "gradient_pattern", "line-blur": 16}
+      "filter": [
+        "any",
+        ["==", "class", "national_park"],
+        ["==", "class", "nature_reserve"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "RTG",
+        "text-field": "name:he"
+      },
+      "paint": {}
     },
     {
-      "id": "park",
+      "id": "park_fill",
       "type": "fill",
       "source": "IHM",
       "source-layer": "park",
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-color": "rgba(192, 216, 151, 0.53)",
-        "fill-opacity": 0.3,
-        "fill-pattern": "green_nesw_pattern"
-      }
-    },
-    {
-      "id": "landuse_overlay_national_park",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "national_park"],
+      "filter": ["all", ["in", "class", "national_park", "nature_reserve"]],
       "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "#E1EBB0",
         "fill-opacity": {"base": 1, "stops": [[5, 0], [9, 0.75]]}
       }
-    },
-    {
-      "id": "park-label",
-      "type": "symbol",
-      "metadata": {"mapbox:group": "1444849242106.713"},
-      "source": "IHM",
-      "source-layer": "park",
-      "minzoom": 0,
-      "filter": ["all", ["==", "rank", 1], ["==", "$type", "Point"]],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "RTG",
-        "text-field": "{name:he}"
-      },
-      "paint": {}
     },
     {
       "id": "contour_label",
@@ -452,7 +434,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 14,
+      "minzoom": 12,
       "maxzoom": 24,
       "filter": [
         "all",
@@ -824,7 +806,8 @@
       "filter": [
         "all",
         ["<=", "admin_level", 2],
-        ["==", "$type", "LineString"]
+        ["==", "$type", "LineString"],
+        ["==", "maritime", 0]
       ],
       "layout": {
         "visibility": "visible",
@@ -1688,6 +1671,6 @@
       }
     }
   ],
-  "id": "klokantech-terrain",
-  "owner": ""
+  "id": "il-MTB",
+  "owner": "Israel Hiking Maps"
 }
