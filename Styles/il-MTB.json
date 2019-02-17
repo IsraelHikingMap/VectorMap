@@ -828,7 +828,7 @@
         "line-miter-limit": 5
       },
       "paint": {
-        "line-color": "rgba(47, 11, 67, 1)",
+        "line-color": "rgba(90, 0, 133, 1)",
         "line-width": {"stops": [[6, 2], [15, 17]]},
         "line-opacity": 0.3
       }
@@ -999,26 +999,14 @@
         "all",
         ["==", "$type", "Point"],
         [
-          "!in",
+          "in",
           "subclass",
-          "bus_stop",
-          "supermarket",
-          "bank",
-          "clothes",
-          "fast_food"
-        ],
-        [
-          "!in",
-          "class",
-          "alcohol_shop",
-          "grocery",
-          "car",
-          "post",
-          "shop",
-          "veterinary",
-          "fuel",
-          "restaurant",
-          "cafe"
+          "monument",
+          "casle",
+          "attraction",
+          "campsite",
+          "bicycle",
+          "picnic"
         ]
       ],
       "layout": {
@@ -1599,7 +1587,7 @@
       "layout": {
         "text-field": "{name:he}",
         "text-font": ["Open Sans Light"],
-        "text-max-width": 6,
+        "text-max-width": 3,
         "text-size": {"stops": [[6, 10], [12, 14]]},
         "visibility": "visible",
         "text-anchor": "center"
@@ -1621,7 +1609,7 @@
       "layout": {
         "text-field": "{name:nonlatin}",
         "text-font": ["Open Sans Light"],
-        "text-max-width": 10,
+        "text-max-width": 3,
         "text-size": {"stops": [[3, 12], [8, 16]]}
       },
       "paint": {
@@ -1672,7 +1660,7 @@
       "layout": {
         "text-field": "{name:he}",
         "text-font": ["Open Sans Bold"],
-        "text-max-width": 10,
+        "text-max-width": 5,
         "text-size": {"stops": [[3, 12], [8, 18]]}
       },
       "paint": {
