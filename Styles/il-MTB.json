@@ -1013,7 +1013,7 @@
         "text-size": 11,
         "text-font": ["Open Sans Light"],
         "visibility": "visible",
-        "text-offset": [0, 1.2],
+        "text-offset": [0, 2],
         "icon-size": 1,
         "text-anchor": "top",
         "text-field": {
