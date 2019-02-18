@@ -456,7 +456,7 @@
       "layout": {
         "line-cap": "round",
         "line-join": "bevel",
-        "visibility": "visible"
+        "visibility": "invisible"
       },
       "paint": {
         "line-color": "rgba(245, 245, 248, 1)",
