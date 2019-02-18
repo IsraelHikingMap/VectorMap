@@ -1,0 +1,145 @@
+{
+  "version": 8,
+  "name": "IMTB",
+  "metadata": {
+    "mapbox:autocomposite": false,
+    "mapbox:type": "template",
+    "maputnik:renderer": "mbgljs",
+    "IHM:version": "3.x",
+    "IHM:mapbox:owner": "IHM",
+    "IHM:mapbox:source:url": "mapbox://IHM.4qljc88t",
+    "maputnik:thunderforest_access_token": ""
+  },
+  "center": [
+    32,
+    35
+  ],
+  "zoom": 8,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "contours": {
+      "type": "vector",
+      "url": "https://klokantech.tilehosting.com/data/contours.json?key=tXme5cuqgrCqdPoZHqyn"
+    }
+  },
+  "sprite": "https://raw.githubusercontent.com/IsraelHikingMap/VectorMap/master/Icons/publish/sprite",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "contour_label",
+      "type": "symbol",
+      "metadata": {},
+      "source": "contours",
+      "source-layer": "contour",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "in",
+          "nth_line",
+          10,
+          5
+        ],
+        [
+          ">",
+          "height",
+          0
+        ]
+      ],
+      "layout": {
+        "text-size": {
+          "base": 1,
+          "stops": [
+            [
+              15,
+              9.5
+            ],
+            [
+              20,
+              12
+            ]
+          ]
+        },
+        "text-allow-overlap": false,
+        "symbol-avoid-edges": true,
+        "text-ignore-placement": false,
+        "symbol-placement": "line",
+        "text-padding": 10,
+        "text-rotation-alignment": "map",
+        "text-field": "{height} m",
+        "text-font": [
+          "Open Sans Light"
+        ],
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "hsl(0, 0%, 37%)",
+        "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "contour_index",
+      "type": "line",
+      "source": "contours",
+      "source-layer": "contour",
+      "filter": [
+        "all",
+        [
+          ">",
+          "height",
+          0
+        ],
+        [
+          "in",
+          "nth_line",
+          10,
+          5
+        ]
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(150, 94, 37, 1)",
+        "line-opacity": 0.4,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "contour",
+      "type": "line",
+      "source": "contours",
+      "source-layer": "contour",
+      "filter": [
+        "all",
+        [
+          "!in",
+          "nth_line",
+          10,
+          5
+        ],
+        [
+          ">",
+          "height",
+          0
+        ]
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(150, 94, 37, 1)",
+        "line-opacity": 0.5,
+        "line-width": 1
+      }
+    }
+  ],
+  "id": "il-MTB",
+  "owner": "Israel Hiking Maps"
+}
