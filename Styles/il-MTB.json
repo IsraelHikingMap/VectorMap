@@ -637,6 +637,8 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
+      "minzoom": 9,
+      "maxzoom": 24,
       "filter": ["all", ["==", "$type", "LineString"], [">=", "ref_length", 1]],
       "layout": {
         "symbol-placement": "line",
@@ -647,14 +649,15 @@
         "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
         "text-rotation-alignment": "map",
         "visibility": "visible",
-        "icon-image": "dot",
+        "icon-image": "shield",
         "symbol-spacing": 2000,
-        "icon-size": 5
+        "icon-size": {"stops": [[6, 0.3], [14, 1]]}
       },
       "paint": {
-        "text-color": "rgba(238, 10, 10, 1)",
+        "text-color": "rgba(255, 0, 0, 1)",
         "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 10
+        "text-halo-width": 10,
+        "icon-color": "rgba(255, 0, 0, 1)"
       }
     },
     {
