@@ -205,7 +205,9 @@
         "visibility": "visible",
         "text-field": "{name:he}",
         "icon-anchor": "center",
-        "text-padding": 0
+        "text-padding": 0,
+        "text-max-width": 5,
+        "text-offset": [0, 1]
       },
       "paint": {
         "text-color": "rgba(0, 0, 0, 1)",
@@ -437,7 +439,7 @@
       },
       "paint": {
         "line-color": "rgba(0, 0, 9, 1)",
-        "line-dasharray": [1, 1],
+        "line-dasharray": [2, 2],
         "line-width": {"base": 1.55, "stops": [[7, 1], [20, 30]]}
       }
     },
@@ -456,7 +458,7 @@
       "layout": {
         "line-cap": "round",
         "line-join": "bevel",
-        "visibility": "invisible"
+        "visibility": "visible"
       },
       "paint": {
         "line-color": "rgba(245, 245, 248, 1)",
@@ -989,48 +991,6 @@
       }
     },
     {
-      "id": "poi_label",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 14,
-      "maxzoom": 20,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        [
-          "in",
-          "subclass",
-          "monument",
-          "casle",
-          "attraction",
-          "campsite",
-          "bicycle",
-          "picnic"
-        ]
-      ],
-      "layout": {
-        "text-size": 11,
-        "text-font": ["Open Sans Light"],
-        "visibility": "visible",
-        "text-offset": [0, 2],
-        "icon-size": 1,
-        "text-anchor": "top",
-        "text-field": {
-          "stops": [[6, "{name:nonlatin}"], [10, "{name:nonlatin}"]]
-        },
-        "text-max-width": 8,
-        "icon-offset": [0, -100],
-        "icon-anchor": "top"
-      },
-      "paint": {
-        "text-color": "rgba(16, 16, 16, 1)",
-        "text-halo-width": 1,
-        "text-halo-color": "rgba(255,255,255,0.75)",
-        "text-halo-blur": 1
-      }
-    },
-    {
       "id": "poi_monument",
       "type": "symbol",
       "source": "IHM",
@@ -1125,6 +1085,51 @@
       }
     },
     {
+      "id": "poi_label",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "maxzoom": 20,
+      "filter": [
+        "all",
+        [
+          "in",
+          "subclass",
+          "muslim",
+          "jewish",
+          "christian",
+          "monument",
+          "casle",
+          "attraction",
+          "campsite",
+          "bicycle",
+          "picnic",
+          "ruins"
+        ]
+      ],
+      "layout": {
+        "text-size": 11,
+        "text-font": ["Open Sans Light"],
+        "visibility": "visible",
+        "text-offset": [0, 1],
+        "icon-size": 1,
+        "text-anchor": "top",
+        "text-field": {
+          "stops": [[6, "{name:nonlatin}"], [10, "{name:nonlatin}"]]
+        },
+        "text-max-width": 8,
+        "icon-offset": [0, 0],
+        "icon-anchor": "top"
+      },
+      "paint": {
+        "text-color": "rgba(16, 16, 16, 1)",
+        "text-halo-width": 1,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1
+      }
+    },
+    {
       "id": "airport-label",
       "type": "symbol",
       "source": "IHM",
@@ -1139,7 +1144,7 @@
         "icon-size": 1,
         "text-anchor": "top",
         "text-field": "{name:nonlatin}",
-        "text-max-width": 8,
+        "text-max-width": 3,
         "icon-image": "airfield"
       },
       "paint": {
@@ -1164,7 +1169,7 @@
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
         "icon-size": 1,
-        "text-field": ""
+        "text-field": "{name:he}"
       },
       "paint": {
         "icon-color": "rgba(20, 19, 19, 1)",
@@ -1555,21 +1560,24 @@
       "filter": ["all", ["==", "$type", "Point"]],
       "layout": {
         "icon-image": "dot",
-        "text-size": {"stops": [[8, 5], [16, 15]]},
+        "text-size": {"stops": [[8, 10], [16, 19]]},
         "icon-size": {"stops": [[9, 0.15], [12, 1]]},
         "text-font": ["Open Sans Regular"],
         "icon-offset": [0, -2],
         "visibility": "visible",
         "text-field": "{name:he}",
         "icon-anchor": "center",
-        "text-padding": 0
+        "text-padding": 0,
+        "text-offset": [0, 0.5],
+        "text-max-width": 4,
+        "text-anchor": "top"
       },
       "paint": {
         "text-color": "rgba(0, 0, 0, 1)",
         "text-halo-width": 1,
         "text-halo-color": "rgba(255,255,255,0.75)",
         "text-halo-blur": 1,
-        "text-translate": [0, 15],
+        "text-translate": [0, 0],
         "text-translate-anchor": "viewport"
       }
     },
