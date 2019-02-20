@@ -297,6 +297,39 @@
       "paint": {"fill-color": "hsl(205, 56%, 73%)"}
     },
     {
+      "id": "waterway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "waterway",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["!in", "brunnel", "tunnel", "bridge"]
+      ],
+      "paint": {
+        "line-color": "hsl(205, 56%, 73%)",
+        "line-width": {"base": 1.4, "stops": [[8, 1], [20, 8]]},
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "waterway-bridge-case",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "waterway",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "bridge"]
+      ],
+      "layout": {"line-cap": "butt", "line-join": "miter"},
+      "paint": {
+        "line-color": "#bbbbbb",
+        "line-width": {"base": 1.6, "stops": [[12, 0.5], [20, 10]]},
+        "line-gap-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
+      }
+    },
+    {
       "id": "waterway-tunnel",
       "type": "line",
       "source": "IHM",
@@ -315,38 +348,19 @@
       }
     },
     {
-      "id": "waterway",
+      "id": "waterway-bridge",
       "type": "line",
       "source": "IHM",
       "source-layer": "waterway",
       "filter": [
         "all",
         ["==", "$type", "LineString"],
-        ["!in", "brunnel", "tunnel", "bridge"]
+        ["==", "brunnel", "bridge"]
       ],
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "hsl(205, 56%, 73%)",
-        "line-width": {"base": 1.4, "stops": [[8, 1], [20, 8]]},
-        "line-opacity": 1
-      }
-    },
-    {
-      "id": "tunnel_railway_transit",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 0,
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["==", "brunnel", "tunnel"],
-        ["==", "class", "transit"]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "miter"},
-      "paint": {
-        "line-color": "hsl(34, 12%, 66%)",
-        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]},
-        "line-dasharray": [3, 3]
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
       }
     },
     {
@@ -616,11 +630,44 @@
       }
     },
     {
-      "id": "road_major_label",
+      "id": "road_rural_label",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
-      "filter": ["==", "$type", "LineString"],
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["in", "class", "track", "path"]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{name:he}",
+        "text-font": ["Open Sans Light"],
+        "text-transform": "uppercase",
+        "text-letter-spacing": 0.1,
+        "text-size": {"base": 1.4, "stops": [[14, 10], [20, 16]]},
+        "text-rotation-alignment": "auto",
+        "visibility": "visible",
+        "text-anchor": "bottom",
+        "text-offset": [0, 1],
+        "text-pitch-alignment": "auto"
+      },
+      "paint": {
+        "text-color": "#000",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "road_urban_label",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["!in", "class", "track", "path"]
+      ],
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name:he}",
@@ -635,6 +682,25 @@
         "text-color": "#000",
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 2
+      }
+    },
+    {
+      "id": "tunnel_railway_transit",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 0,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "class", "transit"]
+      ],
+      "layout": {"line-cap": "butt", "line-join": "miter"},
+      "paint": {
+        "line-color": "hsl(34, 12%, 66%)",
+        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]},
+        "line-dasharray": [3, 3]
       }
     },
     {
@@ -701,39 +767,6 @@
       "paint": {
         "line-color": "hsl(34, 12%, 66%)",
         "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]}
-      }
-    },
-    {
-      "id": "waterway-bridge-case",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "waterway",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["==", "brunnel", "bridge"]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "miter"},
-      "paint": {
-        "line-color": "#bbbbbb",
-        "line-width": {"base": 1.6, "stops": [[12, 0.5], [20, 10]]},
-        "line-gap-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
-      }
-    },
-    {
-      "id": "waterway-bridge",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "waterway",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["==", "brunnel", "bridge"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "hsl(205, 56%, 73%)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
       }
     },
     {
@@ -811,7 +844,7 @@
       }
     },
     {
-      "id": "admin_country",
+      "id": "admin_country-inner",
       "type": "line",
       "source": "IHM",
       "source-layer": "boundary",
@@ -831,8 +864,34 @@
       },
       "paint": {
         "line-color": "rgba(90, 0, 133, 1)",
-        "line-width": {"stops": [[6, 2], [15, 17]]},
-        "line-opacity": 0.3
+        "line-width": {"stops": [[3, 2], [15, 5]]},
+        "line-opacity": 0.5,
+        "line-dasharray": [1, 1, 3, 1]
+      }
+    },
+    {
+      "id": "admin_country_outer",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "boundary",
+      "minzoom": 0,
+      "maxzoom": 20,
+      "filter": [
+        "all",
+        ["<=", "admin_level", 2],
+        ["==", "$type", "LineString"],
+        ["==", "maritime", 0]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "bevel",
+        "line-miter-limit": 5
+      },
+      "paint": {
+        "line-color": "rgba(90, 0, 133, 1)",
+        "line-width": {"stops": [[6, 1], [15, 14]]},
+        "line-opacity": 0.2
       }
     },
     {
@@ -978,7 +1037,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1009,7 +1068,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1040,7 +1099,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": "",
         "text-font": ["Open Sans Light", "Open Sans Bold"]
       },
@@ -1072,7 +1131,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1109,15 +1168,13 @@
         ]
       ],
       "layout": {
-        "text-size": 11,
+        "text-size": {"stops": [[8, 5], [16, 15]]},
         "text-font": ["Open Sans Light"],
         "visibility": "visible",
-        "text-offset": [0, 1],
+        "text-offset": [0, 0.5],
         "icon-size": 1,
         "text-anchor": "top",
-        "text-field": {
-          "stops": [[6, "{name:nonlatin}"], [10, "{name:nonlatin}"]]
-        },
+        "text-field": "{name:he}",
         "text-max-width": 8,
         "icon-offset": [0, 0],
         "icon-anchor": "top"
@@ -1160,6 +1217,7 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 7,
+      "maxzoom": 24,
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "campsite"]],
       "layout": {
         "visibility": "visible",
@@ -1168,7 +1226,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": "{name:he}"
       },
       "paint": {
@@ -1199,7 +1257,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1225,7 +1283,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1251,7 +1309,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1277,7 +1335,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1309,11 +1367,11 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(85, 48, 12, 1)",
+        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1336,7 +1394,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1362,7 +1420,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1392,7 +1450,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1410,6 +1468,7 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 7,
+      "maxzoom": 24,
       "filter": [
         "all",
         ["==", "$type", "Point"],
@@ -1422,7 +1481,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1453,7 +1512,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1484,7 +1543,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1511,7 +1570,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": 1,
+        "icon-size": {"stops": [[14, 1], [20, 12]]},
         "text-field": ""
       },
       "paint": {
@@ -1559,7 +1618,7 @@
       "filter": ["all", ["==", "$type", "Point"]],
       "layout": {
         "icon-image": "dot",
-        "text-size": {"stops": [[8, 10], [16, 19]]},
+        "text-size": {"stops": [[8, 5], [16, 15]]},
         "icon-size": {"stops": [[9, 0.15], [12, 1]]},
         "text-font": ["Open Sans Regular"],
         "icon-offset": [0, -2],
