@@ -656,7 +656,7 @@
       "paint": {
         "text-color": "rgba(255, 0, 0, 1)",
         "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 10,
+        "text-halo-width": 1,
         "icon-color": "rgba(255, 0, 0, 1)"
       }
     },
