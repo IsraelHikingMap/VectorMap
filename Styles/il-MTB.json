@@ -1,15 +1,7 @@
 {
   "version": 8,
   "name": "IMTB",
-  "metadata": {
-    "mapbox:autocomposite": false,
-    "mapbox:type": "template",
-    "maputnik:renderer": "mbgljs",
-    "IHM:version": "3.x",
-    "IHM:mapbox:owner": "IHM",
-    "IHM:mapbox:source:url": "mapbox://IHM.4qljc88t",
-    "maputnik:thunderforest_access_token": ""
-  },
+  "metadata": {"maputnik:renderer": "mbgljs", "owner": "IHM"},
   "center": [32, 35],
   "zoom": 8,
   "bearing": 0,
@@ -1248,7 +1240,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 1,
       "maxzoom": 24,
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "campsite"]],
       "layout": {
@@ -1259,7 +1251,7 @@
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
         "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": "{name:he}"
+        "text-field": ""
       },
       "paint": {
         "icon-color": "rgba(150, 91, 34, 1)",
