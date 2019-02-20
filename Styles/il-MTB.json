@@ -982,7 +982,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(249, 204, 0, 0.69)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1013,7 +1013,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(154, 154, 154, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1045,7 +1045,7 @@
         "text-font": ["Open Sans Light", "Open Sans Bold"]
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(154, 154, 154, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1076,7 +1076,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(37, 133, 37, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1172,7 +1172,7 @@
         "text-field": "{name:he}"
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1203,7 +1203,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(249, 0, 0, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1230,7 +1230,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1282,7 +1282,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(254, 0, 0, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1314,7 +1314,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1341,7 +1341,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1367,7 +1367,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(255, 255, 255, 0)",
         "icon-halo-width": 3,
@@ -1397,7 +1397,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1427,7 +1427,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1458,7 +1458,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1489,7 +1489,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(255, 255, 255, 0)",
         "icon-halo-width": 3,
@@ -1516,7 +1516,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-color": "rgba(85, 48, 12, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
