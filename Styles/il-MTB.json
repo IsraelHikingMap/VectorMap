@@ -35,8 +35,8 @@
       "filter": ["all", ["in", "class", "sand"]],
       "paint": {
         "fill-antialias": false,
-        "fill-color": "rgba(232, 214, 38, 1)",
-        "fill-opacity": 0.3
+        "fill-color": "rgba(235, 232, 182, 1)",
+        "fill-opacity": 1
       }
     },
     {
@@ -85,7 +85,7 @@
       "filter": ["==", "class", "wood"],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "hsl(82, 46%, 72%)",
+        "fill-color": "rgba(200, 217, 174, 1)",
         "fill-opacity": {"base": 1, "stops": [[8, 0.6], [22, 1]]}
       }
     },
@@ -108,7 +108,7 @@
       "source-layer": "landcover",
       "filter": ["all", ["in", "subclass", "farmland", " farm"]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "rgba(227, 213, 193, 1)", "fill-opacity": 1}
+      "paint": {"fill-color": "rgba(233, 220, 192, 1)", "fill-opacity": 1}
     },
     {
       "id": "landuse_fields",
@@ -147,7 +147,7 @@
       ],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "rgba(216, 216, 216, 1)",
+        "fill-color": "rgba(224, 224, 224, 1)",
         "fill-opacity": 1,
         "fill-outline-color": "rgba(187, 187, 187, 1)"
       }
@@ -212,7 +212,7 @@
       "layout": {
         "icon-image": "RTG",
         "text-size": {"stops": [[8, 5], [16, 15]]},
-        "icon-size": {"stops": [[10, 1], [20, 2]]},
+        "icon-size": {"stops": [[10, 0.5], [20, 2]]},
         "text-font": ["Open Sans Regular"],
         "icon-offset": [0, -2],
         "visibility": "visible",
@@ -388,7 +388,7 @@
       "source-layer": "building",
       "minzoom": 15,
       "paint": {
-        "fill-color": "rgba(198, 198, 198, 1)",
+        "fill-color": "rgba(207, 207, 207, 1)",
         "fill-outline-color": "rgba(164, 164, 164, 1)",
         "fill-opacity": {"base": 1, "stops": [[13, 0.6], [14, 1]]}
       }
