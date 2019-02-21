@@ -430,28 +430,28 @@
 		"width": 32,
 		"height": 22,
 		"x": 0,
-		"y": 383,
+		"y": 361,
 		"pixelRatio": 1
 	},
 	"shield_red": {
 		"width": 32,
 		"height": 22,
 		"x": 45,
-		"y": 383,
+		"y": 361,
 		"pixelRatio": 1
 	},
 	"shield_green": {
 		"width": 32,
 		"height": 22,
 		"x": 90,
-		"y": 383,
+		"y": 361,
 		"pixelRatio": 1
 	},
 	"shield_brown": {
 		"width": 32,
 		"height": 22,
 		"x": 135,
-		"y": 383,
+		"y": 361,
 		"pixelRatio": 1
 	}
 }

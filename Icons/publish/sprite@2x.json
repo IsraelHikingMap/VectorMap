@@ -416,28 +416,28 @@
 		"width": 64,
 		"height": 44,
 		"x": 0,
-		"y": 766,
+		"y": 722,
 		"pixelRatio": 2
 	},
 	"shield_red": {
 		"width": 64,
 		"height": 44,
 		"x": 90,
-		"y": 766,
+		"y": 722,
 		"pixelRatio": 2
 	},
 	"shield_green": {
 		"width": 64,
 		"height": 44,
 		"x": 180,
-		"y": 766,
+		"y": 722,
 		"pixelRatio": 2
 	},
 	"shield_brown": {
 		"width": 64,
 		"height": 44,
 		"x": 270,
-		"y": 766,
+		"y": 722,
 		"pixelRatio": 2
 	}
 }
