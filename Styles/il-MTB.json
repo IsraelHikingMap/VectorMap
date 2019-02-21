@@ -625,6 +625,35 @@
       }
     },
     {
+      "id": "road_shield-background",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 9,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "$type", "LineString"], [">=", "ref_length", 1]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Bold"],
+        "text-transform": "uppercase",
+        "text-letter-spacing": 0.15,
+        "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
+        "text-rotation-alignment": "map",
+        "visibility": "visible",
+        "icon-image": "shield_background",
+        "symbol-spacing": 2000,
+        "icon-size": {"stops": [[6, 0.3], [14, 1]]},
+        "icon-ignore-placement": true
+      },
+      "paint": {
+        "text-color": "rgba(255, 255, 255, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 1,
+        "icon-color": "rgba(255, 255, 255, 1)"
+      }
+    },
+    {
       "id": "road_motorway_shield",
       "type": "symbol",
       "source": "IHM",
@@ -649,7 +678,7 @@
         "icon-image": "shield",
         "symbol-spacing": 2000,
         "icon-size": {"stops": [[6, 0.3], [14, 1]]},
-        "icon-ignore-placement": true
+        "icon-ignore-placement": false
       },
       "paint": {
         "text-color": "rgba(0, 0, 255, 1)",
@@ -683,7 +712,7 @@
         "icon-image": "shield",
         "symbol-spacing": 2000,
         "icon-size": {"stops": [[6, 0.3], [14, 1]]},
-        "icon-ignore-placement": true
+        "icon-ignore-placement": false
       },
       "paint": {
         "text-color": "rgba(255, 0, 0, 1)",
@@ -717,7 +746,7 @@
         "icon-image": "shield",
         "symbol-spacing": 2000,
         "icon-size": {"stops": [[6, 0.3], [14, 1]]},
-        "icon-ignore-placement": true
+        "icon-ignore-placement": false
       },
       "paint": {
         "text-color": "rgba(0, 162, 0, 1)",
@@ -751,42 +780,13 @@
         "icon-image": "shield",
         "symbol-spacing": 2000,
         "icon-size": {"stops": [[6, 0.3], [14, 1]]},
-        "icon-ignore-placement": true
+        "icon-ignore-placement": false
       },
       "paint": {
         "text-color": "rgba(117, 75, 28, 1)",
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 1,
         "icon-color": "rgba(117, 75, 28, 1)"
-      }
-    },
-    {
-      "id": "road_shield-background",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "minzoom": 9,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "$type", "LineString"], [">=", "ref_length", 1]],
-      "layout": {
-        "symbol-placement": "line",
-        "text-field": "{ref}",
-        "text-font": ["Open Sans Bold"],
-        "text-transform": "uppercase",
-        "text-letter-spacing": 0.15,
-        "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
-        "text-rotation-alignment": "map",
-        "visibility": "visible",
-        "icon-image": "shield_background",
-        "symbol-spacing": 2000,
-        "icon-size": {"stops": [[6, 0.3], [14, 1]]},
-        "icon-ignore-placement": true
-      },
-      "paint": {
-        "text-color": "rgba(255, 255, 255, 1)",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 1,
-        "icon-color": "rgba(0, 0, 255, 1)"
       }
     },
     {
