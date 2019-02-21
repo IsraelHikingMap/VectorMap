@@ -314,20 +314,6 @@
 		"y": 360,
 		"pixelRatio": 2
 	},
-	"shield": {
-		"width": 64,
-		"height": 44,
-		"x": 240,
-		"y": 362,
-		"pixelRatio": 2
-	},
-	"shield_background": {
-		"width": 64,
-		"height": 44,
-		"x": 330,
-		"y": 362,
-		"pixelRatio": 2
-	},	
 	"vines_pattern": {
 		"width": 64,
 		"height": 64,
@@ -424,6 +410,34 @@
 		"height": 32,
 		"x": 192,
 		"y": 644,
+		"pixelRatio": 2
+	},
+	"shield_blue": {
+		"width": 64,
+		"height": 44,
+		"x": 0,
+		"y": 766,
+		"pixelRatio": 2
+	},
+	"shield_red": {
+		"width": 64,
+		"height": 44,
+		"x": 90,
+		"y": 766,
+		"pixelRatio": 2
+	},
+	"shield_green": {
+		"width": 64,
+		"height": 44,
+		"x": 180,
+		"y": 766,
+		"pixelRatio": 2
+	},
+	"shield_brown": {
+		"width": 64,
+		"height": 44,
+		"x": 270,
+		"y": 766,
 		"pixelRatio": 2
 	}
 }

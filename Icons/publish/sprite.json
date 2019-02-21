@@ -352,7 +352,7 @@
 	"stones_pattern": {
 		"width": 32,
 		"height": 32,
-		"x": 144,
+		"x": 122,
 		"y": 226,
 		"pixelRatio": 1
 	},
@@ -387,7 +387,7 @@
 	"red_nesw_pattern": {
 		"width": 32,
 		"height": 32,
-		"x": 144,
+		"x": 122,
 		"y": 274,
 		"pixelRatio": 1
 	},
@@ -415,7 +415,7 @@
 	"cross_pattern": {
 		"width": 16,
 		"height": 16,
-		"x": 64,
+		"x": 32,
 		"y": 322,
 		"pixelRatio": 1
 	},
@@ -424,6 +424,34 @@
 		"height": 16,
 		"x": 96,
 		"y": 322,
+		"pixelRatio": 1
+	}'
+	"shield_blue": {
+		"width": 32,
+		"height": 22,
+		"x": 0,
+		"y": 383,
+		"pixelRatio": 1
+	},
+	"shield_red": {
+		"width": 32,
+		"height": 22,
+		"x": 45,
+		"y": 383,
+		"pixelRatio": 1
+	},
+	"shield_green": {
+		"width": 32,
+		"height": 22,
+		"x": 90,
+		"y": 383,
+		"pixelRatio": 1
+	},
+	"shield_brown": {
+		"width": 32,
+		"height": 22,
+		"x": 135,
+		"y": 383,
 		"pixelRatio": 1
 	}
 }
