@@ -827,10 +827,11 @@
         "text-rotation-alignment": "map",
         "visibility": "visible",
         "text-anchor": "center",
-        "text-offset": [0, 2],
+        "text-offset": {"stops": [[13, [0, 0.5]], [20, [0, 2]]]},
         "text-pitch-alignment": "map",
         "text-keep-upright": true,
-        "text-justify": "center"
+        "text-justify": "center",
+        "text-max-width": 30
       },
       "paint": {
         "text-color": "#000",
