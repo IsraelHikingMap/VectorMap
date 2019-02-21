@@ -321,6 +321,13 @@
 		"y": 362,
 		"pixelRatio": 2
 	},
+	"shield_background": {
+		"width": 64,
+		"height": 44,
+		"x": 330,
+		"y": 362,
+		"pixelRatio": 2
+	},	
 	"vines_pattern": {
 		"width": 64,
 		"height": 64,
