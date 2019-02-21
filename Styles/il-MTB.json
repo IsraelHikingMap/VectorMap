@@ -821,7 +821,7 @@
       ],
       "layout": {
         "symbol-placement": "line",
-        "text-field": "{name:en}",
+        "text-field": "{name:he}",
         "text-font": ["Open Sans Light"],
         "text-transform": "none",
         "text-letter-spacing": 0,
