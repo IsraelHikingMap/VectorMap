@@ -331,6 +331,36 @@
       }
     },
     {
+      "id": "waterway_name",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "waterway",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["all"],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{name:he}",
+        "text-font": ["Open Sans Light"],
+        "text-transform": "none",
+        "text-letter-spacing": 0,
+        "text-size": {"base": 1.4, "stops": [[14, 10], [20, 16]]},
+        "text-rotation-alignment": "map",
+        "visibility": "visible",
+        "text-anchor": "center",
+        "text-offset": [0, 0],
+        "text-pitch-alignment": "map",
+        "text-keep-upright": true,
+        "text-justify": "center",
+        "text-max-width": 30
+      },
+      "paint": {
+        "text-color": "rgba(65, 56, 177, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 1.5
+      }
+    },
+    {
       "id": "waterway-bridge-case",
       "type": "line",
       "source": "IHM",
@@ -695,12 +725,13 @@
         "text-transform": "uppercase",
         "text-letter-spacing": 0.1,
         "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
-        "text-rotation-alignment": "map",
+        "text-rotation-alignment": "viewport",
         "visibility": "visible",
         "icon-image": "shield_blue",
         "symbol-spacing": 2000,
         "icon-size": {"stops": [[6, 0.3], [14, 1]]},
-        "icon-ignore-placement": false
+        "icon-ignore-placement": false,
+        "icon-rotation-alignment": "viewport"
       },
       "paint": {
         "text-color": "rgba(0, 0, 255, 1)",
@@ -728,12 +759,13 @@
         "text-transform": "uppercase",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
-        "text-rotation-alignment": "map",
+        "text-rotation-alignment": "viewport",
         "visibility": "visible",
         "icon-image": "shield_red",
         "symbol-spacing": 2000,
         "icon-size": {"stops": [[6, 0.3], [14, 1]]},
-        "icon-ignore-placement": false
+        "icon-ignore-placement": false,
+        "icon-rotation-alignment": "viewport"
       },
       "paint": {
         "text-color": "rgba(255, 0, 0, 1)",
@@ -761,12 +793,13 @@
         "text-transform": "uppercase",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
-        "text-rotation-alignment": "map",
+        "text-rotation-alignment": "viewport",
         "visibility": "visible",
         "icon-image": "shield_green",
         "symbol-spacing": 2000,
         "icon-size": {"stops": [[6, 0.3], [14, 1]]},
-        "icon-ignore-placement": false
+        "icon-ignore-placement": false,
+        "icon-rotation-alignment": "viewport"
       },
       "paint": {
         "text-color": "rgba(0, 162, 0, 1)",
@@ -794,12 +827,13 @@
         "text-transform": "uppercase",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
-        "text-rotation-alignment": "map",
+        "text-rotation-alignment": "viewport",
         "visibility": "visible",
         "icon-image": "shield_brown",
         "symbol-spacing": 2000,
         "icon-size": {"stops": [[6, 0.3], [14, 1]]},
-        "icon-ignore-placement": false
+        "icon-ignore-placement": false,
+        "icon-rotation-alignment": "viewport"
       },
       "paint": {
         "text-color": "rgba(117, 75, 28, 1)",
@@ -849,7 +883,7 @@
       "filter": [
         "all",
         ["==", "$type", "LineString"],
-        ["!in", "class", "track", "path"]
+        ["!in", "class", "track", "path", "motorway", "trunk"]
       ],
       "layout": {
         "symbol-placement": "line",
