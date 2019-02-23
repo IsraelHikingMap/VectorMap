@@ -344,7 +344,7 @@
         "text-font": ["Open Sans Light"],
         "text-transform": "none",
         "text-letter-spacing": 0,
-        "text-size": {"base": 1.4, "stops": [[14, 10], [20, 16]]},
+        "text-size": {"base": 1.4, "stops": [[14, 12], [20, 18]]},
         "text-rotation-alignment": "map",
         "visibility": "visible",
         "text-anchor": "center",
