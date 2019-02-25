@@ -232,6 +232,32 @@
       }
     },
     {
+      "id": "contour_index",
+      "type": "line",
+      "source": "contours",
+      "source-layer": "contour",
+      "filter": ["all", [">", "height", 0], ["in", "nth_line", 10, 5]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(150, 94, 37, 1)",
+        "line-opacity": 0.4,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "contour",
+      "type": "line",
+      "source": "contours",
+      "source-layer": "contour",
+      "filter": ["all", ["!in", "nth_line", 10, 5], [">", "height", 0]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(150, 94, 37, 1)",
+        "line-opacity": 0.5,
+        "line-width": 1
+      }
+    },
+    {
       "id": "contour_label",
       "type": "symbol",
       "metadata": {},
@@ -257,34 +283,8 @@
       },
       "paint": {
         "text-color": "hsl(0, 0%, 37%)",
-        "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
         "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "contour_index",
-      "type": "line",
-      "source": "contours",
-      "source-layer": "contour",
-      "filter": ["all", [">", "height", 0], ["in", "nth_line", 10, 5]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "rgba(150, 94, 37, 1)",
-        "line-opacity": 0.4,
-        "line-width": 2
-      }
-    },
-    {
-      "id": "contour",
-      "type": "line",
-      "source": "contours",
-      "source-layer": "contour",
-      "filter": ["all", ["!in", "nth_line", 10, 5], [">", "height", 0]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "rgba(150, 94, 37, 1)",
-        "line-opacity": 0.5,
-        "line-width": 1
       }
     },
     {
@@ -322,7 +322,8 @@
       "filter": [
         "all",
         ["==", "$type", "LineString"],
-        ["!in", "brunnel", "tunnel", "bridge"]
+        ["!in", "brunnel", "tunnel", "bridge"],
+        ["!=", "intermittent", 1]
       ],
       "paint": {
         "line-color": "hsl(205, 56%, 73%)",
@@ -331,7 +332,25 @@
       }
     },
     {
-      "id": "waterway_name",
+      "id": "waterway-intermittent",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "waterway",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["!in", "brunnel", "tunnel", "bridge"],
+        ["==", "intermittent", 1]
+      ],
+      "paint": {
+        "line-color": "hsl(205, 56%, 73%)",
+        "line-width": {"base": 1.4, "stops": [[8, 1], [20, 8]]},
+        "line-opacity": 1,
+        "line-dasharray": [2, 1]
+      }
+    },
+    {
+      "id": "waterway_label",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "waterway",
