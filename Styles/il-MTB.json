@@ -555,7 +555,7 @@
       "layout": {
         "line-cap": "round",
         "line-join": "bevel",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "rgba(4, 4, 203, 1)",
@@ -575,88 +575,6 @@
       ],
       "layout": {},
       "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-opacity": 0.5}
-    },
-    {
-      "id": "road_footway",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["==", "class", "path"],
-        ["==", "subclass", "footway"]
-      ],
-      "layout": {
-        "line-cap": "square",
-        "line-join": "bevel",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-color": "rgba(203, 22, 4, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
-      }
-    },
-    {
-      "id": "road_cyclepath",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["==", "class", "path"],
-        ["==", "subclass", "cycleway"]
-      ],
-      "layout": {
-        "line-cap": "square",
-        "line-join": "bevel",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-color": "rgba(1, 149, 10, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
-      }
-    },
-    {
-      "id": "road_minor",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["in", "class", "minor", "service"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "rgba(180, 180, 180, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
-      }
-    },
-    {
-      "id": "road_trunk_primary",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["in", "class", "trunk", "primary"]
-      ],
-      "layout": {
-        "line-cap": "round",
-        "line-join": "round",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-color": "rgba(180, 180, 180, 1)",
-        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 30]]}
-      }
     },
     {
       "id": "road_secondary_tertiary",
@@ -697,6 +615,134 @@
         "line-color": "#B4B4B4",
         "line-width": {"base": 1.4, "stops": [[8, 1], [16, 10]]},
         "line-offset": 0
+      }
+    },
+    {
+      "id": "road_trunk_primary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["in", "class", "trunk", "primary"]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(180, 180, 180, 1)",
+        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 30]]}
+      }
+    },
+    {
+      "id": "road_minor",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["in", "class", "minor", "service"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(180, 180, 180, 1)",
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
+      }
+    },
+    {
+      "id": "road_footway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "class", "path"],
+        ["==", "subclass", "footway"]
+      ],
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "none"
+      },
+      "paint": {
+        "line-color": "rgba(203, 22, 4, 1)",
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
+      }
+    },
+    {
+      "id": "road_cyclepath",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "class", "path"],
+        ["==", "subclass", "cycleway"]
+      ],
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "none"
+      },
+      "paint": {
+        "line-color": "rgba(1, 149, 10, 1)",
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
+      }
+    },
+    {
+      "id": "mtb_path_blue",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "class", "path"],
+        ["in", "bicycle", "yes", "designated"],
+        ["==", "mtb_scale", 1]
+      ],
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(3, 19, 255, 1)",
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
+      }
+    },
+    {
+      "id": "mtb_path",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "class", "path"],
+        ["in", "bicycle", "yes", "designated"]
+      ],
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "none"
+      },
+      "paint": {
+        "line-color": "rgba(1, 149, 10, 1)",
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
       }
     },
     {
@@ -950,7 +996,9 @@
       "paint": {
         "text-color": "#000",
         "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 0
+        "text-halo-width": 0,
+        "text-opacity": 0.5,
+        "icon-opacity": 0.6
       }
     },
     {
@@ -972,11 +1020,11 @@
         "text-transform": "none",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[14, 10], [20, 16]]},
-        "text-rotation-alignment": "map",
+        "text-rotation-alignment": "auto",
         "visibility": "visible",
         "text-anchor": "center",
         "text-offset": {"stops": [[13, [0, 0.5]], [20, [0, 2]]]},
-        "text-pitch-alignment": "map",
+        "text-pitch-alignment": "auto",
         "text-keep-upright": true,
         "text-justify": "center",
         "text-max-width": 30
@@ -1004,7 +1052,7 @@
         "text-transform": "uppercase",
         "text-letter-spacing": 0.1,
         "text-size": {"base": 1.4, "stops": [[10, 8], [20, 14]]},
-        "text-rotation-alignment": "map",
+        "text-rotation-alignment": "auto",
         "visibility": "visible"
       },
       "paint": {
