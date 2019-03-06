@@ -512,7 +512,7 @@
       },
       "paint": {
         "line-color": "rgba(0, 0, 9, 1)",
-        "line-dasharray": [1, 1],
+        "line-dasharray": [1.5, 1.5],
         "line-width": {"base": 1.55, "stops": [[7, 1], [20, 30]]}
       }
     },
@@ -596,7 +596,6 @@
       },
       "paint": {
         "line-color": "rgba(203, 22, 4, 1)",
-        "line-dasharray": [1],
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
       }
     },
@@ -620,7 +619,6 @@
       },
       "paint": {
         "line-color": "rgba(1, 149, 10, 1)",
-        "line-dasharray": [1],
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
       }
     },
