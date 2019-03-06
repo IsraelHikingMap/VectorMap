@@ -72,13 +72,13 @@
       }
     },
     {
-      "id": "landcover-ice-shelf",
+      "id": "landcover-ice",
       "type": "fill",
       "source": "IHM",
       "source-layer": "landcover",
-      "filter": ["==", "subclass", "ice_shelf"],
+      "filter": ["all", ["in", "subclass", "ice_shelf", "glacier"]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-opacity": 0.8}
+      "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-opacity": 0.75}
     },
     {
       "id": "landcover_wood",
@@ -90,18 +90,6 @@
       "paint": {
         "fill-color": "rgba(200, 217, 174, 1)",
         "fill-opacity": {"base": 1, "stops": [[8, 0.6], [22, 1]]}
-      }
-    },
-    {
-      "id": "landcover-glacier",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "subclass", "glacier"],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-color": "hsl(47, 22%, 94%)",
-        "fill-opacity": {"base": 1, "stops": [[0, 1], [8, 0.5]]}
       }
     },
     {
@@ -235,7 +223,7 @@
       }
     },
     {
-      "id": "contour_index",
+      "id": "contour_major",
       "type": "line",
       "source": "contours",
       "source-layer": "contour",
@@ -248,7 +236,7 @@
       }
     },
     {
-      "id": "contour",
+      "id": "contour_minor",
       "type": "line",
       "source": "contours",
       "source-layer": "contour",
@@ -443,29 +431,6 @@
         "fill-color": "rgba(207, 207, 207, 1)",
         "fill-outline-color": "rgba(164, 164, 164, 1)",
         "fill-opacity": {"base": 1, "stops": [[13, 0.6], [14, 1]]}
-      }
-    },
-    {
-      "id": "road_area_pier",
-      "type": "fill",
-      "metadata": {},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "$type", "Polygon"], ["==", "class", "pier"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-antialias": true}
-    },
-    {
-      "id": "road_pier",
-      "type": "line",
-      "metadata": {},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "$type", "LineString"], ["in", "class", "pier"]],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "hsl(47, 26%, 88%)",
-        "line-width": {"base": 1.2, "stops": [[15, 1], [17, 4]]}
       }
     },
     {
@@ -740,7 +705,7 @@
       }
     },
     {
-      "id": "admin_country_outer",
+      "id": "border_country_outer",
       "type": "line",
       "source": "IHM",
       "source-layer": "boundary",
@@ -765,7 +730,7 @@
       }
     },
     {
-      "id": "admin_country-inner",
+      "id": "border_country-inner",
       "type": "line",
       "source": "IHM",
       "source-layer": "boundary",
@@ -954,6 +919,43 @@
         "text-color": "#000",
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 2
+      }
+    },
+    {
+      "id": "road_rural_direction",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["in", "class", "path"],
+        ["==", "oneway", 1]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "",
+        "text-font": [""],
+        "text-transform": "none",
+        "text-letter-spacing": 0,
+        "text-size": 16,
+        "text-rotation-alignment": "map",
+        "visibility": "visible",
+        "text-anchor": "center",
+        "text-offset": {"stops": [[13, [0, 0.5]], [20, [0, 2]]]},
+        "text-pitch-alignment": "map",
+        "text-keep-upright": true,
+        "text-justify": "center",
+        "text-max-width": 30,
+        "icon-image": "arrowhead",
+        "icon-rotation-alignment": "map"
+      },
+      "paint": {
+        "text-color": "#000",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 0
       }
     },
     {
