@@ -472,7 +472,7 @@
       },
       "paint": {
         "line-color": "rgba(255, 91, 90, 1)",
-        "line-dasharray": [1],
+        "line-dasharray": [1, 0],
         "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]}
       }
     },
@@ -491,7 +491,7 @@
       },
       "paint": {
         "line-color": "rgba(161, 163, 255, 1)",
-        "line-dasharray": [1],
+        "line-dasharray": [1, 0],
         "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]},
         "line-opacity": 1
       }
@@ -515,7 +515,7 @@
       },
       "paint": {
         "line-color": "rgba(0, 0, 9, 1)",
-        "line-dasharray": [2, 2],
+        "line-dasharray": [1, 1],
         "line-width": {"base": 1.55, "stops": [[7, 1], [20, 30]]}
       }
     },
@@ -538,7 +538,7 @@
       },
       "paint": {
         "line-color": "rgba(245, 245, 248, 1)",
-        "line-dasharray": [1000],
+        "line-dasharray": [1, 0],
         "line-width": {"base": 1.55, "stops": [[7, 0.5], [20, 15]]}
       }
     },
@@ -562,7 +562,7 @@
       },
       "paint": {
         "line-color": "rgba(4, 4, 203, 1)",
-        "line-dasharray": [1],
+        "line-dasharray": [1, 0],
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
       }
     },
