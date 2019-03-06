@@ -577,26 +577,6 @@
       "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-opacity": 0.5}
     },
     {
-      "id": "road_secondary_tertiary",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["in", "class", "secondary", "tertiary"]
-      ],
-      "layout": {
-        "line-cap": "round",
-        "line-join": "round",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-color": "rgba(180, 180, 180, 1)",
-        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 20]]}
-      }
-    },
-    {
       "id": "road_major_motorway",
       "type": "line",
       "source": "IHM",
@@ -635,6 +615,26 @@
       "paint": {
         "line-color": "rgba(180, 180, 180, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 30]]}
+      }
+    },
+    {
+      "id": "road_secondary_tertiary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["in", "class", "secondary", "tertiary"]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(180, 180, 180, 1)",
+        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 20]]}
       }
     },
     {
@@ -1062,6 +1062,23 @@
       }
     },
     {
+      "id": "runway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "filter": ["all", ["==", "class", "runway"]],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#B4B4B4",
+        "line-width": {"base": 1.4, "stops": [[8, 2], [16, 25]]},
+        "line-offset": 0
+      }
+    },
+    {
       "id": "tunnel_railway_transit",
       "type": "line",
       "source": "IHM",
@@ -1142,8 +1159,41 @@
       "filter": ["==", "class", "rail"],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "hsl(34, 12%, 66%)",
-        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]}
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]},
+        "line-width": {"stops": [[6, 1], [20, 3]]}
+      }
+    },
+    {
+      "id": "railway_station",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": [
+        "any",
+        ["in", "subclass", "station"],
+        ["in", "class", "railway"]
+      ],
+      "layout": {
+        "text-size": {"stops": [[8, 5], [16, 15]]},
+        "text-font": ["Open Sans Light"],
+        "visibility": "visible",
+        "text-offset": {"stops": [[7, [0, 1]], [20, [0, 2]]]},
+        "icon-size": 2,
+        "text-anchor": "top",
+        "text-field": "{name:he}",
+        "text-max-width": 8,
+        "icon-offset": [0, 0],
+        "icon-anchor": "top",
+        "icon-image": "square"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1
       }
     },
     {

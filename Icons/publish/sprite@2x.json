@@ -314,6 +314,13 @@
 		"y": 360,
 		"pixelRatio": 2
 	},
+	"square": {
+		"width": 30,
+		"height": 30,
+		"x": 360,
+		"y": 360,
+		"pixelRatio": 2
+	},
 	"vines_pattern": {
 		"width": 64,
 		"height": 64,
