@@ -1119,7 +1119,7 @@
       "filter": ["==", "class", "rail"],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "hsl(34, 12%, 66%)",
+        "line-color": "rgba(0, 0, 0, 1)",
         "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]}
       }
     },
@@ -1195,6 +1195,36 @@
       "paint": {
         "line-color": "#fff",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 30]]}
+      }
+    },
+    {
+      "id": "railway_station",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "class", "railway"],
+        ["==", "subclass", "station"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "square",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(249, 204, 0, 0.69)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
       }
     },
     {
