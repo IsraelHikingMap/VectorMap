@@ -1165,7 +1165,7 @@
       }
     },
     {
-      "id": "railway_station",
+      "id": "railway_station_label",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
@@ -1181,10 +1181,39 @@
         "text-font": ["Open Sans Light"],
         "visibility": "visible",
         "text-offset": {"stops": [[7, [0, 1]], [20, [0, 2]]]},
-        "icon-size": 2,
+        "icon-size": 1,
         "text-anchor": "top",
         "text-field": "{name:he}",
         "text-max-width": 8,
+        "icon-offset": [0, 0],
+        "icon-anchor": "top",
+        "icon-image": ""
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "railway_station",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": [
+        "any",
+        ["in", "subclass", "station"],
+        ["in", "class", "railway"]
+      ],
+      "layout": {
+        "text-size": {"stops": [[8, 5], [16, 15]]},
+        "text-font": ["Open Sans Light"],
+        "visibility": "visible",
+        "text-offset": {"stops": [[7, [0, 1]], [20, [0, 2]]]},
+        "icon-size": {"stops": [[12, 0.3], [20, 1.5]]},
         "icon-offset": [0, 0],
         "icon-anchor": "top",
         "icon-image": "square"
@@ -1193,7 +1222,8 @@
         "text-color": "rgba(0, 0, 0, 1)",
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)",
-        "text-halo-blur": 1
+        "text-halo-blur": 1,
+        "icon-color": "rgba(10, 10, 10, 1)"
       }
     },
     {
