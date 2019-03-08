@@ -17,9 +17,9 @@
    version="1.1"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="sprite.svg"
-   inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite@2x.png"
-   inkscape:export-xdpi="192"
-   inkscape:export-ydpi="192">
+   inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs4586">
     <linearGradient
@@ -396,14 +396,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="234.44328"
-     inkscape:cy="257.13268"
+     inkscape:zoom="11.313708"
+     inkscape:cx="187.88741"
+     inkscape:cy="216.56809"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="986"
+     inkscape:window-width="2880"
+     inkscape:window-height="1526"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
@@ -770,32 +770,28 @@
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <g
-       id="g6032"
-       transform="matrix(1.1428571,0,0,1.0666553,-4.7602909,-75.00752)"
-       inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96">
+       id="g1053">
       <path
          id="rect4489-1"
-         d="m 162.97821,838.48149 c -0.48476,0 -0.875,0.41813 -0.875,0.9375 0,0.51938 0.39024,0.9375 0.875,0.9375 4.8e-4,1.54954 0,9.375 0,9.375 h 1.75 v -9.375 c 0.48475,0 0.875,-0.41812 0.875,-0.9375 0,-0.51937 -0.39025,-0.9375 -0.875,-0.9375 z"
-         style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.45387703;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m 181,819.36211 c -0.55401,0 -1,0.446 -1,0.99999 0,0.554 0.44599,0.99999 1,0.99999 5.5e-4,1.65282 0,9.99989 0,9.99989 h 2.00001 v -9.99989 c 0.554,0 0.99999,-0.44599 0.99999,-0.99999 0,-0.55399 -0.44599,-0.99999 -0.99999,-0.99999 z"
+         style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.5011254;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
          inkscape:connector-curvature="0" />
       <path
          inkscape:connector-curvature="0"
          id="rect4491-0"
-         d="m 167.35321,840.35651 h 1.75 v 9.375 h -1.75 z"
-         style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.43334609;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" />
+         d="m 186,821.36222 h 2 v 9.99989 h -2 z"
+         style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.47845671;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
          sodipodi:nodetypes="ccccc"
          inkscape:connector-curvature="0"
          id="rect4493-6"
-         d="m 171.72821,843.16904 1.75,1.875 v 4.6875 h -1.75 z"
-         style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.42503893;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" />
+         d="m 191,824.36218 2,1.99998 v 4.99995 h -2 z"
+         style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.46928474;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
          inkscape:connector-curvature="0"
          id="rect4491-9-2"
-         d="m 174.35321,850.66914 v 1.875 h -12.25 v -1.875 z"
-         style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.51274186;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" />
+         d="m 194,832.36213 v 1.99998 h -14 v -1.99998 z"
+         style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.56611776;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
     <g
        id="g6037"
