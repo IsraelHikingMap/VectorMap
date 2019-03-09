@@ -141,6 +141,19 @@
       }
     },
     {
+      "id": "landuse-quarry",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "filter": ["all", ["==", "$type", "Polygon"], ["in", "class", "quarry"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(224, 224, 224, 1)",
+        "fill-opacity": 1,
+        "fill-outline-color": "rgba(187, 187, 187, 1)"
+      }
+    },
+    {
       "id": "landuse-residential",
       "type": "fill",
       "source": "IHM",
@@ -185,9 +198,22 @@
       "filter": ["all", ["==", "class", "grass"], ["!=", "subclass", "meadow"]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "rgba(228, 255, 166, 1)",
-        "fill-opacity": 0.45,
-        "fill-outline-color": "rgba(15, 57, 13, 1)"
+        "fill-color": "rgba(210, 232, 155, 1)",
+        "fill-opacity": 1,
+        "fill-outline-color": "rgba(181, 199, 134, 1)"
+      }
+    },
+    {
+      "id": "landuse_pitch",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "filter": ["all", ["==", "class", "pitch"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(210, 232, 155, 1)",
+        "fill-opacity": 1,
+        "fill-outline-color": "rgba(181, 199, 134, 1)"
       }
     },
     {
@@ -244,8 +270,8 @@
       "filter": ["all", [">", "height", 0], ["in", "nth_line", 10, 5]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "rgba(150, 94, 37, 1)",
-        "line-opacity": 0.4,
+        "line-color": "rgba(139, 103, 32, 1)",
+        "line-opacity": 1,
         "line-width": 2
       }
     },
@@ -257,8 +283,8 @@
       "filter": ["all", ["!in", "nth_line", 10, 5], [">", "height", 0]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "rgba(150, 94, 37, 1)",
-        "line-opacity": 0.5,
+        "line-color": "rgba(139, 103, 32, 1)",
+        "line-opacity": 1,
         "line-width": 1
       }
     },
@@ -275,19 +301,19 @@
         [">", "height", 0]
       ],
       "layout": {
-        "text-size": {"base": 1, "stops": [[15, 9.5], [20, 12]]},
+        "text-size": {"base": 1, "stops": [[15, 11], [20, 14]]},
         "text-allow-overlap": false,
         "symbol-avoid-edges": true,
         "text-ignore-placement": false,
         "symbol-placement": "line",
         "text-padding": 10,
         "text-rotation-alignment": "map",
-        "text-field": "{height} m",
+        "text-field": "{height}",
         "text-font": ["Open Sans Light"],
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "hsl(0, 0%, 37%)",
+        "text-color": "rgba(95, 70, 21, 1)",
         "text-halo-color": "rgba(255, 255, 255, 0.74)",
         "text-halo-width": 1
       }
@@ -311,12 +337,27 @@
       "type": "fill",
       "source": "IHM",
       "source-layer": "water",
-      "filter": ["==", "$type", "Polygon"],
+      "filter": ["all", ["==", "$type", "Polygon"], ["!=", "intermittent", 1]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "hsl(205, 56%, 73%)",
         "fill-outline-color": {
           "stops": [[6, "rgba(58, 58, 255, 0)"], [20, "rgba(58, 58, 255, 1)"]]
         }
+      }
+    },
+    {
+      "id": "water_intermittent",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "water",
+      "filter": ["all", ["==", "intermittent", 1]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(200, 217, 174, 1)",
+        "fill-opacity": 1,
+        "fill-pattern": "intermittent_pattern",
+        "fill-outline-color": "rgba(185, 211, 246, 1)"
       }
     },
     {
@@ -329,6 +370,38 @@
         "fill-color": "rgba(207, 207, 207, 1)",
         "fill-outline-color": "rgba(164, 164, 164, 1)",
         "fill-opacity": {"base": 1, "stops": [[13, 0.6], [14, 1]]}
+      }
+    },
+    {
+      "id": "bridge-border",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "brunnel", "bridge"]],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": {"base": 1.4, "stops": [[6, 0.6], [20, 39]]}
+      }
+    },
+    {
+      "id": "bridge",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "brunnel", "bridge"]],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 35]]}
       }
     },
     {
@@ -391,7 +464,7 @@
         "text-max-width": 30
       },
       "paint": {
-        "text-color": "rgba(65, 56, 177, 1)",
+        "text-color": "rgba(108, 153, 186, 1)",
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 1.5
       }
@@ -465,7 +538,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(255, 222, 0, 1)",
+        "line-color": "rgba(255, 231, 64, 0.75)",
         "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]},
         "line-opacity": 1
       }
@@ -484,7 +557,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(255, 91, 90, 1)",
+        "line-color": "rgba(246, 146, 145, 1)",
         "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]}
       }
     },
@@ -508,7 +581,7 @@
       }
     },
     {
-      "id": "road_track-cladding",
+      "id": "road_track-casing",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -519,15 +592,11 @@
         ["==", "$type", "LineString"],
         ["==", "class", "track"]
       ],
-      "layout": {
-        "line-cap": "square",
-        "line-join": "bevel",
-        "visibility": "visible"
-      },
+      "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "rgba(0, 0, 9, 1)",
-        "line-dasharray": [1, 2],
-        "line-width": {"base": 1.55, "stops": [[7, 1], [20, 30]]}
+        "line-dasharray": [2, 2],
+        "line-gap-width": 0,
+        "line-width": {"stops": [[14, 3], [16, 6], [20, 18]]}
       }
     },
     {
@@ -550,7 +619,7 @@
       "paint": {
         "line-color": "rgba(245, 245, 248, 1)",
         "line-dasharray": [1, 0],
-        "line-width": {"base": 1.55, "stops": [[7, 0.5], [20, 15]]}
+        "line-width": {"base": 1.55, "stops": [[14, 2], [20, 15]]}
       }
     },
     {
@@ -784,7 +853,7 @@
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[14, 10], [20, 16]]},
         "text-rotation-alignment": "map",
-        "visibility": "none",
+        "visibility": "visible",
         "text-anchor": "center",
         "text-offset": {"stops": [[13, [0, 0.5]], [20, [0, 2]]]},
         "text-pitch-alignment": "map",
@@ -943,6 +1012,79 @@
       }
     },
     {
+      "id": "railway_station",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 10,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "class", "railway"],
+        ["==", "subclass", "station"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "square",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[12, 0.5], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(249, 204, 0, 0.69)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "railway-tics",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["==", "class", "rail"],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]},
+        "line-dasharray": [0.1, 1],
+        "line-width": {"stops": [[1, 0], [10, 3], [20, 10]]}
+      }
+    },
+    {
+      "id": "railway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["==", "class", "rail"],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]}
+      }
+    },
+    {
+      "id": "railway_transit",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "class", "transit"],
+        ["!=", "brunnel", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "hsl(34, 12%, 66%)",
+        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]}
+      }
+    },
+    {
       "id": "road_cyclepath",
       "type": "line",
       "source": "IHM",
@@ -1094,7 +1236,7 @@
       }
     },
     {
-      "id": "road_motorway_shield",
+      "id": "shield_motorway",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
@@ -1128,7 +1270,7 @@
       }
     },
     {
-      "id": "road_trunk_shield",
+      "id": "shield_trunk",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
@@ -1162,7 +1304,7 @@
       }
     },
     {
-      "id": "road_primary_shield",
+      "id": "shield_primary",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
@@ -1196,7 +1338,7 @@
       }
     },
     {
-      "id": "road_secondary_shield",
+      "id": "shield_secondary",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
@@ -1338,13 +1480,17 @@
         "all",
         ["==", "$type", "LineString"],
         ["==", "brunnel", "tunnel"],
-        ["==", "class", "transit"]
+        ["==", "class", "rail"]
       ],
-      "layout": {"line-cap": "butt", "line-join": "miter"},
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "hsl(34, 12%, 66%)",
-        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]},
-        "line-dasharray": [3, 3]
+        "line-color": "rgba(187, 187, 187, 0.65)",
+        "line-opacity": {"base": 1, "stops": [[11, 1], [16, 1]]},
+        "line-width": {"stops": [[10, 1], [20, 15]]}
       }
     },
     {
@@ -1386,45 +1532,25 @@
       }
     },
     {
-      "id": "railway_transit",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "class", "transit"],
-        ["!=", "brunnel", "tunnel"]
-      ],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "hsl(34, 12%, 66%)",
-        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]}
-      }
-    },
-    {
-      "id": "railway_station",
+      "id": "amenity-campsite",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 10,
+      "minzoom": 1,
       "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "class", "railway"],
-        ["==", "subclass", "station"]
-      ],
+      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "campsite"]],
       "layout": {
         "visibility": "visible",
-        "icon-image": "square",
+        "icon-image": "camping",
         "icon-rotate": 0,
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": {"stops": [[12, 0.5], [20, 2]]},
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(249, 204, 0, 0.69)",
+        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1433,89 +1559,347 @@
       }
     },
     {
-      "id": "railway",
-      "type": "line",
+      "id": "amenity-bike-shop-copy",
+      "type": "symbol",
       "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["==", "class", "rail"],
-      "layout": {"visibility": "visible"},
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "bicycle"],
+        ["==", "subclass", "bicycle"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "bike-red",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
       "paint": {
-        "line-color": "rgba(0, 0, 0, 1)",
-        "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]}
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
       }
     },
     {
-      "id": "bridge_minor case",
-      "type": "line",
+      "id": "amenity-cemetery",
+      "type": "symbol",
       "source": "IHM",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["all", ["==", "brunnel", "bridge"], ["==", "class", "minor_road"]]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "miter"},
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "cemetery"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "cemetery",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
       "paint": {
-        "line-color": "#dedede",
-        "line-width": {"base": 1.6, "stops": [[12, 0.5], [20, 10]]},
-        "line-gap-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
+        "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
       }
     },
     {
-      "id": "bridge_major case",
-      "type": "line",
+      "id": "amenity-fuel",
+      "type": "symbol",
       "source": "IHM",
-      "source-layer": "transportation",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
       "filter": [
         "all",
-        ["==", "$type", "LineString"],
-        [
-          "all",
-          ["==", "brunnel", "bridge"],
-          ["in", "class", "primary", "secondary", "tertiary", "trunk"]
-        ]
+        ["==", "$type", "Point"],
+        ["==", "class", "fuel"],
+        ["==", "subclass", "fuel"]
       ],
-      "layout": {"line-cap": "butt", "line-join": "miter"},
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "gas",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
       "paint": {
-        "line-color": "#dedede",
-        "line-width": {"base": 1.6, "stops": [[12, 0.5], [20, 10]]},
-        "line-gap-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
       }
     },
     {
-      "id": "bridge_minor",
-      "type": "line",
+      "id": "amenity-info",
+      "type": "symbol",
       "source": "IHM",
-      "source-layer": "transportation",
+      "source-layer": "poi",
+      "minzoom": 7,
       "filter": [
         "all",
-        ["==", "$type", "LineString"],
-        ["all", ["==", "brunnel", "bridge"], ["==", "class", "minor_road"]]
+        ["==", "$type", "Point"],
+        ["==", "class", "information"]
       ],
-      "layout": {"line-cap": "round", "line-join": "round"},
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "info",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
       "paint": {
-        "line-color": "#efefef",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
       }
     },
     {
-      "id": "bridge_major",
-      "type": "line",
+      "id": "amenity-clinic",
+      "type": "symbol",
       "source": "IHM",
-      "source-layer": "transportation",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "hospital"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "first_aid",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-hotel",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "filter": ["all", ["==", "$type", "Point"], ["in", "class", "lodging"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "hotel",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(255, 255, 255, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-grocery",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "grocery"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "shopping",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-picnic",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "maxzoom": 24,
       "filter": [
         "all",
-        ["==", "$type", "LineString"],
-        [
-          "all",
-          ["==", "brunnel", "bridge"],
-          ["in", "class", "primary", "secondary", "tertiary", "trunk"]
-        ]
+        ["==", "$type", "Point"],
+        ["==", "class", "picnic_site"]
       ],
-      "layout": {"line-cap": "round", "line-join": "round"},
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "picnic",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
       "paint": {
-        "line-color": "#fff",
-        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 30]]}
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-toilet",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "toilets"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "toilet",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-playground",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "playground"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "playground",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-cafe",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "cafe"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "cafe",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "amenity-restaurant",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["in", "class", "restaurant", "fast_food"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "food",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(150, 91, 34, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(255, 255, 255, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
       }
     },
     {
@@ -1568,7 +1952,7 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "icon-size": {"stops": [[14, 0.75], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -1630,11 +2014,37 @@
         "icon-padding": 2,
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "icon-size": {"stops": [[14, 0.75], [20, 2]]},
         "text-field": ""
       },
       "paint": {
         "icon-color": "rgba(20, 19, 19, 1)",
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "poi_pitch",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": ["all", ["==", "class", "pitch"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "playground",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 0.75], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-color": "rgba(249, 204, 0, 0.69)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1834,377 +2244,6 @@
       }
     },
     {
-      "id": "amenity-campsite",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 1,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "campsite"]],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "camping",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-bike-shop-copy",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "class", "bicycle"],
-        ["==", "subclass", "bicycle"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "bike-red",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-cafe",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 16,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "cafe"]],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "cafe",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-cemetery",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 7,
-      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "cemetery"]],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "cemetery",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-clinic",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 7,
-      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "hospital"]],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "first_aid",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-fuel",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 13,
-      "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "class", "fuel"],
-        ["==", "subclass", "fuel"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "gas",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-grocery",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 16,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "grocery"]],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "shopping",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-hotel",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 7,
-      "filter": ["all", ["==", "$type", "Point"], ["in", "class", "lodging"]],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "hotel",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(255, 255, 255, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-info",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "class", "information"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "info",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-picnic",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 7,
-      "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "class", "picnic_site"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "picnic",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-playground",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 16,
-      "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "class", "playground"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "playground",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-restaurant",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 15,
-      "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["in", "class", "restaurant", "fast_food"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "food",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(255, 255, 255, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "amenity-toilet",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 16,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "$type", "Point"], ["==", "class", "toilets"]],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "toilet",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
       "id": "peak-elevation",
       "type": "symbol",
       "source": "IHM",
@@ -2220,7 +2259,7 @@
         "visibility": "visible",
         "text-field": "{ele}",
         "icon-anchor": "center",
-        "text-offset": [0, -1.5],
+        "text-offset": [0, -1.7],
         "text-anchor": "center",
         "icon-padding": 0,
         "text-padding": 0
