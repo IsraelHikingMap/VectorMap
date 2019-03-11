@@ -15,11 +15,11 @@
    viewBox="0 0 224.00001 383.00002"
    id="svg4584"
    version="1.1"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="0.92.1 r15371"
    sodipodi:docname="sprite.svg"
-   inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96">
+   inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite@2x.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192">
   <defs
      id="defs4586">
     <linearGradient
@@ -396,16 +396,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.313708"
-     inkscape:cx="187.88741"
-     inkscape:cy="216.56809"
+     inkscape:zoom="1.9999999"
+     inkscape:cx="235.87655"
+     inkscape:cy="197.17079"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="2880"
-     inkscape:window-height="1526"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:snap-bbox="true"
      inkscape:snap-smooth-nodes="true"
@@ -454,6 +454,84 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-669.36211)">
+    <rect
+       style="fill:#d5e5ff;fill-opacity:1;stroke:none"
+       id="rect9352-5"
+       width="32"
+       height="32"
+       x="192"
+       y="895.36212" />
+    <g
+       id="g9383"
+       transform="translate(48.000009,-172.99995)"
+       inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       style="fill:#ececec">
+      <rect
+         y="1068.3621"
+         x="96"
+         height="32"
+         width="32"
+         id="rect9352"
+         style="fill:#ececec;fill-opacity:1;stroke:none" />
+      <ellipse
+         cx="102.5"
+         cy="1094.8621"
+         rx="4"
+         ry="1.9999505"
+         id="path9299"
+         style="fill:#ececec;fill-opacity:1;stroke:#cccccc" />
+      <ellipse
+         cx="115.5"
+         cy="1090.8621"
+         rx="4"
+         ry="1.9999505"
+         id="path9299-1"
+         style="fill:#ececec;fill-opacity:1;stroke:#cccccc" />
+      <ellipse
+         cx="105.5"
+         cy="1082.8622"
+         rx="4"
+         ry="1.9999505"
+         id="path9299-2"
+         style="fill:#ececec;fill-opacity:1;stroke:#cccccc" />
+      <ellipse
+         cx="122.5"
+         cy="1084.8622"
+         rx="4"
+         ry="1.9999505"
+         id="path9299-6"
+         style="fill:#ececec;fill-opacity:1;stroke:#cccccc" />
+      <ellipse
+         cx="105.5"
+         cy="1072.8622"
+         rx="4"
+         ry="1.9999505"
+         id="path9299-3"
+         style="fill:#ececec;fill-opacity:1;stroke:#cccccc" />
+      <ellipse
+         cx="116.5"
+         cy="1077.8622"
+         rx="4"
+         ry="1.9999505"
+         id="path9299-17"
+         style="fill:#ececec;fill-opacity:1;stroke:#cccccc" />
+      <ellipse
+         cx="123.5"
+         cy="1096.8622"
+         rx="4"
+         ry="1.9999505"
+         id="path9299-34"
+         style="fill:#ececec;fill-opacity:1;stroke:#cccccc" />
+      <ellipse
+         cx="123.5"
+         cy="1071.8622"
+         rx="4"
+         ry="1.9999505"
+         id="path9299-9"
+         style="fill:#ececec;fill-opacity:1;stroke:#cccccc" />
+    </g>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.02673984"
        id="rect265-3"
@@ -1482,76 +1560,6 @@
        inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
-    <g
-       id="g9383"
-       transform="translate(48.000009,-172.99995)"
-       inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96">
-      <rect
-         y="1068.3621"
-         x="96"
-         height="32"
-         width="32"
-         id="rect9352"
-         style="fill:#f2f2f2;fill-opacity:1;stroke:none" />
-      <ellipse
-         cx="102.5"
-         cy="1094.8621"
-         rx="4"
-         ry="1.9999505"
-         id="path9299"
-         style="fill:#ffffff;fill-opacity:1;stroke:#cccccc" />
-      <ellipse
-         cx="115.5"
-         cy="1090.8621"
-         rx="4"
-         ry="1.9999505"
-         id="path9299-1"
-         style="fill:#ffffff;fill-opacity:1;stroke:#cccccc" />
-      <ellipse
-         cx="105.5"
-         cy="1082.8622"
-         rx="4"
-         ry="1.9999505"
-         id="path9299-2"
-         style="fill:#ffffff;fill-opacity:1;stroke:#cccccc" />
-      <ellipse
-         cx="122.5"
-         cy="1084.8622"
-         rx="4"
-         ry="1.9999505"
-         id="path9299-6"
-         style="fill:#ffffff;fill-opacity:1;stroke:#cccccc" />
-      <ellipse
-         cx="105.5"
-         cy="1072.8622"
-         rx="4"
-         ry="1.9999505"
-         id="path9299-3"
-         style="fill:#ffffff;fill-opacity:1;stroke:#cccccc" />
-      <ellipse
-         cx="116.5"
-         cy="1077.8622"
-         rx="4"
-         ry="1.9999505"
-         id="path9299-17"
-         style="fill:#ffffff;fill-opacity:1;stroke:#cccccc" />
-      <ellipse
-         cx="123.5"
-         cy="1096.8622"
-         rx="4"
-         ry="1.9999505"
-         id="path9299-34"
-         style="fill:#ffffff;fill-opacity:1;stroke:#cccccc" />
-      <ellipse
-         cx="123.5"
-         cy="1071.8622"
-         rx="4"
-         ry="1.9999505"
-         id="path9299-9"
-         style="fill:#ffffff;fill-opacity:1;stroke:#cccccc" />
-    </g>
     <path
        inkscape:connector-curvature="0"
        style="fill:#ff6600;fill-opacity:1;stroke-width:1.07740784"
