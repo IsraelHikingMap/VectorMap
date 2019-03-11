@@ -68,20 +68,6 @@
       }
     },
     {
-      "id": "landcover_wood",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "minzoom": 10,
-      "maxzoom": 24,
-      "filter": ["==", "class", "wood"],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-color": "rgba(200, 217, 174, 1)",
-        "fill-opacity": {"base": 1, "stops": [[8, 0.6], [22, 1]]}
-      }
-    },
-    {
       "id": "landuse_farmland",
       "type": "fill",
       "source": "IHM",
@@ -160,28 +146,6 @@
       }
     },
     {
-      "id": "landuse-military",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 13,
-      "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "$type", "Polygon"],
-        ["==", "class", "military"]
-      ],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-color": "rgba(252, 6, 6, 0.11)",
-        "fill-outline-color": {
-          "stops": [[6, "rgba(191, 9, 9, 0)"], [20, "rgba(191, 9, 9, 1)"]]
-        },
-        "fill-pattern": "red_nwse_pattern",
-        "fill-opacity": 0.3
-      }
-    },
-    {
       "id": "landcover_grass",
       "type": "fill",
       "source": "IHM",
@@ -220,6 +184,42 @@
       "paint": {
         "fill-color": "rgba(140, 201, 138, 0.34)",
         "fill-pattern": "bushes_pattern"
+      }
+    },
+    {
+      "id": "landcover_wood",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 10,
+      "maxzoom": 24,
+      "filter": ["==", "class", "wood"],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(200, 217, 174, 1)",
+        "fill-opacity": {"base": 1, "stops": [[8, 0.6], [22, 1]]}
+      }
+    },
+    {
+      "id": "landuse-military",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["==", "class", "military"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(252, 6, 6, 0.11)",
+        "fill-outline-color": {
+          "stops": [[6, "rgba(191, 9, 9, 0)"], [20, "rgba(191, 9, 9, 1)"]]
+        },
+        "fill-pattern": "red_nwse_pattern",
+        "fill-opacity": 0.3
       }
     },
     {
@@ -273,12 +273,13 @@
       "type": "line",
       "source": "contours",
       "source-layer": "contour",
+      "minzoom": 11,
       "filter": ["all", [">", "height", 0], ["in", "nth_line", 10, 5]],
       "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "rgba(139, 103, 32, 1)",
-        "line-opacity": 1,
-        "line-width": 2
+        "line-opacity": 0.7,
+        "line-width": {"stops": [[11, 1], [20, 2]]}
       }
     },
     {
@@ -290,8 +291,8 @@
       "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "rgba(139, 103, 32, 1)",
-        "line-opacity": 1,
-        "line-width": 1
+        "line-opacity": 0.7,
+        "line-width": {"stops": [[11, 0.5], [20, 1]]}
       }
     },
     {
@@ -348,7 +349,7 @@
       "paint": {
         "fill-color": "hsl(205, 56%, 73%)",
         "fill-outline-color": {
-          "stops": [[6, "rgba(58, 58, 255, 0)"], [20, "rgba(58, 58, 255, 1)"]]
+          "stops": [[6, "rgba(58, 58, 255, 0)"], [20, "rgba(108, 138, 160, 1)"]]
         }
       }
     },
@@ -415,6 +416,8 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "waterway",
+      "minzoom": 12,
+      "maxzoom": 24,
       "filter": [
         "all",
         ["==", "$type", "LineString"],
@@ -432,12 +435,14 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "waterway",
+      "minzoom": 0,
       "filter": [
         "all",
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "tunnel", "bridge"],
         ["==", "intermittent", 1]
       ],
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "hsl(205, 56%, 73%)",
         "line-width": {"base": 1.4, "stops": [[8, 1], [20, 8]]},
@@ -1041,7 +1046,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(249, 204, 0, 0.69)",
+        "icon-color": "rgba(0, 0, 0, 0.69)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2227,6 +2232,34 @@
       }
     },
     {
+      "id": "airport-taxiway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "taxiway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(129, 126, 126, 1)",
+        "line-width": {"stops": [[12, 2], [20, 15]]}
+      }
+    },
+    {
+      "id": "airport-runway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "runway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(129, 126, 126, 1)",
+        "line-width": {"stops": [[12, 3], [20, 25]]}
+      }
+    },
+    {
       "id": "airport-label",
       "type": "symbol",
       "source": "IHM",
@@ -2358,37 +2391,12 @@
       }
     },
     {
-      "id": "country_label-other",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "place",
-      "maxzoom": 12,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "class", "country"],
-        ["!has", "iso_a2"]
-      ],
-      "layout": {
-        "text-field": "{name:latin}",
-        "text-font": ["Open Sans Regular"],
-        "text-max-width": 10,
-        "text-size": {"stops": [[3, 12], [8, 22]]},
-        "visibility": "visible"
-      },
-      "paint": {
-        "text-color": "hsl(0, 0%, 13%)",
-        "text-halo-color": "rgba(255,255,255,0.75)",
-        "text-halo-width": 2,
-        "text-halo-blur": 0
-      }
-    },
-    {
       "id": "country_label",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "place",
-      "maxzoom": 12,
+      "minzoom": 3,
+      "maxzoom": 8,
       "filter": [
         "all",
         ["==", "$type", "Point"],
@@ -2397,9 +2405,9 @@
       ],
       "layout": {
         "text-field": "{name:he}",
-        "text-font": ["Open Sans Regular"],
+        "text-font": ["Open Sans Bold"],
         "text-max-width": 5,
-        "text-size": {"stops": [[3, 12], [8, 18]]}
+        "text-size": {"stops": [[3, 7], [8, 22]]}
       },
       "paint": {
         "text-color": "hsl(0, 0%, 13%)",
