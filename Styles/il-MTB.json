@@ -1046,7 +1046,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(0, 0, 0, 0.69)",
+        "icon-color": "rgba(0, 0, 0, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
