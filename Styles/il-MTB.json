@@ -1607,7 +1607,8 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 15,
+      "maxzoom": 24,
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "cemetery"]],
       "layout": {
         "visibility": "visible",
