@@ -7,11 +7,7 @@
   "bearing": 0,
   "pitch": 0,
   "sources": {
-    "IHM": {
-      "type": "vector",
-      "url": "http://31.154.215.180:8080/data/openmaptiles.json"
-    },
-    "hillshading": {
+     "hillshading": {
       "type": "raster",
       "url": "https://klokantech.tilehosting.com/data/hillshades.json?key=tXme5cuqgrCqdPoZHqyn",
       "tileSize": 256
@@ -19,6 +15,14 @@
     "contours": {
       "type": "vector",
       "url": "https://klokantech.tilehosting.com/data/contours.json?key=tXme5cuqgrCqdPoZHqyn"
+    },
+    "Areas-IHM": {
+      "type": "vector",
+      "url": "http://31.154.215.180:8080/data/openmaptiles.json"
+    },
+	    "Features-IHM": {
+      "type": "vector",
+      "url": "http://31.154.215.180:8080/data/openmaptiles.json"
     }
   },
   "sprite": "https://raw.githubusercontent.com/IsraelHikingMap/VectorMap/master/Icons/publish/sprite",
@@ -33,7 +37,7 @@
       "id": "landcover_sand",
       "type": "fill",
       "metadata": {},
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landcover",
       "minzoom": 12,
       "maxzoom": 24,
@@ -47,7 +51,7 @@
     {
       "id": "landcover-ice",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landcover",
       "filter": ["all", ["in", "subclass", "ice_shelf", "glacier"]],
       "layout": {"visibility": "visible"},
@@ -56,7 +60,7 @@
     {
       "id": "landcover_wetland",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "wetland"]],
       "layout": {"visibility": "visible"},
@@ -70,7 +74,7 @@
     {
       "id": "landuse_farmland",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landcover",
       "minzoom": 1,
       "maxzoom": 24,
@@ -81,7 +85,7 @@
     {
       "id": "landuse_vineyard",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landcover",
       "minzoom": 13,
       "maxzoom": 24,
@@ -99,7 +103,7 @@
     {
       "id": "landcover_orchard",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landcover",
       "minzoom": 13,
       "maxzoom": 24,
@@ -118,7 +122,7 @@
     {
       "id": "landuse-quarry",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landuse",
       "filter": ["all", ["==", "$type", "Polygon"], ["in", "class", "quarry"]],
       "layout": {"visibility": "visible"},
@@ -131,7 +135,7 @@
     {
       "id": "landuse-residential",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landuse",
       "filter": [
         "all",
@@ -148,7 +152,7 @@
     {
       "id": "landcover_grass",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landcover",
       "minzoom": 11,
       "filter": ["all", ["==", "class", "grass"]],
@@ -162,7 +166,7 @@
     {
       "id": "landuse_pitch",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landuse",
       "filter": ["all", ["==", "class", "pitch"]],
       "layout": {"visibility": "visible"},
@@ -175,7 +179,7 @@
     {
       "id": "landcover_meadow",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landcover",
       "minzoom": 13,
       "maxzoom": 24,
@@ -189,7 +193,7 @@
     {
       "id": "landcover_wood",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landcover",
       "minzoom": 10,
       "maxzoom": 24,
@@ -203,7 +207,7 @@
     {
       "id": "landuse-military",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "landuse",
       "minzoom": 13,
       "maxzoom": 24,
@@ -225,7 +229,7 @@
     {
       "id": "park_fill",
       "type": "fill",
-      "source": "IHM",
+      "source": "Areas-IHM",
       "source-layer": "park",
       "minzoom": 12,
       "maxzoom": 24,
@@ -241,7 +245,7 @@
     {
       "id": "park_label",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "park",
       "minzoom": 11,
       "maxzoom": 24,
@@ -342,7 +346,7 @@
     {
       "id": "water",
       "type": "fill",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "water",
       "filter": ["all", ["==", "$type", "Polygon"], ["!=", "intermittent", 1]],
       "layout": {"visibility": "visible"},
@@ -356,7 +360,7 @@
     {
       "id": "water_intermittent",
       "type": "fill",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "water",
       "filter": ["all", ["==", "intermittent", 1]],
       "layout": {"visibility": "visible"},
@@ -370,7 +374,7 @@
     {
       "id": "building",
       "type": "fill",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "building",
       "minzoom": 15,
       "paint": {
@@ -382,7 +386,7 @@
     {
       "id": "bridge-border",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "brunnel", "bridge"]],
       "layout": {
@@ -398,7 +402,7 @@
     {
       "id": "bridge",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "brunnel", "bridge"]],
       "layout": {
@@ -414,7 +418,7 @@
     {
       "id": "waterway",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "waterway",
       "minzoom": 12,
       "maxzoom": 24,
@@ -433,7 +437,7 @@
     {
       "id": "waterway-intermittent",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "waterway",
       "minzoom": 0,
       "filter": [
@@ -453,7 +457,7 @@
     {
       "id": "waterway_label",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "waterway",
       "minzoom": 14,
       "maxzoom": 24,
@@ -483,7 +487,7 @@
     {
       "id": "waterway-bridge-case",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "waterway",
       "filter": [
         "all",
@@ -500,7 +504,7 @@
     {
       "id": "waterway-tunnel",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "waterway",
       "filter": [
         "all",
@@ -518,7 +522,7 @@
     {
       "id": "waterway-bridge",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "waterway",
       "filter": [
         "all",
@@ -534,7 +538,7 @@
     {
       "id": "mtbroute-lcn",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "trail",
       "minzoom": 10,
       "maxzoom": 24,
@@ -557,7 +561,7 @@
     {
       "id": "mtbroute_rcn",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "trail",
       "minzoom": 9,
       "maxzoom": 24,
@@ -575,7 +579,7 @@
     {
       "id": "mtbroute_ncn",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "trail",
       "minzoom": 8,
       "maxzoom": 24,
@@ -594,7 +598,7 @@
     {
       "id": "road_track-casing",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -613,7 +617,7 @@
     {
       "id": "road_track",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 12,
       "maxzoom": 24,
@@ -636,7 +640,7 @@
     {
       "id": "road_bridge_area",
       "type": "fill",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": [
         "all",
@@ -649,7 +653,7 @@
     {
       "id": "road_general_path",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -674,7 +678,7 @@
     {
       "id": "road_footway-2",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -693,7 +697,7 @@
     {
       "id": "road_footway",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -712,7 +716,7 @@
     {
       "id": "mtb_path_ungraded",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -735,7 +739,7 @@
     {
       "id": "mtb_path_0",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -758,7 +762,7 @@
     {
       "id": "mtb_path_1",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -781,7 +785,7 @@
     {
       "id": "mtb_path_2-3",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -804,7 +808,7 @@
     {
       "id": "mtb_path_4-5",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -827,7 +831,7 @@
     {
       "id": "mtb_path_6",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -851,7 +855,7 @@
     {
       "id": "mtbroute_label",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "trail",
       "minzoom": 12,
       "maxzoom": 24,
@@ -882,7 +886,7 @@
     {
       "id": "multi-use_path_ungraded",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -906,7 +910,7 @@
     {
       "id": "multi-use_path_0",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -930,7 +934,7 @@
     {
       "id": "multi-use_path_1",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -954,7 +958,7 @@
     {
       "id": "multi-use_path_2-3",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -978,7 +982,7 @@
     {
       "id": "multi-use_path_4-5",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -1002,7 +1006,7 @@
     {
       "id": "multi-use_path_6",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -1026,7 +1030,7 @@
     {
       "id": "railway_station",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 10,
       "maxzoom": 24,
@@ -1057,7 +1061,7 @@
     {
       "id": "railway-tics",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": ["==", "class", "rail"],
       "layout": {"visibility": "visible"},
@@ -1071,7 +1075,7 @@
     {
       "id": "railway",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": ["==", "class", "rail"],
       "layout": {"visibility": "visible"},
@@ -1083,7 +1087,7 @@
     {
       "id": "railway_transit",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": [
         "all",
@@ -1099,7 +1103,7 @@
     {
       "id": "road_cyclepath",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
@@ -1122,7 +1126,7 @@
     {
       "id": "road_minor",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": [
         "all",
@@ -1138,7 +1142,7 @@
     {
       "id": "road_trunk_primary",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": [
         "all",
@@ -1158,7 +1162,7 @@
     {
       "id": "road_secondary_tertiary",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": [
         "all",
@@ -1178,7 +1182,7 @@
     {
       "id": "road_major_motorway",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": [
         "all",
@@ -1199,7 +1203,7 @@
     {
       "id": "border_country_outer",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "boundary",
       "minzoom": 0,
       "maxzoom": 20,
@@ -1224,7 +1228,7 @@
     {
       "id": "border_country-inner",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "boundary",
       "minzoom": 0,
       "maxzoom": 20,
@@ -1250,7 +1254,7 @@
     {
       "id": "shield_motorway",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation_name",
       "minzoom": 9,
       "maxzoom": 24,
@@ -1284,7 +1288,7 @@
     {
       "id": "shield_trunk",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation_name",
       "minzoom": 9,
       "maxzoom": 24,
@@ -1318,7 +1322,7 @@
     {
       "id": "shield_primary",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation_name",
       "minzoom": 9,
       "maxzoom": 24,
@@ -1352,7 +1356,7 @@
     {
       "id": "shield_secondary",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation_name",
       "minzoom": 9,
       "maxzoom": 24,
@@ -1386,7 +1390,7 @@
     {
       "id": "road_rural_direction",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 15,
       "maxzoom": 24,
@@ -1425,7 +1429,7 @@
     {
       "id": "road_rural_label",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation_name",
       "minzoom": 14,
       "maxzoom": 24,
@@ -1460,7 +1464,7 @@
     {
       "id": "road_urban_label",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation_name",
       "filter": [
         "all",
@@ -1487,7 +1491,7 @@
     {
       "id": "tunnel_railway_transit",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "minzoom": 0,
       "filter": [
@@ -1510,7 +1514,7 @@
     {
       "id": "tunnel_minor",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": [
         "all",
@@ -1527,7 +1531,7 @@
     {
       "id": "tunnel_major",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "transportation",
       "filter": [
         "all",
@@ -1548,7 +1552,7 @@
     {
       "id": "amenity-campsite",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 1,
       "maxzoom": 24,
@@ -1575,7 +1579,7 @@
     {
       "id": "amenity-bike-shop-copy",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -1605,7 +1609,7 @@
     {
       "id": "amenity-cemetery",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 15,
       "maxzoom": 24,
@@ -1632,7 +1636,7 @@
     {
       "id": "amenity-fuel",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 13,
       "maxzoom": 24,
@@ -1664,7 +1668,7 @@
     {
       "id": "amenity-info",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -1694,7 +1698,7 @@
     {
       "id": "amenity-clinic",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 12,
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "hospital"]],
@@ -1720,7 +1724,7 @@
     {
       "id": "amenity-hotel",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 16,
       "filter": ["all", ["==", "$type", "Point"], ["in", "class", "lodging"]],
@@ -1746,7 +1750,7 @@
     {
       "id": "amenity-grocery",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 16,
       "maxzoom": 24,
@@ -1773,7 +1777,7 @@
     {
       "id": "amenity-picnic",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "maxzoom": 24,
@@ -1804,7 +1808,7 @@
     {
       "id": "amenity-toilet",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 16,
       "maxzoom": 24,
@@ -1831,7 +1835,7 @@
     {
       "id": "amenity-playground",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 16,
       "maxzoom": 24,
@@ -1862,7 +1866,7 @@
     {
       "id": "amenity-cafe",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 16,
       "maxzoom": 24,
@@ -1889,7 +1893,7 @@
     {
       "id": "amenity-restaurant",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 16,
       "maxzoom": 24,
@@ -1920,7 +1924,7 @@
     {
       "id": "religion-synagogue",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -1951,7 +1955,7 @@
     {
       "id": "religion-mosque",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -1982,7 +1986,7 @@
     {
       "id": "religion-church",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -2013,7 +2017,7 @@
     {
       "id": "religion-other",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -2044,7 +2048,7 @@
     {
       "id": "poi_pitch",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": ["all", ["==", "class", "pitch"]],
@@ -2069,7 +2073,7 @@
     {
       "id": "poi_attraction",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -2100,7 +2104,7 @@
     {
       "id": "poi_monument",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -2131,7 +2135,7 @@
     {
       "id": "poi_ruins",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -2163,7 +2167,7 @@
     {
       "id": "poi_viewpoint",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
@@ -2194,7 +2198,7 @@
     {
       "id": "poi_label",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "poi",
       "minzoom": 14,
       "maxzoom": 24,
@@ -2235,7 +2239,7 @@
     {
       "id": "airport-taxiway",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "aeroway",
       "minzoom": 14,
       "maxzoom": 24,
@@ -2249,7 +2253,7 @@
     {
       "id": "airport-runway",
       "type": "line",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "aeroway",
       "minzoom": 12,
       "maxzoom": 24,
@@ -2263,7 +2267,7 @@
     {
       "id": "airport-label",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "aerodrome_label",
       "minzoom": 10,
       "filter": ["all", ["has", "iata"]],
@@ -2288,7 +2292,7 @@
     {
       "id": "peak-elevation",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "mountain_peak",
       "minzoom": 12,
       "filter": ["all", ["==", "$type", "Point"]],
@@ -2317,7 +2321,7 @@
     {
       "id": "peak",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "mountain_peak",
       "minzoom": 12,
       "maxzoom": 24,
@@ -2348,7 +2352,7 @@
     {
       "id": "place_label_other",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "place",
       "minzoom": 8,
       "filter": [
@@ -2374,7 +2378,7 @@
     {
       "id": "place_label_city",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "place",
       "maxzoom": 16,
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "city"]],
@@ -2394,7 +2398,7 @@
     {
       "id": "country_label",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "place",
       "minzoom": 3,
       "maxzoom": 8,
