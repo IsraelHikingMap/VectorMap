@@ -44,7 +44,7 @@
 	"tower": {
 		"width": 34,
 		"height": 34,
-		"x": 364,
+		"x": 360,
 		"y": 0,
 		"pixelRatio": 2
 	},
@@ -93,7 +93,7 @@
 	"bollards": {
 		"width": 34,
 		"height": 34,
-		"x": 364,
+		"x": 360,
 		"y": 64,
 		"pixelRatio": 2
 	},
@@ -142,7 +142,7 @@
 	"picnic": {
 		"width": 34,
 		"height": 34,
-		"x": 364,
+		"x": 360,
 		"y": 120,
 		"pixelRatio": 2
 	},
@@ -191,7 +191,7 @@
 	"info": {
 		"width": 34,
 		"height": 34,
-		"x": 364,
+		"x": 360,
 		"y": 180,
 		"pixelRatio": 2
 	},
@@ -240,7 +240,7 @@
 	"spring": {
 		"width": 34,
 		"height": 34,
-		"x": 364,
+		"x": 360,
 		"y": 240,
 		"pixelRatio": 2
 	},
@@ -289,7 +289,7 @@
 	"ruins": {
 		"width": 28,
 		"height": 34,
-		"x": 364,
+		"x": 360,
 		"y": 300,
 		"pixelRatio": 2
 	},
@@ -297,28 +297,28 @@
 		"width": 34,
 		"height": 34,
 		"x": 0,
-		"y": 364,
+		"y": 360,
 		"pixelRatio": 2
 	},
 	"riding_park": {
 		"width": 64,
 		"height": 64,
 		"x": 64,
-		"y": 364,
+		"y": 360,
 		"pixelRatio": 2
 	},
 	"RTG": {
 		"width": 64,
 		"height": 64,
 		"x": 150,
-		"y": 364,
+		"y": 360,
 		"pixelRatio": 2
 	},
 	"square": {
 		"width": 36,
 		"height": 36,
 		"x": 240,
-		"y": 364,
+		"y": 360,
 		"pixelRatio": 2
 	},
 	"vines_pattern": {
