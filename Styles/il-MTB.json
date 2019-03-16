@@ -1049,8 +1049,7 @@
         "icon-size": {"stops": [[12, 0.5], [20, 2]]},
         "text-field": ""
       },
-      "paint": {
-        "icon-color": "rgba(0, 0, 0, 1)",
+      "paint": {        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1568,7 +1567,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1625,7 +1623,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1657,7 +1655,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1687,7 +1684,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1713,7 +1709,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1739,7 +1734,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(255, 255, 255, 0)",
         "icon-halo-width": 3,
@@ -1766,7 +1760,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1797,7 +1790,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1824,7 +1816,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1855,7 +1846,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1882,7 +1872,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1913,7 +1902,6 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(150, 91, 34, 1)",
         "icon-opacity": 1,
         "icon-halo-color": "rgba(255, 255, 255, 0)",
         "icon-halo-width": 3,
@@ -1944,7 +1932,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1975,7 +1963,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2006,7 +1994,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2037,7 +2025,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(20, 19, 19, 1)",
+        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2093,7 +2081,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(249, 204, 0, 0.69)",
+        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2124,7 +2112,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(154, 154, 154, 1)",
+        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2156,7 +2144,7 @@
         "text-font": ["Arimo Regular"]
       },
       "paint": {
-        "icon-color": "rgba(154, 154, 154, 1)",
+        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2187,7 +2175,7 @@
         "text-field": ""
       },
       "paint": {
-        "icon-color": "rgba(37, 133, 37, 1)",
+        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
