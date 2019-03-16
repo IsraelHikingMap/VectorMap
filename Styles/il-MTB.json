@@ -1219,9 +1219,8 @@
         "line-miter-limit": 5
       },
       "paint": {
-        "line-color": "rgba(90, 0, 133, 1)",
-        "line-width": {"stops": [[6, 1], [15, 14]]},
-        "line-opacity": 0.2
+        "line-color": "rgba(90, 0, 133, 0.5)",
+        "line-width": {"stops": [[6, 1], [15, 14]]}
       }
     },
     {
