@@ -670,7 +670,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(170, 104, 49, 0.56)",
+        "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]},
         "line-dasharray": [2, 2]
       }
@@ -1570,10 +1570,10 @@
         ["in", "class", "place_of_worship", "campsite"]
       ],
       "layout": {
-        "text-size": {"stops": [[8, 5], [20, 17]]},
+        "text-size": {"stops": [[8, 5], [20, 15]]},
         "text-font": ["Arimo Regular"],
         "visibility": "visible",
-        "text-offset": {"stops": [[14, [0, 1.1]], [20, [0, 1.5]]]},
+        "text-offset": {"stops": [[14, [0, 1.3]], [20, [0, 1.7]]]},
         "icon-size": 1,
         "text-anchor": "top",
         "text-field": "{name:he}",
@@ -1949,6 +1949,36 @@
       }
     },
     {
+      "id": "religion-other",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "place_of_worship"],
+        ["!in", "subclass", "muslim", "christian", "jewish"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "holy_place",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 0.7], [20, 1.8]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
       "id": "religion-synagogue",
       "type": "symbol",
       "source": "Features-IHM",
@@ -2028,36 +2058,6 @@
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
         "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": ""
-      },
-      "paint": {
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "religion-other",
-      "type": "symbol",
-      "source": "Features-IHM",
-      "source-layer": "poi",
-      "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "class", "place_of_worship"],
-        ["!in", "subclass", "muslim", "christian", "jewish"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "holy_place",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 0.75], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -2348,7 +2348,7 @@
         "text-field": "{name:he}",
         "text-font": ["Arimo Regular"],
         "text-max-width": 3,
-        "text-size": {"stops": [[6, 8], [12, 10]]},
+        "text-size": {"stops": [[8, 7], [20, 16]]},
         "visibility": "visible",
         "text-anchor": "center"
       },
@@ -2370,7 +2370,7 @@
         "text-field": "{name:he}",
         "text-font": ["Arimo Regular"],
         "text-max-width": 3,
-        "text-size": {"stops": [[6, 9], [12, 12]]},
+        "text-size": {"stops": [[8, 9], [20, 18]]},
         "visibility": "visible",
         "text-anchor": "center"
       },
@@ -2393,7 +2393,7 @@
         "text-field": "{name:he}",
         "text-font": ["Arimo Regular"],
         "text-max-width": 3,
-        "text-size": {"stops": [[6, 10], [12, 14]]},
+        "text-size": {"stops": [[8, 10], [20, 20]]},
         "visibility": "visible",
         "text-anchor": "center"
       },
