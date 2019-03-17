@@ -1548,6 +1548,47 @@
       }
     },
     {
+      "id": "poi_label",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": [
+        "any",
+        [
+          "in",
+          "subclass",
+          "viewpoint",
+          "monument",
+          "casle",
+          "attraction",
+          "bicycle",
+          "picnic",
+          "ruins"
+        ],
+        ["in", "class", "place_of_worship", "campsite"]
+      ],
+      "layout": {
+        "text-size": {"stops": [[8, 5], [20, 17]]},
+        "text-font": ["Arimo Regular"],
+        "visibility": "visible",
+        "text-offset": {"stops": [[14, [0, 1.1]], [20, [0, 1.5]]]},
+        "icon-size": 1,
+        "text-anchor": "top",
+        "text-field": "{name:he}",
+        "text-max-width": 8,
+        "icon-offset": [0, 0],
+        "icon-anchor": "top"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1
+      }
+    },
+    {
       "id": "amenity-campsite",
       "type": "symbol",
       "source": "Features-IHM",
@@ -2174,47 +2215,6 @@
       }
     },
     {
-      "id": "poi_label",
-      "type": "symbol",
-      "source": "Features-IHM",
-      "source-layer": "poi",
-      "minzoom": 14,
-      "maxzoom": 24,
-      "filter": [
-        "any",
-        [
-          "in",
-          "subclass",
-          "viewpoint",
-          "monument",
-          "casle",
-          "attraction",
-          "bicycle",
-          "picnic",
-          "ruins"
-        ],
-        ["in", "class", "place_of_worship", "campsite"]
-      ],
-      "layout": {
-        "text-size": {"stops": [[8, 5], [16, 15]]},
-        "text-font": ["Arimo Regular"],
-        "visibility": "visible",
-        "text-offset": {"stops": [[14, [0, 1]], [20, [0, 2]]]},
-        "icon-size": 1,
-        "text-anchor": "top",
-        "text-field": "{name:he}",
-        "text-max-width": 8,
-        "icon-offset": [0, 0],
-        "icon-anchor": "top"
-      },
-      "paint": {
-        "text-color": "rgba(0, 0, 0, 1)",
-        "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)",
-        "text-halo-blur": 1
-      }
-    },
-    {
       "id": "airport-taxiway",
       "type": "line",
       "source": "Features-IHM",
@@ -2283,7 +2283,7 @@
         "visibility": "visible",
         "text-field": "{ele}",
         "icon-anchor": "center",
-        "text-offset": {"stops": [[12, [0, -2]], [20, [0, -1.5]]]},
+        "text-offset": {"stops": [[12, [0, -1.8]], [20, [0, -1.5]]]},
         "text-anchor": "center",
         "icon-padding": 0,
         "text-padding": 0
@@ -2314,7 +2314,7 @@
         "text-field": "{name:he}",
         "icon-anchor": "center",
         "text-padding": 0,
-        "text-offset": [0, 0.5],
+        "text-offset": {"stops": [[12, [0, 0.2]], [20, [0, 0.5]]]},
         "text-max-width": 4,
         "text-anchor": "top"
       },
@@ -2328,16 +2328,67 @@
       }
     },
     {
-      "id": "place_label_other",
+      "id": "place_label_small",
       "type": "symbol",
       "source": "Features-IHM",
       "source-layer": "place",
       "minzoom": 8,
       "filter": [
         "all",
-        ["==", "$type", "Point"],
-        ["all", ["!in", "class", "city", "state", "country", "continent"]]
+        [
+          "in",
+          "class",
+          "hamlet",
+          "suburb",
+          "neighbourhood",
+          "isolated_dwelling"
+        ]
       ],
+      "layout": {
+        "text-field": "{name:he}",
+        "text-font": ["Arimo Regular"],
+        "text-max-width": 3,
+        "text-size": {"stops": [[6, 8], [12, 10]]},
+        "visibility": "visible",
+        "text-anchor": "center"
+      },
+      "paint": {
+        "text-color": "rgba(17, 17, 17, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-blur": 0,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "place_label_village",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "place",
+      "minzoom": 8,
+      "filter": ["all", ["==", "class", "village"]],
+      "layout": {
+        "text-field": "{name:he}",
+        "text-font": ["Arimo Regular"],
+        "text-max-width": 3,
+        "text-size": {"stops": [[6, 9], [12, 12]]},
+        "visibility": "visible",
+        "text-anchor": "center"
+      },
+      "paint": {
+        "text-color": "rgba(17, 17, 17, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-blur": 0,
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "place_label_town",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "place",
+      "minzoom": 8,
+      "maxzoom": 14,
+      "filter": ["all", ["==", "class", "town"]],
       "layout": {
         "text-field": "{name:he}",
         "text-font": ["Arimo Regular"],
