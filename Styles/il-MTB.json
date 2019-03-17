@@ -689,7 +689,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(170, 104, 49, 0.56)",
+        "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]},
         "line-dasharray": [0, 3]
       }
@@ -708,7 +708,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(170, 104, 49, 0.56)",
+        "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]},
         "line-dasharray": [0, 3]
       }
