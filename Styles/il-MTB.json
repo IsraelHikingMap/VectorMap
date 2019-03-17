@@ -1,4 +1,4 @@
-{
+h{
   "version": 8,
   "name": "IMTB",
   "metadata": {"maputnik:renderer": "mbgljs", "owner": "IHM"},
@@ -7,7 +7,7 @@
   "bearing": 0,
   "pitch": 0,
   "sources": {
-     "hillshading": {
+    "hillshading": {
       "type": "raster",
       "url": "https://klokantech.tilehosting.com/data/hillshades.json?key=tXme5cuqgrCqdPoZHqyn",
       "tileSize": 256
@@ -20,7 +20,7 @@
       "type": "vector",
       "url": "http://31.154.215.180:8080/data/openmaptiles.json"
     },
-	    "Features-IHM": {
+    "Features-IHM": {
       "type": "vector",
       "url": "http://31.154.215.180:8080/data/openmaptiles.json"
     }
@@ -312,7 +312,7 @@
         [">", "height", 0]
       ],
       "layout": {
-        "text-size": {"base": 1, "stops": [[15, 11], [20, 14]]},
+        "text-size": {"base": 1, "stops": [[15, 9], [20, 14]]},
         "text-allow-overlap": false,
         "symbol-avoid-edges": true,
         "text-ignore-placement": false,
@@ -1049,7 +1049,7 @@
         "icon-size": {"stops": [[12, 0.5], [20, 2]]},
         "text-field": ""
       },
-      "paint": {        
+      "paint": {
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1413,7 +1413,8 @@
         "text-justify": "center",
         "text-max-width": 30,
         "icon-image": "arrowhead",
-        "icon-rotation-alignment": "map"
+        "icon-rotation-alignment": "map",
+        "icon-size": {"stops": [[14, 0.5], [20, 2.5]]}
       },
       "paint": {
         "text-color": "#000",
@@ -1621,7 +1622,6 @@
         "text-field": ""
       },
       "paint": {
-        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1930,7 +1930,6 @@
         "text-field": ""
       },
       "paint": {
-        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1961,7 +1960,6 @@
         "text-field": ""
       },
       "paint": {
-        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -1992,7 +1990,6 @@
         "text-field": ""
       },
       "paint": {
-        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2023,7 +2020,6 @@
         "text-field": ""
       },
       "paint": {
-        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2079,7 +2075,6 @@
         "text-field": ""
       },
       "paint": {
-        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2110,7 +2105,6 @@
         "text-field": ""
       },
       "paint": {
-        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2142,7 +2136,6 @@
         "text-font": ["Arimo Regular"]
       },
       "paint": {
-        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2173,7 +2166,6 @@
         "text-field": ""
       },
       "paint": {
-        
         "icon-opacity": 1,
         "icon-halo-color": "rgba(253, 249, 249, 0)",
         "icon-halo-width": 3,
@@ -2291,7 +2283,7 @@
         "visibility": "visible",
         "text-field": "{ele}",
         "icon-anchor": "center",
-        "text-offset": [0, -1.5],
+        "text-offset": {"stops": [[12, [0, -2]], [20, [0, -1.5]]]},
         "text-anchor": "center",
         "icon-padding": 0,
         "text-padding": 0
