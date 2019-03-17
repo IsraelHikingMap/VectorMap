@@ -684,14 +684,14 @@
       "maxzoom": 24,
       "filter": ["all", ["==", "class", "path"], ["==", "bicycle", "no"]],
       "layout": {
-        "line-cap": "square",
+        "line-cap": "round",
         "line-join": "bevel",
         "visibility": "visible"
       },
       "paint": {
         "line-color": "rgba(170, 104, 49, 0.56)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]},
-        "line-dasharray": [0, 5]
+        "line-dasharray": [0, 3]
       }
     },
     {
@@ -703,14 +703,14 @@
       "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "footway"]],
       "layout": {
-        "line-cap": "square",
+        "line-cap": "round",
         "line-join": "bevel",
         "visibility": "visible"
       },
       "paint": {
         "line-color": "rgba(170, 104, 49, 0.56)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]},
-        "line-dasharray": [0, 5]
+        "line-dasharray": [0, 3]
       }
     },
     {
