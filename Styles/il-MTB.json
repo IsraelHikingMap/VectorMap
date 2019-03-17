@@ -2269,7 +2269,7 @@
     {
       "id": "peak",
       "type": "symbol",
-      "source": "IHM",
+      "source": "Features-IHM",
       "source-layer": "mountain_peak",
       "minzoom": 12,
       "maxzoom": 24,
