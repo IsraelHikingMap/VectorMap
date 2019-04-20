@@ -18,14 +18,14 @@
     },
     "Areas-IHM": {
       "type": "vector",
-      "url": "http://31.154.215.180:8080/data/openmaptiles.json"
+      "url": "https://israelhiking.osm.org.il/data/v3.json"
     },
     "Features-IHM": {
       "type": "vector",
-      "url": "http://31.154.215.180:8080/data/openmaptiles.json"
+      "url": "https://israelhiking.osm.org.il/data/v3.json"
     }
   },
-  "sprite": "https://raw.githubusercontent.com/IsraelHikingMap/VectorMap/master/Icons/publish/sprite",
+  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
