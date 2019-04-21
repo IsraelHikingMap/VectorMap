@@ -17,9 +17,9 @@
    version="1.1"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="sprite with halos.svg"
-   inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
-   inkscape:export-xdpi="92.010391"
-   inkscape:export-ydpi="92.010391">
+   inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite@2x.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192">
   <defs
      id="defs4586">
     <linearGradient
@@ -411,7 +411,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="4"
      inkscape:cx="61.435026"
-     inkscape:cy="132.4266"
+     inkscape:cy="322.4266"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
