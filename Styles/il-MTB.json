@@ -254,7 +254,7 @@
         "icon-image": "RTG",
         "text-size": {"stops": [[8, 5], [16, 15]]},
         "icon-size": {"stops": [[10, 0.5], [20, 2]]},
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "icon-offset": [0, -2],
         "visibility": "visible",
         "text-field": "{name:he}",
@@ -320,7 +320,7 @@
         "text-padding": 10,
         "text-rotation-alignment": "map",
         "text-field": "{height}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "visibility": "visible"
       },
       "paint": {
@@ -485,7 +485,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name:he}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-transform": "none",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[14, 12], [20, 18]]},
@@ -883,7 +883,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-transform": "none",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[14, 10], [20, 16]]},
@@ -1235,7 +1235,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{ref}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.1,
         "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
@@ -1269,7 +1269,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{ref}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
@@ -1303,7 +1303,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{ref}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
@@ -1337,7 +1337,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{ref}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[10, 9], [20, 20]]},
@@ -1410,7 +1410,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name:he}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-transform": "none",
         "text-letter-spacing": 0,
         "text-size": {"base": 1.4, "stops": [[14, 10], [20, 16]]},
@@ -1443,7 +1443,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name:he}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.1,
         "text-size": {"base": 1.4, "stops": [[10, 8], [20, 14]]},
@@ -1475,13 +1475,15 @@
           "attraction",
           "bicycle",
           "picnic",
-          "ruins"
+          "ruins",
+          "water_well",
+          "archaeological_site"
         ],
         ["in", "class", "place_of_worship", "campsite"]
       ],
       "layout": {
         "text-size": {"stops": [[8, 5], [20, 15]]},
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "visibility": "visible",
         "text-offset": {"stops": [[14, [0, 1.3]], [20, [0, 1.7]]]},
         "icon-size": 1,
@@ -1575,7 +1577,7 @@
       "filter": ["all", ["has", "iata"]],
       "layout": {
         "text-size": 11,
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "visibility": "visible",
         "text-offset": [0, 0.5],
         "icon-size": 1,
@@ -2206,6 +2208,99 @@
       }
     },
     {
+      "id": "poi_archeology",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "subclass", "archaeological_site"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "jar",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "poi_water_well",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "subclass", "water_well"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "water_well",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "poi_tap",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "subclass", "drinking_water"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "tap",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
       "id": "poi_ruins",
       "type": "symbol",
       "source": "Features-IHM",
@@ -2226,7 +2321,7 @@
         "icon-offset": [0, 0],
         "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": "",
-        "text-font": ["Arimo Regular"]
+        "text-font": ["Open Sans Regular"]
       },
       "paint": {
         "icon-opacity": 1,
@@ -2278,7 +2373,7 @@
         "icon-image": "dot",
         "text-size": {"stops": [[8, 5], [20, 15]]},
         "icon-size": {"stops": [[9, 0.15], [12, 1]]},
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-offset": [0, -1.8],
         "visibility": "visible",
         "text-field": "{ele}\n\n{name:he}",
@@ -2313,7 +2408,7 @@
       ],
       "layout": {
         "text-field": "{name:he}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-max-width": 3,
         "text-size": {"stops": [[8, 7], [20, 16]]},
         "visibility": "visible",
@@ -2335,7 +2430,7 @@
       "filter": ["all", ["==", "class", "village"]],
       "layout": {
         "text-field": "{name:he}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-max-width": 3,
         "text-size": {"stops": [[8, 9], [20, 18]]},
         "visibility": "visible",
@@ -2358,7 +2453,7 @@
       "filter": ["all", ["==", "class", "town"]],
       "layout": {
         "text-field": "{name:he}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-max-width": 3,
         "text-size": {"stops": [[8, 10], [20, 20]]},
         "visibility": "visible",
@@ -2380,7 +2475,7 @@
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "city"]],
       "layout": {
         "text-field": "{name:nonlatin}",
-        "text-font": ["Arimo Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-max-width": 3,
         "text-size": {"stops": [[3, 12], [8, 16]]}
       },
@@ -2406,7 +2501,7 @@
       ],
       "layout": {
         "text-field": "{name:he}",
-        "text-font": ["Arimo Bold"],
+        "text-font": ["Open Sans Bold"],
         "text-max-width": 5,
         "text-size": {"stops": [[3, 7], [8, 22]]}
       },
