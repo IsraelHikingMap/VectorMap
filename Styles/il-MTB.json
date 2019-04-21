@@ -1475,7 +1475,9 @@
           "attraction",
           "bicycle",
           "picnic",
-          "ruins"
+          "ruins",
+          "water_well",
+          "archaeological_site"
         ],
         ["in", "class", "place_of_worship", "campsite"]
       ],
@@ -2196,6 +2198,99 @@
         "icon-offset": [0, 0],
         "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "poi_archeology",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "subclass", "archaeological_site"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "jar",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "poi_water_well",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "subclass", "water_well"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "water_well",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "poi_tap",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "subclass", "drinking_water"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "tap",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
       },
       "paint": {
         "icon-opacity": 1,
