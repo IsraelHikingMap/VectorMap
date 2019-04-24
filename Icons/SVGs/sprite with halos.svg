@@ -409,9 +409,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="61.435026"
-     inkscape:cy="132.4266"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="204.6151"
+     inkscape:cy="124.84857"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -467,6 +467,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-667.36211)">
+    <rect
+       style="opacity:0.93599997;fill:#d5e5ff;fill-opacity:1;stroke:none"
+       id="rect9352-5"
+       width="32"
+       height="32"
+       x="193"
+       y="894.36212" />
     <g
        style="vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="g1053-2"
@@ -1013,13 +1020,6 @@
        inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
-    <rect
-       style="fill:#d5e5ff;fill-opacity:1;stroke:none;"
-       id="rect9352-5"
-       width="32"
-       height="32"
-       x="193"
-       y="894.36212" />
     <g
        id="g9383"
        transform="translate(49.000009,-173.99992)"
@@ -2304,14 +2304,6 @@
        inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
-    <path
-       style="fill:#aaccff;fill-opacity:1;stroke:none;opacity:0;"
-       d="m 193.00001,897.36214 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z m -20,4 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z m -20,4 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z m -20,4 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z"
-       id="rect9352-0"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
     <rect
        style="fill:url(#linearGradient9622);fill-opacity:1;stroke:none;"
        id="rect9606"
@@ -2404,6 +2396,14 @@
        cy="825.8465"
        rx="1"
        ry="0.953125" />
+    <path
+       style="fill:#5f8dd3;fill-opacity:1;stroke:none;opacity:0.936;stroke-opacity:1;stroke-width:0.37795276;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 193.00001,897.36214 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z m -20,4 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z m -20,4 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z m -20,4 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z"
+       id="rect9352-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
   <style
      id="style4"

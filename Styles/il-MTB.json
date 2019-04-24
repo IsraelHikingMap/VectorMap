@@ -616,6 +616,26 @@
       }
     },
     {
+      "id": "road_track-casing-good",
+      "type": "line",
+      "source": "Features-IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade1", "grade2"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-dasharray": [1],
+        "line-gap-width": 0,
+        "line-width": {"stops": [[14, 3], [16, 6], [20, 18]]}
+      }
+    },
+    {
       "id": "road_track-casing",
       "type": "line",
       "source": "Features-IHM",
@@ -625,7 +645,8 @@
       "filter": [
         "all",
         ["==", "$type", "LineString"],
-        ["==", "class", "track"]
+        ["==", "class", "track"],
+        ["!in", "tracktype", "grade1", "grade2"]
       ],
       "layout": {"visibility": "visible"},
       "paint": {
@@ -744,7 +765,7 @@
         "all",
         ["==", "class", "path"],
         ["==", "bicycle", "designated"],
-        ["==", "mtb_scale", ""]
+        ["!in", "mtb_scale", 0, 1, 2, 3, 4, 5, 6]
       ],
       "layout": {
         "line-cap": "square",
@@ -752,7 +773,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(132, 0, 162, 1)",
+        "line-color": "rgba(208, 1, 255, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
       }
     },
@@ -1458,6 +1479,93 @@
       }
     },
     {
+      "id": "water_label",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["any", ["in", "class", "water"]],
+      "layout": {
+        "text-size": {"stops": [[8, 5], [20, 15]]},
+        "text-font": ["Open Sans Regular"],
+        "visibility": "visible",
+        "text-offset": {"stops": [[14, [0, 1.3]], [20, [0, 1.7]]]},
+        "icon-size": 1,
+        "text-anchor": "top",
+        "text-field": "{name:he}",
+        "text-max-width": 8,
+        "icon-offset": [0, 0],
+        "icon-anchor": "top"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 255, 1)",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "linear_barrier_wall",
+      "type": "line",
+      "source": "Features-IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 15,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "wall"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-dasharray": [1, 0.5],
+        "line-width": {"stops": [[15, 3], [20, 10]]},
+        "line-color": "rgba(100, 100, 100, 1)"
+      }
+    },
+    {
+      "id": "linear_barrier_city_wall",
+      "type": "line",
+      "source": "Features-IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "city_wall"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-dasharray": [1, 0.2],
+        "line-width": {"stops": [[13, 3], [20, 15]]},
+        "line-color": "rgba(102, 100, 100, 1)"
+      }
+    },
+    {
+      "id": "linear_barrier_fence-line",
+      "type": "line",
+      "source": "Features-IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "fence"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-width": {"stops": [[14, 1], [20, 2]]}}
+    },
+    {
+      "id": "linear_barrier_fence",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "fence"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "cross_pattern",
+        "symbol-placement": "line",
+        "symbol-spacing": 10,
+        "symbol-avoid-edges": true,
+        "text-size": 16,
+        "icon-size": {"stops": [[14, 0.7], [18, 1.2]]}
+      },
+      "paint": {}
+    },
+    {
       "id": "poi_label",
       "type": "symbol",
       "source": "Features-IHM",
@@ -1470,16 +1578,23 @@
           "in",
           "subclass",
           "viewpoint",
-          "monument",
           "casle",
           "attraction",
           "bicycle",
           "picnic",
           "ruins",
-          "water_well",
           "archaeological_site"
         ],
-        ["in", "class", "place_of_worship", "campsite"]
+        [
+          "in",
+          "class",
+          "place_of_worship",
+          "campsite",
+          "bicycle",
+          "memorial",
+          "monument",
+          "tower"
+        ]
       ],
       "layout": {
         "text-size": {"stops": [[8, 5], [20, 15]]},
@@ -1756,6 +1871,36 @@
       }
     },
     {
+      "id": "amenity-sign",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "information"],
+        ["in", "subclass", "map", "guidepost", "board"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "sign",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
       "id": "amenity-info",
       "type": "symbol",
       "source": "Features-IHM",
@@ -1764,7 +1909,8 @@
       "filter": [
         "all",
         ["==", "$type", "Point"],
-        ["==", "class", "information"]
+        ["==", "class", "information"],
+        ["!in", "subclass", "map", "guidepost", "board"]
       ],
       "layout": {
         "visibility": "visible",
@@ -1973,6 +2119,36 @@
       }
     },
     {
+      "id": "amenity-parking",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["in", "subclass", "parking"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "parking",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(255, 255, 255, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
       "id": "amenity-restaurant",
       "type": "symbol",
       "source": "Features-IHM",
@@ -2123,6 +2299,136 @@
       }
     },
     {
+      "id": "barrier_other",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "barrier",
+      "minzoom": 15,
+      "filter": ["all", ["==", "class", "other"], ["!=", "barrier", "bollard"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "gate_open",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 0.75], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "barrier_closed_gate",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "barrier",
+      "minzoom": 15,
+      "filter": ["all", ["==", "class", "closed_gate"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "gate_closed",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 0.75], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "barrier_no_vehicles",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "barrier",
+      "minzoom": 15,
+      "filter": [
+        "any",
+        ["==", "class", "no_vehicles"],
+        ["==", "barrier", "bollard"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "bollards",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 0.75], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "barrier_open_gate",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "barrier",
+      "minzoom": 15,
+      "filter": ["all", ["==", "class", "open_gate"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "gate_open",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 0.75], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "barrier_cattle_grid",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "barrier",
+      "minzoom": 15,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "cattle_grid"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "cattle_grid",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 0.75], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
       "id": "poi_pitch",
       "type": "symbol",
       "source": "Features-IHM",
@@ -2137,6 +2443,32 @@
         "icon-keep-upright": true,
         "icon-offset": [0, 0],
         "icon-size": {"stops": [[14, 0.75], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "poi_tree",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "subclass", "tree"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "tree",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
         "text-field": ""
       },
       "paint": {
@@ -2184,10 +2516,9 @@
       "source-layer": "poi",
       "minzoom": 7,
       "filter": [
-        "all",
-        ["==", "$type", "Point"],
+        "any",
         ["==", "class", "monument"],
-        ["==", "subclass", "monument"]
+        ["==", "class", "memorial"]
       ],
       "layout": {
         "visibility": "visible",
@@ -2239,51 +2570,15 @@
       }
     },
     {
-      "id": "poi_water_well",
+      "id": "poi_tower",
       "type": "symbol",
       "source": "Features-IHM",
       "source-layer": "poi",
-      "minzoom": 13,
-      "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "subclass", "water_well"]
-      ],
+      "minzoom": 7,
+      "filter": ["all", ["==", "$type", "Point"], ["==", "subclass", "tower"]],
       "layout": {
         "visibility": "visible",
-        "icon-image": "water_well",
-        "icon-rotate": 0,
-        "icon-padding": 2,
-        "icon-keep-upright": true,
-        "icon-offset": [0, 0],
-        "icon-size": {"stops": [[14, 1], [20, 2]]},
-        "text-field": "",
-        "text-font": ["Open Sans Regular"]
-      },
-      "paint": {
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(253, 249, 249, 0)",
-        "icon-halo-width": 3,
-        "icon-translate": [0, 0],
-        "icon-translate-anchor": "map"
-      }
-    },
-    {
-      "id": "poi_tap",
-      "type": "symbol",
-      "source": "Features-IHM",
-      "source-layer": "poi",
-      "minzoom": 13,
-      "maxzoom": 24,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "subclass", "drinking_water"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "icon-image": "tap",
+        "icon-image": "tower",
         "icon-rotate": 0,
         "icon-padding": 2,
         "icon-keep-upright": true,
@@ -2384,9 +2679,183 @@
       },
       "paint": {
         "text-color": "rgba(0, 0, 0, 1)",
-        "text-halo-width": 1,
+        "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)",
         "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "water_spring",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "spring"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "spring",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "water_tap",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "subclass", "drinking_water"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "tap",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "water_cistern",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "subclass", "cistern"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "cistern",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "water_waterfall",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "waterfall"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "waterfall",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "water_well",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "subclass", "water_well"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "water_well",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "water_tank",
+      "type": "symbol",
+      "source": "Features-IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "storage_tank"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "water_tank",
+        "icon-rotate": 0,
+        "icon-padding": 2,
+        "icon-keep-upright": true,
+        "icon-offset": [0, 0],
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": "",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3,
+        "icon-translate": [0, 0],
+        "icon-translate-anchor": "map"
       }
     },
     {
