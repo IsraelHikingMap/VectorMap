@@ -3,7 +3,10 @@
   "name": "IHM",
   "metadata": {"maputnik:renderer": "mbgljs"},
   "sources": {
-    "IHM": {"type": "vector", "url": "http://31.154.215.180:8080/data/v3.json"}
+    "IHM": {
+      "type": "vector",
+      "url": "https://israelhiking.osm.org.il/data/v3.json"
+    }
   },
   "sprite": "https://raw.githubusercontent.com/IsraelHikingMap/VectorMap/master/Icons/publish/sprite",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
@@ -12,7 +15,7 @@
       "id": "background",
       "type": "background",
       "layout": {"visibility": "visible"},
-      "paint": {"background-color": "rgba(255, 255, 255, 1)"}
+      "paint": {"background-color": "rgba(250, 247, 225, 1)"}
     },
     {
       "id": "water",
@@ -21,7 +24,7 @@
       "source-layer": "water",
       "filter": ["all", ["!=", "intermittent", "yes"]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "rgba(138, 192, 255, 0.7)", "fill-opacity": 1}
+      "paint": {"fill-color": "rgba(138, 192, 255, 0.7)"}
     },
     {
       "id": "residential",
@@ -32,9 +35,7 @@
       "layout": {"visibility": "visible"},
       "paint": {
         "fill-outline-color": "rgba(102, 102, 102, 1)",
-        "fill-color": "rgba(229, 229, 229, 1)",
-        "fill-antialias": true,
-        "fill-translate": [0, 0]
+        "fill-color": "rgba(229, 229, 229, 1)"
       }
     },
     {
@@ -42,18 +43,274 @@
       "type": "fill",
       "source": "IHM",
       "source-layer": "landcover",
-      "minzoom": 0,
-      "filter": [
-        "all",
-        ["==", "class", "farmland"],
-        ["==", "subclass", "orchard"]
-      ],
+      "filter": ["all", ["==", "subclass", "orchard"]],
       "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(26, 155, 43, 0.56)",
-        "fill-opacity": 1,
-        "fill-antialias": true,
         "fill-outline-color": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "id": "boundary-country",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "boundary",
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        ["!=", "disputed", 1]
+      ],
+      "layout": {"visibility": "visible"}
+    },
+    {
+      "id": "boundary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "boundary",
+      "filter": ["all", ["!=", "maritime", 1], ["!=", "disputed", 1]],
+      "layout": {"visibility": "none"}
+    },
+    {
+      "id": "trail-israel",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "blue:white:blue_stripe:orange_stripe_left"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(255, 210, 136, 1)",
+        "line-width": {"stops": [[12, 3], [13, 7], [16, 12]]}
+      }
+    },
+    {
+      "id": "trail-haifa-wadies-bg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "filter": ["all", ["==", "name", "שביל ואדיות חיפה"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "red",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {"stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]}
+      }
+    },
+    {
+      "id": "trail-haifa-wadies-fg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 7,
+      "filter": ["all", ["==", "name", "שביל ואדיות חיפה"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "green",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {
+          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
+        },
+        "line-dasharray": [4, 4]
+      }
+    },
+    {
+      "id": "trail-kinneret-bike-bg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "filter": ["all", ["==", "osmc_symbol", "yellow:yellow_circle:blue_dot"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "blue",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {
+          "stops": [[7, -1], [10, -1.5], [11, -2], [13, -4], [15, -6]]
+        }
+      }
+    },
+    {
+      "id": "trail-kinneret-bike-fg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 7,
+      "filter": ["all", ["==", "osmc_symbol", "yellow:yellow_circle:blue_dot"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "yellow",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {
+          "stops": [[7, -1], [10, -1.5], [11, -2], [13, -4], [15, -6]]
+        },
+        "line-dasharray": [4, 4]
+      }
+    },
+    {
+      "id": "trail-kinneret-bg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "purple:white:purple_stripe:blue_stripe_left"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#1765AD",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {"stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]}
+      }
+    },
+    {
+      "id": "trail-kinneret-fg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "purple:white:purple_stripe:blue_stripe_left"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#7B5CA0",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {
+          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
+        },
+        "line-dasharray": [4, 4]
+      }
+    },
+    {
+      "id": "trail-jerusalem-bg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "filter": ["all", ["==", "name", "שביל ירושלים"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "yellow",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {"stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]}
+      }
+    },
+    {
+      "id": "trail-jerusalem-fg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 7,
+      "filter": ["all", ["==", "name", "שביל ירושלים"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "blue",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {
+          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
+        },
+        "line-dasharray": [4, 4]
+      }
+    },
+    {
+      "id": "trail-golan-bg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "blue:white:blue_stripe:green_stripe_left"]
+      ],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "#4ca64c",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {"stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]}
+      }
+    },
+    {
+      "id": "trail-golan-fg",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "blue:white:blue_stripe:green_stripe_left"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "blue",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {
+          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
+        },
+        "line-dasharray": [4, 4]
+      }
+    },
+    {
+      "id": "trail-yellow",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "yellow:white:yellow_stripe"],
+        ["!=", "colour", "yellow"]
+      ],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "yellow",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {
+          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
+        },
+        "line-dasharray": [4, 4]
+      }
+    },
+    {
+      "id": "trail-purple",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "purple:white:purple_stripe"],
+        ["!=", "colour", "purple"]
+      ],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "purple",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {
+          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
+        },
+        "line-dasharray": [4, 4]
+      }
+    },
+    {
+      "id": "trail-orange",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "orange:white:orange_stripe"],
+        ["!=", "colour", "orange"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "orange",
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {
+          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
+        },
+        "line-dasharray": [4, 4]
       }
     },
     {
@@ -62,12 +319,15 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 6,
-      "maxzoom": 24,
       "filter": ["all"],
-      "layout": {"visibility": "none"},
+      "layout": {
+        "visibility": "none",
+        "line-cap": "round",
+        "line-join": "round"
+      },
       "paint": {
-        "line-color": "rgba(0, 0, 0, 1)",
-        "line-width": {"stops": [[7, 1], [9, 1.5], [16, 3.5]]}
+        "line-color": "rgba(0, 0, 0, 0.5)",
+        "line-width": {"stops": [[7, 0.6], [16, 1.1]]}
       }
     },
     {
@@ -75,58 +335,398 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "filter": ["all"],
-      "layout": {"visibility": "none"},
+      "filter": [
+        "none",
+        ["==", "class", "motorway"],
+        ["==", "class", "trunk"],
+        ["==", "class", "primary"],
+        ["==", "class", "secondary"],
+        ["==", "class", "tertiary"]
+      ],
+      "layout": {
+        "visibility": "none",
+        "line-cap": "round",
+        "line-join": "round"
+      },
       "paint": {
         "line-color": "rgba(255, 196, 0, 1)",
+        "line-width": {"stops": [[7, 0.5], [16, 1]]}
+      }
+    },
+    {
+      "id": "path-casing",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["none"],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "white",
+        "line-width": {"stops": [[13, 2], [16, 2.5]]}
+      }
+    },
+    {
+      "id": "steps",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "subclass", "steps"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-dasharray": [0.2, 0.3],
+        "line-width": {"stops": [[13, 1.5], [14, 5]]},
+        "line-color": ["to-color", ["get", "colour"], "#8e5632"]
+      }
+    },
+    {
+      "id": "footway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "subclass", "footway"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-dasharray": [1, 1],
+        "line-width": {"stops": [[13, 1.5], [14, 2]]},
+        "line-color": ["to-color", ["get", "colour"], "#8e5632"]
+      }
+    },
+    {
+      "id": "cycleway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "subclass", "cycleway"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-dasharray": [3, 1, 1, 1],
+        "line-width": {"stops": [[13, 1.5], [14, 2]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "path",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "subclass", "path"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-dasharray": [3, 1],
+        "line-width": {"stops": [[13, 1.5], [14, 2]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "track-right",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "track"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-dasharray": [3, 2],
+        "line-offset": {"stops": [[14, 1.2], [16, 2]]},
+        "line-width": {"stops": [[14, 1.5], [16, 2]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "track-left",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "track"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-dasharray": [3, 2],
+        "line-offset": {"stops": [[14, -1.2], [16, -2]]},
+        "line-width": {"stops": [[14, 1.5], [16, 2]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "track-fill",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "track"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-width": {"stops": [[14, 1], [16, 1.8]]},
+        "line-color": "rgba(247, 244, 242, 1)"
+      }
+    },
+    {
+      "id": "road-casing-minor",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "minor", "service"],
+        ["!has", "colour"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-join": "round",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#808080",
+        "line-width": {"stops": [[13, 2], [16, 5]]}
+      }
+    },
+    {
+      "id": "road-casing-minor-colour",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["in", "class", "minor", "service"], ["has", "colour"]],
+      "layout": {
+        "visibility": "visible",
+        "line-join": "round",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": ["get", "colour"],
+        "line-width": {"stops": [[13, 2], [14, 4.5], [16, 6]]}
+      }
+    },
+    {
+      "id": "road-casing-tertiary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "tertiary"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[13, 2.5], [16, 5]]}
+      }
+    },
+    {
+      "id": "road-casing-seconary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "secondary"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[12, 2.6], [13, 3.9], [16, 7.8]]}
+      }
+    },
+    {
+      "id": "road-casing-primary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": ["all", ["==", "class", "primary"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
+      }
+    },
+    {
+      "id": "road-casing-trunk",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": ["all", ["==", "class", "trunk"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[7, 1.3], [9, 2.6], [16, 7.8]]}
+      }
+    },
+    {
+      "id": "road-casing-motorway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "filter": ["all", ["==", "class", "motorway"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
+      }
+    },
+    {
+      "id": "road_minor",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["any", ["==", "class", "minor"], ["==", "class", "service"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": {"stops": [[13, 1], [14, 2], [16, 3]]}
+      }
+    },
+    {
+      "id": "road_tertiary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "tertiary"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgba(255, 230, 107, 1)",
+        "line-width": {"stops": [[13, 1.5], [16, 3]]}
+      }
+    },
+    {
+      "id": "road_secondary ",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "secondary"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgba(139, 69, 19, 1)",
+        "line-width": {"stops": [[12, 1], [13, 1.5], [16, 3]]}
+      }
+    },
+    {
+      "id": "road_primary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": ["all", ["==", "class", "primary"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "green",
+        "line-width": {"stops": [[10, 0.5], [12, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "road_trunk",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": ["all", ["==", "class", "trunk"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "red",
         "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
       }
     },
     {
-      "id": "Track-fill",
+      "id": "road_motorway",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "track"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"line-width": 6, "line-color": "rgba(254, 218, 158, 1)"}
-    },
-    {
-      "id": "Track-right",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "track"]],
-      "layout": {"visibility": "visible"},
+      "minzoom": 6,
+      "filter": ["all", ["==", "class", "motorway"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
       "paint": {
-        "line-dasharray": [3, 2],
-        "line-offset": 2.5,
-        "line-width": 2,
-        "line-color": "rgba(0, 0, 255, 1)"
+        "line-color": "blue",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
       }
     },
     {
-      "id": "Track-left",
+      "id": "Railroad-fill",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "track"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-dasharray": [3, 2],
-        "line-offset": -2.5,
-        "line-width": 2,
-        "line-color": "rgba(255, 0, 0, 1)"
-      }
-    },
-    {
-      "id": "Track-dash",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "track"]],
+      "filter": ["all", ["==", "class", "rail"]],
       "layout": {"visibility": "none"},
-      "paint": {"line-dasharray": [1, 0.5], "line-offset": 0, "line-width": 5}
+      "paint": {"line-dasharray": [1, 0.5], "line-width": 5}
     },
     {
       "id": "viewpoint",
@@ -137,5 +737,6 @@
       "layout": {"icon-image": "viewpoint", "icon-size": 1}
     }
   ],
-  "id": "1kap5aglj"
+  "id": "IHM",
+  "owner": "Israel Hiking Maps"
 }
