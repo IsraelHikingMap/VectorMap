@@ -9,7 +9,7 @@
 	"synagogue": {
 		"width": 34,
 		"height": 34,
-		"x": 64,
+		"x": 60,
 		"y": 0,
 		"pixelRatio": 2
 	},
@@ -58,7 +58,7 @@
 	"cattle_grid": {
 		"width": 34,
 		"height": 34,
-		"x": 64,
+		"x": 60,
 		"y": 64,
 		"pixelRatio": 2
 	},
@@ -107,7 +107,7 @@
 	"gate_closed": {
 		"width": 34,
 		"height": 34,
-		"x": 64,
+		"x": 60,
 		"y": 120,
 		"pixelRatio": 2
 	},
@@ -156,7 +156,7 @@
 	"hotel": {
 		"width": 34,
 		"height": 34,
-		"x": 64,
+		"x": 60,
 		"y": 180,
 		"pixelRatio": 2
 	},
@@ -205,7 +205,7 @@
 	"tap": {
 		"width": 34,
 		"height": 34,
-		"x": 64,
+		"x": 60,
 		"y": 240,
 		"pixelRatio": 2
 	},
@@ -254,7 +254,7 @@
 	"parking": {
 		"width": 34,
 		"height": 34,
-		"x": 64,
+		"x": 60,
 		"y": 300,
 		"pixelRatio": 2
 	},
@@ -303,7 +303,7 @@
 	"riding_park": {
 		"width": 64,
 		"height": 64,
-		"x": 64,
+		"x": 60,
 		"y": 360,
 		"pixelRatio": 2
 	},
@@ -401,7 +401,7 @@
 	"plus_pattern": {
 		"width": 36,
 		"height": 36,
-		"x": 64,
+		"x": 60,
 		"y": 644,
 		"pixelRatio": 2
 	},
