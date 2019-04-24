@@ -315,8 +315,8 @@
 		"pixelRatio": 2
 	},
 	"square": {
-		"width": 36,
-		"height": 36,
+		"width": 32,
+		"height": 32,
 		"x": 240,
 		"y": 360,
 		"pixelRatio": 2
@@ -413,14 +413,14 @@
 		"pixelRatio": 2
 	},
 	"gradient_pattern": {
-		"width": 36,
-		"height": 36,
+		"width": 32,
+		"height": 32,
 		"x": 192,
 		"y": 644,
 		"pixelRatio": 2
 	},
 	"arrowhead": {
-		"width": 36,
+		"width": 38,
 		"height": 30,
 		"x": 256,
 		"y": 650,
