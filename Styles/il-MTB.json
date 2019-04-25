@@ -1428,7 +1428,7 @@
         "text-keep-upright": true,
         "text-justify": "center",
         "text-max-width": 30,
-        "text-max-angle": 0
+        "text-max-angle": 45
       },
       "paint": {
         "text-color": "#000",
