@@ -31,7 +31,7 @@
     {
       "id": "background",
       "type": "background",
-      "paint": {"background-color": "rgba(238, 229, 203, 1)"}
+      "paint": {"background-color": "rgba(248, 240, 219, 1)"}
     },
     {
       "id": "landcover_sand",
@@ -40,7 +40,7 @@
       "source-layer": "landcover",
       "minzoom": 8,
       "filter": ["all", ["in", "class", "sand"]],
-      "paint": {"fill-color": "rgba(237, 224, 180, 1)"}
+      "paint": {"fill-color": "rgba(250, 237, 191, 1)"}
     },
     {
       "id": "landcover-ice",
@@ -70,7 +70,7 @@
       "source-layer": "landcover",
       "minzoom": 8,
       "filter": ["all", ["in", "class", "farmland"]],
-      "paint": {"fill-color": "rgba(242, 221, 193, 1)"}
+      "paint": {"fill-color": "rgba(244, 226, 201, 1)"}
     },
     {
       "id": "farmland_orchard",
@@ -279,7 +279,9 @@
       "source-layer": "building",
       "minzoom": 15,
       "paint": {
-        "fill-translate": {"stops": [[15, [1, 1]], [22, [4, 4]]]},
+        "fill-translate": {
+          "stops": [[15, [1, 1]], [18, [3, 3]], [22, [16, 16]]]
+        },
         "fill-opacity": 0.5
       }
     },
