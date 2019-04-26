@@ -1417,7 +1417,7 @@
       "source": "Features-IHM",
       "source-layer": "linear_barrier",
       "minzoom": 14,
-      "filter": ["all", ["==", "class", "fence"]],
+      "filter": ["all", ["in", "class", "fence", "yes"]],
       "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
     },
     {
@@ -1426,7 +1426,7 @@
       "source": "Features-IHM",
       "source-layer": "linear_barrier",
       "minzoom": 14,
-      "filter": ["all", ["==", "class", "fence"]],
+      "filter": ["all", ["in", "class", "fence", "yes"]],
       "layout": {
         "icon-image": "cross_pattern",
         "symbol-placement": "line",
