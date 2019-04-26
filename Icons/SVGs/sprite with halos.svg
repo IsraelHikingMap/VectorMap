@@ -2233,14 +2233,6 @@
        inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
-    <path
-       inkscape:connector-curvature="0"
-       style="fill:#008000;fill-opacity:1;stroke-width:1.07740772;opacity:0;"
-       d="M 193.73612,942.36214 193,943.02224 v -0.6543 z m 31.26388,0 v 0.707 l -31.28342,31.29299 h -0.70681 v -0.7071 l 31.28342,-31.29289 z m -15.28831,0 -16.70192,16.70699 v -1.4141 l 15.28829,-15.29289 z M 225,957.65503 v 1.4141 l -15.28831,15.293 h -1.41363 z m 0,16 v 0.7071 h -0.70681 z"
-       id="path9146-4-38-0-0"
-       inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
     <g
        id="g9258"
        transform="translate(0.9939706,-157.9999)"
@@ -2401,6 +2393,14 @@
        d="m 193.00001,897.36214 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z m -20,4 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z m -20,4 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z m -20,4 v 1 h 4 v -1 z m 10,0 v 1 h 13 v -1 z m 19,0 v 1 h 3 v -1 z m -28,4 v 1 h 13 v -1 z m 19,0 v 1 h 12 v -1 z"
        id="rect9352-0"
        inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#008000;fill-opacity:1;stroke-width:1.07740772;opacity:1"
+       d="M 193.73612,942.36214 193,943.02224 v -0.6543 z m 31.26388,0 v 0.707 l -31.28342,31.29299 h -0.70681 v -0.7071 l 31.28342,-31.29289 z m -15.28831,0 -16.70192,16.70699 v -1.4141 l 15.28829,-15.29289 z M 225,957.65503 v 1.4141 l -15.28831,15.293 h -1.41363 z m 0,16 v 0.7071 h -0.70681 z"
+       id="path9146-4-38-0-0"
        inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
