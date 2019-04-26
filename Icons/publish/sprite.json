@@ -321,20 +321,6 @@
 		"y": 180,
 		"pixelRatio": 1
 	},
-	"shield": {
-		"width": 34,
-		"height": 24,
-		"x": 120,
-		"y": 181,
-		"pixelRatio": 1
-	},	
-	"shield_background": {
-		"width": 34,
-		"height": 24,
-		"x": 165,
-		"y": 181,
-		"pixelRatio": 1
-	},	
 	"vines_pattern": {
 		"width": 32,
 		"height": 32,
