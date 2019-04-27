@@ -321,6 +321,13 @@
 		"y": 360,
 		"pixelRatio": 2
 	},
+	"flower": {
+		"width": 32,
+		"height": 32,
+		"x": 300,
+		"y": 360,
+		"pixelRatio": 2
+	},
 	"vines_pattern": {
 		"width": 64,
 		"height": 64,
