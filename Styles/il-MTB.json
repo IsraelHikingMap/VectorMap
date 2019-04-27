@@ -2027,6 +2027,25 @@
       }
     },
     {
+      "id": "poi_flowers",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "flowers"]],
+      "layout": {
+        "icon-image": "flower",
+        "icon-size": {"stops": [[14, 1], [20, 2]]},
+        "text-field": ""
+      },
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-color": "rgba(253, 249, 249, 0)",
+        "icon-halo-width": 3
+      }
+    },
+    {
       "id": "poi_tree",
       "type": "symbol",
       "source": "IHM",
@@ -2444,6 +2463,7 @@
         [
           "in",
           "subclass",
+          "flowers",
           "viewpoint",
           "casle",
           "attraction",
