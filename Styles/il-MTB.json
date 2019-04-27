@@ -2031,7 +2031,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
+      "minzoom": 14,
       "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "flowers"]],
       "layout": {
