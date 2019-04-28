@@ -328,6 +328,13 @@
 		"y": 180,
 		"pixelRatio": 1
 	},
+	"forest_pattern": {
+		"width": 32,
+		"height": 32,
+		"x": 180,
+		"y": 180,
+		"pixelRatio": 1
+	},
 	"vines_pattern": {
 		"width": 32,
 		"height": 32,
