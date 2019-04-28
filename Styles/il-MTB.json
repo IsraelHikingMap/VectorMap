@@ -93,6 +93,17 @@
       }
     },
     {
+      "id": "landuse-cemetery",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "filter": ["all", ["in", "class", "cemetery"]],
+      "paint": {
+        "fill-color": "rgba(224, 224, 224, 1)",
+        "fill-outline-color": "rgba(187, 187, 187, 1)"
+      }
+    },
+    {
       "id": "landuse-residential",
       "type": "fill",
       "source": "IHM",
@@ -2214,7 +2225,7 @@
       "filter": ["all", ["==", "$type", "Point"]],
       "layout": {
         "icon-image": "dot",
-        "text-size": {"stops": [[8, 5], [20, 20]]},
+        "text-size": {"stops": [[12, 12], [20, 20]]},
         "icon-size": {"stops": [[9, 0.15], [12, 1]]},
         "text-font": ["Open Sans Regular"],
         "text-offset": [0, -1.8],
