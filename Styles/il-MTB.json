@@ -2,8 +2,8 @@
   "version": 8,
   "name": "IMTB",
   "metadata": {"maputnik:renderer": "mbgljs", "owner": "IHM"},
-  "center": [32, 35],
-  "zoom": 8,
+  "center": [35, 32],
+  "zoom": 14,
   "bearing": 0,
   "pitch": 0,
   "sources": {
