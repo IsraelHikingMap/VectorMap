@@ -154,11 +154,26 @@
       }
     },
     {
-      "id": "landcover_wood",
+      "id": "landcover_wood-pattern",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["==", "class", "wood"],
+      "paint": {
+        "fill-color": "rgba(200, 217, 174, 1)",
+        "fill-opacity": {"base": 1, "stops": [[8, 0.6], [22, 1]]},
+        "fill-pattern": "forest_pattern"
+      }
+    },
+    {
+      "id": "landcover_wood_solid",
       "type": "fill",
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 8,
+      "maxzoom": 13,
       "filter": ["==", "class", "wood"],
       "paint": {
         "fill-color": "rgba(200, 217, 174, 1)",
@@ -170,7 +185,8 @@
       "type": "fill",
       "source": "IHM",
       "source-layer": "landuse",
-      "minzoom": 12,
+      "minzoom": 13,
+      "maxzoom": 24,
       "filter": ["all", ["==", "class", "military"]],
       "paint": {
         "fill-outline-color": {
