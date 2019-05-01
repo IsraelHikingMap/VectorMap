@@ -495,6 +495,15 @@
       }
     },
     {
+      "id": "Railroad-fill",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "rail"]],
+      "layout": {"visibility": "none"},
+      "paint": {"line-dasharray": [1, 0.5], "line-width": 5}
+    },
+    {
       "id": "road-casing-minor",
       "type": "line",
       "source": "IHM",
@@ -720,13 +729,25 @@
       }
     },
     {
-      "id": "Railroad-fill",
-      "type": "line",
+      "id": "road_motorway-shield",
+      "type": "symbol",
       "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "rail"]],
-      "layout": {"visibility": "none"},
-      "paint": {"line-dasharray": [1, 0.5], "line-width": 5}
+      "source-layer": "transportation_name",
+      "minzoom": 8,
+      "filter": ["all", ["==", "class", "motorway"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-rotation-alignment": "viewport",
+        "visibility": "visible",
+        "icon-image": "shield_blue",
+        "icon-size": {"stops": [[8, 0.75], [10, 0.75]]},
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]}
+      },
+      "paint": {"text-color": "blue"}
     },
     {
       "id": "viewpoint",
