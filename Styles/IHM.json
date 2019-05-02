@@ -11,14 +11,16 @@
   "sprite": "https://raw.githubusercontent.com/IsraelHikingMap/VectorMap/master/Icons/publish/sprite",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
+
     {
       "id": "background",
       "type": "background",
       "layout": {"visibility": "visible"},
       "paint": {"background-color": "rgba(250, 247, 225, 1)"}
     },
+
     {
-      "id": "water",
+      "id": "area-water",
       "type": "fill",
       "source": "IHM",
       "source-layer": "water",
@@ -26,8 +28,9 @@
       "layout": {"visibility": "visible"},
       "paint": {"fill-color": "rgba(138, 192, 255, 0.7)"}
     },
+
     {
-      "id": "residential",
+      "id": "area-residential",
       "type": "fill",
       "source": "IHM",
       "source-layer": "landuse",
@@ -38,8 +41,9 @@
         "fill-color": "rgba(229, 229, 229, 1)"
       }
     },
+
     {
-      "id": "plantation",
+      "id": "area-plantation",
       "type": "fill",
       "source": "IHM",
       "source-layer": "landcover",
@@ -50,6 +54,7 @@
         "fill-outline-color": "rgba(0, 0, 0, 0)"
       }
     },
+
     {
       "id": "boundary-country",
       "type": "line",
@@ -63,6 +68,7 @@
       ],
       "layout": {"visibility": "visible"}
     },
+
     {
       "id": "boundary",
       "type": "line",
@@ -71,6 +77,150 @@
       "filter": ["all", ["!=", "maritime", 1], ["!=", "disputed", 1]],
       "layout": {"visibility": "none"}
     },
+
+    {
+      "id": "casing-steps",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "subclass", "steps"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "white",
+        "line-width": {"stops": [[13, 2], [14, 5.5]]}
+      }
+    },
+
+    {
+      "id": "casing-path",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "path"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "white",
+        "line-width": {"stops": [[13, 2], [16, 2.5]]}
+      }
+    },
+
+    {
+      "id": "casing-minor",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["in", "class", "minor", "service"]],
+      "layout": {
+        "visibility": "visible",
+        "line-join": "round",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": ["coalesce", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[13, 2], [14, 4.5], [16, 6]]}
+      }
+    },
+
+    {
+      "id": "casing-tertiary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "tertiary"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[13, 2.5], [16, 5]]}
+      }
+    },
+
+    {
+      "id": "casing-seconary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "secondary"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[12, 2.6], [13, 3.9], [16, 7.8]]}
+      }
+    },
+
+    {
+      "id": "casing-primary",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": ["all", ["==", "class", "primary"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
+      }
+    },
+
+    {
+      "id": "casing-trunk",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": ["all", ["==", "class", "trunk"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
+      }
+    },
+
+    {
+      "id": "casing-motorway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "filter": ["all", ["==", "class", "motorway"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
+      }
+    },
+
     {
       "id": "trail-israel",
       "type": "line",
@@ -86,252 +236,114 @@
         "line-width": {"stops": [[12, 3], [13, 7], [16, 12]]}
       }
     },
+
     {
-      "id": "trail-haifa-wadies-bg",
+      "id": "trail-kinneret-bike-line",
       "type": "line",
       "source": "IHM",
       "source-layer": "trail",
-      "filter": ["all", ["==", "name", "שביל ואדיות חיפה"]],
-      "layout": {"visibility": "visible"},
+      "minzoom": 8,
+      "filter": ["all", ["==", "osmc_symbol", "yellow:yellow_circle:blue_dot"]],
+      "layout": {"visibility": "none"},
       "paint": {
-        "line-color": "red",
+        "line-color": "blue",
         "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {"stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]}
+        "line-offset": {"stops": [[11, 0], [12, -1], [14, -4]]}
       }
     },
+
     {
-      "id": "trail-haifa-wadies-fg",
+      "id": "trail-kinneret-bike-dash",
       "type": "line",
       "source": "IHM",
       "source-layer": "trail",
-      "minzoom": 7,
-      "filter": ["all", ["==", "name", "שביל ואדיות חיפה"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "green",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {
-          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
-        },
-        "line-dasharray": [4, 4]
-      }
-    },
-    {
-      "id": "trail-kinneret-bike-bg",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
+      "minzoom": 8,
       "filter": ["all", ["==", "osmc_symbol", "yellow:yellow_circle:blue_dot"]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "blue",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {
-          "stops": [[7, -1], [10, -1.5], [11, -2], [13, -4], [15, -6]]
-        }
-      }
-    },
-    {
-      "id": "trail-kinneret-bike-fg",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 7,
-      "filter": ["all", ["==", "osmc_symbol", "yellow:yellow_circle:blue_dot"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
+        "line-dasharray": [4, 4],
         "line-color": "yellow",
         "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {
-          "stops": [[7, -1], [10, -1.5], [11, -2], [13, -4], [15, -6]]
-        },
-        "line-dasharray": [4, 4]
+        "line-offset": {"stops": [[11, 0], [12, -1], [14, -4]]}
       }
     },
+
     {
-      "id": "trail-kinneret-bg",
+      "id": "trail-regional-line",
       "type": "line",
       "source": "IHM",
       "source-layer": "trail",
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "purple:white:purple_stripe:blue_stripe_left"]
+      "minzoom": 8,
+      "filter": ["all",
+       	["==", "network", "rwn"],
+	["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
       ],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "#1765AD",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {"stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]}
-      }
-    },
-    {
-      "id": "trail-kinneret-fg",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "purple:white:purple_stripe:blue_stripe_left"]
-      ],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "#7B5CA0",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {
-          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
-        },
-        "line-dasharray": [4, 4]
-      }
-    },
-    {
-      "id": "trail-jerusalem-bg",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
-      "filter": ["all", ["==", "name", "שביל ירושלים"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "yellow",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {"stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]}
-      }
-    },
-    {
-      "id": "trail-jerusalem-fg",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 7,
-      "filter": ["all", ["==", "name", "שביל ירושלים"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "blue",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {
-          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
-        },
-        "line-dasharray": [4, 4]
-      }
-    },
-    {
-      "id": "trail-golan-bg",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "blue:white:blue_stripe:green_stripe_left"]
-      ],
-      "layout": {"visibility": "none"},
-      "paint": {
-        "line-color": "#4ca64c",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {"stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]}
-      }
-    },
-    {
-      "id": "trail-golan-fg",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "blue:white:blue_stripe:green_stripe_left"]
-      ],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "blue",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {
-          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
-        },
-        "line-dasharray": [4, 4]
-      }
-    },
-    {
-      "id": "trail-yellow",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "yellow:white:yellow_stripe"],
-        ["!=", "colour", "yellow"]
-      ],
-      "layout": {"visibility": "none"},
-      "paint": {
-        "line-color": "yellow",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {
-          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
-        },
-        "line-dasharray": [4, 4]
-      }
-    },
-    {
-      "id": "trail-purple",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "purple:white:purple_stripe"],
-        ["!=", "colour", "purple"]
-      ],
-      "layout": {"visibility": "none"},
-      "paint": {
-        "line-color": "purple",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {
-          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
-        },
-        "line-dasharray": [4, 4]
-      }
-    },
-    {
-      "id": "trail-orange",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "orange:white:orange_stripe"],
-        ["!=", "colour", "orange"]
-      ],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "orange",
-        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
-        "line-offset": {
-          "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4], [15, 6]]
-        },
-        "line-dasharray": [4, 4]
-      }
-    },
-    {
-      "id": "road-casing",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 6,
-      "filter": ["all"],
       "layout": {
-        "visibility": "none",
-        "line-cap": "round",
-        "line-join": "round"
+        "visibility": "visible",
+        "line-join": "miter",
+        "line-cap": "butt"
       },
       "paint": {
-        "line-color": "rgba(0, 0, 0, 0.5)",
-        "line-width": {"stops": [[7, 0.6], [16, 1.1]]}
+        "line-color": [
+	    "match",
+	    ["get", "osmc_symbol"],
+	    "purple:white:purple_stripe", "purple",
+	    "orange:white:orange_stripe", "orange",
+	    "yellow:white:yellow_stripe", "yellow",
+	    "yellow:yellow_circle:blue_dot", "blue",
+	    "purple:white:purple_stripe:blue_stripe_left", "#1765AD",
+	    "blue:white:blue_stripe:green_stripe_left", "#4ca64c",
+	    [
+	      "match",
+	      ["get", "name"],
+    	      "שביל ואדיות חיפה", "red",
+	      "שביל ירושלים", "yellow",
+	      "rgba(0,0,0,0)"
+  	    ]
+	],
+	"line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {"stops": [[11, 0], [12, 1], [14, 4]]}
       }
     },
+
     {
-      "id": "road",
+      "id": "trail-regional-dash",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 8,
+      "filter": ["all",
+       	["==", "network", "rwn"],
+	["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-join": "miter",
+        "line-cap": "butt"
+      },
+      "paint": {
+        "line-color": [
+	    "match",
+	    ["get", "osmc_symbol"],
+	    "yellow:yellow_circle:blue_dot", "yellow",
+	    "purple:white:purple_stripe:blue_stripe_left", "#7B5CA0",
+	    "blue:white:blue_stripe:green_stripe_left", "blue",
+	    [
+	      "match",
+	      ["get", "name"],
+    	      "שביל ואדיות חיפה", "green",
+	      "שביל ירושלים", "blue",
+	      "rgba(0,0,0,0)"
+  	    ]
+	],
+        "line-dasharray": [4, 4],
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {"stops": [[11, 0], [12, 1], [14, 4]]}
+      }
+    },
+
+    {
+      "id": "road-remaining",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -353,25 +365,9 @@
         "line-width": {"stops": [[7, 0.5], [16, 1]]}
       }
     },
+
     {
-      "id": "path-casing",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": ["none"],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": "white",
-        "line-width": {"stops": [[13, 2], [16, 2.5]]}
-      }
-    },
-    {
-      "id": "steps",
+      "id": "path-steps",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -387,8 +383,9 @@
         "line-color": ["to-color", ["get", "colour"], "#8e5632"]
       }
     },
+
     {
-      "id": "footway",
+      "id": "path-footway",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -404,8 +401,9 @@
         "line-color": ["to-color", ["get", "colour"], "#8e5632"]
       }
     },
+
     {
-      "id": "cycleway",
+      "id": "path-cycleway",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -421,8 +419,9 @@
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
+
     {
-      "id": "path",
+      "id": "path-path",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -434,6 +433,7 @@
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
+
     {
       "id": "track-right",
       "type": "line",
@@ -458,6 +458,7 @@
         ]
       }
     },
+
     {
       "id": "track-left",
       "type": "line",
@@ -477,6 +478,7 @@
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
+
     {
       "id": "track-fill",
       "type": "line",
@@ -494,131 +496,19 @@
         "line-color": "rgba(247, 244, 242, 1)"
       }
     },
+
     {
-      "id": "road-casing-minor",
+      "id": "Railroad-fill",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["in", "class", "minor", "service"],
-        ["!has", "colour"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "line-join": "round",
-        "line-cap": "round"
-      },
-      "paint": {
-        "line-color": "#808080",
-        "line-width": {"stops": [[13, 2], [16, 5]]}
-      }
+      "filter": ["all", ["==", "class", "rail"]],
+      "layout": {"visibility": "none"},
+      "paint": {"line-dasharray": [1, 0.5], "line-width": 5}
     },
+
     {
-      "id": "road-casing-minor-colour",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": ["all", ["in", "class", "minor", "service"], ["has", "colour"]],
-      "layout": {
-        "visibility": "visible",
-        "line-join": "round",
-        "line-cap": "round"
-      },
-      "paint": {
-        "line-color": ["get", "colour"],
-        "line-width": {"stops": [[13, 2], [14, 4.5], [16, 6]]}
-      }
-    },
-    {
-      "id": "road-casing-tertiary",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 12,
-      "filter": ["all", ["==", "class", "tertiary"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {"stops": [[13, 2.5], [16, 5]]}
-      }
-    },
-    {
-      "id": "road-casing-seconary",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 12,
-      "filter": ["all", ["==", "class", "secondary"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {"stops": [[12, 2.6], [13, 3.9], [16, 7.8]]}
-      }
-    },
-    {
-      "id": "road-casing-primary",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 7,
-      "filter": ["all", ["==", "class", "primary"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
-      }
-    },
-    {
-      "id": "road-casing-trunk",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 7,
-      "filter": ["all", ["==", "class", "trunk"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {"stops": [[7, 1.3], [9, 2.6], [16, 7.8]]}
-      }
-    },
-    {
-      "id": "road-casing-motorway",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 6,
-      "filter": ["all", ["==", "class", "motorway"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
-      }
-    },
-    {
-      "id": "road_minor",
+      "id": "road-minor",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -634,8 +524,9 @@
         "line-width": {"stops": [[13, 1], [14, 2], [16, 3]]}
       }
     },
+
     {
-      "id": "road_tertiary",
+      "id": "road-tertiary",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -651,8 +542,9 @@
         "line-width": {"stops": [[13, 1.5], [16, 3]]}
       }
     },
+
     {
-      "id": "road_secondary ",
+      "id": "road-secondary ",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -668,8 +560,9 @@
         "line-width": {"stops": [[12, 1], [13, 1.5], [16, 3]]}
       }
     },
+
     {
-      "id": "road_primary",
+      "id": "road-primary",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -685,8 +578,9 @@
         "line-width": {"stops": [[10, 0.5], [12, 1], [16, 3]]}
       }
     },
+
     {
-      "id": "road_trunk",
+      "id": "road-trunk",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -702,8 +596,9 @@
         "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
       }
     },
+
     {
-      "id": "road_motorway",
+      "id": "road-motorway",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -719,15 +614,29 @@
         "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
       }
     },
+
     {
-      "id": "Railroad-fill",
-      "type": "line",
+      "id": "road-motorway-shield",
+      "type": "symbol",
       "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "rail"]],
-      "layout": {"visibility": "none"},
-      "paint": {"line-dasharray": [1, 0.5], "line-width": 5}
+      "source-layer": "transportation_name",
+      "minzoom": 8,
+      "filter": ["all", ["==", "class", "motorway"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-rotation-alignment": "viewport",
+        "visibility": "visible",
+        "icon-image": "shield_blue",
+        "icon-size": {"stops": [[8, 0.75], [10, 0.75]]},
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]}
+      },
+      "paint": {"text-color": "blue"}
     },
+
     {
       "id": "viewpoint",
       "type": "symbol",
