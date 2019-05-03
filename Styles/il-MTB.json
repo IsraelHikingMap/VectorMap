@@ -2693,7 +2693,7 @@
         "text-max-width": 5,
         "text-anchor": "top",
         "text-offset": {"stops": [[10, [0, 1]], [20, [0, 2]]]},
-        "symbol-spacing": 50
+        "symbol-spacing": 300
       },
       "paint": {
         "text-color": "rgba(0, 0, 0, 1)",
