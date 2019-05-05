@@ -6,19 +6,22 @@
     "IHM": {
       "type": "vector",
       "url": "https://israelhiking.osm.org.il/data/v3.json"
+    },
+    "Israel-TerrainRGB": {
+      "type": "raster-dem",
+      "url": "https://israelhiking.osm.org.il/data/TerrainRGB.json"
     }
   },
   "sprite": "https://raw.githubusercontent.com/IsraelHikingMap/VectorMap/master/Icons/publish/sprite",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
-
     {
       "id": "background",
       "type": "background",
       "layout": {"visibility": "visible"},
       "paint": {"background-color": "rgba(250, 247, 225, 1)"}
     },
-
+    {"id": "Terrain", "type": "hillshade", "source": "Israel-TerrainRGB"},
     {
       "id": "area-water",
       "type": "fill",
@@ -28,7 +31,6 @@
       "layout": {"visibility": "visible"},
       "paint": {"fill-color": "rgba(138, 192, 255, 0.7)"}
     },
-
     {
       "id": "area-residential",
       "type": "fill",
@@ -41,7 +43,6 @@
         "fill-color": "rgba(229, 229, 229, 1)"
       }
     },
-
     {
       "id": "area-plantation",
       "type": "fill",
@@ -54,7 +55,6 @@
         "fill-outline-color": "rgba(0, 0, 0, 0)"
       }
     },
-
     {
       "id": "boundary-country",
       "type": "line",
@@ -68,7 +68,6 @@
       ],
       "layout": {"visibility": "visible"}
     },
-
     {
       "id": "boundary",
       "type": "line",
@@ -77,7 +76,6 @@
       "filter": ["all", ["!=", "maritime", 1], ["!=", "disputed", 1]],
       "layout": {"visibility": "none"}
     },
-
     {
       "id": "casing-steps",
       "type": "line",
@@ -94,7 +92,6 @@
         "line-width": {"stops": [[13, 2], [14, 5.5]]}
       }
     },
-
     {
       "id": "casing-path",
       "type": "line",
@@ -112,7 +109,6 @@
         "line-width": {"stops": [[13, 2], [16, 2.5]]}
       }
     },
-
     {
       "id": "casing-minor",
       "type": "line",
@@ -130,7 +126,6 @@
         "line-width": {"stops": [[13, 2], [14, 4.5], [16, 6]]}
       }
     },
-
     {
       "id": "casing-tertiary",
       "type": "line",
@@ -148,7 +143,6 @@
         "line-width": {"stops": [[13, 2.5], [16, 5]]}
       }
     },
-
     {
       "id": "casing-seconary",
       "type": "line",
@@ -166,7 +160,6 @@
         "line-width": {"stops": [[12, 2.6], [13, 3.9], [16, 7.8]]}
       }
     },
-
     {
       "id": "casing-primary",
       "type": "line",
@@ -184,7 +177,6 @@
         "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
       }
     },
-
     {
       "id": "casing-trunk",
       "type": "line",
@@ -202,7 +194,6 @@
         "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
       }
     },
-
     {
       "id": "casing-motorway",
       "type": "line",
@@ -220,7 +211,6 @@
         "line-width": {"stops": [[10, 1.3], [12, 2.6], [16, 7.8]]}
       }
     },
-
     {
       "id": "trail-israel",
       "type": "line",
@@ -236,7 +226,6 @@
         "line-width": {"stops": [[12, 3], [13, 7], [16, 12]]}
       }
     },
-
     {
       "id": "trail-kinneret-bike-line",
       "type": "line",
@@ -251,7 +240,6 @@
         "line-offset": {"stops": [[11, 0], [12, -1], [14, -4]]}
       }
     },
-
     {
       "id": "trail-kinneret-bike-dash",
       "type": "line",
@@ -267,16 +255,16 @@
         "line-offset": {"stops": [[11, 0], [12, -1], [14, -4]]}
       }
     },
-
     {
       "id": "trail-regional-line",
       "type": "line",
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 8,
-      "filter": ["all",
-       	["==", "network", "rwn"],
-	["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
+      "filter": [
+        "all",
+        ["==", "network", "rwn"],
+        ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
       ],
       "layout": {
         "visibility": "visible",
@@ -285,36 +273,44 @@
       },
       "paint": {
         "line-color": [
-	    "match",
-	    ["get", "osmc_symbol"],
-	    "purple:white:purple_stripe", "purple",
-	    "orange:white:orange_stripe", "orange",
-	    "yellow:white:yellow_stripe", "yellow",
-	    "yellow:yellow_circle:blue_dot", "blue",
-	    "purple:white:purple_stripe:blue_stripe_left", "#1765AD",
-	    "blue:white:blue_stripe:green_stripe_left", "#4ca64c",
-	    [
-	      "match",
-	      ["get", "name"],
-    	      "שביל ואדיות חיפה", "red",
-	      "שביל ירושלים", "yellow",
-	      "rgba(0,0,0,0)"
-  	    ]
-	],
-	"line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+          "match",
+          ["get", "osmc_symbol"],
+          "purple:white:purple_stripe",
+          "purple",
+          "orange:white:orange_stripe",
+          "orange",
+          "yellow:white:yellow_stripe",
+          "yellow",
+          "yellow:yellow_circle:blue_dot",
+          "blue",
+          "purple:white:purple_stripe:blue_stripe_left",
+          "#1765AD",
+          "blue:white:blue_stripe:green_stripe_left",
+          "#4ca64c",
+          [
+            "match",
+            ["get", "name"],
+            "שביל ואדיות חיפה",
+            "red",
+            "שביל ירושלים",
+            "yellow",
+            "rgba(0,0,0,0)"
+          ]
+        ],
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
         "line-offset": {"stops": [[11, 0], [12, 1], [14, 4]]}
       }
     },
-
     {
       "id": "trail-regional-dash",
       "type": "line",
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 8,
-      "filter": ["all",
-       	["==", "network", "rwn"],
-	["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
+      "filter": [
+        "all",
+        ["==", "network", "rwn"],
+        ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
       ],
       "layout": {
         "visibility": "visible",
@@ -323,25 +319,65 @@
       },
       "paint": {
         "line-color": [
-	    "match",
-	    ["get", "osmc_symbol"],
-	    "yellow:yellow_circle:blue_dot", "yellow",
-	    "purple:white:purple_stripe:blue_stripe_left", "#7B5CA0",
-	    "blue:white:blue_stripe:green_stripe_left", "blue",
-	    [
-	      "match",
-	      ["get", "name"],
-    	      "שביל ואדיות חיפה", "green",
-	      "שביל ירושלים", "blue",
-	      "rgba(0,0,0,0)"
-  	    ]
-	],
+          "match",
+          ["get", "osmc_symbol"],
+          "yellow:yellow_circle:blue_dot",
+          "yellow",
+          "purple:white:purple_stripe:blue_stripe_left",
+          "#7B5CA0",
+          "blue:white:blue_stripe:green_stripe_left",
+          "blue",
+          [
+            "match",
+            ["get", "name"],
+            "שביל ואדיות חיפה",
+            "green",
+            "שביל ירושלים",
+            "blue",
+            "rgba(0,0,0,0)"
+          ]
+        ],
         "line-dasharray": [4, 4],
         "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
         "line-offset": {"stops": [[11, 0], [12, 1], [14, 4]]}
       }
     },
-
+    {
+      "id": "trail-line",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 11,
+      "maxzoom": 13,
+      "filter": ["all", ["in", "network", "lwn", "rwn"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-width": 1,
+        "line-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "purple:white:purple_stripe",
+          "purple",
+          "orange:white:orange_stripe",
+          "orange",
+          "yellow:white:yellow_stripe",
+          "yellow",
+          "rgba(0,0,0,0)"
+        ]
+      }
+    },
     {
       "id": "road-remaining",
       "type": "line",
@@ -365,7 +401,6 @@
         "line-width": {"stops": [[7, 0.5], [16, 1]]}
       }
     },
-
     {
       "id": "path-steps",
       "type": "line",
@@ -383,7 +418,6 @@
         "line-color": ["to-color", ["get", "colour"], "#8e5632"]
       }
     },
-
     {
       "id": "path-footway",
       "type": "line",
@@ -401,7 +435,6 @@
         "line-color": ["to-color", ["get", "colour"], "#8e5632"]
       }
     },
-
     {
       "id": "path-cycleway",
       "type": "line",
@@ -419,7 +452,6 @@
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
-
     {
       "id": "path-path",
       "type": "line",
@@ -433,7 +465,6 @@
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
-
     {
       "id": "track-right",
       "type": "line",
@@ -458,7 +489,6 @@
         ]
       }
     },
-
     {
       "id": "track-left",
       "type": "line",
@@ -478,7 +508,6 @@
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
-
     {
       "id": "track-fill",
       "type": "line",
@@ -496,7 +525,6 @@
         "line-color": "rgba(247, 244, 242, 1)"
       }
     },
-
     {
       "id": "Railroad-fill",
       "type": "line",
@@ -506,7 +534,6 @@
       "layout": {"visibility": "none"},
       "paint": {"line-dasharray": [1, 0.5], "line-width": 5}
     },
-
     {
       "id": "road-minor",
       "type": "line",
@@ -524,7 +551,6 @@
         "line-width": {"stops": [[13, 1], [14, 2], [16, 3]]}
       }
     },
-
     {
       "id": "road-tertiary",
       "type": "line",
@@ -542,7 +568,6 @@
         "line-width": {"stops": [[13, 1.5], [16, 3]]}
       }
     },
-
     {
       "id": "road-secondary ",
       "type": "line",
@@ -560,7 +585,6 @@
         "line-width": {"stops": [[12, 1], [13, 1.5], [16, 3]]}
       }
     },
-
     {
       "id": "road-primary",
       "type": "line",
@@ -578,7 +602,6 @@
         "line-width": {"stops": [[10, 0.5], [12, 1], [16, 3]]}
       }
     },
-
     {
       "id": "road-trunk",
       "type": "line",
@@ -596,7 +619,6 @@
         "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
       }
     },
-
     {
       "id": "road-motorway",
       "type": "line",
@@ -614,7 +636,6 @@
         "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
       }
     },
-
     {
       "id": "road-motorway-shield",
       "type": "symbol",
@@ -636,7 +657,6 @@
       },
       "paint": {"text-color": "blue"}
     },
-
     {
       "id": "viewpoint",
       "type": "symbol",
