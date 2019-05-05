@@ -350,8 +350,8 @@
 		"pixelRatio": 1
 	},
 	"bushes_pattern": {
-		"width": 64,
-		"height": 64,
+		"width": 32,
+		"height": 32,
 		"x": 194,
 		"y": 454,
 		"pixelRatio": 1
