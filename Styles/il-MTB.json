@@ -170,7 +170,8 @@
       "paint": {
         "fill-color": "rgba(236, 13, 18, 1)",
         "fill-opacity": {"base": 1, "stops": [[12, 0], [14, 1]]},
-        "fill-pattern": "forest_pattern"
+        "fill-pattern": "forest_pattern",
+        "fill-translate-anchor": "map"
       }
     },
     {
@@ -2685,9 +2686,9 @@
       "minzoom": 11,
       "filter": ["all"],
       "layout": {
-        "icon-image": "RTG",
+        "icon-image": "tree",
         "text-size": {"stops": [[14, 12], [20, 20]]},
-        "icon-size": {"stops": [[10, 0.25], [20, 1]]},
+        "icon-size": {"stops": [[10, 0.5], [20, 1]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name:he}",
         "text-max-width": 5,
