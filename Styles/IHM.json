@@ -21,16 +21,6 @@
       "layout": {"visibility": "visible"},
       "paint": {"background-color": "rgba(250, 247, 225, 1)"}
     },
-    {"id": "Terrain", "type": "hillshade", "source": "Israel-TerrainRGB"},
-    {
-      "id": "area-water",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "water",
-      "filter": ["all", ["!=", "intermittent", "yes"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "rgba(138, 192, 255, 0.7)"}
-    },
     {
       "id": "area-residential",
       "type": "fill",
@@ -54,6 +44,21 @@
         "fill-color": "rgba(26, 155, 43, 0.56)",
         "fill-outline-color": "rgba(0, 0, 0, 0)"
       }
+    },
+    {
+      "id": "Terrain",
+      "type": "hillshade",
+      "source": "Israel-TerrainRGB",
+      "layout": {"visibility": "visible"}
+    },
+    {
+      "id": "area-water",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "water",
+      "filter": ["all", ["!=", "intermittent", "yes"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(138, 192, 255, 0.7)"}
     },
     {
       "id": "boundary-country",
@@ -581,7 +586,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "rgba(139, 69, 19, 1)",
+        "line-color": "#303030",
         "line-width": {"stops": [[12, 1], [13, 1.5], [16, 3]]}
       }
     },
@@ -637,12 +642,85 @@
       }
     },
     {
-      "id": "road-motorway-shield",
+      "id": "shield-secondary",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["in", "class", "secondary"], ["has", "ref"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-rotation-alignment": "viewport",
+        "visibility": "visible",
+        "icon-image": "shield_brown",
+        "icon-size": 1,
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]},
+        "icon-text-fit": "both",
+        "icon-padding": 2,
+        "icon-text-fit-padding": [2, 6, 2, 6]
+      },
+      "paint": {"text-color": "black"}
+    },
+    {
+      "id": "shield-primary",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 10,
+      "filter": ["all", ["in", "class", "primary"], ["has", "ref"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-rotation-alignment": "viewport",
+        "visibility": "visible",
+        "icon-image": "shield_green",
+        "icon-size": 1,
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]},
+        "icon-text-fit": "both",
+        "icon-padding": 2,
+        "icon-text-fit-padding": [2, 6, 2, 6]
+      },
+      "paint": {"text-color": "green"}
+    },
+    {
+      "id": "shield-trunk",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 7,
+      "filter": ["all", ["in", "class", "trunk"], ["has", "ref"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-rotation-alignment": "viewport",
+        "visibility": "visible",
+        "icon-image": "shield_red",
+        "icon-size": 1,
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]},
+        "icon-text-fit": "both",
+        "icon-padding": 2,
+        "icon-text-fit-padding": [2, 6, 2, 6]
+      },
+      "paint": {"text-color": "red"}
+    },
+    {
+      "id": "shield-motorway",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
       "minzoom": 8,
-      "filter": ["all", ["==", "class", "motorway"]],
+      "filter": ["all", ["in", "class", "motorway"], ["has", "ref"]],
       "layout": {
         "symbol-placement": "line",
         "text-field": "{ref}",
@@ -651,9 +729,12 @@
         "text-rotation-alignment": "viewport",
         "visibility": "visible",
         "icon-image": "shield_blue",
-        "icon-size": {"stops": [[8, 0.75], [10, 0.75]]},
+        "icon-size": 1,
         "icon-rotation-alignment": "viewport",
-        "symbol-spacing": {"stops": [[8, 250], [14, 500]]}
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]},
+        "icon-text-fit": "both",
+        "icon-padding": 2,
+        "icon-text-fit-padding": [2, 6, 2, 6]
       },
       "paint": {"text-color": "blue"}
     },
