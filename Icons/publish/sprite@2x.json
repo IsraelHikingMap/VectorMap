@@ -434,11 +434,19 @@
 		"pixelRatio": 2
 	},
 	"arrowhead": {
-		"width": 72,
+		"width": 68,
 		"height": 60,
 		"x": 512,
-		"y": 650,
+		"y": 1300,
 		"pixelRatio": 2
+	},
+	"arrowline": {
+		"width": 76,
+		"height": 56,
+		"x": 640,
+		"y": 1300,
+		"pixelRatio": 2
+	},
 	},
 	"shield_blue": {
 		"width": 136,
