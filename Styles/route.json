@@ -1,0 +1,48 @@
+{
+  "version": 8,
+  "name": "IMTB",
+  "metadata": {"maputnik:renderer": "mbgljs", "owner": "IHM"},
+  "center": [35, 32],
+  "zoom": 14,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "hillshading": {
+      "type": "raster",
+      "url": "https://klokantech.tilehosting.com/data/hillshades.json?key=tXme5cuqgrCqdPoZHqyn",
+      "tileSize": 256
+    },
+    "contours": {
+      "type": "vector",
+      "url": "https://klokantech.tilehosting.com/data/contours.json?key=tXme5cuqgrCqdPoZHqyn"
+    },
+    "IHM": {
+      "type": "vector",
+      "url": "https://israelhiking.osm.org.il/data/v3.json"
+    }
+  },
+  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "rgba(248, 240, 219, 1)"}
+    },
+    {
+      "id": "route",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "$type", "LineString"]],
+      "layout": {},
+      "paint": {
+        "line-color": "rgba(246, 8, 8, 1)",
+        "line-width": 8,
+        "line-pattern": "arrowline"
+      }
+    }
+  ],
+  "id": "il-MTB",
+  "owner": "Israel Hiking Maps"
+}
