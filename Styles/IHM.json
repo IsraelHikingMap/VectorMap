@@ -394,6 +394,46 @@
       "paint": {"fill-opacity": 1, "fill-color": "rgba(191, 191, 191, 1)"}
     },
     {
+      "id": "barrier-wall",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["all", ["in", "class", "wall", "city_wall"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "black", "line-width": 1.5}
+    },
+    {
+      "id": "barrier-fence-line",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "fence"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "rgba(26, 26, 26, 1)"}
+    },
+    {
+      "id": "barrier-fence-x",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "fence"]],
+      "layout": {
+        "visibility": "visible",
+        "symbol-placement": "line",
+        "icon-image": "cross_pattern",
+        "symbol-spacing": 1,
+        "icon-allow-overlap": true,
+        "icon-size": 0.2
+      },
+      "paint": {}
+    },
+    {
       "id": "trail-israel",
       "type": "line",
       "source": "IHM",
