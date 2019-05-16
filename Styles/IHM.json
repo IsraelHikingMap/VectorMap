@@ -22,6 +22,18 @@
       "paint": {"background-color": "rgba(250, 247, 225, 1)"}
     },
     {
+      "id": "area-residential",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "filter": ["all", ["==", "class", "residential"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-outline-color": "rgba(102, 102, 102, 0.3)",
+        "fill-color": "rgba(242, 242, 242, 1)"
+      }
+    },
+    {
       "id": "area-sand",
       "type": "fill",
       "source": "IHM",
@@ -70,18 +82,6 @@
       }
     },
     {
-      "id": "area-residential",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "filter": ["all", ["==", "class", "residential"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-outline-color": "rgba(102, 102, 102, 0.3)",
-        "fill-color": "rgba(242, 242, 242, 1)"
-      }
-    },
-    {
       "id": "area-beach",
       "type": "fill",
       "source": "IHM",
@@ -106,6 +106,20 @@
       }
     },
     {
+      "id": "area-cemetery",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "cemetery"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#CCCCCC",
+        "fill-outline-color": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
       "id": "area-quarry",
       "type": "fill",
       "source": "IHM",
@@ -115,6 +129,41 @@
       "paint": {
         "fill-color": "#BFBFBF",
         "fill-outline-color": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "id": "area-practice",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "military"],
+        ["==", "military", "training_area"]
+      ],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "fill-color": "#BFBFBF",
+        "fill-outline-color": "red",
+        "fill-pattern": "red_nwse_pattern"
+      }
+    },
+    {
+      "id": "area-military",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "filter": [
+        "all",
+        ["==", "class", "military"],
+        ["!=", "military", "training_area"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#BFBFBF",
+        "fill-outline-color": "red",
+        "fill-pattern": "red_nesw_pattern"
       }
     },
     {
@@ -334,12 +383,15 @@
       "layout": {"visibility": "visible"}
     },
     {
-      "id": "boundary",
-      "type": "line",
+      "id": "building",
+      "type": "fill",
       "source": "IHM",
-      "source-layer": "boundary",
-      "filter": ["all", ["!=", "maritime", 1], ["!=", "disputed", 1]],
-      "layout": {"visibility": "none"}
+      "source-layer": "building",
+      "minzoom": 15,
+      "maxzoom": 24,
+      "filter": ["all"],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-opacity": 1, "fill-color": "rgba(191, 191, 191, 1)"}
     },
     {
       "id": "trail-israel",
@@ -847,7 +899,20 @@
       "paint": {"text-color": "blue"}
     },
     {
-      "id": "viewpoint",
+      "id": "icon-cemerery",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 15,
+      "filter": ["all", ["==", "class", "cemetery"]],
+      "layout": {
+        "icon-image": "cemetery",
+        "icon-size": 0.5,
+        "visibility": "visible"
+      }
+    },
+    {
+      "id": "icon-viewpoint",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
