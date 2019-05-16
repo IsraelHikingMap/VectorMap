@@ -383,6 +383,49 @@
       "layout": {"visibility": "visible"}
     },
     {
+      "id": "aeroway-helipad",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "minzoom": 15,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "helipad"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-opacity": 1,
+        "fill-color": "rgba(96, 96, 96, 1)",
+        "fill-outline-color": "rgba(64, 64, 64, 1)"
+      }
+    },
+    {
+      "id": "aeroway-taxiway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "taxiway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(96, 96, 96, 1)",
+        "line-width": {"stops": [[13, 3], [14, 6], [15, 12]]}
+      }
+    },
+    {
+      "id": "aeroway-runway",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "minzoom": 11,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "runway"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(96, 96, 96, 1)",
+        "line-width": {"stops": [[11, 3], [12, 4], [13, 8], [14, 16], [15, 32]]}
+      }
+    },
+    {
       "id": "building",
       "type": "fill",
       "source": "IHM",
