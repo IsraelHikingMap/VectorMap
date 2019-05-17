@@ -142,8 +142,12 @@
         ["==", "class", "military"],
         ["==", "military", "training_area"]
       ],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-outline-color": "red", "fill-pattern": "red_nwse_pattern"}
+      "layout": {"visibility": "none"},
+      "paint": {
+        "fill-outline-color": "red",
+        "fill-pattern": "red_nwse_pattern",
+        "fill-opacity": 0.2
+      }
     },
     {
       "id": "area-military",
@@ -156,7 +160,11 @@
         ["!=", "military", "training_area"]
       ],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-outline-color": "red", "fill-pattern": "red_nesw_pattern"}
+      "paint": {
+        "fill-outline-color": "red",
+        "fill-pattern": "red_nesw_pattern",
+        "fill-opacity": 0.2
+      }
     },
     {
       "id": "Terrain",
