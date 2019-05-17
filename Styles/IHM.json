@@ -26,7 +26,7 @@
       "type": "fill",
       "source": "IHM",
       "source-layer": "landuse",
-      "filter": ["all", ["==", "class", "residential"]],
+      "filter": ["all", ["in", "class", "residential", "industrial"]],
       "layout": {"visibility": "visible"},
       "paint": {
         "fill-outline-color": "rgba(102, 102, 102, 0.3)",
@@ -132,7 +132,7 @@
       }
     },
     {
-      "id": "area-practice",
+      "id": "area-military-training",
       "type": "fill",
       "source": "IHM",
       "source-layer": "landuse",
@@ -142,12 +142,8 @@
         ["==", "class", "military"],
         ["==", "military", "training_area"]
       ],
-      "layout": {"visibility": "none"},
-      "paint": {
-        "fill-color": "#BFBFBF",
-        "fill-outline-color": "red",
-        "fill-pattern": "red_nwse_pattern"
-      }
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-outline-color": "red", "fill-pattern": "red_nwse_pattern"}
     },
     {
       "id": "area-military",
@@ -160,11 +156,7 @@
         ["!=", "military", "training_area"]
       ],
       "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-color": "#BFBFBF",
-        "fill-outline-color": "red",
-        "fill-pattern": "red_nesw_pattern"
-      }
+      "paint": {"fill-outline-color": "red", "fill-pattern": "red_nesw_pattern"}
     },
     {
       "id": "Terrain",
@@ -416,8 +408,6 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "aeroway",
-      "minzoom": 11,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "runway"]],
       "layout": {"visibility": "visible"},
       "paint": {
@@ -1042,6 +1032,162 @@
       },
       "paint": {
         "text-color": "#1E80E2",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "place-farm",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 15,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "isolated_dwelling"]],
+      "layout": {
+        "text-field": "{name}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Regular"],
+        "visibility": "visible",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "symbol-spacing": 250,
+        "text-max-angle": 45,
+        "text-keep-upright": true,
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "rgba(26, 26, 26, 1)",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "place-hamlet",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 14.5,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "hamlet"]],
+      "layout": {
+        "text-field": "{name}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Regular"],
+        "visibility": "visible",
+        "text-size": {"base": 1.4, "stops": [[14.5, 10], [16, 16]]},
+        "text-letter-spacing": 0.2,
+        "symbol-spacing": 250,
+        "text-max-angle": 45,
+        "text-keep-upright": true,
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "rgba(26, 26, 26, 1)",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "place-village",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "village"]],
+      "layout": {
+        "text-field": "{name}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Regular"],
+        "visibility": "visible",
+        "text-size": {"base": 1.4, "stops": [[13, 10], [16, 20]]},
+        "text-letter-spacing": 0.2,
+        "symbol-spacing": 250,
+        "text-max-angle": 45,
+        "text-keep-upright": true,
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "rgba(26, 26, 26, 1)",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "place-suburb",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 13,
+      "maxzoom": 15,
+      "filter": ["all", ["==", "class", "suburb"]],
+      "layout": {
+        "text-field": "{name}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Regular"],
+        "visibility": "visible",
+        "text-size": 12,
+        "text-letter-spacing": 0.2,
+        "symbol-spacing": 250,
+        "text-max-angle": 45,
+        "text-keep-upright": true,
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "rgba(26, 26, 26, 1)",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "place-town",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 11,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "town"]],
+      "layout": {
+        "text-field": "{name}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Regular"],
+        "visibility": "visible",
+        "text-size": {"base": 1.4, "stops": [[10, 12], [16, 20]]},
+        "text-letter-spacing": 0.2,
+        "symbol-spacing": 250,
+        "text-max-angle": 45,
+        "text-keep-upright": true,
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "rgba(26, 26, 26, 1)",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "place-city",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 8,
+      "maxzoom": 14,
+      "filter": ["all", ["==", "class", "city"]],
+      "layout": {
+        "text-field": "{name}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Regular"],
+        "visibility": "visible",
+        "text-size": {"base": 1.4, "stops": [[8, 12], [10, 16], [14, 20]]},
+        "text-letter-spacing": 0.2,
+        "symbol-spacing": 250,
+        "text-max-angle": 45,
+        "text-keep-upright": true,
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "rgba(26, 26, 26, 1)",
         "text-halo-color": "white",
         "text-halo-width": 1.5
       }
