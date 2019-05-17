@@ -786,7 +786,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["any", ["==", "class", "minor"], ["==", "class", "service"]],
+      "filter": ["all", ["in", "class", "minor", "unclassified", "service"]],
       "layout": {
         "visibility": "visible",
         "line-cap": "round",
@@ -1018,7 +1018,7 @@
       "paint": {
         "text-color": "#1E80E2",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -1045,7 +1045,114 @@
       }
     },
     {
-      "id": "place-peak-dot",
+      "id": "water-tank",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["in", "subclass", "storage_tank", "water_tower"],
+        ["==", "class", "water"]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "water_tank",
+        "icon-size": 0.4,
+        "icon-allow-overlap": true
+      },
+      "paint": {}
+    },
+    {
+      "id": "water-hole",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "waterhole"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "water_hole",
+        "icon-size": 0.4,
+        "icon-allow-overlap": true
+      },
+      "paint": {}
+    },
+    {
+      "id": "water-well",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "water_well"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "water_well",
+        "icon-size": 0.4,
+        "icon-allow-overlap": true
+      },
+      "paint": {}
+    },
+    {
+      "id": "water-cistern",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "cistern"]],
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "cistern",
+        "icon-size": 0.4,
+        "icon-allow-overlap": true
+      },
+      "paint": {}
+    },
+    {
+      "id": "water-spring",
+      "type": "circle",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "spring"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "circle-radius": 2.5,
+        "circle-color": "#1E80E2",
+        "circle-stroke-color": "white",
+        "circle-stroke-width": 1.2
+      }
+    },
+    {
+      "id": "water-point-name",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["has", "name"], ["in", "class", "water"]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2
+      },
+      "paint": {
+        "text-color": "#1E80E2",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 5]
+      }
+    },
+    {
+      "id": "peak-dot",
       "type": "circle",
       "source": "IHM",
       "source-layer": "mountain_peak",
@@ -1056,7 +1163,7 @@
       "paint": {"circle-radius": 3}
     },
     {
-      "id": "place-peak-ele",
+      "id": "peak-ele",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "mountain_peak",
@@ -1085,7 +1192,7 @@
       }
     },
     {
-      "id": "place-peak",
+      "id": "peak-text",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "mountain_peak",
