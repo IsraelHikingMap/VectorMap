@@ -178,11 +178,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "subclass", "steps"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "butt",
-        "line-join": "miter"
-      },
+      "layout": {"line-cap": "butt", "line-join": "miter"},
       "paint": {
         "line-color": "white",
         "line-width": {"stops": [[13, 2], [14, 5.5]]}
@@ -195,11 +191,7 @@
       "source-layer": "transportation",
       "minzoom": 13,
       "filter": ["all", ["==", "class", "path"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "white",
         "line-width": {"stops": [[13, 2], [16, 2.5]]}
@@ -212,11 +204,7 @@
       "source-layer": "transportation",
       "minzoom": 13,
       "filter": ["all", ["==", "class", "track"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-width": {"stops": [[14, 1], [16, 1.8]]},
         "line-color": "rgba(247, 244, 242, 1)"
@@ -229,11 +217,7 @@
       "source-layer": "transportation",
       "minzoom": 13,
       "filter": ["all", ["in", "class", "minor", "service"]],
-      "layout": {
-        "visibility": "visible",
-        "line-join": "round",
-        "line-cap": "round"
-      },
+      "layout": {"line-join": "round", "line-cap": "round"},
       "paint": {
         "line-color": ["coalesce", ["get", "colour"], "#808080"],
         "line-width": {"stops": [[13, 2], [14, 3.5], [16, 6]]}
@@ -246,11 +230,7 @@
       "source-layer": "transportation",
       "minzoom": 12,
       "filter": ["all", ["==", "class", "tertiary"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": ["to-color", ["get", "colour"], "#808080"],
         "line-width": {"stops": [[13, 3.5], [16, 6]]}
@@ -263,11 +243,7 @@
       "source-layer": "transportation",
       "minzoom": 12,
       "filter": ["all", ["==", "class", "secondary"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": ["to-color", ["get", "colour"], "#808080"],
         "line-width": {"stops": [[12, 2], [13, 3.5], [16, 6]]}
@@ -280,11 +256,7 @@
       "source-layer": "transportation",
       "minzoom": 10,
       "filter": ["all", ["==", "class", "primary"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": ["to-color", ["get", "colour"], "#808080"],
         "line-width": {"stops": [[10, 1], [12, 1.5], [16, 6]]}
@@ -297,11 +269,7 @@
       "source-layer": "transportation",
       "minzoom": 7,
       "filter": ["all", ["==", "class", "trunk"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": ["to-color", ["get", "colour"], "#808080"],
         "line-width": {"stops": [[7, 1], [9, 1.5], [16, 6]]}
@@ -314,11 +282,7 @@
       "source-layer": "transportation",
       "minzoom": 6,
       "filter": ["all", ["==", "class", "motorway"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": ["to-color", ["get", "colour"], "#808080"],
         "line-width": {"stops": [[7, 1], [9, 1.5], [16, 6]]}
@@ -465,12 +429,11 @@
       "maxzoom": 24,
       "filter": ["all", ["==", "class", "fence"]],
       "layout": {
-        "visibility": "visible",
         "symbol-placement": "line",
         "icon-image": "cross_pattern",
         "symbol-spacing": 1,
         "icon-allow-overlap": true,
-        "icon-size": 0.2
+        "icon-size": 0.17
       },
       "paint": {}
     },
@@ -529,11 +492,7 @@
         ["==", "network", "rwn"],
         ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
       ],
-      "layout": {
-        "visibility": "visible",
-        "line-join": "miter",
-        "line-cap": "butt"
-      },
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": [
           "match",
@@ -575,11 +534,7 @@
         ["==", "network", "rwn"],
         ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
       ],
-      "layout": {
-        "visibility": "visible",
-        "line-join": "miter",
-        "line-cap": "butt"
-      },
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": [
           "match",
@@ -613,11 +568,7 @@
       "minzoom": 11,
       "maxzoom": 13,
       "filter": ["all", ["in", "network", "lwn", "rwn"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-width": 1,
         "line-color": [
@@ -670,11 +621,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "subclass", "steps"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "butt",
-        "line-join": "miter"
-      },
+      "layout": {"line-cap": "butt", "line-join": "miter"},
       "paint": {
         "line-dasharray": [0.2, 0.3],
         "line-width": {"stops": [[13, 1.5], [14, 5]]},
@@ -687,11 +634,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "subclass", "footway"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "butt",
-        "line-join": "miter"
-      },
+      "layout": {"line-cap": "butt", "line-join": "miter"},
       "paint": {
         "line-dasharray": [1, 1],
         "line-width": {"stops": [[13, 1.5], [14, 2]]},
@@ -704,11 +647,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "subclass", "cycleway"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "butt",
-        "line-join": "miter"
-      },
+      "layout": {"line-cap": "butt", "line-join": "miter"},
       "paint": {
         "line-dasharray": [3, 1, 1, 1],
         "line-width": {"stops": [[13, 1.5], [14, 2]]},
@@ -735,11 +674,7 @@
       "source-layer": "transportation",
       "minzoom": 13,
       "filter": ["all", ["==", "class", "track"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [3, 2],
         "line-offset": {"stops": [[14, 1.2], [16, 2]]},
@@ -759,11 +694,7 @@
       "source-layer": "transportation",
       "minzoom": 13,
       "filter": ["all", ["==", "class", "track"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [3, 2],
         "line-offset": {"stops": [[14, -1.2], [16, -2]]},
@@ -787,11 +718,7 @@
       "source-layer": "transportation",
       "minzoom": 13,
       "filter": ["all", ["in", "class", "minor", "unclassified", "service"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
         "line-width": {"stops": [[13, 1], [14, 2], [16, 3]]}
@@ -804,11 +731,7 @@
       "source-layer": "transportation",
       "minzoom": 12,
       "filter": ["all", ["==", "class", "tertiary"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(255, 230, 107, 1)",
         "line-width": {"stops": [[13, 2], [16, 3]]}
@@ -821,11 +744,7 @@
       "source-layer": "transportation",
       "minzoom": 12,
       "filter": ["all", ["==", "class", "secondary"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "#303030",
         "line-width": {"stops": [[12, 1.5], [13, 2], [16, 3]]}
@@ -838,11 +757,7 @@
       "source-layer": "transportation",
       "minzoom": 10,
       "filter": ["all", ["==", "class", "primary"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "green",
         "line-width": {"stops": [[10, 0.5], [12, 1], [16, 3]]}
@@ -855,11 +770,7 @@
       "source-layer": "transportation",
       "minzoom": 7,
       "filter": ["all", ["==", "class", "trunk"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "red",
         "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
@@ -872,11 +783,7 @@
       "source-layer": "transportation",
       "minzoom": 6,
       "filter": ["all", ["==", "class", "motorway"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "blue",
         "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
@@ -896,7 +803,6 @@
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
         "text-rotation-alignment": "viewport",
-        "visibility": "visible",
         "icon-image": "shield_brown",
         "icon-size": 1,
         "icon-rotation-alignment": "viewport",
@@ -920,7 +826,6 @@
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
         "text-rotation-alignment": "viewport",
-        "visibility": "visible",
         "icon-image": "shield_green",
         "icon-size": 1,
         "icon-rotation-alignment": "viewport",
@@ -944,7 +849,6 @@
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
         "text-rotation-alignment": "viewport",
-        "visibility": "visible",
         "icon-image": "shield_red",
         "icon-size": 1,
         "icon-rotation-alignment": "viewport",
@@ -968,7 +872,6 @@
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
         "text-rotation-alignment": "viewport",
-        "visibility": "visible",
         "icon-image": "shield_blue",
         "icon-size": 1,
         "icon-rotation-alignment": "viewport",
@@ -993,12 +896,305 @@
       }
     },
     {
+      "id": "icon-holy",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": [
+        "all",
+        ["in", "class", "place_of_worship", "monastery"],
+        ["!in", "subclass", "jewish", "muslim", "christian"]
+      ],
+      "layout": {
+        "icon-image": "holy_place",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-jewish",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": [
+        "all",
+        ["in", "class", "place_of_worship", "monastery"],
+        ["==", "subclass", "jewish"]
+      ],
+      "layout": {
+        "icon-image": "synagogue",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-muslim",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": [
+        "all",
+        ["in", "class", "place_of_worship", "monastery"],
+        ["==", "subclass", "muslim"]
+      ],
+      "layout": {
+        "icon-image": "mosque",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-christian",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": [
+        "all",
+        ["in", "class", "place_of_worship", "monastery"],
+        ["==", "subclass", "christian"]
+      ],
+      "layout": {
+        "icon-image": "church",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-ignore-placement": false,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-fuel",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "fuel"]],
+      "layout": {"icon-image": "gas", "icon-size": 0.5}
+    },
+    {
+      "id": "icon-parking",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "parking"]],
+      "layout": {
+        "icon-image": "parking",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true,
+        "icon-optional": true,
+        "icon-padding": 50
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-picnic",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "picnic_site"]],
+      "layout": {
+        "icon-image": "picnic",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-ruins",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "ruins"]],
+      "layout": {
+        "icon-image": "ruins",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-archaeological",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "archaeological_site"]],
+      "layout": {
+        "icon-image": "jar",
+        "icon-size": 0.5,
+        "visibility": "visible",
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-cave",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["in", "subclass", "cave_entrance", "hypogeum"]],
+      "layout": {
+        "icon-image": "cave",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-tree",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "tree"]],
+      "layout": {
+        "icon-image": "tree",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-camp_site",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "camp_site"]],
+      "layout": {
+        "icon-image": "camping",
+        "icon-size": 0.5,
+        "text-field": "{name}",
+        "text-font": ["Open Sans Regular"],
+        "text-anchor": "top",
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
       "id": "icon-viewpoint",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
       "filter": ["all", ["==", "subclass", "viewpoint"]],
-      "layout": {"icon-image": "viewpoint", "icon-size": 0.5}
+      "layout": {
+        "text-field": "{name}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
+        "text-letter-spacing": 0.2,
+        "symbol-spacing": 250,
+        "text-max-angle": 45,
+        "text-keep-upright": true,
+        "text-max-width": 10,
+        "text-allow-overlap": true,
+        "text-anchor": "bottom-right",
+        "text-justify": "right",
+        "icon-image": "viewpoint",
+        "icon-size": 0.5,
+        "icon-allow-overlap": true,
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "rgba(26, 26, 26, 1)",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-translate": {"stops": [[15, [0, -5]], [16, [0, -8]]]}
+      }
     },
     {
       "id": "water-line-name",
@@ -1009,7 +1205,6 @@
         "text-field": "{name}",
         "symbol-placement": "line-center",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": 12,
         "text-letter-spacing": 1,
         "text-max-angle": 180,
@@ -1030,7 +1225,6 @@
         "text-field": "{name}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": 12,
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
@@ -1045,6 +1239,21 @@
       }
     },
     {
+      "id": "water-drinking",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "drinking_water"]],
+      "layout": {
+        "icon-image": "tap",
+        "icon-size": 0.4,
+        "icon-allow-overlap": true
+      },
+      "paint": {}
+    },
+    {
       "id": "water-tank",
       "type": "symbol",
       "source": "IHM",
@@ -1057,7 +1266,6 @@
         ["==", "class", "water"]
       ],
       "layout": {
-        "visibility": "visible",
         "icon-image": "water_tank",
         "icon-size": 0.4,
         "icon-allow-overlap": true
@@ -1073,7 +1281,6 @@
       "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "waterhole"]],
       "layout": {
-        "visibility": "visible",
         "icon-image": "water_hole",
         "icon-size": 0.4,
         "icon-allow-overlap": true
@@ -1089,7 +1296,6 @@
       "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "water_well"]],
       "layout": {
-        "visibility": "visible",
         "icon-image": "water_well",
         "icon-size": 0.4,
         "icon-allow-overlap": true
@@ -1105,12 +1311,28 @@
       "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "cistern"]],
       "layout": {
-        "visibility": "visible",
+        "visibility": "none",
         "icon-image": "cistern",
         "icon-size": 0.4,
         "icon-allow-overlap": true
       },
       "paint": {}
+    },
+    {
+      "id": "water-cistern-temp",
+      "type": "circle",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "cistern"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "circle-radius": 3,
+        "circle-color": "rgba(30, 128, 226, 0)",
+        "circle-stroke-color": "#1E80E2",
+        "circle-stroke-width": 1.2
+      }
     },
     {
       "id": "water-spring",
@@ -1138,17 +1360,17 @@
       "filter": ["all", ["has", "name"], ["in", "class", "water"]],
       "layout": {
         "text-field": "{name}",
-        "visibility": "visible",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
-        "text-letter-spacing": 0.2
+        "text-letter-spacing": 0.2,
+        "text-optional": true
       },
       "paint": {
         "text-color": "#1E80E2",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-translate": [0, 5]
+        "text-translate": [0, 6]
       }
     },
     {
@@ -1174,7 +1396,6 @@
         "text-field": "{ele}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
@@ -1202,14 +1423,13 @@
         "text-field": "{name}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
         "text-max-angle": 45,
-        "text-keep-upright": true,
+        "text-keep-upright": false,
         "text-max-width": 10,
-        "text-allow-overlap": false,
+        "text-allow-overlap": true,
         "text-anchor": "bottom-right",
         "text-justify": "right"
       },
@@ -1232,7 +1452,6 @@
         "text-field": "{name}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
@@ -1258,7 +1477,6 @@
         "text-field": "{name}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": {"base": 1.4, "stops": [[14.5, 10], [16, 16]]},
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
@@ -1284,7 +1502,6 @@
         "text-field": "{name}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": {"base": 1.4, "stops": [[13, 10], [16, 20]]},
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
@@ -1310,7 +1527,6 @@
         "text-field": "{name}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": 12,
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
@@ -1336,7 +1552,6 @@
         "text-field": "{name}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": {"base": 1.4, "stops": [[10, 12], [16, 20]]},
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
@@ -1362,7 +1577,6 @@
         "text-field": "{name}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "visibility": "visible",
         "text-size": {"base": 1.4, "stops": [[8, 12], [10, 16], [14, 20]]},
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
