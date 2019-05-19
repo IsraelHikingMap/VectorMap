@@ -1033,6 +1033,14 @@
       }
     },
     {
+      "id": "icon-guidepost",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "guidepost"]],
+      "layout": {"icon-image": "sign", "icon-size": 0.5}
+    },
+    {
       "id": "icon-picnic",
       "type": "symbol",
       "source": "IHM",
