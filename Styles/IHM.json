@@ -1227,7 +1227,8 @@
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
         "text-letter-spacing": 0.2,
-        "text-optional": true
+        "text-optional": true,
+        "icon-allow-overlap": true
       },
       "paint": {
         "text-halo-color": "white",
@@ -1311,6 +1312,62 @@
       }
     },
     {
+      "id": "gate-cattle_grid",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "barrier",
+      "filter": ["all", ["==", "class", "cattle_grid"]],
+      "layout": {
+        "symbol-placement": "point",
+        "icon-image": "cattle_grid",
+        "icon-size": 0.5,
+        "icon-allow-overlap": true,
+        "visibility": "visible"
+      }
+    },
+    {
+      "id": "gate-open",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "barrier",
+      "filter": ["all", ["==", "class", "open_gate"]],
+      "layout": {
+        "symbol-placement": "point",
+        "icon-image": "gate_open",
+        "icon-size": 0.5,
+        "icon-allow-overlap": true,
+        "visibility": "visible"
+      }
+    },
+    {
+      "id": "gate-no_vehicles",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "barrier",
+      "filter": ["all", ["==", "class", "no_vehicles"]],
+      "layout": {
+        "symbol-placement": "point",
+        "icon-image": "bollards",
+        "icon-size": 0.5,
+        "icon-allow-overlap": true,
+        "visibility": "visible"
+      }
+    },
+    {
+      "id": "gate-closed",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "barrier",
+      "filter": ["all", ["==", "class", "closed_gate"]],
+      "layout": {
+        "symbol-placement": "point",
+        "icon-image": "gate_closed",
+        "icon-size": 0.5,
+        "icon-allow-overlap": true,
+        "visibility": "visible"
+      }
+    },
+    {
       "id": "water-line-name",
       "type": "symbol",
       "source": "IHM",
@@ -1360,11 +1417,7 @@
       "minzoom": 12,
       "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "drinking_water"]],
-      "layout": {
-        "icon-image": "tap",
-        "icon-size": 0.4,
-        "icon-allow-overlap": true
-      },
+      "layout": {"icon-image": "tap", "icon-size": 0.4},
       "paint": {}
     },
     {
