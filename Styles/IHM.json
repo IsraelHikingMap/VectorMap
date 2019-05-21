@@ -343,11 +343,20 @@
       }
     },
     {
-      "id": "boundary-country",
+      "id": "boundary-country-dash",
       "type": "line",
       "source": "IHM",
       "source-layer": "boundary",
-      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]]
+      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
+      "paint": {"line-dasharray": [2.5, 6, 1.5, 0]}
+    },
+    {
+      "id": "boundary-country-bar",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "boundary",
+      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
+      "paint": {"line-dasharray": [0.2, 1.8], "line-width": 5}
     },
     {
       "id": "aeroway-helipad",
@@ -813,10 +822,7 @@
       "source-layer": "transportation",
       "minzoom": 11,
       "filter": ["all", ["==", "class", "rail"]],
-      "layout": {
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-width": 3, "line-color": "gray"}
     },
     {
