@@ -37,10 +37,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "subclass", "sand"]],
-      "paint": {
-        "fill-color": "rgba(255, 236, 139, 0.25)",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "rgba(255, 236, 139, 0.25)"}
     },
     {
       "id": "area-wood",
@@ -48,10 +45,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "wood"]],
-      "paint": {
-        "fill-color": "rgba(145, 230, 145, 0.5)",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "rgba(145, 230, 145, 0.5)"}
     },
     {
       "id": "area-farmland",
@@ -59,10 +53,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "farmland"]],
-      "paint": {
-        "fill-color": "#E7E9C9",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "#E7E9C9"}
     },
     {
       "id": "area-plantation",
@@ -70,10 +61,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "subclass", "orchard"]],
-      "paint": {
-        "fill-color": "rgba(19, 196, 42, 0.4)",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "rgba(19, 196, 42, 0.4)"}
     },
     {
       "id": "area-beach",
@@ -81,10 +69,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "subclass", "beach"]],
-      "paint": {
-        "fill-color": "#FAFAA0",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "#FAFAA0"}
     },
     {
       "id": "area-grass",
@@ -92,10 +77,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "grass"]],
-      "paint": {
-        "fill-color": "rgba(233, 253, 204, 1)",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "rgba(233, 253, 204, 1)"}
     },
     {
       "id": "area-cemetery",
@@ -105,10 +87,7 @@
       "minzoom": 0,
       "maxzoom": 24,
       "filter": ["all", ["==", "class", "cemetery"]],
-      "paint": {
-        "fill-color": "#CCCCCC",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "#CCCCCC"}
     },
     {
       "id": "area-quarry",
@@ -116,10 +95,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "subclass", "quarry"]],
-      "paint": {
-        "fill-color": "#BFBFBF",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "#BFBFBF"}
     },
     {
       "id": "area-military-training",
@@ -336,6 +312,45 @@
         "fill-color": "#8EBDF0",
         "fill-antialias": true,
         "fill-outline-color": "#1E80E2"
+      }
+    },
+    {
+      "id": "boundary-park-casing",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "park",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all"],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-pattern": "gradient_pattern",
+        "line-width": 8,
+        "line-offset": 5,
+        "line-opacity": 0.3
+      }
+    },
+    {
+      "id": "boundary-park",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "park",
+      "minzoom": 9,
+      "filter": ["all"],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-pattern": "",
+        "line-width": 2,
+        "line-offset": 0,
+        "line-opacity": 1,
+        "line-color": "#709d56",
+        "line-dasharray": [8, 2, 1, 2, 1, 2]
       }
     },
     {
@@ -994,6 +1009,20 @@
       "paint": {"text-color": "blue"}
     },
     {
+      "id": "icon-quarry",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "quarry"]],
+      "layout": {
+        "icon-image": "quarry",
+        "icon-size": {"stops": [[13, 0.4], [14, 0.5]]},
+        "icon-padding": 20
+      }
+    },
+    {
       "id": "icon-cemerery",
       "type": "symbol",
       "source": "IHM",
@@ -1321,8 +1350,7 @@
         "symbol-placement": "point",
         "icon-image": "cattle_grid",
         "icon-size": 0.5,
-        "icon-allow-overlap": true,
-        "visibility": "visible"
+        "icon-allow-overlap": true
       }
     },
     {
@@ -1335,8 +1363,7 @@
         "symbol-placement": "point",
         "icon-image": "gate_open",
         "icon-size": 0.5,
-        "icon-allow-overlap": true,
-        "visibility": "visible"
+        "icon-allow-overlap": true
       }
     },
     {
@@ -1349,8 +1376,7 @@
         "symbol-placement": "point",
         "icon-image": "bollards",
         "icon-size": 0.5,
-        "icon-allow-overlap": true,
-        "visibility": "visible"
+        "icon-allow-overlap": true
       }
     },
     {
@@ -1363,8 +1389,7 @@
         "symbol-placement": "point",
         "icon-image": "gate_closed",
         "icon-size": 0.5,
-        "icon-allow-overlap": true,
-        "visibility": "visible"
+        "icon-allow-overlap": true
       }
     },
     {
