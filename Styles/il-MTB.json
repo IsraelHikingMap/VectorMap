@@ -1394,125 +1394,96 @@
       }
     },
     {
-      "id": "shield_motorway",
+      "id": "shield-secondary",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
-      "minzoom": 9,
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        [">=", "ref_length", 1],
-        ["==", "class", "motorway"]
-      ],
+      "minzoom": 12,
+      "filter": ["all", ["in", "class", "secondary"], ["has", "ref"]],
       "layout": {
         "symbol-placement": "line",
         "text-field": "{ref}",
         "text-font": ["Open Sans Regular"],
-        "text-letter-spacing": 0.1,
-        "text-size": {"base": 1.4, "stops": [[10, 9], [20, 12]]},
-        "text-rotation-alignment": "viewport",
-        "icon-image": "shield_blue",
-        "symbol-spacing": 2000,
-        "icon-size": {"stops": [[6, 0.2], [14, 0.4]]},
-        "icon-ignore-placement": false,
-        "icon-rotation-alignment": "viewport"
-      },
-      "paint": {
-        "text-color": "rgba(0, 0, 255, 1)",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 0
-      }
-    },
-    {
-      "id": "shield_trunk",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "minzoom": 9,
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        [">=", "ref_length", 1],
-        ["==", "class", "trunk"]
-      ],
-      "layout": {
-        "symbol-placement": "line",
-        "text-field": "{ref}",
-        "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[10, 9], [20, 12]]},
-        "text-rotation-alignment": "viewport",
-        "icon-image": "shield_red",
-        "symbol-spacing": 2000,
-        "icon-size": {"stops": [[6, 0.2], [14, 0.4]]},
-        "icon-ignore-placement": false,
-        "icon-rotation-alignment": "viewport"
-      },
-      "paint": {
-        "text-color": "rgba(255, 0, 0, 1)",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 0
-      }
-    },
-    {
-      "id": "shield_primary",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "minzoom": 9,
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        [">=", "ref_length", 1],
-        ["==", "class", "primary"]
-      ],
-      "layout": {
-        "symbol-placement": "line",
-        "text-field": "{ref}",
-        "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[10, 9], [20, 12]]},
-        "text-rotation-alignment": "viewport",
-        "icon-image": "shield_green",
-        "symbol-spacing": 2000,
-        "icon-size": {"stops": [[6, 0.2], [14, 0.4]]},
-        "icon-ignore-placement": false,
-        "icon-rotation-alignment": "viewport"
-      },
-      "paint": {
-        "text-color": "rgba(0, 162, 0, 1)",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 0
-      }
-    },
-    {
-      "id": "shield_secondary",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "minzoom": 9,
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        [">=", "ref_length", 1],
-        ["==", "class", "secondary"]
-      ],
-      "layout": {
-        "symbol-placement": "line",
-        "text-field": "{ref}",
-        "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[10, 9], [20, 12]]},
+        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
         "text-rotation-alignment": "viewport",
         "icon-image": "shield_brown",
-        "symbol-spacing": 2000,
-        "icon-size": {"stops": [[6, 0.2], [14, 0.4]]},
-        "icon-ignore-placement": false,
-        "icon-rotation-alignment": "viewport"
+        "icon-size": 1,
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]},
+        "icon-text-fit": "both",
+        "icon-padding": 2,
+        "icon-text-fit-padding": [2, 6, 2, 6]
       },
-      "paint": {
-        "text-color": "rgba(0, 0, 0, 1)",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 0
-      }
+      "paint": {"text-color": "black"}
+    },
+    {
+      "id": "shield-primary",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 10,
+      "filter": ["all", ["in", "class", "primary"], ["has", "ref"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-rotation-alignment": "viewport",
+        "icon-image": "shield_green",
+        "icon-size": 1,
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]},
+        "icon-text-fit": "both",
+        "icon-padding": 2,
+        "icon-text-fit-padding": [2, 6, 2, 6]
+      },
+      "paint": {"text-color": "green"}
+    },
+    {
+      "id": "shield-trunk",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 7,
+      "filter": ["all", ["in", "class", "trunk"], ["has", "ref"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-rotation-alignment": "viewport",
+        "icon-image": "shield_red",
+        "icon-size": 1,
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]},
+        "icon-text-fit": "both",
+        "icon-padding": 2,
+        "icon-text-fit-padding": [2, 6, 2, 6]
+      },
+      "paint": {"text-color": "red"}
+    },
+    {
+      "id": "shield-motorway",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 8,
+      "filter": ["all", ["in", "class", "motorway"], ["has", "ref"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-rotation-alignment": "viewport",
+        "icon-image": "shield_blue",
+        "icon-size": 1,
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": {"stops": [[8, 250], [14, 500]]},
+        "icon-text-fit": "both",
+        "icon-padding": 2,
+        "icon-text-fit-padding": [2, 6, 2, 6]
+      },
+      "paint": {"text-color": "blue"}
     },
     {
       "id": "road_rural_direction",
@@ -2697,7 +2668,7 @@
       "layout": {
         "icon-image": "RTG",
         "text-size": {"stops": [[14, 13], [20, 22]]},
-        "icon-size": {"stops": [[10, 0.6], [20, 1]]},
+        "icon-size": {"stops": [[10, 0.4], [20, 1]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name:he}",
         "text-max-width": 5,
