@@ -594,7 +594,7 @@
       "filter": [
         "all",
         ["==", "$type", "LineString"],
-        ["==", "class", "track"],
+        ["in", "class", "unclassified", "track"],
         ["in", "tracktype", "grade1", "grade2"],
         ["!=", "brunnel", "tunnel"]
       ],
@@ -632,7 +632,7 @@
       "filter": [
         "all",
         ["==", "$type", "LineString"],
-        ["==", "class", "track"],
+        ["in", "class", "track", "unclassified"],
         ["!=", "brunnel", "tunnel"]
       ],
       "layout": {
@@ -2695,7 +2695,7 @@
       "minzoom": 11,
       "filter": ["all"],
       "layout": {
-        "icon-image": "tree",
+        "icon-image": "RTG",
         "text-size": {"stops": [[14, 13], [20, 22]]},
         "icon-size": {"stops": [[10, 0.6], [20, 1]]},
         "text-font": ["Open Sans Regular"],
