@@ -7,10 +7,9 @@
   "bearing": 0,
   "pitch": 0,
   "sources": {
-    "hillshading": {
-      "type": "raster",
-      "url": "https://klokantech.tilehosting.com/data/hillshades.json?key=tXme5cuqgrCqdPoZHqyn",
-      "tileSize": 256
+      "Israel-TerrainRGB": {
+      "type": "raster-dem",
+      "url": "https://israelhiking.osm.org.il/data/TerrainRGB.json"
     },
     "contours": {
       "type": "vector",
@@ -104,18 +103,6 @@
       }
     },
     {
-      "id": "land_pitch",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 13,
-      "filter": ["all", ["==", "class", "pitch"]],
-      "paint": {
-        "fill-color": "rgba(210, 232, 155, 1)",
-        "fill-outline-color": "rgba(181, 199, 134, 1)"
-      }
-    },
-    {
       "id": "land_scrub_solid",
       "type": "fill",
       "source": "IHM",
@@ -187,7 +174,7 @@
       }
     },
     {
-      "id": "land-residential",
+      "id": "land-residential-copy",
       "type": "fill",
       "source": "IHM",
       "source-layer": "landuse",
@@ -200,6 +187,32 @@
       "paint": {
         "fill-color": "rgba(224, 224, 224, 1)",
         "fill-outline-color": "rgba(187, 187, 187, 1)"
+      }
+    },
+    {
+      "id": "land-quarry",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 9,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "quarry"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(106, 104, 104, 0.36)",
+        "fill-outline-color": "rgba(20, 19, 19, 1)"
+      }
+    },
+    {
+      "id": "land_pitch",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "pitch"]],
+      "paint": {
+        "fill-color": "rgba(210, 232, 155, 1)",
+        "fill-outline-color": "rgba(181, 199, 134, 1)"
       }
     },
     {
@@ -281,17 +294,10 @@
         "text-halo-width": 2
       }
     },
-    {
-      "id": "hillshading",
-      "type": "raster",
-      "source": "hillshading",
-      "minzoom": 0,
-      "paint": {
-        "raster-opacity": {"base": 0.5, "stops": [[10, 0.15], [20, 0.35]]},
-        "raster-fade-duration": 300,
-        "raster-contrast": 0
-      }
-    },
+    {"id": "Terrain",
+	"type": "hillshade",
+	"source": "Israel-TerrainRGB"
+	},
     {
       "id": "water",
       "type": "fill",
@@ -2656,6 +2662,26 @@
         "text-color": "rgba(255, 255, 255, 1)",
         "text-halo-color": "rgba(89, 87, 87, 1)",
         "text-halo-width": 1
+      }
+    },
+    {
+      "id": "label_quarry",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "subclass", "quarry"]],
+      "layout": {
+        "icon-image": "quarry",
+        "icon-size": {"stops": [[10, 0.5], [20, 1]]},
+        "symbol-spacing": 150
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "icon-color": "rgba(7, 7, 7, 1)"
       }
     },
     {
