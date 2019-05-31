@@ -37,10 +37,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "subclass", "sand"]],
-      "paint": {
-        "fill-color": "rgba(255, 236, 139, 0.25)",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "rgba(255, 236, 139, 0.25)"}
     },
     {
       "id": "area-wood",
@@ -48,10 +45,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "wood"]],
-      "paint": {
-        "fill-color": "rgba(145, 230, 145, 0.5)",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "rgba(145, 230, 145, 0.5)"}
     },
     {
       "id": "area-farmland",
@@ -59,10 +53,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "farmland"]],
-      "paint": {
-        "fill-color": "#E7E9C9",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "#E7E9C9"}
     },
     {
       "id": "area-plantation",
@@ -70,10 +61,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "subclass", "orchard"]],
-      "paint": {
-        "fill-color": "rgba(19, 196, 42, 0.4)",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "rgba(19, 196, 42, 0.4)"}
     },
     {
       "id": "area-beach",
@@ -81,10 +69,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "subclass", "beach"]],
-      "paint": {
-        "fill-color": "#FAFAA0",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "#FAFAA0"}
     },
     {
       "id": "area-grass",
@@ -92,10 +77,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "grass"]],
-      "paint": {
-        "fill-color": "rgba(233, 253, 204, 1)",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "rgba(233, 253, 204, 1)"}
     },
     {
       "id": "area-cemetery",
@@ -103,12 +85,8 @@
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 0,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "cemetery"]],
-      "paint": {
-        "fill-color": "#CCCCCC",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "#CCCCCC"}
     },
     {
       "id": "area-quarry",
@@ -116,10 +94,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "subclass", "quarry"]],
-      "paint": {
-        "fill-color": "#BFBFBF",
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
+      "paint": {"fill-color": "#BFBFBF"}
     },
     {
       "id": "area-military-training",
@@ -176,7 +151,6 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "subclass", "steps"]],
-      "layout": {"line-cap": "butt", "line-join": "miter"},
       "paint": {
         "line-color": "white",
         "line-width": {"stops": [[13, 2], [14, 5.5]]}
@@ -339,11 +313,62 @@
       }
     },
     {
-      "id": "boundary-country",
+      "id": "boundary-park-casing",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "park",
+      "minzoom": 13,
+      "filter": ["all"],
+      "paint": {
+        "line-pattern": "gradient_pattern",
+        "line-width": 8,
+        "line-offset": 5,
+        "line-opacity": 0.3
+      }
+    },
+    {
+      "id": "boundary-park",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "park",
+      "minzoom": 9,
+      "filter": ["all"],
+      "paint": {
+        "line-pattern": "",
+        "line-width": 2,
+        "line-offset": 0,
+        "line-opacity": 1,
+        "line-color": "#709d56",
+        "line-dasharray": [8, 2, 1, 2, 1, 2]
+      }
+    },
+    {
+      "id": "boundary-country-dash",
       "type": "line",
       "source": "IHM",
       "source-layer": "boundary",
-      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]]
+      "minzoom": 8,
+      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
+      "paint": {"line-dasharray": [2.5, 6, 1.5, 0]}
+    },
+    {
+      "id": "boundary-country-bar",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "boundary",
+      "minzoom": 8,
+      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
+      "paint": {"line-dasharray": [0.2, 1.8], "line-width": 5}
+    },
+    {
+      "id": "boundary-country-line",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "boundary",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
+      "paint": {"line-opacity": 0.2}
     },
     {
       "id": "aeroway-helipad",
@@ -351,7 +376,6 @@
       "source": "IHM",
       "source-layer": "aeroway",
       "minzoom": 15,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "helipad"]],
       "paint": {
         "fill-opacity": 1,
@@ -365,7 +389,6 @@
       "source": "IHM",
       "source-layer": "aeroway",
       "minzoom": 13,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "taxiway"]],
       "paint": {
         "line-color": "rgba(96, 96, 96, 1)",
@@ -389,7 +412,6 @@
       "source": "IHM",
       "source-layer": "building",
       "minzoom": 15,
-      "maxzoom": 24,
       "filter": ["all"],
       "paint": {"fill-opacity": 1, "fill-color": "rgba(191, 191, 191, 1)"}
     },
@@ -399,7 +421,6 @@
       "source": "IHM",
       "source-layer": "linear_barrier",
       "minzoom": 14,
-      "maxzoom": 24,
       "filter": ["all", ["in", "class", "wall", "city_wall"]],
       "paint": {"line-color": "black", "line-width": 1.5}
     },
@@ -409,7 +430,6 @@
       "source": "IHM",
       "source-layer": "linear_barrier",
       "minzoom": 14,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "fence"]],
       "paint": {"line-color": "rgba(26, 26, 26, 1)"}
     },
@@ -419,7 +439,6 @@
       "source": "IHM",
       "source-layer": "linear_barrier",
       "minzoom": 14,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "fence"]],
       "layout": {
         "symbol-placement": "line",
@@ -469,7 +488,6 @@
         ["==", "network", "rwn"],
         ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": [
           "match",
@@ -511,7 +529,6 @@
         ["==", "network", "rwn"],
         ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": [
           "match",
@@ -598,7 +615,6 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "subclass", "steps"]],
-      "layout": {"line-cap": "butt", "line-join": "miter"},
       "paint": {
         "line-dasharray": [0.2, 0.3],
         "line-width": {"stops": [[13, 1.5], [14, 5]]},
@@ -611,7 +627,6 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "subclass", "footway"]],
-      "layout": {"line-cap": "butt", "line-join": "miter"},
       "paint": {
         "line-dasharray": [1, 1],
         "line-width": {"stops": [[13, 1.5], [14, 2]]},
@@ -624,7 +639,6 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "subclass", "cycleway"]],
-      "layout": {"line-cap": "butt", "line-join": "miter"},
       "paint": {
         "line-dasharray": [3, 1, 1, 1],
         "line-width": {"stops": [[13, 1.5], [14, 2]]},
@@ -814,13 +828,27 @@
       }
     },
     {
-      "id": "Railroad-fill",
+      "id": "casing-rail",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 11,
       "filter": ["all", ["==", "class", "rail"]],
-      "layout": {"visibility": "none"},
-      "paint": {"line-dasharray": [1, 0.5], "line-width": 5}
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-width": 3, "line-color": "gray"}
+    },
+    {
+      "id": "Railroad-dash",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "rail"]],
+      "paint": {
+        "line-dasharray": [4, 2],
+        "line-width": 2,
+        "line-color": "white"
+      }
     },
     {
       "id": "road-minor",
@@ -906,7 +934,6 @@
       "source": "IHM",
       "source-layer": "transportation_name",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": ["all", ["in", "class", "secondary"], ["has", "ref"]],
       "layout": {
         "symbol-placement": "line",
@@ -992,6 +1019,19 @@
         "icon-text-fit-padding": [2, 6, 2, 6]
       },
       "paint": {"text-color": "blue"}
+    },
+    {
+      "id": "icon-quarry",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 13,
+      "filter": ["all", ["==", "subclass", "quarry"]],
+      "layout": {
+        "icon-image": "quarry",
+        "icon-size": {"stops": [[13, 0.4], [14, 0.5]]},
+        "icon-padding": 20
+      }
     },
     {
       "id": "icon-cemerery",
@@ -1321,8 +1361,7 @@
         "symbol-placement": "point",
         "icon-image": "cattle_grid",
         "icon-size": 0.5,
-        "icon-allow-overlap": true,
-        "visibility": "visible"
+        "icon-allow-overlap": true
       }
     },
     {
@@ -1335,8 +1374,7 @@
         "symbol-placement": "point",
         "icon-image": "gate_open",
         "icon-size": 0.5,
-        "icon-allow-overlap": true,
-        "visibility": "visible"
+        "icon-allow-overlap": true
       }
     },
     {
@@ -1349,8 +1387,7 @@
         "symbol-placement": "point",
         "icon-image": "bollards",
         "icon-size": 0.5,
-        "icon-allow-overlap": true,
-        "visibility": "visible"
+        "icon-allow-overlap": true
       }
     },
     {
@@ -1363,8 +1400,7 @@
         "symbol-placement": "point",
         "icon-image": "gate_closed",
         "icon-size": 0.5,
-        "icon-allow-overlap": true,
-        "visibility": "visible"
+        "icon-allow-overlap": true
       }
     },
     {
@@ -1415,7 +1451,6 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "drinking_water"]],
       "layout": {"icon-image": "tap", "icon-size": 0.4},
       "paint": {}
@@ -1426,7 +1461,6 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": [
         "all",
         ["in", "subclass", "storage_tank", "water_tower"],
@@ -1445,7 +1479,6 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "waterhole"]],
       "layout": {
         "icon-image": "water_hole",
@@ -1460,7 +1493,6 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "water_well"]],
       "layout": {
         "icon-image": "water_well",
@@ -1475,7 +1507,6 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "cistern"]],
       "layout": {
         "visibility": "none",
@@ -1491,7 +1522,6 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "cistern"]],
       "paint": {
         "circle-radius": 3,
@@ -1506,7 +1536,6 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": ["all", ["==", "subclass", "spring"]],
       "paint": {
         "circle-radius": 2.5,
@@ -1521,7 +1550,6 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": ["all", ["has", "name"], ["in", "class", "water"]],
       "layout": {
         "text-field": "{name}",
@@ -1544,7 +1572,6 @@
       "source": "IHM",
       "source-layer": "mountain_peak",
       "minzoom": 13,
-      "maxzoom": 24,
       "filter": ["all"],
       "paint": {"circle-radius": 3}
     },
@@ -1554,7 +1581,6 @@
       "source": "IHM",
       "source-layer": "mountain_peak",
       "minzoom": 13,
-      "maxzoom": 24,
       "filter": ["all", ["has", "ele"]],
       "layout": {
         "text-field": "{ele}",
@@ -1582,7 +1608,6 @@
       "source": "IHM",
       "source-layer": "mountain_peak",
       "minzoom": 13,
-      "maxzoom": 24,
       "layout": {
         "text-field": "{name}",
         "symbol-placement": "point",
@@ -1610,7 +1635,6 @@
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 15,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "isolated_dwelling"]],
       "layout": {
         "text-field": "{name}",
@@ -1634,8 +1658,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "place",
-      "minzoom": 14.5,
-      "maxzoom": 24,
+      "minzoom": 15,
       "filter": ["all", ["==", "class", "hamlet"]],
       "layout": {
         "text-field": "{name}",
@@ -1660,7 +1683,6 @@
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 12,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "village"]],
       "layout": {
         "text-field": "{name}",
@@ -1710,7 +1732,6 @@
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 11,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "town"]],
       "layout": {
         "text-field": "{name}",
