@@ -1509,7 +1509,7 @@
         "text-offset": {"stops": [[13, [0, 0.5]], [20, [0, 2]]]},
         "text-pitch-alignment": "map",
         "text-max-width": 30,
-        "icon-image": "arrowhead",
+        "icon-image": "arrowline",
         "icon-rotation-alignment": "map",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]},
         "symbol-spacing": 100
@@ -1518,8 +1518,9 @@
         "text-color": "rgba(249, 2, 2, 1)",
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 0,
-        "text-opacity": 0.5,
-        "icon-opacity": 0.6
+        "text-opacity": 1,
+        "icon-opacity": 1,
+        "icon-color": "rgba(255, 0, 0, 1)"
       }
     },
     {
