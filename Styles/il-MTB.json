@@ -7,7 +7,7 @@
   "bearing": 0,
   "pitch": 0,
   "sources": {
-      "Israel-TerrainRGB": {
+    "Israel-TerrainRGB": {
       "type": "raster-dem",
       "url": "https://israelhiking.osm.org.il/data/TerrainRGB.json"
     },
@@ -294,10 +294,7 @@
         "text-halo-width": 2
       }
     },
-    {"id": "Terrain",
-	"type": "hillshade",
-	"source": "Israel-TerrainRGB"
-	},
+    {"id": "Terrain", "type": "hillshade", "source": "Israel-TerrainRGB"},
     {
       "id": "water",
       "type": "fill",
@@ -690,7 +687,7 @@
       },
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
     },
@@ -713,7 +710,7 @@
       },
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [0, 3]
       }
     },
@@ -735,7 +732,7 @@
       },
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [0, 3]
       }
     },
@@ -758,7 +755,7 @@
       },
       "paint": {
         "line-color": "rgba(1, 149, 10, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]}
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
     {
@@ -780,7 +777,7 @@
       },
       "paint": {
         "line-color": "rgba(140, 0, 172, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]}
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
     {
@@ -802,7 +799,7 @@
       },
       "paint": {
         "line-color": "rgba(0, 162, 32, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]}
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
     {
@@ -824,7 +821,7 @@
       },
       "paint": {
         "line-color": "rgba(35, 50, 244, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]}
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
     {
@@ -846,7 +843,7 @@
       },
       "paint": {
         "line-color": "rgba(255, 5, 9, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]}
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
     {
@@ -868,7 +865,7 @@
       },
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]}
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
     {
@@ -890,7 +887,7 @@
       },
       "paint": {
         "line-color": "rgba(56, 24, 9, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [0.5, 0.5]
       }
     },
@@ -913,7 +910,7 @@
       },
       "paint": {
         "line-color": "rgba(140, 0, 172, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
     },
@@ -1514,10 +1511,11 @@
         "text-max-width": 30,
         "icon-image": "arrowhead",
         "icon-rotation-alignment": "map",
-        "icon-size": {"stops": [[14, 0.4], [20, 1]]}
+        "icon-size": {"stops": [[14, 0.4], [20, 1]]},
+        "symbol-spacing": 100
       },
       "paint": {
-        "text-color": "#000",
+        "text-color": "rgba(249, 2, 2, 1)",
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 0,
         "text-opacity": 0.5,
@@ -1897,17 +1895,22 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
-      "filter": ["all", ["in", "subclass", "parking"]],
+      "minzoom": 14,
+      "filter": ["all", ["==", "subclass", "parking"]],
       "layout": {
         "icon-image": "parking",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-field": ""
+        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name:he}",
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 1]
       },
       "paint": {
-        "icon-opacity": 1,
-        "icon-halo-color": "rgba(255, 255, 255, 0)",
-        "icon-halo-width": 3
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)"
       }
     },
     {
