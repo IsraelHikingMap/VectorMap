@@ -30,16 +30,39 @@
       "paint": {"background-color": "rgba(248, 240, 219, 1)"}
     },
     {
+      "id": "route-arrows",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "$type", "LineString"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-size": {"stops": [[10, 30], [20, 50]]},
+        "text-field": ">",
+        "symbol-spacing": 75,
+        "symbol-avoid-edges": true,
+        "text-font": ["Open Sans Extra Bold"],
+        "visibility": "visible",
+        "text-offset": [1, -0.01],
+        "text-allow-overlap": true,
+        "text-padding": 0,
+        "text-ignore-placement": true,
+        "text-max-angle": 180,
+        "text-keep-upright": false
+      },
+      "paint": {"text-color": "rgba(255, 6, 6, 1)", "text-opacity": 1}
+    },
+    {
       "id": "route",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "$type", "LineString"]],
-      "layout": {},
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "rgba(246, 8, 8, 1)",
-        "line-width": 8,
-        "line-pattern": "arrowline"
+        "line-width": 10,
+        "line-opacity": 0.5
       }
     }
   ],
