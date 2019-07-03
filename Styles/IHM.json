@@ -629,11 +629,21 @@
       "source-layer": "transportation",
       "filter": [
         "none",
-        ["==", "class", "motorway"],
-        ["==", "class", "trunk"],
-        ["==", "class", "primary"],
-        ["==", "class", "secondary"],
-        ["==", "class", "tertiary"]
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "unclassified",
+          "service",
+          "rail",
+          "track",
+          "path"
+        ]
       ],
       "layout": {
         "visibility": "none",
@@ -704,7 +714,12 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "filter": ["all", ["in", "subclass", "path", "pedestrian", "platform"]],
+      "filter": [
+        "all",
+        ["==", "class", "path"],
+        ["!in", "subclass", "steps", "cycleway", "footway"]
+      ],
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-dasharray": [3, 1],
         "line-width": {"stops": [[13, 1.5], [14, 2]]},
@@ -1420,7 +1435,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "cattle_grid",
-        "icon-size": 0.5,
+        "icon-size": 0.4,
         "icon-allow-overlap": true
       }
     },
@@ -1433,7 +1448,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "gate_open",
-        "icon-size": 0.5,
+        "icon-size": 0.35,
         "icon-allow-overlap": true
       }
     },
@@ -1446,7 +1461,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "bollards",
-        "icon-size": 0.5,
+        "icon-size": 0.4,
         "icon-allow-overlap": true
       }
     },
@@ -1459,7 +1474,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "gate_closed",
-        "icon-size": 0.5,
+        "icon-size": 0.35,
         "icon-allow-overlap": true
       }
     },
