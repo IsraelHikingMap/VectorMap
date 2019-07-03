@@ -197,7 +197,13 @@
       "filter": ["all", ["in", "class", "minor", "service"]],
       "layout": {"line-join": "round", "line-cap": "round"},
       "paint": {
-        "line-color": ["coalesce", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {"stops": [[13, 2], [14, 3.5], [16, 6]]}
       }
     },
@@ -210,7 +216,13 @@
       "filter": ["all", ["==", "class", "tertiary"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {"stops": [[13, 3.5], [16, 6]]}
       }
     },
@@ -223,7 +235,13 @@
       "filter": ["all", ["==", "class", "secondary"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {"stops": [[12, 2], [13, 3.5], [16, 6]]}
       }
     },
@@ -236,7 +254,13 @@
       "filter": ["all", ["==", "class", "primary"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {"stops": [[10, 1], [12, 1.5], [16, 6]]}
       }
     },
@@ -249,7 +273,13 @@
       "filter": ["all", ["==", "class", "trunk"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {"stops": [[7, 1], [9, 1.5], [16, 6]]}
       }
     },
@@ -262,7 +292,13 @@
       "filter": ["all", ["==", "class", "motorway"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {"stops": [[7, 1], [9, 1.5], [16, 6]]}
       }
     },
@@ -618,7 +654,13 @@
       "paint": {
         "line-dasharray": [0.2, 0.3],
         "line-width": {"stops": [[13, 1.5], [14, 5]]},
-        "line-color": ["to-color", ["get", "colour"], "#8e5632"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#8e5632"
+        ]
       }
     },
     {
@@ -630,7 +672,13 @@
       "paint": {
         "line-dasharray": [1, 1],
         "line-width": {"stops": [[13, 1.5], [14, 2]]},
-        "line-color": ["to-color", ["get", "colour"], "#8e5632"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
       }
     },
     {
@@ -642,7 +690,13 @@
       "paint": {
         "line-dasharray": [3, 1, 1, 1],
         "line-width": {"stops": [[13, 1.5], [14, 2]]},
-        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
       }
     },
     {
@@ -654,7 +708,13 @@
       "paint": {
         "line-dasharray": [3, 1],
         "line-width": {"stops": [[13, 1.5], [14, 2]]},
-        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
       }
     },
     {
