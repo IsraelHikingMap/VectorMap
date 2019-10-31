@@ -101,17 +101,15 @@
       "type": "fill",
       "source": "IHM",
       "source-layer": "landuse",
-      "minzoom": 12,
       "filter": [
         "all",
         ["==", "class", "military"],
         ["==", "military", "training_area"]
       ],
-      "layout": {"visibility": "none"},
       "paint": {
         "fill-outline-color": "red",
         "fill-pattern": "red_nwse_pattern",
-        "fill-opacity": 0.2
+        "fill-opacity": 0.08
       }
     },
     {
@@ -127,7 +125,7 @@
       "paint": {
         "fill-outline-color": "red",
         "fill-pattern": "red_nesw_pattern",
-        "fill-opacity": 0.2
+        "fill-opacity": 0.3
       }
     },
     {"id": "Terrain", "type": "hillshade", "source": "Israel-TerrainRGB"},
@@ -719,7 +717,6 @@
         ["==", "class", "path"],
         ["!in", "subclass", "steps", "cycleway", "footway"]
       ],
-      "layout": {"visibility": "visible"},
       "paint": {
         "line-dasharray": [3, 1],
         "line-width": {"stops": [[13, 1.5], [14, 2]]},
