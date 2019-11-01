@@ -1127,7 +1127,7 @@
       "layout": {
         "icon-image": "holy_place",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1153,7 +1153,7 @@
       "layout": {
         "icon-image": "synagogue",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1179,7 +1179,7 @@
       "layout": {
         "icon-image": "mosque",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1205,7 +1205,7 @@
       "layout": {
         "icon-image": "church",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1236,7 +1236,7 @@
       "layout": {
         "icon-image": "parking",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1268,7 +1268,7 @@
       "layout": {
         "icon-image": "picnic",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1290,7 +1290,7 @@
       "layout": {
         "icon-image": "ruins",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1312,7 +1312,7 @@
       "layout": {
         "icon-image": "jar",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1334,7 +1334,7 @@
       "layout": {
         "icon-image": "cave",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1357,7 +1357,7 @@
       "layout": {
         "icon-image": "tree",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1379,7 +1379,7 @@
       "layout": {
         "icon-image": "camping",
         "icon-size": 0.5,
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1399,7 +1399,7 @@
       "source-layer": "poi",
       "filter": ["all", ["==", "subclass", "viewpoint"]],
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1481,7 +1481,7 @@
       "source": "IHM",
       "source-layer": "waterway",
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "line-center",
         "text-font": ["Open Sans Regular"],
         "text-size": 12,
@@ -1501,7 +1501,7 @@
       "source": "IHM",
       "source-layer": "water_name",
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
         "text-size": 12,
@@ -1622,9 +1622,9 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "filter": ["all", ["has", "name"], ["in", "class", "water"]],
+      "filter": ["all", ["has", "name_he"], ["in", "class", "water"]],
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-anchor": "top",
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1681,7 +1681,7 @@
       "source-layer": "mountain_peak",
       "minzoom": 13,
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1709,7 +1709,7 @@
       "minzoom": 15,
       "filter": ["all", ["==", "class", "isolated_dwelling"]],
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[15, 8], [16, 14]]},
@@ -1733,7 +1733,7 @@
       "minzoom": 15,
       "filter": ["all", ["==", "class", "hamlet"]],
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[14.5, 10], [16, 16]]},
@@ -1757,7 +1757,7 @@
       "minzoom": 12,
       "filter": ["all", ["==", "class", "village"]],
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[13, 10], [16, 20]]},
@@ -1782,7 +1782,7 @@
       "maxzoom": 15,
       "filter": ["all", ["==", "class", "suburb"]],
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
         "text-size": 12,
@@ -1806,7 +1806,7 @@
       "minzoom": 11,
       "filter": ["all", ["==", "class", "town"]],
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[10, 12], [16, 20]]},
@@ -1831,7 +1831,7 @@
       "maxzoom": 14,
       "filter": ["all", ["==", "class", "city"]],
       "layout": {
-        "text-field": "{name}",
+        "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[8, 12], [10, 16], [14, 20]]},
