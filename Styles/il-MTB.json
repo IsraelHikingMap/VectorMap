@@ -1399,12 +1399,17 @@
       "id": "border_country_outer",
       "type": "line",
       "source": "IHM",
-      "source-layer": "boundary",
+      "source-layer": "ihm_boundary",
       "filter": [
         "all",
-        ["<=", "admin_level", 2],
-        ["==", "$type", "LineString"],
-        ["==", "maritime", 0]
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "!in",
+          "name_en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)"
+        ]
       ],
       "layout": {
         "line-cap": "butt",
@@ -1412,7 +1417,7 @@
         "line-miter-limit": 5
       },
       "paint": {
-        "line-color": "rgba(90, 0, 133, 0.1)",
+        "line-color": "rgba(90, 0, 133, 0.23)",
         "line-width": {"stops": [[6, 1], [15, 14]]}
       }
     },
@@ -1420,12 +1425,17 @@
       "id": "border_country-inner",
       "type": "line",
       "source": "IHM",
-      "source-layer": "boundary",
+      "source-layer": "ihm_boundary",
       "filter": [
         "all",
-        ["<=", "admin_level", 2],
-        ["==", "$type", "LineString"],
-        ["==", "maritime", 0]
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "!in",
+          "name_en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)"
+        ]
       ],
       "layout": {
         "line-cap": "butt",
@@ -1433,10 +1443,87 @@
         "line-miter-limit": 5
       },
       "paint": {
-        "line-color": "rgba(90, 0, 133, 0.5)",
+        "line-color": "rgba(90, 0, 133, 0.7)",
         "line-width": {"stops": [[3, 2], [15, 5]]},
         "line-dasharray": [1, 1, 3, 1]
       }
+    },
+    {
+      "id": "border_green_outer",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "in",
+          "name_en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "bevel",
+        "line-miter-limit": 5
+      },
+      "paint": {
+        "line-color": "rgba(32, 116, 32, 0.28)",
+        "line-width": {"stops": [[6, 1], [15, 14]]}
+      }
+    },
+    {
+      "id": "border_green-inner",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "in",
+          "name_en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "bevel",
+        "line-miter-limit": 5
+      },
+      "paint": {
+        "line-color": "rgba(63, 153, 63, 1)",
+        "line-width": {"stops": [[3, 2], [15, 5]]},
+        "line-dasharray": [1, 1, 3, 1]
+      }
+    },
+    {
+      "id": "area-AB",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
+      "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.3}
+    },
+    {
+      "id": "area-A",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": ["all", ["==", "name_en", "Area A"]],
+      "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.3}
+    },
+    {
+      "id": "area-AB-outline",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
+      "paint": {"line-color": "orange", "line-opacity": 0.4}
     },
     {
       "id": "shield-secondary",
