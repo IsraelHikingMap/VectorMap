@@ -80,11 +80,34 @@
       "paint": {"fill-color": "rgba(233, 253, 204, 1)"}
     },
     {
+      "id": "area-AB",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
+      "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.3}
+    },
+    {
+      "id": "area-A",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": ["all", ["==", "name_en", "Area A"]],
+      "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.3}
+    },
+    {
+      "id": "area-AB-outline",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
+      "paint": {"line-color": "orange", "line-opacity": 0.4}
+    },
+    {
       "id": "area-cemetery",
       "type": "fill",
       "source": "IHM",
       "source-layer": "landuse",
-      "minzoom": 0,
       "filter": ["all", ["==", "class", "cemetery"]],
       "paint": {"fill-color": "#CCCCCC"}
     },
@@ -372,7 +395,7 @@
         "line-width": 2,
         "line-offset": 0,
         "line-opacity": 1,
-        "line-color": "#709d56",
+        "line-color": "#709D56",
         "line-dasharray": [8, 2, 1, 2, 1, 2]
       }
     },
@@ -380,29 +403,93 @@
       "id": "boundary-country-dash",
       "type": "line",
       "source": "IHM",
-      "source-layer": "boundary",
+      "source-layer": "ihm_boundary",
       "minzoom": 8,
-      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "!in",
+          "name_en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)",
+          "Israel - Syria",
+          "Israel- Syria"
+        ]
+      ],
       "paint": {"line-dasharray": [2.5, 6, 1.5, 0]}
     },
     {
       "id": "boundary-country-bar",
       "type": "line",
       "source": "IHM",
-      "source-layer": "boundary",
+      "source-layer": "ihm_boundary",
       "minzoom": 8,
-      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "!in",
+          "name_en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)",
+          "Israel - Syria",
+          "Israel- Syria"
+        ]
+      ],
       "paint": {"line-dasharray": [0.2, 1.8], "line-width": 5}
     },
     {
       "id": "boundary-country-line",
       "type": "line",
       "source": "IHM",
-      "source-layer": "boundary",
-      "minzoom": 0,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
-      "paint": {"line-opacity": 0.2}
+      "source-layer": "ihm_boundary",
+      "maxzoom": 8,
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "!in",
+          "name_en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)",
+          "Israel - Syria",
+          "Israel- Syria"
+        ]
+      ],
+      "paint": {"line-opacity": 0.33, "line-width": 2}
+    },
+    {
+      "id": "boundary-country-Green_line",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        [
+          "in",
+          "name_en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)"
+        ]
+      ],
+      "paint": {"line-opacity": 0.33, "line-color": "#2BB32B", "line-width": 2}
+    },
+    {
+      "id": "boundary-country-Golan",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["in", "name_en", "Israel - Syria", "Israel- Syria"]
+      ],
+      "paint": {"line-opacity": 0.33, "line-color": "blue", "line-width": 2}
     },
     {
       "id": "aeroway-helipad",
@@ -598,7 +685,6 @@
       "filter": ["all", ["in", "network", "lwn", "rwn"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-width": 1,
         "line-color": [
           "match",
           ["get", "osmc_symbol"],
