@@ -216,37 +216,6 @@
       }
     },
     {
-      "id": "land-military-base",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 13,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "military", "barracks"]],
-      "paint": {
-        "fill-outline-color": "rgba(12, 0, 0, 0)",
-        "fill-pattern": "red_nesw_pattern",
-        "fill-opacity": 0.3
-      }
-    },
-    {
-      "id": "land-military",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 13,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "class", "military"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-outline-color": {
-          "stops": [[6, "rgba(191, 9, 9, 0)"], [20, "rgba(191, 9, 9, 1)"]]
-        },
-        "fill-pattern": "red_nwse_pattern",
-        "fill-opacity": 0.3
-      }
-    },
-    {
       "id": "park_edge-lines",
       "type": "line",
       "source": "IHM",
@@ -259,7 +228,7 @@
         "line-color": "rgba(16, 81, 10, 1)",
         "line-blur": 0,
         "line-opacity": 0.4,
-        "line-dasharray": [0.2, 0.4],
+        "line-dasharray": [0.4, 0.8],
         "line-offset": {"stops": [[12, 2], [15, 8]]}
       }
     },
@@ -280,28 +249,37 @@
       }
     },
     {
-      "id": "park_edge_gradient",
+      "id": "military_edge-lines",
       "type": "line",
       "source": "IHM",
-      "source-layer": "park",
-      "minzoom": 12,
-      "filter": ["all", ["in", "class", "national_park", "nature_reserve"]],
-      "layout": {"visibility": "none"},
+      "source-layer": "landuse",
+      "minzoom": 10,
+      "filter": ["all", ["in", "class", "military"]],
+      "layout": {"visibility": "visible"},
       "paint": {
-        "line-pattern": "gradient_pattern",
-        "line-width": 31,
-        "line-opacity": 0.6
+        "line-width": {"stops": [[12, 4], [15, 10]]},
+        "line-color": "rgba(178, 0, 27, 1)",
+        "line-blur": 0,
+        "line-opacity": 0.4,
+        "line-dasharray": [0.4, 0.8],
+        "line-offset": {"stops": [[12, 2], [15, 8]]}
       }
     },
     {
-      "id": "park_fill",
-      "type": "fill",
+      "id": "military_edge-solid",
+      "type": "line",
       "source": "IHM",
-      "source-layer": "park",
+      "source-layer": "landuse",
       "minzoom": 12,
-      "filter": ["all", ["in", "class", "national_park", "nature_reserve"]],
-      "layout": {"visibility": "none"},
-      "paint": {"fill-opacity": 0.5, "fill-pattern": "green_nesw_pattern"}
+      "filter": ["all", ["in", "class", "military"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": {"stops": [[12, 2], [15, 8]]},
+        "line-color": "rgba(178, 0, 27, 1)",
+        "line-blur": 0,
+        "line-opacity": 0.4,
+        "line-offset": 0
+      }
     },
     {
       "id": "contour_major",
@@ -1164,6 +1142,27 @@
       }
     },
     {
+      "id": "airfield",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 14,
+      "filter": ["all", ["==", "military", "airfield"]],
+      "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
+    },
+    {
+      "id": "base_fence",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 14,
+      "filter": [
+        "any",
+        ["in", "military", "barracks", "airfield", "naval_base"]
+      ],
+      "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
+    },
+    {
       "id": "perimeter_fence-line",
       "type": "line",
       "source": "IHM",
@@ -1171,6 +1170,27 @@
       "minzoom": 14,
       "filter": ["all", ["in", "class", "fence", "yes"]],
       "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
+    },
+    {
+      "id": "base_fence_x",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["in", "military", "barracks", "airfield", "naval_base"]
+      ],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "icon-image": "cross_pattern",
+        "symbol-placement": "line",
+        "symbol-spacing": 10,
+        "symbol-avoid-edges": false,
+        "icon-size": {"stops": [[14, 0.3], [20, 0.6]]}
+      },
+      "paint": {}
     },
     {
       "id": "perimeter_fence_x",
@@ -2870,6 +2890,38 @@
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)",
         "icon-color": "rgba(7, 7, 7, 1)"
+      }
+    },
+    {
+      "id": "label_military",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "military"]],
+      "layout": {
+        "icon-pitch-alignment": "map",
+        "icon-image": "IDF",
+        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "icon-size": {"stops": [[10, 0.4], [20, 1]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name_he}",
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": {"stops": [[10, [0, 1]], [20, [0, 2]]]},
+        "symbol-spacing": 1000,
+        "symbol-avoid-edges": true,
+        "symbol-placement": "point",
+        "text-padding": 2,
+        "icon-allow-overlap": false,
+        "icon-ignore-placement": false,
+        "icon-optional": false,
+        "icon-padding": 2
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)"
       }
     },
     {
