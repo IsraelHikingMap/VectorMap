@@ -447,6 +447,13 @@
 		"y": 650,
 		"pixelRatio": 1
 	},
+	"IDF": {
+		"width": 64,
+		"height": 64,
+		"x": 386,
+		"y": 636,
+		"pixelRatio": 1
+	},
 	"shield_blue": {
 		"width": 68,
 		"height": 48,
