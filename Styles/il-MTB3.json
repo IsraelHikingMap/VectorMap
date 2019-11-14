@@ -137,7 +137,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 8,
-      "maxzoom": 14,
+      "maxzoom": 24,
       "filter": ["==", "class", "wood"],
       "layout": {"visibility": "visible"},
       "paint": {
@@ -147,19 +147,24 @@
     },
     {
       "id": "land_wood_pattern",
-      "type": "fill",
+      "type": "symbol",
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 12,
       "maxzoom": 24,
       "filter": ["==", "class", "wood"],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-color": "rgba(236, 13, 18, 1)",
-        "fill-opacity": {"base": 1, "stops": [[12, 0], [14, 1]]},
-        "fill-pattern": "forest_pattern",
-        "fill-translate-anchor": "map"
-      }
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "tree",
+        "icon-size": 0.3,
+        "symbol-spacing": 1,
+        "symbol-avoid-edges": false,
+        "icon-allow-overlap": false,
+        "icon-ignore-placement": false,
+        "icon-padding": 1,
+        "icon-keep-upright": true
+      },
+      "paint": {"icon-opacity": 0.5, "icon-halo-color": "rgba(0, 0, 0, 0.99)"}
     },
     {
       "id": "land_grass",
@@ -270,7 +275,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "landuse",
-      "minzoom": 12,
+      "minzoom": 10,
       "filter": ["all", ["in", "class", "military"]],
       "layout": {"visibility": "visible"},
       "paint": {
