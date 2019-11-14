@@ -108,7 +108,7 @@
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 8,
-      "maxzoom": 14,
+      "maxzoom": 24,
       "filter": ["all", ["in", "subclass", "meadow", "scrub"]],
       "layout": {"visibility": "visible"},
       "paint": {
@@ -118,18 +118,14 @@
     },
     {
       "id": "land_scrub_pattern",
-      "type": "fill",
+      "type": "symbol",
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 12,
       "maxzoom": 24,
       "filter": ["all", ["in", "subclass", "meadow", "scrub"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-color": "rgba(236, 13, 18, 1)",
-        "fill-opacity": {"base": 1, "stops": [[12, 0], [14, 1]]},
-        "fill-pattern": "bushes_pattern"
-      }
+      "layout": {"visibility": "visible", "icon-image": "bushes_pattern"},
+      "paint": {}
     },
     {
       "id": "land_wood_solid",
