@@ -329,8 +329,8 @@
 		"pixelRatio": 2
 	},
 	"forest_pattern": {
-		"width": 128,
-		"height": 128,
+		"width": 32,
+		"height": 32,
 		"x": 720,
 		"y": 720,
 		"pixelRatio": 2
@@ -350,8 +350,8 @@
 		"pixelRatio": 2
 	},
 	"bushes_pattern": {
-		"width": 128,
-		"height": 128,
+		"width": 32,
+		"height": 32,
 		"x": 388,
 		"y": 908,
 		"pixelRatio": 2
@@ -447,14 +447,6 @@
 		"y": 1300,
 		"pixelRatio": 2
 	},
-	"IDF": {
-		"width": 128,
-		"height": 128,
-		"x": 772,
-		"y": 1272,
-		"pixelRatio": 2
-	},
-	
 	"shield_blue": {
 		"width": 136,
 		"height": 96,
