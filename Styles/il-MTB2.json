@@ -257,12 +257,12 @@
       "filter": ["all", ["in", "class", "military"]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-width": {"stops": [[10, 4], [15, 15]]},
+        "line-width": {"stops": [[12, 4], [15, 10]]},
         "line-color": "rgba(178, 0, 27, 1)",
-        "line-blur": {"stops": [[6, 0], [10, 0]]},
-        "line-opacity": 0.2,
-        "line-dasharray": [1],
-        "line-offset": {"stops": [[10, 2], [15, 7]]}
+        "line-blur": 0,
+        "line-opacity": 0.4,
+        "line-dasharray": [0.4, 0.8],
+        "line-offset": {"stops": [[12, 2], [15, 8]]}
       }
     },
     {
@@ -274,10 +274,10 @@
       "filter": ["all", ["in", "class", "military"]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-width": {"stops": [[12, 1], [15, 2]]},
+        "line-width": {"stops": [[12, 2], [15, 8]]},
         "line-color": "rgba(178, 0, 27, 1)",
         "line-blur": 0,
-        "line-opacity": 1,
+        "line-opacity": 0.4,
         "line-offset": 0
       }
     },

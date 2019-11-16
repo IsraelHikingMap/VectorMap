@@ -48,13 +48,6 @@
 		"y": 0,
 		"pixelRatio": 2
 	},
-	"bushes": {
-		"width": 64,
-		"height": 64,
-		"x": 838,
-		"y": 0,
-		"pixelRatio": 2
-	},
 	"construction": {
 		"width": 68,
 		"height": 68,
