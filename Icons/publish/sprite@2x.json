@@ -329,8 +329,8 @@
 		"pixelRatio": 2
 	},
 	"forest_pattern": {
-		"width": 32,
-		"height": 32,
+		"width": 128,
+		"height": 128,
 		"x": 720,
 		"y": 720,
 		"pixelRatio": 2
@@ -350,8 +350,8 @@
 		"pixelRatio": 2
 	},
 	"bushes_pattern": {
-		"width": 32,
-		"height": 32,
+		"width": 128,
+		"height": 128,
 		"x": 388,
 		"y": 908,
 		"pixelRatio": 2
