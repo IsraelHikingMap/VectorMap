@@ -332,6 +332,7 @@
       "source": "IHM",
       "source-layer": "water",
       "filter": ["all", ["!=", "intermittent", 1]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "hsl(205, 56%, 73%)",
         "fill-outline-color": {
@@ -2822,7 +2823,8 @@
       "paint": {
         "text-color": "rgba(38, 89, 130, 1)",
         "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 1.5
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1
       }
     },
     {
@@ -3055,6 +3057,28 @@
         "text-color": "hsl(0, 0%, 13%)",
         "text-halo-color": "rgba(255,255,255,0.75)",
         "text-halo-width": 2
+      }
+    },
+    {
+      "id": "water-area-name",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "water_name",
+      "layout": {
+        "text-field": "{name_he}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Regular"],
+        "text-size": 12,
+        "text-letter-spacing": 0.2,
+        "symbol-spacing": 250,
+        "text-max-angle": 45,
+        "text-keep-upright": true,
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "#265982",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
       }
     }
   ],
