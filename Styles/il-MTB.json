@@ -121,7 +121,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "landcover",
-      "minzoom": 12,
+      "minzoom": 14,
       "maxzoom": 24,
       "filter": ["all", ["in", "subclass", "meadow", "scrub"]],
       "layout": {"visibility": "visible", "icon-image": "bushes_pattern"},
@@ -146,10 +146,14 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "landcover",
-      "minzoom": 12,
+      "minzoom": 14,
       "maxzoom": 24,
       "filter": ["==", "class", "wood"],
-      "layout": {"visibility": "visible", "icon-image": "forest_pattern"},
+      "layout": {
+        "visibility": "visible",
+        "icon-image": "forest_pattern",
+        "symbol-avoid-edges": false
+      },
       "paint": {}
     },
     {
@@ -165,7 +169,7 @@
       }
     },
     {
-      "id": "land-residential-copy",
+      "id": "land-residential",
       "type": "fill",
       "source": "IHM",
       "source-layer": "landuse",
@@ -678,7 +682,7 @@
       "filter": [
         "all",
         ["==", "class", "path"],
-        ["!in", "bicycle", "yes", "designated"],
+        ["!in", "bicycle", "yes", "designated", "no"],
         ["!in", "mtb_scale", 1, 2, 3, 4, 5, 6],
         ["!in", "subclass", "footway", "steps"]
       ],
@@ -770,7 +774,7 @@
         "all",
         ["==", "class", "path"],
         ["==", "bicycle", "designated"],
-        ["!in", "mtb_scale", 0, 1, 2, 3, 4, 5, 6]
+        ["!has", "mtb_scale"]
       ],
       "layout": {
         "line-cap": "butt",
@@ -903,7 +907,7 @@
         "all",
         ["==", "class", "path"],
         ["==", "bicycle", "yes"],
-        ["!in", "mtb_scale", 0, 1, 2, 3, 4, 5, 6]
+        ["!has", "mtb_scale"]
       ],
       "layout": {
         "line-cap": "square",
@@ -935,7 +939,7 @@
       },
       "paint": {
         "line-color": "rgba(0, 162, 32, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
     },
@@ -958,7 +962,7 @@
       },
       "paint": {
         "line-color": "rgba(35, 50, 244, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
     },
@@ -981,7 +985,7 @@
       },
       "paint": {
         "line-color": "rgba(255, 5, 9, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
     },
@@ -1004,7 +1008,7 @@
       },
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
     },
@@ -1027,8 +1031,23 @@
       },
       "paint": {
         "line-color": "rgba(56, 24, 9, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 15]]},
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [1, 1]
+      }
+    },
+    {
+      "id": "railway-black",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "rail"], ["!=", "brunnel", "tunnel"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(3, 3, 3, 1)",
+        "line-opacity": 1,
+        "line-width": {"stops": [[12, 4], [20, 9]]},
+        "line-gap-width": 0
       }
     },
     {
@@ -1037,43 +1056,15 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
+      "maxzoom": 24,
       "filter": ["all", ["==", "class", "rail"], ["!=", "brunnel", "tunnel"]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "rgba(246, 243, 243, 1)",
+        "line-color": "rgba(255, 255, 255, 1)",
         "line-opacity": 1,
-        "line-width": {"stops": [[12, 0], [15, 2], [21, 5]]},
-        "line-gap-width": 0
-      }
-    },
-    {
-      "id": "railway-black",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "rail"], ["!=", "brunnel", "tunnel"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "rgba(15, 15, 15, 1)",
-        "line-opacity": 1,
-        "line-width": {"stops": [[12, 0], [15, 2], [21, 5]]},
+        "line-width": {"stops": [[12, 2], [20, 7]]},
         "line-gap-width": 0,
-        "line-dasharray": [1.5, 1.5]
-      }
-    },
-    {
-      "id": "railway-cladding",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 12,
-      "filter": ["all", ["==", "class", "rail"], ["!=", "brunnel", "tunnel"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "rgba(0, 0, 0, 1)",
-        "line-opacity": 1,
-        "line-width": {"stops": [[12, 0], [15, 1], [21, 2]]},
-        "line-gap-width": {"stops": [[10, 2], [20, 5]]}
+        "line-dasharray": {"stops": [[6, [1.5, 1.5]], [15, [4, 4]]]}
       }
     },
     {
