@@ -1095,6 +1095,21 @@
       }
     },
     {
+      "id": "cable_car",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "cable_car"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(3, 3, 3, 1)",
+        "line-opacity": 1,
+        "line-width": {"stops": [[12, 0.5], [20, 5]]},
+        "line-gap-width": 0
+      }
+    },
+    {
       "id": "railway-black",
       "type": "line",
       "source": "IHM",
@@ -2224,7 +2239,8 @@
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 1],
+        "icon-image": "food"
       },
       "paint": {
         "text-color": "rgba(0, 0, 0, 1)",
@@ -2942,6 +2958,30 @@
         "text-rotation-alignment": "map",
         "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-pitch-alignment": "map",
+        "text-max-width": 30,
+        "text-max-angle": 20,
+        "text-letter-spacing": 0.3
+      },
+      "paint": {
+        "text-color": "#000",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "label_cable_car",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "cable_car"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "רכבל",
+        "text-font": ["Open Sans Regular"],
+        "text-transform": "none",
+        "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
+        "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-max-width": 30,
         "text-max-angle": 20,
         "text-letter-spacing": 0.3
