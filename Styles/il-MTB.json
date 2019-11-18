@@ -263,39 +263,6 @@
       "paint": {"fill-color": "rgba(224, 224, 224, 1)"}
     },
     {
-      "id": "military_edge-wide",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 10,
-      "filter": ["all", ["in", "class", "military"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-width": {"stops": [[10, 2], [18, 10]]},
-        "line-color": "rgba(178, 0, 27, 1)",
-        "line-blur": 0,
-        "line-opacity": {"stops": [[10, 0.2], [18, 0.4]]},
-        "line-offset": {"stops": [[10, 1], [18, 5]]}
-      }
-    },
-    {
-      "id": "military_edge-narrow",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 10,
-      "maxzoom": 24,
-      "filter": ["all", ["in", "class", "military"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-width": {"stops": [[10, 1], [18, 2]]},
-        "line-color": "rgba(178, 0, 27, 1)",
-        "line-blur": 0,
-        "line-opacity": {"stops": [[10, 0.5], [18, 1]]},
-        "line-offset": 0
-      }
-    },
-    {
       "id": "contour_major",
       "type": "line",
       "source": "contours",
@@ -362,15 +329,65 @@
       }
     },
     {
+      "id": "water_riverbed",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "water",
+      "filter": ["all", ["==", "intermittent", 1], ["in", "class", "river"]],
+      "paint": {
+        "fill-color": "rgba(200, 217, 174, 1)",
+        "fill-pattern": "stones_pattern",
+        "fill-outline-color": "rgba(185, 211, 246, 1)"
+      }
+    },
+    {
       "id": "water_intermittent",
       "type": "fill",
       "source": "IHM",
       "source-layer": "water",
-      "filter": ["all", ["==", "intermittent", 1]],
+      "filter": ["all", ["==", "intermittent", 1], ["!in", "class", "river"]],
       "paint": {
         "fill-color": "rgba(200, 217, 174, 1)",
         "fill-pattern": "intermittent_pattern",
         "fill-outline-color": "rgba(185, 211, 246, 1)"
+      }
+    },
+    {
+      "id": "waterway-river-intermittent",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "waterway",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["!in", "brunnel", "tunnel", "bridge"],
+        ["==", "intermittent", 1],
+        ["==", "class", "river"]
+      ],
+      "paint": {
+        "line-color": "hsl(205, 56%, 73%)",
+        "line-width": {"base": 1.4, "stops": [[8, 1], [20, 8]]},
+        "line-opacity": 1,
+        "line-gap-width": {"stops": [[12, 10], [20, 50]]},
+        "line-dasharray": [3, 1]
+      }
+    },
+    {
+      "id": "waterway-river",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "waterway",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["!in", "brunnel", "tunnel", "bridge"],
+        ["!=", "intermittent", 1],
+        ["==", "class", "river"]
+      ],
+      "paint": {
+        "line-color": "hsl(205, 56%, 73%)",
+        "line-width": {"base": 1.4, "stops": [[8, 3], [20, 25]]},
+        "line-opacity": 1
       }
     },
     {
@@ -400,7 +417,8 @@
         "all",
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "tunnel", "bridge"],
-        ["==", "intermittent", 1]
+        ["==", "intermittent", 1],
+        ["!=", "class", "river"]
       ],
       "paint": {
         "line-color": "hsl(205, 56%, 73%)",
@@ -1185,15 +1203,6 @@
       }
     },
     {
-      "id": "airfield",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 14,
-      "filter": ["all", ["==", "military", "airfield"]],
-      "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
-    },
-    {
       "id": "base_fence",
       "type": "line",
       "source": "IHM",
@@ -1203,15 +1212,6 @@
         "any",
         ["in", "military", "barracks", "airfield", "naval_base"]
       ],
-      "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
-    },
-    {
-      "id": "perimeter_fence-line",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "linear_barrier",
-      "minzoom": 14,
-      "filter": ["all", ["in", "class", "fence", "yes"]],
       "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
     },
     {
@@ -1234,6 +1234,48 @@
         "icon-size": {"stops": [[14, 0.3], [20, 0.6]]}
       },
       "paint": {}
+    },
+    {
+      "id": "military_edge-narrow",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 10,
+      "maxzoom": 24,
+      "filter": ["all", ["in", "class", "military"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": {"stops": [[10, 1], [18, 2]]},
+        "line-color": "rgba(178, 0, 27, 1)",
+        "line-blur": 0,
+        "line-opacity": {"stops": [[10, 0.5], [18, 1]]},
+        "line-offset": 0
+      }
+    },
+    {
+      "id": "military_edge-wide",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 10,
+      "filter": ["all", ["in", "class", "military"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": {"stops": [[10, 2], [18, 10]]},
+        "line-color": "rgba(178, 0, 27, 1)",
+        "line-blur": 0,
+        "line-opacity": {"stops": [[10, 0.2], [18, 0.4]]},
+        "line-offset": {"stops": [[10, 1], [18, 5]]}
+      }
+    },
+    {
+      "id": "perimeter_fence-line",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "fence", "yes"]],
+      "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
     },
     {
       "id": "perimeter_fence_x",
