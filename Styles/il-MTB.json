@@ -248,6 +248,21 @@
       }
     },
     {
+      "id": "military_base_fill",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 10,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "class", "military"],
+        ["in", "military", "barracks", "airfield", "naval_base"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(224, 224, 224, 1)"}
+    },
+    {
       "id": "military_edge-wide",
       "type": "line",
       "source": "IHM",
@@ -316,13 +331,14 @@
         ["in", "nth_line", 10, 5]
       ],
       "layout": {
-        "text-size": {"base": 1, "stops": [[15, 9], [20, 14]]},
+        "text-size": {"base": 1, "stops": [[15, 12], [20, 20]]},
         "symbol-avoid-edges": true,
         "symbol-placement": "line",
         "text-padding": 2,
         "text-rotation-alignment": "map",
         "text-field": "{height}",
-        "text-font": ["Open Sans Regular"]
+        "text-font": ["Open Sans Regular"],
+        "text-letter-spacing": 0.1
       },
       "paint": {
         "text-color": "rgba(95, 70, 21, 1)",
@@ -461,7 +477,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(255, 231, 64, 0.75)",
+        "line-color": "rgba(250, 222, 1, 0.75)",
         "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]},
         "line-opacity": 1
       }
@@ -620,7 +636,7 @@
       }
     },
     {
-      "id": "track-unpaved-casing",
+      "id": "track-unpaved-casing-copy",
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
@@ -656,9 +672,28 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(245, 245, 248, 1)",
+        "line-color": "rgba(255, 255, 255, 1)",
         "line-dasharray": [1, 0],
         "line-width": {"base": 1.55, "stops": [[14, 2], [20, 15]]}
+      }
+    },
+    {
+      "id": "track-medium",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade3"],
+        ["!=", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-gap-width": 0,
+        "line-width": {"stops": [[14, 1], [16, 2], [20, 4]]},
+        "line-offset": {"stops": [[14, 1.5], [16, 3], [20, 7]]}
       }
     },
     {
@@ -2866,7 +2901,8 @@
         "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-pitch-alignment": "map",
         "text-max-width": 30,
-        "text-max-angle": 20
+        "text-max-angle": 20,
+        "text-letter-spacing": 0.3
       },
       "paint": {
         "text-color": "#000",
@@ -2889,7 +2925,8 @@
         "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
         "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-max-width": 30,
-        "text-max-angle": 20
+        "text-max-angle": 20,
+        "text-letter-spacing": 0.3
       },
       "paint": {
         "text-color": "#000",
