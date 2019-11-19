@@ -1477,6 +1477,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 12,
       "filter": ["all", ["==", "class", "rail"], ["==", "brunnel", "bridge"]],
       "layout": {"visibility": "visible"},
       "paint": {
@@ -1492,6 +1493,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
+      "maxzoom": 24,
       "filter": ["all", ["==", "class", "rail"], ["==", "brunnel", "bridge"]],
       "layout": {"visibility": "visible"},
       "paint": {
