@@ -11,9 +11,9 @@
       "type": "raster-dem",
       "url": "https://israelhiking.osm.org.il/data/TerrainRGB.json"
     },
-    "contours": {
+    "Contour": {
       "type": "vector",
-      "url": "https://api.maptiler.com/tiles/contours/tiles.json?key=JtrAu5oH6yW3hdXZhOEs"
+      "url": "https://israelhiking.osm.org.il/data/Contour.json"
     },
     "IHM": {
       "type": "vector",
@@ -265,7 +265,7 @@
     {
       "id": "contour_major",
       "type": "line",
-      "source": "contours",
+      "source": "Contour",
       "source-layer": "contour",
       "minzoom": 11,
       "filter": ["all", ["in", "nth_line", 10, 5]],
@@ -278,7 +278,7 @@
     {
       "id": "contour_minor",
       "type": "line",
-      "source": "contours",
+      "source": "Contour",
       "source-layer": "contour",
       "filter": ["all", ["!in", "nth_line", 10, 5]],
       "paint": {
@@ -290,13 +290,9 @@
     {
       "id": "contour_label",
       "type": "symbol",
-      "source": "contours",
+      "source": "Contour",
       "source-layer": "contour",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["in", "nth_line", 10, 5]
-      ],
+      "filter": ["all", ["!in", "rank", 1, 2]],
       "layout": {
         "text-size": {"base": 1, "stops": [[15, 12], [20, 20]]},
         "symbol-avoid-edges": true,
