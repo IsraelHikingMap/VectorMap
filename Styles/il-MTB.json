@@ -492,6 +492,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 10,
       "filter": ["all", ["==", "ramp", 1], ["!=", "subclass", "steps"]],
       "paint": {
         "line-color": "rgba(130, 130, 130, 1)",
@@ -518,6 +519,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 9,
       "filter": [
         "all",
         ["in", "class", "trunk", "primary"],
@@ -534,6 +536,8 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 8,
+      "maxzoom": 24,
       "filter": [
         "all",
         ["==", "class", "motorway"],
@@ -1349,10 +1353,30 @@
       }
     },
     {
+      "id": "border_country_low-zoom",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "boundary",
+      "minzoom": 0,
+      "maxzoom": 7,
+      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "bevel",
+        "line-miter-limit": 5,
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": {"stops": [[0, 0.2], [8, 2]]}
+      }
+    },
+    {
       "id": "border_country_outer",
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_boundary",
+      "minzoom": 0,
       "filter": [
         "all",
         ["==", "admin_level", 2],
@@ -1379,6 +1403,8 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_boundary",
+      "minzoom": 3,
+      "maxzoom": 24,
       "filter": [
         "all",
         ["==", "admin_level", 2],
@@ -1406,6 +1432,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_boundary",
+      "minzoom": 0,
       "filter": [
         "all",
         ["==", "admin_level", 2],
@@ -1432,6 +1459,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_boundary",
+      "minzoom": 0,
       "filter": [
         "all",
         ["==", "admin_level", 2],
@@ -1622,11 +1650,41 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "aeroway",
-      "minzoom": 12,
+      "minzoom": 11,
       "filter": ["all", ["==", "class", "runway"]],
       "paint": {
         "line-color": "rgba(129, 126, 126, 1)",
-        "line-width": {"stops": [[12, 3], [20, 25]]}
+        "line-width": {"stops": [[11, 2.5], [20, 25]]}
+      }
+    },
+    {
+      "id": "airfield-label",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 12,
+      "maxzoom": 22,
+      "filter": [
+        "all",
+        ["==", "class", "military"],
+        ["==", "military", "airfield"]
+      ],
+      "layout": {
+        "text-size": 11,
+        "text-font": ["Open Sans Regular"],
+        "text-offset": [0, 0.5],
+        "text-anchor": "top",
+        "text-field": "{name_he}",
+        "text-max-width": 3,
+        "icon-pitch-alignment": "map",
+        "icon-image": "airfield",
+        "icon-size": {"stops": [[10, 0.5], [15, 1]]}
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-width": 1,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1
       }
     },
     {
@@ -1707,7 +1765,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -1743,7 +1800,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -1762,7 +1818,6 @@
         "text-font": ["Open Sans Regular"]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -1798,7 +1853,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -1814,10 +1868,7 @@
         "icon-image": "shopping",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": {
-        "icon-opacity": 1
-		
-      }
+      "paint": {"icon-opacity": 1}
     },
     {
       "id": "amenity-picnic",
@@ -1830,7 +1881,7 @@
         "icon-image": "picnic",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "amenity-toilet",
@@ -1843,7 +1894,7 @@
         "icon-image": "toilet",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "amenity-playground",
@@ -1856,7 +1907,7 @@
         "icon-image": "playground",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "amenity-cafe",
@@ -1876,7 +1927,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -1899,7 +1949,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -1921,7 +1970,6 @@
         "icon-image": "food"
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -1948,7 +1996,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -1975,7 +2022,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -1995,7 +2041,7 @@
         "icon-image": "synagogue",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "religion-mosque",
@@ -2019,7 +2065,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2046,7 +2091,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2062,7 +2106,7 @@
         "icon-image": "gate_open",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "barrier_closed_gate",
@@ -2075,7 +2119,7 @@
         "icon-image": "gate_closed",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "barrier_no_vehicles",
@@ -2092,7 +2136,7 @@
         "icon-image": "bollards",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "barrier_open_gate",
@@ -2105,7 +2149,7 @@
         "icon-image": "gate_open",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "barrier_cattle_grid",
@@ -2118,7 +2162,7 @@
         "icon-image": "cattle_grid",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "poi_pitch",
@@ -2131,7 +2175,7 @@
         "icon-image": "playground",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "poi_cave",
@@ -2151,7 +2195,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2174,7 +2217,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2190,7 +2232,7 @@
         "icon-image": "tree",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "poi_attraction",
@@ -2214,7 +2256,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2241,7 +2282,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2264,7 +2304,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2284,7 +2323,7 @@
         "icon-image": "antenna",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "poi_tower",
@@ -2308,7 +2347,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2331,7 +2369,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2358,7 +2395,6 @@
         "text-offset": [0, 1]
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2383,7 +2419,6 @@
         "text-anchor": "top"
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)",
         "text-halo-blur": 1
@@ -2423,7 +2458,7 @@
         "icon-image": "tap",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "water_hole",
@@ -2487,7 +2522,7 @@
         "icon-image": "water_well",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "water_tank",
@@ -2500,7 +2535,7 @@
         "icon-image": "water_tank",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
-      "paint": { }
+      "paint": {}
     },
     {
       "id": "label_waterway",
@@ -2650,7 +2685,6 @@
         "text-offset": {"stops": [[10, [0, 1]], [20, [0, 2]]]}
       },
       "paint": {
-
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2679,10 +2713,7 @@
         "text-max-width": 3,
         "text-size": {"stops": [[8, 9], [20, 17]]}
       },
-      "paint": {
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 2
-      }
+      "paint": {"text-halo-color": "hsl(0, 0%, 100%)", "text-halo-width": 2}
     },
     {
       "id": "label_village",
@@ -2698,10 +2729,7 @@
         "text-max-width": 3,
         "text-size": {"stops": [[8, 10], [20, 20]]}
       },
-      "paint": {
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 2
-      }
+      "paint": {"text-halo-color": "hsl(0, 0%, 100%)", "text-halo-width": 2}
     },
     {
       "id": "label_town",
@@ -2717,17 +2745,14 @@
         "text-max-width": 3,
         "text-size": {"stops": [[8, 12], [20, 22]]}
       },
-      "paint": {
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 2
-      }
+      "paint": {"text-halo-color": "hsl(0, 0%, 100%)", "text-halo-width": 2}
     },
     {
       "id": "label_city",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "place",
-      "minzoom": 0,
+      "minzoom": 9,
       "maxzoom": 13,
       "filter": ["all", ["==", "class", "city"]],
       "layout": {
@@ -2735,6 +2760,30 @@
         "text-font": ["Open Sans Regular"],
         "text-max-width": 3,
         "text-size": {"stops": [[3, 13], [8, 16]]}
+      },
+      "paint": {
+        "text-color": "hsl(0, 0%, 0%)",
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "dot_city",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 0,
+      "maxzoom": 9,
+      "filter": ["all", ["==", "class", "city"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Regular"],
+        "text-max-width": 5,
+        "text-size": {"stops": [[3, 7], [8, 16]]},
+        "icon-image": "dot",
+        "text-anchor": "top",
+        "text-offset": [0, 0.2],
+        "icon-size": {"stops": [[6, 0.4], [8, 0.8]]}
       },
       "paint": {
         "text-color": "hsl(0, 0%, 0%)",
