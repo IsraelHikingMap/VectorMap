@@ -370,6 +370,7 @@
         ["!in", "brunnel", "tunnel", "bridge"],
         ["!=", "intermittent", 1]
       ],
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "hsl(205, 56%, 73%)",
         "line-width": {"base": 1.4, "stops": [[8, 1], [20, 8]]}
@@ -452,7 +453,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "network", "rcn"]],
       "paint": {
-        "line-color": "rgba(246, 146, 145, 1)",
+        "line-color": "rgba(219, 5, 4, 0.57)",
         "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]}
       }
     },
@@ -480,7 +481,7 @@
       ],
       "paint": {
         "line-color": "rgba(130, 130, 130, 1)",
-        "line-width": {"base": 1.55, "stops": [[6, 0.25], [20, 30]]}
+        "line-width": {"base": 1.55, "stops": [[8, 0.1], [20, 30]]}
       }
     },
     {
@@ -672,6 +673,7 @@
         ["==", "subclass", "footway"],
         ["!in", "bicycle", "yes", "designated"]
       ],
+      "layout": {"line-cap": "round"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -2692,23 +2694,29 @@
       }
     },
     {
+      "id": "label_neighbourhood",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 13,
+      "maxzoom": 15,
+      "filter": ["all", ["in", "class", "suburb", "neighbourhood"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Regular"],
+        "text-max-width": 3,
+        "text-size": {"stops": [[8, 15], [20, 25]]}
+      },
+      "paint": {"text-halo-color": "hsl(0, 0%, 100%)", "text-halo-width": 2}
+    },
+    {
       "id": "label_hamlet",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 8,
       "maxzoom": 15,
-      "filter": [
-        "all",
-        [
-          "in",
-          "class",
-          "hamlet",
-          "suburb",
-          "neighbourhood",
-          "isolated_dwelling"
-        ]
-      ],
+      "filter": ["all", ["in", "class", "hamlet", "isolated_dwelling"]],
       "layout": {
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
