@@ -2425,7 +2425,7 @@
         "text-halo-blur": 1
       }
     },
-    {
+     {
       "id": "water_spring",
       "type": "symbol",
       "source": "IHM",
@@ -2435,7 +2435,7 @@
       "layout": {
         "icon-image": "spring",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
@@ -2470,7 +2470,9 @@
       "filter": ["all", ["==", "subclass", "waterhole"]],
       "layout": {
         "icon-image": "water_hole",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-field": "{name_he}",
+        "text-size": {"stops": [[14, 18], [20, 33]]}
       },
       "paint": {
         "text-color": "blue",
@@ -2487,7 +2489,9 @@
       "filter": ["all", ["==", "subclass", "cistern"]],
       "layout": {
         "icon-image": "cistern",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-field": "{name_he}",
+        "text-size": {"stops": [[10, 18], [22, 33]]}
       },
       "paint": {
         "text-color": "blue",
@@ -2550,13 +2554,15 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
         "text-max-width": 30,
         "text-allow-overlap": false,
-        "symbol-spacing": 500
+        "symbol-spacing": 500,
+        "text-letter-spacing": 0.1,
+        "text-max-angle": 30
       },
       "paint": {
-        "text-color": "rgba(38, 89, 130, 1)",
+        "text-color": "blue",
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -2574,7 +2580,7 @@
         "text-field": "{name}",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
         "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-max-width": 30,
         "text-max-angle": 20,
@@ -2598,7 +2604,7 @@
         "text-field": "רכבל",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
         "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-max-width": 30,
         "text-max-angle": 20,
@@ -2622,7 +2628,7 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
         "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-max-width": 30,
         "text-max-angle": 20,
@@ -2645,13 +2651,14 @@
         "symbol-placement": "line",
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[15, 13], [20, 20]]},
+        "text-size": {"base": 1.4, "stops": [[15, 18], [20, 30]]},
         "text-max-angle": 15
       },
       "paint": {
-        "text-color": "white",
-        "text-halo-color": "rgba(89, 87, 87, 1)",
-        "text-halo-width": 1
+        "text-color": "rgba(6, 6, 6, 1)",
+        "text-halo-color": "rgba(252, 246, 246, 1)",
+        "text-halo-width": 2,
+        "text-halo-blur": 0.5
       }
     },
     {
@@ -2677,7 +2684,7 @@
       "filter": ["all"],
       "layout": {
         "icon-image": "RTG",
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "icon-size": {"stops": [[10, 0.4], [20, 1]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
