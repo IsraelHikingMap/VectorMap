@@ -296,8 +296,12 @@
       "source": "IHM",
       "source-layer": "water",
       "filter": ["all", ["!=", "intermittent", 1]],
-      "layout": {},
-      "paint": {"fill-color": "rgba(174, 213, 213, 1)"}
+      "paint": {
+        "fill-color": "hsl(205, 56%, 73%)",
+        "fill-outline-color": {
+          "stops": [[6, "rgba(58, 58, 255, 0)"], [20, "rgba(108, 138, 160, 1)"]]
+        }
+      }
     },
     {
       "id": "water_riverbed",
@@ -370,7 +374,6 @@
         ["!in", "brunnel", "tunnel", "bridge"],
         ["!=", "intermittent", 1]
       ],
-      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "hsl(205, 56%, 73%)",
         "line-width": {"base": 1.4, "stops": [[8, 1], [20, 8]]}
@@ -453,7 +456,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "network", "rcn"]],
       "paint": {
-        "line-color": "rgba(219, 5, 4, 0.57)",
+        "line-color": "rgba(246, 146, 145, 1)",
         "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]}
       }
     },
@@ -481,7 +484,7 @@
       ],
       "paint": {
         "line-color": "rgba(130, 130, 130, 1)",
-        "line-width": {"base": 1.55, "stops": [[8, 0.1], [20, 30]]}
+        "line-width": {"base": 1.55, "stops": [[6, 0.25], [20, 30]]}
       }
     },
     {
@@ -567,7 +570,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["in", "class", "track", "unclassified"],
+        ["==", "class", "track"],
         ["!in", "tracktype", "grade1", "grade2"],
         ["!=", "brunnel", "tunnel"]
       ],
@@ -587,7 +590,6 @@
         ["in", "class", "track", "unclassified"],
         ["!=", "brunnel", "tunnel"]
       ],
-      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "white",
         "line-width": {"base": 1.55, "stops": [[14, 2], [20, 15]]}
@@ -674,7 +676,6 @@
         ["==", "subclass", "footway"],
         ["!in", "bicycle", "yes", "designated"]
       ],
-      "layout": {"line-cap": "round"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -1004,7 +1005,7 @@
         "line-gap-width": {"stops": [[15, 3], [20, 8]]}
       }
     },
-    {
+	{
       "id": "perimeter_wall",
       "type": "line",
       "source": "IHM",
