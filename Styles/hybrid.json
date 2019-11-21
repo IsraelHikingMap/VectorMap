@@ -2461,7 +2461,7 @@
       },
       "paint": {}
     },
-    {
+	{
       "id": "water_hole",
       "type": "symbol",
       "source": "IHM",
@@ -2470,9 +2470,7 @@
       "filter": ["all", ["==", "subclass", "waterhole"]],
       "layout": {
         "icon-image": "water_hole",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-field": "{name_he}",
-        "text-size": {"stops": [[14, 18], [20, 33]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
       "paint": {
         "text-color": "blue",
@@ -2489,9 +2487,7 @@
       "filter": ["all", ["==", "subclass", "cistern"]],
       "layout": {
         "icon-image": "cistern",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-field": "{name_he}",
-        "text-size": {"stops": [[10, 18], [22, 33]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
       "paint": {
         "text-color": "blue",
@@ -2499,7 +2495,7 @@
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
     },
-	{
+    {
       "id": "water_waterfall",
       "type": "symbol",
       "source": "IHM",
