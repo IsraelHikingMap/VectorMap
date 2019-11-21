@@ -2499,7 +2499,7 @@
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
     },
-    {
+	{
       "id": "water_waterfall",
       "type": "symbol",
       "source": "IHM",
@@ -2529,7 +2529,7 @@
       },
       "paint": {}
     },
-	{
+    {
       "id": "water_tank",
       "type": "symbol",
       "source": "IHM",
