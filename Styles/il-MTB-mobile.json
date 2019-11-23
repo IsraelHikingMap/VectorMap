@@ -200,7 +200,7 @@
       "source-layer": "landuse",
       "minzoom": 13,
       "filter": ["all", ["==", "class", "pitch"]],
-      "layout": {"visibility": "none"},
+      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(210, 232, 155, 1)",
         "fill-outline-color": "rgba(181, 199, 134, 1)"
