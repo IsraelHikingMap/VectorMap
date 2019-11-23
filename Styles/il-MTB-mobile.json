@@ -175,6 +175,7 @@
       "source-layer": "landcover",
       "minzoom": 8,
       "filter": ["all", ["==", "class", "grass"], ["!=", "subclass", "meadow"]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(210, 232, 155, 1)",
         "fill-outline-color": "rgba(181, 199, 134, 1)"
@@ -199,6 +200,7 @@
       "source-layer": "landuse",
       "minzoom": 13,
       "filter": ["all", ["==", "class", "pitch"]],
+      "layout": {"visibility": "none"},
       "paint": {
         "fill-color": "rgba(210, 232, 155, 1)",
         "fill-outline-color": "rgba(181, 199, 134, 1)"
@@ -1900,7 +1902,8 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
+      "minzoom": 15,
+      "maxzoom": 24,
       "filter": ["all", ["==", "class", "playground"]],
       "layout": {
         "icon-image": "playground",
