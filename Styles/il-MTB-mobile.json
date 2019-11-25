@@ -1490,7 +1490,7 @@
       "source-layer": "ihm_boundary",
       "minzoom": 13,
       "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
-      "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.5}
+      "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.2}
     },
     {
       "id": "area-A",
@@ -1499,7 +1499,7 @@
       "source-layer": "ihm_boundary",
       "minzoom": 13,
       "filter": ["all", ["==", "name_en", "Area A"]],
-      "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.5}
+      "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.2}
     },
     {
       "id": "area-AB-outline",
