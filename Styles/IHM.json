@@ -89,7 +89,7 @@
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
-      "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.15}
+      "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.3}
     },
     {
       "id": "area-A",
@@ -97,7 +97,7 @@
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "filter": ["all", ["==", "name_en", "Area A"]],
-      "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.15}
+      "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.3}
     },
     {
       "id": "area-AB-outline",
@@ -152,8 +152,7 @@
       "paint": {
         "fill-outline-color": "red",
         "fill-pattern": "red_nesw_pattern",
-        "fill-opacity": 0.2,
-        "fill-antialias": true
+        "fill-opacity": 0.3
       }
     },
     {"id": "Terrain", "type": "hillshade", "source": "TerrainRGB"},
