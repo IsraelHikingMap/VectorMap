@@ -566,7 +566,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 14,
       "filter": [
         "all",
         ["in", "class", "track", "unclassified"],
@@ -574,7 +574,7 @@
         ["!=", "brunnel", "tunnel"]
       ],
       "paint": {
-        "line-dasharray": [2, 2],
+        "line-dasharray": {"stops": [[12, [1, 1]], [16, [2, 2]]]},
         "line-width": {"stops": [[14, 3], [16, 6], [20, 18]]}
       }
     },
@@ -2025,7 +2025,8 @@
       },
       "paint": {
         "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[16, 0], [16, 1]]}
       }
     },
     {
@@ -2041,7 +2042,7 @@
       ],
       "layout": {
         "icon-image": "synagogue",
-        "icon-size": {"stops": [[14, 0.4], [20, 1]]},
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
         "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
@@ -2051,7 +2052,8 @@
       },
       "paint": {
         "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[16, 0], [16, 1]]}
       }
     },
     {
@@ -2077,7 +2079,8 @@
       },
       "paint": {
         "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[16, 0], [16, 1]]}
       }
     },
     {
@@ -2103,7 +2106,8 @@
       },
       "paint": {
         "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[16, 0], [16, 1]]}
       }
     },
     {
@@ -2147,7 +2151,7 @@
         "icon-image": "bollards",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]}
       },
-      "paint": {}
+      "paint": {"icon-opacity": 1, "icon-halo-width": 0}
     },
     {
       "id": "barrier_open_gate",
@@ -2481,8 +2485,12 @@
       "layout": {
         "icon-image": "water_hole",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
-        "text-size": {"stops": [[14, 18], [20, 33]]}
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-color": "blue",
@@ -2500,8 +2508,12 @@
       "layout": {
         "icon-image": "cistern",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
-        "text-size": {"stops": [[10, 18], [22, 33]]}
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-color": "blue",
