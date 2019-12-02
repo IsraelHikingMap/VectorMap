@@ -164,7 +164,7 @@
         "all",
         ["in", "class", "residential", "commercial", "industrial"]
       ],
-      "layout": {"visibility": "none"},
+      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(224, 224, 224, 1)",
         "fill-outline-color": "rgba(187, 187, 187, 1)"
