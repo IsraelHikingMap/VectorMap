@@ -316,7 +316,10 @@
       "source-layer": "water",
       "filter": ["all", ["!=", "intermittent", 1]],
       "layout": {},
-      "paint": {"fill-color": "rgba(174, 213, 213, 1)"}
+      "paint": {
+        "fill-color": "rgba(174, 213, 213, 1)",
+        "fill-outline-color": "rgba(0, 32, 255, 1)"
+      }
     },
     {
       "id": "water_riverbed",
@@ -583,7 +586,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 14,
+      "minzoom": 13,
       "filter": [
         "all",
         ["in", "class", "track", "unclassified"],
@@ -617,7 +620,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "class", "track"],
