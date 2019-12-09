@@ -317,7 +317,7 @@
       "filter": ["all", ["!=", "intermittent", 1]],
       "layout": {},
       "paint": {
-        "fill-color": "rgba(174, 213, 213, 1)",
+        "fill-color": "rgba(148, 193, 225, 1)",
         "fill-outline-color": "rgba(0, 32, 255, 1)"
       }
     },
