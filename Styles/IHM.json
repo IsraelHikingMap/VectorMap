@@ -445,10 +445,7 @@
       "minzoom": 9,
       "filter": ["all"],
       "paint": {
-        "line-pattern": "",
         "line-width": 2,
-        "line-offset": 0,
-        "line-opacity": 1,
         "line-color": "#709D56",
         "line-dasharray": [8, 2, 1, 2, 1, 2]
       }
@@ -553,7 +550,6 @@
       "minzoom": 15,
       "filter": ["all", ["==", "class", "helipad"]],
       "paint": {
-        "fill-opacity": 1,
         "fill-color": "rgba(96, 96, 96, 1)",
         "fill-outline-color": "rgba(64, 64, 64, 1)"
       }
@@ -580,15 +576,6 @@
         "line-color": "rgba(96, 96, 96, 1)",
         "line-width": {"stops": [[11, 3], [12, 4], [13, 8], [14, 16], [15, 32]]}
       }
-    },
-    {
-      "id": "building",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "building",
-      "minzoom": 15,
-      "filter": ["all"],
-      "paint": {"fill-opacity": 1, "fill-color": "rgba(191, 191, 191, 1)"}
     },
     {
       "id": "barrier-wall",
@@ -1233,6 +1220,18 @@
         "icon-text-fit-padding": [2, 6, 2, 6]
       },
       "paint": {"text-color": "blue"}
+    },
+    {
+      "id": "building",
+      "type": "fill-extrusion",
+      "source": "IHM",
+      "source-layer": "building",
+      "minzoom": 15,
+      "filter": ["all"],
+      "paint": {
+        "fill-extrusion-color": "rgba(191, 191, 191, 1)",
+        "fill-extrusion-height": ["get", "render_height"]
+      }
     },
     {
       "id": "icon-quarry",
