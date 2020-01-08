@@ -436,7 +436,7 @@
       "paint": {
         "line-pattern": "gradient_pattern",
         "line-width": 8,
-        "line-offset": 5,
+        "line-offset": 4,
         "line-opacity": 0.3
       }
     },
