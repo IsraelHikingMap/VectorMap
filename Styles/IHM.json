@@ -1,7 +1,10 @@
 {
   "version": 8,
-  "name": "IHM",
-  "metadata": {},
+  "name": "Israel Hiking",
+  "metadata": {
+    "owner": "Zeev Stadler",
+    "copyright": "Copyright Zeev Stadler 2019-2020. All Rights Reserved."
+  },
   "sources": {
     "IHM": {
       "type": "vector",
@@ -16,7 +19,7 @@
       "url": "https://israelhiking.osm.org.il/data/Contour.json"
     }
   },
-  "sprite": "https://raw.githubusercontent.com/IsraelHikingMap/VectorMap/master/Icons/publish/sprite",
+  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
@@ -1604,26 +1607,6 @@
       }
     },
     {
-      "id": "water-line-name",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "waterway",
-      "layout": {
-        "text-field": "{name_he}",
-        "symbol-placement": "line-center",
-        "text-font": ["Open Sans Regular"],
-        "text-size": 20,
-        "text-letter-spacing": 0.75,
-        "text-max-angle": 45,
-        "text-keep-upright": true
-      },
-      "paint": {
-        "text-color": "#1E80E2",
-        "text-halo-color": "white",
-        "text-halo-width": 2
-      }
-    },
-    {
       "id": "water-area-name",
       "type": "symbol",
       "source": "IHM",
@@ -1743,6 +1726,26 @@
         "circle-color": "#1E80E2",
         "circle-stroke-color": "white",
         "circle-stroke-width": 1.2
+      }
+    },
+    {
+      "id": "water-line-name",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "waterway",
+      "layout": {
+        "text-field": "{name_he}",
+        "symbol-placement": "line-center",
+        "text-font": ["Open Sans Regular"],
+        "text-size": 20,
+        "text-letter-spacing": 0.75,
+        "text-max-angle": 45,
+        "text-keep-upright": true
+      },
+      "paint": {
+        "text-color": "#1E80E2",
+        "text-halo-color": "white",
+        "text-halo-width": 2
       }
     },
     {
@@ -1980,7 +1983,5 @@
       }
     }
   ],
-  "id": "IHM",
-  "owner": "Zeev Stadler",
-  "copyright": "Copyright Zeev Stadler 2019. All Rights Reserved."
+  "id": "IHM"
 }
