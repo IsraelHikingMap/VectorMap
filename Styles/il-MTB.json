@@ -120,10 +120,11 @@
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 14,
-      "filter": ["all", ["in", "subclass", "meadow", "scrub"]],
+      "filter": ["all", ["in", "subclass", "scrub"]],
       "layout": {
         "icon-image": "bushes_pattern",
-        "icon-size": {"stops": [[14, 0.5], [18, 2]]}
+        "icon-size": {"stops": [[14, 0.5], [18, 2]]},
+        "visibility": "visible"
       },
       "paint": {}
     },
@@ -163,6 +164,7 @@
         "all",
         ["in", "class", "residential", "commercial", "industrial"]
       ],
+      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(224, 224, 224, 1)",
         "fill-outline-color": "rgba(187, 187, 187, 1)"
@@ -175,9 +177,25 @@
       "source-layer": "landcover",
       "minzoom": 8,
       "filter": ["all", ["==", "class", "grass"], ["!=", "subclass", "meadow"]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(210, 232, 155, 1)",
         "fill-outline-color": "rgba(181, 199, 134, 1)"
+      }
+    },
+    {
+      "id": "land-quarry-limit",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 9,
+      "filter": ["all", ["==", "subclass", "quarry"]],
+      "layout": {},
+      "paint": {
+        "line-width": {"stops": [[9, 1], [12, 2], [21, 50]]},
+        "line-offset": {"stops": [[9, 1], [12, 1], [21, 20]]},
+        "line-opacity": 0.2,
+        "line-blur": 5
       }
     },
     {
@@ -189,7 +207,7 @@
       "filter": ["all", ["==", "subclass", "quarry"]],
       "paint": {
         "fill-color": "rgba(106, 104, 104, 0.36)",
-        "fill-outline-color": "rgba(20, 19, 19, 1)"
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
       }
     },
     {
@@ -199,36 +217,10 @@
       "source-layer": "landuse",
       "minzoom": 13,
       "filter": ["all", ["==", "class", "pitch"]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(210, 232, 155, 1)",
         "fill-outline-color": "rgba(181, 199, 134, 1)"
-      }
-    },
-    {
-      "id": "park_edge-wide",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "park",
-      "minzoom": 12,
-      "filter": ["all", ["in", "class", "national_park", "nature_reserve"]],
-      "paint": {
-        "line-width": {"stops": [[12, 4], [15, 10]]},
-        "line-color": "rgba(16, 81, 10, 1)",
-        "line-opacity": {"stops": [[12, 0.2], [20, 0.4]]},
-        "line-offset": {"stops": [[12, 2], [15, 5]]}
-      }
-    },
-    {
-      "id": "park_edge-narrow",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "park",
-      "minzoom": 12,
-      "filter": ["all", ["in", "class", "national_park", "nature_reserve"]],
-      "paint": {
-        "line-width": {"stops": [[12, 1], [15, 2]]},
-        "line-color": "rgba(17, 81, 10, 1)",
-        "line-opacity": {"stops": [[12, 0.5], [20, 1]]}
       }
     },
     {
@@ -296,11 +288,10 @@
       "source": "IHM",
       "source-layer": "water",
       "filter": ["all", ["!=", "intermittent", 1]],
+      "layout": {},
       "paint": {
-        "fill-color": "hsl(205, 56%, 73%)",
-        "fill-outline-color": {
-          "stops": [[6, "rgba(58, 58, 255, 0)"], [20, "rgba(108, 138, 160, 1)"]]
-        }
+        "fill-color": "rgba(148, 193, 225, 1)",
+        "fill-outline-color": "rgba(0, 32, 255, 1)"
       }
     },
     {
@@ -325,6 +316,33 @@
         "fill-color": "rgba(200, 217, 174, 1)",
         "fill-pattern": "intermittent_pattern",
         "fill-outline-color": "rgba(185, 211, 246, 1)"
+      }
+    },
+    {
+      "id": "park_edge-narrow",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "park",
+      "minzoom": 12,
+      "filter": ["all", ["in", "class", "national_park", "nature_reserve"]],
+      "paint": {
+        "line-width": {"stops": [[12, 1], [15, 2]]},
+        "line-color": "rgba(17, 81, 10, 1)",
+        "line-opacity": {"stops": [[12, 0.5], [20, 1]]}
+      }
+    },
+    {
+      "id": "park_edge-wide",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "park",
+      "minzoom": 12,
+      "filter": ["all", ["in", "class", "national_park", "nature_reserve"]],
+      "paint": {
+        "line-width": {"stops": [[12, 4], [15, 10]]},
+        "line-color": "rgba(16, 81, 10, 1)",
+        "line-opacity": {"stops": [[12, 0.2], [20, 0.4]]},
+        "line-offset": {"stops": [[12, 2], [15, 5]]}
       }
     },
     {
@@ -374,6 +392,7 @@
         ["!in", "brunnel", "tunnel", "bridge"],
         ["!=", "intermittent", 1]
       ],
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "hsl(205, 56%, 73%)",
         "line-width": {"base": 1.4, "stops": [[8, 1], [20, 8]]}
@@ -456,7 +475,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "network", "rcn"]],
       "paint": {
-        "line-color": "rgba(246, 146, 145, 1)",
+        "line-color": "rgba(219, 5, 4, 0.57)",
         "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]}
       }
     },
@@ -483,8 +502,8 @@
         ["!=", "brunnel", "tunnel"]
       ],
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
-        "line-width": {"base": 1.55, "stops": [[6, 0.25], [20, 30]]}
+        "line-color": "rgba(102, 102, 102, 1)",
+        "line-width": {"base": 1.55, "stops": [[8, 0.1], [20, 30]]}
       }
     },
     {
@@ -495,7 +514,7 @@
       "minzoom": 10,
       "filter": ["all", ["==", "ramp", 1], ["!=", "subclass", "steps"]],
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
+        "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 35]]}
       }
     },
@@ -510,7 +529,7 @@
         ["!=", "brunnel", "tunnel"]
       ],
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
+        "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 35]]}
       }
     },
@@ -527,7 +546,7 @@
         ["!=", "ramp", 1]
       ],
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
+        "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 1], [20, 40]]}
       }
     },
@@ -544,7 +563,7 @@
         ["!=", "brunnel", "tunnel"]
       ],
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
+        "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[4, 1], [20, 45]]}
       }
     },
@@ -567,10 +586,10 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "track"],
+        ["in", "class", "track", "unclassified"],
         ["!in", "tracktype", "grade1", "grade2"],
         ["!=", "brunnel", "tunnel"]
       ],
@@ -590,6 +609,7 @@
         ["in", "class", "track", "unclassified"],
         ["!=", "brunnel", "tunnel"]
       ],
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "white",
         "line-width": {"base": 1.55, "stops": [[14, 2], [20, 15]]}
@@ -600,7 +620,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "class", "track"],
@@ -659,6 +679,7 @@
         ["==", "bicycle", "no"],
         ["!=", "subclass", "steps"]
       ],
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -676,6 +697,7 @@
         ["==", "subclass", "footway"],
         ["!in", "bicycle", "yes", "designated"]
       ],
+      "layout": {"line-cap": "round"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -1023,7 +1045,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "linear_barrier",
-      "minzoom": 12,
+      "minzoom": 11,
       "filter": ["all", ["==", "class", "city_wall"]],
       "paint": {
         "line-width": {"stops": [[12, 3], [20, 15]]},
@@ -1119,7 +1141,7 @@
       "source-layer": "transportation",
       "filter": ["all", ["==", "ramp", 1], ["!=", "subclass", "steps"]],
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
+        "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 35]]}
       }
     },
@@ -1163,7 +1185,11 @@
         ["==", "brunnel", "bridge"],
         ["in", "class", "motorway", "trunk", "primary"]
       ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "#fff",
         "line-width": {"base": 1.4, "stops": [[14, 7], [20, 50]]}
@@ -1302,7 +1328,7 @@
         ["==", "brunnel", "bridge"]
       ],
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
+        "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.55, "stops": [[6, 0.25], [20, 30]]}
       }
     },
@@ -1317,7 +1343,7 @@
         ["==", "brunnel", "bridge"]
       ],
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
+        "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 35]]}
       }
     },
@@ -1332,7 +1358,7 @@
         ["==", "brunnel", "bridge"]
       ],
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
+        "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 1], [20, 40]]}
       }
     },
@@ -1346,9 +1372,13 @@
         ["==", "class", "motorway"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {"line-cap": "square", "line-join": "round"},
+      "layout": {
+        "line-cap": "square",
+        "line-join": "round",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "rgba(130, 130, 130, 1)",
+        "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[4, 1], [20, 45]]}
       }
     },
@@ -1489,7 +1519,7 @@
       "source-layer": "ihm_boundary",
       "minzoom": 13,
       "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
-      "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.5}
+      "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.2}
     },
     {
       "id": "area-A",
@@ -1498,7 +1528,7 @@
       "source-layer": "ihm_boundary",
       "minzoom": 13,
       "filter": ["all", ["==", "name_en", "Area A"]],
-      "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.5}
+      "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.2}
     },
     {
       "id": "area-AB-outline",
@@ -1519,7 +1549,7 @@
         "symbol-placement": "line",
         "text-field": "{ref}",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-size": {"base": 1.4, "stops": [[8, 13], [20, 30]]},
         "text-rotation-alignment": "viewport",
         "icon-pitch-alignment": "map",
         "icon-image": "shield_brown",
@@ -1543,7 +1573,7 @@
         "symbol-placement": "line",
         "text-field": "{ref}",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-size": {"base": 1.4, "stops": [[8, 13], [20, 30]]},
         "text-rotation-alignment": "viewport",
         "icon-pitch-alignment": "map",
         "icon-image": "shield_green",
@@ -1567,7 +1597,7 @@
         "symbol-placement": "line",
         "text-field": "{ref}",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-size": {"base": 1.4, "stops": [[8, 13], [20, 30]]},
         "text-rotation-alignment": "viewport",
         "icon-pitch-alignment": "map",
         "icon-image": "shield_red",
@@ -1591,7 +1621,7 @@
         "symbol-placement": "line",
         "text-field": "{ref}",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[8, 9], [20, 20]]},
+        "text-size": {"base": 1.4, "stops": [[8, 13], [20, 30]]},
         "text-rotation-alignment": "viewport",
         "icon-pitch-alignment": "map",
         "icon-image": "shield_blue",
@@ -1662,7 +1692,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "landuse",
-      "minzoom": 12,
+      "minzoom": 10,
       "maxzoom": 22,
       "filter": [
         "all",
@@ -1678,10 +1708,37 @@
         "text-max-width": 3,
         "icon-pitch-alignment": "map",
         "icon-image": "airfield",
-        "icon-size": {"stops": [[10, 0.5], [15, 1]]}
+        "icon-size": {"stops": [[10, 0.5], [15, 1]]},
+        "icon-padding": 300
       },
       "paint": {
         "text-color": "#666",
+        "text-halo-width": 1,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "airport-international-label",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "aerodrome_label",
+      "minzoom": 10,
+      "maxzoom": 15,
+      "filter": ["all", ["has", "iata"], ["==", "class", "international"]],
+      "layout": {
+        "text-size": {"stops": [[10, 12], [16, 20]]},
+        "text-font": ["Open Sans Regular"],
+        "text-offset": [0, 0.5],
+        "text-anchor": "top",
+        "text-field": "{name_he}",
+        "text-max-width": 3,
+        "icon-pitch-alignment": "map",
+        "icon-image": "airfield",
+        "icon-size": {"stops": [[10, 0.5], [15, 1]]}
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
         "text-halo-width": 1,
         "text-halo-color": "rgba(255,255,255,0.75)",
         "text-halo-blur": 1
@@ -1696,7 +1753,7 @@
       "maxzoom": 15,
       "filter": ["all", ["has", "iata"]],
       "layout": {
-        "text-size": 11,
+        "text-size": {"stops": [[10, 18], [15, 24]]},
         "text-font": ["Open Sans Regular"],
         "text-offset": [0, 0.5],
         "text-anchor": "top",
@@ -1707,18 +1764,31 @@
         "icon-size": {"stops": [[10, 0.5], [15, 1]]}
       },
       "paint": {
-        "text-color": "#666",
+        "text-color": "rgba(0, 0, 0, 1)",
         "text-halo-width": 1,
         "text-halo-color": "rgba(255,255,255,0.75)",
         "text-halo-blur": 1
       }
     },
     {
-      "id": "building",
+      "id": "building_regular",
       "type": "fill-extrusion",
       "source": "IHM",
       "source-layer": "building",
       "minzoom": 15,
+      "filter": ["all", ["==", "render_height", 5]],
+      "paint": {
+        "fill-extrusion-color": "rgba(156, 152, 152, 1)",
+        "fill-extrusion-height": 10
+      }
+    },
+    {
+      "id": "building_high",
+      "type": "fill-extrusion",
+      "source": "IHM",
+      "source-layer": "building",
+      "minzoom": 15,
+      "filter": ["all", ["!=", "render_height", 5]],
       "paint": {
         "fill-extrusion-color": "rgba(156, 152, 152, 1)",
         "fill-extrusion-height": ["get", "render_height"]
@@ -1733,13 +1803,13 @@
       "filter": ["all", ["==", "class", "campsite"]],
       "layout": {
         "icon-image": "camping",
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "icon-size": {"stops": [[10, 0.5], [20, 1]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-color": "rgba(119, 101, 55, 1)",
@@ -1757,12 +1827,12 @@
       "layout": {
         "icon-image": "bike-red",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -1794,10 +1864,9 @@
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
         "text-size": {"stops": [[14, 13], [20, 22]]},
         "text-font": ["Open Sans Regular"],
-        "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -1845,12 +1914,12 @@
       "layout": {
         "icon-image": "hotel",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -1901,7 +1970,8 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
+      "minzoom": 15,
+      "maxzoom": 24,
       "filter": ["all", ["==", "class", "playground"]],
       "layout": {
         "icon-image": "playground",
@@ -1919,12 +1989,12 @@
       "layout": {
         "icon-image": "cafe",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -1941,16 +2011,17 @@
       "layout": {
         "icon-image": "parking",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[15, 0], [15, 1]]}
       }
     },
     {
@@ -1961,12 +2032,12 @@
       "minzoom": 16,
       "filter": ["all", ["in", "class", "restaurant", "fast_food"]],
       "layout": {
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1],
+        "text-offset": [0, 0.5],
         "icon-image": "food"
       },
       "paint": {
@@ -1988,16 +2059,17 @@
       "layout": {
         "icon-image": "square",
         "icon-size": {"stops": [[10, 0.1], [20, 0.75]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[15, 0], [15, 1]]}
       }
     },
     {
@@ -2014,16 +2086,17 @@
       "layout": {
         "icon-image": "holy_place",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[16, 0], [16, 1]]}
       }
     },
     {
@@ -2031,7 +2104,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
+      "minzoom": 14,
       "filter": [
         "all",
         ["==", "class", "place_of_worship"],
@@ -2039,9 +2112,19 @@
       ],
       "layout": {
         "icon-image": "synagogue",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name_he}",
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
       },
-      "paint": {}
+      "paint": {
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[16, 0], [16, 1]]}
+      }
     },
     {
       "id": "religion-mosque",
@@ -2057,16 +2140,17 @@
       "layout": {
         "icon-image": "mosque",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[16, 0], [16, 1]]}
       }
     },
     {
@@ -2083,16 +2167,17 @@
       "layout": {
         "icon-image": "church",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-halo-color": "rgba(255,255,255,0.75)",
+        "text-opacity": {"stops": [[16, 0], [16, 1]]}
       }
     },
     {
@@ -2136,7 +2221,7 @@
         "icon-image": "bollards",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]}
       },
-      "paint": {}
+      "paint": {"icon-opacity": 1, "icon-halo-width": 0}
     },
     {
       "id": "barrier_open_gate",
@@ -2187,12 +2272,12 @@
       "layout": {
         "icon-image": "cave",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2209,12 +2294,12 @@
       "layout": {
         "icon-image": "flower",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2248,12 +2333,12 @@
       "layout": {
         "icon-image": "star",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2274,12 +2359,12 @@
       "layout": {
         "icon-image": "monument",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2296,12 +2381,12 @@
       "layout": {
         "icon-image": "jar",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2341,10 +2426,9 @@
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
         "text-size": {"stops": [[14, 13], [20, 22]]},
         "text-font": ["Open Sans Regular"],
-        "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2361,12 +2445,12 @@
       "layout": {
         "icon-image": "ruins",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2387,12 +2471,12 @@
       "layout": {
         "icon-image": "viewpoint",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 1]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2408,15 +2492,16 @@
       "filter": ["all", ["==", "$type", "Point"]],
       "layout": {
         "icon-image": "dot",
-        "text-size": {"stops": [[12, 12], [20, 20]]},
-        "icon-size": {"stops": [[12, 0.5], [22, 1]]},
+        "text-size": {"stops": [[12, 18], [20, 30]]},
+        "icon-size": {"stops": [[12, 0.75], [22, 1.5]]},
         "text-font": ["Open Sans Regular"],
-        "text-offset": [0, -1.8],
+        "text-offset": [0, -1.25],
         "text-field": "{ele}\n\n{name_he}",
         "icon-anchor": "center",
         "text-padding": 0,
         "text-max-width": 7,
-        "text-anchor": "top"
+        "text-anchor": "top",
+        "text-line-height": 0.825
       },
       "paint": {
         "text-halo-width": 2,
@@ -2434,7 +2519,7 @@
       "layout": {
         "icon-image": "spring",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
         "text-max-width": 5,
@@ -2469,7 +2554,13 @@
       "filter": ["all", ["==", "subclass", "waterhole"]],
       "layout": {
         "icon-image": "water_hole",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name_he}",
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-color": "blue",
@@ -2486,7 +2577,13 @@
       "filter": ["all", ["==", "subclass", "cistern"]],
       "layout": {
         "icon-image": "cistern",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name_he}",
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-color": "blue",
@@ -2503,7 +2600,13 @@
       "filter": ["all", ["==", "subclass", "waterfall"]],
       "layout": {
         "icon-image": "waterfall",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name_he}",
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-color": "blue",
@@ -2545,17 +2648,19 @@
       "minzoom": 14,
       "filter": ["all", ["!=", "brunnel", "tunnel"]],
       "layout": {
-        "symbol-placement": "line-center",
+        "symbol-placement": "line",
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
         "text-max-width": 30,
         "text-allow-overlap": false,
-        "symbol-spacing": 500
+        "symbol-spacing": 750,
+        "text-letter-spacing": 0.1,
+        "text-max-angle": 30
       },
       "paint": {
-        "text-color": "rgba(38, 89, 130, 1)",
+        "text-color": "blue",
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
@@ -2573,7 +2678,7 @@
         "text-field": "{name}",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
         "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-max-width": 30,
         "text-max-angle": 20,
@@ -2597,7 +2702,7 @@
         "text-field": "רכבל",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
         "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-max-width": 30,
         "text-max-angle": 20,
@@ -2621,7 +2726,7 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 13], [20, 22]]},
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
         "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
         "text-max-width": 30,
         "text-max-angle": 20,
@@ -2644,13 +2749,14 @@
         "symbol-placement": "line",
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[15, 13], [20, 20]]},
+        "text-size": {"base": 1.4, "stops": [[15, 18], [20, 30]]},
         "text-max-angle": 15
       },
       "paint": {
-        "text-color": "white",
-        "text-halo-color": "rgba(89, 87, 87, 1)",
-        "text-halo-width": 1
+        "text-color": "rgba(6, 6, 6, 1)",
+        "text-halo-color": "rgba(252, 246, 246, 1)",
+        "text-halo-width": 2,
+        "text-halo-blur": 0.5
       }
     },
     {
@@ -2676,7 +2782,7 @@
       "filter": ["all"],
       "layout": {
         "icon-image": "RTG",
-        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
         "icon-size": {"stops": [[10, 0.4], [20, 1]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
@@ -2690,28 +2796,34 @@
       }
     },
     {
+      "id": "label_neighbourhood",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 14,
+      "maxzoom": 16,
+      "filter": ["all", ["in", "class", "suburb", "neighbourhood"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Regular"],
+        "text-max-width": 3,
+        "text-size": {"stops": [[8, 15], [20, 25]]}
+      },
+      "paint": {"text-halo-color": "hsl(0, 0%, 100%)", "text-halo-width": 2}
+    },
+    {
       "id": "label_hamlet",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 8,
       "maxzoom": 15,
-      "filter": [
-        "all",
-        [
-          "in",
-          "class",
-          "hamlet",
-          "suburb",
-          "neighbourhood",
-          "isolated_dwelling"
-        ]
-      ],
+      "filter": ["all", ["in", "class", "hamlet", "isolated_dwelling"]],
       "layout": {
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-max-width": 3,
-        "text-size": {"stops": [[8, 9], [20, 17]]}
+        "text-size": {"stops": [[8, 15], [20, 25]]}
       },
       "paint": {"text-halo-color": "hsl(0, 0%, 100%)", "text-halo-width": 2}
     },
@@ -2720,14 +2832,14 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "place",
-      "minzoom": 8,
+      "minzoom": 9,
       "maxzoom": 15,
       "filter": ["all", ["==", "class", "village"]],
       "layout": {
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-max-width": 3,
-        "text-size": {"stops": [[8, 10], [20, 20]]}
+        "text-size": {"stops": [[8, 15], [20, 30]]}
       },
       "paint": {"text-halo-color": "hsl(0, 0%, 100%)", "text-halo-width": 2}
     },
@@ -2737,13 +2849,13 @@
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 8,
-      "maxzoom": 15,
+      "maxzoom": 14,
       "filter": ["all", ["==", "class", "town"]],
       "layout": {
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-max-width": 3,
-        "text-size": {"stops": [[8, 12], [20, 22]]}
+        "text-size": {"stops": [[8, 18], [20, 33]]}
       },
       "paint": {"text-halo-color": "hsl(0, 0%, 100%)", "text-halo-width": 2}
     },
@@ -2759,7 +2871,31 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-max-width": 3,
-        "text-size": {"stops": [[3, 13], [8, 16]]}
+        "text-size": {"stops": [[3, 20], [8, 24]]}
+      },
+      "paint": {
+        "text-color": "hsl(0, 0%, 0%)",
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "dot_town",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 0,
+      "maxzoom": 9,
+      "filter": ["all", ["==", "class", "town"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Regular"],
+        "text-max-width": 5,
+        "text-size": {"stops": [[3, 8], [8, 21]]},
+        "icon-image": "dot",
+        "text-anchor": "top",
+        "text-offset": [0, 0.2],
+        "icon-size": {"stops": [[6, 0.3], [8, 0.6]]}
       },
       "paint": {
         "text-color": "hsl(0, 0%, 0%)",
@@ -2779,7 +2915,7 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-max-width": 5,
-        "text-size": {"stops": [[3, 7], [8, 16]]},
+        "text-size": {"stops": [[3, 11], [8, 24]]},
         "icon-image": "dot",
         "text-anchor": "top",
         "text-offset": [0, 0.2],
@@ -2803,7 +2939,7 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Bold"],
         "text-max-width": 5,
-        "text-size": {"stops": [[3, 7], [8, 22]]}
+        "text-size": {"stops": [[3, 12], [8, 33]]}
       },
       "paint": {
         "text-color": "hsl(0, 0%, 13%)",
@@ -2820,7 +2956,7 @@
         "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "text-size": 12,
+        "text-size": {"stops": [[14, 16], [20, 30]]},
         "text-letter-spacing": 0.2,
         "symbol-spacing": 250,
         "text-max-angle": 45,
@@ -2828,7 +2964,7 @@
         "text-max-width": 5
       },
       "paint": {
-        "text-color": "#265982",
+        "text-color": "blue",
         "text-halo-color": "white",
         "text-halo-width": 1.5
       }
