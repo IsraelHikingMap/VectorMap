@@ -171,7 +171,6 @@
         "text-font": ["Open Sans Regular"],
         "text-size": 10,
         "text-allow-overlap": false,
-        "text-optional": true,
         "symbol-avoid-edges": true,
         "text-max-angle": 45,
         "text-letter-spacing": 0.15
@@ -1366,7 +1365,6 @@
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true,
-        "icon-optional": true,
         "icon-padding": 50
       },
       "paint": {
@@ -1841,14 +1839,14 @@
         "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[15, 13], [16, 15]]},
+        "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-max-width": 5
       },
       "paint": {
         "text-color": "rgba(26, 26, 26, 1)",
         "text-halo-color": "white",
-        "text-halo-width": 1.5
+        "text-halo-width": 2
       }
     },
     {
@@ -1862,14 +1860,14 @@
         "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[12, 13], [16, 15]]},
+        "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-max-width": 5
       },
       "paint": {
         "text-color": "rgba(26, 26, 26, 1)",
         "text-halo-color": "white",
-        "text-halo-width": 1.5
+        "text-halo-width": 2
       }
     },
     {
@@ -1877,20 +1875,20 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "place",
-      "minzoom": 10,
+      "minzoom": 11,
       "filter": ["all", ["==", "class", "village"]],
       "layout": {
         "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[10, 13], [16, 15]]},
+        "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-max-width": 5
       },
       "paint": {
         "text-color": "rgba(26, 26, 26, 1)",
         "text-halo-color": "white",
-        "text-halo-width": 1.5
+        "text-halo-width": 2
       }
     },
     {
@@ -1905,14 +1903,14 @@
         "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "text-size": 15,
+        "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-max-width": 5
       },
       "paint": {
         "text-color": "rgba(26, 26, 26, 1)",
         "text-halo-color": "white",
-        "text-halo-width": 1.5
+        "text-halo-width": 2
       }
     },
     {
@@ -1920,13 +1918,14 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "place",
+      "minzoom": 10,
       "maxzoom": 13,
       "filter": ["all", ["==", "class", "town"]],
       "layout": {
         "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[10, 15], [13, 15]]},
+        "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-max-width": 5
       },
@@ -1948,7 +1947,7 @@
         "text-field": "{name_he}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Regular"],
-        "text-size": {"base": 1.4, "stops": [[8, 15], [10, 20], [14, 25]]},
+        "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-max-width": 5
       },
