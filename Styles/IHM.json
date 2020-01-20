@@ -1454,17 +1454,8 @@
       "source-layer": "poi",
       "filter": [
         "any",
-        [
-          "==",
-          "subclass",
-          "cave_entrance"
-        ],
-        [
-          "in",
-          "tomb",
-          "hypogeum",
-          "rock-cut"
-        ]
+        ["==", "subclass", "cave_entrance"],
+        ["in", "tomb", "hypogeum", "rock-cut"]
       ],
       "layout": {
         "icon-image": "cave",
@@ -1826,6 +1817,24 @@
         "text-halo-color": "white",
         "text-halo-width": 2,
         "text-translate": {"stops": [[15, [0, -5]], [16, [0, -8]]]}
+      }
+    },
+    {
+      "id": "park-text",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "park",
+      "filter": ["all", ["==", "$type", "Point"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-size": 18,
+        "text-font": ["Open Sans Regular"],
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "#709D56",
+        "text-halo-color": "white",
+        "text-halo-width": 2
       }
     },
     {
