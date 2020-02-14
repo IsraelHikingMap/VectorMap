@@ -2040,7 +2040,7 @@
       "layout": {
         "text-field": "{east}",
         "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
+        "text-font": ["Open Sans Bold"],
         "text-size": 16,
         "text-letter-spacing": 0.2,
         "text-allow-overlap": true
@@ -2066,7 +2066,7 @@
       "layout": {
         "text-field": "{north}",
         "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
+        "text-font": ["Open Sans Bold"],
         "text-size": 16,
         "text-letter-spacing": 0.1,
         "text-anchor": "left",
