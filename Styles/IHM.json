@@ -21,7 +21,7 @@
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
-  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "glyphs": "https://israelhiking.osm.org.il/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
@@ -1652,9 +1652,9 @@
       ],
       "layout": {
         "icon-image": "water_tank",
+        "text-field": "{name_he}",
         "icon-size": 0.4,
         "icon-allow-overlap": true,
-        "text-field": "{name_he}",
         "text-font": ["Open Sans Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -1677,6 +1677,7 @@
       "filter": ["all", ["==", "subclass", "waterhole"]],
       "layout": {
         "icon-image": "water_hole",
+        "text-field": "{name_he}",
         "icon-size": 0.4,
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Bold"],
@@ -1701,6 +1702,7 @@
       "filter": ["all", ["==", "subclass", "water_well"]],
       "layout": {
         "icon-image": "water_well",
+        "text-field": "{name_he}",
         "icon-size": 0.4,
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Bold"],
@@ -1750,7 +1752,7 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "filter": ["all", ["==", "subclass", "spring"]],
+      "filter": ["all", ["in", "subclass", "spring", "pond", "stream_pool"]],
       "paint": {
         "circle-radius": 5,
         "circle-color": "#1E80E2",
@@ -1784,7 +1786,7 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
-      "filter": ["all", ["in", "subclass", "cistern", "spring"]],
+      "filter": ["all", ["in", "subclass", "cistern", "spring", "pond", "stream_pool"]],
       "layout": {
         "text-field": "{name_he}",
         "text-font": ["Open Sans Bold"],
@@ -2040,7 +2042,7 @@
       "layout": {
         "text-field": "{east}",
         "symbol-placement": "point",
-        "text-font": ["Open Sans Bold"],
+        "text-font": ["Open Sans Cond Bold"],
         "text-size": 16,
         "text-letter-spacing": 0.2,
         "text-allow-overlap": true
@@ -2066,7 +2068,7 @@
       "layout": {
         "text-field": "{north}",
         "symbol-placement": "point",
-        "text-font": ["Open Sans Bold"],
+        "text-font": ["Open Sans Cond Bold"],
         "text-size": 16,
         "text-letter-spacing": 0.1,
         "text-anchor": "left",
