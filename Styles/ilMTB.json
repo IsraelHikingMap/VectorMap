@@ -2968,6 +2968,81 @@
         "text-halo-color": "white",
         "text-halo-width": 1.5
       }
+    },
+    {
+      "id": "grid-lines-minor",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "minzoom": 0,
+      "filter": ["all"],
+      "paint": {
+        "line-color": "rgba(127, 127, 127, 1)",
+        "line-width": {"stops": [[8, 0.5], [11, 1]]}
+      }
+    },
+    {
+      "id": "grid-lines-major",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "minzoom": 11,
+      "filter": ["any", [">=", "east_rank", 10], [">=", "north_rank", 10]],
+      "paint": {"line-color": "rgba(127, 127, 127, 1)", "line-width": 2}
+    },
+    {
+      "id": "grid-label-east",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "filter": [
+        "all",
+        [">=", "north_rank", 10],
+        ["in", "east_rank", 2, 10, 20]
+      ],
+      "layout": {
+        "text-field": "{east}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-letter-spacing": 0.2,
+        "text-allow-overlap": true
+      },
+      "paint": {
+        "text-color": "#7F7F7F",
+        "text-halo-width": 2,
+        "text-halo-color": "white",
+        "text-translate": [0, -15],
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "grid-label-north",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "filter": [
+        "all",
+        [">=", "east_rank", 10],
+        ["in", "north_rank", 2, 10, 20]
+      ],
+      "layout": {
+        "text-field": "{north}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-letter-spacing": 0.1,
+        "text-anchor": "left",
+        "text-justify": "left",
+        "text-allow-overlap": true
+      },
+      "paint": {
+        "text-color": "#7F7F7F",
+        "text-halo-width": 2,
+        "text-halo-color": "white",
+        "text-translate": [15, 0],
+        "text-halo-blur": 1.5
+      }
     }
   ],
   "id": "il-MTB",
