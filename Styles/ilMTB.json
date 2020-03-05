@@ -226,6 +226,7 @@
     {
       "id": "military_base_fill",
       "type": "fill",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 10,
@@ -239,6 +240,7 @@
     {
       "id": "contour_major",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contour",
       "minzoom": 11,
@@ -252,6 +254,7 @@
     {
       "id": "contour_minor",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contour",
       "maxzoom": 24,
@@ -265,6 +268,7 @@
     {
       "id": "contour_label",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contour",
       "filter": ["all", ["!in", "rank", 1, 2]],
@@ -348,6 +352,7 @@
     {
       "id": "waterway-river-intermittent",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
       "minzoom": 12,
@@ -367,6 +372,7 @@
     {
       "id": "waterway-river",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
       "minzoom": 12,
@@ -384,6 +390,7 @@
     {
       "id": "waterway",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
       "minzoom": 12,
@@ -401,6 +408,7 @@
     {
       "id": "waterway-intermittent",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
       "filter": [
@@ -418,6 +426,7 @@
     {
       "id": "waterway-bridge-case",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
       "filter": ["all", ["==", "brunnel", "bridge"]],
@@ -430,6 +439,7 @@
     {
       "id": "waterway-tunnel",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
       "filter": ["all", ["==", "brunnel", "tunnel"]],
@@ -443,6 +453,7 @@
     {
       "id": "waterway-bridge",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
       "filter": ["all", ["==", "brunnel", "bridge"]],
@@ -454,6 +465,7 @@
     {
       "id": "mtbroute-lcn",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 10,
@@ -470,6 +482,7 @@
     {
       "id": "mtbroute_rcn",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 9,
@@ -482,6 +495,7 @@
     {
       "id": "mtbroute_ncn",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 8,
@@ -494,6 +508,7 @@
     {
       "id": "road_minor",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "filter": [
@@ -509,6 +524,7 @@
     {
       "id": "road_ramp",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 10,
@@ -521,6 +537,7 @@
     {
       "id": "road_secondary_tertiary",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "filter": [
@@ -536,6 +553,7 @@
     {
       "id": "road_trunk_primary",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 9,
@@ -553,6 +571,7 @@
     {
       "id": "road_major_motorway",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 8,
@@ -570,6 +589,7 @@
     {
       "id": "track-paved-casing",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
@@ -584,6 +604,7 @@
     {
       "id": "track-unpaved-casing",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -601,6 +622,7 @@
     {
       "id": "track_core",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
@@ -618,6 +640,7 @@
     {
       "id": "track-medium",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -636,6 +659,7 @@
     {
       "id": "path_steps",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 15,
@@ -650,6 +674,7 @@
     {
       "id": "path_general",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -670,6 +695,7 @@
     {
       "id": "path_footway-2",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -689,6 +715,7 @@
     {
       "id": "path_footway",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -707,6 +734,7 @@
     {
       "id": "mtb_cyclepath",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -724,6 +752,7 @@
     {
       "id": "mtb_path_ungraded",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -741,6 +770,7 @@
     {
       "id": "mtb_path_0",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -759,6 +789,7 @@
     {
       "id": "mtb_path_1",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -777,6 +808,7 @@
     {
       "id": "mtb_path_2-3",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -795,6 +827,7 @@
     {
       "id": "mtb_path_4-5",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -813,6 +846,7 @@
     {
       "id": "mtb_path_6",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -836,6 +870,7 @@
     {
       "id": "multiuse_path_ungraded",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -855,6 +890,7 @@
     {
       "id": "multiuse_path_0",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -874,6 +910,7 @@
     {
       "id": "multiuse_path_1",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -893,6 +930,7 @@
     {
       "id": "multiuse_path_2-3",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -912,6 +950,7 @@
     {
       "id": "multiuse_path_4-5",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -931,6 +970,7 @@
     {
       "id": "multiuse_path_6",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -966,6 +1006,7 @@
     {
       "id": "railway-black",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
@@ -978,6 +1019,7 @@
     {
       "id": "railway-white",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
@@ -991,6 +1033,7 @@
     {
       "id": "tunnel_major",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 15,
@@ -1011,6 +1054,7 @@
     {
       "id": "tunnel_minor",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1086,6 +1130,7 @@
     {
       "id": "military_edge-narrow",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 10,
@@ -1099,6 +1144,7 @@
     {
       "id": "military_edge-wide",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 10,
@@ -1137,6 +1183,7 @@
     {
       "id": "elevated_ramp",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "ramp", 1], ["!=", "subclass", "steps"]],
@@ -1148,6 +1195,7 @@
     {
       "id": "bridge_area",
       "type": "fill",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1160,6 +1208,7 @@
     {
       "id": "bridge_major_border",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1177,6 +1226,7 @@
     {
       "id": "bridge_major",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1198,6 +1248,7 @@
     {
       "id": "bridge_foot-border",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1212,6 +1263,7 @@
     {
       "id": "bridge_foot",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1229,6 +1281,7 @@
     {
       "id": "bridge_minor_border",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1255,6 +1308,7 @@
     {
       "id": "bridge_minor",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1281,6 +1335,7 @@
     {
       "id": "elevated-railway-black",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
@@ -1293,6 +1348,7 @@
     {
       "id": "elevated-railway-white",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
@@ -1306,6 +1362,7 @@
     {
       "id": "elevated_path",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
@@ -1320,6 +1377,7 @@
     {
       "id": "elevated_minor",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "filter": [
@@ -1335,6 +1393,7 @@
     {
       "id": "elevated_secondary_tertiary",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "filter": [
@@ -1350,6 +1409,7 @@
     {
       "id": "elevated_trunk_primary",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "filter": [
@@ -1365,6 +1425,7 @@
     {
       "id": "elevated_major_motorway",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "filter": [
@@ -1541,6 +1602,7 @@
     {
       "id": "shield-secondary",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation_name",
       "minzoom": 12,
@@ -1565,6 +1627,7 @@
     {
       "id": "shield-primary",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation_name",
       "minzoom": 10,
@@ -1589,6 +1652,7 @@
     {
       "id": "shield-trunk",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation_name",
       "minzoom": 7,
@@ -1613,6 +1677,7 @@
     {
       "id": "shield-motorway",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation_name",
       "minzoom": 8,
@@ -2643,6 +2708,7 @@
     {
       "id": "label_waterway",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
       "minzoom": 14,
@@ -2669,6 +2735,7 @@
     {
       "id": "label_mtb_route",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 12,
@@ -2717,6 +2784,7 @@
     {
       "id": "label_rural_road",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation_name",
       "minzoom": 14,
@@ -2741,6 +2809,7 @@
     {
       "id": "label_urban_road",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation_name",
       "minzoom": 15,
