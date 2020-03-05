@@ -409,16 +409,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.9999998"
-     inkscape:cx="127.18831"
-     inkscape:cy="178.13242"
+     inkscape:zoom="1.4142135"
+     inkscape:cx="178.80138"
+     inkscape:cy="276.0748"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-width="2400"
+     inkscape:window-height="1271"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:snap-bbox="true"
      inkscape:snap-smooth-nodes="true"
@@ -3512,6 +3512,11 @@
        inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ff7100;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.84873033;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 210.21317,682.3634 a 1.3898473,1.4600323 0 0 0 -1.25497,0.98143 l -8.88238,27.08161 a 1.3898473,1.4600323 0 0 0 1.99402,1.74899 l 8.45566,-4.98918 7.33738,4.91593 a 1.3898473,1.4600323 0 0 0 2.06929,-1.6816 l -8.33854,-27.04938 a 1.3898473,1.4600323 0 0 0 -1.38046,-1.0078 z m 0.0167,6.06143 5.86766,19.03095 -4.78002,-3.2021 a 1.3898473,1.4600323 0 0 0 -1.42787,-0.0409 l -5.99872,3.539 z"
+       id="path9287-1-1"
+       inkscape:connector-curvature="0" />
   </g>
   <style
      id="style4"

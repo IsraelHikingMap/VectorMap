@@ -488,5 +488,12 @@
 		"x": 772,
 		"y": 1408,
 		"pixelRatio": 2
+	},
+	"position": {
+		"width": 84,
+		"height": 120,
+		"x": 1230,
+		"y": 0,
+		"pixelRatio": 2
 	}
 }
