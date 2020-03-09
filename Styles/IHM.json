@@ -622,7 +622,7 @@
       "filter": ["all", ["==", "class", "track"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-width": {"stops": [[13, 3], [16, 6]]},
+        "line-width": {"stops": [[13, 5], [16, 8]]},
         "line-color": [
           "match",
           ["get", "tracktype"],
@@ -649,7 +649,7 @@
           ["get", "colour"],
           "#808080"
         ],
-        "line-width": {"stops": [[13, 3], [16, 6]]}
+        "line-width": {"stops": [[13, 3], [16, 8]]}
       }
     },
     {
@@ -920,7 +920,7 @@
       "paint": {
         "line-dasharray": [10, 3, 2, 3, 2, 3],
         "line-offset": {"stops": [[13, 1], [16, 2]]},
-        "line-width": {"stops": [[13, 1], [16, 2]]},
+        "line-width": {"stops": [[13, 1], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
@@ -940,7 +940,7 @@
       "paint": {
         "line-dasharray": [10, 3, 2, 3, 2, 3],
         "line-offset": {"stops": [[13, -1], [16, -2]]},
-        "line-width": {"stops": [[13, 1], [16, 2]]},
+        "line-width": {"stops": [[13, 1], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -965,7 +965,7 @@
       "paint": {
         "line-dasharray": [10, 3, 2, 3],
         "line-offset": {"stops": [[13, 1], [16, 2]]},
-        "line-width": {"stops": [[13, 1], [16, 2]]},
+        "line-width": {"stops": [[13, 1], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
@@ -985,7 +985,7 @@
       "paint": {
         "line-dasharray": [10, 3, 2, 3],
         "line-offset": {"stops": [[13, -1], [16, -2]]},
-        "line-width": {"stops": [[13, 1], [16, 2]]},
+        "line-width": {"stops": [[13, 1], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -1010,7 +1010,7 @@
       "paint": {
         "line-dasharray": [5, 3],
         "line-offset": {"stops": [[13, 1], [16, 2]]},
-        "line-width": {"stops": [[13, 1], [16, 2]]},
+        "line-width": {"stops": [[13, 1], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
@@ -1030,7 +1030,7 @@
       "paint": {
         "line-dasharray": [5, 3],
         "line-offset": {"stops": [[13, -1], [16, -2]]},
-        "line-width": {"stops": [[13, 1], [16, 2]]},
+        "line-width": {"stops": [[13, 1], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -1054,7 +1054,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-offset": {"stops": [[13, 1], [16, 2]]},
-        "line-width": {"stops": [[13, 1], [16, 2]]},
+        "line-width": {"stops": [[13, 1], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
@@ -1073,7 +1073,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-offset": {"stops": [[13, -1], [16, -2]]},
-        "line-width": {"stops": [[13, 1], [16, 2]]},
+        "line-width": {"stops": [[13, 1], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -1093,7 +1093,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
-        "line-width": {"stops": [[13, 1], [14, 2], [16, 3]]}
+        "line-width": {"stops": [[13, 1], [14, 1.75], [16, 3]]}
       }
     },
     {
@@ -2104,7 +2104,7 @@
         "text-color": "#7F7F7F",
         "text-halo-width": 2,
         "text-halo-color": "white",
-        "text-translate": [0, -15],
+        "text-translate": [0, -30],
         "text-halo-blur": 0
       }
     },
@@ -2124,7 +2124,7 @@
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 16,
         "text-letter-spacing": 0.1,
-        "text-anchor": "left",
+        "text-anchor": "center",
         "text-justify": "left",
         "text-allow-overlap": true
       },
@@ -2132,7 +2132,7 @@
         "text-color": "#7F7F7F",
         "text-halo-width": 2,
         "text-halo-color": "white",
-        "text-translate": [15, 0],
+        "text-translate": [30, 0],
         "text-halo-blur": 1.5
       }
     }
