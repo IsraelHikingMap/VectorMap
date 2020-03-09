@@ -128,7 +128,7 @@
       "filter": [
         "all",
         ["==", "class", "military"],
-        ["==", "military", "training_area"]
+        ["in", "military", "training_area", "airfield"]
       ],
       "paint": {"fill-pattern": "red_nwse_pattern", "fill-opacity": 0.1}
     },
@@ -138,10 +138,11 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "landuse",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "class", "military"],
-        ["!=", "military", "training_area"]
+        ["!in", "military", "training_area", "airfield"]
       ],
       "paint": {"fill-pattern": "red_nesw_pattern", "fill-opacity": 0.3}
     },
@@ -902,7 +903,7 @@
       "maxzoom": 13,
       "filter": ["all", ["==", "class", "track"], ["!has", "colour"]],
       "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {"line-color": "rgba(170, 129, 102, 0.5)"}
+      "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
     },
     {
       "id": "track-right-grade5",
@@ -919,8 +920,8 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [10, 3, 2, 3, 2, 3],
-        "line-offset": {"stops": [[13, 1], [16, 2]]},
-        "line-width": {"stops": [[13, 1], [16, 2.5]]},
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
@@ -939,8 +940,8 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [10, 3, 2, 3, 2, 3],
-        "line-offset": {"stops": [[13, -1], [16, -2]]},
-        "line-width": {"stops": [[13, 1], [16, 2.5]]},
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -964,8 +965,8 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [10, 3, 2, 3],
-        "line-offset": {"stops": [[13, 1], [16, 2]]},
-        "line-width": {"stops": [[13, 1], [16, 2.5]]},
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
@@ -984,8 +985,8 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [10, 3, 2, 3],
-        "line-offset": {"stops": [[13, -1], [16, -2]]},
-        "line-width": {"stops": [[13, 1], [16, 2.5]]},
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -1009,8 +1010,8 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [5, 3],
-        "line-offset": {"stops": [[13, 1], [16, 2]]},
-        "line-width": {"stops": [[13, 1], [16, 2.5]]},
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
@@ -1029,8 +1030,8 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [5, 3],
-        "line-offset": {"stops": [[13, -1], [16, -2]]},
-        "line-width": {"stops": [[13, 1], [16, 2.5]]},
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -1053,8 +1054,8 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-offset": {"stops": [[13, 1], [16, 2]]},
-        "line-width": {"stops": [[13, 1], [16, 2.5]]},
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#aa8166"]
       }
     },
@@ -1072,8 +1073,8 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-offset": {"stops": [[13, -1], [16, -2]]},
-        "line-width": {"stops": [[13, 1], [16, 2.5]]},
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -1165,6 +1166,18 @@
         "line-color": "blue",
         "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
       }
+    },
+    {
+      "id": "road-cable_car",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "class", "cable_car"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "#666", "line-width": 3}
     },
     {
       "id": "shield-secondary",
@@ -1563,6 +1576,39 @@
         "text-halo-color": "white",
         "text-halo-width": 2,
         "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "icon-rail_station",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "class", "railway"],
+        ["==", "subclass", "station"]
+      ],
+      "layout": {
+        "text-field": "{name_he}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-max-width": 10,
+        "text-anchor": "bottom-right",
+        "text-justify": "right",
+        "icon-image": "square",
+        "icon-size": 0.5,
+        "icon-allow-overlap": true,
+        "text-optional": true,
+        "text-offset": [0, -0.4]
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 2,
+        "text-translate": {"stops": [[15, [0, -5]], [16, [0, -8]]]}
       }
     },
     {
