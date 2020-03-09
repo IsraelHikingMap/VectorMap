@@ -247,7 +247,7 @@
       "filter": ["all", ["==", "intermittent", 1]],
       "paint": {
         "line-color": "#8EBDF0",
-        "line-width": {"stops": [[9, 2], [10, 3]]},
+        "line-width": {"stops": [[9, 2], [14, 3]]},
         "line-dasharray": [4, 1]
       }
     },
@@ -260,7 +260,7 @@
       "filter": ["all", ["!=", "intermittent", 1]],
       "paint": {
         "line-color": "#8EBDF0",
-        "line-width": {"stops": [[9, 2], [10, 3]]}
+        "line-width": {"stops": [[9, 2], [14, 3]]}
       }
     },
     {
