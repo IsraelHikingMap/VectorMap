@@ -578,6 +578,761 @@
       }
     },
     {
+      "id": "tunnel-box-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": ["all", ["in", "class", "steps"], ["==", "brunnel", "tunnel"]],
+      "paint": {
+        "line-color": "black",
+        "line-dasharray": [0.35, 0.5],
+        "line-width": 4
+      }
+    },
+    {
+      "id": "tunnel-box-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-dasharray": [0.35, 0.5],
+        "line-width": 12
+      }
+    },
+    {
+      "id": "tunnel-box-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["in", "class", "path"], ["==", "brunnel", "tunnel"]],
+      "paint": {
+        "line-color": "black",
+        "line-dasharray": [0.35, 0.5],
+        "line-width": {"stops": [[13, 4], [16, 5]]}
+      }
+    },
+    {
+      "id": "tunnel-box-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["in", "class", "track"], ["==", "brunnel", "tunnel"]],
+      "paint": {
+        "line-color": "black",
+        "line-dasharray": [0.35, 0.5],
+        "line-width": {"stops": [[13, 10], [16, 16]]}
+      }
+    },
+    {
+      "id": "tunnel-box-paved",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "unclassified",
+          "service"
+        ],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-dasharray": [0.35, 0.5],
+        "line-width": {"stops": [[13, 6], [16, 12]]}
+      }
+    },
+    {
+      "id": "tunnel-casing-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": ["all", ["==", "class", "steps"], ["==", "brunnel", "tunnel"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "white", "line-width": 2}
+    },
+    {
+      "id": "tunnel-casing-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "paint": {"line-color": "white", "line-width": 6}
+    },
+    {
+      "id": "tunnel-casing-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "path"], ["==", "brunnel", "tunnel"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"stops": [[13, 2], [16, 2.5]]}
+      }
+    },
+    {
+      "id": "tunnel-casing-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "track"], ["==", "brunnel", "tunnel"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-width": {"stops": [[13, 5], [16, 8]]},
+        "line-color": [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2"],
+          "#E8D3B2",
+          "#F7F4F2"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-casing-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[13, 3], [16, 8]]}
+      }
+    },
+    {
+      "id": "tunnel-casing-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "tertiary"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "tunnel-casing-seconary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "secondary"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[11, 0.75], [12, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "tunnel-casing-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "primary"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[10, 1], [12, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "tunnel-casing-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": ["all", ["==", "class", "trunk"], ["==", "brunnel", "tunnel"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "tunnel-casing-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "tunnel-rail-casing",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "rail"], ["==", "brunnel", "tunnel"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-width": 3, "line-color": "gray"}
+    },
+    {
+      "id": "tunnel-rail-dash-tunnel",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-dasharray": [6, 2],
+        "line-width": 2,
+        "line-color": "white"
+      }
+    },
+    {
+      "id": "tunnel-rail-dash",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["!=", "brunnel", "tunnel"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-dasharray": [6, 6],
+        "line-width": 2,
+        "line-color": "white"
+      }
+    },
+    {
+      "id": "tunnel-path-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-dasharray": [1.5, 1.5],
+        "line-width": 2.5,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-path-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-dasharray": [0.35, 0.5],
+        "line-width": 6,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#8e5632"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-path-footway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "subclass", "footway"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-dasharray": [1, 1],
+        "line-width": 2.5,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-path-cycleway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "subclass", "cycleway"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-dasharray": [5, 2, 2, 2],
+        "line-width": 2,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-path-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "class", "path"],
+        ["!in", "subclass", "steps", "cycleway", "footway"]
+      ],
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-width": 2,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-track-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "maxzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!has", "colour"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
+    },
+    {
+      "id": "tunnel-track-right-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade5"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "tunnel-track-left-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade5"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-track-right-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade4"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "tunnel-track-left-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade4"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-track-right",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "tunnel-track-left",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-track-right-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade1", "grade2"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "tunnel-track-left-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade1", "grade2"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "tunnel-road-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": {"stops": [[13, 1], [14, 1.75], [16, 3]]}
+      }
+    },
+    {
+      "id": "tunnel-road-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "tertiary"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 230, 107, 1)",
+        "line-width": {"stops": [[13, 2], [16, 3]]}
+      }
+    },
+    {
+      "id": "tunnel-road-secondary ",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "secondary"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "#303030",
+        "line-width": {"stops": [[11, 0.4], [13, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "tunnel-road-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "primary"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "green",
+        "line-width": {"stops": [[10, 0.5], [13, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "tunnel-road-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": ["all", ["==", "class", "trunk"], ["==", "brunnel", "tunnel"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "red",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "tunnel-road-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "blue",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    },
+    {
       "id": "casing-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -585,7 +1340,7 @@
       "source-layer": "transportation",
       "minzoom": 13,
       "maxzoom": 14,
-      "filter": ["all", ["==", "class", "steps"]],
+      "filter": ["all", ["==", "class", "steps"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "white", "line-width": 2}
     },
@@ -596,7 +1351,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": ["all", ["==", "subclass", "steps"]],
+      "filter": ["all", ["==", "subclass", "steps"], ["!has", "brunnel"]],
       "paint": {"line-color": "white", "line-width": 6}
     },
     {
@@ -606,7 +1361,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "class", "path"]],
+      "filter": ["all", ["==", "class", "path"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "white",
@@ -620,7 +1375,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "class", "track"]],
+      "filter": ["all", ["==", "class", "track"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-width": {"stops": [[13, 5], [16, 8]]},
@@ -640,8 +1395,12 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["in", "class", "minor", "unclassified", "service"]],
-      "layout": {"line-join": "round", "line-cap": "round"},
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["!has", "brunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
           "match",
@@ -660,7 +1419,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "class", "tertiary"]],
+      "filter": ["all", ["==", "class", "tertiary"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
@@ -680,7 +1439,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "class", "secondary"]],
+      "filter": ["all", ["==", "class", "secondary"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
@@ -700,7 +1459,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 10,
-      "filter": ["all", ["==", "class", "primary"]],
+      "filter": ["all", ["==", "class", "primary"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
@@ -720,7 +1479,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 7,
-      "filter": ["all", ["==", "class", "trunk"]],
+      "filter": ["all", ["==", "class", "trunk"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
@@ -740,7 +1499,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 6,
-      "filter": ["all", ["==", "class", "motorway"]],
+      "filter": ["all", ["==", "class", "motorway"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
@@ -753,6 +1512,7 @@
         "line-width": {"stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
       }
     },
+    
     {
       "id": "rail-casing",
       "type": "line",
@@ -760,23 +1520,9 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "class", "rail"]],
+      "filter": ["all", ["==", "class", "rail"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-width": 3, "line-color": "gray"}
-    },
-    {
-      "id": "rail-dash-tunnel",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 11,
-      "filter": ["all", ["==", "class", "rail"], ["==", "brunnel", "tunnel"]],
-      "paint": {
-        "line-dasharray": [6, 2],
-        "line-width": 2,
-        "line-color": "white"
-      }
     },
     {
       "id": "rail-dash",
@@ -785,13 +1531,18 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "class", "rail"], ["!=", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["!has", "brunnel"]
+      ],
       "paint": {
         "line-dasharray": [6, 6],
         "line-width": 2,
         "line-color": "white"
       }
     },
+
     {
       "id": "path-steps-line",
       "type": "line",
@@ -799,7 +1550,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "maxzoom": 14,
-      "filter": ["all", ["==", "subclass", "steps"]],
+      "filter": ["all", ["==", "subclass", "steps"], ["!has", "brunnel"]],
       "paint": {
         "line-dasharray": [1.5, 1.5],
         "line-width": 2.5,
@@ -819,7 +1570,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": ["all", ["==", "subclass", "steps"]],
+      "filter": ["all", ["==", "subclass", "steps"], ["!has", "brunnel"]],
       "paint": {
         "line-dasharray": [0.35, 0.5],
         "line-width": 6,
@@ -838,7 +1589,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "filter": ["all", ["==", "subclass", "footway"]],
+      "filter": ["all", ["==", "subclass", "footway"], ["!has", "brunnel"]],
       "paint": {
         "line-dasharray": [1, 1],
         "line-width": 2.5,
@@ -857,7 +1608,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "filter": ["all", ["==", "subclass", "cycleway"]],
+      "filter": ["all", ["==", "subclass", "cycleway"], ["!has", "brunnel"]],
       "paint": {
         "line-dasharray": [5, 2, 2, 2],
         "line-width": 2,
@@ -901,7 +1652,12 @@
       "source-layer": "transportation",
       "minzoom": 12,
       "maxzoom": 13,
-      "filter": ["all", ["==", "class", "track"], ["!has", "colour"]],
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!has", "colour"],
+        ["!has", "brunnel"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
     },
@@ -1090,7 +1846,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["in", "class", "minor", "unclassified", "service"]],
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["!has", "brunnel"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
@@ -1104,7 +1864,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "class", "tertiary"]],
+      "filter": ["all", ["==", "class", "tertiary"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(255, 230, 107, 1)",
@@ -1118,7 +1878,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "class", "secondary"]],
+      "filter": ["all", ["==", "class", "secondary"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "#303030",
@@ -1132,7 +1892,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 10,
-      "filter": ["all", ["==", "class", "primary"]],
+      "filter": ["all", ["==", "class", "primary"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "green",
@@ -1146,7 +1906,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 5,
-      "filter": ["all", ["==", "class", "trunk"]],
+      "filter": ["all", ["==", "class", "trunk"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "red",
@@ -1160,13 +1920,2475 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 5,
-      "filter": ["all", ["==", "class", "motorway"]],
+      "filter": ["all", ["==", "class", "motorway"], ["!has", "brunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "blue",
         "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
       }
     },
+    {
+      "id": "bridge-box-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["in", "class", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {"line-color": "black", "line-width": 4}
+    },
+    {
+      "id": "bridge-box-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {"line-color": "black", "line-width": 12}
+    },
+    {
+      "id": "bridge-box-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "path"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"stops": [[13, 4], [16, 5]]}
+      }
+    },
+    {
+      "id": "bridge-box-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "track"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"stops": [[13, 10], [16, 16]]}
+      }
+    },
+    {
+      "id": "bridge-box-paved",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "unclassified",
+          "service"
+        ],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"stops": [[13, 6], [16, 12]]}
+      }
+    },
+    {
+      "id": "bridge-casing-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "class", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "white", "line-width": 2}
+    },
+    {
+      "id": "bridge-casing-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {"line-color": "white", "line-width": 6}
+    },
+    {
+      "id": "bridge-casing-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "path"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"stops": [[13, 2], [16, 2.5]]}
+      }
+    },
+    {
+      "id": "bridge-casing-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-width": {"stops": [[13, 5], [16, 8]]},
+        "line-color": [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2"],
+          "#E8D3B2",
+          "#F7F4F2"
+        ]
+      }
+    },
+    {
+      "id": "bridge-casing-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[13, 3], [16, 8]]}
+      }
+    },
+    {
+      "id": "bridge-casing-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "tertiary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge-casing-seconary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "secondary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[11, 0.75], [12, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge-casing-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "primary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[10, 1], [12, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge-casing-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "class", "trunk"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge-casing-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge-box-rail",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {"line-width": 6, "line-color": "black"}
+    },
+    {
+      "id": "bridge-rail-casing",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-width": 3, "line-color": "gray"}
+    },
+    {
+      "id": "bridge-path-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {
+        "line-dasharray": [1.5, 1.5],
+        "line-width": 2.5,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge-path-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {
+        "line-dasharray": [0.35, 0.5],
+        "line-width": 6,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#8e5632"
+        ]
+      }
+    },
+    {
+      "id": "bridge-path-footway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "subclass", "footway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {
+        "line-dasharray": [1, 1],
+        "line-width": 2.5,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge-path-cycleway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "subclass", "cycleway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "paint": {
+        "line-dasharray": [5, 2, 2, 2],
+        "line-width": 2,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge-path-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "class", "path"],
+        ["!in", "subclass", "steps", "cycleway", "footway"],
+        ["==", "layer", 1]
+      ],
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-width": 2,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge-track-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "maxzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!has", "colour"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
+    },
+    {
+      "id": "bridge-track-right-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade5"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge-track-left-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade5"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge-track-right-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade4"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge-track-left-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade4"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge-track-right",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge-track-left",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge-track-right-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade1", "grade2"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge-track-left-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade1", "grade2"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge-road-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": {"stops": [[13, 1], [14, 1.75], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge-road-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "tertiary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 230, 107, 1)",
+        "line-width": {"stops": [[13, 2], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge-road-secondary ",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "secondary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "#303030",
+        "line-width": {"stops": [[11, 0.4], [13, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge-road-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "primary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "green",
+        "line-width": {"stops": [[10, 0.5], [13, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge-road-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "class", "trunk"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "red",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge-road-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 1]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "blue",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    },
+
+    {
+      "id": "bridge2-box-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["in", "class", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {"line-color": "black", "line-width": 4}
+    },
+    {
+      "id": "bridge2-box-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {"line-color": "black", "line-width": 12}
+    },
+    {
+      "id": "bridge2-box-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "path"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"stops": [[13, 4], [16, 5]]}
+      }
+    },
+    {
+      "id": "bridge2-box-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "track"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"stops": [[13, 10], [16, 16]]}
+      }
+    },
+    {
+      "id": "bridge2-box-paved",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "unclassified",
+          "service"
+        ],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"stops": [[13, 6], [16, 12]]}
+      }
+    },
+    {
+      "id": "bridge2-casing-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "class", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "white", "line-width": 2}
+    },
+    {
+      "id": "bridge2-casing-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {"line-color": "white", "line-width": 6}
+    },
+    {
+      "id": "bridge2-casing-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "path"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"stops": [[13, 2], [16, 2.5]]}
+      }
+    },
+    {
+      "id": "bridge2-casing-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-width": {"stops": [[13, 5], [16, 8]]},
+        "line-color": [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2"],
+          "#E8D3B2",
+          "#F7F4F2"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-casing-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[13, 3], [16, 8]]}
+      }
+    },
+    {
+      "id": "bridge2-casing-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "tertiary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge2-casing-seconary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "secondary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[11, 0.75], [12, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge2-casing-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "primary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[10, 1], [12, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge2-casing-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "class", "trunk"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge2-casing-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge2-box-rail",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {"line-width": 6, "line-color": "black"}
+    },
+    {
+      "id": "bridge2-rail-casing",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-width": 3, "line-color": "gray"}
+    },
+    {
+      "id": "bridge2-rail-dash-tunnel",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["==", "brunnel", "bridge"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-dasharray": [6, 2],
+        "line-width": 2,
+        "line-color": "white"
+      }
+    },
+    {
+      "id": "bridge2-rail-dash",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["!=", "brunnel", "bridge"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-dasharray": [6, 6],
+        "line-width": 2,
+        "line-color": "white"
+      }
+    },
+    {
+      "id": "bridge2-path-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-dasharray": [1.5, 1.5],
+        "line-width": 2.5,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-path-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-dasharray": [0.35, 0.5],
+        "line-width": 6,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#8e5632"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-path-footway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "subclass", "footway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-dasharray": [1, 1],
+        "line-width": 2.5,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-path-cycleway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "subclass", "cycleway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-dasharray": [5, 2, 2, 2],
+        "line-width": 2,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-path-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "class", "path"],
+        ["!in", "subclass", "steps", "cycleway", "footway"],
+        ["==", "layer", 2]
+      ],
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-width": 2,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-track-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "maxzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!has", "colour"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
+    },
+    {
+      "id": "bridge2-track-right-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade5"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge2-track-left-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade5"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-track-right-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade4"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge2-track-left-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade4"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-track-right",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge2-track-left",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-track-right-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade1", "grade2"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge2-track-left-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade1", "grade2"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge2-road-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": {"stops": [[13, 1], [14, 1.75], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge2-road-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "tertiary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 230, 107, 1)",
+        "line-width": {"stops": [[13, 2], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge2-road-secondary ",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "secondary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "#303030",
+        "line-width": {"stops": [[11, 0.4], [13, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge2-road-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "primary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "green",
+        "line-width": {"stops": [[10, 0.5], [13, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge2-road-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "class", "trunk"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "red",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge2-road-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 2]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "blue",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    },
+
+    {
+      "id": "bridge3-box-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["in", "class", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {"line-color": "black", "line-width": 4}
+    },
+    {
+      "id": "bridge3-box-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {"line-color": "black", "line-width": 12}
+    },
+    {
+      "id": "bridge3-box-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "path"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"stops": [[13, 4], [16, 5]]}
+      }
+    },
+    {
+      "id": "bridge3-box-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "track"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"stops": [[13, 10], [16, 16]]}
+      }
+    },
+    {
+      "id": "bridge3-box-paved",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "unclassified",
+          "service"
+        ],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"stops": [[13, 6], [16, 12]]}
+      }
+    },
+    {
+      "id": "bridge3-casing-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "class", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "white", "line-width": 2}
+    },
+    {
+      "id": "bridge3-casing-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {"line-color": "white", "line-width": 6}
+    },
+    {
+      "id": "bridge3-casing-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "path"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"stops": [[13, 2], [16, 2.5]]}
+      }
+    },
+    {
+      "id": "bridge3-casing-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-width": {"stops": [[13, 5], [16, 8]]},
+        "line-color": [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2"],
+          "#E8D3B2",
+          "#F7F4F2"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-casing-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[13, 3], [16, 8]]}
+      }
+    },
+    {
+      "id": "bridge3-casing-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "tertiary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge3-casing-seconary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "secondary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[11, 0.75], [12, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge3-casing-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "primary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[10, 1], [12, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge3-casing-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "class", "trunk"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge3-casing-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
+        "line-width": {"stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "bridge3-box-rail",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {"line-width": 6, "line-color": "black"}
+    },
+    {
+      "id": "bridge3-rail-casing",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-width": 3, "line-color": "gray"}
+    },
+    {
+      "id": "bridge3-rail-dash-tunnel",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["==", "brunnel", "bridge"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-dasharray": [6, 2],
+        "line-width": 2,
+        "line-color": "white"
+      }
+    },
+    {
+      "id": "bridge3-rail-dash",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "rail"],
+        ["!=", "brunnel", "bridge"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-dasharray": [6, 6],
+        "line-width": 2,
+        "line-color": "white"
+      }
+    },
+    {
+      "id": "bridge3-path-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-dasharray": [1.5, 1.5],
+        "line-width": 2.5,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-path-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-dasharray": [0.35, 0.5],
+        "line-width": 6,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#8e5632"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-path-footway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "subclass", "footway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-dasharray": [1, 1],
+        "line-width": 2.5,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-path-cycleway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "subclass", "cycleway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-dasharray": [5, 2, 2, 2],
+        "line-width": 2,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-path-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "class", "path"],
+        ["!in", "subclass", "steps", "cycleway", "footway"],
+        ["==", "layer", 3]
+      ],
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-width": 2,
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-track-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "maxzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!has", "colour"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
+    },
+    {
+      "id": "bridge3-track-right-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade5"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge3-track-left-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade5"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-track-right-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade4"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge3-track-left-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["==", "tracktype", "grade4"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-track-right",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge3-track-left",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-track-right-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade1", "grade2"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-offset": {"stops": [[13, 1.5], [16, 2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": ["to-color", ["get", "colour"], "#aa8166"]
+      }
+    },
+    {
+      "id": "bridge3-track-left-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "track"],
+        ["in", "tracktype", "grade1", "grade2"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-offset": {"stops": [[13, -1.5], [16, -2]]},
+        "line-width": {"stops": [[13, 1.5], [16, 2.5]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#aa8166"
+        ]
+      }
+    },
+    {
+      "id": "bridge3-road-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "class", "minor", "unclassified", "service"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": {"stops": [[13, 1], [14, 1.75], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge3-road-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "tertiary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 230, 107, 1)",
+        "line-width": {"stops": [[13, 2], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge3-road-secondary ",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "secondary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "#303030",
+        "line-width": {"stops": [[11, 0.4], [13, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge3-road-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "primary"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "green",
+        "line-width": {"stops": [[10, 0.5], [13, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge3-road-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "class", "trunk"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "red",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    },
+    {
+      "id": "bridge3-road-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "layer", 3]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "blue",
+        "line-width": {"stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    },
+
     {
       "id": "road-cable_car",
       "type": "line",
