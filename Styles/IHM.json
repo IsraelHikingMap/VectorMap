@@ -494,6 +494,7 @@
       "source-layer": "trail",
       "minzoom": 8,
       "filter": ["all", ["==", "osmc_symbol", "yellow:yellow_circle:blue_dot"]],
+      "layout": {"visibility": "none"},
       "paint": {
         "line-dasharray": [4, 4],
         "line-color": "yellow",
