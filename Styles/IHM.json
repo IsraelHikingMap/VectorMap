@@ -547,6 +547,43 @@
       }
     },
     {
+      "id": "trail-regional-dash",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "network", "rwn"],
+        ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"],
+        ["!has", "colour"]
+      ],
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "yellow:yellow_circle:blue_dot",
+          "yellow",
+          "purple:white:purple_stripe:blue_stripe_left",
+          "#7B5CA0",
+          "blue:white:blue_stripe:green_stripe_left",
+          "blue",
+          [
+            "match",
+            ["get", "name"],
+            "שביל ואדיות חיפה",
+            "green",
+            "שביל ירושלים",
+            "blue",
+            "rgba(0,0,0,0)"
+          ]
+        ],
+        "line-dasharray": [4, 4],
+        "line-width": {"stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]},
+        "line-offset": {"stops": [[11, 0], [12, 1], [14, 4]]}
+      }
+    },
+    {
       "id": "trail-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
