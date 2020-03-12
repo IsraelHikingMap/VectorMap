@@ -7,17 +7,17 @@
   "bearing": 0,
   "pitch": 30,
   "sources": {
-    "Israel-TerrainRGB": {
+    "IHM": {
+      "type": "vector",
+      "url": "https://israelhiking.osm.org.il/data/v3.json"
+    },
+    "TerrainRGB": {
       "type": "raster-dem",
       "url": "https://israelhiking.osm.org.il/data/TerrainRGB.json"
     },
     "Contour": {
       "type": "vector",
       "url": "https://israelhiking.osm.org.il/data/Contour.json"
-    },
-    "IHM": {
-      "type": "vector",
-      "url": "https://israelhiking.osm.org.il/data/v3.json"
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
@@ -285,7 +285,7 @@
         "text-halo-width": 2
       }
     },
-    {"id": "Terrain", "type": "hillshade", "source": "Israel-TerrainRGB"},
+    {"id": "Terrain", "type": "hillshade", "source": "TerrainRGB"},
     {
       "id": "water",
       "type": "fill",
