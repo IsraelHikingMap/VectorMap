@@ -522,7 +522,7 @@
         "all",
         ["==", "network", "rwn"],
         ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"],
-        ["!has", "colour"]
+        ["!has", "way_colour"]
       ],
       "layout": {"line-join": "miter"},
       "paint": {
@@ -569,7 +569,7 @@
         "all",
         ["==", "network", "rwn"],
         ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"],
-        ["!has", "colour"]
+        ["!has", "way_colour"]
       ],
       "layout": {"line-join": "miter"},
       "paint": {
