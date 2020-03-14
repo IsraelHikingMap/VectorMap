@@ -1,0 +1,28 @@
+{
+  "version": 8,
+  "name": "Ortho",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "sources": {
+    "Ortho": {
+      "type": "raster",
+      "tiles": ["https://israelhiking.osm.org.il/Ortho/{z}/{y}/{x}.jpg"],
+      "minzoom": 7,
+      "maxzoom": 16
+    }
+  },
+  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
+  "glyphs": "https://israelhiking.osm.org.il/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "Ortho",
+      "type": "raster",
+      "source": "Ortho",
+      "paint": {
+        "raster-brightness-min": 0.3,
+        "raster-contrast": 0.4,
+        "raster-saturation": 0.1
+      }
+    }
+  ],
+  "id": "Ortho"
+}
