@@ -470,33 +470,40 @@
       "source-layer": "trail",
       "minzoom": 11,
       "maxzoom": 21,
-      "filter": ["all", ["in", "network", "lcn"]],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "filter": [
+        "all",
+        ["in", "network", "lcn"],
+        ["!in", "network", "rcn", " ncn"]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": [
           "match",
           ["get", "colour"],
           "red",
-          "rgba(255, 0, 0, 0.5)",
+          "rgba(225, 130, 130, 1)",
           "yellow",
           "rgba(250, 222, 1, 1)",
           "blue",
-          "rgba(0, 0, 255, 0.5)",
+          "rgba(140, 140, 255, 1)",
           "orange",
           "orange",
           "green",
-          "green",
+          "rgba(90, 205, 90, 1)",
           "rgba(0, 255, 0, 0.5)",
           "orange",
           "black",
-          "rgba(0, 0, 0, 0.5)",
+          "rgba(80,80,80,.75)",
           "purple",
           "rgba(150, 0, 150, 1)",
           "rgba(250, 222, 1, 1)"
         ],
-        "line-width": {"stops": [[11, 1], [20, 45]]},
-        "line-opacity": 1,
-        "line-dasharray": [2, 1]
+        "line-width": {"stops": [[11, 3], [20, 25]]},
+        "line-opacity": 1
       }
     },
     {
@@ -507,10 +514,10 @@
       "source-layer": "trail",
       "minzoom": 9,
       "filter": ["all", ["==", "network", "rcn"]],
+      "layout": {"visibility": "none"},
       "paint": {
-        "line-color": "rgba(219, 5, 4, 0.57)",
-        "line-width": {"base": 1.55, "stops": [[11, 1], [20, 45]]},
-        "line-dasharray": [1, 1, 1, 0]
+        "line-color": "rgba(234, 125, 125, 1)",
+        "line-width": {"base": 1.55, "stops": [[11, 6], [20, 60]]}
       }
     },
     {
@@ -521,10 +528,14 @@
       "source-layer": "trail",
       "minzoom": 8,
       "filter": ["all", ["==", "network", "ncn"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
       "paint": {
         "line-color": "rgba(161, 163, 255, 1)",
-        "line-width": {"base": 1.55, "stops": [[11, 1], [20, 45]]},
-        "line-dasharray": [1, 1]
+        "line-width": {"stops": [[11, 3], [20, 25]]}
       }
     },
     {
@@ -802,9 +813,13 @@
         ["==", "bicycle", "designated"],
         ["==", "mtb_scale", "0"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "rgba(0, 162, 32, 1)",
+        "line-color": "rgba(0, 108, 23, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
@@ -821,9 +836,13 @@
         ["==", "bicycle", "designated"],
         ["==", "mtb_scale", "1"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "rgba(35, 50, 244, 1)",
+        "line-color": "rgba(0, 0, 200, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
@@ -840,9 +859,13 @@
         ["==", "bicycle", "designated"],
         ["in", "mtb_scale", "2", "3"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "rgba(255, 5, 9, 1)",
+        "line-color": "rgba(200, 0, 0, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
@@ -924,7 +947,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "rgba(0, 162, 32, 1)",
+        "line-color": "rgba(0, 108, 23, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
@@ -944,7 +967,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "rgba(35, 50, 244, 1)",
+        "line-color": "rgba(0, 0, 200, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
@@ -964,7 +987,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "rgba(255, 5, 9, 1)",
+        "line-color": "rgba(200, 0, 0, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
