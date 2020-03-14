@@ -5385,7 +5385,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "itm_grid",
-      "minzoom": 0,
+      "minzoom": 9,
       "filter": ["all"],
       "paint": {
         "line-color": "rgba(127, 127, 127, 1)",
@@ -5406,6 +5406,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "itm_grid",
+      "minzoom": 9,
       "filter": [
         "all",
         [">=", "north_rank", 10],
@@ -5417,7 +5418,8 @@
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 16,
         "text-letter-spacing": 0.2,
-        "text-allow-overlap": true
+        "text-allow-overlap": true,
+        "text-ignore-placement": true
       },
       "paint": {
         "text-color": "#7F7F7F",
@@ -5432,6 +5434,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "itm_grid",
+      "minzoom": 9,
       "filter": [
         "all",
         [">=", "east_rank", 10],
@@ -5445,7 +5448,8 @@
         "text-letter-spacing": 0.1,
         "text-anchor": "center",
         "text-justify": "left",
-        "text-allow-overlap": true
+        "text-allow-overlap": true,
+        "text-ignore-placement": true
       },
       "paint": {
         "text-color": "#7F7F7F",
