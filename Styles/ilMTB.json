@@ -468,15 +468,42 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
-      "minzoom": 10,
+      "minzoom": 11,
+      "maxzoom": 21,
       "filter": [
         "all",
-        ["==", "network", "lcn"],
-        ["!in", "network", "ncn", "rcn"]
+        ["in", "network", "lcn"],
+        ["!in", "network", "rcn", " ncn"]
       ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "rgba(250, 222, 1, 0.75)",
-        "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]}
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          "red",
+          "rgba(225, 130, 130, 1)",
+          "yellow",
+          "rgba(250, 222, 1, 1)",
+          "blue",
+          "rgba(140, 140, 255, 1)",
+          "orange",
+          "orange",
+          "green",
+          "rgba(90, 205, 90, 1)",
+          "rgba(0, 255, 0, 0.5)",
+          "orange",
+          "black",
+          "rgba(80,80,80,.75)",
+          "purple",
+          "rgba(170, 140, 170, 1)",
+          "rgba(250, 222, 1, 1)"
+        ],
+        "line-width": {"stops": [[11, 3], [20, 25]]},
+        "line-opacity": 1
       }
     },
     {
@@ -487,9 +514,10 @@
       "source-layer": "trail",
       "minzoom": 9,
       "filter": ["all", ["==", "network", "rcn"]],
+      "layout": {"visibility": "none"},
       "paint": {
-        "line-color": "rgba(219, 5, 4, 0.57)",
-        "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]}
+        "line-color": "rgba(234, 125, 125, 1)",
+        "line-width": {"base": 1.55, "stops": [[11, 6], [20, 60]]}
       }
     },
     {
@@ -500,9 +528,14 @@
       "source-layer": "trail",
       "minzoom": 8,
       "filter": ["all", ["==", "network", "ncn"]],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
       "paint": {
         "line-color": "rgba(161, 163, 255, 1)",
-        "line-width": {"base": 1.55, "stops": [[8, 3], [20, 60]]}
+        "line-width": {"stops": [[11, 3], [20, 25]]}
       }
     },
     {
@@ -780,9 +813,13 @@
         ["==", "bicycle", "designated"],
         ["==", "mtb_scale", "0"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "rgba(0, 162, 32, 1)",
+        "line-color": "rgba(0, 108, 23, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
@@ -799,9 +836,13 @@
         ["==", "bicycle", "designated"],
         ["==", "mtb_scale", "1"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "rgba(35, 50, 244, 1)",
+        "line-color": "rgba(0, 0, 200, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
@@ -818,9 +859,13 @@
         ["==", "bicycle", "designated"],
         ["in", "mtb_scale", "2", "3"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "rgba(255, 5, 9, 1)",
+        "line-color": "rgba(200, 0, 0, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
@@ -902,7 +947,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "rgba(0, 162, 32, 1)",
+        "line-color": "rgba(0, 108, 23, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
@@ -922,7 +967,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "rgba(35, 50, 244, 1)",
+        "line-color": "rgba(0, 0, 200, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
@@ -942,7 +987,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "rgba(255, 5, 9, 1)",
+        "line-color": "rgba(200, 0, 0, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
@@ -3058,60 +3103,6 @@
       "minzoom": 11,
       "filter": ["any", [">=", "east_rank", 10], [">=", "north_rank", 10]],
       "paint": {"line-color": "rgba(127, 127, 127, 1)", "line-width": 2}
-    },
-    {
-      "id": "grid-label-east",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "itm_grid",
-      "filter": [
-        "all",
-        [">=", "north_rank", 10],
-        ["in", "east_rank", 2, 10, 20]
-      ],
-      "layout": {
-        "text-field": "{east}",
-        "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
-        "text-letter-spacing": 0.2,
-        "text-allow-overlap": true
-      },
-      "paint": {
-        "text-color": "#7F7F7F",
-        "text-halo-width": 2,
-        "text-halo-color": "white",
-        "text-translate": [0, -15],
-        "text-halo-blur": 0
-      }
-    },
-    {
-      "id": "grid-label-north",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "itm_grid",
-      "filter": [
-        "all",
-        [">=", "east_rank", 10],
-        ["in", "north_rank", 2, 10, 20]
-      ],
-      "layout": {
-        "text-field": "{north}",
-        "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
-        "text-letter-spacing": 0.1,
-        "text-anchor": "left",
-        "text-justify": "left",
-        "text-allow-overlap": true
-      },
-      "paint": {
-        "text-color": "#7F7F7F",
-        "text-halo-width": 2,
-        "text-halo-color": "white",
-        "text-translate": [15, 0],
-        "text-halo-blur": 1.5
-      }
     }
   ],
   "id": "il-MTB",
