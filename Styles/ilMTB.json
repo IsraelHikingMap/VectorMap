@@ -468,7 +468,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
-      "minzoom": 11,
+      "minzoom": 10,
       "maxzoom": 21,
       "filter": [
         "all",
@@ -778,7 +778,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "rgba(1, 149, 10, 1)",
+        "line-color": "rgba(30, 150, 30, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
@@ -819,7 +819,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgba(0, 108, 23, 1)",
+        "line-color": "rgba(30, 150, 30, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
@@ -947,7 +947,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "rgba(0, 108, 23, 1)",
+        "line-color": "rgba(30, 150, 30, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
@@ -1749,7 +1749,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 15,
+      "minzoom": 14,
       "filter": ["all", ["in", "class", "path"], ["==", "oneway", 1]],
       "layout": {
         "symbol-placement": "line",
@@ -2434,7 +2434,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 14,
       "filter": [
         "all",
         ["==", "class", "attraction"],
@@ -2460,7 +2460,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 15,
       "filter": [
         "any",
         ["==", "class", "monument"],
@@ -2508,7 +2508,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 15,
       "filter": [
         "all",
         ["==", "class", "tower"],
@@ -2525,7 +2525,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 15,
       "filter": [
         "all",
         ["==", "class", "tower"],
@@ -2550,7 +2550,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 15,
       "filter": ["all", ["==", "class", "castle"], ["==", "subclass", "ruins"]],
       "layout": {
         "icon-image": "ruins",
@@ -2572,7 +2572,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 14,
       "filter": [
         "all",
         ["==", "class", "attraction"],
@@ -2783,18 +2783,23 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
-      "minzoom": 12,
+      "minzoom": 13,
+      "maxzoom": 24,
       "filter": ["all", ["in", "class", "mtb"]],
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name}",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
-        "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
-        "text-max-width": 30,
-        "text-max-angle": 20,
-        "text-letter-spacing": 0.3
+        "text-size": {"base": 1.4, "stops": [[14, 16], [20, 33]]},
+        "text-offset": [0, 0],
+        "text-max-width": 10,
+        "text-max-angle": 60,
+        "text-letter-spacing": 0.3,
+        "visibility": "visible",
+        "text-keep-upright": true,
+        "text-allow-overlap": false,
+        "text-ignore-placement": false
       },
       "paint": {
         "text-color": "#000",
@@ -2839,11 +2844,19 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
-        "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
+        "text-size": {"base": 1.4, "stops": [[14, 16], [20, 33]]},
+        "text-offset": {
+          "property": "",
+          "type": "exponential",
+          "stops": [
+            [{"zoom": 6, "value": 0}, [0, 2]],
+            [{"zoom": 10, "value": 0}, [0, 2]]
+          ]
+        },
         "text-max-width": 30,
         "text-max-angle": 20,
-        "text-letter-spacing": 0.3
+        "text-letter-spacing": 0.3,
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#000",
@@ -2858,6 +2871,7 @@
       "source": "IHM",
       "source-layer": "transportation_name",
       "minzoom": 15,
+      "maxzoom": 24,
       "filter": ["all", ["!in", "class", "track", "path", "motorway", "trunk"]],
       "layout": {
         "symbol-placement": "line",
