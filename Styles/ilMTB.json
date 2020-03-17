@@ -176,7 +176,11 @@
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 8,
-      "filter": ["all", ["==", "class", "grass"], ["!=", "subclass", "meadow"]],
+      "filter": [
+        "all",
+        ["==", "class", "grass"],
+        ["in", "subclass", "park", "grass"]
+      ],
       "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(210, 232, 155, 1)",
@@ -476,8 +480,8 @@
         ["in", "colour", "red", "yellow", "orange", "black"]
       ],
       "layout": {
-        "line-cap": "round",
-        "line-join": "bevel",
+        "line-cap": "butt",
+        "line-join": "round",
         "visibility": "visible"
       },
       "paint": {
@@ -520,8 +524,8 @@
         ["!in", "colour", "red", "yellow", "orange", "black"]
       ],
       "layout": {
-        "line-cap": "round",
-        "line-join": "bevel",
+        "line-cap": "butt",
+        "line-join": "round",
         "visibility": "visible"
       },
       "paint": {
@@ -564,8 +568,8 @@
         ["in", "colour", "red", "yellow", "orange", "black"]
       ],
       "layout": {
-        "line-cap": "round",
-        "line-join": "bevel",
+        "line-cap": "butt",
+        "line-join": "round",
         "visibility": "visible"
       },
       "paint": {
@@ -603,7 +607,11 @@
       "source-layer": "trail",
       "minzoom": 9,
       "filter": ["all", ["==", "network", "rcn"]],
-      "layout": {"visibility": "none"},
+      "layout": {
+        "visibility": "visible",
+        "line-join": "round",
+        "line-cap": "butt"
+      },
       "paint": {
         "line-color": "rgba(234, 125, 125, 1)",
         "line-width": {"base": 1.55, "stops": [[11, 6], [20, 60]]}
@@ -619,7 +627,7 @@
       "filter": ["all", ["==", "network", "ncn"]],
       "layout": {
         "visibility": "visible",
-        "line-cap": "round",
+        "line-cap": "butt",
         "line-join": "round"
       },
       "paint": {
@@ -865,7 +873,7 @@
         ["==", "class", "path"],
         ["==", "subclass", "cycleway"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(30, 150, 30, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
@@ -884,6 +892,11 @@
         ["==", "bicycle", "designated"],
         ["!has", "mtb_scale"]
       ],
+      "layout": {
+        "line-join": "round",
+        "line-cap": "butt",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "rgba(140, 0, 172, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
@@ -903,8 +916,8 @@
         ["==", "mtb_scale", "0"]
       ],
       "layout": {
-        "line-cap": "square",
-        "line-join": "bevel",
+        "line-cap": "butt",
+        "line-join": "round",
         "visibility": "visible"
       },
       "paint": {
@@ -926,8 +939,8 @@
         ["==", "mtb_scale", "1"]
       ],
       "layout": {
-        "line-cap": "square",
-        "line-join": "bevel",
+        "line-cap": "butt",
+        "line-join": "round",
         "visibility": "visible"
       },
       "paint": {
@@ -949,8 +962,8 @@
         ["in", "mtb_scale", "2", "3"]
       ],
       "layout": {
-        "line-cap": "square",
-        "line-join": "bevel",
+        "line-cap": "butt",
+        "line-join": "round",
         "visibility": "visible"
       },
       "paint": {
@@ -971,7 +984,7 @@
         ["==", "bicycle", "designated"],
         ["in", "mtb_scale", "4", "5"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
@@ -991,8 +1004,8 @@
         ["==", "mtb_scale", "6"]
       ],
       "layout": {
-        "line-cap": "square",
-        "line-join": "bevel",
+        "line-cap": "butt",
+        "line-join": "round",
         "visibility": "none"
       },
       "paint": {
@@ -1014,7 +1027,7 @@
         ["==", "bicycle", "yes"],
         ["!has", "mtb_scale"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(140, 0, 172, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -1034,7 +1047,7 @@
         ["==", "bicycle", "yes"],
         ["==", "mtb_scale", "0"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(30, 150, 30, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -1054,7 +1067,7 @@
         ["==", "bicycle", "yes"],
         ["==", "mtb_scale", "1"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(0, 0, 200, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -1074,7 +1087,7 @@
         ["==", "bicycle", "yes"],
         ["in", "mtb_scale", "2", "3"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(200, 0, 0, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -1094,7 +1107,7 @@
         ["==", "bicycle", "yes"],
         ["in", "mtb_scale", "4", "5"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -1115,8 +1128,8 @@
         ["==", "mtb_scale", "6"]
       ],
       "layout": {
-        "line-cap": "square",
-        "line-join": "bevel",
+        "line-cap": "butt",
+        "line-join": "round",
         "visibility": "none"
       },
       "paint": {
