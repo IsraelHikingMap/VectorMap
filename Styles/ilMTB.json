@@ -463,7 +463,7 @@
       }
     },
     {
-      "id": "mtbroute-lcn",
+      "id": "mtbroute-lcn-hot",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -473,7 +473,7 @@
       "filter": [
         "all",
         ["in", "network", "lcn"],
-        ["!in", "network", "rcn", " ncn"]
+        ["in", "colour", "red", "yellow", "orange", "black"]
       ],
       "layout": {
         "line-cap": "round",
@@ -504,6 +504,95 @@
         ],
         "line-width": {"stops": [[11, 3], [20, 25]]},
         "line-opacity": 1
+      }
+    },
+    {
+      "id": "mtbroute-lcn-cold",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 10,
+      "maxzoom": 21,
+      "filter": [
+        "all",
+        ["in", "network", "lcn"],
+        ["!in", "colour", "red", "yellow", "orange", "black"]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          "red",
+          "rgba(225, 130, 130, 1)",
+          "yellow",
+          "rgba(250, 222, 1, 1)",
+          "blue",
+          "rgba(140, 140, 255, 1)",
+          "orange",
+          "orange",
+          "green",
+          "rgba(90, 205, 90, 1)",
+          "rgba(0, 255, 0, 0.5)",
+          "orange",
+          "black",
+          "rgba(80,80,80,.75)",
+          "purple",
+          "rgba(170, 140, 170, 1)",
+          "rgba(250, 222, 1, 1)"
+        ],
+        "line-width": {"stops": [[11, 3], [20, 25]]},
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "mtbroute-lcn-hot-right",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 10,
+      "maxzoom": 21,
+      "filter": [
+        "all",
+        ["in", "network", "lcn"],
+        ["in", "colour", "red", "yellow", "orange", "black"]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          "red",
+          "rgba(225, 130, 130, 1)",
+          "yellow",
+          "rgba(250, 222, 1, 1)",
+          "blue",
+          "rgba(140, 140, 255, 1)",
+          "orange",
+          "orange",
+          "green",
+          "rgba(90, 205, 90, 1)",
+          "rgba(0, 255, 0, 0.5)",
+          "orange",
+          "black",
+          "rgba(80,80,80,.75)",
+          "purple",
+          "rgba(170, 140, 170, 1)",
+          "rgba(250, 222, 1, 1)"
+        ],
+        "line-width": {"stops": [[11, 1.5], [20, 12.5]]},
+        "line-opacity": 1,
+        "line-offset": {"stops": [[10, 1.5], [20, 6]]}
       }
     },
     {
