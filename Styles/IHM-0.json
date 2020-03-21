@@ -1,0 +1,39 @@
+{
+  "version": 8,
+  "name": "Israel Hiking",
+  "metadata": {
+    "owner": "Zeev Stadler",
+    "copyright": "Copyright Zeev Stadler 2019-2020. All Rights Reserved.",
+    "maputnik:renderer": "mbgljs"
+  },
+  "sources": {
+    "IHM": {
+      "type": "vector",
+      "url": "https://israelhiking.osm.org.il/data/v3.json"
+    }
+  },
+  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
+  "glyphs": "https://israelhiking.osm.org.il/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "rgba(250, 247, 225, 1)"}
+    },
+    {
+      "id": "road-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": ["all", ["==", "class", "motorway"], ["!has", "brunnel"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "blue",
+        "line-width": {"base": 1, "stops": [[7, 0.5], [9, 1], [16, 3]]}
+      }
+    }
+  ],
+  "id": "IHM"
+}
