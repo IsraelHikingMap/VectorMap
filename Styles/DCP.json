@@ -18,6 +18,7 @@
     {
       "id": "designated bicycle-path",
       "type": "line",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "filter": [
