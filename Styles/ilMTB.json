@@ -9,15 +9,15 @@
   "sources": {
     "IHM": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/data/v3.json"
+      "url": "https://israelhiking.osm.org.il/vector/data/v3.json"
     },
     "TerrainRGB": {
       "type": "raster-dem",
-      "url": "https://israelhiking.osm.org.il/data/TerrainRGB.json"
+      "url": "https://israelhiking.osm.org.il/vector/data/TerrainRGB.json"
     },
     "Contour": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/data/Contour.json"
+      "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",

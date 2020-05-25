@@ -9,7 +9,7 @@
   "sources": {
     "Contour": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/data/Contour.json"
+      "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
