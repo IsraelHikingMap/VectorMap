@@ -463,7 +463,7 @@
       "source": "IHM",
       "source-layer": "linear_barrier",
       "minzoom": 14,
-      "filter": ["all", ["in", "class", "wall", "city_wall"]],
+      "filter": ["all", ["!in", "class", "fence", "retaining_wall"]],
       "paint": {"line-color": "black", "line-width": 1.5}
     },
     {
