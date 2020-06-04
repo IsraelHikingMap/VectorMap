@@ -1728,7 +1728,7 @@
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 13,
-      "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
+      "filter": ["all", ["in", "name_en", "Area A", "Area B", "Area H1"]],
       "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.2}
     },
     {
@@ -1737,7 +1737,7 @@
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 13,
-      "filter": ["all", ["==", "name_en", "Area A"]],
+      "filter": ["all", ["in", "name_en", "Area A", "Area H1"]],
       "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.2}
     },
     {
@@ -1745,7 +1745,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_boundary",
-      "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
+      "filter": ["all", ["in", "name_en", "Area A", "Area B", "Area H1"]],
       "paint": {"line-color": "orange", "line-opacity": 0.4}
     },
     {
