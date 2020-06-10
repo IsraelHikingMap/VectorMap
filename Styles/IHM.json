@@ -497,11 +497,10 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
-      "minzoom": 8,
+      "minzoom": 11,
       "filter": [
         "all",
         ["==", "network", "rwn"],
-        ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"],
         ["!has", "way_colour"]
       ],
       "layout": {"line-join": "miter"},
@@ -515,8 +514,6 @@
           "orange",
           "yellow:white:yellow_stripe",
           "yellow",
-          "yellow:yellow_circle:blue_dot",
-          "blue",
           "purple:white:purple_stripe:blue_stripe_left",
           "#1765AD",
           "blue:white:blue_stripe:green_stripe_left",
@@ -535,7 +532,7 @@
           "base": 1,
           "stops": [[7, 1], [10, 1.5], [11, 2], [13, 4]]
         },
-        "line-offset": {"base": 1, "stops": [[11, 0], [12, 3], [14, 5]]},
+        "line-offset": {"base": 1, "stops": [[11, 2], [12, 3], [14, 5]]},
         "line-opacity": 0.33
       }
     },
@@ -544,11 +541,10 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "trail",
-      "minzoom": 8,
+      "minzoom": 11,
       "filter": [
         "all",
         ["==", "network", "rwn"],
-        ["!=", "osmc_symbol", "yellow:yellow_circle:blue_dot"],
         ["!has", "way_colour"]
       ],
       "layout": {"line-join": "miter"},
@@ -556,8 +552,6 @@
         "line-color": [
           "match",
           ["get", "osmc_symbol"],
-          "yellow:yellow_circle:blue_dot",
-          "yellow",
           "purple:white:purple_stripe:blue_stripe_left",
           "#7B5CA0",
           "blue:white:blue_stripe:green_stripe_left",
@@ -577,18 +571,58 @@
           "base": 1,
           "stops": [[7, 1], [10, 1.5], [11, 2], [15, 3]]
         },
-        "line-offset": {"base": 1, "stops": [[11, 0], [12, 1], [14, 4]]}
+        "line-offset": {"base": 1, "stops": [[11, 2], [12, 3], [14, 5]]}
       }
     },
     {
-      "id": "trail-line",
+      "id": "trail-line-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 11,
       "maxzoom": 13,
-      "filter": ["all", ["in", "network", "lwn", "rwn"]],
+      "filter": [
+        "all",
+        ["in", "network", "lwn", "rwn"],
+        ["in", "highway", "path", "footway", "cycleway"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "purple:white:purple_stripe",
+          "purple",
+          "orange:white:orange_stripe",
+          "orange",
+          "yellow:white:yellow_stripe",
+          "yellow",
+          "rgba(0,0,0,0)"
+        ]
+      }
+    },
+    {
+      "id": "trail-line-road",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 11,
+      "maxzoom": 12,
+      "filter": [
+        "all",
+        ["in", "network", "lwn", "rwn"],
+        ["!in", "highway", "path", "footway", "cycleway"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
