@@ -685,8 +685,8 @@
       "filter": ["all", ["==", "class", "path"], ["==", "brunnel", "tunnel"]],
       "paint": {
         "line-color": "black",
-        "line-dasharray": [0.35, 0.5],
-        "line-width": {"base": 1, "stops": [[13, 4], [16, 5]]}
+        "line-dasharray": [0.3, 0.4],
+        "line-width": 7
       }
     },
     {
