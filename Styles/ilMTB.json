@@ -38,14 +38,6 @@
       "paint": {"fill-color": "rgba(250, 237, 191, 1)"}
     },
     {
-      "id": "land-ice",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["all", ["in", "subclass", "ice_shelf", "glacier"]],
-      "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-opacity": 0.75}
-    },
-    {
       "id": "land_wetland",
       "type": "fill",
       "source": "IHM",
@@ -123,8 +115,7 @@
       "filter": ["all", ["in", "subclass", "scrub"]],
       "layout": {
         "icon-image": "bushes_pattern",
-        "icon-size": {"stops": [[14, 0.5], [18, 2]]},
-        "visibility": "visible"
+        "icon-size": {"stops": [[14, 0.5], [18, 2]]}
       },
       "paint": {}
     },
@@ -481,11 +472,7 @@
         ["in", "network", "lcn"],
         ["in", "colour", "yellow", "green"]
       ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": [
           "match",
@@ -525,11 +512,7 @@
         ["in", "network", "lcn"],
         ["!in", "colour", "yellow", "green"]
       ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": [
           "match",
@@ -569,11 +552,7 @@
         ["in", "network", "lcn"],
         ["in", "colour", "yellow", "green"]
       ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": [
           "match",
@@ -616,7 +595,7 @@
       },
       "paint": {
         "line-color": "rgba(234, 125, 125, 1)",
-        "line-width": {"base": 1.55, "stops": [[11, 6], [20, 60]]}
+        "line-width": {"base": 1.55, "stops": [[11, 3], [20, 25]]}
       }
     },
     {
@@ -650,7 +629,7 @@
       ],
       "paint": {
         "line-color": "rgba(102, 102, 102, 1)",
-        "line-width": {"base": 1.55, "stops": [[8, 0.1], [20, 30]]}
+        "line-width": {"base": 1.55, "stops": [[8, 0.1], [20, 40]]}
       }
     },
     {
@@ -661,9 +640,10 @@
       "source-layer": "transportation",
       "minzoom": 10,
       "filter": ["all", ["==", "ramp", 1], ["!=", "subclass", "steps"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(102, 102, 102, 1)",
-        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 35]]}
+        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 45]]}
       }
     },
     {
@@ -677,9 +657,10 @@
         ["in", "class", "secondary", "tertiary"],
         ["!=", "brunnel", "tunnel"]
       ],
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(102, 102, 102, 1)",
-        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 35]]}
+        "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 45]]}
       }
     },
     {
@@ -697,7 +678,7 @@
       ],
       "paint": {
         "line-color": "rgba(102, 102, 102, 1)",
-        "line-width": {"base": 1.4, "stops": [[6, 1], [20, 40]]}
+        "line-width": {"base": 1.4, "stops": [[6, 1], [20, 50]]}
       }
     },
     {
@@ -715,7 +696,7 @@
       ],
       "paint": {
         "line-color": "rgba(102, 102, 102, 1)",
-        "line-width": {"base": 1.4, "stops": [[4, 1], [20, 45]]}
+        "line-width": {"base": 1.4, "stops": [[4, 1], [20, 55]]}
       }
     },
     {
@@ -789,13 +770,13 @@
       }
     },
     {
-      "id": "path_steps",
+      "id": "steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 15,
-      "filter": ["all", ["==", "class", "path"], ["==", "subclass", "steps"]],
+      "filter": ["all", ["==", "ilmtb_class", "steps"]],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
         "line-color": "rgba(252, 0, 0, 1)",
@@ -812,10 +793,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "path"],
-        ["!in", "bicycle", "yes", "designated", "no"],
-        ["!in", "mtb_scale", 1, 2, 3, 4, 5, 6],
-        ["!in", "subclass", "footway", "steps"]
+        ["==", "ilmtb_class", "path"],
+        ["!has", "mtb_scale"],
+        ["!has", "bicycle"]
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
@@ -825,46 +805,22 @@
       }
     },
     {
-      "id": "path_footway-2",
+      "id": "footway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "no"],
-        ["!=", "subclass", "steps"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "rgba(170, 104, 49, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
-        "line-dasharray": [0, 3]
-      }
-    },
-    {
-      "id": "path_footway",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "subclass", "footway"],
-        ["!in", "bicycle", "yes", "designated"]
-      ],
+      "filter": ["all", ["==", "ilmtb_class", "footway"]],
       "layout": {"line-cap": "round"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
-        "line-dasharray": [0, 3]
+        "line-dasharray": [0, 2, 0]
       }
     },
     {
-      "id": "mtb_cyclepath",
+      "id": "cyclepath",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -872,7 +828,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "path"],
+        ["==", "ilmtb_class", "cycleway"],
         ["==", "subclass", "cycleway"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
@@ -882,30 +838,39 @@
       }
     },
     {
-      "id": "mtb_path_ungraded",
+      "id": "mtb_path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "designated"],
-        ["!has", "mtb_scale"]
-      ],
-      "layout": {
-        "line-join": "round",
-        "line-cap": "butt",
-        "visibility": "visible"
-      },
+      "filter": ["all", ["==", "ilmtb_class", "cycleway"]],
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": "rgba(140, 0, 172, 1)",
+        "line-color": [
+          "match",
+          ["get", "mtb_scale"],
+          "0",
+          "rgba(30, 150, 30, 1)",
+          "1",
+          "rgba(0, 0, 200, 1)",
+          "2",
+          "rgba(200, 0, 0, 1)",
+          "3",
+          "rgba(200, 0, 0, 1)",
+          "4",
+          "black",
+          "5",
+          "black",
+          "6",
+          "rgba(0,0,0,0)",
+          "rgba(140, 0, 172, 1)"
+        ],
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
     {
-      "id": "mtb_path_0",
+      "id": "multiuse_path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -913,231 +878,47 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "designated"],
-        ["==", "mtb_scale", "0"]
-      ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-color": "rgba(30, 150, 30, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
-      }
-    },
-    {
-      "id": "mtb_path_1",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "designated"],
-        ["==", "mtb_scale", "1"]
-      ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-color": "rgba(0, 0, 200, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
-      }
-    },
-    {
-      "id": "mtb_path_2-3",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "designated"],
-        ["in", "mtb_scale", "2", "3"]
-      ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-color": "rgba(200, 0, 0, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
-      }
-    },
-    {
-      "id": "mtb_path_4-5",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "designated"],
-        ["in", "mtb_scale", "4", "5"]
+        ["==", "ilmtb_class", "path"],
+        ["==", "bicycle", "yes"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": "rgba(0, 0, 0, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
-      }
-    },
-    {
-      "id": "mtb_path_6",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "designated"],
-        ["==", "mtb_scale", "6"]
-      ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "none"
-      },
-      "paint": {
-        "line-color": "rgba(56, 24, 9, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
-        "line-dasharray": [0.5, 0.5]
-      }
-    },
-    {
-      "id": "multiuse_path_ungraded",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "yes"],
-        ["!has", "mtb_scale"]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
-      "paint": {
-        "line-color": "rgba(140, 0, 172, 1)",
+        "line-color": [
+          "match",
+          ["get", "mtb_scale"],
+          "0",
+          "rgba(30, 150, 30, 1)",
+          "1",
+          "rgba(0, 0, 200, 1)",
+          "2",
+          "rgba(200, 0, 0, 1)",
+          "3",
+          "rgba(200, 0, 0, 1)",
+          "4",
+          "black",
+          "5",
+          "black",
+          "6",
+          "rgba(0,0,0,0)",
+          "rgba(140, 0, 172, 1)"
+        ],
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
         "line-dasharray": [2, 2]
       }
     },
     {
-      "id": "multiuse_path_0",
+      "id": "path_6",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "yes"],
-        ["==", "mtb_scale", "0"]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
+      "filter": ["all", ["==", "class", "path"], ["==", "mtb_scale", "6"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": "rgba(30, 150, 30, 1)",
+        "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
-        "line-dasharray": [2, 2]
-      }
-    },
-    {
-      "id": "multiuse_path_1",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "yes"],
-        ["==", "mtb_scale", "1"]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
-      "paint": {
-        "line-color": "rgba(0, 0, 200, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
-        "line-dasharray": [2, 2]
-      }
-    },
-    {
-      "id": "multiuse_path_2-3",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "yes"],
-        ["in", "mtb_scale", "2", "3"]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
-      "paint": {
-        "line-color": "rgba(200, 0, 0, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
-        "line-dasharray": [2, 2]
-      }
-    },
-    {
-      "id": "multiuse_path_4-5",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "yes"],
-        ["in", "mtb_scale", "4", "5"]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
-      "paint": {
-        "line-color": "rgba(0, 0, 0, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
-        "line-dasharray": [2, 2]
-      }
-    },
-    {
-      "id": "multiuse_path_6",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "path"],
-        ["==", "bicycle", "yes"],
-        ["==", "mtb_scale", "6"]
-      ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "none"
-      },
-      "paint": {
-        "line-color": "rgba(56, 24, 9, 1)",
-        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
-        "line-dasharray": [1, 1]
+        "line-dasharray": [0, 3]
       }
     },
     {
@@ -1315,6 +1096,22 @@
       "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
     },
     {
+      "id": "perimeter_fence_x-copy",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "fence", "yes"]],
+      "layout": {
+        "icon-image": "dot",
+        "symbol-placement": "line",
+        "symbol-spacing": 10,
+        "icon-size": {"stops": [[14, 0.3], [20, 0.6]]},
+        "visibility": "none"
+      },
+      "paint": {}
+    },
+    {
       "id": "perimeter_fence_x",
       "type": "symbol",
       "source": "IHM",
@@ -1384,11 +1181,7 @@
         ["==", "brunnel", "bridge"],
         ["in", "class", "motorway", "trunk", "primary"]
       ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "#fff",
         "line-width": {"base": 1.4, "stops": [[14, 7], [20, 50]]}
@@ -1582,11 +1375,7 @@
         ["==", "class", "motorway"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {
-        "line-cap": "square",
-        "line-join": "round",
-        "visibility": "visible"
-      },
+      "layout": {"line-cap": "square", "line-join": "round"},
       "paint": {
         "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[4, 1], [20, 45]]}
@@ -1603,8 +1392,7 @@
       "layout": {
         "line-cap": "butt",
         "line-join": "bevel",
-        "line-miter-limit": 5,
-        "visibility": "visible"
+        "line-miter-limit": 5
       },
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
@@ -1728,7 +1516,7 @@
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 13,
-      "filter": ["all", ["in", "name_en", "Area A", "Area B", "Area H1"]],
+      "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
       "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.2}
     },
     {
@@ -1737,7 +1525,7 @@
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 13,
-      "filter": ["all", ["in", "name_en", "Area A", "Area H1"]],
+      "filter": ["all", ["==", "name_en", "Area A"]],
       "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.2}
     },
     {
@@ -1745,7 +1533,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_boundary",
-      "filter": ["all", ["in", "name_en", "Area A", "Area B", "Area H1"]],
+      "filter": ["all", ["in", "name_en", "Area A", "Area B"]],
       "paint": {"line-color": "orange", "line-opacity": 0.4}
     },
     {
@@ -2516,41 +2304,6 @@
       "paint": {}
     },
     {
-      "id": "poi_pitch",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 16,
-      "filter": ["all", ["==", "class", "pitch"]],
-      "layout": {
-        "icon-image": "playground",
-        "icon-size": {"stops": [[14, 0.4], [20, 1]]}
-      },
-      "paint": {}
-    },
-    {
-      "id": "poi_cave",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 15,
-      "filter": ["all", ["==", "subclass", "cave_entrance"]],
-      "layout": {
-        "icon-image": "cave",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 18], [20, 33]]},
-        "text-font": ["Open Sans Regular"],
-        "text-field": "{name_he}",
-        "text-max-width": 5,
-        "text-anchor": "top",
-        "text-offset": [0, 0.5]
-      },
-      "paint": {
-        "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
-      }
-    },
-    {
       "id": "poi_flowers",
       "type": "symbol",
       "source": "IHM",
@@ -2584,6 +2337,61 @@
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
       "paint": {}
+    },
+    {
+      "id": "poi_pitch",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "filter": ["all", ["==", "class", "pitch"]],
+      "layout": {
+        "icon-image": "playground",
+        "icon-size": {"stops": [[14, 0.4], [20, 1]]}
+      },
+      "paint": {}
+    },
+    {
+      "id": "poi_antenna",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", "class", "tower"],
+        ["==", "subclass", "communication"]
+      ],
+      "layout": {
+        "icon-image": "antenna",
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
+      },
+      "paint": {}
+    },
+    {
+      "id": "poi_tower",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", "class", "tower"],
+        ["==", "subclass", "observation"]
+      ],
+      "layout": {
+        "icon-image": "tower",
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 13], [20, 22]]},
+        "text-font": ["Open Sans Regular"],
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
+      },
+      "paint": {
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)"
+      }
     },
     {
       "id": "poi_attraction",
@@ -2638,60 +2446,18 @@
       }
     },
     {
-      "id": "poi_archeology",
+      "id": "poi_cave",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 13,
-      "filter": ["all", ["==", "subclass", "archaeological_site"]],
+      "minzoom": 15,
+      "filter": ["all", ["==", "subclass", "cave_entrance"]],
       "layout": {
-        "icon-image": "jar",
+        "icon-image": "cave",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
         "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
         "text-field": "{name_he}",
-        "text-max-width": 5,
-        "text-anchor": "top",
-        "text-offset": [0, 0.5]
-      },
-      "paint": {
-        "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
-      }
-    },
-    {
-      "id": "poi_antenna",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        ["==", "class", "tower"],
-        ["==", "subclass", "communication"]
-      ],
-      "layout": {
-        "icon-image": "antenna",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
-      },
-      "paint": {}
-    },
-    {
-      "id": "poi_tower",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        ["==", "class", "tower"],
-        ["==", "subclass", "observation"]
-      ],
-      "layout": {
-        "icon-image": "tower",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 13], [20, 22]]},
-        "text-font": ["Open Sans Regular"],
         "text-max-width": 5,
         "text-anchor": "top",
         "text-offset": [0, 0.5]
@@ -2716,7 +2482,62 @@
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 0.5]
+        "text-offset": [0, 0.5],
+        "visibility": "none"
+      },
+      "paint": {
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)"
+      }
+    },
+    {
+      "id": "poi_archeology-point",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "subclass", "archaeological_site"],
+        ["==", "$type", "Point"]
+      ],
+      "layout": {
+        "icon-image": "jar",
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name_he}",
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5],
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)"
+      }
+    },
+    {
+      "id": "poi_archeology-area",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "subclass", "archaeological_site"],
+        ["==", "$type", "Polygon"]
+      ],
+      "layout": {
+        "icon-image": "jar",
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name_he}",
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5],
+        "visibility": "visible"
       },
       "paint": {
         "text-halo-width": 2,
@@ -2974,7 +2795,6 @@
         "text-max-width": 10,
         "text-max-angle": 90,
         "text-letter-spacing": 0,
-        "visibility": "visible",
         "text-keep-upright": true,
         "text-allow-overlap": false,
         "text-ignore-placement": false,
@@ -3034,8 +2854,7 @@
         },
         "text-max-width": 30,
         "text-max-angle": 20,
-        "text-letter-spacing": 0.3,
-        "visibility": "visible"
+        "text-letter-spacing": 0.3
       },
       "paint": {
         "text-color": "#000",
@@ -3057,8 +2876,7 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[15, 18], [20, 30]]},
-        "text-max-angle": 15,
-        "visibility": "visible"
+        "text-max-angle": 15
       },
       "paint": {
         "text-color": "rgba(6, 6, 6, 1)",
@@ -3081,8 +2899,7 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[15, 18], [20, 30]]},
-        "text-max-angle": 15,
-        "visibility": "visible"
+        "text-max-angle": 15
       },
       "paint": {
         "text-color": "rgba(6, 6, 6, 1)",
@@ -3105,8 +2922,7 @@
         "text-field": "{name_he}",
         "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[15, 18], [20, 30]]},
-        "text-max-angle": 15,
-        "visibility": "visible"
+        "text-max-angle": 15
       },
       "paint": {
         "text-color": "rgba(6, 6, 6, 1)",
@@ -3145,8 +2961,7 @@
         "text-field": "{name_he}",
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": {"stops": [[10, [0, 1]], [20, [0, 2]]]},
-        "visibility": "visible"
+        "text-offset": {"stops": [[10, [0, 1]], [20, [0, 2]]]}
       },
       "paint": {
         "text-halo-width": 2,
