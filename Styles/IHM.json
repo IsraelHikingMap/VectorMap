@@ -5062,6 +5062,101 @@
       }
     },
     {
+      "id": "name-minor",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 15,
+      "filter": ["all", ["in", "class", "minor", "service"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "text-padding": 80
+      },
+      "paint": {
+        "icon-color": "grey",
+        "icon-halo-color": "white",
+        "icon-halo-width": 1,
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "name-tertiary",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "tertiary"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "text-padding": 75,
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "icon-color": "grey",
+        "icon-halo-color": "white",
+        "icon-halo-width": 1,
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "name-path",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "filter": ["all", ["in", "class", "path"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "icon-color": "grey",
+        "icon-halo-color": "white",
+        "icon-halo-width": 1,
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "name-track",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "filter": ["all", ["in", "class", "track", "path"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "icon-color": "grey",
+        "icon-halo-color": "white",
+        "icon-halo-width": 3,
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 2
+      }
+    },
+    {
       "id": "water-area-name",
       "type": "symbol",
       "source": "IHM",
