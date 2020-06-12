@@ -5073,13 +5073,52 @@
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 14,
         "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "text-padding": 80
+        "symbol-placement": "line"
       },
       "paint": {
         "icon-color": "grey",
-        "icon-halo-color": "white",
-        "icon-halo-width": 1,
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "name-path",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "filter": ["all", ["==", "class", "path"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "icon-color": "grey",
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "name-track",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "filter": ["all", ["==", "class", "track"]],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "icon-color": "grey",
         "text-color": "#404040",
         "text-halo-color": "white",
         "text-halo-width": 2
@@ -5098,59 +5137,52 @@
         "text-size": 14,
         "text-letter-spacing": 0.2,
         "symbol-placement": "line",
-        "text-padding": 75,
         "symbol-spacing": 400
       },
       "paint": {
         "icon-color": "grey",
-        "icon-halo-color": "white",
-        "icon-halo-width": 1,
         "text-color": "#404040",
         "text-halo-color": "white",
         "text-halo-width": 2
       }
     },
     {
-      "id": "name-path",
+      "id": "name-secondary-copy",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
-      "filter": ["all", ["in", "class", "path"]],
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "secondary"]],
       "layout": {
         "text-field": "{name_he}",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 14,
         "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
+        "symbol-placement": "line"
       },
       "paint": {
         "icon-color": "grey",
-        "icon-halo-color": "white",
-        "icon-halo-width": 1,
         "text-color": "#404040",
         "text-halo-color": "white",
         "text-halo-width": 2
       }
     },
     {
-      "id": "name-track",
+      "id": "name-primary",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation_name",
-      "filter": ["all", ["in", "class", "track", "path"]],
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "primary"]],
       "layout": {
         "text-field": "{name_he}",
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
+        "text-size": 14,
         "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
+        "symbol-placement": "line"
       },
       "paint": {
         "icon-color": "grey",
-        "icon-halo-color": "white",
-        "icon-halo-width": 3,
         "text-color": "#404040",
         "text-halo-color": "white",
         "text-halo-width": 2
