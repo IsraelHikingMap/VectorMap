@@ -577,7 +577,7 @@
       "filter": [
         "all",
         ["in", "network", "lwn", "rwn"],
-        ["in", "highway", "path", "footway", "cycleway"]
+        ["in", "highway", "path", "footway", "pedestrian", "cycleway"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -613,7 +613,7 @@
       "filter": [
         "all",
         ["in", "network", "lwn", "rwn"],
-        ["!in", "highway", "path", "footway", "cycleway"]
+        ["!in", "highway", "path", "footway", "pedestrian", "cycleway"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1002,7 +1002,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["==", "ihm_class", "footway"],
+        ["in", "ihm_class", "footway", "pedestrian"],
         ["==", "brunnel", "tunnel"]
       ],
       "paint": {
@@ -1687,7 +1687,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["==", "ihm_class", "footway"],
+        ["in", "ihm_class", "footway", "pedestrian"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "paint": {
@@ -2476,7 +2476,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["==", "ihm_class", "footway"],
+        ["in", "ihm_class", "footway", "pedestrian"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -3302,7 +3302,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["==", "ihm_class", "footway"],
+        ["in", "ihm_class", "footway", "pedestrian"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -4147,7 +4147,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["==", "ihm_class", "footway"],
+        ["in", "ihm_class", "footway", "pedestrian"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
