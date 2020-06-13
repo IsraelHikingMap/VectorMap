@@ -262,7 +262,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
-      "filter": ["all", ["==", "intermittent", 1]],
+      "filter": ["all", ["==", "intermittent", 1], ["!=", "class", "ditch"]],
       "paint": {
         "line-color": "#8EBDF0",
         "line-width": {"base": 1, "stops": [[9, 2], [14, 3]]},
@@ -275,7 +275,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
-      "filter": ["all", ["!=", "intermittent", 1]],
+      "filter": ["all", ["!=", "intermittent", 1], ["!=", "class", "ditch"]],
       "paint": {
         "line-color": "#8EBDF0",
         "line-width": {"base": 1, "stops": [[9, 2], [14, 3]]}
@@ -5358,6 +5358,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "waterway",
+      "filter": ["all", ["!=", "class", "ditch"]],
       "layout": {
         "text-field": "{name_he}",
         "symbol-placement": "line-center",
