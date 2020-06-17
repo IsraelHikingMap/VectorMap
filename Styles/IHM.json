@@ -4555,11 +4555,7 @@
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 13,
-      "filter": [
-        "all",
-        ["has", "ref"],
-        ["==", "network", "lwn"]
-      ],
+      "filter": ["all", ["has", "ref"], ["==", "network", "lwn"]],
       "layout": {
         "text-field": "{ref}",
         "text-font": ["Open Sans Cond Bold"],
@@ -4817,6 +4813,29 @@
       "source-layer": "poi",
       "filter": ["all", ["==", "subclass", "fuel"]],
       "layout": {"icon-image": "gas", "icon-size": 0.5}
+    },
+    {
+      "id": "icon-memorial",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["in", "subclass", "memorial", "monument"]],
+      "layout": {
+        "icon-image": "monument",
+        "icon-size": 0.5,
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-anchor": "top",
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-optional": true,
+        "icon-padding": 50
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 2,
+        "text-translate": [0, 6]
+      }
     },
     {
       "id": "icon-parking",
