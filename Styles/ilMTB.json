@@ -1230,18 +1230,13 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        [
-          "!in",
-          "class",
-          "motorway",
-          "trunk",
-          "primary",
-          "track",
-          "path",
-          "bridge"
-        ]
+        ["in", "class", "secondary", "tertiaty", "minor", "service", ""]
       ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 2], [20, 50]]}
@@ -1257,18 +1252,13 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        [
-          "!in",
-          "class",
-          "motorway",
-          "trunk",
-          "primary",
-          "track",
-          "path",
-          "bridge"
-        ]
+        ["in", "class", "secondary", "tertiaty", "minor", "service", ""]
       ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "#fff",
         "line-width": {"base": 1.4, "stops": [[6, 2], [20, 40]]}
