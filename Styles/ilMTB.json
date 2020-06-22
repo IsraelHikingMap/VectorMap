@@ -2357,11 +2357,11 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 15,
+      "minzoom": 14,
       "filter": [
         "all",
         ["==", "class", "tower"],
-        ["==", "subclass", "communication"]
+        ["==", "tower_type", "communication"]
       ],
       "layout": {
         "icon-image": "antenna",
@@ -2374,11 +2374,11 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 15,
+      "minzoom": 14,
       "filter": [
         "all",
         ["==", "class", "tower"],
-        ["==", "subclass", "observation"]
+        ["==", "tower_type", "observation"]
       ],
       "layout": {
         "icon-image": "tower",
@@ -2484,7 +2484,7 @@
         "text-max-width": 5,
         "text-anchor": "top",
         "text-offset": [0, 0.5],
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": {
         "text-halo-width": 2,
@@ -2580,8 +2580,8 @@
       "filter": ["all", ["==", "$type", "Point"]],
       "layout": {
         "icon-image": "dot",
-        "text-size": {"stops": [[12, 18], [20, 30]]},
-        "icon-size": {"stops": [[12, 0.75], [22, 1.5]]},
+        "text-size": {"stops": [[12, 16], [20, 24]]},
+        "icon-size": {"stops": [[12, 0.5], [22, 1.2]]},
         "text-font": ["Open Sans Regular"],
         "text-offset": [0, -1.25],
         "text-field": "{ele}\n\n{name_he}",
