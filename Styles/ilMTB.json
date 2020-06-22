@@ -495,7 +495,7 @@
           "rgba(170, 140, 170, 1)",
           "rgba(250, 222, 1, 1)"
         ],
-        "line-width": {"stops": [[11, 3], [20, 25]]},
+        "line-width": {"stops": [[9, 3], [24, 30]]},
         "line-opacity": 1
       }
     },
@@ -535,7 +535,7 @@
           "rgba(170, 140, 170, 1)",
           "rgba(250, 222, 1, 1)"
         ],
-        "line-width": {"stops": [[11, 3], [20, 25]]},
+        "line-width": {"stops": [[9, 3], [24, 30]]},
         "line-opacity": 1
       }
     },
@@ -575,9 +575,9 @@
           "rgba(170, 140, 170, 1)",
           "rgba(250, 222, 1, 1)"
         ],
-        "line-width": {"stops": [[11, 1.5], [20, 12.5]]},
+        "line-width": {"stops": [[9, 1.5], [24, 15]]},
         "line-opacity": 1,
-        "line-offset": {"stops": [[10, 1.5], [20, 6]]}
+        "line-offset": {"stops": [[9, 1.5], [24, 7.5]]}
       }
     },
     {
@@ -595,7 +595,7 @@
       },
       "paint": {
         "line-color": "rgba(234, 125, 125, 1)",
-        "line-width": {"base": 1.55, "stops": [[11, 3], [20, 25]]}
+        "line-width": {"stops": [[9, 3], [24, 30]]}
       }
     },
     {
@@ -613,7 +613,7 @@
       },
       "paint": {
         "line-color": "rgba(161, 163, 255, 1)",
-        "line-width": {"stops": [[11, 3], [20, 25]]}
+        "line-width": {"stops": [[9, 3], [24, 30]]}
       }
     },
     {
@@ -927,7 +927,18 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "class", "cable_car"]],
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "cable_car",
+          "chair_lift",
+          "drag_lift",
+          "goods",
+          "magic_carpet"
+        ]
+      ],
       "paint": {
         "line-color": "rgba(40, 40, 40, 1)",
         "line-width": {"stops": [[12, 0.5], [20, 5]]}
@@ -2700,9 +2711,19 @@
       "filter": ["all", ["==", "subclass", "water_well"]],
       "layout": {
         "icon-image": "water_well",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name_he}",
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
       },
-      "paint": {}
+      "paint": {
+        "text-color": "blue",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)"
+      }
     },
     {
       "id": "water_tank",
@@ -2767,42 +2788,23 @@
       }
     },
     {
-      "id": "label_mtb_route",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 10,
-      "maxzoom": 24,
-      "filter": ["all", ["in", "class", "mtb"]],
-      "layout": {
-        "symbol-placement": "line",
-        "text-field": "{name_he}",
-        "text-font": ["Open Sans Regular"],
-        "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 16], [20, 33]]},
-        "text-offset": [0, 0],
-        "text-max-width": 10,
-        "text-max-angle": 90,
-        "text-letter-spacing": 0,
-        "text-keep-upright": true,
-        "text-allow-overlap": false,
-        "text-ignore-placement": false,
-        "symbol-spacing": {"stops": [[10, 10], [14, 500]]}
-      },
-      "paint": {
-        "text-color": "#000",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 2
-      }
-    },
-    {
       "id": "label_cable_car",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": ["all", ["in", "class", "cable_car"]],
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "cable_car",
+          "chair_lift",
+          "drag_lift",
+          "goods",
+          "magic_carpet"
+        ]
+      ],
       "layout": {
         "symbol-placement": "line",
         "text-field": "רכבל",
@@ -2919,6 +2921,36 @@
         "text-halo-color": "rgba(252, 246, 246, 1)",
         "text-halo-width": 2,
         "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "label_mtb_route",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 10,
+      "maxzoom": 24,
+      "filter": ["all", ["in", "class", "mtb"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Regular"],
+        "text-transform": "none",
+        "text-size": {"base": 1.4, "stops": [[14, 16], [20, 33]]},
+        "text-offset": [0, 0],
+        "text-max-width": 10,
+        "text-max-angle": 90,
+        "text-letter-spacing": 0,
+        "text-keep-upright": true,
+        "text-allow-overlap": false,
+        "text-ignore-placement": false,
+        "symbol-spacing": {"stops": [[10, 10], [14, 500]]}
+      },
+      "paint": {
+        "text-color": "#000",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
       }
     },
     {
