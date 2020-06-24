@@ -805,6 +805,21 @@
       }
     },
     {
+      "id": "footway-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": ["all", ["==", "ilmtb_class", "path"], ["==", "bicycle", "no"]],
+      "layout": {"line-cap": "round"},
+      "paint": {
+        "line-color": "rgba(170, 104, 49, 1)",
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
+        "line-dasharray": [0, 2, 0]
+      }
+    },
+    {
       "id": "footway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -3012,7 +3027,7 @@
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 8,
-      "maxzoom": 15,
+      "maxzoom": 16,
       "filter": ["all", ["in", "class", "hamlet", "isolated_dwelling"]],
       "layout": {
         "text-field": "{name_he}",
