@@ -4545,7 +4545,19 @@
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
-      "filter": ["all", ["==", "class", "cable_car"]],
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "cable_car",
+          "gondola",
+          "chair_lift",
+          "drag_lift",
+          "goods",
+          "magic_carpet"
+        ]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "#666", "line-width": 3}
     },
@@ -5290,9 +5302,27 @@
       "source-layer": "poi",
       "minzoom": 12,
       "filter": [
-        "all",
-        ["in", "subclass", "storage_tank", "water_tower"],
-        ["==", "class", "water"]
+        "any",
+        [
+          "case",
+          ["==", ["typeof", ["get", "subclass"]], "string"],
+          ["==", ["get", "subclass"], "water_tower"],
+          false
+        ],
+        [
+          "case",
+          [
+            "all",
+            ["==", ["typeof", ["get", "subclass"]], "string"],
+            ["==", ["typeof", ["get", "content"]], "string"]
+          ],
+          [
+            "all",
+            ["==", ["get", "subclass"], "storage_tank"],
+            ["==", ["get", "content"], "water"]
+          ],
+          false
+        ]
       ],
       "layout": {
         "icon-image": "water_tank",
@@ -5473,8 +5503,8 @@
         "text-size": 16,
         "text-letter-spacing": 0.2,
         "text-max-width": 5,
-        "text-anchor": "right",
-        "text-offset": [-0.4, 0]
+        "text-anchor": "top-right",
+        "text-padding": 0
       },
       "paint": {
         "text-color": "#404040",
@@ -5498,7 +5528,8 @@
         "text-max-width": 10,
         "text-anchor": "bottom-right",
         "text-justify": "right",
-        "text-offset": [0, -0.4]
+        "text-offset": [0, -0.1],
+        "text-padding": 0
       },
       "paint": {
         "text-color": "#404040",
