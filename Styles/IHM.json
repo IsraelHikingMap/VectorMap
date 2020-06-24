@@ -5290,9 +5290,27 @@
       "source-layer": "poi",
       "minzoom": 12,
       "filter": [
-        "all",
-        ["in", "subclass", "storage_tank", "water_tower"],
-        ["==", "class", "water"]
+        "any",
+        [
+          "case",
+          ["==", ["typeof", ["get", "subclass"]], "string"],
+          ["==", ["get", "subclass"], "water_tower"],
+          false
+        ],
+        [
+          "case",
+          [
+            "all",
+            ["==", ["typeof", ["get", "subclass"]], "string"],
+            ["==", ["typeof", ["get", "content"]], "string"]
+          ],
+          [
+            "all",
+            ["==", ["get", "subclass"], "storage_tank"],
+            ["==", ["get", "content"], "water"]
+          ],
+          false
+        ]
       ],
       "layout": {
         "icon-image": "water_tank",
