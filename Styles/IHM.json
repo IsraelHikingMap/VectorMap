@@ -4545,7 +4545,19 @@
       "source-layer": "transportation",
       "minzoom": 14,
       "maxzoom": 24,
-      "filter": ["all", ["==", "class", "cable_car"]],
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "cable_car",
+          "gondola",
+          "chair_lift",
+          "drag_lift",
+          "goods",
+          "magic_carpet"
+        ]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "#666", "line-width": 3}
     },
