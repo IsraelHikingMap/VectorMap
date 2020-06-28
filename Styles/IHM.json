@@ -458,12 +458,41 @@
       }
     },
     {
+      "id": "barrier-cliff-icon",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 9,
+      "filter": ["all", ["in", "class", "cliff", "earth_bank"]],
+      "layout": {
+        "icon-image": "cliff_pattern",
+        "symbol-placement": "line",
+        "symbol-spacing": 1,
+        "icon-allow-overlap": true,
+        "icon-padding": 0,
+        "icon-anchor": "bottom",
+        "icon-rotate": 180,
+        "icon-offset": [0, 5],
+        "icon-size": 0.4
+      },
+      "paint": {"icon-opacity": 1}
+    },
+    {
+      "id": "barrier-cliff",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 9,
+      "filter": ["all", ["in", "class", "cliff", "earth_bank"]],
+      "paint": {"line-width": 1.5, "line-color": "#C87137", "line-opacity": 0.8}
+    },
+    {
       "id": "barrier-wall",
       "type": "line",
       "source": "IHM",
       "source-layer": "linear_barrier",
       "minzoom": 14,
-      "filter": ["all", ["!in", "class", "fence", "retaining_wall"]],
+      "filter": ["all", ["in", "class", "wall", "city_wall"]],
       "paint": {"line-color": "black", "line-width": 1.5}
     },
     {
@@ -472,7 +501,7 @@
       "source": "IHM",
       "source-layer": "linear_barrier",
       "minzoom": 14,
-      "filter": ["all", ["==", "class", "fence"]],
+      "filter": ["all", ["in", "class", "fence", "yes"]],
       "paint": {"line-color": "rgba(26, 26, 26, 1)"}
     },
     {
@@ -5435,7 +5464,7 @@
       }
     },
     {
-      "id": "water-line-name",
+      "id": "name-water-line",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "waterway",
@@ -5456,7 +5485,7 @@
       }
     },
     {
-      "id": "water-point-name",
+      "id": "name-water-point",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
@@ -5514,7 +5543,7 @@
       }
     },
     {
-      "id": "peak-text",
+      "id": "name-peak",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "mountain_peak",
@@ -5539,7 +5568,7 @@
       }
     },
     {
-      "id": "park-text",
+      "id": "name-park",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "park",
@@ -5553,6 +5582,32 @@
       },
       "paint": {
         "text-color": "#709D56",
+        "text-halo-color": "white",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "name-natural",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "ihm_natural",
+      "filter": [
+        "all",
+        [
+          "<",
+          ["get", "pixels"],
+          ["*", ["length", ["get", "name_he"]], 30]
+        ]
+      ],
+      "layout": {
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "symbol-placement": "line-center",
+        "text-letter-spacing": 1
+      },
+      "paint": {
+        "text-color": "#404040",
         "text-halo-color": "white",
         "text-halo-width": 2
       }
