@@ -1113,6 +1113,38 @@
       }
     },
     {
+      "id": "cliff",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "cliff"]],
+      "layout": {
+        "icon-image": "cliff_pattern",
+        "icon-size": {"stops": [[12, 0.3], [24, 1.5]]},
+        "symbol-placement": "line",
+        "symbol-spacing": 1,
+        "icon-rotate": 180,
+        "icon-allow-overlap": true,
+        "icon-anchor": "bottom",
+        "icon-offset": [0, 0],
+        "text-padding": 0
+      }
+    },
+    {
+      "id": "cliff-line",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "cliff"]],
+      "paint": {
+        "line-color": "rgba(200, 113, 55, 1)",
+        "line-width": {"stops": [[12, 0.5], [20, 2]]},
+        "line-offset": 5
+      }
+    },
+    {
       "id": "perimeter_fence-line",
       "type": "line",
       "source": "IHM",
@@ -2784,6 +2816,61 @@
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "label_ridge",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "ihm_natural",
+      "minzoom": 7,
+      "maxzoom": 14,
+      "filter": ["all", ["in", "class", "ridge"]],
+      "layout": {
+        "symbol-placement": "line-center",
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Regular"],
+        "text-transform": "none",
+        "text-size": {"base": 1.4, "stops": [[9, 20], [13, 40]]},
+        "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
+        "text-max-width": 30,
+        "text-max-angle": 20,
+        "text-letter-spacing": 0.3,
+        "symbol-avoid-edges": false,
+        "icon-text-fit": "none"
+      },
+      "paint": {
+        "text-color": "rgba(111, 109, 109, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "label_valley",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "ihm_natural",
+      "minzoom": 7,
+      "maxzoom": 14,
+      "filter": ["all", ["in", "class", "valley"]],
+      "layout": {
+        "symbol-placement": "line-center",
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Regular"],
+        "text-transform": "none",
+        "text-size": {"base": 1.4, "stops": [[9, 20], [13, 40]]},
+        "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
+        "text-max-width": 30,
+        "text-max-angle": 20,
+        "text-letter-spacing": 0.3,
+        "symbol-spacing": 100,
+        "symbol-avoid-edges": false,
+        "icon-text-fit": "none"
+      },
+      "paint": {
+        "text-color": "rgba(111, 109, 109, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
       }
     },
     {
