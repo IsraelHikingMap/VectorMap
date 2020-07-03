@@ -1124,9 +1124,9 @@
       "minzoom": 12,
       "filter": ["all", ["==", "class", "cliff"]],
       "paint": {
-        "line-color": "rgba(200, 113, 55, 1)",
+        "line-color": "rgba(151, 124, 115, 1)",
         "line-width": {"stops": [[12, 0.5], [20, 2]]},
-        "line-offset": 5
+        "line-offset": 0
       }
     },
     {
