@@ -310,8 +310,9 @@
       "paint": {
         "line-pattern": "gradient_pattern",
         "line-width": 8,
-        "line-offset": 4,
-        "line-opacity": 0.3
+        "line-offset": 5,
+        "line-opacity": 0.5,
+        "line-blur": 1
       }
     },
     {
@@ -467,15 +468,12 @@
       "layout": {
         "icon-image": "cliff_pattern",
         "symbol-placement": "line",
-        "symbol-spacing": 1,
+        "symbol-spacing": 10,
         "icon-allow-overlap": true,
-        "icon-padding": 0,
         "icon-anchor": "bottom",
         "icon-rotate": 180,
-        "icon-offset": [0, 5],
         "icon-size": 0.4
-      },
-      "paint": {"icon-opacity": 1}
+      }
     },
     {
       "id": "barrier-cliff",
@@ -484,7 +482,7 @@
       "source-layer": "linear_barrier",
       "minzoom": 9,
       "filter": ["all", ["in", "class", "cliff", "earth_bank"]],
-      "paint": {"line-width": 1.5, "line-color": "#C87137", "line-opacity": 0.8}
+      "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
     },
     {
       "id": "barrier-wall",
@@ -5593,11 +5591,7 @@
       "source-layer": "ihm_natural",
       "filter": [
         "all",
-        [
-          "<",
-          ["get", "pixels"],
-          ["*", ["length", ["get", "name_he"]], 30]
-        ]
+        ["<", ["get", "pixels"], ["*", ["length", ["get", "name_he"]], 30]]
       ],
       "layout": {
         "text-field": "{name_he}",
@@ -5787,8 +5781,7 @@
         "text-color": "#7F7F7F",
         "text-halo-width": 2,
         "text-halo-color": "white",
-        "text-translate": [0, -30],
-        "text-halo-blur": 0
+        "text-translate": [0, -30]
       }
     },
     {
