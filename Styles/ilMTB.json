@@ -1117,7 +1117,7 @@
       }
     },
     {
-      "id": "cliff-line",
+      "id": "cliff-line-copy",
       "type": "line",
       "source": "IHM",
       "source-layer": "linear_barrier",
@@ -1126,7 +1126,23 @@
       "paint": {
         "line-color": "rgba(151, 124, 115, 1)",
         "line-width": {"stops": [[12, 0.5], [20, 2]]},
-        "line-offset": 0
+        "line-offset": 0,
+        "line-pattern": "cliff_pattern"
+      }
+    },
+    {
+      "id": "cliff-line",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "linear_barrier",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "cliff"]],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-color": "rgba(151, 124, 115, 1)",
+        "line-width": {"stops": [[12, 10], [20, 30]]},
+        "line-offset": 0,
+        "line-pattern": "antenna"
       }
     },
     {
@@ -2810,7 +2826,7 @@
       "source-layer": "ihm_natural",
       "minzoom": 7,
       "maxzoom": 14,
-      "filter": ["all", ["in", "class", "valley", " ridge"]],
+      "filter": ["all", ["in", "class", "valley", "ridge"]],
       "layout": {
         "symbol-placement": "line-center",
         "text-field": "{name_he}",
