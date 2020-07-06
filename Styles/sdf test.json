@@ -2306,9 +2306,15 @@
       ],
       "layout": {
         "icon-image": "bollards",
-        "icon-size": {"stops": [[14, 0.4], [20, 1]]}
+        "icon-size": {"stops": [[14, 1], [20, 3]]}
       },
-      "paint": {"icon-opacity": 1, "icon-halo-width": 0}
+      "paint": {
+        "icon-opacity": 1,
+        "icon-halo-width": 2,
+        "icon-color": "rgba(236, 20, 20, 1)",
+        "icon-halo-color": "rgba(230, 221, 221, 1)",
+        "icon-halo-blur": 1
+      }
     },
     {
       "id": "barrier_open_gate",
