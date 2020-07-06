@@ -1,0 +1,106 @@
+{
+  "aerialway-15": {
+    "height": 21,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 21,
+    "x": 0,
+    "y": 69
+  },
+  "bollards": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 0,
+    "y": 0
+  },
+  "cattle_grid": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 23,
+    "y": 0
+  },
+  "cave": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 0,
+    "y": 23
+  },
+  "gate": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 23,
+    "y": 23
+  },
+  "jar": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 46,
+    "y": 0
+  },
+  "memorial": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 69,
+    "y": 0
+  },
+  "picnic": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 46,
+    "y": 23
+  },
+  "ruins": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 69,
+    "y": 23
+  },
+  "star": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 0,
+    "y": 46
+  },
+  "tap": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 23,
+    "y": 46
+  },
+  "viewpoint": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 46,
+    "y": 46
+  },
+  "waterfall": {
+    "height": 23,
+    "pixelRatio": 1,
+    "sdf": true,
+    "width": 23,
+    "x": 69,
+    "y": 46
+  }
+}
