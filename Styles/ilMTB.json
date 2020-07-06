@@ -2647,7 +2647,7 @@
         "text-offset": [0, 0.5]
       },
       "paint": {
-        "text-color": "blue",
+        "text-color": "rgba(30, 128, 227, 1)",
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2683,7 +2683,7 @@
         "text-offset": [0, 0.5]
       },
       "paint": {
-        "text-color": "blue",
+        "text-color": "rgba(30, 128, 227, 1)",
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2706,7 +2706,7 @@
         "text-offset": [0, 0.5]
       },
       "paint": {
-        "text-color": "blue",
+        "text-color": "rgba(30, 128, 227, 1)",
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2729,7 +2729,7 @@
         "text-offset": [0, 0.5]
       },
       "paint": {
-        "text-color": "blue",
+        "text-color": "rgba(30, 128, 227, 1)",
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2752,7 +2752,7 @@
         "text-offset": [0, 0.5]
       },
       "paint": {
-        "text-color": "blue",
+        "text-color": "rgba(30, 128, 227, 1)",
         "text-halo-width": 2,
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
@@ -2817,33 +2817,6 @@
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 1.5,
         "text-halo-blur": 1
-      }
-    },
-    {
-      "id": "label_ridge_valley",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "ihm_natural",
-      "minzoom": 7,
-      "maxzoom": 14,
-      "filter": ["all", ["in", "class", "valley", "ridge"]],
-      "layout": {
-        "symbol-placement": "line-center",
-        "text-field": "{name_he}",
-        "text-font": ["Open Sans Regular"],
-        "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[9, 15], [13, 40]]},
-        "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
-        "text-max-width": 30,
-        "text-max-angle": 20,
-        "text-letter-spacing": 0.3,
-        "symbol-avoid-edges": false,
-        "icon-text-fit": "none"
-      },
-      "paint": {
-        "text-color": "rgba(111, 109, 109, 1)",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 2
       }
     },
     {
@@ -3096,6 +3069,33 @@
         "text-size": {"stops": [[8, 15], [20, 30]]}
       },
       "paint": {"text-halo-color": "hsl(0, 0%, 100%)", "text-halo-width": 2}
+    },
+    {
+      "id": "label_ridge_valley",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "ihm_natural",
+      "minzoom": 7,
+      "maxzoom": 14,
+      "filter": ["all", ["in", "class", "valley", "ridge"]],
+      "layout": {
+        "symbol-placement": "line-center",
+        "text-field": "{name_he}",
+        "text-font": ["Open Sans Regular"],
+        "text-transform": "none",
+        "text-size": {"base": 1.4, "stops": [[9, 15], [13, 40]]},
+        "text-offset": {"stops": [[14, [0, 0.5]], [20, [0, 2]]]},
+        "text-max-width": 30,
+        "text-max-angle": 20,
+        "text-letter-spacing": 0.3,
+        "symbol-avoid-edges": false,
+        "icon-text-fit": "none"
+      },
+      "paint": {
+        "text-color": "rgba(111, 109, 109, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
+      }
     },
     {
       "id": "label_town",
