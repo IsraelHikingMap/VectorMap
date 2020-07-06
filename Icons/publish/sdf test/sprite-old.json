@@ -10,7 +10,6 @@
   "bollards": {
     "height": 23,
     "pixelRatio": 1,
-    "sdf": true,
     "width": 23,
     "x": 0,
     "y": 0
