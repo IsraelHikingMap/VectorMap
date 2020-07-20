@@ -61,15 +61,17 @@
     },
     {
       "id": "land_orchard",
-      "type": "fill",
+      "type": "symbol",
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 13,
       "filter": ["all", ["==", "subclass", "orchard"]],
-      "paint": {
-        "fill-pattern": "orchard_pattern",
-        "fill-outline-color": "rgba(63, 161, 0, 0.35)"
-      }
+      "layout": {
+        "icon-image": "memorial",
+        "symbol-placement": "point",
+        "symbol-spacing": 10
+      },
+      "paint": {}
     },
     {
       "id": "land_vineyard",
@@ -139,9 +141,9 @@
       "minzoom": 14,
       "filter": ["==", "class", "wood"],
       "layout": {
-        "icon-image": "forest_pattern",
         "icon-size": {"stops": [[14, 0.5], [18, 2]]},
-        "icon-pitch-alignment": "viewport"
+        "icon-pitch-alignment": "viewport",
+        "icon-image": "picnic"
       },
       "paint": {}
     },
@@ -416,8 +418,9 @@
       ],
       "paint": {
         "line-color": "hsl(205, 56%, 73%)",
-        "line-width": {"base": 1.4, "stops": [[8, 1], [20, 8]]},
-        "line-dasharray": [3, 1]
+        "line-width": {"base": 1.4, "stops": [[8, 5], [20, 20]]},
+        "line-dasharray": [],
+        "line-pattern": "cave"
       }
     },
     {
@@ -797,7 +800,11 @@
         ["!has", "mtb_scale"],
         ["!has", "bicycle"]
       ],
-      "layout": {"line-cap": "square", "line-join": "bevel"},
+      "layout": {
+        "line-cap": "square",
+        "line-join": "bevel",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]},
@@ -3254,6 +3261,24 @@
       "minzoom": 11,
       "filter": ["any", [">=", "east_rank", 10], [">=", "north_rank", 10]],
       "paint": {"line-color": "rgba(127, 127, 127, 1)", "line-width": 2}
+    },
+    {
+      "id": "route",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "path"]],
+      "layout": {
+        "icon-image": "memorial",
+        "symbol-placement": "line",
+        "icon-size": 2,
+        "icon-rotate": 90,
+        "symbol-spacing": 1,
+        "text-padding": 0,
+        "text-allow-overlap": true,
+        "text-ignore-placement": true
+      },
+      "paint": {"icon-color": "rgba(238, 22, 22, 1)"}
     }
   ],
   "id": "il-MTB",

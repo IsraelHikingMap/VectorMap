@@ -2286,7 +2286,11 @@
       "source": "IHM",
       "source-layer": "barrier",
       "minzoom": 15,
-      "filter": ["all", ["==", "class", "closed_gate"]],
+      "filter": [
+        "all",
+        ["==", "class", "closed_gate"],
+        ["!=", "barrier", "fence"]
+      ],
       "layout": {
         "icon-image": "gate_closed",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]}
