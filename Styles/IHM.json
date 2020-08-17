@@ -27,7 +27,7 @@
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
-  "glyphs": "https://israelhiking.osm.org.il/glyphs/{fontstack}/{range}.pbf",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
