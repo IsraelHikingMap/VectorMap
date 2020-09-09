@@ -4767,7 +4767,12 @@
       "layout": {
         "icon-image": "holy_place",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -4805,7 +4810,12 @@
       "layout": {
         "icon-image": "mosque",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -4831,7 +4841,12 @@
       "layout": {
         "icon-image": "church",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -4862,7 +4877,12 @@
       "layout": {
         "icon-image": "monument",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -4885,7 +4905,12 @@
       "layout": {
         "icon-image": "parking",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -4916,7 +4941,12 @@
       "layout": {
         "icon-image": "picnic",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -4938,7 +4968,12 @@
       "layout": {
         "icon-image": "ruins",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -4960,7 +4995,12 @@
       "layout": {
         "icon-image": "jar",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -4986,7 +5026,12 @@
       "layout": {
         "icon-image": "cave",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -5009,7 +5054,12 @@
       "layout": {
         "icon-image": "tree",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -5031,7 +5081,12 @@
       "layout": {
         "icon-image": "camping",
         "icon-size": 0.5,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -5056,7 +5111,12 @@
         ["==", "subclass", "station"]
       ],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5084,7 +5144,12 @@
       "source-layer": "poi",
       "filter": ["all", ["==", "subclass", "viewpoint"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5165,7 +5230,12 @@
       "minzoom": 15,
       "filter": ["all", ["in", "class", "minor", "service"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 14,
         "text-letter-spacing": 0.2,
@@ -5184,7 +5254,12 @@
       "source-layer": "transportation_name",
       "filter": ["all", ["==", "class", "path"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 14,
         "text-letter-spacing": 0.2,
@@ -5204,7 +5279,12 @@
       "source-layer": "transportation_name",
       "filter": ["all", ["==", "class", "track"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 16,
         "text-letter-spacing": 0.2,
@@ -5225,7 +5305,12 @@
       "minzoom": 13,
       "filter": ["all", ["==", "class", "tertiary"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 14,
         "text-letter-spacing": 0.2,
@@ -5246,7 +5331,12 @@
       "minzoom": 13,
       "filter": ["all", ["==", "class", "secondary"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 14,
         "text-letter-spacing": 0.2,
@@ -5266,7 +5356,12 @@
       "minzoom": 13,
       "filter": ["all", ["==", "class", "primary"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 14,
         "text-letter-spacing": 0.2,
@@ -5284,7 +5379,12 @@
       "source": "IHM",
       "source-layer": "water_name",
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5308,7 +5408,12 @@
       "layout": {
         "icon-image": "tap",
         "icon-size": 0.4,
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -5353,7 +5458,12 @@
       ],
       "layout": {
         "icon-image": "water_tank",
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "icon-size": 0.4,
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
@@ -5378,7 +5488,12 @@
       "filter": ["all", ["==", "subclass", "waterhole"]],
       "layout": {
         "icon-image": "water_hole",
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "icon-size": 0.4,
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
@@ -5403,7 +5518,12 @@
       "filter": ["all", ["==", "subclass", "water_well"]],
       "layout": {
         "icon-image": "water_well",
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "icon-size": 0.4,
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
@@ -5468,7 +5588,12 @@
       "source-layer": "waterway",
       "filter": ["all", ["!=", "class", "ditch"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "line-center",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5493,7 +5618,12 @@
         ["in", "subclass", "cistern", "spring", "pond", "stream_pool"]
       ],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -5547,7 +5677,12 @@
       "source-layer": "mountain_peak",
       "minzoom": 13,
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5573,7 +5708,12 @@
       "minzoom": 9,
       "filter": ["all", ["==", "$type", "Point"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-size": 18,
         "text-font": ["Open Sans Cond Bold"],
         "text-max-width": 5
@@ -5591,10 +5731,31 @@
       "source-layer": "ihm_natural",
       "filter": [
         "all",
-        ["<", ["get", "pixels"], ["*", ["length", ["get", "name_he"]], 30]]
+        [
+          "<",
+          ["get", "pixels"],
+          [
+            "*",
+            30,
+            [
+              "length",
+              [
+                "coalesce",
+                ["get", "name:he"],
+                ["get", "name:latin"],
+                ["get", "name"]
+              ]
+            ]
+          ]
+        ]
       ],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 14,
         "symbol-placement": "line-center",
@@ -5614,7 +5775,12 @@
       "minzoom": 12,
       "filter": ["all", ["==", "class", "isolated_dwelling"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5635,7 +5801,12 @@
       "minzoom": 12,
       "filter": ["all", ["==", "class", "hamlet"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5656,7 +5827,12 @@
       "minzoom": 11,
       "filter": ["all", ["==", "class", "village"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5678,7 +5854,12 @@
       "maxzoom": 15,
       "filter": ["all", ["==", "class", "suburb"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5700,7 +5881,12 @@
       "maxzoom": 13,
       "filter": ["all", ["==", "class", "town"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
@@ -5722,7 +5908,12 @@
       "maxzoom": 13,
       "filter": ["all", ["==", "class", "city"]],
       "layout": {
-        "text-field": "{name_he}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
