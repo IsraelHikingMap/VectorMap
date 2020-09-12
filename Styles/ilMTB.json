@@ -849,7 +849,6 @@
         ["==", "ilmtb_class", "cycleway"],
         ["!=", "subclass", "cycleway"]
       ],
-	  
       "layout": {
         "line-cap": "butt",
         "line-join": "round",
@@ -878,7 +877,6 @@
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
       }
     },
-
     {
       "id": "multiuse_path",
       "type": "line",
@@ -887,14 +885,15 @@
       "source-layer": "transportation",
       "minzoom": 13,
       "filter": [
-    "all",
-    ["==", "ilmtb_class", "path" ],
-    [
-      "any",
-      ["==", "bicycle", "yes" ],
-      ["has", "mtb_scale" ]
-    ]
-  ],
+        "all",
+        ["==", "ilmtb_class", "path"],
+        [
+          "any",
+          ["==", "bicycle", "yes"],
+          ["==", "bicycle", "permissive"],
+          ["has", "mtb_scale"]
+        ]
+      ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": [
