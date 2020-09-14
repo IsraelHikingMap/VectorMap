@@ -536,18 +536,18 @@
           "orange:white:orange_stripe",
           "orange",
           "yellow:white:yellow_stripe",
-          "yellow",
+          "gold",
           "purple:white:purple_stripe:blue_stripe_left",
           "#1765AD",
           "blue:white:blue_stripe:green_stripe_left",
           "#4CA64C",
+          "yellow:blue:yellow_stripe",
+          "gold",
           [
             "match",
             ["get", "name"],
             "שביל ואדיות חיפה",
-            "red",
-            "שביל ירושלים",
-            "yellow",
+            "green",
             "rgba(0,0,0,0)"
           ]
         ],
@@ -575,15 +575,9 @@
           "#7B5CA0",
           "blue:white:blue_stripe:green_stripe_left",
           "blue",
-          [
-            "match",
-            ["get", "name"],
-            "שביל ואדיות חיפה",
-            "green",
-            "שביל ירושלים",
-            "blue",
-            "rgba(0,0,0,0)"
-          ]
+          "yellow:blue:yellow_stripe",
+          "blue",
+          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "rgba(0,0,0,0)"]
         ],
         "line-dasharray": [4, 4],
         "line-width": {
@@ -4589,40 +4583,6 @@
       "paint": {"line-color": "#666", "line-width": 3}
     },
     {
-      "id": "ref-trail",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 13,
-      "filter": ["all", ["has", "ref"], ["==", "network", "lwn"]],
-      "layout": {
-        "text-field": "{ref}",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
-        "text-offset": [0, -1],
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
-      },
-      "paint": {
-        "text-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "green",
-          "blue:white:blue_stripe",
-          "blue",
-          "rgba(0,0,0,0)"
-        ],
-        "text-halo-color": "white",
-        "text-halo-width": 2
-      }
-    },
-    {
       "id": "shield-secondary",
       "type": "symbol",
       "metadata": {"IHM:overlay": true},
@@ -5220,6 +5180,152 @@
         "icon-image": "gate_closed",
         "icon-size": 0.35,
         "icon-allow-overlap": true
+      }
+    },
+    {
+      "id": "name-trail-regional",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 13,
+      "filter": ["all", ["==", "network", "rwn"]],
+      "layout": {
+        "text-field": [
+          "concat",
+          [
+            "coalesce",
+            ["get", "name:he"],
+            ["get", "name_he"],
+            ["get", "name:latin"],
+            ["get", "name"]
+          ],
+          " ",
+          ["get", "ref"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-offset": [0, -1],
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "purple:white:purple_stripe",
+          "black",
+          "orange:white:orange_stripe",
+          "orange",
+          "yellow:white:yellow_stripe",
+          "gold",
+          "purple:white:purple_stripe:blue_stripe_left",
+          "#7B5CA0",
+          "blue:white:blue_stripe:green_stripe_left",
+          "blue",
+          "yellow:blue:yellow_stripe",
+          "blue",
+          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "rgba(0,0,0,0)"]
+        ],
+        "text-halo-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "yellow:white:yellow_stripe",
+          "black",
+          "purple:white:purple_stripe:blue_stripe_left",
+          "#1765AD",
+          "blue:white:blue_stripe:green_stripe_left",
+          "rgba(76, 166, 76, 0.3)",
+          "yellow:blue:yellow_stripe",
+          "gold",
+          [
+            "match",
+            ["get", "name"],
+            "שביל ואדיות חיפה",
+            "rgba(76, 166, 76, 0.3)",
+            "white"
+          ]
+        ],
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "name-ref-trail",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 13,
+      "filter": ["all", ["has", "ref"], ["==", "network", "lwn"]],
+      "layout": {
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-offset": [0, -1],
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "rgba(0,0,0,0)"
+        ],
+        "text-halo-color": "white",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "name-trail-local",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 13,
+      "filter": ["all", ["==", "network", "lwn"], ["has", "name"]],
+      "layout": {
+        "text-field": [
+          "concat",
+          [
+            "coalesce",
+            ["get", "name:he"],
+            ["get", "name_he"],
+            ["get", "name:latin"],
+            ["get", "name"]
+          ],
+          " ",
+          ["get", "ref"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-offset": [0, -1],
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "rgba(0,0,0,0)"
+        ],
+        "text-halo-color": "white",
+        "text-halo-width": 2
       }
     },
     {
