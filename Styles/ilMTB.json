@@ -889,8 +889,7 @@
         ["==", "ilmtb_class", "path"],
         [
           "any",
-          ["==", "bicycle", "yes"],
-          ["==", "bicycle", "permissive"],
+          ["in", "bicycle", "yes", "permissive"],
           ["has", "mtb_scale"]
         ]
       ],
