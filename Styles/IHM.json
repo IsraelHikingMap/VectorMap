@@ -5193,7 +5193,6 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_he"],
           ["get", "name:latin"],
           ["get", "name"]
         ],
@@ -5295,7 +5294,6 @@
           [
             "coalesce",
             ["get", "name:he"],
-            ["get", "name_he"],
             ["get", "name:latin"],
             ["get", "name"]
           ],
