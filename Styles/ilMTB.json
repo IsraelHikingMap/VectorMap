@@ -624,7 +624,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["in", "class", "minor", "service"],
+        ["in", "ilmtb_class", "minor", "service"],
         ["!=", "brunnel", "tunnel"]
       ],
       "paint": {
@@ -654,7 +654,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["in", "class", "secondary", "tertiary"],
+        ["in", "ilmtb_class", "secondary", "tertiary"],
         ["!=", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -672,7 +672,7 @@
       "minzoom": 9,
       "filter": [
         "all",
-        ["in", "class", "trunk", "primary"],
+        ["in", "ilmtb_class", "trunk", "primary"],
         ["!=", "brunnel", "tunnel"],
         ["!=", "ramp", 1]
       ],
@@ -691,7 +691,7 @@
       "maxzoom": 24,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ilmtb_class", "motorway"],
         ["!=", "brunnel", "tunnel"]
       ],
       "paint": {
@@ -708,7 +708,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["in", "class", "unclassified", "track"],
+        ["in", "ilmtb_class", "unclassified", "track"],
         ["in", "tracktype", "grade1", "grade2"],
         ["!=", "brunnel", "tunnel"]
       ],
@@ -723,7 +723,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["in", "class", "track", "unclassified"],
+        ["in", "ilmtb_class", "track", "unclassified"],
         ["!in", "tracktype", "grade1", "grade2"],
         ["!=", "brunnel", "tunnel"]
       ],
@@ -741,7 +741,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["in", "class", "track", "unclassified"],
+        ["in", "ilmtb_class", "track", "unclassified"],
         ["!=", "brunnel", "tunnel"]
       ],
       "layout": {"visibility": "visible"},
@@ -759,7 +759,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "track"],
+        ["==", "ilmtb_class", "track"],
         ["in", "tracktype", "grade3"],
         ["!=", "brunnel", "tunnel"]
       ],
@@ -925,7 +925,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "class", "path"], ["==", "mtb_scale", "6"]],
+      "filter": ["all", ["==", "ilmtb_class", "path"], ["==", "mtb_scale", "6"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
@@ -943,7 +943,7 @@
         "all",
         [
           "in",
-          "class",
+          "ilmtb_class",
           "cable_car",
           "chair_lift",
           "drag_lift",
@@ -963,7 +963,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "class", "rail"], ["!=", "brunnel", "tunnel"]],
+      "filter": ["all", ["==", "ilmtb_class", "rail"], ["!=", "brunnel", "tunnel"]],
       "paint": {
         "line-color": "rgba(40, 40, 40, 1)",
         "line-width": {"stops": [[12, 4], [20, 9]]}
@@ -976,7 +976,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "class", "rail"], ["!=", "brunnel", "tunnel"]],
+      "filter": ["all", ["==", "ilmtb_class", "rail"], ["!=", "brunnel", "tunnel"]],
       "paint": {
         "line-color": "white",
         "line-width": {"stops": [[12, 2], [20, 7]]},
@@ -994,7 +994,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["in", "class", "motorway", "trunk", "primary"]
+        ["in", "ilmtb_class", "motorway", "trunk", "primary"]
       ],
       "paint": {
         "line-color": "rgba(24, 24, 24, 1)",
@@ -1014,7 +1014,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["!in", "class", "motorway", "trunk", "primary"]
+        ["!in", "ilmtb_class", "motorway", "trunk", "primary"]
       ],
       "paint": {
         "line-color": "rgba(24, 24, 24, 1)",
@@ -1200,7 +1200,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": ["all", ["==", "brunnel", "bridge"], ["in", "class", "bridge"]],
+      "filter": ["all", ["==", "brunnel", "bridge"], ["in", "ilmtb_class", "bridge"]],
       "paint": {
         "fill-color": "rgba(248, 242, 242, 1)",
         "fill-outline-color": "rgba(0, 0, 0, 1)"
@@ -1216,7 +1216,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "motorway", "trunk", "primary"]
+        ["in", "ilmtb_class", "motorway", "trunk", "primary"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -1234,7 +1234,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "motorway", "trunk", "primary"]
+        ["in", "ilmtb_class", "motorway", "trunk", "primary"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -1252,7 +1252,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "track", "path"]
+        ["in", "ilmtb_class", "track", "path"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {"line-width": {"base": 1.4, "stops": [[6, 3], [20, 25]]}}
@@ -1267,7 +1267,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "track", "path"]
+        ["in", "ilmtb_class", "track", "path"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -1285,7 +1285,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "secondary", "tertiaty", "minor", "service", ""]
+        ["in", "ilmtb_class", "secondary", "tertiaty", "minor", "service", ""]
       ],
       "layout": {
         "line-cap": "butt",
@@ -1307,7 +1307,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "secondary", "tertiaty", "minor", "service", ""]
+        ["in", "ilmtb_class", "secondary", "tertiaty", "minor", "service", ""]
       ],
       "layout": {
         "line-cap": "butt",
@@ -1326,7 +1326,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "class", "rail"], ["==", "brunnel", "bridge"]],
+      "filter": ["all", ["==", "ilmtb_class", "rail"], ["==", "brunnel", "bridge"]],
       "paint": {
         "line-color": "rgba(15, 15, 15, 1)",
         "line-width": {"stops": [[12, 4], [20, 9]]}
@@ -1339,7 +1339,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "class", "rail"], ["==", "brunnel", "bridge"]],
+      "filter": ["all", ["==", "ilmtb_class", "rail"], ["==", "brunnel", "bridge"]],
       "paint": {
         "line-color": "white",
         "line-width": {"stops": [[12, 2], [20, 7]]},
@@ -1353,7 +1353,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "class", "path"], ["==", "brunnel", "bridge"]],
+      "filter": ["all", ["==", "ilmtb_class", "path"], ["==", "brunnel", "bridge"]],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
@@ -1369,7 +1369,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["in", "class", "minor", "service"],
+        ["in", "ilmtb_class", "minor", "service"],
         ["==", "brunnel", "bridge"]
       ],
       "paint": {
@@ -1385,7 +1385,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["in", "class", "secondary", "tertiary"],
+        ["in", "ilmtb_class", "secondary", "tertiary"],
         ["==", "brunnel", "bridge"]
       ],
       "paint": {
@@ -1401,7 +1401,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["in", "class", "trunk", "primary"],
+        ["in", "ilmtb_class", "trunk", "primary"],
         ["==", "brunnel", "bridge"]
       ],
       "paint": {
@@ -1417,7 +1417,7 @@
       "source-layer": "transportation",
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ilmtb_class", "motorway"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "square", "line-join": "round"},
@@ -1687,7 +1687,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": ["all", ["in", "class", "path"], ["==", "oneway", 1]],
+      "filter": ["all", ["in", "ilmtb_class", "path"], ["==", "oneway", 1]],
       "layout": {
         "symbol-placement": "line",
         "text-font": [""],
@@ -2990,7 +2990,7 @@
         "all",
         [
           "in",
-          "class",
+          "ilmtb_class",
           "cable_car",
           "chair_lift",
           "drag_lift",

@@ -703,7 +703,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "class", "path"], ["==", "brunnel", "tunnel"]],
+      "filter": ["all", ["==", "ihm_class", "path"], ["==", "brunnel", "tunnel"]],
       "paint": {
         "line-color": "black",
         "line-dasharray": [0.3, 0.4],
@@ -765,7 +765,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "class", "path"], ["==", "brunnel", "tunnel"]],
+      "filter": ["all", ["==", "ihm_class", "path"], ["==", "brunnel", "tunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "white",
@@ -829,7 +829,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["==", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -853,7 +853,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["==", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -880,7 +880,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["==", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -905,7 +905,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 7,
-      "filter": ["all", ["==", "class", "trunk"], ["==", "brunnel", "tunnel"]],
+      "filter": ["all", ["==", "ihm_class", "trunk"], ["==", "brunnel", "tunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
@@ -927,7 +927,7 @@
       "minzoom": 6,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["==", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -949,7 +949,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "class", "rail"], ["==", "brunnel", "tunnel"]],
+      "filter": ["all", ["==", "ihm_class", "rail"], ["==", "brunnel", "tunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-width": 3, "line-color": "gray"}
     },
@@ -960,7 +960,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "class", "rail"], ["==", "brunnel", "tunnel"]],
+      "filter": ["all", ["==", "ihm_class", "rail"], ["==", "brunnel", "tunnel"]],
       "paint": {
         "line-dasharray": [6, 2],
         "line-width": 2,
@@ -1315,7 +1315,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["==", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1334,7 +1334,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["==", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1353,7 +1353,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["==", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1370,7 +1370,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 5,
-      "filter": ["all", ["==", "class", "trunk"], ["==", "brunnel", "tunnel"]],
+      "filter": ["all", ["==", "ihm_class", "trunk"], ["==", "brunnel", "tunnel"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [1, 3],
@@ -1387,7 +1387,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["==", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1436,7 +1436,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "path"],
+        ["==", "ihm_class", "path"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1502,7 +1502,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1526,7 +1526,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1553,7 +1553,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1580,7 +1580,7 @@
       "minzoom": 7,
       "filter": [
         "all",
-        ["==", "class", "trunk"],
+        ["==", "ihm_class", "trunk"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1604,7 +1604,7 @@
       "minzoom": 6,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1628,7 +1628,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1643,7 +1643,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "paint": {
@@ -1999,7 +1999,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2017,7 +2017,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2035,7 +2035,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2053,7 +2053,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "trunk"],
+        ["==", "ihm_class", "trunk"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2071,7 +2071,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2120,7 +2120,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "path"],
+        ["==", "ihm_class", "path"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2158,7 +2158,7 @@
         "all",
         [
           "in",
-          "class",
+          "ihm_class",
           "motorway",
           "trunk",
           "primary",
@@ -2217,7 +2217,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "path"],
+        ["==", "ihm_class", "path"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2286,7 +2286,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2311,7 +2311,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2339,7 +2339,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2367,7 +2367,7 @@
       "minzoom": 7,
       "filter": [
         "all",
-        ["==", "class", "trunk"],
+        ["==", "ihm_class", "trunk"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2392,7 +2392,7 @@
       "minzoom": 6,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2417,7 +2417,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2432,7 +2432,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2801,7 +2801,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2820,7 +2820,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2839,7 +2839,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2858,7 +2858,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "trunk"],
+        ["==", "ihm_class", "trunk"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2877,7 +2877,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -2927,7 +2927,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "path"],
+        ["==", "ihm_class", "path"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -2965,7 +2965,7 @@
         "all",
         [
           "in",
-          "class",
+          "ihm_class",
           "motorway",
           "trunk",
           "primary",
@@ -3093,7 +3093,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3118,7 +3118,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3146,7 +3146,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3174,7 +3174,7 @@
       "minzoom": 7,
       "filter": [
         "all",
-        ["==", "class", "trunk"],
+        ["==", "ihm_class", "trunk"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3199,7 +3199,7 @@
       "minzoom": 6,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3224,7 +3224,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3239,7 +3239,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3255,7 +3255,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3627,7 +3627,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3646,7 +3646,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3665,7 +3665,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3684,7 +3684,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "trunk"],
+        ["==", "ihm_class", "trunk"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3703,7 +3703,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
@@ -3753,7 +3753,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "path"],
+        ["==", "ihm_class", "path"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -3791,7 +3791,7 @@
         "all",
         [
           "in",
-          "class",
+          "ihm_class",
           "motorway",
           "trunk",
           "primary",
@@ -3850,7 +3850,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "class", "path"],
+        ["==", "ihm_class", "path"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -3919,7 +3919,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -3944,7 +3944,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -3972,7 +3972,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4000,7 +4000,7 @@
       "minzoom": 7,
       "filter": [
         "all",
-        ["==", "class", "trunk"],
+        ["==", "ihm_class", "trunk"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4025,7 +4025,7 @@
       "minzoom": 6,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4050,7 +4050,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4065,7 +4065,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4081,7 +4081,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4100,7 +4100,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "rail"],
+        ["==", "ihm_class", "rail"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4472,7 +4472,7 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "class", "tertiary"],
+        ["==", "ihm_class", "tertiary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4491,7 +4491,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "class", "secondary"],
+        ["==", "ihm_class", "secondary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4510,7 +4510,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "primary"],
+        ["==", "ihm_class", "primary"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4529,7 +4529,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "trunk"],
+        ["==", "ihm_class", "trunk"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4548,7 +4548,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "motorway"],
+        ["==", "ihm_class", "motorway"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 3]
       ],
@@ -4570,7 +4570,7 @@
         "all",
         [
           "in",
-          "class",
+          "ihm_class",
           "cable_car",
           "gondola",
           "chair_lift",
