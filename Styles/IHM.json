@@ -241,6 +241,14 @@
       }
     },
     {
+      "id": "water-area-breakwater",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "filter": ["all", ["==", "class", "breakwater"]],
+      "paint": {"fill-color": "rgba(250, 247, 225, 1)"}
+    },
+    {
       "id": "trail-israel",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -703,7 +711,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "ihm_class", "path"], ["==", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["==", "ihm_class", "path"],
+        ["==", "brunnel", "tunnel"]
+      ],
       "paint": {
         "line-color": "black",
         "line-dasharray": [0.3, 0.4],
@@ -765,7 +777,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "ihm_class", "path"], ["==", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["==", "ihm_class", "path"],
+        ["==", "brunnel", "tunnel"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "white",
@@ -905,7 +921,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 7,
-      "filter": ["all", ["==", "ihm_class", "trunk"], ["==", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["==", "ihm_class", "trunk"],
+        ["==", "brunnel", "tunnel"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
@@ -949,7 +969,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "ihm_class", "rail"], ["==", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["==", "ihm_class", "rail"],
+        ["==", "brunnel", "tunnel"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-width": 3, "line-color": "gray"}
     },
@@ -960,7 +984,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "ihm_class", "rail"], ["==", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["==", "ihm_class", "rail"],
+        ["==", "brunnel", "tunnel"]
+      ],
       "paint": {
         "line-dasharray": [6, 2],
         "line-width": 2,
@@ -1370,7 +1398,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 5,
-      "filter": ["all", ["==", "ihm_class", "trunk"], ["==", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["==", "ihm_class", "trunk"],
+        ["==", "brunnel", "tunnel"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [1, 3],
