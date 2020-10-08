@@ -2472,6 +2472,25 @@
       "paint": {"line-width": 3, "line-color": "gray"}
     },
     {
+      "id": "bridge-rail-dash",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "rail"],
+        ["==", "brunnel", "bridge"],
+        ["any", ["==", "layer", 1], ["!has", "layer"]]
+      ],
+      "paint": {
+        "line-dasharray": [6, 6],
+        "line-width": 2,
+        "line-color": "white"
+      }
+    },
+    {
       "id": "bridge-path-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
