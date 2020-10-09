@@ -6170,6 +6170,204 @@
         "text-translate": [30, 0],
         "text-halo-blur": 1.5
       }
+    },
+    {
+      "id": "construction-casing-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "minor_construction",
+          "unclassified_construction",
+          "service_construction"
+        ]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[13, 3], [16, 8]]}
+      }
+    },
+    {
+      "id": "construction-casing-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "tertiary_construction"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "construction-casing-secondary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "secondary_construction"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 0, 0.8)",
+        "line-width": {
+          "base": 1,
+          "stops": [[11, 0.75], [12, 1.5], [13, 3], [16, 6]]
+        }
+      }
+    },
+    {
+      "id": "construction-casing-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": ["all", ["==", "class", "primary_construction"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 0, 0.8)",
+        "line-width": {
+          "base": 1,
+          "stops": [[10, 1], [12, 1.5], [13, 3], [16, 6]]
+        }
+      }
+    },
+    {
+      "id": "construction-casing-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": ["all", ["==", "class", "trunk_construction"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "construction-casing-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "filter": ["all", ["==", "class", "motorway_construction"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[7, 1], [9, 1.5], [13, 3], [16, 6]]}
+      }
+    },
+    {
+      "id": "construction-road-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "minor_construction",
+          "unclassified_construction",
+          "service_construction"
+        ]
+      ],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 100, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[13, 1], [14, 1.75], [16, 3]]},
+        "line-dasharray": [0.5, 1]
+      }
+    },
+    {
+      "id": "construction-road-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "tertiary_construction"]],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 100, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[13, 2], [16, 3]]},
+        "line-dasharray": [0.5, 1]
+      }
+    },
+    {
+      "id": "construction-road-secondary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "secondary_construction"]],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 100, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[11, 0.4], [13, 1], [16, 3]]},
+        "line-dasharray": [0.5, 1]
+      }
+    },
+    {
+      "id": "construction-road-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": ["all", ["==", "class", "primary_construction"]],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 100, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[10, 0.5], [13, 1], [16, 3]]},
+        "line-dasharray": [0.5, 1]
+      }
+    },
+    {
+      "id": "construction-road-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": ["all", ["==", "class", "trunk_construction"]],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 100, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[7, 0.5], [9, 1], [16, 3]]},
+        "line-dasharray": [0.5, 1]
+      }
+    },
+    {
+      "id": "construction-road-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": ["all", ["==", "class", "motorway_construction"]],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 100, 0, 0.8)",
+        "line-width": {"base": 1, "stops": [[7, 0.5], [9, 1], [16, 3]]},
+        "line-dasharray": [0.5, 1]
+      }
     }
   ],
   "id": "IHM"
