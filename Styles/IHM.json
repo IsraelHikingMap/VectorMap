@@ -861,7 +861,7 @@
       }
     },
     {
-      "id": "tunnel-casing-seconary",
+      "id": "tunnel-casing-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1354,7 +1354,7 @@
       }
     },
     {
-      "id": "tunnel-road-secondary ",
+      "id": "tunnel-road-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1550,7 +1550,7 @@
       }
     },
     {
-      "id": "casing-seconary",
+      "id": "casing-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2041,7 +2041,7 @@
       }
     },
     {
-      "id": "road-secondary ",
+      "id": "road-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2335,7 +2335,7 @@
       }
     },
     {
-      "id": "bridge-casing-seconary",
+      "id": "bridge-casing-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2863,7 +2863,7 @@
       }
     },
     {
-      "id": "bridge-road-secondary ",
+      "id": "bridge-road-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3161,7 +3161,7 @@
       }
     },
     {
-      "id": "bridge2-casing-seconary",
+      "id": "bridge2-casing-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3689,7 +3689,7 @@
       }
     },
     {
-      "id": "bridge2-road-secondary ",
+      "id": "bridge2-road-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3987,7 +3987,7 @@
       }
     },
     {
-      "id": "bridge3-casing-seconary",
+      "id": "bridge3-casing-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4534,7 +4534,7 @@
       }
     },
     {
-      "id": "bridge3-road-secondary ",
+      "id": "bridge3-road-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
