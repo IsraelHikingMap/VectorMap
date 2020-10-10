@@ -470,7 +470,7 @@
       "id": "barrier-cliff-icon",
       "type": "symbol",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 9,
       "filter": ["all", ["in", "class", "cliff", "earth_bank"]],
       "layout": {
@@ -487,7 +487,7 @@
       "id": "barrier-cliff",
       "type": "line",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 9,
       "filter": ["all", ["in", "class", "cliff", "earth_bank"]],
       "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
@@ -496,7 +496,7 @@
       "id": "barrier-wall",
       "type": "line",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 14,
       "filter": ["all", ["in", "class", "wall", "city_wall"]],
       "paint": {"line-color": "black", "line-width": 1.5}
@@ -505,7 +505,7 @@
       "id": "barrier-fence-line",
       "type": "line",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 14,
       "filter": ["all", ["in", "class", "fence", "yes"]],
       "paint": {"line-color": "rgba(26, 26, 26, 1)"}
@@ -514,7 +514,7 @@
       "id": "barrier-fence-x",
       "type": "symbol",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 14,
       "filter": ["all", ["==", "class", "fence"]],
       "layout": {

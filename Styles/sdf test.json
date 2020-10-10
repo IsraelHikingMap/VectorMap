@@ -1023,7 +1023,7 @@
       "id": "perimeter_wall",
       "type": "line",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 14,
       "filter": ["all", ["==", "class", "wall"]],
       "paint": {
@@ -1036,7 +1036,7 @@
       "id": "perimeter_city_wall",
       "type": "line",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 11,
       "filter": ["all", ["==", "class", "city_wall"]],
       "paint": {
@@ -1108,7 +1108,7 @@
       "id": "cliff",
       "type": "symbol",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 12,
       "filter": ["all", ["==", "class", "cliff"]],
       "layout": {
@@ -1127,7 +1127,7 @@
       "id": "cliff-line-copy",
       "type": "line",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 12,
       "filter": ["all", ["==", "class", "cliff"]],
       "paint": {
@@ -1141,7 +1141,7 @@
       "id": "cliff-line",
       "type": "line",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 12,
       "filter": ["all", ["==", "class", "cliff"]],
       "layout": {"visibility": "none"},
@@ -1156,7 +1156,7 @@
       "id": "perimeter_fence-line",
       "type": "line",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 14,
       "filter": ["all", ["==", "class", "fence"]],
       "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
@@ -1165,7 +1165,7 @@
       "id": "perimeter_fence_x",
       "type": "symbol",
       "source": "IHM",
-      "source-layer": "linear_barrier",
+      "source-layer": "ihm_lines",
       "minzoom": 14,
       "filter": ["all", ["==", "class", "fence"]],
       "layout": {
