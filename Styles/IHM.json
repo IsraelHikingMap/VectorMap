@@ -206,7 +206,7 @@
       "paint": {
         "text-color": "rgba(161, 127, 86, 1)",
         "text-halo-color": "rgba(255, 255, 255,0.8)",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -4763,7 +4763,7 @@
       "source-layer": "landuse",
       "minzoom": 15,
       "filter": ["all", ["==", "class", "cemetery"]],
-      "layout": {"icon-image": "cemetery", "icon-size": 0.5}
+      "layout": {"icon-image": "cemetery", "icon-size": 0.7}
     },
     {
       "id": "icon-holy",
@@ -4792,7 +4792,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -4835,7 +4835,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -4867,7 +4867,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -4877,7 +4877,7 @@
       "source": "IHM",
       "source-layer": "poi",
       "filter": ["all", ["==", "subclass", "fuel"]],
-      "layout": {"icon-image": "gas", "icon-size": 0.5}
+      "layout": {"icon-image": "gas", "icon-size": 0.7}
     },
     {
       "id": "icon-memorial",
@@ -4887,7 +4887,7 @@
       "filter": ["all", ["in", "subclass", "memorial", "monument"]],
       "layout": {
         "icon-image": "monument",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4903,7 +4903,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -4915,7 +4915,7 @@
       "filter": ["all", ["==", "subclass", "parking"]],
       "layout": {
         "icon-image": "parking",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4931,7 +4931,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -4941,7 +4941,7 @@
       "source": "IHM",
       "source-layer": "poi",
       "filter": ["all", ["==", "subclass", "guidepost"]],
-      "layout": {"icon-image": "sign", "icon-size": 0.5}
+      "layout": {"icon-image": "sign", "icon-size": 0.7}
     },
     {
       "id": "icon-picnic",
@@ -4951,7 +4951,7 @@
       "filter": ["all", ["==", "subclass", "picnic_site"]],
       "layout": {
         "icon-image": "picnic",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4966,7 +4966,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -4978,7 +4978,7 @@
       "filter": ["all", ["==", "subclass", "ruins"]],
       "layout": {
         "icon-image": "ruins",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4993,7 +4993,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5020,7 +5020,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5036,7 +5036,7 @@
       ],
       "layout": {
         "icon-image": "cave",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5052,7 +5052,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5064,7 +5064,7 @@
       "filter": ["all", ["==", "subclass", "tree"]],
       "layout": {
         "icon-image": "tree",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5079,7 +5079,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5091,7 +5091,7 @@
       "filter": ["all", ["==", "subclass", "camp_site"]],
       "layout": {
         "icon-image": "camping",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5106,7 +5106,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5136,7 +5136,7 @@
         "text-anchor": "bottom-right",
         "text-justify": "right",
         "icon-image": "square",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "icon-allow-overlap": true,
         "text-optional": true,
         "text-offset": [0, -0.4]
@@ -5144,7 +5144,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": {"base": 1, "stops": [[15, [0, -5]], [16, [0, -8]]]}
       }
     },
@@ -5169,7 +5169,7 @@
         "text-anchor": "bottom-right",
         "text-justify": "right",
         "icon-image": "viewpoint",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "icon-allow-overlap": true,
         "text-optional": true,
         "text-offset": [0, -0.4]
@@ -5177,7 +5177,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": {"base": 1, "stops": [[15, [0, -5]], [16, [0, -8]]]}
       }
     },
@@ -5190,7 +5190,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "cattle_grid",
-        "icon-size": 0.4,
+        "icon-size": 0.7,
         "icon-allow-overlap": true
       }
     },
@@ -5203,7 +5203,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "gate_open",
-        "icon-size": 0.35,
+        "icon-size": 0.7,
         "icon-allow-overlap": true
       }
     },
@@ -5216,7 +5216,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "bollards",
-        "icon-size": 0.4,
+        "icon-size": 0.7,
         "icon-allow-overlap": true
       }
     },
@@ -5229,7 +5229,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "gate_closed",
-        "icon-size": 0.35,
+        "icon-size": 0.7,
         "icon-allow-overlap": true
       }
     },
@@ -5295,7 +5295,7 @@
             "rgba(0,0,0,0)"
           ]
         ],
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5329,7 +5329,7 @@
           "rgba(0,0,0,0)"
         ],
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5385,7 +5385,7 @@
           "white",
           "rgba(0,0,0,0)"
         ],
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5410,7 +5410,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5435,7 +5435,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5460,7 +5460,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5486,7 +5486,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5511,7 +5511,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5536,7 +5536,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5560,7 +5560,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 2.5,
+        "text-halo-width": 1.5,
         "text-halo-blur": 1
       }
     },
@@ -5573,7 +5573,7 @@
       "filter": ["all", ["==", "subclass", "drinking_water"]],
       "layout": {
         "icon-image": "tap",
-        "icon-size": 0.4,
+        "icon-size": 0.7,
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5589,7 +5589,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5641,7 +5641,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5671,7 +5671,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5701,7 +5701,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5765,7 +5765,7 @@
       "paint": {
         "text-color": "#1E80E2",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5795,7 +5795,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": [0, 6]
       }
     },
@@ -5828,7 +5828,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": {"base": 1, "stops": [[15, [-7, 0]], [16, [-16, 0]]]}
       }
     },
@@ -5858,7 +5858,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-translate": {"base": 1, "stops": [[15, [0, -5]], [16, [0, -8]]]}
       }
     },
@@ -5883,7 +5883,7 @@
       "paint": {
         "text-color": "#709D56",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5926,7 +5926,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5952,7 +5952,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -5978,7 +5978,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -6004,7 +6004,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -6031,7 +6031,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2
+        "text-halo-width": 1.5
       }
     },
     {
@@ -6058,7 +6058,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-halo-blur": 1
       }
     },
@@ -6085,7 +6085,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-halo-blur": 1
       }
     },
@@ -6132,7 +6132,7 @@
       },
       "paint": {
         "text-color": "#7F7F7F",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-halo-color": "white",
         "text-translate": [0, -30]
       }
@@ -6161,7 +6161,7 @@
       },
       "paint": {
         "text-color": "#7F7F7F",
-        "text-halo-width": 2,
+        "text-halo-width": 1.5,
         "text-halo-color": "white",
         "text-translate": [30, 0],
         "text-halo-blur": 1.5
