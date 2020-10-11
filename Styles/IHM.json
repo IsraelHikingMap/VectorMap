@@ -5005,7 +5005,7 @@
       "filter": ["all", ["==", "subclass", "archaeological_site"]],
       "layout": {
         "icon-image": "jar",
-        "icon-size": 0.5,
+        "icon-size": 0.7,
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5706,31 +5706,26 @@
       }
     },
     {
-      "id": "water-cistern",
-      "type": "symbol",
+      "id": "water-cistern-bg",
+      "type": "circle",
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
       "filter": ["all", ["==", "subclass", "cistern"]],
-      "paint": {
-        "text-color": "#125595",
-        "text-halo-color": "white",
-        "text-halo-width": 2,
-        "text-translate": [0, 6]
-      }
+      "paint": {"circle-color": "white", "circle-radius": 5.5}
     },
     {
-      "id": "water-cistern-temp",
+      "id": "water-cistern-circle",
       "type": "circle",
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
       "filter": ["all", ["==", "subclass", "cistern"]],
       "paint": {
-        "circle-radius": 4,
-        "circle-color": "rgba(30, 128, 226, 0)",
+        "circle-radius": 2.5,
+        "circle-color": "rgba(0,0,0,0)",
         "circle-stroke-color": "#1E80E2",
-        "circle-stroke-width": 2
+        "circle-stroke-width": 2.5
       }
     },
     {
@@ -5794,6 +5789,7 @@
         "text-anchor": "top",
         "text-size": 18,
         "text-letter-spacing": 0.2,
+        "text-ignore-placement": true,
         "text-optional": true
       },
       "paint": {
