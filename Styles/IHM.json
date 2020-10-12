@@ -4763,7 +4763,10 @@
       "source-layer": "landuse",
       "minzoom": 15,
       "filter": ["all", ["==", "class", "cemetery"]],
-      "layout": {"icon-image": "cemetery", "icon-size": 0.7}
+      "layout": {
+        "icon-image": "cemetery",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]}
+      }
     },
     {
       "id": "icon-holy",
@@ -4877,7 +4880,10 @@
       "source": "IHM",
       "source-layer": "poi",
       "filter": ["all", ["==", "subclass", "fuel"]],
-      "layout": {"icon-image": "gas", "icon-size": 0.7}
+      "layout": {
+        "icon-image": "gas",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]}
+      }
     },
     {
       "id": "icon-memorial",
@@ -4887,7 +4893,7 @@
       "filter": ["all", ["in", "subclass", "memorial", "monument"]],
       "layout": {
         "icon-image": "monument",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4915,7 +4921,7 @@
       "filter": ["all", ["==", "subclass", "parking"]],
       "layout": {
         "icon-image": "parking",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4941,7 +4947,10 @@
       "source": "IHM",
       "source-layer": "poi",
       "filter": ["all", ["==", "subclass", "guidepost"]],
-      "layout": {"icon-image": "sign", "icon-size": 0.7}
+      "layout": {
+        "icon-image": "sign",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]}
+      }
     },
     {
       "id": "icon-picnic",
@@ -4951,7 +4960,7 @@
       "filter": ["all", ["==", "subclass", "picnic_site"]],
       "layout": {
         "icon-image": "picnic",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4978,7 +4987,7 @@
       "filter": ["all", ["==", "subclass", "ruins"]],
       "layout": {
         "icon-image": "ruins",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5005,7 +5014,7 @@
       "filter": ["all", ["==", "subclass", "archaeological_site"]],
       "layout": {
         "icon-image": "jar",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5036,7 +5045,7 @@
       ],
       "layout": {
         "icon-image": "cave",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5064,7 +5073,7 @@
       "filter": ["all", ["==", "subclass", "tree"]],
       "layout": {
         "icon-image": "tree",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5091,7 +5100,7 @@
       "filter": ["all", ["==", "subclass", "camp_site"]],
       "layout": {
         "icon-image": "camping",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -5136,7 +5145,7 @@
         "text-anchor": "bottom-right",
         "text-justify": "right",
         "icon-image": "square",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "icon-allow-overlap": true,
         "text-optional": true,
         "text-offset": [0, -0.4]
@@ -5169,7 +5178,7 @@
         "text-anchor": "bottom-right",
         "text-justify": "right",
         "icon-image": "viewpoint",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "icon-allow-overlap": true,
         "text-optional": true,
         "text-offset": [0, -0.4]
@@ -5190,7 +5199,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "cattle_grid",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "icon-allow-overlap": true
       }
     },
@@ -5203,7 +5212,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "gate_open",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
         "icon-allow-overlap": true
       }
     },
@@ -5216,7 +5225,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "bollards",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "icon-allow-overlap": true
       }
     },
@@ -5229,7 +5238,7 @@
       "layout": {
         "symbol-placement": "point",
         "icon-image": "gate_closed",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
         "icon-allow-overlap": true
       }
     },
@@ -5573,7 +5582,7 @@
       "filter": ["all", ["==", "subclass", "drinking_water"]],
       "layout": {
         "icon-image": "tap",
-        "icon-size": 0.7,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
