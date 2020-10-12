@@ -779,7 +779,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "ihm_class", "path"],
+        ["in", "ihm_class", "path", "cycleway", "footway"],
         ["==", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1468,7 +1468,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "ihm_class", "path"],
+        ["in", "ihm_class", "path", "cycleway", "footway"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1483,7 +1483,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 13,
+      "minzoom": 12,
       "filter": [
         "all",
         ["==", "ihm_class", "track"],
@@ -1522,7 +1522,7 @@
           ["get", "colour"],
           "#808080"
         ],
-        "line-width": {"base": 1, "stops": [[13, 3], [16, 8]]}
+        "line-width": {"base": 1, "stops": [[13, 5], [16, 8]]}
       }
     },
     {
@@ -1834,8 +1834,8 @@
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
         "line-dasharray": [8, 2, 1, 2, 1, 2],
-        "line-offset": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
-        "line-width": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
+        "line-offset": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
+        "line-width": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
     },
@@ -1855,8 +1855,8 @@
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
         "line-dasharray": [8, 2, 1, 2, 1, 2],
-        "line-offset": {"base": 1, "stops": [[12, -1.5], [16, -2.5]]},
-        "line-width": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
+        "line-offset": {"base": 1, "stops": [[12, -1], [16, -2.5]]},
+        "line-width": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -1881,8 +1881,8 @@
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
         "line-dasharray": [8, 2, 1, 2],
-        "line-offset": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
-        "line-width": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
+        "line-offset": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
+        "line-width": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
     },
@@ -1902,8 +1902,8 @@
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
         "line-dasharray": [8, 2, 1, 2],
-        "line-offset": {"base": 1, "stops": [[12, -1.5], [16, -2]]},
-        "line-width": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
+        "line-offset": {"base": 1, "stops": [[12, -1], [16, -2]]},
+        "line-width": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -1928,8 +1928,8 @@
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
         "line-dasharray": [8, 2.5],
-        "line-offset": {"base": 1, "stops": [[12, 1.5], [16, 2]]},
-        "line-width": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
+        "line-offset": {"base": 1, "stops": [[12, 1], [16, 2]]},
+        "line-width": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
     },
@@ -1949,8 +1949,8 @@
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
         "line-dasharray": [8, 2.5],
-        "line-offset": {"base": 1, "stops": [[12, -1.5], [16, -2]]},
-        "line-width": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
+        "line-offset": {"base": 1, "stops": [[12, -1], [16, -2]]},
+        "line-width": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -1974,8 +1974,8 @@
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
-        "line-offset": {"base": 1, "stops": [[12, 1.5], [16, 2]]},
-        "line-width": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
+        "line-offset": {"base": 1, "stops": [[12, 1], [16, 2]]},
+        "line-width": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
     },
@@ -1994,8 +1994,8 @@
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
-        "line-offset": {"base": 1, "stops": [[12, -1.5], [16, -2]]},
-        "line-width": {"base": 1, "stops": [[12, 1.5], [16, 2.5]]},
+        "line-offset": {"base": 1, "stops": [[12, -1], [16, -2]]},
+        "line-width": {"base": 1, "stops": [[12, 1], [16, 2.5]]},
         "line-color": [
           "to-color",
           ["get", "colour2"],
@@ -2019,7 +2019,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
-        "line-width": {"base": 1, "stops": [[13, 1], [14, 1.75], [16, 3]]}
+        "line-width": {"base": 1, "stops": [[13, 1.5], [14, 1.75], [16, 3]]}
       }
     },
     {
@@ -2249,7 +2249,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "ihm_class", "path"],
+        ["in", "ihm_class", "path", "cycleway", "footway"],
         ["==", "brunnel", "bridge"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
@@ -3075,7 +3075,7 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "ihm_class", "path"],
+        ["in", "ihm_class", "path", "cycleway", "footway"],
         ["==", "brunnel", "bridge"],
         ["==", "layer", 2]
       ],
