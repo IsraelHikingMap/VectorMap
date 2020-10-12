@@ -39,7 +39,18 @@
       "type": "fill",
       "source": "IHM",
       "source-layer": "landuse",
-      "filter": ["all", ["in", "class", "residential", "industrial"]],
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "residential",
+          "industrial",
+          "substation",
+          "sub_station",
+          "plant"
+        ]
+      ],
       "paint": {
         "fill-outline-color": "rgba(102, 102, 102, 0.3)",
         "fill-color": "rgba(242, 242, 242, 1)"
@@ -493,13 +504,13 @@
       "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
     },
     {
-      "id": "barrier-wall",
+      "id": "barrier-power",
       "type": "line",
       "source": "IHM",
-      "source-layer": "ihm_lines",
+      "source-layer": "landuse",
       "minzoom": 14,
-      "filter": ["all", ["in", "class", "wall", "city_wall"]],
-      "paint": {"line-color": "black", "line-width": 1.5}
+      "filter": ["all", ["in", "class", "substation", "sub_station", "plant"]],
+      "paint": {"line-color": "rgba(26, 26, 26, 1)"}
     },
     {
       "id": "barrier-fence-line",
@@ -525,6 +536,15 @@
         "icon-size": 0.17
       },
       "paint": {}
+    },
+    {
+      "id": "barrier-wall",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "wall", "city_wall"]],
+      "paint": {"line-color": "black", "line-width": 1.5}
     },
     {
       "id": "trail-regional-line",
@@ -4632,6 +4652,31 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "#666", "line-width": 3}
+    },
+    {
+      "id": "power-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "line", "minor_line"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "#bbb", "line-width": 1.5}
+    },
+    {
+      "id": "power-tower",
+      "type": "circle",
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["all", ["==", "class", "tower"]],
+      "paint": {
+        "circle-radius": 2.5,
+        "circle-stroke-color": "#bbb",
+        "circle-opacity": 0,
+        "circle-stroke-width": 1.5
+      }
     },
     {
       "id": "shield-secondary",
