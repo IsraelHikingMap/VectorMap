@@ -1527,7 +1527,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 13,
+      "minzoom": 12,
       "filter": [
         "all",
         ["in", "ihm_class", "minor", "unclassified", "service"],
@@ -1542,7 +1542,7 @@
           ["get", "colour"],
           "#808080"
         ],
-        "line-width": {"base": 1, "stops": [[13, 5], [16, 8]]}
+        "line-width": {"base": 1, "stops": [[12, 4], [13, 5], [16, 8]]}
       }
     },
     {
@@ -2030,7 +2030,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 13,
+      "minzoom": 12,
       "filter": [
         "all",
         ["in", "ihm_class", "minor", "unclassified", "service"],
@@ -2039,7 +2039,10 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
-        "line-width": {"base": 1, "stops": [[13, 1.5], [14, 1.75], [16, 3]]}
+        "line-width": {
+          "base": 1,
+          "stops": [[12, 1], [13, 1.5], [14, 1.75], [16, 3]]
+        }
       }
     },
     {
@@ -2057,7 +2060,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(255, 230, 107, 1)",
-        "line-width": {"base": 1, "stops": [[13, 2], [16, 3]]}
+        "line-width": {"base": 1, "stops": [[12, 1.5], [13, 2], [16, 3]]}
       }
     },
     {
@@ -2075,7 +2078,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "#303030",
-        "line-width": {"base": 1, "stops": [[11, 0.4], [13, 1], [16, 3]]}
+        "line-width": {"base": 1, "stops": [[11, 0.4], [12, 2], [16, 3]]}
       }
     },
     {
@@ -2093,7 +2096,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "green",
-        "line-width": {"base": 1, "stops": [[10, 0.5], [13, 1], [16, 3]]}
+        "line-width": {"base": 1, "stops": [[10, 0.5], [12, 2], [16, 3]]}
       }
     },
     {
