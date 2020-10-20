@@ -98,7 +98,7 @@
       "type": "fill",
       "source": "IHM",
       "source-layer": "ihm_boundary",
-      "filter": ["all", ["in", "name_en", "Area A", "Area B", "Area H1"]],
+      "filter": ["all", ["in", "name:en", "Area A", "Area B", "Area H1"]],
       "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.3}
     },
     {
@@ -106,7 +106,7 @@
       "type": "fill",
       "source": "IHM",
       "source-layer": "ihm_boundary",
-      "filter": ["all", ["in", "name_en", "Area A", "Area H1"]],
+      "filter": ["all", ["in", "name:en", "Area A", "Area H1"]],
       "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.3}
     },
     {
@@ -294,7 +294,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_boundary",
-      "filter": ["all", ["in", "name_en", "Area A", "Area B", "Area H1"]],
+      "filter": ["all", ["in", "name:en", "Area A", "Area B", "Area H1"]],
       "paint": {"line-color": "orange", "line-opacity": 0.4}
     },
     {
@@ -348,7 +348,7 @@
         ["!=", "maritime", 1],
         [
           "!in",
-          "name_en",
+          "name:en",
           "1949 Armistice Line",
           "Jerusalem City Municipal Boundary (Israel)",
           "Israel - Syria",
@@ -369,7 +369,7 @@
         ["!=", "maritime", 1],
         [
           "!in",
-          "name_en",
+          "name:en",
           "1949 Armistice Line",
           "Jerusalem City Municipal Boundary (Israel)",
           "Israel - Syria",
@@ -390,7 +390,7 @@
         ["!=", "maritime", 1],
         [
           "!in",
-          "name_en",
+          "name:en",
           "1949 Armistice Line",
           "Jerusalem City Municipal Boundary (Israel)",
           "Israel - Syria",
@@ -409,7 +409,7 @@
         ["==", "admin_level", 2],
         [
           "in",
-          "name_en",
+          "name:en",
           "1949 Armistice Line",
           "Jerusalem City Municipal Boundary (Israel)"
         ]
@@ -424,7 +424,7 @@
       "filter": [
         "all",
         ["==", "admin_level", 2],
-        ["in", "name_en", "Israel - Syria", "Israel- Syria"]
+        ["in", "name:en", "Israel - Syria", "Israel- Syria"]
       ],
       "paint": {"line-opacity": 0.33, "line-color": "blue", "line-width": 2}
     },
