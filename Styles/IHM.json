@@ -618,6 +618,7 @@
       "filter": [
         "all",
         ["in", "network", "lwn", "rwn"],
+        ["has", "way_colour"],
         ["in", "highway", "path", "footway", "pedestrian", "cycleway"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -651,10 +652,7 @@
       "source-layer": "trail",
       "minzoom": 11,
       "maxzoom": 12,
-      "filter": [
-        "all",
-        ["in", "network", "lwn", "rwn"]
-      ],
+      "filter": ["all", ["in", "network", "lwn", "rwn"], ["has", "way_colour"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": [
