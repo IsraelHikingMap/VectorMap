@@ -502,49 +502,6 @@
       "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
     },
     {
-      "id": "barrier-power",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 14,
-      "filter": ["all", ["in", "class", "substation", "sub_station", "plant"]],
-      "paint": {"line-color": "rgba(26, 26, 26, 1)"}
-    },
-    {
-      "id": "barrier-fence-line",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 14,
-      "filter": ["all", ["in", "class", "fence", "yes"]],
-      "paint": {"line-color": "rgba(26, 26, 26, 1)"}
-    },
-    {
-      "id": "barrier-fence-x",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 14,
-      "filter": ["all", ["==", "class", "fence"]],
-      "layout": {
-        "symbol-placement": "line",
-        "icon-image": "cross_pattern",
-        "symbol-spacing": 1,
-        "icon-allow-overlap": true,
-        "icon-size": 0.17
-      },
-      "paint": {}
-    },
-    {
-      "id": "barrier-wall",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 14,
-      "filter": ["all", ["in", "class", "wall", "city_wall"]],
-      "paint": {"line-color": "black", "line-width": 1.5}
-    },
-    {
       "id": "trail-regional-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -4611,6 +4568,58 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "#666", "line-width": 3}
+    },
+    {
+      "id": "barrier-power",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "substation", "sub_station", "plant"]],
+      "paint": {"line-color": "rgba(26, 26, 26, 1)"}
+    },
+    {
+      "id": "barrier-power",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "substation", "sub_station", "plant"]],
+      "paint": {"line-color": "rgba(26, 26, 26, 1)"}
+    },
+    {
+      "id": "barrier-fence-line",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "fence", "yes"]],
+      "paint": {"line-color": "rgba(26, 26, 26, 1)"}
+    },
+    {
+      "id": "barrier-fence-x",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["all", ["==", "class", "fence"]],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "cross_pattern",
+        "symbol-spacing": 1,
+        "icon-allow-overlap": true,
+        "icon-size": 0.17
+      },
+      "paint": {}
+    },
+    {
+      "id": "barrier-wall",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "wall", "city_wall"]],
+      "paint": {"line-color": "black", "line-width": 1.5}
     },
     {
       "id": "power-line",
