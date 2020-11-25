@@ -4748,6 +4748,312 @@
       }
     },
     {
+      "id": "name-trail-regional",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 13,
+      "filter": ["all", ["==", "network", "rwn"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-offset": [0, -1],
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "purple:white:purple_stripe",
+          "black",
+          "orange:white:orange_stripe",
+          "orange",
+          "yellow:white:yellow_stripe",
+          "gold",
+          "purple:white:purple_stripe:blue_stripe_left",
+          "#7B5CA0",
+          "blue:white:blue_stripe:green_stripe_left",
+          "blue",
+          "yellow:blue:yellow_stripe",
+          "blue",
+          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "rgba(0,0,0,0)"]
+        ],
+        "text-halo-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "purple:white:purple_stripe",
+          "white",
+          "orange:white:orange_stripe",
+          "white",
+          "yellow:white:yellow_stripe",
+          "black",
+          "purple:white:purple_stripe:blue_stripe_left",
+          "#1765AD",
+          "blue:white:blue_stripe:green_stripe_left",
+          "rgba(76, 166, 76, 0.3)",
+          "yellow:blue:yellow_stripe",
+          "gold",
+          [
+            "match",
+            ["get", "name"],
+            "שביל ואדיות חיפה",
+            "rgba(76, 166, 76, 0.3)",
+            "rgba(0,0,0,0)"
+          ]
+        ],
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "name-trail-ref",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 13,
+      "filter": ["all", ["has", "ref"], ["==", "network", "lwn"]],
+      "layout": {
+        "text-field": "{ref}",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-offset": [0, -1],
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "rgba(0,0,0,0)"
+        ],
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "name-trail-local",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 13,
+      "filter": ["all", ["==", "network", "lwn"], ["has", "name"]],
+      "layout": {
+        "text-field": [
+          "concat",
+          [
+            "coalesce",
+            ["get", "name:he"],
+            ["get", "name:latin"],
+            ["get", "name"]
+          ],
+          " ",
+          ["get", "ref"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-offset": [0, -1],
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "rgba(0,0,0,0)"
+        ],
+        "text-halo-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "white",
+          "red:white:red_stripe",
+          "white",
+          "green:white:green_stripe",
+          "white",
+          "blue:white:blue_stripe",
+          "white",
+          "rgba(0,0,0,0)"
+        ],
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "name-minor",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 15,
+      "filter": ["all", ["in", "class", "minor", "service"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line"
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "name-path",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "filter": ["all", ["==", "class", "path"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "name-track",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "filter": ["all", ["==", "class", "track"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "name-tertiary",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "tertiary"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "name-secondary",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "secondary"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line"
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "name-primary",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation_name",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "primary"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line"
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5
+      }
+    },
+    {
       "id": "icon-quarry",
       "type": "symbol",
       "source": "IHM",
@@ -5146,7 +5452,7 @@
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-max-width": 10,
-	"text-anchor": "top",
+        "text-anchor": "top",
         "text-offset": [0, 1],
         "icon-image": "square",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
@@ -5243,312 +5549,6 @@
         "icon-image": "gate_closed",
         "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
         "icon-allow-overlap": true
-      }
-    },
-    {
-      "id": "name-trail-regional",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 13,
-      "filter": ["all", ["==", "network", "rwn"]],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
-        "text-offset": [0, -1],
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
-      },
-      "paint": {
-        "text-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "purple:white:purple_stripe",
-          "black",
-          "orange:white:orange_stripe",
-          "orange",
-          "yellow:white:yellow_stripe",
-          "gold",
-          "purple:white:purple_stripe:blue_stripe_left",
-          "#7B5CA0",
-          "blue:white:blue_stripe:green_stripe_left",
-          "blue",
-          "yellow:blue:yellow_stripe",
-          "blue",
-          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "rgba(0,0,0,0)"]
-        ],
-        "text-halo-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "purple:white:purple_stripe",
-          "white",
-          "orange:white:orange_stripe",
-          "white",
-          "yellow:white:yellow_stripe",
-          "black",
-          "purple:white:purple_stripe:blue_stripe_left",
-          "#1765AD",
-          "blue:white:blue_stripe:green_stripe_left",
-          "rgba(76, 166, 76, 0.3)",
-          "yellow:blue:yellow_stripe",
-          "gold",
-          [
-            "match",
-            ["get", "name"],
-            "שביל ואדיות חיפה",
-            "rgba(76, 166, 76, 0.3)",
-            "rgba(0,0,0,0)"
-          ]
-        ],
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "name-trail-ref",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 13,
-      "filter": ["all", ["has", "ref"], ["==", "network", "lwn"]],
-      "layout": {
-        "text-field": "{ref}",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
-        "text-offset": [0, -1],
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
-      },
-      "paint": {
-        "text-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "green",
-          "blue:white:blue_stripe",
-          "blue",
-          "rgba(0,0,0,0)"
-        ],
-        "text-halo-color": "white",
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "name-trail-local",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 13,
-      "filter": ["all", ["==", "network", "lwn"], ["has", "name"]],
-      "layout": {
-        "text-field": [
-          "concat",
-          [
-            "coalesce",
-            ["get", "name:he"],
-            ["get", "name:latin"],
-            ["get", "name"]
-          ],
-          " ",
-          ["get", "ref"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
-        "text-offset": [0, -1],
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
-      },
-      "paint": {
-        "text-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "green",
-          "blue:white:blue_stripe",
-          "blue",
-          "rgba(0,0,0,0)"
-        ],
-        "text-halo-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "white",
-          "red:white:red_stripe",
-          "white",
-          "green:white:green_stripe",
-          "white",
-          "blue:white:blue_stripe",
-          "white",
-          "rgba(0,0,0,0)"
-        ],
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "name-minor",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "minzoom": 15,
-      "filter": ["all", ["in", "class", "minor", "service"]],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line"
-      },
-      "paint": {
-        "text-color": "#404040",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "name-path",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "filter": ["all", ["==", "class", "path"]],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
-      },
-      "paint": {
-        "text-color": "#404040",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "name-track",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "filter": ["all", ["==", "class", "track"]],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
-      },
-      "paint": {
-        "text-color": "#404040",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "name-tertiary",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "minzoom": 13,
-      "filter": ["all", ["==", "class", "tertiary"]],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
-      },
-      "paint": {
-        "text-color": "#404040",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "name-secondary",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "minzoom": 13,
-      "filter": ["all", ["==", "class", "secondary"]],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line"
-      },
-      "paint": {
-        "text-color": "#404040",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "name-primary",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "transportation_name",
-      "minzoom": 13,
-      "filter": ["all", ["==", "class", "primary"]],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line"
-      },
-      "paint": {
-        "text-color": "#404040",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5
       }
     },
     {
