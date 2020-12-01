@@ -4579,15 +4579,6 @@
       "paint": {"line-color": "rgba(26, 26, 26, 1)"}
     },
     {
-      "id": "barrier-power",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 14,
-      "filter": ["all", ["in", "class", "substation", "sub_station", "plant"]],
-      "paint": {"line-color": "rgba(26, 26, 26, 1)"}
-    },
-    {
       "id": "barrier-fence-line",
       "type": "line",
       "source": "IHM",
