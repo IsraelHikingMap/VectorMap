@@ -5801,7 +5801,6 @@
         "text-anchor": "top",
         "text-size": 18,
         "text-letter-spacing": 0.2,
-        "text-ignore-placement": true,
         "text-optional": true
       },
       "paint": {
