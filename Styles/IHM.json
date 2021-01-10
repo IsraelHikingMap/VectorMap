@@ -1486,6 +1486,26 @@
       }
     },
     {
+      "id": "casing-minor-colour2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "ihm_class", "minor", "unclassified", "service"],
+        ["!in", "brunnel", "bridge", "tunnel"],
+        ["has", "colour2"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["get", "colour2"],
+        "line-width": {"base": 1, "stops": [[13, 2], [16, 4]]},
+        "line-offset": {"stops": [[12, 1], [12, 1.5], [16, 2]]}
+      }
+    },
+    {
       "id": "casing-tertiary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
