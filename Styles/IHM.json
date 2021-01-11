@@ -635,7 +635,7 @@
       }
     },
     {
-      "id": "tunnel-box-steps-line",
+      "id": "layer-1-box-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -654,7 +654,7 @@
       }
     },
     {
-      "id": "tunnel-box-steps",
+      "id": "layer-1-box-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -672,7 +672,7 @@
       }
     },
     {
-      "id": "tunnel-box-path",
+      "id": "layer-1-box-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -690,7 +690,7 @@
       }
     },
     {
-      "id": "tunnel-box-track",
+      "id": "layer-1-box-track",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -708,7 +708,7 @@
       }
     },
     {
-      "id": "tunnel-casing-steps-line",
+      "id": "layer-1-casing-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -724,7 +724,7 @@
       "paint": {"line-color": "white", "line-width": 2}
     },
     {
-      "id": "tunnel-casing-steps",
+      "id": "layer-1-casing-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -738,7 +738,7 @@
       "paint": {"line-color": "white", "line-width": 6}
     },
     {
-      "id": "tunnel-casing-path",
+      "id": "layer-1-casing-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -756,7 +756,7 @@
       }
     },
     {
-      "id": "tunnel-casing-track",
+      "id": "layer-1-casing-track",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -780,7 +780,7 @@
       }
     },
     {
-      "id": "tunnel-casing-minor",
+      "id": "layer-1-casing-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "id": "tunnel-casing-tertiary",
+      "id": "layer-1-casing-tertiary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -828,7 +828,7 @@
       }
     },
     {
-      "id": "tunnel-casing-secondary",
+      "id": "layer-1-casing-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -852,7 +852,7 @@
       }
     },
     {
-      "id": "tunnel-casing-primary",
+      "id": "layer-1-casing-primary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -876,7 +876,7 @@
       }
     },
     {
-      "id": "tunnel-casing-trunk",
+      "id": "layer-1-casing-trunk",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -900,7 +900,7 @@
       }
     },
     {
-      "id": "tunnel-casing-motorway",
+      "id": "layer-1-casing-motorway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -924,7 +924,7 @@
       }
     },
     {
-      "id": "tunnel-rail-casing",
+      "id": "layer-1-rail-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -939,7 +939,7 @@
       "paint": {"line-width": 3, "line-color": "gray"}
     },
     {
-      "id": "tunnel-rail-dash-tunnel",
+      "id": "layer-1-rail-dash-tunnel",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -957,7 +957,7 @@
       }
     },
     {
-      "id": "tunnel-path-steps-line",
+      "id": "layer-1-path-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -981,7 +981,7 @@
       }
     },
     {
-      "id": "tunnel-path-steps",
+      "id": "layer-1-path-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1005,7 +1005,7 @@
       }
     },
     {
-      "id": "tunnel-path-footway",
+      "id": "layer-1-path-footway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1028,7 +1028,7 @@
       }
     },
     {
-      "id": "tunnel-path-cycleway",
+      "id": "layer-1-path-cycleway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1051,7 +1051,7 @@
       }
     },
     {
-      "id": "tunnel-path-path",
+      "id": "layer-1-path-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1074,7 +1074,7 @@
       }
     },
     {
-      "id": "tunnel-track-line",
+      "id": "layer-1-track-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1091,7 +1091,7 @@
       "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
     },
     {
-      "id": "tunnel-track-right-grade5",
+      "id": "layer-1-track-right-grade5",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1112,7 +1112,7 @@
       }
     },
     {
-      "id": "tunnel-track-left-grade5",
+      "id": "layer-1-track-left-grade5",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1138,7 +1138,7 @@
       }
     },
     {
-      "id": "tunnel-track-right-grade4",
+      "id": "layer-1-track-right-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1159,7 +1159,7 @@
       }
     },
     {
-      "id": "tunnel-track-left-grade4",
+      "id": "layer-1-track-left-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1185,7 +1185,7 @@
       }
     },
     {
-      "id": "tunnel-track-right",
+      "id": "layer-1-track-right",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1206,7 +1206,7 @@
       }
     },
     {
-      "id": "tunnel-track-left",
+      "id": "layer-1-track-left",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1232,7 +1232,7 @@
       }
     },
     {
-      "id": "tunnel-track-right-grade1-2",
+      "id": "layer-1-track-right-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1252,7 +1252,7 @@
       }
     },
     {
-      "id": "tunnel-track-left-grade1-2",
+      "id": "layer-1-track-left-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1277,7 +1277,7 @@
       }
     },
     {
-      "id": "tunnel-road-minor",
+      "id": "layer-1-road-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1296,7 +1296,7 @@
       }
     },
     {
-      "id": "tunnel-road-tertiary",
+      "id": "layer-1-road-tertiary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1315,7 +1315,7 @@
       }
     },
     {
-      "id": "tunnel-road-secondary",
+      "id": "layer-1-road-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1334,7 +1334,7 @@
       }
     },
     {
-      "id": "tunnel-road-primary",
+      "id": "layer-1-road-primary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1353,7 +1353,7 @@
       }
     },
     {
-      "id": "tunnel-road-trunk",
+      "id": "layer-1-road-trunk",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -1372,7 +1372,7 @@
       }
     },
     {
-      "id": "tunnel-road-motorway",
+      "id": "layer-1-road-motorway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2088,7 +2088,7 @@
       }
     },
     {
-      "id": "bridge-box-steps-line",
+      "id": "layer1-box-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2104,7 +2104,7 @@
       "paint": {"line-color": "black", "line-width": 4}
     },
     {
-      "id": "bridge-box-steps",
+      "id": "layer1-box-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2119,7 +2119,7 @@
       "paint": {"line-color": "black", "line-width": 12}
     },
     {
-      "id": "bridge-box-path",
+      "id": "layer1-box-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2137,7 +2137,7 @@
       }
     },
     {
-      "id": "bridge-box-track",
+      "id": "layer1-box-track",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2155,7 +2155,7 @@
       }
     },
     {
-      "id": "bridge-box-paved",
+      "id": "layer1-box-paved",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2184,7 +2184,7 @@
       }
     },
     {
-      "id": "bridge-casing-steps-line",
+      "id": "layer1-casing-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2201,7 +2201,7 @@
       "paint": {"line-color": "white", "line-width": 2}
     },
     {
-      "id": "bridge-casing-steps",
+      "id": "layer1-casing-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2216,7 +2216,7 @@
       "paint": {"line-color": "white", "line-width": 6}
     },
     {
-      "id": "bridge-casing-path",
+      "id": "layer1-casing-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2235,7 +2235,7 @@
       }
     },
     {
-      "id": "bridge-casing-track",
+      "id": "layer1-casing-track",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2260,7 +2260,7 @@
       }
     },
     {
-      "id": "bridge-casing-minor",
+      "id": "layer1-casing-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2285,7 +2285,7 @@
       }
     },
     {
-      "id": "bridge-casing-tertiary",
+      "id": "layer1-casing-tertiary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2310,7 +2310,7 @@
       }
     },
     {
-      "id": "bridge-casing-secondary",
+      "id": "layer1-casing-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2335,7 +2335,7 @@
       }
     },
     {
-      "id": "bridge-casing-primary",
+      "id": "layer1-casing-primary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2360,7 +2360,7 @@
       }
     },
     {
-      "id": "bridge-casing-trunk",
+      "id": "layer1-casing-trunk",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2385,7 +2385,7 @@
       }
     },
     {
-      "id": "bridge-casing-motorway",
+      "id": "layer1-casing-motorway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2410,7 +2410,7 @@
       }
     },
     {
-      "id": "bridge-box-rail",
+      "id": "layer1-box-rail",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2425,7 +2425,7 @@
       "paint": {"line-width": 6, "line-color": "black"}
     },
     {
-      "id": "bridge-rail-casing",
+      "id": "layer1-rail-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2441,7 +2441,7 @@
       "paint": {"line-width": 3, "line-color": "gray"}
     },
     {
-      "id": "bridge-rail-dash",
+      "id": "layer1-rail-dash",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2460,7 +2460,7 @@
       }
     },
     {
-      "id": "bridge-path-steps-line",
+      "id": "layer1-path-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2485,7 +2485,7 @@
       }
     },
     {
-      "id": "bridge-path-steps",
+      "id": "layer1-path-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2510,7 +2510,7 @@
       }
     },
     {
-      "id": "bridge-path-footway",
+      "id": "layer1-path-footway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2534,7 +2534,7 @@
       }
     },
     {
-      "id": "bridge-path-cycleway",
+      "id": "layer1-path-cycleway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2558,7 +2558,7 @@
       }
     },
     {
-      "id": "bridge-path-path",
+      "id": "layer1-path-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2582,7 +2582,7 @@
       }
     },
     {
-      "id": "bridge-track-line",
+      "id": "layer1-track-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2600,7 +2600,7 @@
       "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
     },
     {
-      "id": "bridge-track-right-grade5",
+      "id": "layer1-track-right-grade5",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2622,7 +2622,7 @@
       }
     },
     {
-      "id": "bridge-track-left-grade5",
+      "id": "layer1-track-left-grade5",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2649,7 +2649,7 @@
       }
     },
     {
-      "id": "bridge-track-right-grade4",
+      "id": "layer1-track-right-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2671,7 +2671,7 @@
       }
     },
     {
-      "id": "bridge-track-left-grade4",
+      "id": "layer1-track-left-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2698,7 +2698,7 @@
       }
     },
     {
-      "id": "bridge-track-right",
+      "id": "layer1-track-right",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2720,7 +2720,7 @@
       }
     },
     {
-      "id": "bridge-track-left",
+      "id": "layer1-track-left",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2747,7 +2747,7 @@
       }
     },
     {
-      "id": "bridge-track-right-grade1-2",
+      "id": "layer1-track-right-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2768,7 +2768,7 @@
       }
     },
     {
-      "id": "bridge-track-left-grade1-2",
+      "id": "layer1-track-left-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2794,7 +2794,7 @@
       }
     },
     {
-      "id": "bridge-road-minor",
+      "id": "layer1-road-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2813,7 +2813,7 @@
       }
     },
     {
-      "id": "bridge-road-tertiary",
+      "id": "layer1-road-tertiary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2832,7 +2832,7 @@
       }
     },
     {
-      "id": "bridge-road-secondary",
+      "id": "layer1-road-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2851,7 +2851,7 @@
       }
     },
     {
-      "id": "bridge-road-primary",
+      "id": "layer1-road-primary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2870,7 +2870,7 @@
       }
     },
     {
-      "id": "bridge-road-trunk",
+      "id": "layer1-road-trunk",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2889,7 +2889,7 @@
       }
     },
     {
-      "id": "bridge-road-motorway",
+      "id": "layer1-road-motorway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2908,7 +2908,7 @@
       }
     },
     {
-      "id": "bridge2-box-steps-line",
+      "id": "layer2-box-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2924,7 +2924,7 @@
       "paint": {"line-color": "black", "line-width": 4}
     },
     {
-      "id": "bridge2-box-steps",
+      "id": "layer2-box-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2939,7 +2939,7 @@
       "paint": {"line-color": "black", "line-width": 12}
     },
     {
-      "id": "bridge2-box-path",
+      "id": "layer2-box-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2957,7 +2957,7 @@
       }
     },
     {
-      "id": "bridge2-box-track",
+      "id": "layer2-box-track",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -2975,7 +2975,7 @@
       }
     },
     {
-      "id": "bridge2-box-paved",
+      "id": "layer2-box-paved",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3004,7 +3004,7 @@
       }
     },
     {
-      "id": "bridge2-casing-steps-line",
+      "id": "layer2-casing-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3021,7 +3021,7 @@
       "paint": {"line-color": "white", "line-width": 2}
     },
     {
-      "id": "bridge2-casing-steps",
+      "id": "layer2-casing-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3036,7 +3036,7 @@
       "paint": {"line-color": "white", "line-width": 6}
     },
     {
-      "id": "bridge2-casing-path",
+      "id": "layer2-casing-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3055,7 +3055,7 @@
       }
     },
     {
-      "id": "bridge2-casing-track",
+      "id": "layer2-casing-track",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3080,7 +3080,7 @@
       }
     },
     {
-      "id": "bridge2-casing-minor",
+      "id": "layer2-casing-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3105,7 +3105,7 @@
       }
     },
     {
-      "id": "bridge2-casing-tertiary",
+      "id": "layer2-casing-tertiary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3130,7 +3130,7 @@
       }
     },
     {
-      "id": "bridge2-casing-secondary",
+      "id": "layer2-casing-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3155,7 +3155,7 @@
       }
     },
     {
-      "id": "bridge2-casing-primary",
+      "id": "layer2-casing-primary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3180,7 +3180,7 @@
       }
     },
     {
-      "id": "bridge2-casing-trunk",
+      "id": "layer2-casing-trunk",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3205,7 +3205,7 @@
       }
     },
     {
-      "id": "bridge2-casing-motorway",
+      "id": "layer2-casing-motorway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3230,7 +3230,7 @@
       }
     },
     {
-      "id": "bridge2-box-rail",
+      "id": "layer2-box-rail",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3245,7 +3245,7 @@
       "paint": {"line-width": 6, "line-color": "black"}
     },
     {
-      "id": "bridge2-rail-casing",
+      "id": "layer2-rail-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3261,7 +3261,7 @@
       "paint": {"line-width": 3, "line-color": "gray"}
     },
     {
-      "id": "bridge2-rail-dash",
+      "id": "layer2-rail-dash",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3280,7 +3280,7 @@
       }
     },
     {
-      "id": "bridge2-path-steps-line",
+      "id": "layer2-path-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3305,7 +3305,7 @@
       }
     },
     {
-      "id": "bridge2-path-steps",
+      "id": "layer2-path-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3330,7 +3330,7 @@
       }
     },
     {
-      "id": "bridge2-path-footway",
+      "id": "layer2-path-footway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3354,7 +3354,7 @@
       }
     },
     {
-      "id": "bridge2-path-cycleway",
+      "id": "layer2-path-cycleway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3378,7 +3378,7 @@
       }
     },
     {
-      "id": "bridge2-path-path",
+      "id": "layer2-path-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3402,7 +3402,7 @@
       }
     },
     {
-      "id": "bridge2-track-line",
+      "id": "layer2-track-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3420,7 +3420,7 @@
       "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
     },
     {
-      "id": "bridge2-track-right-grade5",
+      "id": "layer2-track-right-grade5",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3442,7 +3442,7 @@
       }
     },
     {
-      "id": "bridge2-track-left-grade5",
+      "id": "layer2-track-left-grade5",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3469,7 +3469,7 @@
       }
     },
     {
-      "id": "bridge2-track-right-grade4",
+      "id": "layer2-track-right-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3491,7 +3491,7 @@
       }
     },
     {
-      "id": "bridge2-track-left-grade4",
+      "id": "layer2-track-left-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3518,7 +3518,7 @@
       }
     },
     {
-      "id": "bridge2-track-right",
+      "id": "layer2-track-right",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3540,7 +3540,7 @@
       }
     },
     {
-      "id": "bridge2-track-left",
+      "id": "layer2-track-left",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3567,7 +3567,7 @@
       }
     },
     {
-      "id": "bridge2-track-right-grade1-2",
+      "id": "layer2-track-right-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3588,7 +3588,7 @@
       }
     },
     {
-      "id": "bridge2-track-left-grade1-2",
+      "id": "layer2-track-left-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3614,7 +3614,7 @@
       }
     },
     {
-      "id": "bridge2-road-minor",
+      "id": "layer2-road-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3633,7 +3633,7 @@
       }
     },
     {
-      "id": "bridge2-road-tertiary",
+      "id": "layer2-road-tertiary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3652,7 +3652,7 @@
       }
     },
     {
-      "id": "bridge2-road-secondary",
+      "id": "layer2-road-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3671,7 +3671,7 @@
       }
     },
     {
-      "id": "bridge2-road-primary",
+      "id": "layer2-road-primary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3690,7 +3690,7 @@
       }
     },
     {
-      "id": "bridge2-road-trunk",
+      "id": "layer2-road-trunk",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3709,7 +3709,7 @@
       }
     },
     {
-      "id": "bridge2-road-motorway",
+      "id": "layer2-road-motorway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3728,7 +3728,7 @@
       }
     },
     {
-      "id": "bridge3-box-steps-line",
+      "id": "layer3-box-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3744,7 +3744,7 @@
       "paint": {"line-color": "black", "line-width": 4}
     },
     {
-      "id": "bridge3-box-steps",
+      "id": "layer3-box-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3759,7 +3759,7 @@
       "paint": {"line-color": "black", "line-width": 12}
     },
     {
-      "id": "bridge3-box-path",
+      "id": "layer3-box-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3777,7 +3777,7 @@
       }
     },
     {
-      "id": "bridge3-box-track",
+      "id": "layer3-box-track",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3795,7 +3795,7 @@
       }
     },
     {
-      "id": "bridge3-box-paved",
+      "id": "layer3-box-paved",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3824,7 +3824,7 @@
       }
     },
     {
-      "id": "bridge3-casing-steps-line",
+      "id": "layer3-casing-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3841,7 +3841,7 @@
       "paint": {"line-color": "white", "line-width": 2}
     },
     {
-      "id": "bridge3-casing-steps",
+      "id": "layer3-casing-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3856,7 +3856,7 @@
       "paint": {"line-color": "white", "line-width": 6}
     },
     {
-      "id": "bridge3-casing-path",
+      "id": "layer3-casing-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3875,7 +3875,7 @@
       }
     },
     {
-      "id": "bridge3-casing-track",
+      "id": "layer3-casing-track",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3900,7 +3900,7 @@
       }
     },
     {
-      "id": "bridge3-casing-minor",
+      "id": "layer3-casing-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3925,7 +3925,7 @@
       }
     },
     {
-      "id": "bridge3-casing-tertiary",
+      "id": "layer3-casing-tertiary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3950,7 +3950,7 @@
       }
     },
     {
-      "id": "bridge3-casing-secondary",
+      "id": "layer3-casing-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -3975,7 +3975,7 @@
       }
     },
     {
-      "id": "bridge3-casing-primary",
+      "id": "layer3-casing-primary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4000,7 +4000,7 @@
       }
     },
     {
-      "id": "bridge3-casing-trunk",
+      "id": "layer3-casing-trunk",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4025,7 +4025,7 @@
       }
     },
     {
-      "id": "bridge3-casing-motorway",
+      "id": "layer3-casing-motorway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4050,7 +4050,7 @@
       }
     },
     {
-      "id": "bridge3-box-rail",
+      "id": "layer3-box-rail",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4065,7 +4065,7 @@
       "paint": {"line-width": 6, "line-color": "black"}
     },
     {
-      "id": "bridge3-rail-casing",
+      "id": "layer3-rail-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4081,7 +4081,7 @@
       "paint": {"line-width": 3, "line-color": "gray"}
     },
     {
-      "id": "bridge3-rail-dash-tunnel",
+      "id": "layer3-rail-dash-tunnel",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4100,7 +4100,7 @@
       }
     },
     {
-      "id": "bridge3-rail-dash",
+      "id": "layer3-rail-dash",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4119,7 +4119,7 @@
       }
     },
     {
-      "id": "bridge3-path-steps-line",
+      "id": "layer3-path-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4144,7 +4144,7 @@
       }
     },
     {
-      "id": "bridge3-path-steps",
+      "id": "layer3-path-steps",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4169,7 +4169,7 @@
       }
     },
     {
-      "id": "bridge3-path-footway",
+      "id": "layer3-path-footway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4193,7 +4193,7 @@
       }
     },
     {
-      "id": "bridge3-path-cycleway",
+      "id": "layer3-path-cycleway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4217,7 +4217,7 @@
       }
     },
     {
-      "id": "bridge3-path-path",
+      "id": "layer3-path-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4241,7 +4241,7 @@
       }
     },
     {
-      "id": "bridge3-track-line",
+      "id": "layer3-track-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4259,7 +4259,7 @@
       "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
     },
     {
-      "id": "bridge3-track-right-grade5",
+      "id": "layer3-track-right-grade5",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4281,7 +4281,7 @@
       }
     },
     {
-      "id": "bridge3-track-left-grade5",
+      "id": "layer3-track-left-grade5",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4308,7 +4308,7 @@
       }
     },
     {
-      "id": "bridge3-track-right-grade4",
+      "id": "layer3-track-right-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4330,7 +4330,7 @@
       }
     },
     {
-      "id": "bridge3-track-left-grade4",
+      "id": "layer3-track-left-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4357,7 +4357,7 @@
       }
     },
     {
-      "id": "bridge3-track-right",
+      "id": "layer3-track-right",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4379,7 +4379,7 @@
       }
     },
     {
-      "id": "bridge3-track-left",
+      "id": "layer3-track-left",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4406,7 +4406,7 @@
       }
     },
     {
-      "id": "bridge3-track-right-grade1-2",
+      "id": "layer3-track-right-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4427,7 +4427,7 @@
       }
     },
     {
-      "id": "bridge3-track-left-grade1-2",
+      "id": "layer3-track-left-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4453,7 +4453,7 @@
       }
     },
     {
-      "id": "bridge3-road-minor",
+      "id": "layer3-road-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4472,7 +4472,7 @@
       }
     },
     {
-      "id": "bridge3-road-tertiary",
+      "id": "layer3-road-tertiary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4491,7 +4491,7 @@
       }
     },
     {
-      "id": "bridge3-road-secondary",
+      "id": "layer3-road-secondary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4510,7 +4510,7 @@
       }
     },
     {
-      "id": "bridge3-road-primary",
+      "id": "layer3-road-primary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4529,7 +4529,7 @@
       }
     },
     {
-      "id": "bridge3-road-trunk",
+      "id": "layer3-road-trunk",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -4548,7 +4548,7 @@
       }
     },
     {
-      "id": "bridge3-road-motorway",
+      "id": "layer3-road-motorway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
