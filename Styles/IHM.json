@@ -5891,25 +5891,11 @@
       "minzoom": 12,
       "filter": [
         "any",
+        ["==", ["get", "subclass"], "water_tower"],
         [
-          "case",
-          ["==", ["typeof", ["get", "subclass"]], "string"],
-          ["==", ["get", "subclass"], "water_tower"],
-          false
-        ],
-        [
-          "case",
-          [
-            "all",
-            ["==", ["typeof", ["get", "subclass"]], "string"],
-            ["==", ["typeof", ["get", "content"]], "string"]
-          ],
-          [
-            "all",
-            ["==", ["get", "subclass"], "storage_tank"],
-            ["==", ["get", "content"], "water"]
-          ],
-          false
+          "all",
+          ["==", ["get", "content"], "water"],
+          ["==", ["get", "subclass"], "storage_tank"]
         ]
       ],
       "layout": {
