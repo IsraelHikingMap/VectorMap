@@ -303,6 +303,33 @@
       }
     },
     {
+      "id": "name-water-line",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "waterway",
+      "filter": ["all", ["!=", "class", "ditch"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "line-center",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.75,
+        "text-max-angle": 45,
+        "text-keep-upright": true
+      },
+      "paint": {
+        "text-color": "#1E80E2",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
       "id": "boundary-area-AB",
       "type": "line",
       "source": "IHM",
@@ -6019,33 +6046,6 @@
         "circle-color": "#1E80E2",
         "circle-stroke-color": "white",
         "circle-stroke-width": 1.2
-      }
-    },
-    {
-      "id": "name-water-line",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "waterway",
-      "filter": ["all", ["!=", "class", "ditch"]],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "symbol-placement": "line-center",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 18,
-        "text-letter-spacing": 0.75,
-        "text-max-angle": 45,
-        "text-keep-upright": true
-      },
-      "paint": {
-        "text-color": "#1E80E2",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5
       }
     },
     {
