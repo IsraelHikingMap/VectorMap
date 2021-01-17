@@ -5345,6 +5345,19 @@
       }
     },
     {
+      "id": "gate-open",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "barrier",
+      "filter": ["all", ["==", "class", "open_gate"]],
+      "layout": {
+        "symbol-placement": "point",
+        "icon-image": "gate_open",
+        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
+        "icon-allow-overlap": true
+      }
+    },
+    {
       "id": "icon-quarry",
       "type": "symbol",
       "source": "IHM",
@@ -5355,18 +5368,6 @@
         "icon-image": "quarry",
         "icon-size": {"base": 1, "stops": [[13, 0.4], [14, 0.5]]},
         "icon-padding": 20
-      }
-    },
-    {
-      "id": "icon-cemerery",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 15,
-      "filter": ["all", ["==", "class", "cemetery"]],
-      "layout": {
-        "icon-image": "cemetery",
-        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]}
       }
     },
     {
@@ -5479,6 +5480,69 @@
       }
     },
     {
+      "id": "icon-rail_station",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "class", "railway"],
+        ["==", "subclass", "station"]
+      ],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-max-width": 10,
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "icon-image": "square",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-allow-overlap": true,
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5,
+        "text-translate": {"base": 1, "stops": [[15, [0, -5]], [16, [0, -8]]]}
+      }
+    },
+    {
+      "id": "icon-cemerery",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 15,
+      "filter": ["all", ["==", "class", "cemetery"]],
+      "layout": {
+        "icon-image": "cemetery",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]}
+      }
+    },
+    {
+      "id": "gate-cattle_grid",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "barrier",
+      "filter": ["all", ["==", "class", "cattle_grid"]],
+      "layout": {
+        "symbol-placement": "point",
+        "icon-image": "cattle_grid",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-allow-overlap": true
+      }
+    },
+    {
       "id": "icon-fuel",
       "type": "symbol",
       "source": "IHM",
@@ -5512,6 +5576,45 @@
         "icon-padding": 50
       },
       "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "water-tank",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "filter": [
+        "any",
+        ["==", ["get", "subclass"], "water_tower"],
+        [
+          "all",
+          ["==", ["get", "content"], "water"],
+          ["==", ["get", "subclass"], "storage_tank"]
+        ]
+      ],
+      "layout": {
+        "icon-image": "water_tank",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "icon-size": 0.4,
+        "icon-allow-overlap": true,
+        "text-font": ["Open Sans Cond Bold"],
+        "text-anchor": "top",
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#125595",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5,
@@ -5556,6 +5659,34 @@
       "layout": {
         "icon-image": "sign",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]}
+      }
+    },
+    {
+      "id": "icon-tree",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "subclass", "tree"]],
+      "layout": {
+        "icon-image": "tree",
+        "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-anchor": "top",
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5,
+        "text-translate": [0, 6]
       }
     },
     {
@@ -5676,41 +5807,14 @@
       }
     },
     {
-      "id": "icon-tree",
+      "id": "water-drinking",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "filter": ["all", ["==", "subclass", "tree"]],
+      "minzoom": 12,
+      "filter": ["all", ["==", "subclass", "drinking_water"]],
       "layout": {
-        "icon-image": "tree",
-        "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-anchor": "top",
-        "text-size": 18,
-        "text-letter-spacing": 0.2,
-        "text-optional": true
-      },
-      "paint": {
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
-      }
-    },
-    {
-      "id": "icon-camp_site",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "filter": ["all", ["==", "subclass", "camp_site"]],
-      "layout": {
-        "icon-image": "camping",
+        "icon-image": "tap",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
@@ -5725,48 +5829,11 @@
         "text-optional": true
       },
       "paint": {
+        "text-color": "#125595",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5,
         "text-translate": [0, 6]
-      }
-    },
-    {
-      "id": "icon-rail_station",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "class", "railway"],
-        ["==", "subclass", "station"]
-      ],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 18,
-        "text-letter-spacing": 0.2,
-        "text-max-width": 10,
-        "text-anchor": "top",
-        "text-offset": [0, 1],
-        "icon-image": "square",
-        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
-        "icon-allow-overlap": true,
-        "text-optional": true
-      },
-      "paint": {
-        "text-color": "#404040",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": {"base": 1, "stops": [[15, [0, -5]], [16, [0, -8]]]}
       }
     },
     {
@@ -5804,32 +5871,6 @@
       }
     },
     {
-      "id": "gate-cattle_grid",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "barrier",
-      "filter": ["all", ["==", "class", "cattle_grid"]],
-      "layout": {
-        "symbol-placement": "point",
-        "icon-image": "cattle_grid",
-        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
-        "icon-allow-overlap": true
-      }
-    },
-    {
-      "id": "gate-open",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "barrier",
-      "filter": ["all", ["==", "class", "open_gate"]],
-      "layout": {
-        "symbol-placement": "point",
-        "icon-image": "gate_open",
-        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
-        "icon-allow-overlap": true
-      }
-    },
-    {
       "id": "gate-no_vehicles",
       "type": "symbol",
       "source": "IHM",
@@ -5839,7 +5880,8 @@
         "symbol-placement": "point",
         "icon-image": "bollards",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
-        "icon-allow-overlap": true
+        "icon-allow-overlap": true,
+        "visibility": "none"
       }
     },
     {
@@ -5856,85 +5898,22 @@
       }
     },
     {
-      "id": "water-area-name",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "water_name",
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 18,
-        "text-letter-spacing": 0.3,
-        "text-max-width": 5
-      },
-      "paint": {
-        "text-color": "#125595",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
-      "id": "water-drinking",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 12,
-      "filter": ["all", ["==", "subclass", "drinking_water"]],
-      "layout": {
-        "icon-image": "tap",
-        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-anchor": "top",
-        "text-size": 18,
-        "text-letter-spacing": 0.2,
-        "text-optional": true
-      },
-      "paint": {
-        "text-color": "#125595",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
-      }
-    },
-    {
-      "id": "water-tank",
+      "id": "name-water-point",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
       "filter": [
-        "any",
-        ["==", ["get", "subclass"], "water_tower"],
-        [
-          "all",
-          ["==", ["get", "content"], "water"],
-          ["==", ["get", "subclass"], "storage_tank"]
-        ]
+        "all",
+        ["in", "subclass", "cistern", "spring", "pond", "stream_pool"]
       ],
       "layout": {
-        "icon-image": "water_tank",
         "text-field": [
           "coalesce",
           ["get", "name:he"],
           ["get", "name:latin"],
           ["get", "name"]
         ],
-        "icon-size": 0.4,
-        "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-size": 18,
@@ -5981,6 +5960,29 @@
       }
     },
     {
+      "id": "water-cistern-bg",
+      "type": "circle",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "filter": ["all", ["==", "subclass", "cistern"]],
+      "paint": {"circle-color": "white", "circle-radius": 5.5}
+    },
+    {
+      "id": "water-cistern-circle",
+      "type": "circle",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "filter": ["all", ["==", "subclass", "cistern"]],
+      "paint": {
+        "circle-radius": 2.5,
+        "circle-color": "rgba(0,0,0,0)",
+        "circle-stroke-color": "#1E80E2",
+        "circle-stroke-width": 2.5
+      }
+    },
+    {
       "id": "water-well",
       "type": "symbol",
       "source": "IHM",
@@ -6012,26 +6014,28 @@
       }
     },
     {
-      "id": "water-cistern-bg",
-      "type": "circle",
+      "id": "water-area-name",
+      "type": "symbol",
       "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 12,
-      "filter": ["all", ["==", "subclass", "cistern"]],
-      "paint": {"circle-color": "white", "circle-radius": 5.5}
-    },
-    {
-      "id": "water-cistern-circle",
-      "type": "circle",
-      "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 12,
-      "filter": ["all", ["==", "subclass", "cistern"]],
+      "source-layer": "water_name",
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.3,
+        "text-max-width": 5
+      },
       "paint": {
-        "circle-radius": 2.5,
-        "circle-color": "rgba(0,0,0,0)",
-        "circle-stroke-color": "#1E80E2",
-        "circle-stroke-width": 2.5
+        "text-color": "#125595",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -6049,16 +6053,14 @@
       }
     },
     {
-      "id": "name-water-point",
+      "id": "icon-camp_site",
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 12,
-      "filter": [
-        "all",
-        ["in", "subclass", "cistern", "spring", "pond", "stream_pool"]
-      ],
+      "filter": ["all", ["==", "subclass", "camp_site"]],
       "layout": {
+        "icon-image": "camping",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -6072,7 +6074,6 @@
         "text-optional": true
       },
       "paint": {
-        "text-color": "#125595",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5,
