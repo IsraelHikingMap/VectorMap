@@ -3917,6 +3917,34 @@
       }
     },
     {
+      "id": "icon-tree",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["==", "subclass", "tree"],
+      "layout": {
+        "icon-image": "tree",
+        "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-anchor": "top",
+        "text-size": {"stops": [[15, 0], [16, 18]]},
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5,
+        "text-translate": [0, 6]
+      }
+    },
+    {
       "id": "name-trail-regional",
       "type": "symbol",
       "source": "IHM",
@@ -4525,7 +4553,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
-        "text-size": 18,
+        "text-size": {"stops": [[15, 0], [16, 18]]},
         "text-letter-spacing": 0.2,
         "text-optional": true,
         "icon-padding": 50
@@ -4546,34 +4574,6 @@
       "layout": {
         "icon-image": "sign",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]}
-      }
-    },
-    {
-      "id": "icon-tree",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "poi",
-      "filter": ["==", "subclass", "tree"],
-      "layout": {
-        "icon-image": "tree",
-        "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:latin"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-anchor": "top",
-        "text-size": 18,
-        "text-letter-spacing": 0.2,
-        "text-optional": true
-      },
-      "paint": {
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
       }
     },
     {
