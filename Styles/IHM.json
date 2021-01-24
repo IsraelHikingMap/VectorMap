@@ -646,12 +646,12 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "path"]
+        ["in", "ihm_class", "path", "cycleway", "footway"]
       ],
       "paint": {
         "line-color": "black",
         "line-dasharray": [0.3, 0.4],
-        "line-width": 7
+        "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]}
       }
     },
     {
@@ -2227,12 +2227,12 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["==", "ihm_class", "path"],
+        ["in", "ihm_class", "path", "cycleway", "footway"],
         ["any", ["==", "layer", 1], ["!has", "layer"]]
       ],
       "paint": {
         "line-color": "black",
-        "line-width": {"base": 1, "stops": [[13, 4], [16, 5]]}
+        "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]}
       }
     },
     {
@@ -3089,12 +3089,12 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "path"],
+        ["in", "ihm_class", "path", "cycleway", "footway"],
         ["==", "brunnel", "bridge"]
       ],
       "paint": {
         "line-color": "black",
-        "line-width": {"base": 1, "stops": [[13, 4], [16, 5]]}
+        "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]}
       }
     },
     {
