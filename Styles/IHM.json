@@ -3646,7 +3646,7 @@
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 14,
-      "filter": ["in", "class", "wall", "city_wall"],
+      "filter": ["in", "class", "wall", "city_wall", "dam"],
       "paint": {"line-color": "black", "line-width": 1.5}
     },
     {
