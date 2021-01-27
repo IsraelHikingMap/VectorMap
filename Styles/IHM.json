@@ -209,7 +209,8 @@
         "text-size": 16,
         "symbol-avoid-edges": true,
         "text-max-angle": 45,
-        "text-letter-spacing": 0.15
+        "text-letter-spacing": 0.15,
+        "text-keep-upright": false
       },
       "paint": {
         "text-color": "rgba(161, 127, 86, 1)",

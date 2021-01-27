@@ -272,7 +272,8 @@
         "symbol-placement": "line",
         "text-field": "{height}",
         "text-font": ["Open Sans Regular"],
-        "text-letter-spacing": 0.1
+        "text-letter-spacing": 0.1,
+        "text-keep-upright": false
       },
       "paint": {
         "text-color": "rgba(95, 70, 21, 1)",
