@@ -3621,7 +3621,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_lines",
-      "minzoom": 14,
+      "minzoom": 11,
       "filter": ["in", "class", "fence", "yes"],
       "paint": {"line-color": "rgba(26, 26, 26, 1)"}
     },
@@ -3630,7 +3630,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "ihm_lines",
-      "minzoom": 14,
+      "minzoom": 11,
       "filter": ["==", "class", "fence"],
       "layout": {
         "symbol-placement": "line",
@@ -3646,7 +3646,7 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_lines",
-      "minzoom": 14,
+      "minzoom": 11,
       "filter": ["in", "class", "wall", "city_wall", "dam"],
       "paint": {"line-color": "black", "line-width": 1.5}
     },
