@@ -318,6 +318,66 @@
       }
     },
     {
+      "id": "tunnel_minor-copy",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["!in", "class", "motorway", "trunk", "primary"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(24, 24, 24, 1)",
+        "line-width": {"base": 1.55, "stops": [[15, 1], [20, 8]]},
+        "line-opacity": 1,
+        "line-gap-width": {"stops": [[15, 3], [20, 8]]}
+      }
+    },
+    {
+      "id": "tunnel_minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["!in", "class", "motorway", "trunk", "primary"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"base": 1.55, "stops": [[15, 1], [20, 8]]},
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "tunnel_major",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "maxzoom": 22,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["in", "class", "motorway", "trunk", "primary"]
+      ],
+      "paint": {
+        "line-color": "rgba(24, 24, 24, 1)",
+        "line-width": {"base": 1.55, "stops": [[15, 2], [20, 3]]},
+        "line-dasharray": [2, 2],
+        "line-opacity": 0.5,
+        "line-gap-width": 4
+      }
+    },
+    {
       "id": "park_edge-narrow",
       "type": "line",
       "source": "IHM",
@@ -887,11 +947,7 @@
       "filter": [
         "all",
         ["==", "ilmtb_class", "path"],
-        [
-          "any",
-          ["in", "bicycle", "yes", "permissive"],
-          ["has", "mtb_scale"]
-        ]
+        ["any", ["in", "bicycle", "yes", "permissive"], ["has", "mtb_scale"]]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -981,47 +1037,6 @@
         "line-color": "white",
         "line-width": {"stops": [[12, 2], [20, 7]]},
         "line-dasharray": {"stops": [[6, [1.5, 1.5]], [15, [4, 4]]]}
-      }
-    },
-    {
-      "id": "tunnel_major",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 15,
-      "maxzoom": 22,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["in", "class", "motorway", "trunk", "primary"]
-      ],
-      "paint": {
-        "line-color": "rgba(24, 24, 24, 1)",
-        "line-width": {"base": 1.55, "stops": [[15, 2], [20, 3]]},
-        "line-dasharray": [2, 2],
-        "line-opacity": 0.5,
-        "line-gap-width": 4
-      }
-    },
-    {
-      "id": "tunnel_minor",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["!in", "class", "motorway", "trunk", "primary"]
-      ],
-      "paint": {
-        "line-color": "rgba(24, 24, 24, 1)",
-        "line-width": {"base": 1.55, "stops": [[15, 1], [20, 3]]},
-        "line-dasharray": [4, 4],
-        "line-opacity": 0.5,
-        "line-gap-width": {"stops": [[15, 3], [20, 8]]}
       }
     },
     {
@@ -1680,6 +1695,35 @@
         "icon-text-fit-padding": [2, 6, 2, 6]
       },
       "paint": {"text-color": "blue"}
+    },
+    {
+      "id": "road_rural_direction-2",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "path"], ["==", "oneway:mtb", "yes"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-font": [""],
+        "text-transform": "none",
+        "text-size": 16,
+        "text-offset": {"stops": [[13, [0, 0.5]], [20, [0, 2]]]},
+        "text-max-width": 30,
+        "icon-pitch-alignment": "map",
+        "icon-image": "arrowhead",
+        "icon-rotation-alignment": "map",
+        "icon-size": {"stops": [[14, 0.4], [20, 1]]},
+        "symbol-spacing": 100
+      },
+      "paint": {
+        "text-color": "rgba(249, 2, 2, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 0,
+        "text-opacity": 1,
+        "icon-opacity": 0.4,
+        "icon-color": "rgba(255, 0, 0, 1)"
+      }
     },
     {
       "id": "road_rural_direction",
@@ -2761,31 +2805,35 @@
       }
     },
     {
-      "id": "water_spring",
+      "id": "label_waterway",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
-      "source-layer": "poi",
-      "minzoom": 13,
-      "filter": ["all", ["==", "subclass", "spring"]],
+      "source-layer": "waterway",
+      "minzoom": 14,
+      "filter": ["all", ["!=", "brunnel", "tunnel"]],
       "layout": {
-        "icon-image": "spring",
-        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
-        "text-size": {"stops": [[14, 18], [20, 33]]},
-        "text-font": ["Open Sans Regular"],
+        "symbol-placement": "line",
         "text-field": [
           "coalesce",
           ["get", "name:he"],
           ["get", "name:latin"],
           ["get", "name"]
         ],
-        "text-max-width": 5,
-        "text-anchor": "top",
-        "text-offset": [0, 0.5]
+        "text-font": ["Open Sans Regular"],
+        "text-transform": "none",
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
+        "text-max-width": 30,
+        "text-allow-overlap": false,
+        "symbol-spacing": 750,
+        "text-letter-spacing": 0.1,
+        "text-max-angle": 30
       },
       "paint": {
-        "text-color": "rgba(30, 128, 227, 1)",
-        "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
+        "text-color": "blue",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1
       }
     },
     {
@@ -2949,35 +2997,31 @@
       }
     },
     {
-      "id": "label_waterway",
+      "id": "water_spring",
       "type": "symbol",
-      "metadata": {"IHM:overlay": true},
       "source": "IHM",
-      "source-layer": "waterway",
-      "minzoom": 14,
-      "filter": ["all", ["!=", "brunnel", "tunnel"]],
+      "source-layer": "poi",
+      "minzoom": 13,
+      "filter": ["all", ["==", "subclass", "spring"]],
       "layout": {
-        "symbol-placement": "line",
+        "icon-image": "spring",
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
         "text-field": [
           "coalesce",
           ["get", "name:he"],
           ["get", "name:latin"],
           ["get", "name"]
         ],
-        "text-font": ["Open Sans Regular"],
-        "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
-        "text-max-width": 30,
-        "text-allow-overlap": false,
-        "symbol-spacing": 750,
-        "text-letter-spacing": 0.1,
-        "text-max-angle": 30
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
       },
       "paint": {
-        "text-color": "blue",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1
+        "text-color": "rgba(30, 128, 227, 1)",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)"
       }
     },
     {
@@ -3435,6 +3479,43 @@
         "text-color": "hsl(0, 0%, 13%)",
         "text-halo-color": "rgba(255,255,255,0.75)",
         "text-halo-width": 2
+      }
+    },
+    {
+      "id": "poi_bikepark",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 9,
+      "maxzoom": 15,
+      "filter": [
+        "all",
+        ["==", "class", "recreation_ground"],
+        ["==", "subclass", "mtb"]
+      ],
+      "layout": {
+        "icon-size": {"stops": [[9, 0.35], [15, 0.6]]},
+        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-font": ["Open Sans Regular"],
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:latin"],
+          ["get", "name"]
+        ],
+        "text-max-width": 5,
+        "text-anchor": "top",
+        "text-offset": [0, 0.75],
+        "visibility": "visible",
+        "icon-image": "riding_park",
+        "text-ignore-placement": false,
+        "text-allow-overlap": false,
+        "icon-allow-overlap": false,
+        "icon-ignore-placement": false
+      },
+      "paint": {
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.75)"
       }
     },
     {
