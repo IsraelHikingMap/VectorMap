@@ -319,12 +319,33 @@
       }
     },
     {
-      "id": "tunnel_minor-copy",
+      "id": "tunnel_minor-outer",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 14,
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["!in", "class", "motorway", "trunk", "primary"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(24, 24, 24, 1)",
+        "line-width": {"base": 1.55, "stops": [[15, 1], [20, 8]]},
+        "line-opacity": 1,
+        "line-gap-width": {"stops": [[15, 8], [20, 25]]},
+        "line-dasharray": [2, 2]
+      }
+    },
+    {
+      "id": "tunnel_minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
@@ -336,25 +357,6 @@
         "line-width": {"base": 1.55, "stops": [[15, 1], [20, 8]]},
         "line-opacity": 1,
         "line-gap-width": {"stops": [[15, 3], [20, 8]]}
-      }
-    },
-    {
-      "id": "tunnel_minor",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["!in", "class", "motorway", "trunk", "primary"]
-      ],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "white",
-        "line-width": {"base": 1.55, "stops": [[15, 1], [20, 8]]},
-        "line-opacity": 1
       }
     },
     {
@@ -948,11 +950,7 @@
       "filter": [
         "all",
         ["==", "ilmtb_class", "path"],
-        [
-          "any",
-          ["in", "bicycle", "yes", "permissive"],
-          ["has", "mtb_scale"]
-        ]
+        ["any", ["in", "bicycle", "yes", "permissive"], ["has", "mtb_scale"]]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -986,7 +984,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "ilmtb_class", "path"], ["==", "mtb_scale", "6"]],
+      "filter": [
+        "all",
+        ["==", "ilmtb_class", "path"],
+        ["==", "mtb_scale", "6"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
@@ -1024,7 +1026,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "ilmtb_class", "rail"], ["!=", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["==", "ilmtb_class", "rail"],
+        ["!=", "brunnel", "tunnel"]
+      ],
       "paint": {
         "line-color": "rgba(40, 40, 40, 1)",
         "line-width": {"stops": [[12, 4], [20, 9]]}
@@ -1037,52 +1043,15 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "ilmtb_class", "rail"], ["!=", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["==", "ilmtb_class", "rail"],
+        ["!=", "brunnel", "tunnel"]
+      ],
       "paint": {
         "line-color": "white",
         "line-width": {"stops": [[12, 2], [20, 7]]},
         "line-dasharray": {"stops": [[6, [1.5, 1.5]], [15, [4, 4]]]}
-      }
-    },
-    {
-      "id": "tunnel_major",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 15,
-      "maxzoom": 22,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["in", "ilmtb_class", "motorway", "trunk", "primary"]
-      ],
-      "paint": {
-        "line-color": "rgba(24, 24, 24, 1)",
-        "line-width": {"base": 1.55, "stops": [[15, 2], [20, 3]]},
-        "line-dasharray": [2, 2],
-        "line-opacity": 0.5,
-        "line-gap-width": 4
-      }
-    },
-    {
-      "id": "tunnel_minor",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["!in", "ilmtb_class", "motorway", "trunk", "primary"]
-      ],
-      "paint": {
-        "line-color": "rgba(24, 24, 24, 1)",
-        "line-width": {"base": 1.55, "stops": [[15, 1], [20, 3]]},
-        "line-dasharray": [4, 4],
-        "line-opacity": 0.5,
-        "line-gap-width": {"stops": [[15, 3], [20, 8]]}
       }
     },
     {
@@ -1261,7 +1230,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": ["all", ["==", "brunnel", "bridge"], ["in", "ilmtb_class", "bridge"]],
+      "filter": [
+        "all",
+        ["==", "brunnel", "bridge"],
+        ["in", "ilmtb_class", "bridge"]
+      ],
       "paint": {
         "fill-color": "rgba(248, 242, 242, 1)",
         "fill-outline-color": "rgba(0, 0, 0, 1)"
@@ -1387,7 +1360,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "ilmtb_class", "rail"], ["==", "brunnel", "bridge"]],
+      "filter": [
+        "all",
+        ["==", "ilmtb_class", "rail"],
+        ["==", "brunnel", "bridge"]
+      ],
       "paint": {
         "line-color": "rgba(15, 15, 15, 1)",
         "line-width": {"stops": [[12, 4], [20, 9]]}
@@ -1400,7 +1377,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "ilmtb_class", "rail"], ["==", "brunnel", "bridge"]],
+      "filter": [
+        "all",
+        ["==", "ilmtb_class", "rail"],
+        ["==", "brunnel", "bridge"]
+      ],
       "paint": {
         "line-color": "white",
         "line-width": {"stops": [[12, 2], [20, 7]]},
@@ -1414,7 +1395,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "ilmtb_class", "path"], ["==", "brunnel", "bridge"]],
+      "filter": [
+        "all",
+        ["==", "ilmtb_class", "path"],
+        ["==", "brunnel", "bridge"]
+      ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
@@ -3270,11 +3255,7 @@
       "minzoom": 14,
       "layout": {
         "symbol-placement": "line",
-        "text-field": [
-          "coalesce",
-          ["get", "mtb:name:he"],
-          ["get", "mtb:name"]
-        ],
+        "text-field": ["coalesce", ["get", "mtb:name:he"], ["get", "mtb:name"]],
         "text-font": ["Open Sans Regular"],
         "text-transform": "none",
         "text-size": {"base": 1.4, "stops": [[14, 16], [20, 33]]},
