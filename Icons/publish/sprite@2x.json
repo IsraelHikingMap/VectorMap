@@ -97,6 +97,13 @@
 		"y": 120,
 		"pixelRatio": 2
 	},
+	"triangle": {
+		"width": 68,
+		"height": 68,
+		"x": 820,
+		"y": 120,
+		"pixelRatio": 2
+	},
 	"gate_open": {
 		"width": 68,
 		"height": 68,
