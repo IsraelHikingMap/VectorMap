@@ -98,10 +98,10 @@
 		"pixelRatio": 1
 	},	
 	"triangle": {
-		"width": 34,
-		"height": 34,
+		"width": 16,
+		"height": 14,
 		"x": 410,
-		"y": 60,
+		"y": 66,
 		"pixelRatio": 1
 	},
 	"gate_open": {
