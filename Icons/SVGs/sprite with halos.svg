@@ -17,9 +17,9 @@
    version="1.1"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="sprite with halos.svg"
-   inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite@2x.png"
-   inkscape:export-xdpi="383.98904"
-   inkscape:export-ydpi="383.98904">
+   inkscape:export-filename="C:\Users\shakhar\Documents\GitHub\VectorMap\Icons\publish\sprite.png"
+   inkscape:export-xdpi="192.04857"
+   inkscape:export-ydpi="192.04857">
   <defs
      id="defs4586">
     <linearGradient
@@ -409,14 +409,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9999995"
-     inkscape:cx="210.1943"
-     inkscape:cy="336.98468"
+     inkscape:zoom="15.999999"
+     inkscape:cx="210.25853"
+     inkscape:cy="354.10305"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
+     inkscape:window-width="1536"
+     inkscape:window-height="801"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -3571,8 +3571,8 @@
        inkscape:rounded="0"
        inkscape:randomized="0"
        d="m 212.30882,698.09465 7.81375,13.53381 -15.6275,0 z"
-       inkscape:transform-center-y="-1.8333439"
-       transform="matrix(0.83186684,0,0,0.81277906,34.887331,132.9654)" />
+       inkscape:transform-center-y="-1.1282141"
+       transform="matrix(0.51191806,0,0,0.50017173,100.31528,355.42567)" />
   </g>
   <style
      id="style4"
