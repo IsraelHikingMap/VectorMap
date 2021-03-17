@@ -178,6 +178,20 @@
       "paint": {"fill-pattern": "red_nesw_pattern", "fill-opacity": 0.3}
     },
     {
+      "id": "area-minefield",
+      "type": "fill",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "minefield",
+      "filter": ["all"],
+      "paint": {
+        "fill-opacity": 0.5,
+        "fill-color": "#f4be66",
+        "fill-antialias": true,
+        "fill-outline-color": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
       "id": "contour-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -348,6 +362,39 @@
       "filter": ["==", "class", "military"],
       "layout": {},
       "paint": {"line-color": "red", "line-opacity": 0.3}
+    },
+    {
+      "id": "boundary-minefield",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "minefield",
+      "minzoom": 11,
+      "filter": ["all"],
+      "paint": {
+        "line-color": "red",
+        "line-opacity": {"stops": [[12, 0.1], [14, 0.3]]},
+        "line-width": {"stops": [[14, 1], [16, 2]]}
+      }
+    },
+    {
+      "id": "boundary-minefield-icon",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "minefield",
+      "minzoom": 13,
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "triangle",
+        "icon-size": {"stops": [[12, 0.3], [16, 1]]},
+        "symbol-spacing": 1,
+        "icon-rotate": 180,
+        "icon-anchor": "bottom",
+        "icon-pitch-alignment": "map",
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true
+      },
+      "paint": {"icon-opacity": 0.5}
     },
     {
       "id": "boundary-park-casing",
