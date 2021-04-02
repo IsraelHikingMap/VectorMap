@@ -380,6 +380,7 @@
     {
       "id": "boundary-minefield-icon",
       "type": "symbol",
+      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "minefield",
       "minzoom": 13,
