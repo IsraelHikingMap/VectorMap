@@ -1003,16 +1003,14 @@
       "source-layer": "transportation",
       "minzoom": 12,
       "filter": [
-        "all",
-        [
-          "in",
-          "ilmtb_class",
-          "cable_car",
-          "chair_lift",
-          "drag_lift",
-          "goods",
-          "magic_carpet"
-        ]
+        "in",
+        "subclass",
+        "cable_car",
+        "gondola",
+        "chair_lift",
+        "drag_lift",
+        "goods",
+        "magic_carpet"
       ],
       "paint": {
         "line-color": "rgba(40, 40, 40, 1)",
@@ -2267,8 +2265,8 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "class", "railway"],
-        ["==", "subclass", "station"]
+        ["==", "subclass", "station"],
+        ["in", "class", "railway", "aerialway"]
       ],
       "layout": {
         "icon-image": "square",
@@ -3062,16 +3060,14 @@
       "source-layer": "transportation",
       "minzoom": 14,
       "filter": [
-        "all",
-        [
-          "in",
-          "ilmtb_class",
-          "cable_car",
-          "chair_lift",
-          "drag_lift",
-          "goods",
-          "magic_carpet"
-        ]
+        "in",
+        "subclass",
+        "cable_car",
+        "gondola",
+        "chair_lift",
+        "drag_lift",
+        "goods",
+        "magic_carpet"
       ],
       "layout": {
         "symbol-placement": "line",

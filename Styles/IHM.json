@@ -3644,7 +3644,7 @@
       "maxzoom": 24,
       "filter": [
         "in",
-        "ihm_class",
+        "subclass",
         "cable_car",
         "gondola",
         "chair_lift",
@@ -4322,7 +4322,7 @@
       "filter": [
         "all",
         ["==", "subclass", "station"],
-        ["==", "class", "railway"]
+        ["in", "class", "railway", "aerialway"]
       ],
       "layout": {
         "text-field": [
