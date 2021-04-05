@@ -1843,7 +1843,8 @@
       "filter": [
         "all",
         ["in", "ihm_class", "footway", "pedestrian"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["!in", "brunnel", "bridge", "tunnel"],
+        ["==", "$type", "LineString"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
