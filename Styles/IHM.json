@@ -265,6 +265,16 @@
       }
     },
     {
+      "id": "area-pier",
+      "type": "fill",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "pier"], ["==", "$type", "Polygon"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#FAF7E1"}
+    },
+    {
       "id": "water-area-breakwater",
       "type": "fill",
       "source": "IHM",
@@ -791,6 +801,18 @@
           "#E8D3B2",
           "#F7F4F2"
         ]
+      }
+    },
+    {
+      "id": "casing-pier",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "pier"]],
+      "paint": {
+        "line-color": "#FAF7E1",
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
       }
     },
     {
