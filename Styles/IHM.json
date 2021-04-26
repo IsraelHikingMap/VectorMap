@@ -267,7 +267,6 @@
     {
       "id": "area-pier",
       "type": "fill",
-      "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "class", "pier"], ["==", "$type", "Polygon"]],
