@@ -1165,9 +1165,7 @@
       "filter": ["all", ["==", "class", "cliff"]],
       "paint": {
         "line-color": "rgba(151, 124, 115, 1)",
-        "line-width": {"stops": [[12, 0.5], [20, 2]]},
-        "line-offset": 0,
-        "line-pattern": "cliff_pattern"
+        "line-width": {"stops": [[12, 0.5], [20, 2]]}
       }
     },
     {
