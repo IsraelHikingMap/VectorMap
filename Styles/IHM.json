@@ -161,7 +161,16 @@
         ["==", "class", "military"],
         ["in", "military", "training_area", "airfield"]
       ],
-      "paint": {"fill-pattern": "red_nwse_pattern", "fill-opacity": 0.1}
+      "paint": {
+        "fill-pattern": [
+          "match",
+          ["get", "military"],
+          "training_area",
+          "red_nwse_pattern",
+          "red_nesw_pattern"
+        ],
+        "fill-opacity": 0.1
+      }
     },
     {
       "id": "area-military",
