@@ -3863,7 +3863,8 @@
       "filter": ["all"],
       "paint": {
         "fill-extrusion-color": "rgba(191, 191, 191, 1)",
-        "fill-extrusion-height": ["get", "render_height"]
+        "fill-extrusion-height": ["get", "render_height"],
+        "fill-extrusion-opacity": 0.75
       }
     },
     {
