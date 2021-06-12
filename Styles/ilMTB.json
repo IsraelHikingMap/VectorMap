@@ -516,6 +516,19 @@
       }
     },
     {
+      "id": "dam",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 13,
+      "filter": ["all", ["==", "class", "dam"]],
+      "paint": {
+        "line-width": {"stops": [[13, 3], [20, 10]]},
+        "line-color": "rgba(85, 85, 85, 1)",
+        "line-dasharray": [1, 0.3]
+      }
+    },
+    {
       "id": "mtbroute-lcn-hot",
       "type": "line",
       "metadata": {"IHM:overlay": true},
