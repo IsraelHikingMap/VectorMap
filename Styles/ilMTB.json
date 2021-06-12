@@ -2094,7 +2094,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
+      "minzoom": 15,
       "filter": ["all", ["in", "class", "lodging"]],
       "layout": {
         "icon-image": "hotel",
@@ -2121,7 +2121,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
+      "minzoom": 15,
       "filter": ["all", ["==", "class", "grocery"]],
       "layout": {
         "icon-image": "shopping",
@@ -2147,7 +2147,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
+      "minzoom": 15,
       "filter": ["all", ["==", "class", "toilets"]],
       "layout": {
         "icon-image": "toilet",
@@ -2174,7 +2174,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
+      "minzoom": 15,
       "filter": ["all", ["==", "class", "cafe"]],
       "layout": {
         "icon-image": "cafe",
@@ -2229,7 +2229,7 @@
       "type": "symbol",
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 16,
+      "minzoom": 15,
       "filter": ["all", ["in", "class", "restaurant", "fast_food"]],
       "layout": {
         "text-size": {"stops": [[14, 18], [20, 33]]},
