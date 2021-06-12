@@ -155,7 +155,6 @@
         "all",
         ["in", "class", "residential", "commercial", "industrial"]
       ],
-      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(224, 224, 224, 1)",
         "fill-outline-color": "rgba(187, 187, 187, 1)"
@@ -172,7 +171,6 @@
         ["==", "class", "grass"],
         ["in", "subclass", "park", "grass"]
       ],
-      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(210, 232, 155, 1)",
         "fill-outline-color": "rgba(181, 199, 134, 1)"
@@ -185,7 +183,6 @@
       "source-layer": "landcover",
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "quarry"]],
-      "layout": {},
       "paint": {
         "line-width": {"stops": [[9, 1], [12, 2], [21, 50]]},
         "line-offset": {"stops": [[9, 1], [12, 1], [21, 20]]},
@@ -212,7 +209,6 @@
       "source-layer": "landuse",
       "minzoom": 13,
       "filter": ["all", ["==", "class", "pitch"]],
-      "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "rgba(210, 232, 155, 1)",
         "fill-outline-color": "rgba(181, 199, 134, 1)"
@@ -288,7 +284,6 @@
       "source": "IHM",
       "source-layer": "water",
       "filter": ["all", ["!=", "intermittent", 1]],
-      "layout": {},
       "paint": {
         "fill-color": "rgba(148, 193, 225, 1)",
         "fill-outline-color": "rgba(0, 32, 255, 1)"
@@ -330,7 +325,6 @@
         ["==", "brunnel", "tunnel"],
         ["!in", "class", "motorway", "trunk", "primary"]
       ],
-      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "rgba(24, 24, 24, 1)",
         "line-width": {"base": 1.55, "stops": [[15, 1], [20, 8]]},
@@ -351,7 +345,6 @@
         ["==", "brunnel", "tunnel"],
         ["!in", "class", "motorway", "trunk", "primary"]
       ],
-      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "rgba(24, 24, 24, 1)",
         "line-width": {"base": 1.55, "stops": [[15, 1], [20, 8]]},
@@ -651,11 +644,7 @@
       "source-layer": "trail",
       "minzoom": 9,
       "filter": ["all", ["==", "network", "rcn"]],
-      "layout": {
-        "visibility": "visible",
-        "line-join": "round",
-        "line-cap": "butt"
-      },
+      "layout": {"line-join": "round", "line-cap": "butt"},
       "paint": {
         "line-color": "rgba(234, 125, 125, 1)",
         "line-width": {"stops": [[9, 3], [24, 30]]}
@@ -669,11 +658,7 @@
       "source-layer": "trail",
       "minzoom": 8,
       "filter": ["all", ["==", "network", "ncn"]],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "butt",
-        "line-join": "round"
-      },
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(161, 163, 255, 1)",
         "line-width": {"stops": [[9, 3], [24, 30]]}
@@ -807,7 +792,6 @@
         ["in", "ilmtb_class", "track", "unclassified"],
         ["!=", "brunnel", "tunnel"]
       ],
-      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "white",
         "line-width": {"base": 1.55, "stops": [[14, 2], [20, 15]]}
@@ -912,11 +896,7 @@
         ["==", "ilmtb_class", "cycleway"],
         ["!=", "subclass", "cycleway"]
       ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": [
           "match",
@@ -1157,7 +1137,7 @@
       }
     },
     {
-      "id": "cliff-line-copy",
+      "id": "cliff-line",
       "type": "line",
       "source": "IHM",
       "source-layer": "ihm_lines",
@@ -1166,21 +1146,6 @@
       "paint": {
         "line-color": "rgba(151, 124, 115, 1)",
         "line-width": {"stops": [[12, 0.5], [20, 2]]}
-      }
-    },
-    {
-      "id": "cliff-line",
-      "type": "line",
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 12,
-      "filter": ["all", ["==", "class", "cliff"]],
-      "layout": {"visibility": "none"},
-      "paint": {
-        "line-color": "rgba(151, 124, 115, 1)",
-        "line-width": {"stops": [[12, 10], [20, 30]]},
-        "line-offset": 0,
-        "line-pattern": "antenna"
       }
     },
     {
@@ -1317,11 +1282,7 @@
         ["==", "brunnel", "bridge"],
         ["in", "ilmtb_class", "secondary", "tertiaty", "minor", "service", ""]
       ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 2], [20, 50]]}
@@ -1339,11 +1300,7 @@
         ["==", "brunnel", "bridge"],
         ["in", "ilmtb_class", "secondary", "tertiaty", "minor", "service", ""]
       ],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round",
-        "visibility": "visible"
-      },
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "#fff",
         "line-width": {"base": 1.4, "stops": [[6, 2], [20, 40]]}
@@ -2692,8 +2649,7 @@
         ],
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 0.5],
-        "visibility": "visible"
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2724,8 +2680,7 @@
         ],
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 0.5],
-        "visibility": "visible"
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -2756,8 +2711,7 @@
         ],
         "text-max-width": 5,
         "text-anchor": "top",
-        "text-offset": [0, 0.5],
-        "visibility": "visible"
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-halo-width": 2,
@@ -3562,7 +3516,6 @@
         "text-max-width": 5,
         "text-anchor": "top",
         "text-offset": [0, 0.75],
-        "visibility": "visible",
         "icon-image": "riding_park",
         "text-ignore-placement": false,
         "text-allow-overlap": false,
