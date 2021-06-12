@@ -683,6 +683,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 12,
       "filter": [
         "all",
         ["in", "ilmtb_class", "minor", "service"],
@@ -713,6 +714,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 10,
       "filter": [
         "all",
         ["in", "ilmtb_class", "secondary", "tertiary"],
