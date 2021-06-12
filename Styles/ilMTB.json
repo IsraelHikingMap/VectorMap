@@ -873,7 +873,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "ilmtb_class", "footway"]],
+      "filter": [
+        "all",
+        ["in", "ilmtb_class", "footway", "pedestrian"],
+        ["==", "$type", "LineString"]
+      ],
       "layout": {"line-cap": "round"},
       "paint": {
         "line-color": "rgba(170, 104, 49, 1)",
@@ -1366,7 +1370,8 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "ilmtb_class", "footway"],
+        ["in", "ilmtb_class", "footway", "pedetrian"],
+        ["==", "$type", "LineString"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "round"},
