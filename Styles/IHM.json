@@ -347,7 +347,6 @@
           "coalesce",
           ["get", "name:he"],
           ["get", "name_en"],
-
           ["get", "name"]
         ],
         "symbol-placement": "line-center",
