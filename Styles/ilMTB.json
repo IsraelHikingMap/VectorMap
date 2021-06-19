@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "IMTB",
+  "name": "ilMTB",
   "metadata": {"maputnik:renderer": "mbgljs", "owner": "IHM"},
   "center": [35, 32],
   "zoom": 14,
@@ -27,6 +27,21 @@
       "id": "background",
       "type": "background",
       "paint": {"background-color": "rgba(248, 240, 219, 1)"}
+    },
+    {
+      "id": "land-residential",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 9,
+      "filter": [
+        "all",
+        ["in", "class", "residential", "commercial", "industrial"]
+      ],
+      "paint": {
+        "fill-color": "rgba(224, 224, 224, 1)",
+        "fill-outline-color": "rgba(187, 187, 187, 1)"
+      }
     },
     {
       "id": "land_sand",
@@ -144,21 +159,6 @@
         "icon-pitch-alignment": "viewport"
       },
       "paint": {}
-    },
-    {
-      "id": "land-residential",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 9,
-      "filter": [
-        "all",
-        ["in", "class", "residential", "commercial", "industrial"]
-      ],
-      "paint": {
-        "fill-color": "rgba(224, 224, 224, 1)",
-        "fill-outline-color": "rgba(187, 187, 187, 1)"
-      }
     },
     {
       "id": "land_grass",
