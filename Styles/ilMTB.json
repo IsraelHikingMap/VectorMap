@@ -44,6 +44,31 @@
       }
     },
     {
+      "id": "land-construction",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 9,
+      "filter": ["all", ["in", "class", "construction"]],
+      "paint": {
+        "fill-color": "rgba(192, 192, 192, 1)",
+        "fill-outline-color": "rgba(170, 170, 170, 1)"
+      }
+    },
+    {
+      "id": "land-construction-pattern",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "construction"]],
+      "layout": {
+        "icon-image": "construction",
+        "icon-size": {"stops": [[14, 0.5], [21, 2]]}
+      },
+      "paint": {}
+    },
+    {
       "id": "land_sand",
       "type": "fill",
       "source": "IHM",
@@ -760,6 +785,37 @@
       "paint": {
         "line-color": "rgba(102, 102, 102, 1)",
         "line-width": {"base": 1.4, "stops": [[4, 1], [20, 55]]}
+      }
+    },
+    {
+      "id": "road_construction",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "ilmtb_class", "minor_construction", "tertiary_construction"],
+        ["!=", "brunnel", "tunnel"]
+      ],
+      "paint": {"line-width": {"stops": [[14, 3], [16, 6], [20, 18]]}}
+    },
+    {
+      "id": "road_construction core",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "ilmtb_class", "minor_construction", "tertiary_construction"],
+        ["!=", "brunnel", "tunnel"]
+      ],
+      "paint": {
+        "line-color": "white",
+        "line-width": {"base": 1.55, "stops": [[14, 2], [20, 15]]}
       }
     },
     {
