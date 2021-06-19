@@ -3748,10 +3748,10 @@
       "minzoom": 14,
       "filter": ["==", "class", "tower"],
       "paint": {
-        "circle-radius": 2.5,
+        "circle-radius": {"stops": [[14, 2.5], [20, 4]]},
         "circle-stroke-color": "#bbb",
         "circle-opacity": 0,
-        "circle-stroke-width": 1.5
+        "circle-stroke-width": {"stops": [[14, 1.5], [20, 2.4]]}
       }
     },
     {
@@ -4248,7 +4248,7 @@
       ],
       "layout": {
         "icon-image": "holy_place",
-        "icon-size": 0.5,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4278,7 +4278,10 @@
         ["==", "subclass", "jewish"],
         ["in", "class", "place_of_worship", "monastery"]
       ],
-      "layout": {"icon-image": "synagogue", "icon-size": 0.5}
+      "layout": {
+        "icon-image": "synagogue",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]}
+      }
     },
     {
       "id": "icon-muslim",
@@ -4292,7 +4295,7 @@
       ],
       "layout": {
         "icon-image": "mosque",
-        "icon-size": 0.5,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4324,7 +4327,7 @@
       ],
       "layout": {
         "icon-image": "church",
-        "icon-size": 0.5,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "text-field": [
           "coalesce",
           ["get", "name:he"],
@@ -4471,7 +4474,7 @@
           ["get", "name:latin"],
           ["get", "name"]
         ],
-        "icon-size": 0.4,
+        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
@@ -4777,7 +4780,7 @@
           ["get", "name:latin"],
           ["get", "name"]
         ],
-        "icon-size": 0.4,
+        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
@@ -4800,7 +4803,10 @@
       "source-layer": "poi",
       "minzoom": 12,
       "filter": ["==", "subclass", "cistern"],
-      "paint": {"circle-color": "white", "circle-radius": 5.5}
+      "paint": {
+        "circle-color": "white",
+        "circle-radius": {"stops": [[14, 6.2], [20, 10.85]]}
+      }
     },
     {
       "id": "water-cistern-circle",
@@ -4810,10 +4816,10 @@
       "minzoom": 12,
       "filter": ["==", "subclass", "cistern"],
       "paint": {
-        "circle-radius": 2.5,
+        "circle-radius": {"stops": [[14, 2.5], [20, 4.375]]},
         "circle-color": "rgba(0,0,0,0)",
         "circle-stroke-color": "#1E80E2",
-        "circle-stroke-width": 2.5
+        "circle-stroke-width": {"stops": [[14, 2.5], [20, 4.375]]}
       }
     },
     {
@@ -4831,7 +4837,7 @@
           ["get", "name:latin"],
           ["get", "name"]
         ],
-        "icon-size": 0.4,
+        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
@@ -4880,10 +4886,10 @@
       "minzoom": 12,
       "filter": ["in", "subclass", "spring", "pond", "stream_pool"],
       "paint": {
-        "circle-radius": 5,
+        "circle-radius": {"stops": [[14, 5], [20, 8.75]]},
         "circle-color": "#1E80E2",
         "circle-stroke-color": "white",
-        "circle-stroke-width": 1.2
+        "circle-stroke-width": {"stops": [[14, 1.2], [20, 2.1]]}
       }
     },
     {
