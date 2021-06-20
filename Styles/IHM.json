@@ -251,6 +251,17 @@
       "paint": {"fill-color": "#8EBDF0"}
     },
     {
+      "id": "water-area-wetland",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": ["==", "class", "wetland"],
+      "paint": {
+        "fill-pattern": "intermittent_pattern",
+        "fill-outline-color": "#1E80E2"
+      }
+    },
+    {
       "id": "water-area-intermittent",
       "type": "fill",
       "source": "IHM",
@@ -4006,12 +4017,7 @@
       "layout": {
         "text-field": [
           "concat",
-          [
-            "coalesce",
-            ["get", "name:he"],
-            ["get", "name_en"],
-            ["get", "name"]
-          ],
+          ["coalesce", ["get", "name:he"], ["get", "name_en"], ["get", "name"]],
           " ",
           ["get", "ref"]
         ],
