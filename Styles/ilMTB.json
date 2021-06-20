@@ -387,6 +387,15 @@
       }
     },
     {
+      "id": "breakwater",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 8,
+      "filter": ["all", ["in", "class", "breakwater"]],
+      "paint": {"fill-color": "#F8F0DB"}
+    },
+    {
       "id": "tunnel_minor-outer",
       "type": "line",
       "metadata": {"IHM:overlay": true},
