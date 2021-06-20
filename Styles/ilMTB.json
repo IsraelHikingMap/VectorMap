@@ -254,6 +254,54 @@
       "paint": {"fill-color": "rgba(224, 224, 224, 1)"}
     },
     {
+      "id": "minefield-fill",
+      "type": "fill",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "minefield",
+      "filter": ["all"],
+      "paint": {
+        "fill-opacity": 0.5,
+        "fill-color": "#f4be66",
+        "fill-antialias": true,
+        "fill-outline-color": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "id": "minefield-perimeter",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "minefield",
+      "minzoom": 11,
+      "filter": ["all"],
+      "paint": {
+        "line-color": "red",
+        "line-opacity": {"stops": [[11, 0.1], [14, 1]]},
+        "line-width": {"stops": [[14, 1], [16, 2]]}
+      }
+    },
+    {
+      "id": "minefield-icon",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "minefield",
+      "minzoom": 13,
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "triangle",
+        "icon-size": {"stops": [[12, 0.3], [24, 5]]},
+        "symbol-spacing": {"stops": [[13, 3], [14, 20]]},
+        "icon-rotate": 180,
+        "icon-anchor": "bottom",
+        "icon-pitch-alignment": "map",
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true
+      },
+      "paint": {"icon-opacity": 1}
+    },
+    {
       "id": "contour_major",
       "type": "line",
       "metadata": {"IHM:overlay": true},
