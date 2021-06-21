@@ -202,6 +202,18 @@
       }
     },
     {
+      "id": "land-industrial",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 9,
+      "filter": ["all", ["in", "class", "industrial", "plant"]],
+      "paint": {
+        "fill-color": "rgba(192, 192, 192, 1)",
+        "fill-outline-color": "rgba(187, 187, 187, 1)"
+      }
+    },
+    {
       "id": "land-quarry-limit",
       "type": "line",
       "source": "IHM",
@@ -300,6 +312,15 @@
         "icon-ignore-placement": true
       },
       "paint": {"icon-opacity": 1}
+    },
+    {
+      "id": "power-station",
+      "type": "line",
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 14,
+      "filter": ["in", "class", "substation", "sub_station", "plant"],
+      "paint": {"line-color": "rgba(26, 26, 26, 1)"}
     },
     {
       "id": "contour_major",
@@ -1303,6 +1324,32 @@
         "icon-size": {"stops": [[14, 0.3], [20, 0.6]]}
       },
       "paint": {}
+    },
+    {
+      "id": "power-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["in", "class", "line", "minor_line"],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "#444", "line-width": 1.5}
+    },
+    {
+      "id": "power-pole",
+      "type": "circle",
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["==", "class", "tower"],
+      "paint": {
+        "circle-radius": {"stops": [[14, 2.5], [20, 4]]},
+        "circle-stroke-color": "#444",
+        "circle-stroke-width": {"stops": [[14, 1.5], [20, 2.4]]},
+        "circle-color": "#fff",
+        "circle-opacity": 1
+      }
     },
     {
       "id": "elevated_ramp",
