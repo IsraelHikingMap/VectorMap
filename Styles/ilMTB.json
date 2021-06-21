@@ -78,19 +78,6 @@
       "paint": {"fill-color": "rgba(250, 237, 191, 1)"}
     },
     {
-      "id": "land_wetland",
-      "type": "fill",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["all", ["==", "class", "wetland"]],
-      "paint": {
-        "fill-color": "rgba(200, 217, 174, 1)",
-        "fill-opacity": {"base": 1, "stops": [[8, 0.6], [22, 1]]},
-        "fill-pattern": "intermittent_pattern",
-        "fill-outline-color": "rgba(185, 211, 246, 1)"
-      }
-    },
-    {
       "id": "land_farm",
       "type": "fill",
       "source": "IHM",
@@ -145,19 +132,6 @@
         "fill-color": "rgba(221, 233, 175, 1)",
         "fill-opacity": {"base": 1, "stops": [[8, 0], [10, 1]]}
       }
-    },
-    {
-      "id": "land_scrub_pattern",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "landcover",
-      "minzoom": 14,
-      "filter": ["all", ["in", "subclass", "scrub"]],
-      "layout": {
-        "icon-image": "bushes_pattern",
-        "icon-size": {"stops": [[14, 0.5], [18, 2]]}
-      },
-      "paint": {}
     },
     {
       "id": "land_wood_solid",
@@ -250,6 +224,36 @@
         "fill-color": "rgba(210, 232, 155, 1)",
         "fill-outline-color": "rgba(181, 199, 134, 1)"
       }
+    },
+    {
+      "id": "land_wetland",
+      "type": "fill",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "filter": ["all", ["==", "class", "wetland"]],
+      "paint": {
+        "fill-color": "rgba(200, 217, 174, 1)",
+        "fill-opacity": {"base": 1, "stops": [[8, 0.6], [22, 1]]},
+        "fill-pattern": "intermittent_pattern",
+        "fill-outline-color": "rgba(185, 211, 246, 1)"
+      }
+    },
+    {
+      "id": "land_scrub_pattern",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 14,
+      "filter": [
+        "any",
+        ["in", "subclass", "scrub"],
+        ["==", "class", "wetland"]
+      ],
+      "layout": {
+        "icon-image": "bushes_pattern",
+        "icon-size": {"stops": [[14, 0.5], [18, 2]]}
+      },
+      "paint": {}
     },
     {
       "id": "military_base_fill",
