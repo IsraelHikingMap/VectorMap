@@ -1588,6 +1588,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 12,
       "filter": [
         "all",
         ["in", "ilmtb_class", "minor", "service"],
@@ -1604,6 +1605,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 10,
       "filter": [
         "all",
         ["in", "ilmtb_class", "secondary", "tertiary"],
@@ -1620,6 +1622,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 9,
       "filter": [
         "all",
         ["in", "ilmtb_class", "trunk", "primary"],
@@ -1636,6 +1639,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 8,
       "filter": [
         "all",
         ["==", "ilmtb_class", "motorway"],
