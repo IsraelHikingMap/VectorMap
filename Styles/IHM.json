@@ -323,6 +323,238 @@
       }
     },
     {
+      "id": "layer-1-box-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "subclass", "steps"]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-dasharray": [0.35, 0.5],
+        "line-width": 4
+      }
+    },
+    {
+      "id": "layer-1-box-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "subclass", "steps"]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-dasharray": [0.35, 0.5],
+        "line-width": 12
+      }
+    },
+    {
+      "id": "layer-1-box-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["in", "ihm_class", "path", "cycleway", "footway"]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-dasharray": [0.3, 0.4],
+        "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]}
+      }
+    },
+    {
+      "id": "layer-1-box-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "ihm_class", "track"]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-dasharray": [0.35, 0.5],
+        "line-width": {"base": 2, "stops": [[13, 7.5], [16, 12], [22, 48]]}
+      }
+    },
+    {
+      "id": "layer-1-casing-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "subclass", "steps"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "white", "line-width": 2}
+    },
+    {
+      "id": "layer-1-casing-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "subclass", "steps"]
+      ],
+      "paint": {"line-color": "white", "line-width": 6}
+    },
+    {
+      "id": "layer-1-casing-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["in", "ihm_class", "path", "cycleway", "footway"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
+      }
+    },
+    {
+      "id": "layer-1-casing-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "ihm_class", "track"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-width": {"base": 2, "stops": [[13, 5], [16, 8], [22, 32]]},
+        "line-color": [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2"],
+          "#E8D3B2",
+          "#F7F4F2"
+        ]
+      }
+    },
+    {
+      "id": "casing-pier",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "pier"]],
+      "paint": {
+        "line-color": "#FAF7E1",
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
+      }
+    },
+    {
+      "id": "casing-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "white", "line-width": 2}
+    },
+    {
+      "id": "casing-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "paint": {
+        "line-color": "white",
+        "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]}
+      }
+    },
+    {
+      "id": "casing-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "ihm_class", "path", "cycleway", "footway"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
+      }
+    },
+    {
+      "id": "casing-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "track"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-width": {"base": 2, "stops": [[13, 5], [16, 8], [22, 32]]},
+        "line-color": [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2"],
+          "#E8D3B2",
+          "#F7F4F2"
+        ]
+      }
+    },
+    {
       "id": "water-line-intermittent",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -674,238 +906,6 @@
           "yellow:white:yellow_stripe",
           "yellow",
           "rgba(0,0,0,0)"
-        ]
-      }
-    },
-    {
-      "id": "layer-1-box-steps-line",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "maxzoom": 14,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "subclass", "steps"]
-      ],
-      "paint": {
-        "line-color": "black",
-        "line-dasharray": [0.35, 0.5],
-        "line-width": 4
-      }
-    },
-    {
-      "id": "layer-1-box-steps",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "subclass", "steps"]
-      ],
-      "paint": {
-        "line-color": "black",
-        "line-dasharray": [0.35, 0.5],
-        "line-width": 12
-      }
-    },
-    {
-      "id": "layer-1-box-path",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["in", "ihm_class", "path", "cycleway", "footway"]
-      ],
-      "paint": {
-        "line-color": "black",
-        "line-dasharray": [0.3, 0.4],
-        "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]}
-      }
-    },
-    {
-      "id": "layer-1-box-track",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"]
-      ],
-      "paint": {
-        "line-color": "black",
-        "line-dasharray": [0.35, 0.5],
-        "line-width": {"base": 2, "stops": [[13, 7.5], [16, 12], [22, 48]]}
-      }
-    },
-    {
-      "id": "layer-1-casing-steps-line",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "maxzoom": 14,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "subclass", "steps"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {"line-color": "white", "line-width": 2}
-    },
-    {
-      "id": "layer-1-casing-steps",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "subclass", "steps"]
-      ],
-      "paint": {"line-color": "white", "line-width": 6}
-    },
-    {
-      "id": "layer-1-casing-path",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["in", "ihm_class", "path", "cycleway", "footway"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "white",
-        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
-      }
-    },
-    {
-      "id": "layer-1-casing-track",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-width": {"base": 2, "stops": [[13, 5], [16, 8], [22, 32]]},
-        "line-color": [
-          "match",
-          ["get", "tracktype"],
-          ["grade1", "grade2"],
-          "#E8D3B2",
-          "#F7F4F2"
-        ]
-      }
-    },
-    {
-      "id": "casing-pier",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "pier"]],
-      "paint": {
-        "line-color": "#FAF7E1",
-        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
-      }
-    },
-    {
-      "id": "casing-steps-line",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "maxzoom": 14,
-      "filter": [
-        "all",
-        ["==", "subclass", "steps"],
-        ["!in", "brunnel", "bridge", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {"line-color": "white", "line-width": 2}
-    },
-    {
-      "id": "casing-steps",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "subclass", "steps"],
-        ["!in", "brunnel", "bridge", "tunnel"]
-      ],
-      "paint": {
-        "line-color": "white",
-        "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]}
-      }
-    },
-    {
-      "id": "casing-path",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["in", "ihm_class", "path", "cycleway", "footway"],
-        ["!in", "brunnel", "bridge", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "white",
-        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
-      }
-    },
-    {
-      "id": "casing-track",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 12,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-width": {"base": 2, "stops": [[13, 5], [16, 8], [22, 32]]},
-        "line-color": [
-          "match",
-          ["get", "tracktype"],
-          ["grade1", "grade2"],
-          "#E8D3B2",
-          "#F7F4F2"
         ]
       }
     },
