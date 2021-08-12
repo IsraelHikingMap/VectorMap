@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Lights",
+  "metadata": {
+    "owner": "Zeev Stadler",
+    "copyright": "Copyright Zeev Stadler 2019-2021. All Rights Reserved.",
+    "maputnik:renderer": "mbgljs"
+  },
+  "sources": {
+    "Lights": {
+      "type": "raster",
+      "url": "https://israelhiking.osm.org.il/vector/data/Lights.json"
+    }
+  },
+  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "Lights",
+      "type": "raster",
+      "source": "Lights",
+      "paint": {"raster-opacity": 0.5}
+    }
+  ],
+  "id": "Lights"
+}
