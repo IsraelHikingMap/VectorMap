@@ -26,11 +26,13 @@
     {
       "id": "background",
       "type": "background",
+      "metadata": {"IHM:overlay": false},
       "paint": {"background-color": "rgba(248, 240, 219, 1)"}
     },
     {
       "id": "land-residential",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 9,
@@ -46,6 +48,7 @@
     {
       "id": "land-construction",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 9,
@@ -58,6 +61,7 @@
     {
       "id": "land-construction-pattern",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 14,
@@ -71,6 +75,7 @@
     {
       "id": "land_sand",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 8,
@@ -80,6 +85,7 @@
     {
       "id": "land_farm",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 8,
@@ -89,6 +95,7 @@
     {
       "id": "land_orchard",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 13,
@@ -101,6 +108,7 @@
     {
       "id": "land_vineyard",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 13,
@@ -113,6 +121,7 @@
     {
       "id": "land-cemetery",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "filter": ["all", ["in", "class", "cemetery"]],
@@ -124,6 +133,7 @@
     {
       "id": "land_scrub_solid",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 8,
@@ -136,6 +146,7 @@
     {
       "id": "land_wood_solid",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 8,
@@ -148,6 +159,7 @@
     {
       "id": "land_wood_pattern",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 14,
@@ -162,6 +174,7 @@
     {
       "id": "land_grass",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 8,
@@ -178,6 +191,7 @@
     {
       "id": "land-industrial",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 9,
@@ -190,6 +204,7 @@
     {
       "id": "land-quarry-limit",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 9,
@@ -204,6 +219,7 @@
     {
       "id": "land-quarry",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 9,
@@ -216,6 +232,7 @@
     {
       "id": "land_pitch",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 13,
@@ -228,6 +245,7 @@
     {
       "id": "land_wetland",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "wetland"]],
@@ -241,6 +259,7 @@
     {
       "id": "land_scrub_pattern",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 14,
@@ -320,6 +339,7 @@
     {
       "id": "power-station",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 14,
@@ -375,10 +395,16 @@
         "text-halo-width": 2
       }
     },
-    {"id": "Terrain", "type": "hillshade", "source": "TerrainRGB"},
+    {
+      "id": "Terrain",
+      "type": "hillshade",
+      "metadata": {"IHM:overlay": false},
+      "source": "TerrainRGB"
+    },
     {
       "id": "water",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "water",
       "filter": ["all", ["!=", "intermittent", 1]],
@@ -390,6 +416,7 @@
     {
       "id": "water_riverbed",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "water",
       "filter": ["all", ["==", "intermittent", 1], ["in", "class", "river"]],
@@ -402,6 +429,7 @@
     {
       "id": "water_intermittent",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "water",
       "filter": ["all", ["==", "intermittent", 1], ["!in", "class", "river"]],
@@ -414,6 +442,7 @@
     {
       "id": "breakwater",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 8,
@@ -483,6 +512,7 @@
     {
       "id": "park_edge-narrow",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 11,
@@ -497,6 +527,7 @@
     {
       "id": "park_edge-wide",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 11,
@@ -625,6 +656,7 @@
     {
       "id": "dam",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 13,
@@ -1136,6 +1168,7 @@
     {
       "id": "cable_car",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
@@ -1192,6 +1225,7 @@
     {
       "id": "perimeter_wall",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 14,
@@ -1205,6 +1239,7 @@
     {
       "id": "perimeter_city_wall",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 11,
@@ -1218,6 +1253,7 @@
     {
       "id": "base_fence",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 14,
@@ -1230,6 +1266,7 @@
     {
       "id": "base_fence_x",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 14,
@@ -1277,6 +1314,7 @@
     {
       "id": "cliff",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 12,
@@ -1296,6 +1334,7 @@
     {
       "id": "cliff-line",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 12,
@@ -1308,6 +1347,7 @@
     {
       "id": "perimeter_fence-line",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 14,
@@ -1317,6 +1357,7 @@
     {
       "id": "perimeter_fence_x",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 14,
@@ -1343,6 +1384,7 @@
     {
       "id": "power-pole",
       "type": "circle",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 14,
@@ -1654,6 +1696,7 @@
     {
       "id": "border_country_low-zoom",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "boundary",
       "minzoom": 0,
@@ -1672,6 +1715,7 @@
     {
       "id": "border_country_outer",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 0,
@@ -1699,6 +1743,7 @@
     {
       "id": "border_country-inner",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 3,
@@ -1728,6 +1773,7 @@
     {
       "id": "border_green_outer",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 0,
@@ -1755,6 +1801,7 @@
     {
       "id": "border_green-inner",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 0,
@@ -1783,6 +1830,7 @@
     {
       "id": "area-AB",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 13,
@@ -1792,6 +1840,7 @@
     {
       "id": "area-A",
       "type": "fill",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "minzoom": 13,
@@ -1801,6 +1850,7 @@
     {
       "id": "area-AB-outline",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_boundary",
       "filter": ["all", ["in", "name:en", "Area A", "Area B"]],
@@ -1909,6 +1959,7 @@
     {
       "id": "road_rural_direction-2",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1938,6 +1989,7 @@
     {
       "id": "road_rural_direction",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -1967,6 +2019,7 @@
     {
       "id": "building_regular",
       "type": "fill-extrusion",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "building",
       "minzoom": 15,
@@ -1979,6 +2032,7 @@
     {
       "id": "building_high",
       "type": "fill-extrusion",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "building",
       "minzoom": 15,
@@ -1991,6 +2045,7 @@
     {
       "id": "amenity_camping",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 11,
@@ -2019,6 +2074,7 @@
     {
       "id": "amenity-bike-shop-copy",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 7,
@@ -2046,6 +2102,7 @@
     {
       "id": "amenity-cemetery",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2059,6 +2116,7 @@
     {
       "id": "amenity-fuel",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -2080,6 +2138,7 @@
     {
       "id": "amenity-info",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 7,
@@ -2098,6 +2157,7 @@
     {
       "id": "amenity-clinic",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 12,
@@ -2111,6 +2171,7 @@
     {
       "id": "amenity-hotel",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2138,6 +2199,7 @@
     {
       "id": "amenity-grocery",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2151,6 +2213,7 @@
     {
       "id": "amenity-picnic",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 7,
@@ -2164,6 +2227,7 @@
     {
       "id": "amenity-toilet",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2177,6 +2241,7 @@
     {
       "id": "amenity-playground",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2191,6 +2256,7 @@
     {
       "id": "amenity-cafe",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2218,6 +2284,7 @@
     {
       "id": "amenity-parking",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
@@ -2246,6 +2313,7 @@
     {
       "id": "amenity-restaurant",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2272,6 +2340,7 @@
     {
       "id": "railway_station",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 10,
@@ -2304,6 +2373,7 @@
     {
       "id": "religion-other",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
@@ -2336,6 +2406,7 @@
     {
       "id": "religion-synagogue",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
@@ -2368,6 +2439,7 @@
     {
       "id": "religion-mosque",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
@@ -2400,6 +2472,7 @@
     {
       "id": "religion-church",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
@@ -2432,6 +2505,7 @@
     {
       "id": "barrier_other",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "barrier",
       "minzoom": 15,
@@ -2445,6 +2519,7 @@
     {
       "id": "barrier_closed_gate",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "barrier",
       "minzoom": 15,
@@ -2462,6 +2537,7 @@
     {
       "id": "barrier_no_vehicles",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "barrier",
       "minzoom": 15,
@@ -2479,6 +2555,7 @@
     {
       "id": "barrier_open_gate",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "barrier",
       "minzoom": 15,
@@ -2492,6 +2569,7 @@
     {
       "id": "barrier_cattle_grid",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "barrier",
       "minzoom": 15,
@@ -2505,6 +2583,7 @@
     {
       "id": "poi_flowers",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2532,6 +2611,7 @@
     {
       "id": "poi_tree",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2545,6 +2625,7 @@
     {
       "id": "poi_pitch",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 16,
@@ -2558,6 +2639,7 @@
     {
       "id": "poi_antenna",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
@@ -2575,6 +2657,7 @@
     {
       "id": "poi_tower",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
@@ -2600,6 +2683,7 @@
     {
       "id": "poi_attraction",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
@@ -2631,6 +2715,7 @@
     {
       "id": "poi_monument",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2662,6 +2747,7 @@
     {
       "id": "poi_cave",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2689,6 +2775,7 @@
     {
       "id": "poi_ruins",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
@@ -2716,6 +2803,7 @@
     {
       "id": "poi_archeology-point",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -2747,6 +2835,7 @@
     {
       "id": "poi_archeology-area",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -2778,6 +2867,7 @@
     {
       "id": "poi_viewpoint",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
@@ -2809,6 +2899,7 @@
     {
       "id": "peak",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "mountain_peak",
       "minzoom": 12,
@@ -2872,6 +2963,7 @@
     {
       "id": "water_tap",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -2885,6 +2977,7 @@
     {
       "id": "water_hole",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -2913,6 +3006,7 @@
     {
       "id": "water_cistern",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -2941,6 +3035,7 @@
     {
       "id": "water_waterfall",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -2969,6 +3064,7 @@
     {
       "id": "water_well",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -2997,6 +3093,7 @@
     {
       "id": "water_tank",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -3010,6 +3107,7 @@
     {
       "id": "symbol_park",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 12,
@@ -3032,6 +3130,7 @@
     {
       "id": "water_spring",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
@@ -3060,6 +3159,7 @@
     {
       "id": "label_cable_car",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
@@ -3280,6 +3380,7 @@
     {
       "id": "label_quarry",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
       "minzoom": 14,
@@ -3294,6 +3395,7 @@
     {
       "id": "label_park",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 14,
@@ -3322,6 +3424,7 @@
     {
       "id": "airport-taxiway",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "aeroway",
       "minzoom": 14,
@@ -3334,6 +3437,7 @@
     {
       "id": "airport-runway",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "aeroway",
       "minzoom": 11,
@@ -3346,6 +3450,7 @@
     {
       "id": "airport-symbol",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "aerodrome_label",
       "minzoom": 10,
@@ -3371,6 +3476,7 @@
     {
       "id": "airport-label",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "aerodrome_label",
       "minzoom": 10,
@@ -3402,6 +3508,7 @@
     {
       "id": "airbase-symbol",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 11,
@@ -3432,6 +3539,7 @@
     {
       "id": "airbase-label",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landuse",
       "minzoom": 13,
@@ -3460,6 +3568,7 @@
     {
       "id": "airfield-symbol",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "aerodrome_label",
       "minzoom": 12,
@@ -3485,6 +3594,7 @@
     {
       "id": "airfield-label",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "aerodrome_label",
       "minzoom": 13,
@@ -3516,6 +3626,7 @@
     {
       "id": "label_neighbourhood",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 14,
@@ -3537,6 +3648,7 @@
     {
       "id": "label_hamlet",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 8,
@@ -3558,6 +3670,7 @@
     {
       "id": "label_village",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 9,
@@ -3579,6 +3692,7 @@
     {
       "id": "label_ridge_valley",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_natural",
       "minzoom": 7,
@@ -3611,6 +3725,7 @@
     {
       "id": "label_town",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 8,
@@ -3632,6 +3747,7 @@
     {
       "id": "label_city",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 9,
@@ -3657,6 +3773,7 @@
     {
       "id": "dot_town",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 0,
@@ -3686,6 +3803,7 @@
     {
       "id": "dot_city",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 0,
@@ -3715,6 +3833,7 @@
     {
       "id": "label_country",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 3,
@@ -3740,6 +3859,7 @@
     {
       "id": "poi_bikepark",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 9,
@@ -3776,6 +3896,7 @@
     {
       "id": "water-area-name",
       "type": "symbol",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "water_name",
       "layout": {
@@ -3803,6 +3924,7 @@
     {
       "id": "grid-lines-minor",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "itm_grid",
       "minzoom": 0,
@@ -3815,6 +3937,7 @@
     {
       "id": "grid-lines-major",
       "type": "line",
+      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "itm_grid",
       "minzoom": 11,
