@@ -5063,7 +5063,7 @@
       "source": "IHM",
       "source-layer": "mountain_peak",
       "minzoom": 13,
-      "filter": ["all"],
+      "filter": ["all", ["==", "$type", "Point"]],
       "paint": {"circle-radius": 3}
     },
     {
