@@ -905,8 +905,6 @@
           "purple",
           "orange:white:orange_stripe",
           "orange",
-          "yellow:white:yellow_stripe",
-          "yellow",
           "rgba(0,0,0,0)"
         ]
       }
@@ -937,8 +935,6 @@
           "purple",
           "orange:white:orange_stripe",
           "orange",
-          "yellow:white:yellow_stripe",
-          "yellow",
           "rgba(0,0,0,0)"
         ]
       }
@@ -1126,6 +1122,32 @@
       }
     },
     {
+      "id": "trail-regional-line-purple",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "network", "rwn"],
+        ["!has", "way_colour"],
+        ["==", "osmc_symbol", "purple:white:purple_stripe"]
+      ],
+      "layout": {"line-join": "miter"},
+      "paint": {
+        "line-color": "purple",
+        "line-width": {
+          "base": 2,
+          "stops": [[7, 1], [10, 1.5], [16, 4], [22, 16]]
+        },
+        "line-offset": {
+          "base": 2,
+          "stops": [[11, -2], [12, -3], [14, -5], [16, -6], [22, -24]]
+        }
+      }
+    },
+    {
       "id": "trail-regional-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -1138,12 +1160,8 @@
         "line-color": [
           "match",
           ["get", "osmc_symbol"],
-          "purple:white:purple_stripe",
-          "purple",
           "orange:white:orange_stripe",
           "orange",
-          "yellow:white:yellow_stripe",
-          "gold",
           "purple:white:purple_stripe:blue_stripe_left",
           "#1765AD",
           "blue:white:blue_stripe:green_stripe_left",
@@ -4024,11 +4042,9 @@
           "match",
           ["get", "osmc_symbol"],
           "purple:white:purple_stripe",
-          "black",
+          "purple",
           "orange:white:orange_stripe",
           "orange",
-          "yellow:white:yellow_stripe",
-          "gold",
           "purple:white:purple_stripe:blue_stripe_left",
           "#7B5CA0",
           "blue:white:blue_stripe:green_stripe_left",
@@ -4044,8 +4060,6 @@
           "white",
           "orange:white:orange_stripe",
           "white",
-          "yellow:white:yellow_stripe",
-          "black",
           "purple:white:purple_stripe:blue_stripe_left",
           "#1765AD",
           "blue:white:blue_stripe:green_stripe_left",
