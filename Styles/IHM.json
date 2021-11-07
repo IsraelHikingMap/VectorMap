@@ -616,8 +616,8 @@
         "symbol-placement": "line-center",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
-        "text-letter-spacing": 0.75,
-        "text-max-angle": 45,
+        "text-letter-spacing": 0.7,
+        "text-max-angle": 150,
         "text-keep-upright": true
       },
       "paint": {
