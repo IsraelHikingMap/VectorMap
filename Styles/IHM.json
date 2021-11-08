@@ -613,7 +613,7 @@
           ["get", "name_en"],
           ["get", "name"]
         ],
-        "symbol-placement": "line-center",
+        "symbol-placement": "line",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
         "text-letter-spacing": 0.7,
