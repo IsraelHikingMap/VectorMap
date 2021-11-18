@@ -328,11 +328,7 @@
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 5,
-      "filter": [
-        "==",
-        "osmc_symbol",
-        "orange:orange:white_right:blue_stripe"
-      ],
+      "filter": ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
       "layout": {"line-cap": "round"},
       "paint": {
         "line-color": "rgba(255, 194, 100, 1)",
@@ -618,7 +614,8 @@
         "text-size": 18,
         "text-letter-spacing": 0.7,
         "text-max-angle": 150,
-        "text-keep-upright": true
+        "text-keep-upright": true,
+        "symbol-spacing": 500
       },
       "paint": {
         "text-color": "#1E80E2",
