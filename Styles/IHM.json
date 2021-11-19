@@ -18,12 +18,6 @@
     "Contour": {
       "type": "vector",
       "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
-    },
-    "Ortho": {
-      "type": "raster",
-      "tiles": ["https://israelhiking.osm.org.il/Ortho/{z}/{y}/{x}.jpg"],
-      "minzoom": 7,
-      "maxzoom": 16
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
@@ -151,18 +145,6 @@
       "metadata": {"IHM:overlay": false},
       "source": "TerrainRGB",
       "paint": {"hillshade-exaggeration": 0.33}
-    },
-    {
-      "id": "Ortho",
-      "type": "raster",
-      "metadata": {"IHM:overlay": false},
-      "source": "Ortho",
-      "layout": {"visibility": "none"},
-      "paint": {
-        "raster-brightness-min": 0.3,
-        "raster-contrast": 0.4,
-        "raster-saturation": 0.1
-      }
     },
     {
       "id": "area-military-training",
