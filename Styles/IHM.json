@@ -50,58 +50,47 @@
       }
     },
     {
-      "id": "area-sand",
+      "id": "area-landcover-low",
       "type": "fill",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "landcover",
-      "filter": ["==", "subclass", "sand"],
-      "paint": {"fill-color": "rgba(255, 236, 139, 0.25)"}
-    },
-    {
-      "id": "area-wood",
-      "type": "fill",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "wood"],
-      "paint": {"fill-color": "rgba(145, 230, 145, 0.5)"}
-    },
-    {
-      "id": "area-farmland",
-      "type": "fill",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "farmland"],
-      "paint": {"fill-color": "#E7E9C9"}
-    },
-    {
-      "id": "area-plantation",
-      "type": "fill",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "subclass", "orchard"],
-      "paint": {"fill-color": "rgba(19, 196, 42, 0.4)"}
-    },
-    {
-      "id": "area-beach",
-      "type": "fill",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "subclass", "beach"],
-      "paint": {"fill-color": "#FAFAA0"}
-    },
-    {
-      "id": "area-grass",
-      "type": "fill",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "grass"],
-      "paint": {"fill-color": "rgba(233, 253, 204, 1)"}
+      "filter": [
+        "in",
+        "class",
+        "sand",
+        "wood",
+        "sand",
+        "farmland",
+        "orchard",
+        "grass",
+        "grass"
+      ],
+      "paint": {
+        "fill-color": [
+          "match",
+          ["get", "class"],
+          "sand",
+          [
+            "match",
+            ["get", "subclass"],
+            "sand",
+            "rgba(255, 236, 139, 0.25)",
+            "beach",
+            "#FAFAA0",
+            "rgba(0, 0, 0, 0)"
+          ],
+          "wood",
+          "rgba(145, 230, 145, 0.5)",
+          "farmland",
+          "#E7E9C9",
+          "orchard",
+          "rgba(19, 196, 42, 0.4)",
+          "grass",
+          "rgba(233, 253, 204, 1)",
+          "rgba(0, 0, 0, 0)"
+        ]
+      }
     },
     {
       "id": "area-AB",
@@ -147,16 +136,12 @@
       "paint": {"hillshade-exaggeration": 0.33}
     },
     {
-      "id": "area-military-training",
+      "id": "area-military",
       "type": "fill",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "landuse",
-      "filter": [
-        "all",
-        ["==", "class", "military"],
-        ["in", "military", "training_area", "airfield"]
-      ],
+      "filter": ["==", "class", "military"],
       "paint": {
         "fill-pattern": [
           "match",
@@ -165,22 +150,16 @@
           "red_nwse_pattern",
           "red_nesw_pattern"
         ],
-        "fill-opacity": 0.1
+        "fill-opacity": [
+          "match",
+          ["get", "military"],
+          "training_area",
+          0.1,
+          "airfield",
+          0.1,
+          0.3
+        ]
       }
-    },
-    {
-      "id": "area-military",
-      "type": "fill",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "class", "military"],
-        ["!in", "military", "training_area", "airfield"]
-      ],
-      "paint": {"fill-pattern": "red_nesw_pattern", "fill-opacity": 0.3}
     },
     {
       "id": "area-minefield",
@@ -197,22 +176,20 @@
       }
     },
     {
-      "id": "contour-minor",
+      "id": "contour-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contour",
-      "filter": ["in", "rank", 1, 2],
-      "paint": {"line-color": "rgba(161, 127, 86, 1)", "line-width": 1}
-    },
-    {
-      "id": "contour-major",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "Contour",
-      "source-layer": "contour",
-      "filter": ["!in", "rank", 1, 2],
-      "paint": {"line-color": "rgba(161, 127, 86, 1)", "line-width": 2}
+      "paint": {
+        "line-color": "rgba(161, 127, 86, 1)",
+        "line-width": [
+          "case",
+          ["in", ["get", "rank"], ["literal", [1, 2]]],
+          1,
+          2
+        ]
+      }
     },
     {
       "id": "contour-label",
@@ -239,24 +216,22 @@
       }
     },
     {
-      "id": "water-area-ocean",
+      "id": "water-area",
       "type": "fill",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "water",
-      "filter": ["==", "class", "ocean"],
-      "paint": {"fill-color": "#8EBDF0"}
-    },
-    {
-      "id": "water-area-wetland",
-      "type": "fill",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "wetland"],
+      "filter": ["!=", "intermittent", 1],
       "paint": {
-        "fill-pattern": "intermittent_pattern",
-        "fill-outline-color": "#1E80E2"
+        "fill-color": "#8EBDF0",
+        "fill-antialias": true,
+        "fill-outline-color": [
+          "match",
+          ["get", "class"],
+          "ocean",
+          "rgba(0, 0, 0, 0)",
+          "#1E80E2"
+        ]
       }
     },
     {
@@ -272,15 +247,14 @@
       }
     },
     {
-      "id": "water-area",
+      "id": "water-area-wetland",
       "type": "fill",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
-      "source-layer": "water",
-      "filter": ["none", ["==", "intermittent", 1], ["==", "class", "ocean"]],
+      "source-layer": "landcover",
+      "filter": ["==", "class", "wetland"],
       "paint": {
-        "fill-color": "#8EBDF0",
-        "fill-antialias": true,
+        "fill-pattern": "intermittent_pattern",
         "fill-outline-color": "#1E80E2"
       }
     },
