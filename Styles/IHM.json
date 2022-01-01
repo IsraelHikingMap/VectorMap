@@ -5134,7 +5134,8 @@
               "coalesce",
               ["get", "name:he"],
               ["get", "name_en"],
-              ["get", "name"]
+              ["get", "name"],
+              ""
             ]
           ]
         ]
