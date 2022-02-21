@@ -5040,7 +5040,7 @@
       "source": "IHM",
       "source-layer": "mountain_peak",
       "minzoom": 13,
-      "filter": ["has", "ele"],
+      "filter": ["all", ["has", "ele"], ["==", "$type", "Point"]],
       "layout": {
         "text-field": "{ele}",
         "symbol-placement": "point",
@@ -5066,6 +5066,7 @@
       "source": "IHM",
       "source-layer": "mountain_peak",
       "minzoom": 13,
+      "filter": ["all", ["==", "$type", "Point"]],
       "layout": {
         "text-field": [
           "coalesce",
