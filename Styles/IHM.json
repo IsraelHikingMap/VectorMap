@@ -3769,7 +3769,7 @@
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 11,
-      "filter": ["in", "class", "fence", "yes"],
+      "filter": ["all", ["in", "class", "fence", "yes", "block"]],
       "paint": {"line-color": "rgba(26, 26, 26, 1)"}
     },
     {
