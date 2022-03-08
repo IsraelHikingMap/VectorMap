@@ -1963,7 +1963,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": ["all", ["in", "class", "path"], ["==", "oneway:mtb", "yes"]],
+      "filter": [
+        "all",
+        ["in", "ilmtb_class", "path", "cycleway"],
+        ["==", "oneway:mtb", "yes"]
+      ],
       "layout": {
         "symbol-placement": "line",
         "text-font": [""],
@@ -1993,7 +1997,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": ["all", ["in", "ilmtb_class", "path"], ["==", "oneway", 1]],
+      "filter": [
+        "all",
+        ["in", "ilmtb_class", "path", "cycleway"],
+        ["==", "oneway", 1]
+      ],
       "layout": {
         "symbol-placement": "line",
         "text-font": [""],
