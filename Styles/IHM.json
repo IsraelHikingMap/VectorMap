@@ -183,12 +183,7 @@
       "source-layer": "contour",
       "paint": {
         "line-color": "rgba(161, 127, 86, 1)",
-        "line-width": [
-          "case",
-          ["in", ["get", "rank"], ["literal", [1, 2]]],
-          1,
-          2
-        ]
+        "line-width": ["match", ["get", "rank"], [1, 2], 1, 2]
       }
     },
     {
