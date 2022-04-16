@@ -929,7 +929,11 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["get", "colour2"],
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          "rgba(0, 0, 0, 0)"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[12, 1], [13, 1.5], [16, 4], [22, 16]]
