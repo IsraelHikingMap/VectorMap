@@ -1,0 +1,60 @@
+{
+  "version": 8,
+  "name": "Atzmaut 2022 Picnic Benches",
+  "metadata": {
+    "owner": "Zeev Stadler",
+    "copyright": "Copyright Zeev Stadler 2022. All Rights Reserved.",
+    "maputnik:renderer": "mbgljs"
+  },
+  "sources": {
+    "IHM": {
+      "type": "vector",
+      "url": "https://israelhiking.osm.org.il/vector/data/IHM.json"
+  },
+  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "picnic-circle-outer",
+      "type": "circle",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["==", "subclass", "picnic_site"],
+      "paint": {
+        "circle-color": "rgba(255, 255, 255, 1)",
+        "circle-stroke-color": "rgba(120, 160, 255, 1)",
+        "circle-radius": 20,
+        "circle-stroke-width": 3
+      }
+    },
+    {
+      "id": "picnic-circle-inner",
+      "type": "circle",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["==", "subclass", "picnic_site"],
+      "paint": {
+        "circle-color": "rgba(255, 255, 255, 1)",
+        "circle-stroke-color": "rgba(120, 160, 255, 1)",
+        "circle-radius": 14,
+        "circle-stroke-width": 3
+      }
+    },
+    {
+      "id": "picnic-icon",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["==", "subclass", "picnic_site"],
+      "layout": {
+        "icon-image": "picnic",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-allow-overlap": true
+      }
+    }
+  ],
+  "id": "Atzmaut22"
+}
