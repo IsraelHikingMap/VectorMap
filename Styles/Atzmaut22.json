@@ -17,7 +17,6 @@
     {
       "id": "picnic-circle-outer",
       "type": "circle",
-      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "filter": ["==", "subclass", "picnic_site"],
@@ -31,7 +30,6 @@
     {
       "id": "picnic-circle-inner",
       "type": "circle",
-      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "filter": ["==", "subclass", "picnic_site"],
@@ -45,7 +43,6 @@
     {
       "id": "picnic-icon",
       "type": "symbol",
-      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
       "filter": ["==", "subclass", "picnic_site"],
