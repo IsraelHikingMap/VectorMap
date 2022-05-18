@@ -929,11 +929,7 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": [
-          "to-color",
-          ["get", "colour2"],
-          "rgba(0, 0, 0, 0)"
-        ],
+        "line-color": ["to-color", ["get", "colour2"], "rgba(0, 0, 0, 0)"],
         "line-width": {
           "base": 2,
           "stops": [[12, 1], [13, 1.5], [16, 4], [22, 16]]
@@ -1350,6 +1346,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "maxzoom": 14,
       "filter": [
         "all",
@@ -1398,6 +1395,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
@@ -1422,6 +1420,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
@@ -1446,6 +1445,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
@@ -1838,6 +1838,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "maxzoom": 14,
       "filter": [
         "all",
@@ -1886,6 +1887,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["in", "ihm_class", "footway", "pedestrian"],
@@ -1911,6 +1913,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "ihm_class", "cycleway"],
@@ -1935,6 +1938,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "ihm_class", "path"],
@@ -2610,6 +2614,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "maxzoom": 14,
       "filter": ["all", ["==", "layer", 1], ["==", "subclass", "steps"]],
       "paint": {
@@ -2650,6 +2655,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "layer", 1],
@@ -2674,6 +2680,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "cycleway"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -2694,6 +2701,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "path"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -3340,6 +3348,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "maxzoom": 14,
       "filter": [
         "all",
@@ -3378,6 +3387,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "layer", 2],
@@ -3397,6 +3407,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "layer", 2],
@@ -3416,6 +3427,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "layer", 2],
@@ -3627,6 +3639,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "layer", 3],
