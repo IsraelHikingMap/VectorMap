@@ -4626,7 +4626,8 @@
       "filter": ["==", "subclass", "guidepost"],
       "layout": {
         "icon-image": "sign",
-        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]}
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-anchor": "bottom"
       }
     },
     {
