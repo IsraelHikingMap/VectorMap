@@ -162,20 +162,6 @@
       }
     },
     {
-      "id": "area-minefield",
-      "type": "fill",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "minefield",
-      "filter": ["all"],
-      "paint": {
-        "fill-opacity": 0.5,
-        "fill-color": "#f4be66",
-        "fill-antialias": true,
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
-      }
-    },
-    {
       "id": "contour-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -251,6 +237,20 @@
       "paint": {
         "fill-pattern": "intermittent_pattern",
         "fill-outline-color": "#1E80E2"
+      }
+    },
+    {
+      "id": "area-minefield",
+      "type": "fill",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "minefield",
+      "filter": ["all"],
+      "paint": {
+        "fill-opacity": 0.5,
+        "fill-color": "#f4be66",
+        "fill-antialias": true,
+        "fill-outline-color": "rgba(0, 0, 0, 0)"
       }
     },
     {
