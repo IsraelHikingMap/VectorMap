@@ -129,13 +129,6 @@
       "paint": {"fill-color": "#BFBFBF"}
     },
     {
-      "id": "Terrain",
-      "type": "hillshade",
-      "metadata": {"IHM:overlay": false},
-      "source": "TerrainRGB",
-      "paint": {"hillshade-exaggeration": 0.33}
-    },
-    {
       "id": "area-military",
       "type": "fill",
       "metadata": {"IHM:overlay": true},
@@ -170,30 +163,6 @@
       "paint": {
         "line-color": "rgba(161, 127, 86, 1)",
         "line-width": ["match", ["get", "rank"], [1, 2], 1, 2]
-      }
-    },
-    {
-      "id": "contour-label",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": true},
-      "source": "Contour",
-      "source-layer": "contour",
-      "filter": ["!in", "rank", 1, 2],
-      "layout": {
-        "text-field": "{height}",
-        "symbol-placement": "line",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
-        "symbol-avoid-edges": true,
-        "text-max-angle": 45,
-        "text-letter-spacing": 0.15,
-        "text-keep-upright": false
-      },
-      "paint": {
-        "text-color": "rgba(161, 127, 86, 1)",
-        "text-halo-color": "rgba(255, 255, 255,0.8)",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5
       }
     },
     {
@@ -547,35 +516,6 @@
       }
     },
     {
-      "id": "name-water-line",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "waterway",
-      "filter": ["!=", "class", "ditch"],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name_en"],
-          ["get", "name"]
-        ],
-        "symbol-placement": "line",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 18,
-        "text-letter-spacing": 0.7,
-        "text-max-angle": 150,
-        "text-keep-upright": true,
-        "symbol-spacing": 500
-      },
-      "paint": {
-        "text-color": "#1E80E2",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
       "id": "boundary-area-AB",
       "type": "line",
       "metadata": {"IHM:overlay": false},
@@ -607,26 +547,6 @@
         "line-opacity": {"stops": [[12, 0.1], [14, 0.3]]},
         "line-width": {"stops": [[14, 1], [16, 2]]}
       }
-    },
-    {
-      "id": "boundary-minefield-icon",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "minefield",
-      "minzoom": 13,
-      "layout": {
-        "symbol-placement": "line",
-        "icon-image": "triangle",
-        "icon-size": {"stops": [[12, 0.3], [16, 1]]},
-        "symbol-spacing": 1,
-        "icon-rotate": 180,
-        "icon-anchor": "bottom",
-        "icon-pitch-alignment": "map",
-        "icon-allow-overlap": true,
-        "icon-ignore-placement": true
-      },
-      "paint": {"icon-opacity": 0.5}
     },
     {
       "id": "boundary-park-casing",
@@ -792,24 +712,6 @@
       "paint": {
         "line-color": "rgba(96, 96, 96, 1)",
         "line-width": {"stops": [[11, 3], [12, 4], [13, 8], [14, 16], [15, 32]]}
-      }
-    },
-    {
-      "id": "barrier-cliff-icon",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 9,
-      "filter": ["in", "class", "cliff", "earth_bank"],
-      "layout": {
-        "icon-image": "cliff_pattern",
-        "symbol-placement": "line",
-        "symbol-spacing": 10,
-        "icon-allow-overlap": true,
-        "icon-anchor": "bottom",
-        "icon-rotate": 180,
-        "icon-size": 0.4
       }
     },
     {
@@ -3785,23 +3687,6 @@
       "paint": {"line-color": "rgba(26, 26, 26, 1)"}
     },
     {
-      "id": "barrier-fence-x",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 11,
-      "filter": ["==", "class", "fence"],
-      "layout": {
-        "symbol-placement": "line",
-        "icon-image": "cross_pattern",
-        "symbol-spacing": 1,
-        "icon-allow-overlap": true,
-        "icon-size": 0.17
-      },
-      "paint": {}
-    },
-    {
       "id": "barrier-wall",
       "type": "line",
       "metadata": {"IHM:overlay": false},
@@ -3821,6 +3706,149 @@
       "filter": ["in", "class", "line", "minor_line"],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "#bbb", "line-width": 1.5}
+    },
+    {
+      "id": "Terrain",
+      "type": "hillshade",
+      "metadata": {"IHM:overlay": false},
+      "source": "TerrainRGB",
+      "paint": {"hillshade-exaggeration": 0.33}
+    },
+    {
+      "id": "boundary-minefield-icon",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "minefield",
+      "minzoom": 13,
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "triangle",
+        "icon-size": {"stops": [[12, 0.3], [16, 1]]},
+        "symbol-spacing": 1,
+        "icon-rotate": 180,
+        "icon-anchor": "bottom",
+        "icon-pitch-alignment": "map",
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true
+      },
+      "paint": {"icon-opacity": 0.5}
+    },
+    {
+      "id": "barrier-cliff-icon",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 9,
+      "filter": ["in", "class", "cliff", "earth_bank"],
+      "layout": {
+        "icon-image": "cliff_pattern",
+        "symbol-placement": "line",
+        "symbol-spacing": 10,
+        "icon-allow-overlap": true,
+        "icon-anchor": "bottom",
+        "icon-rotate": 180,
+        "icon-size": 0.4
+      }
+    },
+    {
+      "id": "barrier-fence-x",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 11,
+      "filter": ["==", "class", "fence"],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "cross_pattern",
+        "symbol-spacing": 1,
+        "icon-allow-overlap": true,
+        "icon-size": 0.17
+      },
+      "paint": {}
+    },
+    {
+      "id": "grid-lines-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "minzoom": 9,
+      "filter": ["all"],
+      "paint": {
+        "line-color": "rgba(127, 127, 127, 1)",
+        "line-width": {"base": 2, "stops": [[8, 0.5], [11, 1]]}
+      }
+    },
+    {
+      "id": "grid-lines-major",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "minzoom": 11,
+      "filter": ["any", [">=", "east_rank", 10], [">=", "north_rank", 10]],
+      "paint": {"line-color": "rgba(127, 127, 127, 1)", "line-width": 2}
+    },
+    {
+      "id": "grid-label-east",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "minzoom": 9,
+      "filter": [
+        "all",
+        [">=", "north_rank", 10],
+        ["in", "east_rank", 2, 10, 20]
+      ],
+      "layout": {
+        "text-field": "{east}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-letter-spacing": 0.2,
+        "text-ignore-placement": true
+      },
+      "paint": {
+        "text-color": "#7F7F7F",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5,
+        "text-halo-color": "white",
+        "text-translate": [0, -30]
+      }
+    },
+    {
+      "id": "grid-label-north",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "minzoom": 9,
+      "filter": [
+        "all",
+        [">=", "east_rank", 10],
+        ["in", "north_rank", 2, 10, 20]
+      ],
+      "layout": {
+        "text-field": "{north}",
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "text-letter-spacing": 0.1,
+        "text-anchor": "center",
+        "text-justify": "left",
+        "text-ignore-placement": true
+      },
+      "paint": {
+        "text-color": "#7F7F7F",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5,
+        "text-halo-color": "white",
+        "text-translate": [30, 0]
+      }
     },
     {
       "id": "power-tower",
@@ -3978,6 +4006,59 @@
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5,
         "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "contour-label",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": true},
+      "source": "Contour",
+      "source-layer": "contour",
+      "filter": ["!in", "rank", 1, 2],
+      "layout": {
+        "text-field": "{height}",
+        "symbol-placement": "line",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 16,
+        "symbol-avoid-edges": true,
+        "text-max-angle": 45,
+        "text-letter-spacing": 0.15,
+        "text-keep-upright": false
+      },
+      "paint": {
+        "text-color": "rgba(161, 127, 86, 1)",
+        "text-halo-color": "rgba(255, 255, 255,0.8)",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "name-water-line",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "waterway",
+      "filter": ["!=", "class", "ditch"],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name_en"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "line",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.7,
+        "text-max-angle": 150,
+        "text-keep-upright": true,
+        "symbol-spacing": 500
+      },
+      "paint": {
+        "text-color": "#1E80E2",
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -5341,89 +5422,6 @@
         "text-halo-color": "white",
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5
-      }
-    },
-    {
-      "id": "grid-lines-minor",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "itm_grid",
-      "minzoom": 9,
-      "filter": ["all"],
-      "paint": {
-        "line-color": "rgba(127, 127, 127, 1)",
-        "line-width": {"base": 2, "stops": [[8, 0.5], [11, 1]]}
-      }
-    },
-    {
-      "id": "grid-lines-major",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "itm_grid",
-      "minzoom": 11,
-      "filter": ["any", [">=", "east_rank", 10], [">=", "north_rank", 10]],
-      "paint": {"line-color": "rgba(127, 127, 127, 1)", "line-width": 2}
-    },
-    {
-      "id": "grid-label-east",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "itm_grid",
-      "minzoom": 9,
-      "filter": [
-        "all",
-        [">=", "north_rank", 10],
-        ["in", "east_rank", 2, 10, 20]
-      ],
-      "layout": {
-        "text-field": "{east}",
-        "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
-        "text-letter-spacing": 0.2,
-        "text-allow-overlap": true,
-        "text-ignore-placement": true
-      },
-      "paint": {
-        "text-color": "#7F7F7F",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-halo-color": "white",
-        "text-translate": [0, -30]
-      }
-    },
-    {
-      "id": "grid-label-north",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "itm_grid",
-      "minzoom": 9,
-      "filter": [
-        "all",
-        [">=", "east_rank", 10],
-        ["in", "north_rank", 2, 10, 20]
-      ],
-      "layout": {
-        "text-field": "{north}",
-        "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
-        "text-letter-spacing": 0.1,
-        "text-anchor": "center",
-        "text-justify": "left",
-        "text-allow-overlap": true,
-        "text-ignore-placement": true
-      },
-      "paint": {
-        "text-color": "#7F7F7F",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-halo-color": "white",
-        "text-translate": [30, 0]
       }
     }
   ],
