@@ -59,20 +59,6 @@
       }
     },
     {
-      "id": "land-construction-pattern",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 14,
-      "filter": ["all", ["in", "class", "construction"]],
-      "layout": {
-        "icon-image": "construction",
-        "icon-size": {"stops": [[14, 0.5], [21, 2]]}
-      },
-      "paint": {}
-    },
-    {
       "id": "land_sand",
       "type": "fill",
       "metadata": {"IHM:overlay": false},
@@ -155,21 +141,6 @@
         "fill-color": "rgba(200, 217, 174, 1)",
         "fill-opacity": {"base": 1, "stops": [[8, 0], [10, 1]]}
       }
-    },
-    {
-      "id": "land_wood_pattern",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landcover",
-      "minzoom": 14,
-      "filter": ["==", "class", "wood"],
-      "layout": {
-        "icon-image": "forest_pattern",
-        "icon-size": {"stops": [[14, 0.5], [18, 2]]},
-        "icon-pitch-alignment": "viewport"
-      },
-      "paint": {}
     },
     {
       "id": "land_grass",
@@ -257,24 +228,6 @@
       }
     },
     {
-      "id": "land_scrub_pattern",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landcover",
-      "minzoom": 14,
-      "filter": [
-        "any",
-        ["in", "subclass", "scrub"],
-        ["==", "class", "wetland"]
-      ],
-      "layout": {
-        "icon-image": "bushes_pattern",
-        "icon-size": {"stops": [[14, 0.5], [18, 2]]}
-      },
-      "paint": {}
-    },
-    {
       "id": "military_base_fill",
       "type": "fill",
       "metadata": {"IHM:overlay": true},
@@ -317,26 +270,6 @@
       }
     },
     {
-      "id": "minefield-icon",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "minefield",
-      "minzoom": 13,
-      "layout": {
-        "symbol-placement": "line",
-        "icon-image": "triangle",
-        "icon-size": {"stops": [[12, 0.3], [24, 5]]},
-        "symbol-spacing": {"stops": [[13, 3], [14, 20]]},
-        "icon-rotate": 180,
-        "icon-anchor": "bottom",
-        "icon-pitch-alignment": "map",
-        "icon-allow-overlap": true,
-        "icon-ignore-placement": true
-      },
-      "paint": {"icon-opacity": 1}
-    },
-    {
       "id": "power-station",
       "type": "line",
       "metadata": {"IHM:overlay": false},
@@ -373,33 +306,6 @@
         "line-opacity": 0.7,
         "line-width": {"stops": [[11, 0.75], [20, 2]]}
       }
-    },
-    {
-      "id": "contour_label",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": true},
-      "source": "Contour",
-      "source-layer": "contour",
-      "filter": ["all", ["!in", "rank", 1, 2]],
-      "layout": {
-        "text-size": {"base": 1, "stops": [[15, 12], [20, 20]]},
-        "symbol-placement": "line",
-        "text-field": "{height}",
-        "text-font": ["Open Sans Regular"],
-        "text-letter-spacing": 0.1,
-        "text-keep-upright": false
-      },
-      "paint": {
-        "text-color": "rgba(95, 70, 21, 1)",
-        "text-halo-color": "rgba(255, 255, 255, 0.74)",
-        "text-halo-width": 2
-      }
-    },
-    {
-      "id": "Terrain",
-      "type": "hillshade",
-      "metadata": {"IHM:overlay": false},
-      "source": "TerrainRGB"
     },
     {
       "id": "water",
@@ -1264,25 +1170,6 @@
       "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
     },
     {
-      "id": "base_fence_x",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "landuse",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["in", "military", "barracks", "airfield", "naval_base"]
-      ],
-      "layout": {
-        "icon-image": "cross_pattern",
-        "symbol-placement": "line",
-        "symbol-spacing": 10,
-        "icon-size": {"stops": [[14, 0.3], [20, 0.6]]}
-      },
-      "paint": {}
-    },
-    {
       "id": "military_edge-narrow",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -1312,26 +1199,6 @@
       }
     },
     {
-      "id": "cliff",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 12,
-      "filter": ["all", ["==", "class", "cliff"]],
-      "layout": {
-        "icon-image": "cliff_pattern",
-        "icon-size": {"stops": [[12, 0.3], [24, 1.5]]},
-        "symbol-placement": "line",
-        "symbol-spacing": 1,
-        "icon-rotate": 180,
-        "icon-allow-overlap": true,
-        "icon-anchor": "bottom",
-        "icon-offset": [0, 0],
-        "text-padding": 0
-      }
-    },
-    {
       "id": "cliff-line",
       "type": "line",
       "metadata": {"IHM:overlay": false},
@@ -1355,22 +1222,6 @@
       "paint": {"line-width": {"stops": [[14, 1], [20, 3]]}}
     },
     {
-      "id": "perimeter_fence_x",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 14,
-      "filter": ["all", ["==", "class", "fence"]],
-      "layout": {
-        "icon-image": "cross_pattern",
-        "symbol-placement": "line",
-        "symbol-spacing": 10,
-        "icon-size": {"stops": [[14, 0.3], [20, 0.6]]}
-      },
-      "paint": {}
-    },
-    {
       "id": "power-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -1380,22 +1231,6 @@
       "filter": ["in", "class", "line", "minor_line"],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "#444", "line-width": 1.5}
-    },
-    {
-      "id": "power-pole",
-      "type": "circle",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 14,
-      "filter": ["==", "class", "tower"],
-      "paint": {
-        "circle-radius": {"stops": [[14, 2.5], [20, 4]]},
-        "circle-stroke-color": "#444",
-        "circle-stroke-width": {"stops": [[14, 1.5], [20, 2.4]]},
-        "circle-color": "#fff",
-        "circle-opacity": 1
-      }
     },
     {
       "id": "elevated_ramp",
@@ -1855,6 +1690,220 @@
       "source-layer": "ihm_boundary",
       "filter": ["all", ["in", "name:en", "Area A", "Area B"]],
       "paint": {"line-color": "orange", "line-opacity": 0.4}
+    },
+    {
+      "id": "airport-taxiway",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "minzoom": 14,
+      "filter": ["all", ["==", "class", "taxiway"]],
+      "paint": {
+        "line-color": "rgba(129, 126, 126, 1)",
+        "line-width": {"stops": [[12, 2], [20, 15]]}
+      }
+    },
+    {
+      "id": "airport-runway",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "runway"]],
+      "paint": {
+        "line-color": "rgba(129, 126, 126, 1)",
+        "line-width": {"stops": [[11, 2.5], [20, 25]]}
+      }
+    },
+    {
+      "id": "grid-lines-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "minzoom": 0,
+      "filter": ["all"],
+      "paint": {
+        "line-color": "rgba(127, 127, 127, 1)",
+        "line-width": {"stops": [[8, 0.5], [11, 1]]}
+      }
+    },
+    {
+      "id": "grid-lines-major",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "itm_grid",
+      "minzoom": 11,
+      "filter": ["any", [">=", "east_rank", 10], [">=", "north_rank", 10]],
+      "paint": {"line-color": "rgba(127, 127, 127, 1)", "line-width": 2}
+    },
+    {
+      "id": "land-construction-pattern",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "construction"]],
+      "layout": {
+        "icon-image": "construction",
+        "icon-size": {"stops": [[14, 0.5], [21, 2]]}
+      },
+      "paint": {}
+    },
+    {
+      "id": "land_wood_pattern",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 14,
+      "filter": ["==", "class", "wood"],
+      "layout": {
+        "icon-image": "forest_pattern",
+        "icon-size": {"stops": [[14, 0.5], [18, 2]]},
+        "icon-pitch-alignment": "viewport"
+      },
+      "paint": {}
+    },
+    {
+      "id": "land_scrub_pattern",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "landcover",
+      "minzoom": 14,
+      "filter": [
+        "any",
+        ["in", "subclass", "scrub"],
+        ["==", "class", "wetland"]
+      ],
+      "layout": {
+        "icon-image": "bushes_pattern",
+        "icon-size": {"stops": [[14, 0.5], [18, 2]]}
+      },
+      "paint": {}
+    },
+    {
+      "id": "minefield-icon",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "minefield",
+      "minzoom": 13,
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "triangle",
+        "icon-size": {"stops": [[12, 0.3], [24, 5]]},
+        "symbol-spacing": {"stops": [[13, 3], [14, 20]]},
+        "icon-rotate": 180,
+        "icon-anchor": "bottom",
+        "icon-pitch-alignment": "map",
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true
+      },
+      "paint": {"icon-opacity": 1}
+    },
+    {
+      "id": "contour_label",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": true},
+      "source": "Contour",
+      "source-layer": "contour",
+      "filter": ["all", ["!in", "rank", 1, 2]],
+      "layout": {
+        "text-size": {"base": 1, "stops": [[15, 12], [20, 20]]},
+        "symbol-placement": "line",
+        "text-field": "{height}",
+        "text-font": ["Open Sans Regular"],
+        "text-letter-spacing": 0.1,
+        "text-keep-upright": false
+      },
+      "paint": {
+        "text-color": "rgba(95, 70, 21, 1)",
+        "text-halo-color": "rgba(255, 255, 255, 0.74)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "Terrain",
+      "type": "hillshade",
+      "metadata": {"IHM:overlay": false},
+      "source": "TerrainRGB"
+    },
+    {
+      "id": "base_fence_x",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "landuse",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["in", "military", "barracks", "airfield", "naval_base"]
+      ],
+      "layout": {
+        "icon-image": "cross_pattern",
+        "symbol-placement": "line",
+        "symbol-spacing": 10,
+        "icon-size": {"stops": [[14, 0.3], [20, 0.6]]}
+      },
+      "paint": {}
+    },
+    {
+      "id": "cliff",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 12,
+      "filter": ["all", ["==", "class", "cliff"]],
+      "layout": {
+        "icon-image": "cliff_pattern",
+        "icon-size": {"stops": [[12, 0.3], [24, 1.5]]},
+        "symbol-placement": "line",
+        "symbol-spacing": 1,
+        "icon-rotate": 180,
+        "icon-allow-overlap": true,
+        "icon-anchor": "bottom",
+        "icon-offset": [0, 0],
+        "text-padding": 0
+      }
+    },
+    {
+      "id": "perimeter_fence_x",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["all", ["==", "class", "fence"]],
+      "layout": {
+        "icon-image": "cross_pattern",
+        "symbol-placement": "line",
+        "symbol-spacing": 10,
+        "icon-size": {"stops": [[14, 0.3], [20, 0.6]]}
+      },
+      "paint": {}
+    },
+    {
+      "id": "power-pole",
+      "type": "circle",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 14,
+      "filter": ["==", "class", "tower"],
+      "paint": {
+        "circle-radius": {"stops": [[14, 2.5], [20, 4]]},
+        "circle-stroke-color": "#444",
+        "circle-stroke-width": {"stops": [[14, 1.5], [20, 2.4]]},
+        "circle-color": "#fff",
+        "circle-opacity": 1
+      }
     },
     {
       "id": "shield-secondary",
@@ -3430,32 +3479,6 @@
       }
     },
     {
-      "id": "airport-taxiway",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "aeroway",
-      "minzoom": 14,
-      "filter": ["all", ["==", "class", "taxiway"]],
-      "paint": {
-        "line-color": "rgba(129, 126, 126, 1)",
-        "line-width": {"stops": [[12, 2], [20, 15]]}
-      }
-    },
-    {
-      "id": "airport-runway",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "aeroway",
-      "minzoom": 11,
-      "filter": ["all", ["==", "class", "runway"]],
-      "paint": {
-        "line-color": "rgba(129, 126, 126, 1)",
-        "line-width": {"stops": [[11, 2.5], [20, 25]]}
-      }
-    },
-    {
       "id": "airport-symbol",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
@@ -3928,29 +3951,6 @@
         "text-halo-color": "white",
         "text-halo-width": 1.5
       }
-    },
-    {
-      "id": "grid-lines-minor",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "itm_grid",
-      "minzoom": 0,
-      "filter": ["all"],
-      "paint": {
-        "line-color": "rgba(127, 127, 127, 1)",
-        "line-width": {"stops": [[8, 0.5], [11, 1]]}
-      }
-    },
-    {
-      "id": "grid-lines-major",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "itm_grid",
-      "minzoom": 11,
-      "filter": ["any", [">=", "east_rank", 10], [">=", "north_rank", 10]],
-      "paint": {"line-color": "rgba(127, 127, 127, 1)", "line-width": 2}
     }
   ],
   "id": "il-MTB",
