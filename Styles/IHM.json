@@ -229,7 +229,6 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "class", "pier"], ["==", "$type", "Polygon"]],
-      "layout": {"visibility": "visible"},
       "paint": {"fill-color": "#FAF7E1"}
     },
     {
@@ -3629,7 +3628,6 @@
         ["==", "layer", 1],
         ["==", "ihm_class", "goods_conveyor"]
       ],
-      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "black",
         "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]}
@@ -3966,20 +3964,6 @@
       "paint": {"text-color": "blue"}
     },
     {
-      "id": "building",
-      "type": "fill-extrusion",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "building",
-      "minzoom": 15,
-      "filter": ["all"],
-      "paint": {
-        "fill-extrusion-color": "rgba(191, 191, 191, 1)",
-        "fill-extrusion-height": ["get", "render_height"],
-        "fill-extrusion-opacity": 0.75
-      }
-    },
-    {
       "id": "icon-tree",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
@@ -3999,13 +3983,28 @@
         "text-anchor": "top",
         "text-size": {"stops": [[15, 0], [16, 18]]},
         "text-letter-spacing": 0.2,
-        "text-optional": true
+        "text-optional": true,
+        "icon-anchor": "bottom"
       },
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5,
         "text-translate": [0, 6]
+      }
+    },
+    {
+      "id": "building",
+      "type": "fill-extrusion",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "building",
+      "minzoom": 15,
+      "filter": ["all"],
+      "paint": {
+        "fill-extrusion-color": "rgba(191, 191, 191, 1)",
+        "fill-extrusion-height": ["get", "render_height"],
+        "fill-extrusion-opacity": 0.75
       }
     },
     {
@@ -4028,6 +4027,32 @@
       "paint": {
         "text-color": "rgba(161, 127, 86, 1)",
         "text-halo-color": "rgba(255, 255, 255,0.8)",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "name-building",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "building",
+      "minzoom": 16,
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name_en"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 14,
+        "text-letter-spacing": 0.2,
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5
       }
