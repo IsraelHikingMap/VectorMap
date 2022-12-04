@@ -241,19 +241,44 @@
       "paint": {"fill-color": "rgba(250, 247, 225, 1)"}
     },
     {
-      "id": "trail-israel",
+      "id": "trail-israel-secondary-",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 5,
-      "filter": ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
+        ["!in", "highway", "primary", "trunk", "motorway"]
+      ],
       "layout": {"line-cap": "round"},
       "paint": {
         "line-color": "rgba(255, 194, 100, 1)",
         "line-width": {
           "base": 2,
           "stops": [[11, 6], [12, 9], [16, 16], [22, 80]]
+        }
+      }
+    },
+    {
+      "id": "trail-israel-primary+",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
+        ["in", "highway", "primary", "trunk", "motorway"]
+      ],
+      "layout": {"line-cap": "round"},
+      "paint": {
+        "line-color": "rgba(255, 194, 100, 1)",
+        "line-width": {
+          "base": 2,
+          "stops": [[11, 6], [12, 9], [16, 24], [22, 94]]
         }
       }
     },
