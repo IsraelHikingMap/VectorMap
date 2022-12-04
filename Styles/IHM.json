@@ -724,71 +724,6 @@
       "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
     },
     {
-      "id": "trail-line-path",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 12,
-      "maxzoom": 13,
-      "filter": [
-        "all",
-        ["has", "way_colour"],
-        ["in", "network", "lwn", "rwn"],
-        ["in", "highway", "path", "footway", "pedestrian", "cycleway"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "green",
-          "blue:white:blue_stripe",
-          "blue",
-          "purple:white:purple_stripe",
-          "purple",
-          "orange:white:orange_stripe",
-          "orange",
-          "rgba(0,0,0,0)"
-        ]
-      }
-    },
-    {
-      "id": "trail-line-road",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 11,
-      "maxzoom": 12,
-      "filter": ["all", ["in", "network", "lwn", "rwn"], ["has", "way_colour"]],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "green",
-          "blue:white:blue_stripe",
-          "blue",
-          "purple:white:purple_stripe",
-          "purple",
-          "orange:white:orange_stripe",
-          "orange",
-          "rgba(0,0,0,0)"
-        ]
-      }
-    },
-    {
       "id": "casing-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -1623,6 +1558,71 @@
           "base": 2,
           "stops": [[7, 0.5], [9, 1], [16, 8], [22, 32]]
         }
+      }
+    },
+    {
+      "id": "trail-line-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 12,
+      "maxzoom": 13,
+      "filter": [
+        "all",
+        ["has", "way_colour"],
+        ["in", "network", "lwn", "rwn"],
+        ["in", "highway", "path", "footway", "pedestrian", "cycleway"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "purple:white:purple_stripe",
+          "purple",
+          "orange:white:orange_stripe",
+          "orange",
+          "rgba(0,0,0,0)"
+        ]
+      }
+    },
+    {
+      "id": "trail-line-road",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 11,
+      "maxzoom": 12,
+      "filter": ["all", ["in", "network", "lwn", "rwn"], ["has", "way_colour"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "purple:white:purple_stripe",
+          "purple",
+          "orange:white:orange_stripe",
+          "orange",
+          "rgba(0,0,0,0)"
+        ]
       }
     },
     {
