@@ -250,7 +250,16 @@
       "filter": [
         "all",
         ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
-        ["!in", "highway", "primary", "trunk", "motorway"]
+        [
+          "!in",
+          "highway",
+          "primary",
+          "trunk",
+          "motorway",
+          "primary_link",
+          "trunk_link",
+          "motorway_link"
+        ]
       ],
       "layout": {"line-cap": "round"},
       "paint": {
@@ -271,7 +280,16 @@
       "filter": [
         "all",
         ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
-        ["in", "highway", "primary", "trunk", "motorway"]
+        [
+          "in",
+          "highway",
+          "primary",
+          "trunk",
+          "motorway",
+          "primary_link",
+          "trunk_link",
+          "motorway_link"
+        ]
       ],
       "layout": {"line-cap": "round"},
       "paint": {
