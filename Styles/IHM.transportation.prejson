@@ -1,0 +1,461 @@
+define(LAYER_ID,`"'LAYER_PREFIX$1`"')dnl
+    {
+      "id": LAYER_ID(rail-casing),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "rail"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]},
+        "line-color": "#666666"
+      }
+    },
+    {
+      "id": LAYER_ID(rail-dash),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "rail"],
+        LAYER_COND
+      ],
+      "paint": {
+        "line-dasharray": [6, 6],
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
+        "line-color": "white"
+      }
+    },
+    {
+      "id": LAYER_ID(path-steps-line),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        LAYER_COND
+      ],
+      "paint": {
+        "line-dasharray": [1.5, 1.5],
+        "line-width": 2.5,
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": LAYER_ID(path-steps),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        LAYER_COND
+      ],
+      "paint": {
+        "line-dasharray": [0.2, 0.25],
+        "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]},
+        "line-color": ["to-color", ["get", "colour"], "#8E5632"]
+      }
+    },
+    {
+      "id": LAYER_ID(path-footway),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "ihm_class", "footway", "pedestrian"],
+        LAYER_COND,
+        ["==", "$type", "LineString"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [0.5, 2],
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": LAYER_ID(path-cycleway),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "cycleway"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [4, 2, 0.5, 2],
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": LAYER_ID(path-path),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "path"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [4, 3],
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": LAYER_ID(track-line),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "maxzoom": 12,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "track"],
+        ["!has", "colour"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
+    },
+    {
+      "id": LAYER_ID(track-right-grade5),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "tracktype", "grade5"],
+        ["==", "ihm_class", "track"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [8, 2, 1, 2, 1, 2],
+        "line-offset": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": LAYER_ID(track-left-grade5),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "tracktype", "grade5"],
+        ["==", "ihm_class", "track"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [8, 2, 1, 2, 1, 2],
+        "line-offset": {"base": 2, "stops": [[12, -1], [16, -2.5], [20, -10]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
+      }
+    },
+    {
+      "id": LAYER_ID(track-right-grade4),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "tracktype", "grade4"],
+        ["==", "ihm_class", "track"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [8, 2, 1, 2],
+        "line-offset": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": LAYER_ID(track-left-grade4),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "tracktype", "grade4"],
+        ["==", "ihm_class", "track"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [8, 2, 1, 2],
+        "line-offset": {"base": 2, "stops": [[12, -1], [16, -2], [20, -8]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
+      }
+    },
+    {
+      "id": LAYER_ID(track-right),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "track"],
+        LAYER_COND,
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [8, 2.5],
+        "line-offset": {"base": 2, "stops": [[12, 1], [16, 2], [22, 8]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": LAYER_ID(track-left),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "track"],
+        LAYER_COND,
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [8, 2.5],
+        "line-offset": {"base": 2, "stops": [[12, -1], [16, -2], [20, -8]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
+      }
+    },
+    {
+      "id": LAYER_ID(track-right-grade1-2),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "tracktype", "grade1", "grade2"],
+        ["==", "ihm_class", "track"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-offset": {"base": 2, "stops": [[12, 1], [16, 2], [22, 8]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": LAYER_ID(track-left-grade1-2),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "tracktype", "grade1", "grade2"],
+        ["==", "ihm_class", "track"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-offset": {"base": 2, "stops": [[12, -1], [16, -2], [20, -8]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": [
+          "to-color",
+          ["get", "colour2"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
+      }
+    },
+    {
+      "id": LAYER_ID(road-minor),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "ihm_class", "minor", "unclassified", "service"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": {
+          "base": 2,
+          "stops": [[12, 1], [13, 1.5], [14, 1.75], [16, 4], [22, 16]]
+        }
+      }
+    },
+    {
+      "id": LAYER_ID(road-tertiary),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "tertiary"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 230, 107, 1)",
+        "line-width": {
+          "base": 2,
+          "stops": [[11, 1], [12, 1.5], [13, 2], [16, 4], [22, 16]]
+        }
+      }
+    },
+    {
+      "id": LAYER_ID(road-secondary),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "secondary"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "#303030",
+        "line-width": {
+          "base": 2,
+          "stops": [[11, 1], [12, 2], [16, 4], [22, 16]]
+        }
+      }
+    },
+    {
+      "id": LAYER_ID(road-primary),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "primary"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "green",
+        "line-width": {
+          "base": 2,
+          "stops": [[10, 1], [12, 2], [16, 8], [22, 32]]
+        }
+      }
+    },
+    {
+      "id": LAYER_ID(road-trunk),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "trunk"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "red",
+        "line-width": {
+          "base": 2,
+          "stops": [[7, 0.5], [9, 1], [16, 8], [22, 32]]
+        }
+      }
+    },
+    {
+      "id": LAYER_ID(road-motorway),
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "motorway"],
+        LAYER_COND
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "blue",
+        "line-width": {
+          "base": 2,
+          "stops": [[7, 0.5], [9, 1], [16, 8], [22, 32]]
+        }
+      }
+    },
