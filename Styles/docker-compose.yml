@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  charites:
+    image: unvt/nanban
+    ports:
+      - 8888:8080
+    volumes:
+      - .:/data
+    working_dir: /data
