@@ -1,0 +1,33 @@
+{
+  "version": 8,
+  "name": "playground",
+  "metadata": {"maputnik:renderer": "mbgljs", "owner": "IHM"},
+  "center": [35, 32],
+  "zoom": 14,
+  "bearing": 0,
+  "pitch": 30,
+  "sources": {
+    "IHM": {
+      "type": "vector",
+      "url": "https://israelhiking.osm.org.il/vector/data/IHM.json"
+    }
+  },
+  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
+  "layers": [
+    {
+      "id": "playground",
+      "type": "symbol",
+      "source": "IHM",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "filter": ["all", ["in", "class", "playground", "pitch"]],
+      "layout": {
+        "icon-image": "playground",
+        "icon-size": {"stops": [[14, 0.5], [20, 1]]}
+      },
+      "paint": {}
+    }
+  ],
+  "id": "playground",
+  "owner": "Israel Hiking Maps"
+}
