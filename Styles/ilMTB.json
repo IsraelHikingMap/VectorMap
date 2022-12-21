@@ -1094,6 +1094,54 @@
       }
     },
     {
+      "id": "goods_conveyor-bridge",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "layer", 1],
+        ["==", "ihm_class", "goods_conveyor"]
+      ],
+      "paint": {
+        "line-color": "black",
+        "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]}
+      }
+    },
+    {
+      "id": "goods_conveyor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "maxzoom": 24,
+      "filter": ["any", ["==", "ihm_class", "goods_conveyor"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "#666",
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
+      }
+    },
+    {
+      "id": "goods_conveyor-dash",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "maxzoom": 24,
+      "filter": ["any", ["==", "ihm_class", "goods_conveyor"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
+        "line-dasharray": [1, 3]
+      }
+    },
+    {
       "id": "railway-black",
       "type": "line",
       "metadata": {"IHM:overlay": true},
