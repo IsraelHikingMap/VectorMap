@@ -2054,12 +2054,31 @@
       "paint": {"text-color": "blue"}
     },
     {
+      "id": "road_direction",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 16,
+      "filter": ["any", ["==", "oneway", 1], ["==", "oneway:mtb", "yes"]],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-pitch-alignment": "map",
+        "icon-image": "arrowhead",
+        "icon-rotation-alignment": "map",
+        "icon-size": {"stops": [[14, 0.4], [20, 1]]},
+        "symbol-spacing": 100
+      },
+      "paint": {"icon-opacity": 0.4, "icon-color": "rgba(255, 0, 0, 1)"}
+    },
+    {
       "id": "road_rural_direction",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
+      "maxzoom": 16,
       "filter": [
         "all",
         ["in", "ilmtb_class", "path", "cycleway"],
@@ -2067,25 +2086,13 @@
       ],
       "layout": {
         "symbol-placement": "line",
-        "text-font": [""],
-        "text-transform": "none",
-        "text-size": 16,
-        "text-offset": {"stops": [[13, [0, 0.5]], [20, [0, 2]]]},
-        "text-max-width": 30,
         "icon-pitch-alignment": "map",
         "icon-image": "arrowhead",
         "icon-rotation-alignment": "map",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]},
         "symbol-spacing": 100
       },
-      "paint": {
-        "text-color": "rgba(249, 2, 2, 1)",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 0,
-        "text-opacity": 1,
-        "icon-opacity": 0.4,
-        "icon-color": "rgba(255, 0, 0, 1)"
-      }
+      "paint": {"icon-opacity": 0.4, "icon-color": "rgba(255, 0, 0, 1)"}
     },
     {
       "id": "building_regular",
