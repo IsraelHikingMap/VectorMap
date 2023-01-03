@@ -4071,7 +4071,7 @@
           "green",
           "blue:white:blue_stripe",
           "blue",
-          "rgba(0,0,0,0)"
+          ["to-color", ["get", "colour"], "black"]
         ],
         "text-halo-color": "white",
         "text-halo-width": 1.5,
@@ -4112,7 +4112,7 @@
           "green",
           "blue:white:blue_stripe",
           "blue",
-          "rgba(0,0,0,0)"
+          ["to-color", ["get", "colour"], "black"]
         ],
         "text-halo-color": [
           "match",
