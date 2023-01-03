@@ -2066,6 +2066,105 @@
       }
     },
     {
+      "id": "road-tertiary+secondary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["in", "ihm_class", "tertiary", "secondary"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "line-sort-key": [
+          "match",
+          ["get", "ihm_class"],
+          "motorway",
+          90,
+          "trunk",
+          80,
+          "primary",
+          70,
+          "secondary",
+          60,
+          "tertiary",
+          50,
+          "minor",
+          40,
+          "unclassified",
+          40,
+          "service",
+          40,
+          "track",
+          30,
+          "path",
+          20,
+          "cycleway",
+          20,
+          "footway",
+          20,
+          "pedestrian",
+          20,
+          "steps",
+          20,
+          0
+        ],
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "ihm_class"],
+          "secondary",
+          "#303030",
+          "tertiary",
+          "rgba(255, 230, 107, 1)",
+          "rgba(0, 0, 0, 0)"
+        ],
+        "line-width": [
+          "match",
+          ["get", "ihm_class"],
+          "secondary",
+          [
+            "interpolate",
+            "exponential",
+            2,
+            ["zoom"],
+            11,
+            1,
+            12,
+            2,
+            16,
+            4,
+            22,
+            16
+          ],
+          "tertiary",
+          [
+            "interpolate",
+            "exponential",
+            2,
+            ["zoom"],
+            11,
+            1,
+            12,
+            1.5,
+            13,
+            2,
+            16,
+            4,
+            22,
+            16
+          ],
+          0
+        ]
+      }
+    },
+    {
       "id": "road-primary",
       "type": "line",
       "metadata": {"IHM:overlay": true},
