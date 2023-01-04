@@ -2397,7 +2397,7 @@
       "minzoom": 15,
       "filter": ["all", ["in", "class", "restaurant", "fast_food"]],
       "layout": {
-        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-size": {"base": 1.4, "stops": [[15, 18], [20, 30]]},
         "text-font": ["Open Sans Regular"],
         "text-field": [
           "coalesce",
@@ -2412,6 +2412,7 @@
       },
       "paint": {
         "text-halo-width": 2,
+        "text-opacity": ["step", ["zoom"], 0, 16, 1],
         "text-halo-color": "rgba(255,255,255,0.75)"
       }
     },
