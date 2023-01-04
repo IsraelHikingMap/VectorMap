@@ -3183,29 +3183,6 @@
       "paint": {}
     },
     {
-      "id": "symbol_park",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "park",
-      "minzoom": 12,
-      "maxzoom": 16,
-      "filter": ["all"],
-      "layout": {
-        "icon-image": "RTG",
-        "text-size": 16,
-        "icon-size": {"stops": [[10, 0.4], [20, 1]]},
-        "text-font": [],
-        "text-max-width": 10,
-        "text-anchor": "top",
-        "text-offset": {"stops": [[10, [0, 1]], [20, [0, 2]]]}
-      },
-      "paint": {
-        "text-halo-width": 2,
-        "text-halo-color": "rgba(255,255,255,0.75)"
-      }
-    },
-    {
       "id": "water_spring",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
@@ -3471,17 +3448,17 @@
       "paint": {}
     },
     {
-      "id": "label_park",
+      "id": "symbol_park",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "park",
-      "minzoom": 14,
+      "minzoom": 12,
       "maxzoom": 16,
-      "filter": ["all"],
+      "filter": ["all", ["==", "$type", "Polygon"]],
       "layout": {
         "icon-image": "RTG",
-        "text-size": {"stops": [[14, 18], [20, 33]]},
+        "text-size": {"stops": [[13, 0], [14, 18], [20, 33]]},
         "icon-size": {"stops": [[10, 0.4], [20, 1]]},
         "text-font": ["Open Sans Regular"],
         "text-field": [
