@@ -12,9 +12,26 @@
       "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
     }
   },
-  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
+    {
+      "id": "",
+      "type": "background",
+      "layout": {"visibility": "none"},
+      "paint": {"background-color": "rgba(161, 127, 86, 1)"}
+    },
+    {
+      "id": "contour-line-casing",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "Contour",
+      "source-layer": "contour",
+      "paint": {
+        "line-color": "white",
+        "line-width": ["match", ["get", "rank"], [1, 2], 2, 3],
+        "line-blur": 2
+      }
+    },
     {
       "id": "contour-line",
       "type": "line",
@@ -32,12 +49,11 @@
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contour",
-      "filter": ["!in", "rank", 1, 2],
       "layout": {
         "text-field": "{height}",
         "symbol-placement": "line",
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
+        "text-size": 12,
         "symbol-avoid-edges": true,
         "text-max-angle": 45,
         "text-letter-spacing": 0.15,
