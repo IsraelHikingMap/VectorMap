@@ -16,27 +16,15 @@
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
-      "id": "background",
-      "type": "background",
-      "paint": {"background-color": "rgba(250, 247, 225, 1)"}
-    },
-    {
-      "id": "contour-minor",
+      "id": "contour-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contour",
-      "filter": ["all", ["in", "rank", 1, 2]],
-      "paint": {"line-color": "rgba(161, 127, 86, 1)", "line-width": 1}
-    },
-    {
-      "id": "contour-major",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "Contour",
-      "source-layer": "contour",
-      "filter": ["all", ["!in", "rank", 1, 2]],
-      "paint": {"line-color": "rgba(161, 127, 86, 1)", "line-width": 2}
+      "paint": {
+        "line-color": "rgba(161, 127, 86, 1)",
+        "line-width": ["match", ["get", "rank"], [1, 2], 1, 2]
+      }
     },
     {
       "id": "contour-label",
@@ -44,7 +32,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contour",
-      "filter": ["all", ["!in", "rank", 1, 2]],
+      "filter": ["!in", "rank", 1, 2],
       "layout": {
         "text-field": "{height}",
         "symbol-placement": "line",
@@ -52,12 +40,14 @@
         "text-size": 16,
         "symbol-avoid-edges": true,
         "text-max-angle": 45,
-        "text-letter-spacing": 0.15
+        "text-letter-spacing": 0.15,
+        "text-keep-upright": false
       },
       "paint": {
         "text-color": "rgba(161, 127, 86, 1)",
         "text-halo-color": "rgba(255, 255, 255,0.8)",
-        "text-halo-width": 2
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5
       }
     }
   ],
