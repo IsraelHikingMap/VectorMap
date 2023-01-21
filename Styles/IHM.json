@@ -155,6 +155,18 @@
       }
     },
     {
+      "id": "contour-line-casing",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "Contour",
+      "source-layer": "contour",
+      "paint": {
+        "line-color": "white",
+        "line-width": ["match", ["get", "rank"], [1, 2], 2, 3],
+        "line-blur": 2
+      }
+    },
+    {
       "id": "contour-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
