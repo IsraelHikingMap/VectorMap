@@ -18,6 +18,10 @@
     "Contour": {
       "type": "vector",
       "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
+    },
+    "world": {
+      "type": "vector",
+      "url": "https://demotiles.maplibre.org/tiles/tiles.json"
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
@@ -27,7 +31,15 @@
       "id": "background",
       "type": "background",
       "metadata": {"IHM:overlay": false},
-      "paint": {"background-color": "rgba(250, 247, 225, 1)"}
+      "paint": {"background-color": "#8EBDF0"}
+    },
+    {
+      "id": "countries-fill",
+      "type": "fill",
+      "source": "world",
+      "source-layer": "countries",
+      "maxzoom": 24,
+      "paint": {"fill-color": "rgba(250, 247, 225, 1)"}
     },
     {
       "id": "area-residential",
@@ -678,11 +690,22 @@
       "paint": {"line-dasharray": [0.2, 1.8], "line-width": 5}
     },
     {
+      "id": "boundary-country-line-world",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "world",
+      "source-layer": "countries",
+      "maxzoom": 7,
+      "filter": ["all"],
+      "paint": {"line-opacity": 0.33, "line-width": 2, "line-blur": 1}
+    },
+    {
       "id": "boundary-country-line",
       "type": "line",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_boundary",
+      "minzoom": 7,
       "maxzoom": 8,
       "filter": [
         "all",
@@ -723,6 +746,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_boundary",
+      "minzoom": 7,
       "filter": [
         "all",
         ["==", "admin_level", 2],
@@ -3615,6 +3639,7 @@
       "type": "hillshade",
       "metadata": {"IHM:overlay": false},
       "source": "TerrainRGB",
+      "minzoom": 7,
       "paint": {"hillshade-exaggeration": 0.33}
     },
     {
