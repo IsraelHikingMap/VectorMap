@@ -365,7 +365,17 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["!in", "class", "motorway", "trunk", "primary"]
+        [
+          "!in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "motorway_construction",
+          "trunk_construction",
+          "primary_construction",
+          "secondary_construction"
+        ]
       ],
       "paint": {
         "line-color": "rgba(24, 24, 24, 1)",
@@ -385,7 +395,17 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["!in", "class", "motorway", "trunk", "primary"]
+        [
+          "!in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "motorway_construction",
+          "trunk_construction",
+          "primary_construction",
+          "secondary_construction"
+        ]
       ],
       "paint": {
         "line-color": "rgba(24, 24, 24, 1)",
@@ -2162,13 +2182,35 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 16,
-      "filter": ["any", ["==", "oneway", 1], ["==", "oneway:mtb", "yes"]],
+      "filter": [
+        "all",
+        ["any", ["in", "oneway", 1, "-1"], ["in", "oneway:mtb", "yes", "-1"]],
+        [
+          "!in",
+          "ilmtb_class",
+          "motorway_construction",
+          "trunk_construction",
+          "primary_construction",
+          "secondary_construction",
+          "tertiary_construction",
+          "raceway_construction",
+          "minor_construction"
+        ]
+      ],
       "layout": {
         "symbol-placement": "line",
         "icon-pitch-alignment": "map",
         "icon-image": "arrowhead",
         "icon-rotation-alignment": "map",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]},
+        "icon-rotate": [
+          "case",
+          ["==", ["get", "oneway"], "-1"],
+          180,
+          ["==", ["get", "oneway:mtb"], "-1"],
+          180,
+          0
+        ],
         "symbol-spacing": 100
       },
       "paint": {"icon-opacity": 0.4, "icon-color": "rgba(255, 0, 0, 1)"}
