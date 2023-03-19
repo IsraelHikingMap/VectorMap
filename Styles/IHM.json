@@ -4638,7 +4638,23 @@
       "layout": {
         "icon-image": "sign",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
-        "icon-anchor": "bottom"
+        "icon-anchor": "bottom",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name_en"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-anchor": "top",
+        "text-size": {"stops": [[15, 0], [16, 18]]},
+        "text-optional": true,
+        "icon-padding": 2
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1.5
       }
     },
     {
