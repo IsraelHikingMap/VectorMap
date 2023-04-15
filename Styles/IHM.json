@@ -3894,8 +3894,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4363,8 +4362,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4412,8 +4410,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4446,8 +4443,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4485,8 +4481,7 @@
         "text-color": "#404040",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": {"base": 1, "stops": [[15, [0, -5]], [16, [0, -8]]]}
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4554,8 +4549,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4594,8 +4588,7 @@
         "text-color": "#125595",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4624,8 +4617,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4682,8 +4674,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4711,8 +4702,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4740,8 +4730,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4774,8 +4763,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4805,8 +4793,7 @@
         "text-color": "#125595",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4840,8 +4827,7 @@
         "text-color": "#404040",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": {"base": 1, "stops": [[15, [0, -5]], [16, [0, -8]]]}
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4897,8 +4883,7 @@
         "text-color": "#125595",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4929,8 +4914,7 @@
         "text-color": "#125595",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -4989,8 +4973,7 @@
         "text-color": "#125595",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -5059,8 +5042,7 @@
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": [0, 6]
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -5089,14 +5071,14 @@
         "text-letter-spacing": 0.2,
         "text-max-width": 5,
         "text-anchor": "right",
-        "text-padding": 0
+        "text-padding": 0,
+        "text-offset": [-0.7, 0]
       },
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": {"base": 1, "stops": [[15, [-7, 0]], [16, [-16, 0]]]}
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -5120,15 +5102,14 @@
         "text-letter-spacing": 0.2,
         "text-max-width": 10,
         "text-anchor": "top",
-        "text-offset": [0, 1],
+        "text-offset": [0, 0.6],
         "text-padding": 0
       },
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
         "text-halo-width": 1.5,
-        "text-halo-blur": 1.5,
-        "text-translate": {"base": 1, "stops": [[15, [0, -5]], [16, [0, -8]]]}
+        "text-halo-blur": 1.5
       }
     },
     {
