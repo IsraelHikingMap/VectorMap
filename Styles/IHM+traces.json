@@ -18,6 +18,13 @@
     "Contour": {
       "type": "vector",
       "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
+    },
+    "traces": {
+      "type": "vector",
+      "tiles": ["http://localhost:8080/traces/{z}/{x}/{y}.pbf"],
+      "minZoom": 0,
+      "maxZoom": 14,
+      "maxzoom": 14
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
@@ -155,18 +162,6 @@
       }
     },
     {
-      "id": "contour-line-casing",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "Contour",
-      "source-layer": "contour",
-      "paint": {
-        "line-color": "white",
-        "line-width": ["match", ["get", "rank"], [1, 2], 2, 3],
-        "line-blur": 2
-      }
-    },
-    {
       "id": "contour-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -241,6 +236,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "filter": ["all", ["==", "class", "pier"], ["==", "$type", "Polygon"]],
+      "layout": {"visibility": "visible"},
       "paint": {"fill-color": "#FAF7E1"}
     },
     {
@@ -253,62 +249,19 @@
       "paint": {"fill-color": "rgba(250, 247, 225, 1)"}
     },
     {
-      "id": "trail-israel-secondary-",
+      "id": "trail-israel",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "trail",
       "minzoom": 5,
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
-        [
-          "!in",
-          "highway",
-          "primary",
-          "trunk",
-          "motorway",
-          "primary_link",
-          "trunk_link",
-          "motorway_link"
-        ]
-      ],
+      "filter": ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
       "layout": {"line-cap": "round"},
       "paint": {
         "line-color": "rgba(255, 194, 100, 1)",
         "line-width": {
           "base": 2,
           "stops": [[11, 6], [12, 9], [16, 16], [22, 80]]
-        }
-      }
-    },
-    {
-      "id": "trail-israel-primary+",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 5,
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
-        [
-          "in",
-          "highway",
-          "primary",
-          "trunk",
-          "motorway",
-          "primary_link",
-          "trunk_link",
-          "motorway_link"
-        ]
-      ],
-      "layout": {"line-cap": "round"},
-      "paint": {
-        "line-color": "rgba(255, 194, 100, 1)",
-        "line-width": {
-          "base": 2,
-          "stops": [[11, 6], [12, 9], [16, 24], [22, 94]]
         }
       }
     },
@@ -779,6 +732,71 @@
       "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
     },
     {
+      "id": "trail-line-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 12,
+      "maxzoom": 13,
+      "filter": [
+        "all",
+        ["has", "way_colour"],
+        ["in", "network", "lwn", "rwn"],
+        ["in", "highway", "path", "footway", "pedestrian", "cycleway"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "purple:white:purple_stripe",
+          "purple",
+          "orange:white:orange_stripe",
+          "orange",
+          "rgba(0,0,0,0)"
+        ]
+      }
+    },
+    {
+      "id": "trail-line-road",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 11,
+      "maxzoom": 12,
+      "filter": ["all", ["in", "network", "lwn", "rwn"], ["has", "way_colour"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "black:white:black_stripe",
+          "black",
+          "red:white:red_stripe",
+          "red",
+          "green:white:green_stripe",
+          "green",
+          "blue:white:blue_stripe",
+          "blue",
+          "purple:white:purple_stripe",
+          "purple",
+          "orange:white:orange_stripe",
+          "orange",
+          "rgba(0,0,0,0)"
+        ]
+      }
+    },
+    {
       "id": "casing-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -792,7 +810,13 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[12, 2], [13, 3], [16, 8], [22, 32]]
@@ -839,7 +863,13 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
@@ -860,7 +890,13 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
@@ -881,7 +917,13 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[10, 2], [12, 1.5], [13, 3], [16, 16], [22, 64]]
@@ -902,7 +944,13 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
@@ -1041,7 +1089,13 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#E0E0E0"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#E0E0E0"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[12, 2], [13, 3], [16, 8], [22, 32]]
@@ -1062,7 +1116,13 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#E0E0E0"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#E0E0E0"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
@@ -1205,7 +1265,13 @@
       "paint": {
         "line-dasharray": [1.5, 1.5],
         "line-width": 2.5,
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -1223,7 +1289,13 @@
       "paint": {
         "line-dasharray": [0.35, 0.5],
         "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#8E5632"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#8E5632"
+        ]
       }
     },
     {
@@ -1242,7 +1314,13 @@
       "paint": {
         "line-dasharray": [0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -1261,7 +1339,13 @@
       "paint": {
         "line-dasharray": [4, 2, 0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -1280,7 +1364,13 @@
       "paint": {
         "line-dasharray": [4, 3],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -1616,71 +1706,6 @@
       }
     },
     {
-      "id": "trail-line-path",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 12,
-      "maxzoom": 13,
-      "filter": [
-        "all",
-        ["has", "way_colour"],
-        ["in", "network", "lwn", "rwn"],
-        ["in", "highway", "path", "footway", "pedestrian", "cycleway"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "green",
-          "blue:white:blue_stripe",
-          "blue",
-          "purple:white:purple_stripe",
-          "purple",
-          "orange:white:orange_stripe",
-          "orange",
-          "rgba(0,0,0,0)"
-        ]
-      }
-    },
-    {
-      "id": "trail-line-road",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 11,
-      "maxzoom": 12,
-      "filter": ["all", ["in", "network", "lwn", "rwn"], ["has", "way_colour"]],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "green",
-          "blue:white:blue_stripe",
-          "blue",
-          "purple:white:purple_stripe",
-          "purple",
-          "orange:white:orange_stripe",
-          "orange",
-          "rgba(0,0,0,0)"
-        ]
-      }
-    },
-    {
       "id": "rail-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -1732,7 +1757,13 @@
       "paint": {
         "line-dasharray": [1.5, 1.5],
         "line-width": 2.5,
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -1750,7 +1781,13 @@
       "paint": {
         "line-dasharray": [0.2, 0.25],
         "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#8E5632"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#8E5632"
+        ]
       }
     },
     {
@@ -1770,7 +1807,13 @@
       "paint": {
         "line-dasharray": [0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -1789,7 +1832,13 @@
       "paint": {
         "line-dasharray": [4, 2, 0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -1808,7 +1857,13 @@
       "paint": {
         "line-dasharray": [4, 3],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -2311,7 +2366,13 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[12, 2], [13, 3], [16, 8], [22, 32]]
@@ -2328,7 +2389,13 @@
       "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "tertiary"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
@@ -2345,7 +2412,13 @@
       "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "secondary"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#808080"
+        ],
         "line-width": {
           "base": 2,
           "stops": [[11, 0.75], [12, 1.5], [13, 3], [16, 8], [22, 32]]
@@ -2456,7 +2529,13 @@
       "paint": {
         "line-dasharray": [1.5, 1.5],
         "line-width": 2.5,
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -2470,7 +2549,13 @@
       "paint": {
         "line-dasharray": [0.35, 0.5],
         "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#8E5632"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#8E5632"
+        ]
       }
     },
     {
@@ -2489,7 +2574,13 @@
       "paint": {
         "line-dasharray": [0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -2504,7 +2595,13 @@
       "paint": {
         "line-dasharray": [4, 2, 0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -2519,7 +2616,13 @@
       "paint": {
         "line-dasharray": [4, 3],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          ["black", "blue", "green", "orange", "purple", "red", "yellow"],
+          ["get", "colour"],
+          "#AA8166"
+        ]
       }
     },
     {
@@ -3533,6 +3636,7 @@
         ["==", "layer", 1],
         ["==", "ihm_class", "goods_conveyor"]
       ],
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "black",
         "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]}
@@ -3609,6 +3713,19 @@
       "filter": ["in", "class", "line", "minor_line"],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "#bbb", "line-width": 1.5}
+    },
+    {
+      "id": "traces",
+      "type": "line",
+      "source": "traces",
+      "source-layer": "traces",
+      "filter": ["all", ["==", "$type", "LineString"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(255, 1, 255, 0.5)",
+        "line-width": 2,
+        "line-blur": 1
+      }
     },
     {
       "id": "Terrain",
@@ -3869,6 +3986,20 @@
       "paint": {"text-color": "blue"}
     },
     {
+      "id": "building",
+      "type": "fill-extrusion",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "building",
+      "minzoom": 15,
+      "filter": ["all"],
+      "paint": {
+        "fill-extrusion-color": "rgba(191, 191, 191, 1)",
+        "fill-extrusion-height": ["get", "render_height"],
+        "fill-extrusion-opacity": 0.75
+      }
+    },
+    {
       "id": "icon-tree",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
@@ -3888,28 +4019,13 @@
         "text-anchor": "top",
         "text-size": {"stops": [[15, 0], [16, 18]]},
         "text-letter-spacing": 0.2,
-        "text-optional": true,
-        "icon-anchor": "bottom"
+        "text-optional": true
       },
       "paint": {
         "text-halo-color": "white",
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5,
         "text-translate": [0, 6]
-      }
-    },
-    {
-      "id": "building",
-      "type": "fill-extrusion",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "building",
-      "minzoom": 15,
-      "filter": ["all"],
-      "paint": {
-        "fill-extrusion-color": "rgba(191, 191, 191, 1)",
-        "fill-extrusion-height": ["get", "render_height"],
-        "fill-extrusion-opacity": 0.75
       }
     },
     {
@@ -3932,32 +4048,6 @@
       "paint": {
         "text-color": "rgba(161, 127, 86, 1)",
         "text-halo-color": "rgba(255, 255, 255,0.8)",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
-      "id": "name-building",
-      "type": "symbol",
-      "source": "IHM",
-      "source-layer": "building",
-      "minzoom": 16,
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name_en"],
-          ["get", "name"]
-        ],
-        "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
-        "text-letter-spacing": 0.2,
-        "text-max-width": 5
-      },
-      "paint": {
-        "text-color": "#404040",
-        "text-halo-color": "white",
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5
       }
@@ -4083,7 +4173,7 @@
           "green",
           "blue:white:blue_stripe",
           "blue",
-          ["to-color", ["get", "colour"], "black"]
+          "rgba(0,0,0,0)"
         ],
         "text-halo-color": "white",
         "text-halo-width": 1.5,
@@ -4124,7 +4214,7 @@
           "green",
           "blue:white:blue_stripe",
           "blue",
-          ["to-color", ["get", "colour"], "black"]
+          "rgba(0,0,0,0)"
         ],
         "text-halo-color": [
           "match",
@@ -4638,23 +4728,7 @@
       "layout": {
         "icon-image": "sign",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
-        "icon-anchor": "bottom",
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name_en"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-anchor": "top",
-        "text-size": {"stops": [[15, 0], [16, 18]]},
-        "text-optional": true,
-        "icon-padding": 2
-      },
-      "paint": {
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5
+        "icon-anchor": "bottom"
       }
     },
     {
@@ -5006,11 +5080,11 @@
           ["get", "name_en"],
           ["get", "name"]
         ],
-        "symbol-placement": "line-center",
+        "symbol-placement": "line",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
         "text-letter-spacing": 0.3,
-        "text-rotation-alignment": "viewport"
+        "text-max-width": 5
       },
       "paint": {
         "text-color": "#125595",

@@ -18,6 +18,16 @@
     "Contour": {
       "type": "vector",
       "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
+    },
+    "Radar": {
+      "type": "image",
+      "url": "https://cdnil.govmap.gov.il/rainradar/radar280comp_202301121550_ITM.png",
+      "coordinates": [
+        [31.74573, 34.49564],
+        [37.86637, 34.51562],
+        [37.72371, 29.44547],
+        [31.93089, 29.42906]
+      ]
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
@@ -152,18 +162,6 @@
           0.1,
           0.3
         ]
-      }
-    },
-    {
-      "id": "contour-line-casing",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "Contour",
-      "source-layer": "contour",
-      "paint": {
-        "line-color": "white",
-        "line-width": ["match", ["get", "rank"], [1, 2], 2, 3],
-        "line-blur": 2
       }
     },
     {
@@ -4638,23 +4636,7 @@
       "layout": {
         "icon-image": "sign",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
-        "icon-anchor": "bottom",
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name_en"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-anchor": "top",
-        "text-size": {"stops": [[15, 0], [16, 18]]},
-        "text-optional": true,
-        "icon-padding": 2
-      },
-      "paint": {
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5
+        "icon-anchor": "bottom"
       }
     },
     {
@@ -5006,11 +4988,11 @@
           ["get", "name_en"],
           ["get", "name"]
         ],
-        "symbol-placement": "line-center",
+        "symbol-placement": "line",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
         "text-letter-spacing": 0.3,
-        "text-rotation-alignment": "viewport"
+        "text-max-width": 5
       },
       "paint": {
         "text-color": "#125595",
@@ -5369,6 +5351,12 @@
         "text-halo-width": 1.5,
         "text-halo-blur": 1.5
       }
+    },
+    {
+      "id": "Radar",
+      "type": "raster",
+      "source": "Radar",
+      "paint": {"raster-opacity": 0.5}
     }
   ],
   "id": "IHM"

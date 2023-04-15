@@ -826,70 +826,7 @@
       }
     },
     {
-      "id": "casing-tertiary",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 11,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "tertiary"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {
-          "base": 2,
-          "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
-        }
-      }
-    },
-    {
-      "id": "casing-secondary",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 11,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "secondary"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {
-          "base": 2,
-          "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
-        }
-      }
-    },
-    {
-      "id": "casing-primary",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 10,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "primary"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {
-          "base": 2,
-          "stops": [[10, 2], [12, 1.5], [13, 3], [16, 16], [22, 64]]
-        }
-      }
-    },
-    {
-      "id": "casing-trunk",
+      "id": "casing-tertiary-up",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -897,37 +834,43 @@
       "minzoom": 7,
       "filter": [
         "all",
-        ["==", "ihm_class", "trunk"],
+        [
+          "in",
+          "ihm_class",
+          "tertiary",
+          "tertiary",
+          "primary",
+          "trunk",
+          "motorway"
+        ],
         ["!in", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
-        }
-      }
-    },
-    {
-      "id": "casing-motorway",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 6,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "motorway"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "#808080",
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 2],
+          ["zoom"],
+          7,
+          1,
+          10,
+          2,
+          13,
+          3,
+          16,
+          8,
+          22,
+          [
+            "match",
+            ["get", "ilmtb_class"],
+            ["motorway", "trunk", "primary"],
+            64,
+            ["tertiary", "secondary"],
+            32,
+            0
+          ]
+        ]
       }
     },
     {
@@ -2382,7 +2325,7 @@
         "line-color": "#808080",
         "line-width": {
           "base": 2,
-          "stops": [[7, 1], [9, 1.5], [13, 3], [16, 16], [22, 64]]
+          "stops": [[10, 2], [13, 3], [16, 16], [22, 64]]
         }
       }
     },
@@ -4638,23 +4581,7 @@
       "layout": {
         "icon-image": "sign",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
-        "icon-anchor": "bottom",
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name_en"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-anchor": "top",
-        "text-size": {"stops": [[15, 0], [16, 18]]},
-        "text-optional": true,
-        "icon-padding": 2
-      },
-      "paint": {
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5
+        "icon-anchor": "bottom"
       }
     },
     {
@@ -5006,11 +4933,11 @@
           ["get", "name_en"],
           ["get", "name"]
         ],
-        "symbol-placement": "line-center",
+        "symbol-placement": "line",
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 18,
         "text-letter-spacing": 0.3,
-        "text-rotation-alignment": "viewport"
+        "text-max-width": 5
       },
       "paint": {
         "text-color": "#125595",
