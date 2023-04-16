@@ -3877,6 +3877,7 @@
       "filter": ["==", "subclass", "tree"],
       "layout": {
         "icon-image": "tree",
+        "icon-anchor": "bottom",
         "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
         "text-field": [
           "coalesce",
@@ -3888,8 +3889,7 @@
         "text-anchor": "top",
         "text-size": {"stops": [[15, 0], [16, 18]]},
         "text-letter-spacing": 0.2,
-        "text-optional": true,
-        "icon-anchor": "bottom"
+        "text-optional": true
       },
       "paint": {
         "text-halo-color": "white",
@@ -4355,6 +4355,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -4403,6 +4404,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -4435,6 +4437,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-ignore-placement": false,
@@ -4471,7 +4474,7 @@
         "text-letter-spacing": 0.2,
         "text-max-width": 10,
         "text-anchor": "top",
-        "text-offset": [0, 1],
+        "text-offset": [0, 0.5],
         "icon-image": "square",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "icon-allow-overlap": true,
@@ -4541,6 +4544,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true,
@@ -4580,6 +4584,7 @@
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -4609,6 +4614,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": {"stops": [[15, 0], [16, 18]]},
         "text-letter-spacing": 0.2,
         "text-optional": true,
@@ -4667,6 +4673,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -4695,6 +4702,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -4723,6 +4731,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -4755,6 +4764,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true,
@@ -4785,6 +4795,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -4816,12 +4827,12 @@
         "text-letter-spacing": 0.2,
         "text-max-width": 10,
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-justify": "right",
         "icon-image": "viewpoint",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
         "icon-allow-overlap": true,
-        "text-optional": true,
-        "text-offset": [0, 1]
+        "text-optional": true
       },
       "paint": {
         "text-color": "#404040",
@@ -4875,6 +4886,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -4906,6 +4918,7 @@
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -4965,6 +4978,7 @@
         "icon-allow-overlap": true,
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
@@ -5035,6 +5049,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
+        "text-offset": [0, 0.5],
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-optional": true
