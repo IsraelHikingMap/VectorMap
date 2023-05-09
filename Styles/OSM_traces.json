@@ -3,11 +3,9 @@
   "name": "OSM traces",
   "metadata": {"maputnik:renderer": "mbgljs"},
   "sources": {
-    "trace_lines": {
+    "OSM_traces": {
       "type": "vector",
-      "tiles": ["http://localhost:8765/data/trace_lines/{z}/{x}/{y}.pbf"],
-      "minzoom": 0,
-      "maxzoom": 13
+      "url": "https://israelhiking.osm.org.il/vector/data/OSM_traces.json"
     }
   },
   "layers": [
@@ -15,8 +13,8 @@
       "id": "OSM-glow",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trace_lines",
-      "source-layer": "trace_lines",
+      "source": "OSM_traces",
+      "source-layer": "OSM_traces",
       "maxzoom": 24,
       "paint": {
         "line-color": "yellow",
@@ -28,8 +26,8 @@
       "id": "OSM-trace",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trace_lines",
-      "source-layer": "trace_lines",
+      "source": "OSM_traces",
+      "source-layer": "OSM_traces",
       "maxzoom": 24,
       "paint": {
         "line-color": "rgba(0, 128, 0, 1)",
@@ -39,5 +37,5 @@
       }
     }
   ],
-  "id": "OSM-traces"
+  "id": "OSM_traces"
 }
