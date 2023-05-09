@@ -1,0 +1,43 @@
+{
+  "version": 8,
+  "name": "OSM traces",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "sources": {
+    "trace_lines": {
+      "type": "vector",
+      "tiles": ["http://localhost:8765/data/trace_lines/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 13
+    }
+  },
+  "layers": [
+    {
+      "id": "OSM-glow",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "trace_lines",
+      "source-layer": "trace_lines",
+      "maxzoom": 24,
+      "paint": {
+        "line-color": "yellow",
+        "line-width": {"stops": [[8, 1], [10, 2.5]]},
+        "line-opacity": 0.6
+      }
+    },
+    {
+      "id": "OSM-trace",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "trace_lines",
+      "source-layer": "trace_lines",
+      "maxzoom": 24,
+      "paint": {
+        "line-color": "rgba(0, 128, 0, 1)",
+        "line-blur": 0,
+        "line-width": {"stops": [[8, 0.2], [10, 1]]},
+        "line-opacity": 0.6
+      }
+    }
+  ],
+  "id": "OSM-traces"
+}
