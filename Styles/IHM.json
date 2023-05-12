@@ -3615,7 +3615,10 @@
       "type": "hillshade",
       "metadata": {"IHM:overlay": false},
       "source": "TerrainRGB",
-      "paint": {"hillshade-exaggeration": 0.33}
+      "paint": {
+        "hillshade-exaggeration": 0.33,
+        "hillshade-highlight-color": "rgba(256,256,256,0)"
+      }
     },
     {
       "id": "boundary-minefield-icon",
@@ -4062,7 +4065,12 @@
       "minzoom": 13,
       "filter": ["all", ["==", "network", "lwn"], ["has", "name"]],
       "layout": {
-        "text-field": ["coalesce", ["get", "name:he"], ["get", "name_en"], ["get", "name"]],
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name_en"],
+          ["get", "name"]
+        ],
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 16,
         "text-offset": [0, -1],

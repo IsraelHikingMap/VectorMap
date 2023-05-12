@@ -2002,7 +2002,8 @@
       "id": "Terrain",
       "type": "hillshade",
       "metadata": {"IHM:overlay": false},
-      "source": "TerrainRGB"
+      "source": "TerrainRGB",
+      "paint": {"hillshade-highlight-color": "rgba(256,256,256,0)"}
     },
     {
       "id": "base_fence_x",
