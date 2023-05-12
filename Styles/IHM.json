@@ -4054,42 +4054,6 @@
       }
     },
     {
-      "id": "name-trail-ref",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 13,
-      "filter": ["all", ["has", "ref"], ["==", "network", "lwn"]],
-      "layout": {
-        "text-field": "{ref}",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
-        "text-offset": [0, -1],
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
-      },
-      "paint": {
-        "text-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "green",
-          "blue:white:blue_stripe",
-          "blue",
-          ["to-color", ["get", "colour"], "black"]
-        ],
-        "text-halo-color": "white",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
       "id": "name-trail-local",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
@@ -4098,12 +4062,7 @@
       "minzoom": 13,
       "filter": ["all", ["==", "network", "lwn"], ["has", "name"]],
       "layout": {
-        "text-field": [
-          "concat",
-          ["coalesce", ["get", "name:he"], ["get", "name_en"], ["get", "name"]],
-          " ",
-          ["get", "ref"]
-        ],
+        "text-field": ["coalesce", ["get", "name:he"], ["get", "name_en"], ["get", "name"]],
         "text-font": ["Open Sans Cond Bold"],
         "text-size": 16,
         "text-offset": [0, -1],
