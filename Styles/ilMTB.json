@@ -2240,29 +2240,27 @@
       "paint": {"icon-opacity": 0.4, "icon-color": "rgba(255, 0, 0, 1)"}
     },
     {
-      "id": "building_regular",
+      "id": "building",
       "type": "fill-extrusion",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "building",
       "minzoom": 15,
-      "filter": ["all", ["==", "render_height", 5]],
       "paint": {
-        "fill-extrusion-color": "rgba(156, 152, 152, 1)",
-        "fill-extrusion-height": 10
-      }
-    },
-    {
-      "id": "building_high",
-      "type": "fill-extrusion",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "building",
-      "minzoom": 15,
-      "filter": ["all", ["!=", "render_height", 5]],
-      "paint": {
-        "fill-extrusion-color": "rgba(156, 152, 152, 1)",
-        "fill-extrusion-height": ["get", "render_height"]
+        "fill-extrusion-color": [
+          "coalesce",
+          ["get", "colour"],
+          "rgb(156, 152, 152)"
+        ],
+        "fill-extrusion-height": [
+          "match",
+          ["get", "render_height"],
+          5,
+          10,
+          ["get", "render_height"]
+        ],
+        "fill-extrusion-base": ["get", "render_min_height"],
+        "fill-extrusion-opacity": 0.75
       }
     },
     {

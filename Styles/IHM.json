@@ -3909,8 +3909,13 @@
       "minzoom": 15,
       "filter": ["all"],
       "paint": {
-        "fill-extrusion-color": "rgba(191, 191, 191, 1)",
+        "fill-extrusion-color": [
+          "coalesce",
+          ["get", "colour"],
+          "rgba(191, 191, 191, 1)"
+        ],
         "fill-extrusion-height": ["get", "render_height"],
+        "fill-extrusion-base": ["get", "render_min_height"],
         "fill-extrusion-opacity": 0.75
       }
     },
