@@ -3714,13 +3714,12 @@
         "text-field": "{east}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
         "text-letter-spacing": 0.2,
         "text-ignore-placement": true
       },
       "paint": {
         "text-color": "#7F7F7F",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5,
         "text-halo-color": "white",
         "text-translate": [0, -30]
@@ -3742,7 +3741,6 @@
         "text-field": "{north}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
         "text-letter-spacing": 0.1,
         "text-anchor": "center",
         "text-justify": "left",
@@ -3750,7 +3748,7 @@
       },
       "paint": {
         "text-color": "#7F7F7F",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5,
         "text-halo-color": "white",
         "text-translate": [30, 0]
@@ -3896,7 +3894,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -3930,7 +3928,6 @@
         "text-field": "{height}",
         "symbol-placement": "line",
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
         "symbol-avoid-edges": true,
         "text-max-angle": 45,
         "text-letter-spacing": 0.15,
@@ -3939,7 +3936,7 @@
       "paint": {
         "text-color": "rgb(161, 127, 86)",
         "text-halo-color": "rgba(255, 255, 255,0.8)",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -3958,14 +3955,13 @@
         ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
         "text-letter-spacing": 0.2,
         "text-max-width": 5
       },
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -3994,7 +3990,7 @@
       "paint": {
         "text-color": "#1E80E2",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4014,7 +4010,6 @@
           ["get", "name"]
         ],
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
         "text-offset": [0, -1],
         "text-letter-spacing": 0.2,
         "symbol-placement": "line",
@@ -4057,7 +4052,7 @@
             "rgba(0,0,0,0)"
           ]
         ],
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4077,7 +4072,6 @@
           ["get", "name"]
         ],
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
         "text-offset": [0, -1],
         "text-letter-spacing": 0.2,
         "symbol-placement": "line",
@@ -4110,7 +4104,7 @@
           "white",
           "rgba(0,0,0,0)"
         ],
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4130,14 +4124,13 @@
           ["get", "name"]
         ],
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
         "text-letter-spacing": 0.2,
         "symbol-placement": "line"
       },
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4156,7 +4149,6 @@
           ["get", "name"]
         ],
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
         "text-letter-spacing": 0.2,
         "symbol-placement": "line",
         "symbol-spacing": 400
@@ -4164,7 +4156,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4183,7 +4175,6 @@
           ["get", "name"]
         ],
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
         "text-letter-spacing": 0.2,
         "symbol-placement": "line",
         "symbol-spacing": 400
@@ -4191,7 +4182,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4211,7 +4202,6 @@
           ["get", "name"]
         ],
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
         "text-letter-spacing": 0.2,
         "symbol-placement": "line",
         "symbol-spacing": 400
@@ -4219,7 +4209,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4239,14 +4229,13 @@
           ["get", "name"]
         ],
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
         "text-letter-spacing": 0.2,
         "symbol-placement": "line"
       },
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4266,14 +4255,13 @@
           ["get", "name"]
         ],
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
         "text-letter-spacing": 0.2,
         "symbol-placement": "line"
       },
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4334,7 +4322,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4383,7 +4371,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4417,7 +4405,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4455,7 +4443,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4524,7 +4512,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4564,7 +4552,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4594,7 +4582,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4623,7 +4611,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4652,7 +4640,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4681,7 +4669,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4710,7 +4698,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4744,7 +4732,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4775,7 +4763,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4809,7 +4797,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4866,7 +4854,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4898,7 +4886,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4958,7 +4946,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -4984,7 +4972,7 @@
       "paint": {
         "text-color": "#125595",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5028,7 +5016,7 @@
       },
       "paint": {
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5054,7 +5042,6 @@
         "text-field": "{ele}",
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 16,
         "text-letter-spacing": 0.2,
         "text-max-width": 5,
         "text-anchor": "right",
@@ -5064,7 +5051,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5095,7 +5082,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5121,7 +5108,7 @@
       "paint": {
         "text-color": "#709D56",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5157,14 +5144,13 @@
           ["get", "name"]
         ],
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 14,
         "symbol-placement": "line-center",
         "text-letter-spacing": 1
       },
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5192,7 +5178,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5220,7 +5206,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5248,7 +5234,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5277,7 +5263,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5306,7 +5292,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     },
@@ -5334,7 +5320,7 @@
       "paint": {
         "text-color": "#404040",
         "text-halo-color": "white",
-        "text-halo-width": 1.5,
+        "text-halo-width": 5,
         "text-halo-blur": 1.5
       }
     }
