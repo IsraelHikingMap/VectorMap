@@ -358,8 +358,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["in", "ihm_class", "path", "cycleway", "footway"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["cycleway", "footway", "path"],
+          true,
+          false
+        ]
       ],
       "paint": {
         "line-color": "black",
@@ -376,8 +382,8 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "paint": {
         "line-color": "black",
@@ -424,8 +430,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["in", "ihm_class", "path", "cycleway", "footway"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["cycleway", "footway", "path"],
+          true,
+          false
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -442,8 +454,8 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -511,8 +523,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["in", "ihm_class", "path", "cycleway", "footway"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["cycleway", "footway", "path"],
+          true,
+          false
+        ],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -529,8 +547,8 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -787,8 +805,14 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["in", "ihm_class", "minor", "unclassified", "service"],
-        ["!in", "brunnel", "tunnel"]
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ],
+        ["match", ["get", "brunnel"], ["tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -808,8 +832,14 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["in", "ihm_class", "minor", "unclassified", "service"],
-        ["!in", "brunnel", "tunnel"],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ],
+        ["match", ["get", "brunnel"], ["tunnel"], false, true],
         ["has", "colour2"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
@@ -834,7 +864,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "ihm_class", "tertiary"],
+        ["==", "class", "tertiary"],
         ["!in", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -855,7 +885,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "ihm_class", "secondary"],
+        ["==", "class", "secondary"],
         ["!in", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -876,7 +906,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "ihm_class", "primary"],
+        ["==", "class", "primary"],
         ["!in", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -897,7 +927,7 @@
       "minzoom": 7,
       "filter": [
         "all",
-        ["==", "ihm_class", "trunk"],
+        ["==", "class", "trunk"],
         ["!in", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -918,7 +948,7 @@
       "minzoom": 6,
       "filter": [
         "all",
-        ["==", "ihm_class", "motorway"],
+        ["==", "class", "motorway"],
         ["!in", "brunnel", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1036,8 +1066,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["in", "ihm_class", "minor", "unclassified", "service"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -1058,7 +1094,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "tertiary"]
+        ["==", "class", "tertiary"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -1079,7 +1115,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "secondary"]
+        ["==", "class", "secondary"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -1100,7 +1136,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "primary"]
+        ["==", "class", "primary"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -1121,7 +1157,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "trunk"]
+        ["==", "class", "trunk"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -1142,7 +1178,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "motorway"]
+        ["==", "class", "motorway"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -1163,7 +1199,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "rail"]
+        ["==", "class", "rail"]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1181,7 +1217,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "rail"]
+        ["==", "class", "rail"]
       ],
       "paint": {
         "line-dasharray": [6, 1],
@@ -1235,8 +1271,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["in", "ihm_class", "footway", "pedestrian"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["footway", "pedestrian"],
+          true,
+          false
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1254,8 +1296,8 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "cycleway"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "cycleway"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1273,8 +1315,8 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "path"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "path"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1293,9 +1335,9 @@
       "maxzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"],
-        ["!has", "colour"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["!", ["has", "colour"]]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
@@ -1309,9 +1351,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "tracktype", "grade5"],
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "tracktype"], "grade5"],
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1330,9 +1372,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "tracktype", "grade5"],
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "tracktype"], "grade5"],
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1356,9 +1398,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "tracktype", "grade4"],
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "tracktype"], "grade4"],
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1377,9 +1419,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "tracktype", "grade4"],
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "tracktype"], "grade4"],
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1403,9 +1445,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"],
-        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2", "grade4", "grade5"],
+          false,
+          true
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1424,9 +1472,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"],
-        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2", "grade4", "grade5"],
+          false,
+          true
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1450,9 +1504,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"],
-        ["in", "tracktype", "grade1", "grade2"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "tracktype"], ["grade1", "grade2"], true, false]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1470,9 +1524,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"],
-        ["in", "tracktype", "grade1", "grade2"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "tracktype"], ["grade1", "grade2"], true, false]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1495,8 +1549,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "tunnel"],
-        ["in", "ihm_class", "minor", "unclassified", "service"]
+        ["==", ["get", "brunnel"], "tunnel"],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1518,7 +1578,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "tertiary"]
+        ["==", "class", "tertiary"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1537,7 +1597,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "secondary"]
+        ["==", "class", "secondary"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1559,7 +1619,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "primary"]
+        ["==", "class", "primary"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1581,7 +1641,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "trunk"]
+        ["==", "class", "trunk"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1603,7 +1663,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "motorway"]
+        ["==", "class", "motorway"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1689,7 +1749,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "ihm_class", "rail"],
+        ["==", "class", "rail"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1707,7 +1767,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "ihm_class", "rail"],
+        ["==", "class", "rail"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "paint": {
@@ -1762,9 +1822,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["in", "ihm_class", "footway", "pedestrian"],
-        ["!in", "brunnel", "bridge", "tunnel"],
-        ["==", "$type", "LineString"]
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["footway", "pedestrian"],
+          true,
+          false
+        ],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true],
+        ["==", ["geometry-type"], "LineString"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1782,8 +1848,12 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "ihm_class", "cycleway"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        [
+          "==",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          "cycleway"
+        ],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1801,8 +1871,8 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "ihm_class", "path"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "path"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -1821,9 +1891,9 @@
       "maxzoom": 12,
       "filter": [
         "all",
-        ["==", "ihm_class", "track"],
-        ["!has", "colour"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["!", ["has", "colour"]],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
@@ -1837,9 +1907,9 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "tracktype", "grade5"],
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["==", ["get", "tracktype"], "grade5"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1858,9 +1928,9 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "tracktype", "grade5"],
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["==", ["get", "tracktype"], "grade5"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1884,9 +1954,9 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "tracktype", "grade4"],
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["==", ["get", "tracktype"], "grade4"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1905,9 +1975,9 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "tracktype", "grade4"],
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["==", ["get", "tracktype"], "grade4"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1931,9 +2001,15 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"],
-        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true],
+        [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2", "grade4", "grade5"],
+          false,
+          true
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1952,9 +2028,15 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"],
-        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true],
+        [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2", "grade4", "grade5"],
+          false,
+          true
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1978,9 +2060,9 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["in", "tracktype", "grade1", "grade2"],
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["match", ["get", "tracktype"], ["grade1", "grade2"], true, false],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -1998,9 +2080,9 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["in", "tracktype", "grade1", "grade2"],
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        ["match", ["get", "tracktype"], ["grade1", "grade2"], true, false],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -2023,8 +2105,14 @@
       "minzoom": 12,
       "filter": [
         "all",
-        ["in", "ihm_class", "minor", "unclassified", "service"],
-        ["!in", "brunnel", "bridge", "tunnel"]
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ],
+        ["match", ["get", "brunnel"], ["bridge", "tunnel"], false, true]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -2044,7 +2132,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "ihm_class", "tertiary"],
+        ["==", "class", "tertiary"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2065,7 +2153,7 @@
       "minzoom": 11,
       "filter": [
         "all",
-        ["==", "ihm_class", "secondary"],
+        ["==", "class", "secondary"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2086,7 +2174,7 @@
       "minzoom": 10,
       "filter": [
         "all",
-        ["==", "ihm_class", "primary"],
+        ["==", "class", "primary"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2107,7 +2195,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "ihm_class", "trunk"],
+        ["==", "class", "trunk"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2128,7 +2216,7 @@
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "ihm_class", "motorway"],
+        ["==", "class", "motorway"],
         ["!in", "brunnel", "bridge", "tunnel"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -2170,8 +2258,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["in", "ihm_class", "path", "cycleway", "footway"]
+        ["==", ["get", "layer"], 1],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["cycleway", "footway", "path"],
+          true,
+          false
+        ]
       ],
       "paint": {
         "line-color": "black",
@@ -2185,7 +2279,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "track"]],
+      "filter": [
+        "all",
+        ["==", ["get", "layer"], 1],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
+      ],
       "paint": {
         "line-color": "black",
         "line-width": {"base": 2, "stops": [[13, 7.5], [16, 12], [22, 48]]}
@@ -2200,17 +2298,24 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "brunnel", "bridge"],
+        ["==", ["get", "brunnel"], "bridge"],
         [
-          "in",
-          "ihm_class",
-          "secondary",
-          "tertiary",
-          "minor",
-          "unclassified",
-          "service"
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "secondary", "service", "tertiary", "unclassified"],
+          true,
+          false
         ],
-        ["any", ["==", "layer", 1], ["!has", "layer"]]
+        [
+          "any",
+          [
+            "case",
+            ["==", ["typeof", ["get", "layer"]], "number"],
+            ["==", ["get", "layer"], 1],
+            false
+          ],
+          ["!", ["has", "layer"]]
+        ]
       ],
       "paint": {
         "line-color": "black",
@@ -2227,7 +2332,7 @@
       "filter": [
         "all",
         ["==", "layer", 1],
-        ["in", "ihm_class", "motorway", "trunk", "primary"]
+        ["in", "class", "motorway", "trunk", "primary"]
       ],
       "paint": {
         "line-color": "black",
@@ -2268,8 +2373,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["in", "ihm_class", "path", "cycleway", "footway"]
+        ["==", ["get", "layer"], 1],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["cycleway", "footway", "path"],
+          true,
+          false
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -2284,7 +2395,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "track"]],
+      "filter": [
+        "all",
+        ["==", ["get", "layer"], 1],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-width": {"base": 2, "stops": [[13, 5], [16, 8], [22, 32]]},
@@ -2306,8 +2421,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["in", "ihm_class", "minor", "unclassified", "service"]
+        ["==", ["get", "layer"], 1],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -2325,7 +2446,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "tertiary"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "tertiary"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": ["to-color", ["get", "colour"], "#808080"],
@@ -2342,7 +2463,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "secondary"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "secondary"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": ["to-color", ["get", "colour"], "#808080"],
@@ -2359,7 +2480,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 10,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "primary"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "primary"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "#808080",
@@ -2376,7 +2497,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 7,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "trunk"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "trunk"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "#808080",
@@ -2393,7 +2514,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 6,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "motorway"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "motorway"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "#808080",
@@ -2410,7 +2531,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "rail"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "rail"]],
       "paint": {
         "line-width": {"base": 2, "stops": [[13, 8], [16, 16], [22, 64]]},
         "line-color": "black"
@@ -2423,7 +2544,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "rail"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "rail"]],
       "layout": {"line-join": "round"},
       "paint": {
         "line-width": {"base": 2, "stops": [[13, 4], [16, 8], [22, 32]]},
@@ -2437,7 +2558,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "rail"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "rail"]],
       "paint": {
         "line-dasharray": [6, 6],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
@@ -2482,8 +2603,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["in", "ihm_class", "footway", "pedestrian"]
+        ["==", ["get", "layer"], 1],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["footway", "pedestrian"],
+          true,
+          false
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -2499,7 +2626,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "cycleway"]],
+      "filter": [
+        "all",
+        ["==", ["get", "layer"], 1],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "cycleway"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [4, 2, 0.5, 2],
@@ -2514,7 +2645,11 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "path"]],
+      "filter": [
+        "all",
+        ["==", ["get", "layer"], 1],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "path"]
+      ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-dasharray": [4, 3],
@@ -2532,9 +2667,9 @@
       "maxzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["==", "ihm_class", "track"],
-        ["!has", "colour"]
+        ["==", ["get", "layer"], 1],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["!", ["has", "colour"]]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
@@ -2548,9 +2683,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["==", "tracktype", "grade5"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "layer"], 1],
+        ["==", ["get", "tracktype"], "grade5"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -2569,9 +2704,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["==", "tracktype", "grade5"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "layer"], 1],
+        ["==", ["get", "tracktype"], "grade5"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -2595,9 +2730,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["==", "tracktype", "grade4"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "layer"], 1],
+        ["==", ["get", "tracktype"], "grade4"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -2616,9 +2751,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["==", "tracktype", "grade4"],
-        ["==", "ihm_class", "track"]
+        ["==", ["get", "layer"], 1],
+        ["==", ["get", "tracktype"], "grade4"],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -2642,9 +2777,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["==", "ihm_class", "track"],
-        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+        ["==", ["get", "layer"], 1],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2", "grade4", "grade5"],
+          false,
+          true
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -2663,9 +2804,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["==", "ihm_class", "track"],
-        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+        ["==", ["get", "layer"], 1],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2", "grade4", "grade5"],
+          false,
+          true
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -2689,9 +2836,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["==", "ihm_class", "track"],
-        ["in", "tracktype", "grade1", "grade2"]
+        ["==", ["get", "layer"], 1],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "tracktype"], ["grade1", "grade2"], true, false]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -2709,9 +2856,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["==", "ihm_class", "track"],
-        ["in", "tracktype", "grade1", "grade2"]
+        ["==", ["get", "layer"], 1],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "track"],
+        ["match", ["get", "tracktype"], ["grade1", "grade2"], true, false]
       ],
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
@@ -2734,8 +2881,14 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 1],
-        ["in", "ihm_class", "minor", "unclassified", "service"]
+        ["==", ["get", "layer"], 1],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -2753,7 +2906,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "tertiary"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "tertiary"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgb(255, 230, 107)",
@@ -2767,7 +2920,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "secondary"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "secondary"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "#303030",
@@ -2784,7 +2937,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 10,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "primary"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "primary"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "green",
@@ -2801,7 +2954,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 5,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "trunk"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "trunk"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "red",
@@ -2818,7 +2971,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 5,
-      "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "motorway"]],
+      "filter": ["all", ["==", "layer", 1], ["==", "class", "motorway"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "blue",
@@ -2868,9 +3021,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 2],
-        ["in", "ihm_class", "path", "cycleway", "footway"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 2],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["cycleway", "footway", "path"],
+          true,
+          false
+        ],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "paint": {
         "line-color": "black",
@@ -2886,20 +3045,24 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 2],
+        ["==", ["get", "layer"], 2],
         [
-          "in",
-          "ihm_class",
-          "motorway",
-          "trunk",
-          "primary",
-          "secondary",
-          "tertiary",
-          "minor",
-          "unclassified",
-          "service"
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          [
+            "minor",
+            "motorway",
+            "primary",
+            "secondary",
+            "service",
+            "tertiary",
+            "trunk",
+            "unclassified"
+          ],
+          true,
+          false
         ],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "paint": {
         "line-color": "black",
@@ -2950,9 +3113,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 2],
-        ["in", "ihm_class", "path", "cycleway", "footway"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 2],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["cycleway", "footway", "path"],
+          true,
+          false
+        ],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -2969,9 +3138,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 2],
-        ["in", "ihm_class", "minor", "unclassified", "service"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 2],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -2992,7 +3167,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "tertiary"],
+        ["==", "class", "tertiary"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
@@ -3014,7 +3189,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "secondary"],
+        ["==", "class", "secondary"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
@@ -3036,7 +3211,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "primary"],
+        ["==", "class", "primary"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
@@ -3058,7 +3233,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "trunk"],
+        ["==", "class", "trunk"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
@@ -3080,7 +3255,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "motorway"],
+        ["==", "class", "motorway"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
@@ -3102,7 +3277,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "rail"],
+        ["==", "class", "rail"],
         ["==", "brunnel", "bridge"]
       ],
       "paint": {
@@ -3120,7 +3295,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "rail"],
+        ["==", "class", "rail"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-join": "round"},
@@ -3139,7 +3314,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "rail"],
+        ["==", "class", "rail"],
         ["==", "brunnel", "bridge"]
       ],
       "paint": {
@@ -3196,9 +3371,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 2],
-        ["in", "ihm_class", "footway", "pedestrian"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 2],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["footway", "pedestrian"],
+          true,
+          false
+        ],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -3216,9 +3397,13 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 2],
-        ["==", "ihm_class", "cycleway"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 2],
+        [
+          "==",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          "cycleway"
+        ],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -3236,9 +3421,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 2],
-        ["==", "ihm_class", "path"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 2],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "path"],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -3256,9 +3441,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 2],
-        ["in", "ihm_class", "minor", "unclassified", "service"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 2],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -3279,7 +3470,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "tertiary"],
+        ["==", "class", "tertiary"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -3298,7 +3489,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "secondary"],
+        ["==", "class", "secondary"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -3320,7 +3511,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "primary"],
+        ["==", "class", "primary"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -3342,7 +3533,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "trunk"],
+        ["==", "class", "trunk"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -3364,7 +3555,7 @@
       "filter": [
         "all",
         ["==", "layer", 2],
-        ["==", "ihm_class", "motorway"],
+        ["==", "class", "motorway"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -3385,9 +3576,9 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 3],
-        ["==", "ihm_class", "path"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 3],
+        ["==", ["coalesce", ["get", "ihm_class"], ["get", "class"]], "path"],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -3404,9 +3595,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 3],
-        ["in", "ihm_class", "minor", "unclassified", "service"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 3],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -3427,7 +3624,7 @@
       "filter": [
         "all",
         ["==", "layer", 3],
-        ["==", "ihm_class", "tertiary"],
+        ["==", "class", "tertiary"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
@@ -3448,9 +3645,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 3],
-        ["in", "ihm_class", "footway", "pedestrian"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 3],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["footway", "pedestrian"],
+          true,
+          false
+        ],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -3468,9 +3671,15 @@
       "minzoom": 13,
       "filter": [
         "all",
-        ["==", "layer", 3],
-        ["in", "ihm_class", "minor", "unclassified", "service"],
-        ["==", "brunnel", "bridge"]
+        ["==", ["get", "layer"], 3],
+        [
+          "match",
+          ["coalesce", ["get", "ihm_class"], ["get", "class"]],
+          ["minor", "service", "unclassified"],
+          true,
+          false
+        ],
+        ["==", ["get", "brunnel"], "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -3491,7 +3700,7 @@
       "filter": [
         "all",
         ["==", "layer", 3],
-        ["==", "ihm_class", "tertiary"],
+        ["==", "class", "tertiary"],
         ["==", "brunnel", "bridge"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -3531,7 +3740,7 @@
       "filter": [
         "all",
         ["==", "layer", 1],
-        ["==", "ihm_class", "goods_conveyor"]
+        ["==", "class", "goods_conveyor"]
       ],
       "paint": {
         "line-color": "black",
@@ -3546,7 +3755,7 @@
       "source-layer": "transportation",
       "minzoom": 11,
       "maxzoom": 24,
-      "filter": ["any", ["==", "ihm_class", "goods_conveyor"]],
+      "filter": ["any", ["==", "class", "goods_conveyor"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "#666",
@@ -3561,7 +3770,7 @@
       "source-layer": "transportation",
       "minzoom": 11,
       "maxzoom": 24,
-      "filter": ["any", ["==", "ihm_class", "goods_conveyor"]],
+      "filter": ["any", ["==", "class", "goods_conveyor"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "white",
