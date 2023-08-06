@@ -3888,7 +3888,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
-        "text-size": {"stops": [[15, 0], [16, 18]]},
+        "text-size": ["step", ["zoom"], 0, 16, 18],
         "text-letter-spacing": 0.2,
         "text-optional": true
       },
@@ -4575,7 +4575,7 @@
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
         "text-offset": [0, 0.5],
-        "text-size": {"stops": [[15, 0], [16, 18]]},
+        "text-size": ["step", ["zoom"], 0, 16, 18],
         "text-letter-spacing": 0.2,
         "text-optional": true,
         "icon-padding": 2
@@ -4605,7 +4605,7 @@
         ],
         "text-font": ["Open Sans Cond Bold"],
         "text-anchor": "top",
-        "text-size": {"stops": [[15, 0], [16, 18]]},
+        "text-size": ["step", ["zoom"], 0, 16, 18],
         "text-optional": true,
         "icon-padding": 2
       },
