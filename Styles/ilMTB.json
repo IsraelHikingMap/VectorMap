@@ -1478,7 +1478,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "ilmtb_class", "track", "path"]
+        ["in", "ilmtb_class", "track", "path", "footway", "cycleway"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {"line-width": {"base": 1.4, "stops": [[6, 3], [20, 25]]}}
@@ -1493,7 +1493,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "ilmtb_class", "track", "path"]
+        ["in", "ilmtb_class", "track", "path", "footway", "cycleway"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
