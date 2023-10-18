@@ -2,6 +2,5 @@ openmaptiles.md
 **/*.xls*
 Styles/Streets*
 Styles/osm_liberty.json
-.*.swp
-.*~
 *.log
+.*
