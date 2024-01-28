@@ -2840,6 +2840,7 @@
       "filter": ["all", ["==", "subclass", "tree"]],
       "layout": {
         "icon-image": "tree",
+        "icon-anchor": "bottom",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]}
       },
       "paint": {}
