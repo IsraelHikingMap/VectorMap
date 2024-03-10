@@ -458,576 +458,6 @@
       }
     },
     {
-      "id": "casing-pier",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "pier"]],
-      "paint": {
-        "line-color": "#FAF7E1",
-        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
-      }
-    },
-    {
-      "id": "casing-steps-line",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "maxzoom": 14,
-      "filter": [
-        "all",
-        ["==", "subclass", "steps"],
-        ["!in", "brunnel", "bridge", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {"line-color": "white", "line-width": 2}
-    },
-    {
-      "id": "casing-steps",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "subclass", "steps"],
-        ["!in", "brunnel", "bridge", "tunnel"]
-      ],
-      "paint": {
-        "line-color": "white",
-        "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]}
-      }
-    },
-    {
-      "id": "casing-path",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["in", "ihm_class", "path", "cycleway", "footway"],
-        ["!in", "brunnel", "bridge", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "white",
-        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
-      }
-    },
-    {
-      "id": "casing-track",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 12,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "track"],
-        ["!in", "brunnel", "bridge", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-width": {"base": 2, "stops": [[13, 5], [16, 8], [22, 32]]},
-        "line-color": [
-          "match",
-          ["get", "tracktype"],
-          ["grade1", "grade2"],
-          "#E8D3B2",
-          "#F7F4F2"
-        ]
-      }
-    },
-    {
-      "id": "water-line-intermittent",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "waterway",
-      "filter": ["all", ["==", "intermittent", 1], ["!=", "class", "ditch"]],
-      "paint": {
-        "line-color": "#8EBDF0",
-        "line-width": {"base": 1, "stops": [[9, 2], [14, 3]]},
-        "line-dasharray": [4, 1]
-      }
-    },
-    {
-      "id": "water-line",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "waterway",
-      "filter": ["all", ["!=", "intermittent", 1], ["!=", "class", "ditch"]],
-      "paint": {
-        "line-color": "#8EBDF0",
-        "line-width": {"base": 1, "stops": [[9, 2], [14, 3]]}
-      }
-    },
-    {
-      "id": "boundary-area-AB",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_boundary",
-      "filter": ["in", "name:en", "Area A", "Area B", "Area H1"],
-      "paint": {"line-color": "orange", "line-opacity": 0.4}
-    },
-    {
-      "id": "boundary-military",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "landuse",
-      "filter": ["==", "class", "military"],
-      "layout": {},
-      "paint": {"line-color": "red", "line-opacity": 0.3}
-    },
-    {
-      "id": "boundary-minefield",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "minefield",
-      "minzoom": 11,
-      "filter": ["all"],
-      "paint": {
-        "line-color": "red",
-        "line-opacity": {"stops": [[12, 0.1], [14, 0.3]]},
-        "line-width": {"stops": [[14, 1], [16, 2]]}
-      }
-    },
-    {
-      "id": "boundary-park-casing",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "park",
-      "minzoom": 13,
-      "filter": ["all"],
-      "layout": {"line-join": "round"},
-      "paint": {
-        "line-pattern": "gradient_pattern",
-        "line-width": 8,
-        "line-offset": 5,
-        "line-opacity": 0.5,
-        "line-blur": 1
-      }
-    },
-    {
-      "id": "boundary-park",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "park",
-      "minzoom": 9,
-      "filter": ["all"],
-      "paint": {
-        "line-width": 2,
-        "line-color": "#709D56",
-        "line-dasharray": [8, 2, 1, 2, 1, 2]
-      }
-    },
-    {
-      "id": "boundary-country-dash",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_boundary",
-      "minzoom": 8,
-      "filter": [
-        "all",
-        ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
-        [
-          "!in",
-          "name:en",
-          "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)",
-          "Israel - Syria",
-          "Israel- Syria"
-        ]
-      ],
-      "paint": {"line-dasharray": [2.5, 6, 1.5, 0]}
-    },
-    {
-      "id": "boundary-country-bar",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_boundary",
-      "minzoom": 8,
-      "filter": [
-        "all",
-        ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
-        [
-          "!in",
-          "name:en",
-          "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)",
-          "Israel - Syria",
-          "Israel- Syria"
-        ]
-      ],
-      "paint": {"line-dasharray": [0.2, 1.8], "line-width": 5}
-    },
-    {
-      "id": "boundary-country-line",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_boundary",
-      "maxzoom": 8,
-      "filter": [
-        "all",
-        ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
-        [
-          "!in",
-          "name:en",
-          "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)",
-          "Israel - Syria",
-          "Israel- Syria"
-        ]
-      ],
-      "paint": {"line-opacity": 0.33, "line-width": 2}
-    },
-    {
-      "id": "boundary-country-Green_line",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_boundary",
-      "filter": [
-        "all",
-        ["==", "admin_level", 2],
-        [
-          "in",
-          "name:en",
-          "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)"
-        ]
-      ],
-      "paint": {"line-opacity": 0.33, "line-color": "#2BB32B", "line-width": 2}
-    },
-    {
-      "id": "boundary-country-Golan",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_boundary",
-      "filter": [
-        "all",
-        ["==", "admin_level", 2],
-        ["in", "name:en", "Israel - Syria", "Israel- Syria"]
-      ],
-      "paint": {"line-opacity": 0.33, "line-color": "blue", "line-width": 2}
-    },
-    {
-      "id": "aeroway-helipad",
-      "type": "fill",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "aeroway",
-      "minzoom": 15,
-      "filter": ["==", "class", "helipad"],
-      "paint": {
-        "fill-color": "rgb(96, 96, 96)",
-        "fill-outline-color": "rgb(64, 64, 64)"
-      }
-    },
-    {
-      "id": "aeroway-taxiway",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "aeroway",
-      "minzoom": 13,
-      "filter": ["==", "class", "taxiway"],
-      "paint": {
-        "line-color": "rgb(96, 96, 96)",
-        "line-width": {"base": 1, "stops": [[13, 3], [14, 6], [15, 12]]}
-      }
-    },
-    {
-      "id": "aeroway-runway",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "aeroway",
-      "filter": ["==", "class", "runway"],
-      "paint": {
-        "line-color": "rgb(96, 96, 96)",
-        "line-width": {"stops": [[11, 3], [12, 4], [13, 8], [14, 16], [15, 32]]}
-      }
-    },
-    {
-      "id": "barrier-cliff",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "ihm_lines",
-      "minzoom": 9,
-      "filter": ["in", "class", "cliff", "earth_bank"],
-      "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
-    },
-    {
-      "id": "casing-minor",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 12,
-      "filter": [
-        "all",
-        ["in", "ihm_class", "minor", "unclassified", "service"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {
-          "base": 2,
-          "stops": [[12, 2], [13, 3], [16, 8], [22, 32]]
-        }
-      }
-    },
-    {
-      "id": "casing-minor-colour2",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 12,
-      "filter": [
-        "all",
-        ["in", "ihm_class", "minor", "unclassified", "service"],
-        ["!in", "brunnel", "tunnel"],
-        ["has", "colour2"]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour2"], "rgba(0, 0, 0, 0)"],
-        "line-width": {
-          "base": 2,
-          "stops": [[12, 1], [13, 1.5], [16, 4], [22, 16]]
-        },
-        "line-offset": {
-          "base": 2,
-          "stops": [[12, 0.5], [13, 0.75], [16, 2], [22, 8]]
-        }
-      }
-    },
-    {
-      "id": "casing-tertiary",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 11,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "tertiary"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {
-          "base": 2,
-          "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
-        }
-      }
-    },
-    {
-      "id": "casing-secondary",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 11,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "secondary"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {
-          "base": 2,
-          "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
-        }
-      }
-    },
-    {
-      "id": "casing-primary",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 10,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "primary"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {
-          "base": 2,
-          "stops": [[10, 2], [12, 1.5], [13, 3], [16, 16], [22, 64]]
-        }
-      }
-    },
-    {
-      "id": "casing-trunk",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "trunk"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
-        }
-      }
-    },
-    {
-      "id": "casing-motorway",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "transportation",
-      "minzoom": 6,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "motorway"],
-        ["!in", "brunnel", "tunnel"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "#808080",
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
-        }
-      }
-    },
-    {
-      "id": "trail-regional-line-purple",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 11,
-      "filter": [
-        "all",
-        ["==", "network", "rwn"],
-        ["!has", "way_colour"],
-        ["==", "osmc_symbol", "purple:white:purple_stripe"]
-      ],
-      "layout": {"line-join": "miter"},
-      "paint": {
-        "line-color": "purple",
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [10, 1.5], [16, 4], [22, 16]]
-        },
-        "line-offset": {
-          "base": 2,
-          "stops": [[11, -2], [12, -3], [14, -5], [16, -6], [22, -24]]
-        }
-      }
-    },
-    {
-      "id": "trail-regional-line",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 11,
-      "filter": ["all", ["==", "network", "rwn"], ["!has", "way_colour"]],
-      "layout": {"line-join": "miter"},
-      "paint": {
-        "line-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "orange:white:orange_stripe",
-          "orange",
-          "blue:blue:white_right:purple_stripe",
-          "#1765AD",
-          "green:green:white_right:blue_stripe",
-          "#4CA64C",
-          "yellow:blue:yellow_stripe",
-          "gold",
-          [
-            "match",
-            ["get", "name"],
-            "שביל ואדיות חיפה",
-            "green",
-            "rgba(0,0,0,0)"
-          ]
-        ],
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [10, 1.5], [16, 4], [22, 16]]
-        },
-        "line-offset": {
-          "base": 2,
-          "stops": [[11, 2], [12, 3], [14, 5], [16, 6], [22, 24]]
-        }
-      }
-    },
-    {
-      "id": "trail-regional-dash",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "trail",
-      "minzoom": 11,
-      "filter": ["all", ["==", "network", "rwn"], ["!has", "way_colour"]],
-      "layout": {"line-join": "miter"},
-      "paint": {
-        "line-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "blue:blue:white_right:purple_stripe",
-          "#7B5CA0",
-          "green:green:white_right:blue_stripe",
-          "blue",
-          "yellow:blue:yellow_stripe",
-          "blue",
-          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "rgba(0,0,0,0)"]
-        ],
-        "line-dasharray": [4, 4],
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [10, 1.5], [11, 2], [16, 4], [22, 16]]
-        },
-        "line-offset": {
-          "base": 2,
-          "stops": [[11, 2], [12, 3], [14, 5], [16, 6], [22, 24]]
-        }
-      }
-    },
-    {
       "id": "layer-1-casing-minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -1613,6 +1043,576 @@
         "line-width": {
           "base": 2,
           "stops": [[7, 0.5], [9, 1], [16, 8], [22, 32]]
+        }
+      }
+    },
+    {
+      "id": "casing-pier",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "filter": ["all", ["==", "class", "pier"]],
+      "paint": {
+        "line-color": "#FAF7E1",
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
+      }
+    },
+    {
+      "id": "casing-steps-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "white", "line-width": 2}
+    },
+    {
+      "id": "casing-steps",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "steps"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "paint": {
+        "line-color": "white",
+        "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]}
+      }
+    },
+    {
+      "id": "casing-path",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "ihm_class", "path", "cycleway", "footway"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
+      }
+    },
+    {
+      "id": "casing-track",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "track"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-width": {"base": 2, "stops": [[13, 5], [16, 8], [22, 32]]},
+        "line-color": [
+          "match",
+          ["get", "tracktype"],
+          ["grade1", "grade2"],
+          "#E8D3B2",
+          "#F7F4F2"
+        ]
+      }
+    },
+    {
+      "id": "water-line-intermittent",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "waterway",
+      "filter": ["all", ["==", "intermittent", 1], ["!=", "class", "ditch"]],
+      "paint": {
+        "line-color": "#8EBDF0",
+        "line-width": {"base": 1, "stops": [[9, 2], [14, 3]]},
+        "line-dasharray": [4, 1]
+      }
+    },
+    {
+      "id": "water-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "waterway",
+      "filter": ["all", ["!=", "intermittent", 1], ["!=", "class", "ditch"]],
+      "paint": {
+        "line-color": "#8EBDF0",
+        "line-width": {"base": 1, "stops": [[9, 2], [14, 3]]}
+      }
+    },
+    {
+      "id": "boundary-area-AB",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": ["in", "name:en", "Area A", "Area B", "Area H1"],
+      "paint": {"line-color": "orange", "line-opacity": 0.4}
+    },
+    {
+      "id": "boundary-military",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "landuse",
+      "filter": ["==", "class", "military"],
+      "layout": {},
+      "paint": {"line-color": "red", "line-opacity": 0.3}
+    },
+    {
+      "id": "boundary-minefield",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "minefield",
+      "minzoom": 11,
+      "filter": ["all"],
+      "paint": {
+        "line-color": "red",
+        "line-opacity": {"stops": [[12, 0.1], [14, 0.3]]},
+        "line-width": {"stops": [[14, 1], [16, 2]]}
+      }
+    },
+    {
+      "id": "boundary-park-casing",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "park",
+      "minzoom": 13,
+      "filter": ["all"],
+      "layout": {"line-join": "round"},
+      "paint": {
+        "line-pattern": "gradient_pattern",
+        "line-width": 8,
+        "line-offset": 5,
+        "line-opacity": 0.5,
+        "line-blur": 1
+      }
+    },
+    {
+      "id": "boundary-park",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "park",
+      "minzoom": 9,
+      "filter": ["all"],
+      "paint": {
+        "line-width": 2,
+        "line-color": "#709D56",
+        "line-dasharray": [8, 2, 1, 2, 1, 2]
+      }
+    },
+    {
+      "id": "boundary-country-dash",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "!in",
+          "name:en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)",
+          "Israel - Syria",
+          "Israel- Syria"
+        ]
+      ],
+      "paint": {"line-dasharray": [2.5, 6, 1.5, 0]}
+    },
+    {
+      "id": "boundary-country-bar",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "!in",
+          "name:en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)",
+          "Israel - Syria",
+          "Israel- Syria"
+        ]
+      ],
+      "paint": {"line-dasharray": [0.2, 1.8], "line-width": 5}
+    },
+    {
+      "id": "boundary-country-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "maxzoom": 8,
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["!=", "maritime", 1],
+        [
+          "!in",
+          "name:en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)",
+          "Israel - Syria",
+          "Israel- Syria"
+        ]
+      ],
+      "paint": {"line-opacity": 0.33, "line-width": 2}
+    },
+    {
+      "id": "boundary-country-Green_line",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        [
+          "in",
+          "name:en",
+          "1949 Armistice Line",
+          "Jerusalem City Municipal Boundary (Israel)"
+        ]
+      ],
+      "paint": {"line-opacity": 0.33, "line-color": "#2BB32B", "line-width": 2}
+    },
+    {
+      "id": "boundary-country-Golan",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_boundary",
+      "filter": [
+        "all",
+        ["==", "admin_level", 2],
+        ["in", "name:en", "Israel - Syria", "Israel- Syria"]
+      ],
+      "paint": {"line-opacity": 0.33, "line-color": "blue", "line-width": 2}
+    },
+    {
+      "id": "aeroway-helipad",
+      "type": "fill",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "minzoom": 15,
+      "filter": ["==", "class", "helipad"],
+      "paint": {
+        "fill-color": "rgb(96, 96, 96)",
+        "fill-outline-color": "rgb(64, 64, 64)"
+      }
+    },
+    {
+      "id": "aeroway-taxiway",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "minzoom": 13,
+      "filter": ["==", "class", "taxiway"],
+      "paint": {
+        "line-color": "rgb(96, 96, 96)",
+        "line-width": {"base": 1, "stops": [[13, 3], [14, 6], [15, 12]]}
+      }
+    },
+    {
+      "id": "aeroway-runway",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "aeroway",
+      "filter": ["==", "class", "runway"],
+      "paint": {
+        "line-color": "rgb(96, 96, 96)",
+        "line-width": {"stops": [[11, 3], [12, 4], [13, 8], [14, 16], [15, 32]]}
+      }
+    },
+    {
+      "id": "barrier-cliff",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 9,
+      "filter": ["in", "class", "cliff", "earth_bank"],
+      "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
+    },
+    {
+      "id": "casing-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "ihm_class", "minor", "unclassified", "service"],
+        ["!in", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {
+          "base": 2,
+          "stops": [[12, 2], [13, 3], [16, 8], [22, 32]]
+        }
+      }
+    },
+    {
+      "id": "casing-minor-colour2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "ihm_class", "minor", "unclassified", "service"],
+        ["!in", "brunnel", "tunnel"],
+        ["has", "colour2"]
+      ],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": ["to-color", ["get", "colour2"], "rgba(0, 0, 0, 0)"],
+        "line-width": {
+          "base": 2,
+          "stops": [[12, 1], [13, 1.5], [16, 4], [22, 16]]
+        },
+        "line-offset": {
+          "base": 2,
+          "stops": [[12, 0.5], [13, 0.75], [16, 2], [22, 8]]
+        }
+      }
+    },
+    {
+      "id": "casing-tertiary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "tertiary"],
+        ["!in", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {
+          "base": 2,
+          "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
+        }
+      }
+    },
+    {
+      "id": "casing-secondary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "secondary"],
+        ["!in", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {
+          "base": 2,
+          "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
+        }
+      }
+    },
+    {
+      "id": "casing-primary",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "primary"],
+        ["!in", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {
+          "base": 2,
+          "stops": [[10, 2], [12, 1.5], [13, 3], [16, 16], [22, 64]]
+        }
+      }
+    },
+    {
+      "id": "casing-trunk",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "trunk"],
+        ["!in", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-width": {
+          "base": 2,
+          "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
+        }
+      }
+    },
+    {
+      "id": "casing-motorway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "motorway"],
+        ["!in", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "#808080",
+        "line-width": {
+          "base": 2,
+          "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
+        }
+      }
+    },
+    {
+      "id": "trail-regional-line-purple",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "network", "rwn"],
+        ["!has", "way_colour"],
+        ["==", "osmc_symbol", "purple:white:purple_stripe"]
+      ],
+      "layout": {"line-join": "miter"},
+      "paint": {
+        "line-color": "purple",
+        "line-width": {
+          "base": 2,
+          "stops": [[7, 1], [10, 1.5], [16, 4], [22, 16]]
+        },
+        "line-offset": {
+          "base": 2,
+          "stops": [[11, -2], [12, -3], [14, -5], [16, -6], [22, -24]]
+        }
+      }
+    },
+    {
+      "id": "trail-regional-line",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 11,
+      "filter": ["all", ["==", "network", "rwn"], ["!has", "way_colour"]],
+      "layout": {"line-join": "miter"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "orange:white:orange_stripe",
+          "orange",
+          "blue:blue:white_right:purple_stripe",
+          "#1765AD",
+          "green:green:white_right:blue_stripe",
+          "#4CA64C",
+          "yellow:blue:yellow_stripe",
+          "gold",
+          [
+            "match",
+            ["get", "name"],
+            "שביל ואדיות חיפה",
+            "green",
+            "rgba(0,0,0,0)"
+          ]
+        ],
+        "line-width": {
+          "base": 2,
+          "stops": [[7, 1], [10, 1.5], [16, 4], [22, 16]]
+        },
+        "line-offset": {
+          "base": 2,
+          "stops": [[11, 2], [12, 3], [14, 5], [16, 6], [22, 24]]
+        }
+      }
+    },
+    {
+      "id": "trail-regional-dash",
+      "type": "line",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "trail",
+      "minzoom": 11,
+      "filter": ["all", ["==", "network", "rwn"], ["!has", "way_colour"]],
+      "layout": {"line-join": "miter"},
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "osmc_symbol"],
+          "blue:blue:white_right:purple_stripe",
+          "#7B5CA0",
+          "green:green:white_right:blue_stripe",
+          "blue",
+          "yellow:blue:yellow_stripe",
+          "blue",
+          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "rgba(0,0,0,0)"]
+        ],
+        "line-dasharray": [4, 4],
+        "line-width": {
+          "base": 2,
+          "stops": [[7, 1], [10, 1.5], [11, 2], [16, 4], [22, 16]]
+        },
+        "line-offset": {
+          "base": 2,
+          "stops": [[11, 2], [12, 3], [14, 5], [16, 6], [22, 24]]
         }
       }
     },
