@@ -368,7 +368,7 @@
       }
     },
     {
-      "id": "layer-1-box-track",
+      "id": "layer-1-box-track+minor",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
@@ -377,7 +377,7 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "ihm_class", "track"]
+        ["in", "ihm_class", "track", "minor"]
       ],
       "paint": {
         "line-color": "black",
