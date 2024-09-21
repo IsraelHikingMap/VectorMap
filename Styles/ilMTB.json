@@ -1699,25 +1699,6 @@
       }
     },
     {
-      "id": "border_country_low-zoom",
-      "type": "line",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "boundary",
-      "minzoom": 0,
-      "maxzoom": 7,
-      "filter": ["all", ["==", "admin_level", 2], ["!=", "maritime", 1]],
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "bevel",
-        "line-miter-limit": 5
-      },
-      "paint": {
-        "line-color": "rgb(0, 0, 0)",
-        "line-width": {"stops": [[0, 0.2], [8, 2]]}
-      }
-    },
-    {
       "id": "border_country_outer",
       "type": "line",
       "metadata": {"IHM:overlay": false},
