@@ -1232,14 +1232,13 @@
       "filter": [
         "all",
         ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
+        ["!has", "maritime"],
         [
           "!in",
           "name:en",
           "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)",
-          "Israel - Syria",
-          "Israel- Syria"
+          "Jerusalem City Municipal Boundary",
+          "Israel - Syria"
         ]
       ],
       "paint": {"line-dasharray": [2.5, 6, 1.5, 0]}
@@ -1254,14 +1253,13 @@
       "filter": [
         "all",
         ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
+        ["!has", "maritime"],
         [
           "!in",
           "name:en",
           "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)",
-          "Israel - Syria",
-          "Israel- Syria"
+          "Jerusalem City Municipal Boundary",
+          "Israel - Syria"
         ]
       ],
       "paint": {"line-dasharray": [0.2, 1.8], "line-width": 5}
@@ -1276,14 +1274,13 @@
       "filter": [
         "all",
         ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
+        ["!has", "maritime"],
         [
           "!in",
           "name:en",
           "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)",
-          "Israel - Syria",
-          "Israel- Syria"
+          "Jerusalem City Municipal Boundary",
+          "Israel - Syria"
         ]
       ],
       "paint": {"line-opacity": 0.33, "line-width": 2}
@@ -1301,7 +1298,7 @@
           "in",
           "name:en",
           "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)"
+          "Jerusalem City Municipal Boundary"
         ]
       ],
       "paint": {"line-opacity": 0.33, "line-color": "#2BB32B", "line-width": 2}
@@ -1315,7 +1312,7 @@
       "filter": [
         "all",
         ["==", "admin_level", 2],
-        ["in", "name:en", "Israel - Syria", "Israel- Syria"]
+        ["==", "name:en", "Israel - Syria"]
       ],
       "paint": {"line-opacity": 0.33, "line-color": "blue", "line-width": 2}
     },

@@ -1708,12 +1708,12 @@
       "filter": [
         "all",
         ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
+        ["!has", "maritime"],
         [
           "!in",
           "name:en",
           "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)"
+          "Jerusalem City Municipal Boundary"
         ]
       ],
       "layout": {
@@ -1737,12 +1737,12 @@
       "filter": [
         "all",
         ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
+        ["!has", "maritime"],
         [
           "!in",
           "name:en",
           "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)"
+          "Jerusalem City Municipal Boundary"
         ]
       ],
       "layout": {
@@ -1766,12 +1766,11 @@
       "filter": [
         "all",
         ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
         [
           "in",
           "name:en",
           "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)"
+          "Jerusalem City Municipal Boundary"
         ]
       ],
       "layout": {
@@ -1794,12 +1793,11 @@
       "filter": [
         "all",
         ["==", "admin_level", 2],
-        ["!=", "maritime", 1],
         [
           "in",
           "name:en",
           "1949 Armistice Line",
-          "Jerusalem City Municipal Boundary (Israel)"
+          "Jerusalem City Municipal Boundary"
         ]
       ],
       "layout": {
