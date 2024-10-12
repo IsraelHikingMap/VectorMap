@@ -1198,7 +1198,7 @@
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 13,
-      "filter": ["all"],
+      "filter": ["in", "class", "national_park", "nature_reserve"],
       "layout": {"line-join": "round"},
       "paint": {
         "line-pattern": "gradient_pattern",
@@ -1215,7 +1215,7 @@
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 9,
-      "filter": ["all"],
+      "filter": ["in", "class", "national_park", "nature_reserve"],
       "paint": {
         "line-width": 2,
         "line-color": "#709D56",
@@ -5099,7 +5099,11 @@
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 9,
-      "filter": ["==", "$type", "Point"],
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["in", "class", "national_park", "nature_reserve"]
+      ],
       "layout": {
         "text-field": [
           "coalesce",
