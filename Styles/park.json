@@ -30,7 +30,6 @@
     {
       "id": "park-name",
       "type": "symbol",
-      "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 9,
