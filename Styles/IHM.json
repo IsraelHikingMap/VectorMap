@@ -4680,35 +4680,6 @@
       }
     },
     {
-      "id": "icon-archaeological",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "poi",
-      "filter": ["==", "subclass", "archaeological_site"],
-      "layout": {
-        "icon-image": "jar",
-        "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:en"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-anchor": "top",
-        "text-offset": [0, 0.5],
-        "text-size": 18,
-        "text-letter-spacing": 0.2,
-        "text-optional": true
-      },
-      "paint": {
-        "text-halo-color": "white",
-        "text-halo-width": 3,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
       "id": "icon-cave",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
@@ -4802,6 +4773,35 @@
       },
       "paint": {
         "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "icon-archaeological",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "poi",
+      "filter": ["==", "subclass", "archaeological_site"],
+      "layout": {
+        "icon-image": "jar",
+        "icon-size": {"stops": [[14, 0.6], [20, 0.8]]},
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-anchor": "top",
+        "text-offset": [0, 0.5],
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
         "text-halo-color": "white",
         "text-halo-width": 3,
         "text-halo-blur": 1.5
