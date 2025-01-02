@@ -4422,11 +4422,7 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "subclass", "station"],
-        ["in", "class", "railway", "aerialway"]
-      ],
+      "filter": ["==", "subclass", "station"],
       "layout": {
         "text-field": [
           "coalesce",

@@ -2320,7 +2320,7 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 13,
-      "filter": ["all", ["==", "class", "fuel"], ["==", "subclass", "fuel"]],
+      "filter": ["==", "subclass", "fuel"],
       "layout": {
         "icon-image": "gas",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
@@ -2981,7 +2981,7 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
-      "filter": ["all", ["==", "class", "castle"], ["==", "subclass", "ruins"]],
+      "filter": ["==", "subclass", "ruins"],
       "layout": {
         "icon-image": "ruins",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
