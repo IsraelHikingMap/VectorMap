@@ -9,19 +9,30 @@
   "sources": {
     "global": {
       "type": "vector",
-      "tiles": [ "https://israelhiking.osm.org.il/vector/data/global/{z}/{x}/{y}.mvt" ],
+      "tiles": [
+        "https://israelhiking.osm.org.il/vector/data/global/{z}/{x}/{y}.mvt"
+      ],
       "maxzoom": 14,
-      "attribution": "\u003ca href=\"https://www.openmaptiles.org/\" target=\"_blank\"\u003e\u0026copy; OpenMapTiles\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e"
+      "attribution": "<a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
     },
     "DEM": {
       "type": "raster-dem",
-      "encoding": "terrarium",
-      "bounds": [-180, -85.0511287, 180, 85.0511287],
-      "url": "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2.json"
+      "tiles": [
+        "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2/{z}/{x}/{y}.png"
+      ],
+      "minzoom": 0,
+      "maxzoom": 11,
+      "tileSize": 512,
+      "encoding": "terrarium"
     },
     "Contour": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
+      "tiles": [
+        "https://global.israelhikingmap.workers.dev/JAXA_AW3D30_2024_contour_z5-Z12_vector/{z}/{x}/{y}.mvt"
+      ],
+      "minzoom": 5,
+      "maxzoom": 12,
+      "scheme": "xyz"
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
@@ -120,7 +131,10 @@
     {
       "id": "area-military",
       "type": "fill",
-      "metadata": {"IHM:overlay": true},
+      "metadata": {
+        "IHM:overlay": true,
+        "maputnik:comment": "TODO: add `military` attribute to source"
+      },
       "source": "global",
       "source-layer": "landuse",
       "filter": ["==", "class", "military"],
@@ -139,32 +153,125 @@
           0.1,
           "airfield",
           0.1,
-          0.3
+          0.1
         ]
       }
     },
     {
-      "id": "contour-line-casing",
+      "id": "contour-minor-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
-      "source-layer": "contour",
-      "paint": {
-        "line-color": "white",
-        "line-width": ["match", ["get", "rank"], [1, 2], 2, 3],
-        "line-blur": 2
-      }
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 10]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 20]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 200]],
+          ["==", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          false
+        ]
+      ],
+      "paint": {"line-color": "white", "line-width": 2}
     },
     {
-      "id": "contour-line",
+      "id": "contour-major-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
-      "source-layer": "contour",
-      "paint": {
-        "line-color": "rgb(161, 127, 86)",
-        "line-width": ["match", ["get", "rank"], [1, 2], 1, 2]
-      }
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 250]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 1000]],
+          ["==", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 2500]],
+          false
+        ]
+      ],
+      "paint": {"line-color": "white", "line-width": 3}
+    },
+    {
+      "id": "contour-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "Contour",
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 10]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 20]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 200]],
+          ["<=", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          false
+        ]
+      ],
+      "paint": {"line-color": "rgb(161, 127, 86)", "line-width": 1}
+    },
+    {
+      "id": "contour-major",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "Contour",
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 250]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 1000]],
+          ["==", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 2500]],
+          false
+        ]
+      ],
+      "paint": {"line-color": "rgb(161, 127, 86)", "line-width": 2}
     },
     {
       "id": "water-area",
@@ -3879,16 +3986,36 @@
       "type": "symbol",
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
-      "source-layer": "contour",
-      "filter": ["!in", "rank", 1, 2],
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 250]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 1000]],
+          ["==", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 2500]],
+          false
+        ]
+      ],
       "layout": {
-        "text-field": "{height}",
+        "text-field": "{ele}",
         "symbol-placement": "line",
         "text-font": ["Open Sans Cond Bold"],
         "symbol-avoid-edges": true,
-        "text-max-angle": 45,
         "text-letter-spacing": 0.15,
-        "text-keep-upright": false
+        "text-keep-upright": false,
+        "text-max-angle": 90
       },
       "paint": {
         "text-color": "rgb(161, 127, 86)",
@@ -5282,5 +5409,5 @@
       }
     }
   ],
-  "id": "IHM"
+  "id": "global_topo"
 }
