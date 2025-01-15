@@ -3,12 +3,14 @@
   "name": "Global Topo",
   "metadata": {
     "owner": "Zeev Stadler",
-    "copyright": "Copyright Zeev Stadler 2019-2024. All Rights Reserved.",
+    "copyright": "Copyright Zeev Stadler 2019-2025. All Rights Reserved.",
+    "note": "Sources have both url and tiles fields on purpose",
     "maputnik:renderer": "mbgljs"
   },
   "sources": {
     "global": {
       "type": "vector",
+      "url": "https://israelhiking.osm.org.il/vector/data/global.json",
       "tiles": [
         "https://israelhiking.osm.org.il/vector/data/global/{z}/{x}/{y}.mvt"
       ],
@@ -17,6 +19,7 @@
     },
     "DEM": {
       "type": "raster-dem",
+      "url": "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2.json",
       "tiles": [
         "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2/{z}/{x}/{y}.png"
       ],
@@ -27,6 +30,7 @@
     },
     "Contour": {
       "type": "vector",
+      "url": "https://global.israelhikingmap.workers.dev/JAXA_AW3D30_2024_contour_z5-Z12_vector.json",
       "tiles": [
         "https://global.israelhikingmap.workers.dev/JAXA_AW3D30_2024_contour_z5-Z12_vector/{z}/{x}/{y}.mvt"
       ],
