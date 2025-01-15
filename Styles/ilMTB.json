@@ -2164,7 +2164,7 @@
       "minzoom": 16,
       "filter": [
         "all",
-        ["any", ["in", "oneway", 1, "-1"], ["in", "oneway:mtb", "yes", "-1"]],
+        ["any", ["in", "oneway", "1", "-1"], ["in", "oneway:mtb", "yes", "1", "-1"]],
         [
           "!in",
           "ilmtb_class",
@@ -2205,8 +2205,8 @@
       "maxzoom": 16,
       "filter": [
         "all",
-        ["in", "ilmtb_class", "path", "cycleway"],
-        ["any", ["==", "oneway", 1], ["==", "oneway:mtb", "yes"]]
+        ["any", ["in", "oneway", "1", "-1"], ["in", "oneway:mtb", "yes", "1", "-1"]],
+        ["in", "ilmtb_class", "path", "cycleway"]
       ],
       "layout": {
         "symbol-placement": "line",
@@ -2214,6 +2214,14 @@
         "icon-image": "arrowhead",
         "icon-rotation-alignment": "map",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]},
+        "icon-rotate": [
+          "case",
+          ["==", ["get", "oneway"], "-1"],
+          180,
+          ["==", ["get", "oneway:mtb"], "-1"],
+          180,
+          0
+        ],
         "symbol-spacing": 100
       },
       "paint": {"icon-opacity": 0.4, "icon-color": "rgb(255, 0, 0)"}
