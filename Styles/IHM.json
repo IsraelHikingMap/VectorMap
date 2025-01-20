@@ -240,7 +240,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "transportation",
-      "filter": ["all", ["==", "class", "pier"], ["==", "$type", "Polygon"]],
+      "filter": ["all", ["==", "class", "pier"]],
       "paint": {"fill-color": "#FAF7E1"}
     },
     {
