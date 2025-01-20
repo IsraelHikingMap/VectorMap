@@ -1424,8 +1424,7 @@
       "minzoom": 14,
       "filter": [
         "all",
-        ["==", "brunnel", "bridge"],
-        ["in", "ilmtb_class", "bridge"]
+        ["==", "brunnel", "bridge"]
       ],
       "paint": {
         "fill-color": "rgb(248, 242, 242)",
