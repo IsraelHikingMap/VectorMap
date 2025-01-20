@@ -1424,7 +1424,7 @@
       "minzoom": 14,
       "filter": [
         "all",
-        ["==", "brunnel", "bridge"]
+        ["==", "class", "bridge"]
       ],
       "paint": {
         "fill-color": "rgb(248, 242, 242)",
