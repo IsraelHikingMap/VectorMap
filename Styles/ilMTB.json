@@ -4040,14 +4040,11 @@
           ["get", "name_en"],
           ["get", "name"]
         ],
-        "symbol-placement": "point",
+        "symbol-placement": "line-center",
         "text-font": ["Open Sans Regular"],
         "text-size": {"stops": [[14, 16], [20, 30]]},
         "text-letter-spacing": 0.2,
-        "symbol-spacing": 250,
-        "text-max-angle": 45,
-        "text-keep-upright": true,
-        "text-max-width": 5
+        "text-rotation-alignment": "viewport"
       },
       "paint": {
         "text-color": "blue",
