@@ -4958,6 +4958,34 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "water_name",
+      "filter": ["==", "$type", "Point"],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.3,
+        "text-rotation-alignment": "viewport",
+        "text-max-width": 4
+      },
+      "paint": {
+        "text-color": "#125595",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "water-area-name-deprecated",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "water_name",
+      "filter": ["==", "$type", "LineString"],
       "layout": {
         "text-field": [
           "coalesce",
