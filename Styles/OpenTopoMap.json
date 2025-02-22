@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "name": "OpenTopoMaps",
+  "sources": {
+    "OpenTopoMaps": {
+      "type": "raster",
+      "tiles": [
+        "https://a.tile.opentopomap.org/{z}/{x}/{y}.png",
+        "https://b.tile.opentopomap.org/{z}/{x}/{y}.png",
+        "https://c.tile.opentopomap.org/{z}/{x}/{y}.png"
+      ],
+      "minzoom": 1,
+      "maxzoom": 15,
+      "tileSize": 256,
+      "attribution": "Map data: © <a href=\"https://openstreetmap.org/copyright\">OpenStreetMap</a> contributors, SRTM | Map display: © <a href=\"http://opentopomap.org\">OpenTopoMap</a> (<a href=\"https://creativecommons.org/licenses/by-sa/3.0/\">CC-BY-SA</a>)"
+    }
+  },
+  "layers": [
+    {"id": "OpenTopoMaps", "type": "raster", "source": "OpenTopoMaps"}
+  ],
+  "id": "OpenTopoMaps"
+}
