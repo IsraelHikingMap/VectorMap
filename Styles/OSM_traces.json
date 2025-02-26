@@ -5,7 +5,17 @@
   "sources": {
     "OSM_traces": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/OSM_traces.json"
+      "maxzoom": 15,
+      "minzoom": 0,
+      "bounds": [
+        34.20003,
+        29.449228,
+        35.9007859,
+        33.350029
+      ],
+      "tiles": [
+        "https://israelhiking.osm.org.il/vector/data/OSM_traces/{z}/{x}/{y}.mvt"
+      ]
     }
   },
   "layers": [
