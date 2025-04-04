@@ -78,7 +78,7 @@
             "rgba(255, 236, 139, 0.25)",
             "beach",
             "#FAFAA0",
-            "rgba(0, 0, 0, 0)"
+            "#0000"
           ],
           "wood",
           "rgba(145, 230, 145, 0.5)",
@@ -88,7 +88,7 @@
           "rgba(19, 196, 42, 0.4)",
           "grass",
           "rgb(233, 253, 204)",
-          "rgba(0, 0, 0, 0)"
+          "#0000"
         ]
       }
     },
@@ -191,7 +191,7 @@
           "match",
           ["get", "class"],
           "ocean",
-          "rgba(0, 0, 0, 0)",
+          "#0000",
           "#1E80E2"
         ]
       }
@@ -231,7 +231,7 @@
         "fill-opacity": 0.5,
         "fill-color": "#f4be66",
         "fill-antialias": true,
-        "fill-outline-color": "rgba(0, 0, 0, 0)"
+        "fill-outline-color": "#0000"
       }
     },
     {
@@ -471,7 +471,7 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#E0E0E0"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#E0E0E0"],
         "line-width": {
           "base": 2,
           "stops": [[12, 2], [13, 3], [16, 8], [22, 32]]
@@ -492,7 +492,7 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#E0E0E0"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#E0E0E0"],
         "line-width": {
           "base": 2,
           "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
@@ -635,7 +635,7 @@
       "paint": {
         "line-dasharray": [1.5, 1.5],
         "line-width": 2.5,
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -653,7 +653,7 @@
       "paint": {
         "line-dasharray": [0.35, 0.5],
         "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#8E5632"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#8E5632"]
       }
     },
     {
@@ -672,7 +672,7 @@
       "paint": {
         "line-dasharray": [0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -691,7 +691,7 @@
       "paint": {
         "line-dasharray": [4, 2, 0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -711,7 +711,7 @@
       "paint": {
         "line-dasharray": [4, 3],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -749,7 +749,7 @@
         "line-dasharray": [10, 3, 2, 3, 2, 3],
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -772,8 +772,8 @@
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -796,7 +796,7 @@
         "line-dasharray": [10, 3, 2, 3],
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -819,8 +819,8 @@
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -843,7 +843,7 @@
         "line-dasharray": [5, 3],
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -866,8 +866,8 @@
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -889,7 +889,7 @@
       "paint": {
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -911,8 +911,8 @@
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -1378,7 +1378,7 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#808080"],
         "line-width": {
           "base": 2,
           "stops": [[12, 2], [13, 3], [16, 8], [22, 32]]
@@ -1400,7 +1400,7 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour2"], "rgba(0, 0, 0, 0)"],
+        "line-color": ["to-color", ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]], "#0000"],
         "line-width": {
           "base": 2,
           "stops": [[12, 1], [13, 1.5], [16, 4], [22, 16]]
@@ -1425,7 +1425,7 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#808080"],
         "line-width": {
           "base": 2,
           "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
@@ -1446,7 +1446,7 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#808080"],
         "line-width": {
           "base": 2,
           "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
@@ -1467,7 +1467,7 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#808080"],
         "line-width": {
           "base": 2,
           "stops": [[10, 2], [12, 1.5], [13, 3], [16, 16], [22, 64]]
@@ -1488,7 +1488,7 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#808080"],
         "line-width": {
           "base": 2,
           "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
@@ -1560,7 +1560,7 @@
           "blue:blue:white_right:purple_stripe",
           "#1765AD",
           "green:green:white_right:blue_stripe",
-          "#4CA64C",
+          "#00C000",
           "yellow:blue:yellow_stripe",
           "gold",
           [
@@ -1568,7 +1568,7 @@
             ["get", "name"],
             "שביל ואדיות חיפה",
             "green",
-            "rgba(0,0,0,0)"
+            "#0000"
           ]
         ],
         "line-width": {
@@ -1600,7 +1600,7 @@
           "blue",
           "yellow:blue:yellow_stripe",
           "blue",
-          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "rgba(0,0,0,0)"]
+          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "#0000"]
         ],
         "line-dasharray": [4, 4],
         "line-width": {
@@ -1637,14 +1637,14 @@
           "red:white:red_stripe",
           "red",
           "green:white:green_stripe",
-          "green",
+          "#00C000",
           "blue:white:blue_stripe",
           "blue",
           "purple:white:purple_stripe",
           "purple",
           "orange:white:orange_stripe",
           "orange",
-          "rgba(0,0,0,0)"
+          "#0000"
         ]
       }
     },
@@ -1667,14 +1667,14 @@
           "red:white:red_stripe",
           "red",
           "green:white:green_stripe",
-          "green",
+          "#00C000",
           "blue:white:blue_stripe",
           "blue",
           "purple:white:purple_stripe",
           "purple",
           "orange:white:orange_stripe",
           "orange",
-          "rgba(0,0,0,0)"
+          "#0000"
         ]
       }
     },
@@ -1730,7 +1730,7 @@
       "paint": {
         "line-dasharray": [1.5, 1.5],
         "line-width": 2.5,
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -1748,7 +1748,7 @@
       "paint": {
         "line-dasharray": [0.2, 0.25],
         "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#8E5632"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#8E5632"]
       }
     },
     {
@@ -1768,7 +1768,7 @@
       "paint": {
         "line-dasharray": [0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -1787,7 +1787,7 @@
       "paint": {
         "line-dasharray": [4, 2, 0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -1807,7 +1807,7 @@
       "paint": {
         "line-dasharray": [4, 3],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -1845,7 +1845,7 @@
         "line-dasharray": [8, 2, 1, 2, 1, 2],
         "line-offset": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -1868,8 +1868,8 @@
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -1892,7 +1892,7 @@
         "line-dasharray": [8, 2, 1, 2],
         "line-offset": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -1915,8 +1915,8 @@
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -1939,7 +1939,7 @@
         "line-dasharray": [8, 2.5],
         "line-offset": {"base": 2, "stops": [[12, 1], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -1962,8 +1962,8 @@
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -1985,7 +1985,7 @@
       "paint": {
         "line-offset": {"base": 2, "stops": [[12, 1], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -2007,8 +2007,8 @@
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -2310,7 +2310,7 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#808080"],
         "line-width": {
           "base": 2,
           "stops": [[12, 2], [13, 3], [16, 8], [22, 32]]
@@ -2327,7 +2327,7 @@
       "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "tertiary"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#808080"],
         "line-width": {
           "base": 2,
           "stops": [[11, 2], [13, 3], [16, 8], [22, 32]]
@@ -2344,7 +2344,7 @@
       "filter": ["all", ["==", "layer", 1], ["==", "ihm_class", "secondary"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#808080"],
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#808080"],
         "line-width": {
           "base": 2,
           "stops": [[11, 0.75], [12, 1.5], [13, 3], [16, 8], [22, 32]]
@@ -2455,7 +2455,7 @@
       "paint": {
         "line-dasharray": [1.5, 1.5],
         "line-width": 2.5,
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -2469,7 +2469,7 @@
       "paint": {
         "line-dasharray": [0.35, 0.5],
         "line-width": {"base": 2, "stops": [[16, 6], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#8E5632"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#8E5632"]
       }
     },
     {
@@ -2488,7 +2488,7 @@
       "paint": {
         "line-dasharray": [0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -2503,7 +2503,7 @@
       "paint": {
         "line-dasharray": [4, 2, 0.5, 2],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -2523,7 +2523,7 @@
       "paint": {
         "line-dasharray": [4, 3],
         "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -2561,7 +2561,7 @@
         "line-dasharray": [10, 3, 2, 3, 2, 3],
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -2584,8 +2584,8 @@
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -2608,7 +2608,7 @@
         "line-dasharray": [10, 3, 2, 3],
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -2631,8 +2631,8 @@
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -2655,7 +2655,7 @@
         "line-dasharray": [5, 3],
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -2678,8 +2678,8 @@
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -2701,7 +2701,7 @@
       "paint": {
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+        "line-color": ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "#AA8166"]
       }
     },
     {
@@ -2723,8 +2723,8 @@
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": [
           "to-color",
-          ["get", "colour2"],
-          ["get", "colour"],
+          ["match",["get", "colour2"],"green","#00C000",["get", "colour2"]],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "#AA8166"
         ]
       }
@@ -3915,7 +3915,7 @@
       "paint": {
         "fill-extrusion-color": [
           "coalesce",
-          ["get", "colour"],
+          ["match",["get", "colour"],"green","#00C000",["get", "colour"]],
           "rgb(191, 191, 191)"
         ],
         "fill-extrusion-height": ["get", "render_height"],
@@ -4035,7 +4035,7 @@
           "blue",
           "yellow:blue:yellow_stripe",
           "blue",
-          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "rgba(0,0,0,0)"]
+          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "#0000"]
         ],
         "text-halo-color": [
           "match",
@@ -4047,7 +4047,7 @@
           "blue:blue:white_right:purple_stripe",
           "#1765AD",
           "green:green:white_right:blue_stripe",
-          "rgba(76, 166, 76, 0.3)",
+          "#00C00050",
           "yellow:blue:yellow_stripe",
           "gold",
           [
@@ -4055,7 +4055,7 @@
             ["get", "name"],
             "שביל ואדיות חיפה",
             "rgba(76, 166, 76, 0.3)",
-            "rgba(0,0,0,0)"
+            "#0000"
           ]
         ],
         "text-halo-width": 3,
@@ -4092,10 +4092,10 @@
           "red:white:red_stripe",
           "red",
           "green:white:green_stripe",
-          "green",
+          "#00C000",
           "blue:white:blue_stripe",
           "blue",
-          ["to-color", ["get", "colour"], "black"]
+          ["to-color", ["match",["get", "colour"],"green","#00C000",["get", "colour"]], "black"]
         ],
         "text-halo-color": [
           "match",
@@ -4108,7 +4108,7 @@
           "white",
           "blue:white:blue_stripe",
           "white",
-          "rgba(0,0,0,0)"
+          "#0000"
         ],
         "text-halo-width": 3,
         "text-halo-blur": 1.5
@@ -4915,7 +4915,7 @@
       "filter": ["==", "subclass", "cistern"],
       "paint": {
         "circle-radius": {"stops": [[14, 2.5], [20, 4.375]]},
-        "circle-color": "rgba(0,0,0,0)",
+        "circle-color": "#0000",
         "circle-stroke-color": "#1E80E2",
         "circle-stroke-width": {"stops": [[14, 2.5], [20, 4.375]]}
       }
