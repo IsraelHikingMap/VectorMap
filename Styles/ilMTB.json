@@ -2265,7 +2265,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2294,7 +2294,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2391,7 +2391,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2476,7 +2476,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2504,7 +2504,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2531,7 +2531,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2565,7 +2565,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2598,7 +2598,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2631,7 +2631,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2664,7 +2664,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2697,7 +2697,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2804,7 +2804,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2909,7 +2909,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2941,7 +2941,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2969,7 +2969,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -2997,7 +2997,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3029,7 +3029,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3061,7 +3061,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3093,7 +3093,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3123,7 +3123,7 @@
           "concat",
           ["get", "ele"],
           "\n\n",
-          ["coalesce", ["get", "name:he"], ["get", "name_en"], ["get", "name"]]
+          ["coalesce", ["get", "name:he"], ["get", "name:en"], ["get", "name"]]
         ],
         "icon-anchor": "center",
         "text-padding": 0,
@@ -3150,7 +3150,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3199,7 +3199,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3228,7 +3228,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3257,7 +3257,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3286,7 +3286,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3329,7 +3329,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3389,7 +3389,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3427,7 +3427,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3455,7 +3455,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3483,7 +3483,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3511,7 +3511,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3595,7 +3595,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -3624,7 +3624,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 3,
@@ -3742,7 +3742,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 3,
@@ -3770,7 +3770,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3792,7 +3792,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3814,7 +3814,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3837,7 +3837,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3869,7 +3869,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3891,7 +3891,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3917,7 +3917,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3947,7 +3947,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -3977,7 +3977,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Bold"],
@@ -4010,7 +4010,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-max-width": 5,
@@ -4038,7 +4038,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": ["Open Sans Regular"],
@@ -4064,7 +4064,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:he"],
-          ["get", "name_en"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "symbol-placement": "line-center",
