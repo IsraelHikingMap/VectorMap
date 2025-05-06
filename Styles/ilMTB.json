@@ -9,7 +9,7 @@
   "sources": {
     "IHM": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/IHM.json"
+      "url": "https://israelhiking.osm.org.il/vector/data/global.json"
     },
     "TerrainRGB": {
       "type": "raster-dem",
