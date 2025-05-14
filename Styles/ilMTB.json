@@ -2960,7 +2960,11 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
-      "filter": ["all", ["==", "subclass", "cave_entrance"]],
+      "filter": [
+        "any",
+        ["==", "subclass", "cave_entrance"],
+        ["in", "tomb", "hypogeum", "rock-cut"]
+      ],
       "layout": {
         "icon-image": "cave",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
