@@ -1422,10 +1422,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "class", "bridge"]
-      ],
+      "filter": ["all", ["==", "class", "bridge"]],
       "paint": {
         "fill-color": "rgb(248, 242, 242)",
         "fill-outline-color": "rgb(0, 0, 0)"
@@ -2163,17 +2160,26 @@
       "minzoom": 16,
       "filter": [
         "all",
-        ["any", ["in", "oneway", "1", "-1"], ["in", "oneway:mtb", "yes", "1", "-1"]],
         [
-          "!in",
-          "ilmtb_class",
-          "motorway_construction",
-          "trunk_construction",
-          "primary_construction",
-          "secondary_construction",
-          "tertiary_construction",
-          "raceway_construction",
-          "minor_construction"
+          "any",
+          ["match", ["get", "oneway"], [-1, 1], true, false],
+          ["match", ["get", "oneway:mtb"], [-1, 1], true, false],
+          ["match", ["get", "oneway:mtb"], ["yes"], true, false]
+        ],
+        [
+          "match",
+          ["get", "ilmtb_class"],
+          [
+            "minor_construction",
+            "motorway_construction",
+            "primary_construction",
+            "raceway_construction",
+            "secondary_construction",
+            "tertiary_construction",
+            "trunk_construction"
+          ],
+          false,
+          true
         ]
       ],
       "layout": {
@@ -2204,7 +2210,11 @@
       "maxzoom": 16,
       "filter": [
         "all",
-        ["any", ["in", "oneway", "1", "-1"], ["in", "oneway:mtb", "yes", "1", "-1"]],
+        [
+          "any",
+          ["in", "oneway", "1", "-1"],
+          ["in", "oneway:mtb", "yes", "1", "-1"]
+        ],
         ["in", "ilmtb_class", "path", "cycleway"]
       ],
       "layout": {
