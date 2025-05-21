@@ -19,9 +19,9 @@
       "type": "vector",
       "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
     },
-    "trail": {
+    "IHM-code": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/trail.json"
+      "url": "https://israelhiking.osm.org.il/vector/data/IHM-code.json"
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
@@ -601,7 +601,7 @@
       "id": "mtbroute-lcn-hot",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 10,
       "maxzoom": 21,
@@ -641,7 +641,7 @@
       "id": "mtbroute-lcn-cold",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 10,
       "maxzoom": 21,
@@ -681,7 +681,7 @@
       "id": "mtbroute-lcn-hot-right",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 10,
       "maxzoom": 21,
@@ -722,7 +722,7 @@
       "id": "mtbroute_rcn",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 9,
       "filter": ["all", ["==", "network", "rcn"]],
@@ -736,7 +736,7 @@
       "id": "mtbroute_ncn",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 8,
       "filter": ["all", ["==", "network", "ncn"]],
@@ -3514,7 +3514,7 @@
       "id": "label_mtb_route",
       "type": "symbol",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 10,
       "maxzoom": 24,

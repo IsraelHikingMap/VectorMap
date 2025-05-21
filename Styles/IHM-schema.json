@@ -19,9 +19,9 @@
       "type": "vector",
       "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
     },
-    "trail": {
+    "IHM-code": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/trail.json"
+      "url": "https://israelhiking.osm.org.il/vector/data/IHM-code.json"
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
@@ -260,7 +260,7 @@
       "id": "trail-israel-secondary-",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 5,
       "filter": [
@@ -290,7 +290,7 @@
       "id": "trail-israel-primary+",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 5,
       "filter": [
@@ -1626,7 +1626,7 @@
       "id": "trail-regional-line-purple",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 11,
       "filter": [
@@ -1652,7 +1652,7 @@
       "id": "trail-regional-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 11,
       "filter": ["all", ["==", "network", "rwn"], ["!has", "way_colour"]],
@@ -1685,7 +1685,7 @@
       "id": "trail-regional-dash",
       "type": "line",
       "metadata": {"IHM:overlay": false},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 11,
       "filter": ["all", ["==", "network", "rwn"], ["!has", "way_colour"]],
@@ -1717,7 +1717,7 @@
       "id": "trail-line-path",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 12,
       "maxzoom": 13,
@@ -1752,7 +1752,7 @@
       "id": "trail-line-road",
       "type": "line",
       "metadata": {"IHM:overlay": true},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 11,
       "maxzoom": 12,
@@ -4230,7 +4230,7 @@
       "id": "name-trail-regional",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 13,
       "filter": ["==", "network", "rwn"],
@@ -4292,7 +4292,7 @@
       "id": "name-trail-local",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
-      "source": "trail",
+      "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 13,
       "filter": ["all", ["==", "network", "lwn"], ["has", "name"]],
