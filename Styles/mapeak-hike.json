@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "Israel Hiking",
+  "name": "mapeak-hike",
   "metadata": {
     "owner": "Zeev Stadler",
     "copyright": "Copyright Zeev Stadler 2019-2025. All Rights Reserved.",
@@ -10,18 +10,14 @@
     "IHM": {
       "type": "vector",
       "url": "https://mapeak.com/vector/data/IHM-schema.json",
-      "tiles": [
-        "https://mapeak.com/vector/data/IHM-schema/{z}/{x}/{y}.mvt"
-      ],
+      "tiles": ["https://mapeak.com/vector/data/IHM-schema/{z}/{x}/{y}.mvt"],
       "maxzoom": 14,
       "attribution": "<a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
     },
     "IHM-code": {
       "type": "vector",
       "url": "https://mapeak.com/vector/data/IHM-code.json",
-      "tiles": [
-        "https://mapeak.com/vector/data/IHM-code/{z}/{x}/{y}.mvt"
-      ],
+      "tiles": ["https://mapeak.com/vector/data/IHM-code/{z}/{x}/{y}.mvt"],
       "maxzoom": 14,
       "attribution": "<a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
     },
@@ -4271,10 +4267,30 @@
       "type": "symbol",
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
-      "source-layer": "contour",
-      "filter": ["!in", "rank", 1, 2],
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 250]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 1000]],
+          ["==", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 2500]],
+          false
+        ]
+      ],
       "layout": {
-        "text-field": "{height}",
+        "text-field": "{ele}",
         "symbol-placement": "line",
         "text-font": ["Open Sans Cond Bold"],
         "symbol-avoid-edges": true,
@@ -5740,5 +5756,6 @@
       }
     }
   ],
-  "id": "IHM"
+  "id": "mapeak-hike",
+  "owner": "Mapeak.com"
 }
