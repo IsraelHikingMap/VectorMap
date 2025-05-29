@@ -9,19 +9,44 @@
   "sources": {
     "IHM": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/IHM-schema.json"
-    },
-    "TerrainRGB": {
-      "type": "raster-dem",
-      "url": "https://israelhiking.osm.org.il/vector/data/TerrainRGB.json"
-    },
-    "Contour": {
-      "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/Contour.json"
+      "url": "https://mapeak.com/vector/data/IHM-schema.json",
+      "tiles": [
+        "https://mapeak.com/vector/data/IHM-schema/{z}/{x}/{y}.mvt"
+      ],
+      "maxzoom": 14,
+      "attribution": "<a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
     },
     "IHM-code": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/IHM-code.json"
+      "url": "https://mapeak.com/vector/data/IHM-code.json",
+      "tiles": [
+        "https://mapeak.com/vector/data/IHM-code/{z}/{x}/{y}.mvt"
+      ],
+      "maxzoom": 14,
+      "attribution": "<a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
+    },
+    "DEM": {
+      "type": "raster-dem",
+      "url": "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2.json",
+      "tiles": [
+        "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2/{z}/{x}/{y}.png"
+      ],
+      "minzoom": 0,
+      "maxzoom": 11,
+      "tileSize": 512,
+      "encoding": "terrarium",
+      "attribution": "<a href=https://earth.jaxa.jp/en/data/policy/>AW3D30 (JAXA)</a>"
+    },
+    "Contour": {
+      "type": "vector",
+      "url": "https://global.israelhikingmap.workers.dev/JAXA_AW3D30_2024_contour_z5-Z12_vector.json",
+      "tiles": [
+        "https://global.israelhikingmap.workers.dev/JAXA_AW3D30_2024_contour_z5-Z12_vector/{z}/{x}/{y}.mvt"
+      ],
+      "minzoom": 5,
+      "maxzoom": 12,
+      "scheme": "xyz",
+      "attribution": "<a href=https://earth.jaxa.jp/en/data/policy/>AW3D30 (JAXA)</a>"
     }
   },
   "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
@@ -67,7 +92,6 @@
         "sand",
         "farmland",
         "orchard",
-        "grass",
         "grass"
       ],
       "paint": {
@@ -159,27 +183,120 @@
       }
     },
     {
-      "id": "contour-line-casing",
+      "id": "contour-minor-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
-      "source-layer": "contour",
-      "paint": {
-        "line-color": "white",
-        "line-width": ["match", ["get", "rank"], [1, 2], 2, 3],
-        "line-blur": 2
-      }
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 10]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 20]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 200]],
+          ["==", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          false
+        ]
+      ],
+      "paint": {"line-color": "white", "line-width": 2}
     },
     {
-      "id": "contour-line",
+      "id": "contour-major-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
-      "source-layer": "contour",
-      "paint": {
-        "line-color": "rgb(161, 127, 86)",
-        "line-width": ["match", ["get", "rank"], [1, 2], 1, 2]
-      }
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 250]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 1000]],
+          ["==", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 2500]],
+          false
+        ]
+      ],
+      "paint": {"line-color": "white", "line-width": 3}
+    },
+    {
+      "id": "contour-minor",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "Contour",
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 10]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 20]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 200]],
+          ["<=", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          false
+        ]
+      ],
+      "paint": {"line-color": "rgb(161, 127, 86)", "line-width": 1}
+    },
+    {
+      "id": "contour-major",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "Contour",
+      "source-layer": "contours",
+      "filter": [
+        "let",
+        "ele",
+        ["to-number", ["get", "ele"]],
+        [
+          "case",
+          [">=", ["zoom"], 14],
+          ["==", 0, ["%", ["var", "ele"], 50]],
+          ["==", ["zoom"], 13],
+          ["==", 0, ["%", ["var", "ele"], 100]],
+          ["==", ["zoom"], 12],
+          ["==", 0, ["%", ["var", "ele"], 250]],
+          ["==", ["zoom"], 11],
+          ["==", 0, ["%", ["var", "ele"], 500]],
+          ["==", ["zoom"], 10],
+          ["==", 0, ["%", ["var", "ele"], 1000]],
+          ["==", ["zoom"], 9],
+          ["==", 0, ["%", ["var", "ele"], 2500]],
+          false
+        ]
+      ],
+      "paint": {"line-color": "rgb(161, 127, 86)", "line-width": 2}
     },
     {
       "id": "water-area",
@@ -3846,7 +3963,7 @@
       "id": "Terrain",
       "type": "hillshade",
       "metadata": {"IHM:overlay": false},
-      "source": "TerrainRGB",
+      "source": "DEM",
       "paint": {
         "hillshade-exaggeration": 0.33,
         "hillshade-highlight-color": "rgba(256,256,256,0)"
