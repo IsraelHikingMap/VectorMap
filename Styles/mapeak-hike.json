@@ -184,6 +184,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contours",
+      "minzoom": 9,
       "filter": [
         "let",
         "ele",
@@ -213,6 +214,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contours",
+      "minzoom": 9,
       "filter": [
         "let",
         "ele",
@@ -242,6 +244,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contours",
+      "minzoom": 9,
       "filter": [
         "let",
         "ele",
@@ -271,6 +274,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "Contour",
       "source-layer": "contours",
+      "minzoom": 9,
       "filter": [
         "let",
         "ele",
