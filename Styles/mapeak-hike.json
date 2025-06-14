@@ -3861,11 +3861,12 @@
         "in",
         "subclass",
         "cable_car",
-        "gondola",
         "chair_lift",
         "drag_lift",
+        "gondola",
         "goods",
-        "magic_carpet"
+        "magic_carpet",
+        "platter"
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {"line-color": "#666", "line-width": 3}

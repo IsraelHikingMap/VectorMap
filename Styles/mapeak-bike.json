@@ -1262,11 +1262,12 @@
         "in",
         "subclass",
         "cable_car",
-        "gondola",
         "chair_lift",
         "drag_lift",
+        "gondola",
         "goods",
-        "magic_carpet"
+        "magic_carpet",
+        "platter"
       ],
       "paint": {
         "line-color": "rgb(40, 40, 40)",
@@ -3444,11 +3445,12 @@
         "in",
         "subclass",
         "cable_car",
-        "gondola",
         "chair_lift",
         "drag_lift",
+        "gondola",
         "goods",
-        "magic_carpet"
+        "magic_carpet",
+        "platter"
       ],
       "layout": {
         "symbol-placement": "line",
