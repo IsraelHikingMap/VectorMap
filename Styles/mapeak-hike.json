@@ -81,14 +81,18 @@
       "source": "IHM",
       "source-layer": "landcover",
       "filter": [
-        "in",
-        "class",
-        "sand",
-        "wood",
-        "sand",
-        "farmland",
-        "orchard",
-        "grass"
+        "all",
+        [
+          "in",
+          "class",
+          "sand",
+          "wood",
+          "sand",
+          "farmland",
+          "orchard",
+          "grass",
+          "ice"
+        ]
       ],
       "paint": {
         "fill-color": [
@@ -112,6 +116,15 @@
           "rgba(19, 196, 42, 0.4)",
           "grass",
           "rgb(233, 253, 204)",
+          "ice",
+          "white",
+          "#0000"
+        ],
+        "fill-outline-color": [
+          "match",
+          ["get", "class"],
+          "ice",
+          "gray",
           "#0000"
         ]
       }
