@@ -3901,21 +3901,18 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 14,
+      "minzoom": 11,
       "maxzoom": 24,
-      "filter": [
-        "in",
-        "subclass",
-        "cable_car",
-        "chair_lift",
-        "drag_lift",
-        "gondola",
-        "goods",
-        "magic_carpet",
-        "platter"
-      ],
+      "filter": ["all", ["in", "class", "aerialway"]],
       "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {"line-color": "#666", "line-width": 3}
+      "paint": {
+        "line-color": "#666",
+        "line-width": {
+          "property": "",
+          "type": "exponential",
+          "stops": [[{"zoom": 6, "value": 0}, 3], [{"zoom": 10, "value": 0}, 3]]
+        }
+      }
     },
     {
       "id": "goods_conveyor-bridge",
@@ -4855,7 +4852,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 14,
+      "minzoom": 13,
       "filter": ["==", "subclass", "station"],
       "layout": {
         "text-field": [
@@ -4866,13 +4863,13 @@
         ],
         "symbol-placement": "point",
         "text-font": ["Open Sans Cond Bold"],
-        "text-size": 18,
+        "text-size": {"stops": [[13, 0], [14, 16]]},
         "text-letter-spacing": 0.2,
         "text-max-width": 10,
         "text-anchor": "top",
         "text-offset": [0, 0.5],
         "icon-image": "square",
-        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-size": {"stops": [[12, 0.25], [20, 0.8]]},
         "icon-allow-overlap": true,
         "text-optional": true
       },
@@ -5661,35 +5658,7 @@
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 12,
-      "filter": ["==", "class", "isolated_dwelling"],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:en"],
-          ["get", "name"]
-        ],
-        "symbol-placement": "point",
-        "text-font": ["Open Sans Cond Bold"],
-        "text-size": 18,
-        "text-letter-spacing": 0.2,
-        "text-max-width": 5
-      },
-      "paint": {
-        "text-color": "#404040",
-        "text-halo-color": "white",
-        "text-halo-width": 3,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
-      "id": "place-hamlet",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM",
-      "source-layer": "place",
-      "minzoom": 12,
-      "filter": ["==", "class", "hamlet"],
+      "filter": ["all", ["in", "class", "isolated_dwelling", "hamlet"]],
       "layout": {
         "text-field": [
           "coalesce",
@@ -5717,7 +5686,7 @@
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 11,
-      "filter": ["==", "class", "village"],
+      "filter": ["all", ["in", "class", "village", "alpine_hut"]],
       "layout": {
         "text-field": [
           "coalesce",
