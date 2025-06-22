@@ -434,6 +434,37 @@
       }
     },
     {
+      "id": "layer-1-box-wayerway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "waterway",
+      "minzoom": 10,
+      "filter": ["all", ["==", "brunnel", "tunnel"]],
+      "paint": {
+        "line-color": "rgba(63, 63, 63, 1)",
+        "line-dasharray": [0.3, 0.4],
+        "line-width": {
+          "base": 2,
+          "stops": [[10, 2.5], [13, 4], [16, 8], [22, 32]]
+        }
+      }
+    },
+    {
+      "id": "layer-1-casing-waterway",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "waterway",
+      "minzoom": 10,
+      "filter": ["all", ["==", "brunnel", "tunnel"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 4], [22, 16]]}
+      }
+    },
+    {
       "id": "layer-1-box-steps-line",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -1326,10 +1357,11 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
+      "minzoom": 9,
       "filter": ["all", ["==", "intermittent", 1], ["!=", "class", "ditch"]],
       "paint": {
         "line-color": "#8EBDF0",
-        "line-width": {"base": 1, "stops": [[9, 2], [14, 3]]},
+        "line-width": {"base": 1, "stops": [[10, 1], [14, 3]]},
         "line-dasharray": [4, 1]
       }
     },
@@ -1339,10 +1371,11 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
+      "minzoom": 9,
       "filter": ["all", ["!=", "intermittent", 1], ["!=", "class", "ditch"]],
       "paint": {
         "line-color": "#8EBDF0",
-        "line-width": {"base": 1, "stops": [[9, 2], [14, 3]]}
+        "line-width": {"base": 1, "stops": [[10, 1], [14, 3]]}
       }
     },
     {
