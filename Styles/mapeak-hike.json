@@ -1594,7 +1594,7 @@
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 9,
-      "filter": ["in", "class", "cliff", "earth_bank"],
+      "filter": ["all", ["in", "class", "cliff", "earth_bank", "arete"]],
       "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
     },
     {
@@ -4037,13 +4037,31 @@
       "paint": {"icon-opacity": 0.5}
     },
     {
+      "id": "barrier-cliff-arete",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "ihm_lines",
+      "minzoom": 9,
+      "filter": ["all", ["in", "class", "arete"]],
+      "layout": {
+        "icon-image": "cliff_pattern",
+        "symbol-placement": "line",
+        "symbol-spacing": 10,
+        "icon-allow-overlap": true,
+        "icon-anchor": "bottom",
+        "icon-rotate": 0,
+        "icon-size": 0.4
+      }
+    },
+    {
       "id": "barrier-cliff-icon",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "ihm_lines",
       "minzoom": 9,
-      "filter": ["in", "class", "cliff", "earth_bank"],
+      "filter": ["all", ["in", "class", "cliff", "earth_bank", "arete"]],
       "layout": {
         "icon-image": "cliff_pattern",
         "symbol-placement": "line",
