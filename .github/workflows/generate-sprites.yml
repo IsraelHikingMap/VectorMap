@@ -19,7 +19,6 @@ jobs:
       - name: Generate sprites
         run: |
           cd Icons
-          mkdir -p SVGs/input
           node generate-sprites.mjs
 
       - name: Show git status

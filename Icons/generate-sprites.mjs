@@ -10,10 +10,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const iconsDir = path.join(__dirname, 'SVGs', 'single SVGs');
 const inputDir = path.join(__dirname, 'SVGs', 'input');
+if (fs.existsSync(inputDir)) {
+    fs.rmSync(inputDir, { recursive: true, force: true });
+}
+fs.mkdirSync(inputDir, { recursive: true });
+
 const publishDir = path.join(__dirname, 'publish');
 const dockerImage = 'ghcr.io/harelm/spreet:0.12.0-dev';
 const haloIcons = fs.readdirSync(iconsDir)
-  .filter(file => file.endsWith('.svg') && !file.includes('pattern') && !file.includes('arrowline') && !file.includes('cliff'));
+  .filter(file => file.endsWith('.svg') && !file.includes('pattern') && !file.includes('arrowline') && !file.includes('cliff') && !file.includes('triangle'));
 
 // read svg and add a halo
 for (let file of haloIcons) {
@@ -37,10 +42,10 @@ for (let file of haloIcons) {
 }
 
 // Handle duplicate icons with different colors
-let svgContent = fs.readFileSync(path.join(inputDir, 'david_star.svg'), 'utf8');
+let svgContent = fs.readFileSync(path.join(inputDir, 'synagogue.svg'), 'utf8');
 svgContent = svgContent.replace('<path ', '<path fill="red" ');
 fs.writeFileSync(path.join(inputDir, 'first_aid.svg'), svgContent);
-svgContent = fs.readFileSync(path.join(inputDir, 'gate.svg'), 'utf8');
+svgContent = fs.readFileSync(path.join(inputDir, 'gate_open.svg'), 'utf8');
 svgContent = svgContent.replace('<path ', '<path fill="red" ');
 fs.writeFileSync(path.join(inputDir, 'gate_closed.svg'), svgContent);
 svgContent = fs.readFileSync(path.join(inputDir, 'dot.svg'), 'utf8');
@@ -58,7 +63,7 @@ fs.writeFileSync(path.join(inputDir, 'blue_shield.svg'), svgContent);
 
 // Copy icons that do not need a halo
 const patternIcons = fs.readdirSync(iconsDir)
-  .filter(file => file.endsWith('.svg') && file.includes('pattern') || file.includes('cliff') || file.includes('arrowline'));
+  .filter(file => file.endsWith('.svg') && file.includes('pattern') || file.includes('cliff') || file.includes('arrowline') || file.includes('triangle') || file.includes('cross'));
 
 for (let file of patternIcons) {
     fs.copyFileSync(path.join(iconsDir, file), path.join(inputDir, file));
