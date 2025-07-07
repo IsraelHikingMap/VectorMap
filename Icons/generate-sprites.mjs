@@ -56,9 +56,9 @@ svgContent = fs.readFileSync(path.join(inputDir, 'shield.svg'), 'utf8');
 svgContent = svgContent.replace('<path ', '<path fill="blue" ');
 fs.writeFileSync(path.join(inputDir, 'blue_shield.svg'), svgContent);
 
-// Copy pattern icons to input directory
+// Copy icons that do not need a halo
 const patternIcons = fs.readdirSync(iconsDir)
-  .filter(file => file.endsWith('.svg') && file.includes('pattern'));
+  .filter(file => file.endsWith('.svg') && file.includes('pattern') || file.includes('cliff') || file.includes('arrowline'));
 
 for (let file of patternIcons) {
     fs.copyFileSync(path.join(iconsDir, file), path.join(inputDir, file));
