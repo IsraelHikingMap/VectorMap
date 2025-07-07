@@ -43,8 +43,8 @@ for (let file of haloIcons) {
 
 function copyIconWithDifferentColor(originalFile, newFile, color) {
     let svgContent = fs.readFileSync(path.join(inputDir, originalFile), 'utf8');
-    if (svgContent.includes('fill="')) {
-        svgContent = svgContent.replace(/fill="[^"]*"/, `fill="${color}"`);
+    if (svgContent.includes('<path fill="')) {
+        svgContent = svgContent.replace(/path fill="[^"]*"/, `path fill="${color}"`);
     } else {
         svgContent = svgContent.replace('<path ', `<path fill="${color}" `);
     }
