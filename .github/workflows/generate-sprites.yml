@@ -1,0 +1,27 @@
+name: Generate Sprites
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  generate-sprites:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate sprites
+        run: |
+          cd Icons
+          mkdir -p SVGs/input
+          node generate-sprites.mjs
+
+      - name: Show git status
+        run: |
+          git status
