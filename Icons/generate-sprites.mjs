@@ -1,14 +1,17 @@
 // This script gewnerrates sprites by calling spreet docker image.
 // It also adds a halo to the icons.
-// It ignores hale for icons that has a pattern in their file name.
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const iconsDir = path.join(__dirname, 'SVGs', 'single SVGs with halo');
+// It ignores halo for icons that has a pattern in their file name.
+import { execSync } from 'child_process';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const iconsDir = path.join(__dirname, 'SVGs', 'single SVGs');
 const inputDir = path.join(__dirname, 'SVGs', 'input');
-// HM TODO: rename to publish
-const publishDir = path.join(__dirname, 'output');
-const dockerImage = 'ghcr.io/harelm/spreet:0.13.0';
+const publishDir = path.join(__dirname, 'publish');
+const dockerImage = 'ghcr.io/harelm/spreet:0.12.0-dev';
 const haloIcons = fs.readdirSync(iconsDir)
   .filter(file => file.endsWith('.svg') && !file.includes('pattern') && !file.includes('arrowline') && !file.includes('cliff'));
 
@@ -33,6 +36,7 @@ for (let file of haloIcons) {
     fs.writeFileSync(path.join(inputDir, file), svgContent);
 }
 
+// Handle duplicate icons with different colors
 let svgContent = fs.readFileSync(path.join(inputDir, 'david_star.svg'), 'utf8');
 svgContent = svgContent.replace('<path ', '<path fill="red" ');
 fs.writeFileSync(path.join(inputDir, 'first_aid.svg'), svgContent);
@@ -52,7 +56,7 @@ svgContent = fs.readFileSync(path.join(inputDir, 'shield.svg'), 'utf8');
 svgContent = svgContent.replace('<path ', '<path fill="blue" ');
 fs.writeFileSync(path.join(inputDir, 'blue_shield.svg'), svgContent);
 
-
+// Copy pattern icons to input directory
 const patternIcons = fs.readdirSync(iconsDir)
   .filter(file => file.endsWith('.svg') && file.includes('pattern'));
 
@@ -60,7 +64,10 @@ for (let file of patternIcons) {
     fs.copyFileSync(path.join(iconsDir, file), path.join(inputDir, file));
 }
 
+// HM TODO: fix stripes patterns
+
 // HM TODO: cross and plus patterns
 
 // Generate sprites using the docker image
 execSync(`docker run --rm -v ${inputDir}:/app/input -v ${publishDir}:/app/output ${dockerImage} input output/sprite`);
+execSync(`docker run --rm -v ${inputDir}:/app/input -v ${publishDir}:/app/output ${dockerImage} input --retina output/sprite@2x`);
