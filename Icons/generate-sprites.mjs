@@ -16,7 +16,7 @@ if (fs.existsSync(inputDir)) {
 fs.mkdirSync(inputDir, { recursive: true });
 
 const publishDir = path.join(__dirname, 'publish');
-const dockerImage = 'ghcr.io/harelm/spreet:0.12.0-dev';
+const dockerImage = 'ghcr.io/harelm/spreet:0.13.0';
 const haloIcons = fs.readdirSync(iconsDir)
   .filter(file => file.endsWith('.svg') && !file.includes('pattern') && !file.includes('arrowline') && !file.includes('cliff') && !file.includes('triangle'));
 
@@ -41,25 +41,23 @@ for (let file of haloIcons) {
     fs.writeFileSync(path.join(inputDir, file), svgContent);
 }
 
+function copyIconWithDifferentColor(originalFile, newFile, color) {
+    let svgContent = fs.readFileSync(path.join(inputDir, originalFile), 'utf8');
+    if (svgContent.includes('fill="')) {
+        svgContent = svgContent.replace(/fill="[^"]*"/, `fill="${color}"`);
+    } else {
+        svgContent = svgContent.replace('<path ', `<path fill="${color}" `);
+    }
+    fs.writeFileSync(path.join(inputDir, newFile), svgContent);
+}
+
 // Handle duplicate icons with different colors
-let svgContent = fs.readFileSync(path.join(inputDir, 'synagogue.svg'), 'utf8');
-svgContent = svgContent.replace('<path ', '<path fill="red" ');
-fs.writeFileSync(path.join(inputDir, 'first_aid.svg'), svgContent);
-svgContent = fs.readFileSync(path.join(inputDir, 'gate_open.svg'), 'utf8');
-svgContent = svgContent.replace('<path ', '<path fill="red" ');
-fs.writeFileSync(path.join(inputDir, 'gate_closed.svg'), svgContent);
-svgContent = fs.readFileSync(path.join(inputDir, 'dot.svg'), 'utf8');
-svgContent = svgContent.replace('<path ', '<path fill="#1e80e3ff" ');
-fs.writeFileSync(path.join(inputDir, 'spring.svg'), svgContent);
-svgContent = fs.readFileSync(path.join(inputDir, 'shield.svg'), 'utf8');
-svgContent = svgContent.replace('<path ', '<path fill="red" ');
-fs.writeFileSync(path.join(inputDir, 'red_shield.svg'), svgContent);
-svgContent = fs.readFileSync(path.join(inputDir, 'shield.svg'), 'utf8');
-svgContent = svgContent.replace('<path ', '<path fill="green" ');
-fs.writeFileSync(path.join(inputDir, 'green_shield.svg'), svgContent);
-svgContent = fs.readFileSync(path.join(inputDir, 'shield.svg'), 'utf8');
-svgContent = svgContent.replace('<path ', '<path fill="blue" ');
-fs.writeFileSync(path.join(inputDir, 'blue_shield.svg'), svgContent);
+copyIconWithDifferentColor('synagogue.svg', 'first_aid.svg', 'red');
+copyIconWithDifferentColor('gate_open.svg', 'gate_closed.svg', 'red');
+copyIconWithDifferentColor('dot.svg', 'spring.svg', '#1e80e3ff');
+copyIconWithDifferentColor('shield.svg', 'shield_red.svg', 'red');
+copyIconWithDifferentColor('shield.svg', 'shield_green.svg', 'green');
+copyIconWithDifferentColor('shield.svg', 'shield_blue.svg', 'blue');
 
 // Copy icons that do not need a halo
 const patternIcons = fs.readdirSync(iconsDir)
@@ -69,7 +67,9 @@ for (let file of patternIcons) {
     fs.copyFileSync(path.join(iconsDir, file), path.join(inputDir, file));
 }
 
-// HM TODO: fix stripes patterns
+ copyIconWithDifferentColor('red_nesw_pattern.svg', 'orange_nesw_pattern.svg', '#ffa500ff');
+ copyIconWithDifferentColor('red_nwse_pattern.svg', 'orange_nwse_pattern.svg', '#ffa500ff');
+ copyIconWithDifferentColor('red_nesw_pattern.svg', 'green_nesw_pattern.svg', '#008000ff');
 
 // HM TODO: cross and plus patterns
 
