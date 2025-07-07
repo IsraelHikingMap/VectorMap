@@ -17,9 +17,10 @@ fs.mkdirSync(inputDir, { recursive: true });
 
 const publishDir = path.join(__dirname, 'publish');
 const dockerImage = 'ghcr.io/harelm/spreet:0.13.0';
-const haloIcons = fs.readdirSync(iconsDir)
+let haloIcons = fs.readdirSync(iconsDir)
   .filter(file => file.endsWith('.svg') && !file.includes('pattern') && !file.includes('arrowline') && !file.includes('cliff') && !file.includes('triangle'));
 
+haloIcons = haloIcons.concat(['cross_pattern.svg', 'plus_pattern.svg']);
 // read svg and add a halo
 for (let file of haloIcons) {
     let svgContent = fs.readFileSync(path.join(iconsDir, file), 'utf8');
@@ -60,10 +61,9 @@ copyIconWithDifferentColor('shield.svg', 'shield_green.svg', 'green');
 copyIconWithDifferentColor('shield.svg', 'shield_blue.svg', 'blue');
 
 // Copy icons that do not need a halo
-const patternIcons = fs.readdirSync(iconsDir)
-  .filter(file => file.endsWith('.svg') && file.includes('pattern') || file.includes('cliff') || file.includes('arrowline') || file.includes('triangle') || file.includes('cross'));
+const otherIcons = fs.readdirSync(iconsDir).filter(file => !haloIcons.includes(file));
 
-for (let file of patternIcons) {
+for (let file of otherIcons) {
     fs.copyFileSync(path.join(iconsDir, file), path.join(inputDir, file));
 }
 
