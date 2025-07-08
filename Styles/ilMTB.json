@@ -2066,7 +2066,7 @@
         "text-size": {"base": 1.4, "stops": [[8, 13], [20, 30]]},
         "text-rotation-alignment": "viewport",
         "icon-pitch-alignment": "map",
-        "icon-image": "shield_brown",
+        "icon-image": "shield_black",
         "icon-size": 1,
         "icon-rotation-alignment": "viewport",
         "symbol-spacing": {"stops": [[8, 250], [14, 500]]},

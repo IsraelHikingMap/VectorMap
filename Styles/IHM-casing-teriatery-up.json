@@ -3725,7 +3725,7 @@
         "text-font": ["Open Sans Cond Bold"],
         "text-size": {"base": 1.4, "stops": [[9, 12], [20, 20]]},
         "text-rotation-alignment": "viewport",
-        "icon-image": "shield_brown",
+        "icon-image": "shield_black",
         "icon-size": 1,
         "icon-rotation-alignment": "viewport",
         "icon-text-fit": "both",
