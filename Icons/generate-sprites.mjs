@@ -8,8 +8,8 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const iconsDir = path.join(__dirname, 'SVGs', 'single SVGs');
-const inputDir = path.join(__dirname, 'SVGs', 'input');
+const iconsDir = path.join(__dirname, 'SVGs');
+const inputDir = path.join(__dirname, 'input');
 if (fs.existsSync(inputDir)) {
     fs.rmSync(inputDir, { recursive: true, force: true });
 }
