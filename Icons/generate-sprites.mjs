@@ -18,7 +18,7 @@ fs.mkdirSync(inputDir, { recursive: true });
 const publishDir = path.join(__dirname, 'publish');
 const dockerImage = 'ghcr.io/harelm/spreet:0.13.0';
 let haloIcons = fs.readdirSync(iconsDir)
-  .filter(file => file.endsWith('.svg') && !file.includes('pattern') && !file.includes('arrowline') && !file.includes('cliff') && !file.includes('triangle'));
+  .filter(file => file.endsWith('.svg') && !file.includes('pattern') && !file.includes('arrowline') && !file.includes('triangle'));
 
 haloIcons = haloIcons.concat(['cross_pattern.svg', 'plus_pattern.svg']);
 // read svg and add a halo
@@ -56,9 +56,9 @@ function copyIconWithDifferentColor(originalFile, newFile, color) {
 copyIconWithDifferentColor('synagogue.svg', 'first_aid.svg', 'red');
 copyIconWithDifferentColor('gate_open.svg', 'gate_closed.svg', 'red');
 copyIconWithDifferentColor('dot.svg', 'spring.svg', '#1e80e3ff');
-copyIconWithDifferentColor('shield.svg', 'shield_red.svg', 'red');
-copyIconWithDifferentColor('shield.svg', 'shield_green.svg', 'green');
-copyIconWithDifferentColor('shield.svg', 'shield_blue.svg', 'blue');
+copyIconWithDifferentColor('shield_black.svg', 'shield_red.svg', 'red');
+copyIconWithDifferentColor('shield_black.svg', 'shield_green.svg', 'green');
+copyIconWithDifferentColor('shield_black.svg', 'shield_blue.svg', 'blue');
 
 // Copy icons that do not need a halo
 const otherIcons = fs.readdirSync(iconsDir).filter(file => !haloIcons.includes(file));
