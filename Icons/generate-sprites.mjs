@@ -18,7 +18,7 @@ fs.mkdirSync(inputDir, { recursive: true });
 const publishDir = path.join(__dirname, 'publish');
 const dockerImage = 'ghcr.io/harelm/spreet:0.13.0';
 let haloIcons = fs.readdirSync(iconsDir)
-  .filter(file => file.endsWith('.svg') && !file.includes('pattern') && !file.includes('arrowline') && !file.includes('triangle'));
+  .filter(file => file.endsWith('.svg') && !file.includes('pattern') && !file.includes('arrowline') && !file.includes('triangle') && !file.includes('square'));
 
 haloIcons = haloIcons.concat(['cross_pattern.svg', 'plus_pattern.svg']);
 // read svg and add a halo
