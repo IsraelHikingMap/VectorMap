@@ -14,7 +14,7 @@ jobs:
       with:
         EXECUTE_COMMANDS: |
           git clone --depth 1 https://github.com/IsraelHikingMap/Site.git
-          cp -up Site/IsraelHiking.Web/src/content/sprite* Icons/publish/sprite
+          cp -up Site/IsraelHiking.Web/src/content/sprite/sprite* Icons/publish
           rm -fr Site
         COMMIT_MESSAGE: 'chore: update sprite files'
         COMMIT_NAME: 'GitHub Actions'
