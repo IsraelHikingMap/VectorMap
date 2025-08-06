@@ -219,7 +219,11 @@
           false
         ]
       ],
-      "paint": {"line-color": "white", "line-width": 2}
+      "paint": {
+        "line-color": "white",
+        "line-width": 2,
+        "line-blur": 2
+      }
     },
     {
       "id": "contour-major-casing",
@@ -249,7 +253,11 @@
           false
         ]
       ],
-      "paint": {"line-color": "white", "line-width": 3}
+      "paint": {
+        "line-color": "white",
+        "line-width": 3,
+        "line-blur": 2
+      }
     },
     {
       "id": "contour-minor",
