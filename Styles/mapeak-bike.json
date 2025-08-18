@@ -1252,7 +1252,7 @@
       }
     },
     {
-      "id": "cable_car",
+      "id": "aerialway",
       "type": "line",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
@@ -1260,14 +1260,8 @@
       "minzoom": 12,
       "filter": [
         "in",
-        "subclass",
-        "cable_car",
-        "chair_lift",
-        "drag_lift",
-        "gondola",
-        "goods",
-        "magic_carpet",
-        "platter"
+        "class",
+        "aerialway"
       ],
       "paint": {
         "line-color": "rgb(40, 40, 40)",
@@ -3435,7 +3429,7 @@
       }
     },
     {
-      "id": "label_cable_car",
+      "id": "label_aerialway",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
@@ -3443,14 +3437,8 @@
       "minzoom": 14,
       "filter": [
         "in",
-        "subclass",
-        "cable_car",
-        "chair_lift",
-        "drag_lift",
-        "gondola",
-        "goods",
-        "magic_carpet",
-        "platter"
+        "class",
+        "aerialway"
       ],
       "layout": {
         "symbol-placement": "line",

@@ -3904,13 +3904,12 @@
       }
     },
     {
-      "id": "cable_car",
+      "id": "aerialway",
       "type": "line",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 11,
-      "maxzoom": 24,
       "filter": ["all", ["in", "class", "aerialway"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
