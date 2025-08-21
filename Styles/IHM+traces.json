@@ -27,7 +27,7 @@
       "maxzoom": 14
     }
   },
-  "sprite": "https://israelhikingmap.github.io/VectorMap/Icons/publish/sprite",
+  "sprite": "https://israelhiking.osm.org.il/content/sprite/sprite",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
