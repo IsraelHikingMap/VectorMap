@@ -2337,7 +2337,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 11,
+      "minzoom": 13,
       "filter": ["all", ["==", "class", "campsite"]],
       "layout": {
         "icon-image": "camping",
@@ -2366,7 +2366,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 13,
       "filter": ["all", ["==", "subclass", "bicycle"]],
       "layout": {
         "icon-image": "bike-red",
@@ -2430,7 +2430,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 13,
       "filter": ["all", ["==", "class", "information"]],
       "layout": {
         "icon-image": "info",
@@ -2449,7 +2449,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 12,
+      "minzoom": 13,
       "filter": ["all", ["==", "class", "hospital"]],
       "layout": {
         "icon-image": "first_aid",
@@ -2505,7 +2505,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 7,
+      "minzoom": 13,
       "filter": ["all", ["==", "class", "picnic_site"]],
       "layout": {
         "icon-image": "picnic",
@@ -2534,7 +2534,6 @@
       "source": "IHM",
       "source-layer": "poi",
       "minzoom": 15,
-      "maxzoom": 24,
       "filter": ["all", ["==", "class", "playground"]],
       "layout": {
         "icon-image": "playground",
@@ -2633,7 +2632,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
-      "minzoom": 10,
+      "minzoom": 12,
       "filter": [
         "all",
         ["==", "subclass", "station"],
