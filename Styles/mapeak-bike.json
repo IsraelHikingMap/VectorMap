@@ -4024,7 +4024,7 @@
       "source-layer": "place",
       "minzoom": 3,
       "maxzoom": 8,
-      "filter": ["all", ["==", "class", "country"], ["has", "iso_a2"]],
+      "filter": ["all", ["==", "class", "country"]],
       "layout": {
         "text-field": [
           "coalesce",
