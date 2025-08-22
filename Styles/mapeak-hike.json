@@ -5778,8 +5778,37 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
+      "minzoom": 5,
       "maxzoom": 13,
       "filter": ["==", "class", "city"],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "place-country",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "place",
+      "maxzoom": 8,
+      "filter": ["==", "class", "country"],
       "layout": {
         "text-field": [
           "coalesce",
