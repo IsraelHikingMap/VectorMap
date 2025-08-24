@@ -797,7 +797,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 9,
+      "minzoom": 8,
       "filter": [
         "all",
         ["in", "ilmtb_class", "trunk", "primary"],
@@ -1665,7 +1665,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 9,
+      "minzoom": 8,
       "filter": [
         "all",
         ["in", "ilmtb_class", "trunk", "primary"],
@@ -2107,7 +2107,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation_name",
-      "minzoom": 7,
+      "minzoom": 8,
       "filter": ["all", ["in", "class", "trunk"], ["has", "ref"]],
       "layout": {
         "symbol-placement": "line",
