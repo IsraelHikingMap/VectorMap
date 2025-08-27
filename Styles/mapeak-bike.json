@@ -1014,8 +1014,7 @@
       "filter": [
         "all",
         ["==", "ilmtb_class", "path"],
-        ["!has", "mtb_scale"],
-        ["!has", "bicycle"]
+        ["!has", "mtb_scale"]
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
