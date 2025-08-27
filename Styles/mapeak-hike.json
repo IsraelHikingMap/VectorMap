@@ -1439,7 +1439,6 @@
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 13,
-      "filter": ["in", "class", "national_park", "nature_reserve"],
       "layout": {"line-join": "round"},
       "paint": {
         "line-pattern": "gradient_pattern",
@@ -1456,7 +1455,6 @@
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 9,
-      "filter": ["in", "class", "national_park", "nature_reserve"],
       "paint": {
         "line-width": 2,
         "line-color": "#709D56",
