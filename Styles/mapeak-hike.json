@@ -1920,36 +1920,6 @@
       }
     },
     {
-      "id": "trail-line-road",
-      "type": "line",
-      "metadata": {"IHM:overlay": true},
-      "source": "IHM-code",
-      "source-layer": "trail",
-      "minzoom": 11,
-      "maxzoom": 12,
-      "filter": ["all", ["in", "network", "lwn", "rwn"], ["has", "way_colour"]],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "#00C000",
-          "blue:white:blue_stripe",
-          "blue",
-          "purple:white:purple_stripe",
-          "purple",
-          "orange:white:orange_stripe",
-          "orange",
-          "#0000"
-        ]
-      }
-    },
-    {
       "id": "rail-casing",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -2357,6 +2327,96 @@
           "base": 2,
           "stops": [[12, 1], [13, 1.5], [14, 1.75], [16, 4], [22, 16]]
         }
+      }
+    },
+    {
+      "id": "trail-line-bg",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM-code",
+      "source-layer": "trail",
+      "minzoom": 0,
+      "filter": ["all", ["has", "num_colours"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "white",
+        "line-width": ["+", 1, ["*", ["get", "num_colours"], 4]],
+        "line-offset": ["+", 4, ["*", ["get", "num_colours"], 2]]
+      }
+    },
+    {
+      "id": "trail-line5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM-code",
+      "source-layer": "trail",
+      "minzoom": 0,
+      "filter": ["all", ["has", "colour5"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["get", "colour5"],
+        "line-width": 3,
+        "line-offset": ["step", ["zoom"], 8, 13, 22]
+      }
+    },
+    {
+      "id": "trail-line4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM-code",
+      "source-layer": "trail",
+      "minzoom": 0,
+      "filter": ["all", ["has", "colour4"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["get", "colour4"],
+        "line-width": 3,
+        "line-offset": ["step", ["zoom"], 6, 13, 18]
+      }
+    },
+    {
+      "id": "trail-line3",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM-code",
+      "source-layer": "trail",
+      "minzoom": 0,
+      "filter": ["all", ["has", "colour3"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["get", "colour3"],
+        "line-width": 3,
+        "line-offset": ["step", ["zoom"], 4, 13, 14]
+      }
+    },
+    {
+      "id": "trail-line2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM-code",
+      "source-layer": "trail",
+      "minzoom": 0,
+      "filter": ["all", ["has", "colour2"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["get", "colour2"],
+        "line-width": 3,
+        "line-offset": ["step", ["zoom"], 2, 13, 10]
+      }
+    },
+    {
+      "id": "trail-line1",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM-code",
+      "source-layer": "trail",
+      "minzoom": 0,
+      "filter": ["all", ["has", "colour1"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": ["get", "colour1"],
+        "line-width": 3,
+        "line-offset": ["step", ["zoom"], 0, 13, 6]
       }
     },
     {
@@ -4409,6 +4469,7 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "waterway",
+      "minzoom": 11,
       "filter": ["!=", "class", "ditch"],
       "layout": {
         "text-field": [
