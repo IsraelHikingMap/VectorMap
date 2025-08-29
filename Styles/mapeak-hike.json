@@ -5644,11 +5644,6 @@
       "source": "IHM",
       "source-layer": "park",
       "minzoom": 9,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["in", "class", "national_park", "nature_reserve"]
-      ],
       "layout": {
         "text-field": [
           "coalesce",
@@ -5658,7 +5653,8 @@
         ],
         "text-size": 18,
         "text-font": ["Open Sans Cond Bold"],
-        "text-max-width": 5
+        "text-max-width": 5,
+        "text-padding": 50
       },
       "paint": {
         "text-color": "#709D56",
