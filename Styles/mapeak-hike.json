@@ -5734,13 +5734,45 @@
       }
     },
     {
+      "id": "place-alpine_hut",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "place",
+      "minzoom": 11,
+      "filter": ["all", ["in", "class", "alpine_hut"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "point",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-max-width": 5,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-image": "alpinehut",
+        "text-offset": [0, 1],
+        "text-anchor": "top"
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
       "id": "place-village",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "place",
       "minzoom": 11,
-      "filter": ["all", ["in", "class", "village", "alpine_hut"]],
+      "filter": ["all", ["==", "class", "village"]],
       "layout": {
         "text-field": [
           "coalesce",
