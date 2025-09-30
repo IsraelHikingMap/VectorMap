@@ -4454,11 +4454,41 @@
       }
     },
     {
-      "id": "name-water-line",
+      "id": "name-water-line_old",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "waterway",
+      "minzoom": 11,
+      "filter": ["!=", "class", "ditch"],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "line",
+        "text-font": ["Open Sans Cond Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.7,
+        "text-max-angle": 150,
+        "text-keep-upright": true,
+        "symbol-spacing": 500
+      },
+      "paint": {
+        "text-color": "#1E80E2",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "name-water-line",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM",
+      "source-layer": "waterway_name",
       "minzoom": 11,
       "filter": ["!=", "class", "ditch"],
       "layout": {

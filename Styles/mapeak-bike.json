@@ -3222,11 +3222,43 @@
       }
     },
     {
-      "id": "label_waterway",
+      "id": "label_waterway_old",
       "type": "symbol",
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "waterway",
+      "minzoom": 14,
+      "filter": ["all", ["!=", "brunnel", "tunnel"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Regular"],
+        "text-transform": "none",
+        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
+        "text-max-width": 30,
+        "text-allow-overlap": false,
+        "symbol-spacing": 750,
+        "text-letter-spacing": 0.1,
+        "text-max-angle": 30
+      },
+      "paint": {
+        "text-color": "blue",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "label_waterway",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "waterway_name",
       "minzoom": 14,
       "filter": ["all", ["!=", "brunnel", "tunnel"]],
       "layout": {
