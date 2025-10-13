@@ -2169,14 +2169,19 @@
       "source-layer": "transportation",
       "minzoom": 11,
       "maxzoom": 12,
-      "filter": [
-        "all",
-        ["==", "ihm_class", "track"],
-        ["!has", "colour"],
-        ["!in", "brunnel", "bridge", "tunnel"]
-      ],
+      "filter": ["all", ["==", "ihm_class", "track"]],
       "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {"line-color": "rgba(170, 129, 102, 0.5)", "line-width": 2}
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "colour"],
+          "green",
+          "#00C000",
+          ["to-color", ["get", "colour"], "#AA8166"]
+        ],
+        "line-width": 2,
+        "line-opacity": 0.5
+      }
     },
     {
       "id": "track-right-grade5",
