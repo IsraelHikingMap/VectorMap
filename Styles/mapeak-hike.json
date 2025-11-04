@@ -1601,7 +1601,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 11,
       "filter": [
         "all",
         ["in", "ihm_class", "minor", "unclassified", "service"],
@@ -1628,7 +1628,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 11,
       "filter": [
         "all",
         ["in", "ihm_class", "minor", "unclassified", "service"],
@@ -1660,7 +1660,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 11,
+      "minzoom": 10,
       "filter": [
         "all",
         ["==", "ihm_class", "tertiary"],
@@ -1687,7 +1687,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 11,
+      "minzoom": 8,
       "filter": [
         "all",
         ["==", "ihm_class", "secondary"],
@@ -1729,10 +1729,7 @@
           "#00C000",
           ["to-color", ["get", "colour"], "#808080"]
         ],
-        "line-width": {
-          "base": 2,
-          "stops": [[10, 2], [12, 1.5], [13, 3], [16, 16], [22, 64]]
-        }
+        "line-width": {"base": 2, "stops": [[13, 3], [16, 16], [22, 64]]}
       }
     },
     {
@@ -1756,10 +1753,7 @@
           "#00C000",
           ["to-color", ["get", "colour"], "#808080"]
         ],
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
-        }
+        "line-width": {"base": 2, "stops": [[13, 3], [16, 16], [22, 64]]}
       }
     },
     {
@@ -1777,10 +1771,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "#808080",
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [9, 2], [13, 3], [16, 16], [22, 64]]
-        }
+        "line-width": {"base": 2, "stops": [[13, 3], [16, 16], [22, 64]]}
       }
     },
     {
@@ -2399,7 +2390,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 11,
       "filter": [
         "all",
         ["in", "ihm_class", "minor", "unclassified", "service"],
@@ -2420,7 +2411,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 11,
+      "minzoom": 10,
       "filter": [
         "all",
         ["==", "ihm_class", "tertiary"],
@@ -2441,7 +2432,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 11,
+      "minzoom": 8,
       "filter": [
         "all",
         ["==", "ihm_class", "secondary"],
@@ -2462,7 +2453,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 10,
+      "minzoom": 4,
       "filter": [
         "all",
         ["==", "ihm_class", "primary"],
@@ -2471,10 +2462,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "green",
-        "line-width": {
-          "base": 2,
-          "stops": [[10, 1], [12, 2], [16, 8], [22, 32]]
-        }
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 8], [22, 32]]}
       }
     },
     {
@@ -2483,7 +2471,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 5,
+      "minzoom": 3,
       "filter": [
         "all",
         ["==", "ihm_class", "trunk"],
@@ -2492,10 +2480,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "red",
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 0.5], [9, 1], [16, 8], [22, 32]]
-        }
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 8], [22, 32]]}
       }
     },
     {
@@ -2504,7 +2489,7 @@
       "metadata": {"IHM:overlay": true},
       "source": "IHM",
       "source-layer": "transportation",
-      "minzoom": 5,
+      "minzoom": 3,
       "filter": [
         "all",
         ["==", "ihm_class", "motorway"],
@@ -2513,10 +2498,7 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "blue",
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 0.5], [9, 1], [16, 8], [22, 32]]
-        }
+        "line-width": {"base": 2, "stops": [[13, 2], [16, 8], [22, 32]]}
       }
     },
     {
