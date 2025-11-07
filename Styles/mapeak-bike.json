@@ -43,7 +43,7 @@
       "attribution": "<a href=https://earth.jaxa.jp/en/data/policy/>AW3D30 (JAXA)</a>"
     }
   },
-  "sprite": "https://israelhiking.osm.org.il/content/sprite/sprite",
+  "sprite": "https://mapeak.com/content/sprite/sprite",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
