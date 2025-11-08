@@ -2297,7 +2297,7 @@
       "minzoom": 7,
       "filter": ["all", ["==", "subclass", "bicycle"]],
       "layout": {
-        "icon-image": "bike-red",
+        "icon-image": "bike_red",
         "icon-size": {"stops": [[14, 0.5], [20, 1]]},
         "text-size": {"stops": [[14, 18], [20, 33]]},
         "text-font": ["Open Sans Regular"],
