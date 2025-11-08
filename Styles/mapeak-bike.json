@@ -1011,11 +1011,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "ilmtb_class", "path"],
-        ["!has", "mtb_scale"]
-      ],
+      "filter": ["all", ["==", "ilmtb_class", "path"], ["!has", "mtb_scale"]],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
         "line-color": "rgb(170, 104, 49)",
@@ -1257,11 +1253,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": [
-        "in",
-        "class",
-        "aerialway"
-      ],
+      "filter": ["in", "class", "aerialway"],
       "paint": {
         "line-color": "rgb(40, 40, 40)",
         "line-width": {"stops": [[12, 0.5], [20, 5]]}
@@ -2236,11 +2228,7 @@
       "minzoom": 16,
       "filter": [
         "all",
-        [
-          "any",
-          ["in", "oneway", "1", "-1"],
-          ["in", "oneway:mtb", "yes", "1", "-1"]
-        ],
+        ["any", ["in", "oneway", 1, -1], ["in", "oneway:mtb", 1, -1]],
         [
           "!in",
           "ilmtb_class",
@@ -2261,9 +2249,9 @@
         "icon-size": {"stops": [[14, 0.4], [20, 1]]},
         "icon-rotate": [
           "case",
-          ["==", ["get", "oneway"], "-1"],
+          ["==", ["get", "oneway"], -1],
           180,
-          ["==", ["get", "oneway:mtb"], "-1"],
+          ["==", ["get", "oneway:mtb"], -1],
           180,
           0
         ],
@@ -2281,11 +2269,7 @@
       "maxzoom": 16,
       "filter": [
         "all",
-        [
-          "any",
-          ["in", "oneway", "1", "-1"],
-          ["in", "oneway:mtb", "yes", "1", "-1"]
-        ],
+        ["any", ["in", "oneway", 1, -1], ["in", "oneway:mtb", 1, -1]],
         ["in", "ilmtb_class", "path", "cycleway"]
       ],
       "layout": {
@@ -2296,9 +2280,9 @@
         "icon-size": {"stops": [[14, 0.4], [20, 1]]},
         "icon-rotate": [
           "case",
-          ["==", ["get", "oneway"], "-1"],
+          ["==", ["get", "oneway"], -1],
           180,
-          ["==", ["get", "oneway:mtb"], "-1"],
+          ["==", ["get", "oneway:mtb"], -1],
           180,
           0
         ],
@@ -3465,11 +3449,7 @@
       "source": "IHM",
       "source-layer": "transportation",
       "minzoom": 14,
-      "filter": [
-        "in",
-        "class",
-        "aerialway"
-      ],
+      "filter": ["in", "class", "aerialway"],
       "layout": {
         "symbol-placement": "line",
         "text-field": "רכבל",
