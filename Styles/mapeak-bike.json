@@ -665,32 +665,12 @@
       "maxzoom": 21,
       "filter": [
         "all",
-        ["in", "network", "lcn"],
-        ["in", "colour", "yellow", "green"]
+        ["==", "bike_network", "lcn"],
+        ["has", "bike_hot_colour"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": [
-          "match",
-          ["get", "colour"],
-          "red",
-          "rgb(225, 130, 130)",
-          "yellow",
-          "rgb(250, 222, 1)",
-          "blue",
-          "rgb(140, 140, 255)",
-          "orange",
-          "orange",
-          "green",
-          "rgb(90, 205, 90)",
-          "rgba(0, 255, 0, 0.5)",
-          "orange",
-          "black",
-          "rgba(80,80,80,.75)",
-          "purple",
-          "rgb(170, 140, 170)",
-          "rgb(250, 222, 1)"
-        ],
+        "line-color": ["get", "bike_hot_colour"],
         "line-width": {"stops": [[9, 3], [24, 30]]},
         "line-opacity": 1
       }
@@ -705,32 +685,12 @@
       "maxzoom": 21,
       "filter": [
         "all",
-        ["in", "network", "lcn"],
-        ["!in", "colour", "yellow", "green"]
+        ["==", "bike_network", "lcn"],
+        ["has", "bike_cold_colour"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": [
-          "match",
-          ["get", "colour"],
-          "red",
-          "rgb(225, 130, 130)",
-          "yellow",
-          "rgb(250, 222, 1)",
-          "blue",
-          "rgb(140, 140, 255)",
-          "orange",
-          "orange",
-          "green",
-          "rgb(90, 205, 90)",
-          "rgba(0, 255, 0, 0.5)",
-          "orange",
-          "black",
-          "rgba(80,80,80,.75)",
-          "purple",
-          "rgb(170, 140, 170)",
-          "rgb(250, 222, 1)"
-        ],
+        "line-color": ["get", "bike_cold_colour"],
         "line-width": {"stops": [[9, 3], [24, 30]]},
         "line-opacity": 1
       }
@@ -745,32 +705,12 @@
       "maxzoom": 21,
       "filter": [
         "all",
-        ["in", "network", "lcn"],
-        ["in", "colour", "yellow", "green"]
+        ["==", "bike_network", "lcn"],
+        ["has", "bike_hot_colour"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": [
-          "match",
-          ["get", "colour"],
-          "red",
-          "rgb(225, 130, 130)",
-          "yellow",
-          "rgb(250, 222, 1)",
-          "blue",
-          "rgb(140, 140, 255)",
-          "orange",
-          "orange",
-          "green",
-          "rgb(90, 205, 90)",
-          "rgba(0, 255, 0, 0.5)",
-          "orange",
-          "black",
-          "rgba(80,80,80,.75)",
-          "purple",
-          "rgb(170, 140, 170)",
-          "rgb(250, 222, 1)"
-        ],
+        "line-color": ["get", "bike_hot_colour"],
         "line-width": {"stops": [[9, 1.5], [24, 15]]},
         "line-opacity": 1,
         "line-offset": {"stops": [[9, 1.5], [24, 7.5]]}
@@ -783,10 +723,10 @@
       "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 9,
-      "filter": ["all", ["==", "network", "rcn"]],
+      "filter": ["all", ["==", "bike_network", "rcn"]],
       "layout": {"line-join": "round", "line-cap": "butt"},
       "paint": {
-        "line-color": "rgb(234, 125, 125)",
+        "line-color": "#EA7D7D",
         "line-width": {"stops": [[9, 3], [24, 30]]}
       }
     },
@@ -797,10 +737,10 @@
       "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 8,
-      "filter": ["all", ["==", "network", "ncn"]],
+      "filter": ["all", ["==", "bike_network", "ncn"]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": "rgb(161, 163, 255)",
+        "line-color": "#A1A3FF",
         "line-width": {"stops": [[9, 3], [24, 30]]}
       }
     },
@@ -3593,7 +3533,7 @@
       "type": "symbol",
       "metadata": {"IHM:overlay": true},
       "source": "IHM-code",
-      "source-layer": "trail",
+      "source-layer": "trail_name",
       "minzoom": 10,
       "maxzoom": 24,
       "filter": ["all", ["in", "class", "mtb"]],
