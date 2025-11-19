@@ -918,6 +918,27 @@
       }
     },
     {
+      "id": "layer-1-track-left-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "tracktype", "grade5"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "ihm_class", "track"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"base": 2, "stops": [[13, -1.5], [16, -2], [22, -8]]},
+        "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
       "id": "layer-1-track-right-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -934,6 +955,27 @@
       "paint": {
         "line-dasharray": [10, 3, 2, 3],
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
+        "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": "layer-1-track-left-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "tracktype", "grade4"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "ihm_class", "track"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"base": 2, "stops": [[13, -1.5], [16, -2], [22, -8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
@@ -960,6 +1002,27 @@
       }
     },
     {
+      "id": "layer-1-track-left",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "ihm_class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"base": 2, "stops": [[13, -1.5], [16, -2], [22, -8]]},
+        "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
       "id": "layer-1-track-right-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -975,6 +1038,26 @@
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
+        "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": "layer-1-track-left-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "ihm_class", "track"],
+        ["in", "tracktype", "grade1", "grade2"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-offset": {"base": 2, "stops": [[13, -1.5], [16, -2], [22, -8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
@@ -1628,7 +1711,7 @@
       "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 12,
-      "filter": ["all", ["has", "num_colours"]],
+      "filter": ["all", [">", "num_colours", 0]],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "white",
@@ -1643,10 +1726,10 @@
       "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 12,
-      "filter": ["all", ["has", "colour5"]],
+      "filter": ["all", ["has", "hike_colour5"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["get", "colour5"],
+        "line-color": ["get", "hike_colour5"],
         "line-width": 3,
         "line-offset": 22
       }
@@ -1658,10 +1741,10 @@
       "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 12,
-      "filter": ["all", ["has", "colour4"]],
+      "filter": ["all", ["has", "hike_colour4"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["get", "colour4"],
+        "line-color": ["get", "hike_colour4"],
         "line-width": 3,
         "line-offset": 18
       }
@@ -1673,10 +1756,10 @@
       "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 12,
-      "filter": ["all", ["has", "colour3"]],
+      "filter": ["all", ["has", "hike_colour3"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["get", "colour3"],
+        "line-color": ["get", "hike_colour3"],
         "line-width": 3,
         "line-offset": 14
       }
@@ -1688,10 +1771,10 @@
       "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 12,
-      "filter": ["all", ["has", "colour2"]],
+      "filter": ["all", ["has", "hike_colour2"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["get", "colour2"],
+        "line-color": ["get", "hike_colour2"],
         "line-width": 3,
         "line-offset": 10
       }
@@ -1703,10 +1786,10 @@
       "source": "IHM-code",
       "source-layer": "trail",
       "minzoom": 12,
-      "filter": ["all", ["has", "colour1"]],
+      "filter": ["all", ["has", "hike_colour1"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["get", "colour1"],
+        "line-color": ["get", "hike_colour1"],
         "line-width": 3,
         "line-offset": 6
       }
@@ -1881,6 +1964,27 @@
       }
     },
     {
+      "id": "track-left-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "tracktype", "grade5"],
+        ["==", "ihm_class", "track"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [8, 2, 1, 2, 1, 2],
+        "line-offset": {"base": 2, "stops": [[12, -1], [16, -2.5], [22, -10]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
       "id": "track-right-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -1897,6 +2001,27 @@
       "paint": {
         "line-dasharray": [8, 2, 1, 2],
         "line-offset": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": "track-left-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "tracktype", "grade4"],
+        ["==", "ihm_class", "track"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [8, 2, 1, 2],
+        "line-offset": {"base": 2, "stops": [[12, -1], [16, -2.5], [22, -10]]},
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
@@ -1923,6 +2048,27 @@
       }
     },
     {
+      "id": "track-left",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "ihm_class", "track"],
+        ["!in", "brunnel", "bridge", "tunnel"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [8, 2.5],
+        "line-offset": {"base": 2, "stops": [[12, -1], [16, -2], [22, -8]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
       "id": "track-right-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -1938,6 +2084,26 @@
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
         "line-offset": {"base": 2, "stops": [[12, 1], [16, 2], [22, 8]]},
+        "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": "track-left-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["in", "tracktype", "grade1", "grade2"],
+        ["==", "ihm_class", "track"],
+        ["!in", "brunnel", "bridge", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-offset": {"base": 2, "stops": [[12, -1], [16, -2], [22, -8]]},
         "line-width": {"base": 2, "stops": [[12, 1], [16, 2.5], [22, 10]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
@@ -2485,6 +2651,27 @@
       }
     },
     {
+      "id": "layer1-track-left-grade5",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "layer", 1],
+        ["==", "tracktype", "grade5"],
+        ["==", "ihm_class", "track"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3, 2, 3],
+        "line-offset": {"base": 2, "stops": [[13, -1.5], [16, -2], [22, -8]]},
+        "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
       "id": "layer1-track-right-grade4",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -2501,6 +2688,27 @@
       "paint": {
         "line-dasharray": [10, 3, 2, 3],
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
+        "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": "layer1-track-left-grade4",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "layer", 1],
+        ["==", "tracktype", "grade4"],
+        ["==", "ihm_class", "track"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [10, 3, 2, 3],
+        "line-offset": {"base": 2, "stops": [[13, -1.5], [16, -2], [22, -8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
@@ -2527,6 +2735,27 @@
       }
     },
     {
+      "id": "layer1-track-left",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "layer", 1],
+        ["==", "ihm_class", "track"],
+        ["!in", "tracktype", "grade1", "grade2", "grade4", "grade5"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-dasharray": [5, 3],
+        "line-offset": {"base": 2, "stops": [[13, -1.5], [16, -2], [22, -8]]},
+        "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
       "id": "layer1-track-right-grade1-2",
       "type": "line",
       "metadata": {"IHM:overlay": true},
@@ -2542,6 +2771,26 @@
       "layout": {"line-cap": "round", "line-join": "miter"},
       "paint": {
         "line-offset": {"base": 2, "stops": [[13, 1.5], [16, 2], [22, 8]]},
+        "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
+      "id": "layer1-track-left-grade1-2",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "IHM",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "layer", 1],
+        ["==", "ihm_class", "track"],
+        ["in", "tracktype", "grade1", "grade2"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "miter"},
+      "paint": {
+        "line-offset": {"base": 2, "stops": [[13, -1.5], [16, -2], [22, -8]]},
         "line-width": {"base": 2, "stops": [[13, 1.5], [16, 2.5], [22, 10]]},
         "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
