@@ -1,11 +1,12 @@
 {
   "version": 8,
-  "name": "OSM traces",
+  "name": "Global OSM traces",
   "metadata": {"maputnik:renderer": "mbgljs"},
   "sources": {
     "OSM_traces": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/OSM_traces.json"
+      "tiles": ["https://slice.israelhikingmap.workers.dev/OSM_traces/{z}/{x}/{y}.mvt"],
+      "minzoom": 7
     }
   },
   "layers": [
