@@ -1,0 +1,73 @@
+{
+  "version": 8,
+  "name": "OSM traces",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "sources": {
+    "OSM_traces": {
+      "type": "vector",
+      "url": "https://israelhiking.osm.org.il/vector/data/OSM_traces.json"
+    }
+  },
+  "layers": [
+    {
+      "id": "OSM-glow",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "OSM_traces",
+      "source-layer": "OSM_traces",
+      "maxzoom": 24,
+      "paint": {
+        "line-color": "yellow",
+        "line-width": {"stops": [[8, 1], [10, 2.5]]},
+        "line-opacity": [
+          "interpolate",
+          ["linear"],
+          [
+            "-",
+            ["+", 2025, ["/", 2, 12]],
+            [
+              "+",
+              ["to-number", ["slice", ["get", "start_time"], 0, 4]],
+              ["/", ["to-number", ["slice", ["get", "start_time"], 5, 7]], 12]
+            ]
+          ],
+          0,
+          0.6,
+          3,
+          0.1
+        ]
+      }
+    },
+    {
+      "id": "OSM-trace",
+      "type": "line",
+      "metadata": {"IHM:overlay": true},
+      "source": "OSM_traces",
+      "source-layer": "OSM_traces",
+      "maxzoom": 24,
+      "paint": {
+        "line-color": "rgba(0, 128, 0, 1)",
+        "line-blur": 0,
+        "line-width": {"stops": [[8, 0.2], [10, 1]]},
+        "line-opacity": [
+          "interpolate",
+          ["linear"],
+          [
+            "-",
+            ["+", 2025, ["/", 2, 12]],
+            [
+              "+",
+              ["to-number", ["slice", ["get", "start_time"], 0, 4]],
+              ["/", ["to-number", ["slice", ["get", "start_time"], 5, 7]], 12]
+            ]
+          ],
+          0,
+          0.6,
+          3,
+          0.05
+        ]
+      }
+    }
+  ],
+  "id": "OSM_traces"
+}
