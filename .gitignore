@@ -4,3 +4,7 @@ Styles/Streets*
 Styles/osm_liberty.json
 *.log
 Icons/input
+.*.swp
+.*.swo
+.swp
+.swo
