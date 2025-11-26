@@ -1344,13 +1344,13 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "park",
-      "minzoom": 13,
+      "minzoom": 6,
       "layout": {"line-join": "round"},
       "paint": {
         "line-pattern": "gradient_pattern",
-        "line-width": 8,
-        "line-offset": 5,
-        "line-opacity": 0.5,
+        "line-width": {"stops": [[6, 4], [8, 8]]},
+        "line-offset": {"stops": [[6, 3], [8, 5]]},
+        "line-opacity": 0.3,
         "line-blur": 1
       }
     },
@@ -1360,11 +1360,11 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "park",
-      "minzoom": 9,
+      "minzoom": 5,
       "paint": {
-        "line-width": 2,
+        "line-width": {"stops": [[6, 1], [8, 2]]},
         "line-color": "#709D56",
-        "line-dasharray": [8, 2, 1, 2, 1, 2]
+        "line-dasharray": [4, 1, 0.5, 1, 0.5, 1]
       }
     },
     {
@@ -1700,9 +1700,7 @@
         ["in", "highway", "path", "footway", "pedestrian", "cycleway"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#0000"]
-      }
+      "paint": {"line-color": ["to-color", ["get", "colour"], "#0000"]}
     },
     {
       "id": "trail-colours-bg",
@@ -4761,8 +4759,8 @@
       "metadata": {"IHM:overlay": false},
       "source": "IHM",
       "source-layer": "poi",
-      "filter": ["==", "subclass", "bench"],
       "minzoom": 16,
+      "filter": ["==", "subclass", "bench"],
       "layout": {
         "icon-image": "bench",
         "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
