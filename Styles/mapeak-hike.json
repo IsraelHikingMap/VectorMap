@@ -3,8 +3,7 @@
   "name": "mapeak-hike",
   "metadata": {
     "owner": "Zeev Stadler",
-    "copyright": "Copyright Zeev Stadler 2019-2025. All Rights Reserved.",
-    "maputnik:renderer": "mbgljs"
+    "copyright": "Copyright Zeev Stadler 2019-2025. All Rights Reserved."
   },
   "sources": {
     "IHM": {
@@ -4131,126 +4130,6 @@
       }
     },
     {
-      "id": "name-trail-regional",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM-code",
-      "source-layer": "trail",
-      "minzoom": 13,
-      "filter": ["==", "network", "rwn"],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:en"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-offset": [0, -1],
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": {"base": 2, "stops": [[17, 400], [22, 1600]]}
-      },
-      "paint": {
-        "text-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "purple:white:purple_stripe",
-          "purple",
-          "orange:white:orange_stripe",
-          "orange",
-          "blue:blue:white_right:purple_stripe",
-          "#7B5CA0",
-          "green:green:white_right:blue_stripe",
-          "blue",
-          "yellow:blue:yellow_stripe",
-          "blue",
-          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "#0000"]
-        ],
-        "text-halo-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "purple:white:purple_stripe",
-          "white",
-          "orange:white:orange_stripe",
-          "white",
-          "blue:blue:white_right:purple_stripe",
-          "#1765AD",
-          "green:green:white_right:blue_stripe",
-          "#00C00050",
-          "yellow:blue:yellow_stripe",
-          "gold",
-          [
-            "match",
-            ["get", "name"],
-            "שביל ואדיות חיפה",
-            "rgba(76, 166, 76, 0.3)",
-            "#0000"
-          ]
-        ],
-        "text-halo-width": 3,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
-      "id": "name-trail-local",
-      "type": "symbol",
-      "metadata": {"IHM:overlay": false},
-      "source": "IHM-code",
-      "source-layer": "trail",
-      "minzoom": 13,
-      "filter": ["all", ["==", "network", "lwn"], ["has", "name"]],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:en"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Cond Bold"],
-        "text-offset": [0, -1],
-        "text-letter-spacing": 0.2,
-        "symbol-placement": "line",
-        "symbol-spacing": 400
-      },
-      "paint": {
-        "text-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "black",
-          "red:white:red_stripe",
-          "red",
-          "green:white:green_stripe",
-          "#00C000",
-          "blue:white:blue_stripe",
-          "blue",
-          [
-            "match",
-            ["get", "colour"],
-            "green",
-            "#00C000",
-            ["to-color", ["get", "colour"], "black"]
-          ]
-        ],
-        "text-halo-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "black:white:black_stripe",
-          "white",
-          "red:white:red_stripe",
-          "white",
-          "green:white:green_stripe",
-          "white",
-          "blue:white:blue_stripe",
-          "white",
-          "#0000"
-        ],
-        "text-halo-width": 3,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
       "id": "name-minor",
       "type": "symbol",
       "metadata": {"IHM:overlay": false},
@@ -5580,6 +5459,35 @@
       },
       "paint": {
         "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "name-trail",
+      "type": "symbol",
+      "metadata": {"IHM:overlay": false},
+      "source": "IHM-code",
+      "source-layer": "trail_name",
+      "minzoom": 13,
+      "filter": ["all", ["in", "class", "hiking"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "text-font": ["Open Sans Cond Bold"],
+        "text-offset": [0, -1],
+        "text-letter-spacing": 0.2,
+        "symbol-placement": "line",
+        "symbol-spacing": 400,
+        "text-allow-overlap": true
+      },
+      "paint": {
+        "text-color": ["coalesce", ["get", "colour"], "black"],
         "text-halo-color": "white",
         "text-halo-width": 3,
         "text-halo-blur": 1.5
