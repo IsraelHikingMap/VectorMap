@@ -1,7 +1,10 @@
 {
   "version": 8,
   "name": "Global OSM traces",
-  "metadata": {"maputnik:renderer": "mbgljs"},
+  "metadata": {
+    "owner": "Zeev Stadler",
+    "copyright": "Copyright Zeev Stadler 2024-2025. All Rights Reserved."
+  },
   "sources": {
     "OSM_traces": {
       "type": "vector",
@@ -13,7 +16,6 @@
     {
       "id": "OSM-glow",
       "type": "line",
-      "metadata": {"IHM:overlay": true},
       "source": "OSM_traces",
       "source-layer": "OSM_traces",
       "maxzoom": 24,
@@ -42,7 +44,6 @@
     {
       "id": "OSM-trace",
       "type": "line",
-      "metadata": {"IHM:overlay": true},
       "source": "OSM_traces",
       "source-layer": "OSM_traces",
       "maxzoom": 24,
