@@ -5216,8 +5216,7 @@
         "text-offset": [0, -1],
         "text-letter-spacing": 0.2,
         "symbol-placement": "line",
-        "symbol-spacing": 400,
-        "text-allow-overlap": true
+        "symbol-spacing": 400
       },
       "paint": {
         "text-color": ["coalesce", ["get", "colour"], "black"],
