@@ -78,7 +78,7 @@
             "rgba(255, 236, 139, 0.25)",
             "beach",
             "#FAFAA0",
-            "#0000"
+            "transparent"
           ],
           "wood",
           "rgba(145, 230, 145, 0.5)",
@@ -88,7 +88,7 @@
           "rgba(19, 196, 42, 0.4)",
           "grass",
           "rgb(233, 253, 204)",
-          "#0000"
+          "transparent"
         ]
       }
     },
@@ -191,7 +191,7 @@
           "match",
           ["get", "class"],
           "ocean",
-          "#0000",
+          "transparent",
           "#1E80E2"
         ]
       }
@@ -231,7 +231,7 @@
         "fill-opacity": 0.5,
         "fill-color": "#f4be66",
         "fill-antialias": true,
-        "fill-outline-color": "#0000"
+        "fill-outline-color": "transparent"
       }
     },
     {
@@ -1560,7 +1560,7 @@
             ["get", "name"],
             "שביל ואדיות חיפה",
             "green",
-            "#0000"
+            "transparent"
           ]
         ],
         "line-width": {
@@ -1592,7 +1592,7 @@
           "blue",
           "yellow:blue:yellow_stripe",
           "blue",
-          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "#0000"]
+          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "transparent"]
         ],
         "line-dasharray": [4, 4],
         "line-width": {
@@ -1636,7 +1636,7 @@
           "purple",
           "orange:white:orange_stripe",
           "orange",
-          "#0000"
+          "transparent"
         ]
       }
     },
@@ -1666,7 +1666,7 @@
           "purple",
           "orange:white:orange_stripe",
           "orange",
-          "#0000"
+          "transparent"
         ]
       }
     },
@@ -4011,7 +4011,7 @@
           "blue",
           "yellow:blue:yellow_stripe",
           "blue",
-          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "#0000"]
+          ["match", ["get", "name"], "שביל ואדיות חיפה", "red", "transparent"]
         ],
         "text-halo-color": [
           "match",
@@ -4031,7 +4031,7 @@
             ["get", "name"],
             "שביל ואדיות חיפה",
             "rgba(76, 166, 76, 0.3)",
-            "#0000"
+            "transparent"
           ]
         ],
         "text-halo-width": 3,
@@ -4084,7 +4084,7 @@
           "white",
           "blue:white:blue_stripe",
           "white",
-          "#0000"
+          "transparent"
         ],
         "text-halo-width": 3,
         "text-halo-blur": 1.5
@@ -4891,7 +4891,7 @@
       "filter": ["==", "subclass", "cistern"],
       "paint": {
         "circle-radius": {"stops": [[14, 2.5], [20, 4.375]]},
-        "circle-color": "#0000",
+        "circle-color": "transparent",
         "circle-stroke-color": "#1E80E2",
         "circle-stroke-width": {"stops": [[14, 2.5], [20, 4.375]]}
       }

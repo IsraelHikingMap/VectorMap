@@ -102,7 +102,7 @@
             "rgba(255, 236, 139, 0.25)",
             "beach",
             "#FAFAA0",
-            "#0000"
+            "transparent"
           ],
           "wood",
           "rgba(145, 230, 145, 0.5)",
@@ -114,14 +114,14 @@
           "rgb(233, 253, 204)",
           "ice",
           "white",
-          "#0000"
+          "transparent"
         ],
         "fill-outline-color": [
           "match",
           ["get", "class"],
           "ice",
           "gray",
-          "#0000"
+          "transparent"
         ]
       }
     },
@@ -311,7 +311,7 @@
           "match",
           ["get", "class"],
           "ocean",
-          "#0000",
+          "transparent",
           "#1E80E2"
         ]
       }
@@ -348,7 +348,7 @@
         "fill-opacity": 0.5,
         "fill-color": "#f4be66",
         "fill-antialias": true,
-        "fill-outline-color": "#0000"
+        "fill-outline-color": "transparent"
       }
     },
     {
@@ -1585,7 +1585,7 @@
           "#00C000",
           "yellow:blue:yellow_stripe",
           "gold",
-          ["match", ["get", "name"], "שביל ואדיות חיפה", "green", "#0000"]
+          ["match", ["get", "name"], "שביל ואדיות חיפה", "green", "transparent"]
         ],
         "line-width": {
           "base": 2,
@@ -1611,7 +1611,7 @@
         ["in", "highway", "path", "footway", "pedestrian", "cycleway"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {"line-color": ["to-color", ["get", "colour"], "#0000"]}
+      "paint": {"line-color": ["to-color", ["get", "colour"], "transparent"]}
     },
     {
       "id": "trail-colours-bg",
@@ -4712,7 +4712,7 @@
       "filter": ["==", "subclass", "cistern"],
       "paint": {
         "circle-radius": {"stops": [[14, 2.5], [20, 4.375]]},
-        "circle-color": "#0000",
+        "circle-color": "transparent",
         "circle-stroke-color": "#1E80E2",
         "circle-stroke-width": {"stops": [[14, 2.5], [20, 4.375]]}
       }
