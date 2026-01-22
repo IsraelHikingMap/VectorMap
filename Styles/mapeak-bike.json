@@ -21,7 +21,6 @@
     },
     "DEM": {
       "type": "raster-dem",
-      "url": "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2.json",
       "tiles": [
         "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2/{z}/{x}/{y}.png"
       ],
@@ -33,13 +32,11 @@
     },
     "Contour": {
       "type": "vector",
-      "url": "https://global.israelhikingmap.workers.dev/JAXA_AW3D30_2024_contour_z5-Z12_vector.json",
       "tiles": [
         "https://global.israelhikingmap.workers.dev/JAXA_AW3D30_2024_contour_z5-Z12_vector/{z}/{x}/{y}.mvt"
       ],
       "minzoom": 5,
       "maxzoom": 12,
-      "scheme": "xyz",
       "attribution": "<a href=https://earth.jaxa.jp/en/data/policy/>AW3D30 (JAXA)</a>"
     }
   },
