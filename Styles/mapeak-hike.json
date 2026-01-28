@@ -5030,9 +5030,9 @@
       "id": "place-alpine_hut",
       "type": "symbol",
       "source": "IHM",
-      "source-layer": "place",
+      "source-layer": "poi",
       "minzoom": 11,
-      "filter": ["all", ["in", "class", "alpine_hut"]],
+      "filter": ["all", ["==", "subclass", "alpine_hut"]],
       "layout": {
         "text-field": [
           "coalesce",
