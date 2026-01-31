@@ -8,6 +8,7 @@
   "sources": {
     "OSM_traces": {
       "type": "vector",
+      "url": "https://slice.israelhikingmap.workers.dev/OSM_traces.json",
       "tiles": ["https://slice.israelhikingmap.workers.dev/OSM_traces/{z}/{x}/{y}.mvt"],
       "minzoom": 7
     }
