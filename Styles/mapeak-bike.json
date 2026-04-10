@@ -23,7 +23,7 @@
       "type": "raster-dem",
       "url": "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2.json",
       "tiles": [
-        "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2/{z}/{x}/{y}.png"
+        "https://global.israelhikingmap.workers.dev/jaxa_terrarium0-11_v2/{z}/{x}/{y}.webp"
       ],
       "minzoom": 7,
       "maxzoom": 11,
