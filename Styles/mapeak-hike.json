@@ -3925,7 +3925,8 @@
           "coalesce",
           ["get", "name:he"],
           ["get", "name:en"],
-          ["get", "name"]
+          ["get", "name"],
+          ["get", "ref"]
         ],
         "text-font": ["Noto Sans Condensed Bold"],
         "text-letter-spacing": 0.2,
@@ -3949,7 +3950,8 @@
           "coalesce",
           ["get", "name:he"],
           ["get", "name:en"],
-          ["get", "name"]
+          ["get", "name"],
+          ["get", "ref"]
         ],
         "text-font": ["Noto Sans Condensed Bold"],
         "text-letter-spacing": 0.2,
@@ -3974,7 +3976,8 @@
           "coalesce",
           ["get", "name:he"],
           ["get", "name:en"],
-          ["get", "name"]
+          ["get", "name"],
+          ["get", "ref"]
         ],
         "text-font": ["Noto Sans Condensed Bold"],
         "text-letter-spacing": 0.2,
@@ -4000,7 +4003,8 @@
           "coalesce",
           ["get", "name:he"],
           ["get", "name:en"],
-          ["get", "name"]
+          ["get", "name"],
+          ["get", "ref"]
         ],
         "text-font": ["Noto Sans Condensed Bold"],
         "text-letter-spacing": 0.2,
