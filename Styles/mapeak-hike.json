@@ -367,64 +367,6 @@
       "paint": {"fill-color": "rgb(250, 247, 225)"}
     },
     {
-      "id": "trail-israel-secondary-",
-      "type": "line",
-      "source": "IHM-code",
-      "source-layer": "trail",
-      "minzoom": 5,
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
-        [
-          "!in",
-          "highway",
-          "primary",
-          "trunk",
-          "motorway",
-          "primary_link",
-          "trunk_link",
-          "motorway_link"
-        ]
-      ],
-      "layout": {"line-cap": "round"},
-      "paint": {
-        "line-color": "rgb(255, 194, 100)",
-        "line-width": {
-          "base": 2,
-          "stops": [[11, 6], [12, 9], [16, 16], [22, 80]]
-        }
-      }
-    },
-    {
-      "id": "trail-israel-primary+",
-      "type": "line",
-      "source": "IHM-code",
-      "source-layer": "trail",
-      "minzoom": 5,
-      "filter": [
-        "all",
-        ["==", "osmc_symbol", "orange:orange:white_right:blue_stripe"],
-        [
-          "in",
-          "highway",
-          "primary",
-          "trunk",
-          "motorway",
-          "primary_link",
-          "trunk_link",
-          "motorway_link"
-        ]
-      ],
-      "layout": {"line-cap": "round"},
-      "paint": {
-        "line-color": "rgb(255, 194, 100)",
-        "line-width": {
-          "base": 2,
-          "stops": [[11, 6], [12, 9], [16, 24], [22, 94]]
-        }
-      }
-    },
-    {
       "id": "layer-1-box-wayerway",
       "type": "line",
       "source": "IHM",
@@ -1537,63 +1479,6 @@
       "paint": {
         "line-color": "#808080",
         "line-width": {"base": 2, "stops": [[13, 3], [16, 16], [22, 64]]}
-      }
-    },
-    {
-      "id": "trail-regional-line-purple",
-      "type": "line",
-      "source": "IHM-code",
-      "source-layer": "trail",
-      "minzoom": 11,
-      "filter": [
-        "all",
-        ["==", "network", "rwn"],
-        ["==", "num_colours", 1],
-        ["==", "osmc_symbol", "purple:white:purple_stripe"]
-      ],
-      "layout": {"line-join": "miter"},
-      "paint": {
-        "line-color": "purple",
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [10, 1.5], [16, 4], [22, 16]]
-        },
-        "line-offset": {
-          "base": 2,
-          "stops": [[11, -2], [12, -3], [14, -5], [16, -6], [22, -24]]
-        }
-      }
-    },
-    {
-      "id": "trail-regional-line",
-      "type": "line",
-      "source": "IHM-code",
-      "source-layer": "trail",
-      "minzoom": 11,
-      "filter": ["all", ["==", "network", "rwn"], ["==", "num_colours", 1]],
-      "layout": {"line-join": "miter"},
-      "paint": {
-        "line-color": [
-          "match",
-          ["get", "osmc_symbol"],
-          "orange:white:orange_stripe",
-          "orange",
-          "blue:blue:white_right:purple_stripe",
-          "#1765AD",
-          "green:green:white_right:blue_stripe",
-          "#00C000",
-          "yellow:blue:yellow_stripe",
-          "gold",
-          ["match", ["get", "name"], "שביל ואדיות חיפה", "green", "transparent"]
-        ],
-        "line-width": {
-          "base": 2,
-          "stops": [[7, 1], [10, 1.5], [16, 4], [22, 16]]
-        },
-        "line-offset": {
-          "base": 2,
-          "stops": [[11, 2], [12, 3], [14, 5], [16, 6], [22, 24]]
-        }
       }
     },
     {
