@@ -1160,7 +1160,6 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "waterway",
-      "minzoom": 9,
       "filter": ["all", ["==", "intermittent", 1], ["!=", "class", "ditch"]],
       "paint": {
         "line-color": "#8EBDF0",
@@ -1173,7 +1172,6 @@
       "type": "line",
       "source": "IHM",
       "source-layer": "waterway",
-      "minzoom": 9,
       "filter": ["all", ["!=", "intermittent", 1], ["!=", "class", "ditch"]],
       "paint": {
         "line-color": "#8EBDF0",
