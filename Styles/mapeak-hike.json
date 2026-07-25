@@ -3,7 +3,7 @@
   "name": "mapeak-hike",
   "metadata": {
     "owner": "Zeev Stadler",
-    "copyright": "Copyright Zeev Stadler 2019-2025. All Rights Reserved."
+    "copyright": "Copyright Zeev Stadler 2019-2026. All Rights Reserved."
   },
   "sources": {
     "IHM": {
@@ -119,7 +119,7 @@
           "match",
           ["get", "class"],
           "ice",
-          "gray",
+          "lightgray",
           "transparent"
         ]
       }
@@ -155,6 +155,12 @@
       "source-layer": "landcover",
       "filter": ["==", "subclass", "quarry"],
       "paint": {"fill-color": "#BFBFBF"}
+    },
+    {
+      "id": "Terrain",
+      "type": "hillshade",
+      "source": "DEM",
+      "paint": {"hillshade-exaggeration": 0.33, "hillshade-method": "igor"}
     },
     {
       "id": "area-military",
@@ -208,7 +214,12 @@
           false
         ]
       ],
-      "paint": {"line-color": "white", "line-width": 2, "line-blur": 2}
+      "paint": {
+        "line-color": "white",
+        "line-width": 2,
+        "line-blur": 2,
+        "line-opacity": 0.5
+      }
     },
     {
       "id": "contour-major-casing",
@@ -237,7 +248,12 @@
           false
         ]
       ],
-      "paint": {"line-color": "white", "line-width": 3, "line-blur": 2}
+      "paint": {
+        "line-color": "white",
+        "line-width": 3,
+        "line-blur": 2,
+        "line-opacity": 0.5
+      }
     },
     {
       "id": "contour-minor",
@@ -266,7 +282,11 @@
           false
         ]
       ],
-      "paint": {"line-color": "rgb(161, 127, 86)", "line-width": 1}
+      "paint": {
+        "line-color": "rgb(161, 127, 86)",
+        "line-width": 1,
+        "line-opacity": 0.5
+      }
     },
     {
       "id": "contour-major",
@@ -295,7 +315,11 @@
           false
         ]
       ],
-      "paint": {"line-color": "rgb(161, 127, 86)", "line-width": 2}
+      "paint": {
+        "line-color": "rgb(161, 127, 86)",
+        "line-width": 2,
+        "line-opacity": 0.5
+      }
     },
     {
       "id": "water-area",
@@ -3377,15 +3401,6 @@
       "paint": {"line-color": "#bbb", "line-width": 1.5}
     },
     {
-      "id": "Terrain",
-      "type": "hillshade",
-      "source": "DEM",
-      "paint": {
-        "hillshade-exaggeration": 0.33,
-        "hillshade-highlight-color": "rgba(256,256,256,0)"
-      }
-    },
-    {
       "id": "boundary-minefield-icon",
       "type": "symbol",
       "source": "IHM",
@@ -5126,6 +5141,5 @@
       }
     }
   ],
-  "id": "mapeak-hike",
-  "owner": "Mapeak.com"
+  "id": "mapeak-hike"
 }
