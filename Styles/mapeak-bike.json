@@ -2968,7 +2968,17 @@
         "text-offset": [0, -1.25],
         "text-field": [
           "concat",
-          ["get", "ele"],
+          [
+            "to-string",
+            [
+              "round",
+              [
+                "*",
+                1.0000000,
+                ["to-number", ["get", "ele"]]
+              ]
+            ]
+          ],
           "\n\n",
           ["coalesce", ["get", "name:he"], ["get", "name:en"], ["get", "name"]]
         ],

@@ -4805,7 +4805,17 @@
       "minzoom": 13,
       "filter": ["all", ["has", "ele"], ["==", "$type", "Point"]],
       "layout": {
-        "text-field": "{ele}",
+        "text-field": [
+          "to-string",
+          [
+            "round",
+            [
+              "*",
+              1.0000000,
+              ["to-number", ["get", "ele"]]
+            ]
+          ]
+        ],
         "symbol-placement": "point",
         "text-font": ["Noto Sans Condensed Bold"],
         "text-letter-spacing": 0.2,
