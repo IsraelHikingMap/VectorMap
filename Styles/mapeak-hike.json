@@ -3401,6 +3401,27 @@
       "paint": {"line-color": "#bbb", "line-width": 1.5}
     },
     {
+      "id": "grid-lines-minor",
+      "type": "line",
+      "source": "mapeak-schema",
+      "source-layer": "itm_grid",
+      "minzoom": 9,
+      "filter": ["all"],
+      "paint": {
+        "line-color": "rgb(127, 127, 127)",
+        "line-width": {"base": 2, "stops": [[8, 0.5], [11, 1]]}
+      }
+    },
+    {
+      "id": "grid-lines-major",
+      "type": "line",
+      "source": "mapeak-schema",
+      "source-layer": "itm_grid",
+      "minzoom": 11,
+      "filter": ["any", [">=", "east_rank", 10], [">=", "north_rank", 10]],
+      "paint": {"line-color": "rgb(127, 127, 127)", "line-width": 2}
+    },
+    {
       "id": "boundary-minefield-icon",
       "type": "symbol",
       "source": "mapeak-schema",
@@ -3468,27 +3489,6 @@
         "icon-size": 0.17
       },
       "paint": {}
-    },
-    {
-      "id": "grid-lines-minor",
-      "type": "line",
-      "source": "mapeak-schema",
-      "source-layer": "itm_grid",
-      "minzoom": 9,
-      "filter": ["all"],
-      "paint": {
-        "line-color": "rgb(127, 127, 127)",
-        "line-width": {"base": 2, "stops": [[8, 0.5], [11, 1]]}
-      }
-    },
-    {
-      "id": "grid-lines-major",
-      "type": "line",
-      "source": "mapeak-schema",
-      "source-layer": "itm_grid",
-      "minzoom": 11,
-      "filter": ["any", [">=", "east_rank", 10], [">=", "north_rank", 10]],
-      "paint": {"line-color": "rgb(127, 127, 127)", "line-width": 2}
     },
     {
       "id": "grid-label-east",
