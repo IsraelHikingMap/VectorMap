@@ -1753,6 +1753,12 @@
       "paint": {"line-color": "rgb(127, 127, 127)", "line-width": 2}
     },
     {
+      "id": "Terrain",
+      "type": "hillshade",
+      "source": "DEM",
+      "paint": {"hillshade-highlight-color": "rgba(256,256,256,0)"}
+    },
+    {
       "id": "land-construction-pattern",
       "type": "symbol",
       "source": "mapeak-schema",
@@ -1854,12 +1860,6 @@
         "text-halo-color": "rgba(255, 255, 255, 0.74)",
         "text-halo-width": 2
       }
-    },
-    {
-      "id": "Terrain",
-      "type": "hillshade",
-      "source": "DEM",
-      "paint": {"hillshade-highlight-color": "rgba(256,256,256,0)"}
     },
     {
       "id": "base_fence_x",
