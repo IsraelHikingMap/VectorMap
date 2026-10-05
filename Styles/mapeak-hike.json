@@ -5141,11 +5141,18 @@
         "text-offset": [0, -1],
         "text-letter-spacing": 0.2,
         "symbol-placement": "line",
+        "text-max-angle": 90,
         "symbol-spacing": 400
       },
       "paint": {
         "text-color": ["coalesce", ["get", "colour"], "black"],
-        "text-halo-color": "white",
+        "text-halo-color": [
+          "match",
+          ["get", "colour"],
+          "white",
+          "#999",
+          "white"
+        ],
         "text-halo-width": 3,
         "text-halo-blur": 1.5
       }
