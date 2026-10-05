@@ -23,9 +23,7 @@
     "DEM": {
       "type": "raster-dem",
       "url": "https://mapeak.com/vector/data/raster-dem.json",
-      "tiles": [
-        "https://mapeak.com/vector/data/raster-dem/{z}/{x}/{y}.webp"
-      ],
+      "tiles": ["https://mapeak.com/vector/data/raster-dem/{z}/{x}/{y}.webp"],
       "minzoom": 7,
       "maxzoom": 11,
       "tileSize": 512,
@@ -35,9 +33,7 @@
     "Contour": {
       "type": "vector",
       "url": "https://mapeak.com/vector/data/contour.json",
-      "tiles": [
-        "https://mapeak.com/vector/data/contour/{z}/{x}/{y}.mvt"
-      ],
+      "tiles": ["https://mapeak.com/vector/data/contour/{z}/{x}/{y}.mvt"],
       "minzoom": 7,
       "maxzoom": 12,
       "attribution": "<a href=https://earth.jaxa.jp/en/data/policy/>AW3D30 (JAXA)</a>"
@@ -4177,6 +4173,45 @@
       }
     },
     {
+      "id": "water-tank",
+      "type": "symbol",
+      "source": "mapeak-schema",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "filter": [
+        "any",
+        ["==", ["get", "subclass"], "water_tower"],
+        [
+          "all",
+          ["==", ["get", "content"], "water"],
+          ["==", ["get", "subclass"], "storage_tank"]
+        ]
+      ],
+      "layout": {
+        "icon-image": "water_tank",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
+        "icon-allow-overlap": true,
+        "text-font": ["Noto Sans Condensed Bold"],
+        "text-anchor": "top",
+        "text-offset": [0, 0.5],
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#125595",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
       "id": "icon-fuel",
       "type": "symbol",
       "source": "mapeak-schema",
@@ -4217,45 +4252,6 @@
       }
     },
     {
-      "id": "water-tank",
-      "type": "symbol",
-      "source": "mapeak-schema",
-      "source-layer": "poi",
-      "minzoom": 12,
-      "filter": [
-        "any",
-        ["==", ["get", "subclass"], "water_tower"],
-        [
-          "all",
-          ["==", ["get", "content"], "water"],
-          ["==", ["get", "subclass"], "storage_tank"]
-        ]
-      ],
-      "layout": {
-        "icon-image": "water_tank",
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:en"],
-          ["get", "name"]
-        ],
-        "icon-size": {"stops": [[14, 0.4], [20, 0.7]]},
-        "icon-allow-overlap": true,
-        "text-font": ["Noto Sans Condensed Bold"],
-        "text-anchor": "top",
-        "text-offset": [0, 0.5],
-        "text-size": 18,
-        "text-letter-spacing": 0.2,
-        "text-optional": true
-      },
-      "paint": {
-        "text-color": "#125595",
-        "text-halo-color": "white",
-        "text-halo-width": 3,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
       "id": "icon-parking",
       "type": "symbol",
       "source": "mapeak-schema",
@@ -4275,6 +4271,34 @@
         "text-offset": [0, 0.5],
         "text-size": ["step", ["zoom"], 0, 16, 18],
         "text-letter-spacing": 0.2,
+        "text-optional": true,
+        "icon-padding": 2
+      },
+      "paint": {
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "icon-toilets",
+      "type": "symbol",
+      "source": "mapeak-schema",
+      "source-layer": "poi",
+      "filter": ["==", "class", "toilets"],
+      "layout": {
+        "icon-image": "toilet",
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-anchor": "bottom",
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "text-font": ["Noto Sans Condensed Bold"],
+        "text-anchor": "top",
+        "text-size": ["step", ["zoom"], 0, 16, 18],
         "text-optional": true,
         "icon-padding": 2
       },
@@ -4946,6 +4970,68 @@
         "text-size": 18,
         "text-letter-spacing": 0.2,
         "text-max-width": 5
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "place-restaurant",
+      "type": "symbol",
+      "source": "mapeak-schema",
+      "source-layer": "poi",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "restaurant"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "point",
+        "text-font": ["Noto Sans Condensed Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-max-width": 5,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-image": "food",
+        "text-offset": [0, 1],
+        "text-anchor": "top"
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "place-hotel",
+      "type": "symbol",
+      "source": "mapeak-schema",
+      "source-layer": "poi",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "lodging"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "point",
+        "text-font": ["Noto Sans Condensed Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-max-width": 5,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-image": "hotel",
+        "text-offset": [0, 1],
+        "text-anchor": "top"
       },
       "paint": {
         "text-color": "#404040",
