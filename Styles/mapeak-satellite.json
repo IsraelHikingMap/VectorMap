@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "road_minor",
+      "id": "minor_service",
       "type": "line",
       "source": "mapeak-schema",
       "source-layer": "transportation",
@@ -69,12 +69,12 @@
       }
     },
     {
-      "id": "road_secondary_tertiary",
+      "id": "secondary_tertiary",
       "type": "line",
       "source": "mapeak-schema",
       "source-layer": "transportation",
       "minzoom": 10,
-      "filter": ["all", ["in", "bike_class", "secondary", "tertiary"]],
+      "filter": ["all", ["in", "hike_class", "secondary", "tertiary"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "white",
@@ -83,12 +83,12 @@
       }
     },
     {
-      "id": "road_trunk_primary",
+      "id": "trunk_primary",
       "type": "line",
       "source": "mapeak-schema",
       "source-layer": "transportation",
       "minzoom": 9,
-      "filter": ["all", ["in", "bike_class", "trunk", "primary"]],
+      "filter": ["all", ["in", "hike_class", "trunk", "primary"]],
       "paint": {
         "line-color": "white",
         "line-layer-opacity": 0.25,
@@ -96,13 +96,13 @@
       }
     },
     {
-      "id": "road_major_motorway",
+      "id": "motorway",
       "type": "line",
       "source": "mapeak-schema",
       "source-layer": "transportation",
       "minzoom": 8,
       "maxzoom": 24,
-      "filter": ["all", ["==", "bike_class", "motorway"]],
+      "filter": ["all", ["==", "hike_class", "motorway"]],
       "paint": {
         "line-color": "white",
         "line-layer-opacity": 0.25,
@@ -110,12 +110,12 @@
       }
     },
     {
-      "id": "track_core",
+      "id": "track",
       "type": "line",
       "source": "mapeak-schema",
       "source-layer": "transportation",
       "minzoom": 12,
-      "filter": ["all", ["in", "bike_class", "track", "unclassified"]],
+      "filter": ["all", ["in", "hike_class", "track", "unclassified"]],
       "paint": {
         "line-color": "white",
         "line-layer-opacity": 0.25,
@@ -132,7 +132,7 @@
         "all",
         [
           "in",
-          "bike_class",
+          "hike_class",
           "path",
           "steps",
           "footway",
@@ -145,6 +145,61 @@
         "line-color": "white",
         "line-layer-opacity": 0.25,
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 20]]}
+      }
+    },
+    {
+      "id": "name-water-line",
+      "type": "symbol",
+      "source": "mapeak-schema",
+      "source-layer": "waterway_name",
+      "minzoom": 11,
+      "filter": ["!=", "class", "ditch"],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "line",
+        "text-font": ["Noto Sans Condensed Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.7,
+        "text-max-angle": 150,
+        "text-keep-upright": true,
+        "symbol-spacing": 500
+      },
+      "paint": {
+        "text-color": "#1E80E2",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
+      "id": "water-area-name",
+      "type": "symbol",
+      "source": "mapeak-schema",
+      "source-layer": "water_name",
+      "filter": ["==", "$type", "Point"],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "text-font": ["Noto Sans Condensed Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.3,
+        "text-rotation-alignment": "viewport",
+        "text-max-width": 4
+      },
+      "paint": {
+        "text-color": "#125595",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
       }
     },
     {
@@ -169,7 +224,6 @@
       },
       "paint": {
         "text-color": "white",
-        "text-opacity": 0.67,
         "text-halo-color": "rgba(0, 0, 0, 0.75)",
         "text-halo-width": 3,
         "text-halo-blur": 1.5
@@ -197,7 +251,6 @@
       },
       "paint": {
         "text-color": "white",
-        "text-opacity": 0.67,
         "text-halo-color": "rgba(0, 0, 0, 0.75)",
         "text-halo-width": 3,
         "text-halo-blur": 1.5
@@ -225,7 +278,6 @@
       },
       "paint": {
         "text-color": "white",
-        "text-opacity": 0.67,
         "text-halo-color": "rgba(0, 0, 0, 0.75)",
         "text-halo-width": 3,
         "text-halo-blur": 1.5
@@ -254,7 +306,6 @@
       },
       "paint": {
         "text-color": "white",
-        "text-opacity": 0.67,
         "text-halo-color": "rgba(0, 0, 0, 0.75)",
         "text-halo-width": 3,
         "text-halo-blur": 1.5
@@ -283,7 +334,6 @@
       },
       "paint": {
         "text-color": "white",
-        "text-opacity": 0.67,
         "text-halo-color": "rgba(0, 0, 0, 0.75)",
         "text-halo-width": 3,
         "text-halo-blur": 1.5
@@ -312,7 +362,6 @@
       },
       "paint": {
         "text-color": "white",
-        "text-opacity": 0.67,
         "text-halo-color": "rgba(0, 0, 0, 0.75)",
         "text-halo-width": 3,
         "text-halo-blur": 1.5
@@ -340,7 +389,6 @@
       },
       "paint": {
         "text-color": "white",
-        "text-opacity": 0.67,
         "text-halo-color": "rgba(0, 0, 0, 0.75)",
         "text-halo-width": 3,
         "text-halo-blur": 1.5
