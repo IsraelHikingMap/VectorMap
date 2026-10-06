@@ -2981,37 +2981,6 @@
       }
     },
     {
-      "id": "label_waterway_old",
-      "type": "symbol",
-      "source": "mapeak-schema",
-      "source-layer": "waterway",
-      "minzoom": 14,
-      "filter": ["all", ["!=", "brunnel", "tunnel"]],
-      "layout": {
-        "symbol-placement": "line",
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:en"],
-          ["get", "name"]
-        ],
-        "text-font": ["Open Sans Regular"],
-        "text-transform": "none",
-        "text-size": {"base": 1.4, "stops": [[14, 18], [20, 33]]},
-        "text-max-width": 30,
-        "text-allow-overlap": false,
-        "symbol-spacing": 750,
-        "text-letter-spacing": 0.1,
-        "text-max-angle": 30
-      },
-      "paint": {
-        "text-color": "blue",
-        "text-halo-color": "hsl(0, 0%, 100%)",
-        "text-halo-width": 1.5,
-        "text-halo-blur": 1
-      }
-    },
-    {
       "id": "label_waterway",
       "type": "symbol",
       "source": "mapeak-schema",
@@ -3850,31 +3819,6 @@
         "text-letter-spacing": 0.2,
         "text-rotation-alignment": "viewport",
         "text-max-width": 4
-      },
-      "paint": {
-        "text-color": "blue",
-        "text-halo-color": "white",
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "water-area-name-deprecated",
-      "type": "symbol",
-      "source": "mapeak-schema",
-      "source-layer": "water_name",
-      "filter": ["==", "$type", "LineString"],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:en"],
-          ["get", "name"]
-        ],
-        "symbol-placement": "line-center",
-        "text-font": ["Open Sans Regular"],
-        "text-size": {"stops": [[14, 16], [20, 30]]},
-        "text-letter-spacing": 0.2,
-        "text-rotation-alignment": "viewport"
       },
       "paint": {
         "text-color": "blue",

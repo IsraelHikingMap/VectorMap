@@ -3764,35 +3764,6 @@
       }
     },
     {
-      "id": "name-water-line_old",
-      "type": "symbol",
-      "source": "mapeak-schema",
-      "source-layer": "waterway",
-      "minzoom": 11,
-      "filter": ["!=", "class", "ditch"],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:en"],
-          ["get", "name"]
-        ],
-        "symbol-placement": "line",
-        "text-font": ["Noto Sans Condensed Bold"],
-        "text-size": 18,
-        "text-letter-spacing": 0.7,
-        "text-max-angle": 150,
-        "text-keep-upright": true,
-        "symbol-spacing": 500
-      },
-      "paint": {
-        "text-color": "#1E80E2",
-        "text-halo-color": "white",
-        "text-halo-width": 3,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
       "id": "name-water-line",
       "type": "symbol",
       "source": "mapeak-schema",
@@ -4705,32 +4676,6 @@
         "text-letter-spacing": 0.3,
         "text-rotation-alignment": "viewport",
         "text-max-width": 4
-      },
-      "paint": {
-        "text-color": "#125595",
-        "text-halo-color": "white",
-        "text-halo-width": 3,
-        "text-halo-blur": 1.5
-      }
-    },
-    {
-      "id": "water-area-name-deprecated",
-      "type": "symbol",
-      "source": "mapeak-schema",
-      "source-layer": "water_name",
-      "filter": ["==", "$type", "LineString"],
-      "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:he"],
-          ["get", "name:en"],
-          ["get", "name"]
-        ],
-        "symbol-placement": "line-center",
-        "text-font": ["Noto Sans Condensed Bold"],
-        "text-size": 18,
-        "text-letter-spacing": 0.3,
-        "text-rotation-alignment": "viewport"
       },
       "paint": {
         "text-color": "#125595",
