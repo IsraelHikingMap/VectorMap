@@ -4924,6 +4924,37 @@
       }
     },
     {
+      "id": "place-cafe",
+      "type": "symbol",
+      "source": "mapeak-schema",
+      "source-layer": "poi",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "cafe"]],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:he"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "symbol-placement": "point",
+        "text-font": ["Noto Sans Condensed Bold"],
+        "text-size": 18,
+        "text-letter-spacing": 0.2,
+        "text-max-width": 5,
+        "icon-size": {"stops": [[14, 0.5], [20, 0.8]]},
+        "icon-image": "cafe",
+        "text-offset": [0, 1],
+        "text-anchor": "top"
+      },
+      "paint": {
+        "text-color": "#404040",
+        "text-halo-color": "white",
+        "text-halo-width": 3,
+        "text-halo-blur": 1.5
+      }
+    },
+    {
       "id": "place-restaurant",
       "type": "symbol",
       "source": "mapeak-schema",
