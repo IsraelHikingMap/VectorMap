@@ -156,7 +156,10 @@
       "id": "Terrain",
       "type": "hillshade",
       "source": "DEM",
-      "paint": {"hillshade-exaggeration": 0.33, "hillshade-method": "igor"}
+      "paint": {
+        "hillshade-exaggeration": {"stops": [[6, 0], [15, 0.33]]},
+        "hillshade-method": "igor"
+      }
     },
     {
       "id": "area-military",
@@ -281,7 +284,8 @@
       "paint": {
         "line-color": "rgb(161, 127, 86)",
         "line-width": 1,
-        "line-opacity": 0.5
+        "line-opacity": 0.5,
+        "line-layer-opacity": {"stops": [[10, 0.3], [13, 1]]}
       }
     },
     {
@@ -314,7 +318,8 @@
       "paint": {
         "line-color": "rgb(161, 127, 86)",
         "line-width": 2,
-        "line-opacity": 0.5
+        "line-opacity": 0.5,
+        "line-layer-opacity": {"stops": [[10, 0.2], [13, 1]]}
       }
     },
     {
@@ -1386,7 +1391,7 @@
       "type": "line",
       "source": "mapeak-schema",
       "source-layer": "ihm_lines",
-      "minzoom": 9,
+      "minzoom": 10,
       "filter": ["all", ["in", "class", "cliff", "earth_bank", "arete"]],
       "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
     },
@@ -1727,18 +1732,36 @@
       }
     },
     {
+      "id": "path-line",
+      "type": "line",
+      "source": "mapeak-schema",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "maxzoom": 13,
+      "filter": [
+        "all",
+        ["==", "hike_class", "path"],
+        ["!in", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-dasharray": [0.5, 2.5],
+        "line-width": 1.5,
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
+      }
+    },
+    {
       "id": "track-line",
       "type": "line",
       "source": "mapeak-schema",
       "source-layer": "transportation",
-      "minzoom": 11,
+      "minzoom": 10,
       "maxzoom": 12,
       "filter": ["all", ["==", "hike_class", "track"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": ["to-color", ["get", "colour"], "#AA8166"],
-        "line-width": 2,
-        "line-opacity": 0.5
+        "line-width": 1.3,
+        "line-color": ["to-color", ["get", "colour"], "#AA8166"]
       }
     },
     {
@@ -1900,6 +1923,20 @@
       }
     },
     {
+      "id": "road-minor-line",
+      "type": "line",
+      "source": "mapeak-schema",
+      "source-layer": "transportation",
+      "maxzoom": 11,
+      "filter": [
+        "all",
+        ["in", "hike_class", "minor", "unclassified", "service"],
+        ["!in", "brunnel", "tunnel"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {"line-color": "rgb(255, 255, 255)", "line-width": 1}
+    },
+    {
       "id": "road-minor",
       "type": "line",
       "source": "mapeak-schema",
@@ -1924,7 +1961,7 @@
       "type": "line",
       "source": "mapeak-schema",
       "source-layer": "transportation",
-      "minzoom": 10,
+      "minzoom": 8,
       "filter": [
         "all",
         ["==", "hike_class", "tertiary"],
@@ -1944,7 +1981,7 @@
       "type": "line",
       "source": "mapeak-schema",
       "source-layer": "transportation",
-      "minzoom": 8,
+      "minzoom": 6,
       "filter": [
         "all",
         ["==", "hike_class", "secondary"],
@@ -3458,7 +3495,7 @@
       "type": "symbol",
       "source": "mapeak-schema",
       "source-layer": "ihm_lines",
-      "minzoom": 9,
+      "minzoom": 10,
       "filter": ["all", ["in", "class", "cliff", "earth_bank", "arete"]],
       "layout": {
         "icon-image": "cliff_pattern",
