@@ -284,8 +284,7 @@
       "paint": {
         "line-color": "rgb(161, 127, 86)",
         "line-width": 1,
-        "line-opacity": 0.5,
-        "line-layer-opacity": {"stops": [[10, 0.3], [13, 1]]}
+        "line-opacity": {"stops": [[10, 0.15], [13, 0.5]]}
       }
     },
     {
@@ -318,8 +317,7 @@
       "paint": {
         "line-color": "rgb(161, 127, 86)",
         "line-width": 2,
-        "line-opacity": 0.5,
-        "line-layer-opacity": {"stops": [[10, 0.2], [13, 1]]}
+        "line-opacity": {"stops": [[10, 0.1], [13, 0.5]]}
       }
     },
     {
