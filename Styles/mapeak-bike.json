@@ -22,10 +22,10 @@
       "url": "https://mapeak.com/vector/data/raster-dem.json",
       "tiles": ["https://mapeak.com/vector/data/raster-dem/{z}/{x}/{y}.webp"],
       "minzoom": 7,
-      "maxzoom": 11,
+      "maxzoom": 12,
       "tileSize": 512,
       "encoding": "terrarium",
-      "attribution": "<a href=https://earth.jaxa.jp/en/data/policy/>AW3D30 (JAXA)</a>"
+      "attribution":"<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
     },
     "Contour": {
       "type": "vector",
