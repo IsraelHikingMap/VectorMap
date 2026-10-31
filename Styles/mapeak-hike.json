@@ -124,7 +124,7 @@
       "id": "area-AB",
       "type": "fill",
       "source": "mapeak-schema",
-      "source-layer": "ihm_boundary",
+      "source-layer": "mapeak_boundary",
       "filter": ["in", "name:en", "Area A", "Area B", "Area H1"],
       "paint": {"fill-pattern": "orange_nesw_pattern", "fill-opacity": 0.3}
     },
@@ -132,7 +132,7 @@
       "id": "area-A",
       "type": "fill",
       "source": "mapeak-schema",
-      "source-layer": "ihm_boundary",
+      "source-layer": "mapeak_boundary",
       "filter": ["in", "name:en", "Area A", "Area H1"],
       "paint": {"fill-pattern": "orange_nwse_pattern", "fill-opacity": 0.3}
     },
@@ -1207,7 +1207,7 @@
       "id": "boundary-area-AB",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_boundary",
+      "source-layer": "mapeak_boundary",
       "filter": ["in", "name:en", "Area A", "Area B", "Area H1"],
       "paint": {"line-color": "orange", "line-opacity": 0.4}
     },
@@ -1264,7 +1264,7 @@
       "id": "boundary-country-dash",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_boundary",
+      "source-layer": "mapeak_boundary",
       "minzoom": 8,
       "filter": [
         "all",
@@ -1284,7 +1284,7 @@
       "id": "boundary-country-bar",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_boundary",
+      "source-layer": "mapeak_boundary",
       "minzoom": 8,
       "filter": [
         "all",
@@ -1304,7 +1304,7 @@
       "id": "boundary-country-line",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_boundary",
+      "source-layer": "mapeak_boundary",
       "maxzoom": 8,
       "filter": [
         "all",
@@ -1324,7 +1324,7 @@
       "id": "boundary-country-Green_line",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_boundary",
+      "source-layer": "mapeak_boundary",
       "filter": [
         "all",
         ["==", "admin_level", 2],
@@ -1341,7 +1341,7 @@
       "id": "boundary-country-Golan",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_boundary",
+      "source-layer": "mapeak_boundary",
       "filter": [
         "all",
         ["==", "admin_level", 2],
@@ -1388,7 +1388,7 @@
       "id": "barrier-cliff",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_lines",
+      "source-layer": "mapeak_lines",
       "minzoom": 10,
       "filter": ["all", ["in", "class", "cliff", "earth_bank", "arete"]],
       "paint": {"line-width": 1.5, "line-color": "#977C73", "line-opacity": 0.8}
@@ -3407,7 +3407,7 @@
       "id": "barrier-fence-line",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_lines",
+      "source-layer": "mapeak_lines",
       "minzoom": 11,
       "filter": ["all", ["in", "class", "fence", "yes", "block"]],
       "paint": {"line-color": "rgb(26, 26, 26)"}
@@ -3416,7 +3416,7 @@
       "id": "barrier-wall",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_lines",
+      "source-layer": "mapeak_lines",
       "minzoom": 11,
       "filter": ["in", "class", "wall", "city_wall", "dam"],
       "paint": {"line-color": "black", "line-width": 1.5}
@@ -3425,7 +3425,7 @@
       "id": "power-line",
       "type": "line",
       "source": "mapeak-schema",
-      "source-layer": "ihm_lines",
+      "source-layer": "mapeak_lines",
       "minzoom": 14,
       "filter": ["in", "class", "line", "minor_line"],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -3475,7 +3475,7 @@
       "id": "barrier-cliff-arete",
       "type": "symbol",
       "source": "mapeak-schema",
-      "source-layer": "ihm_lines",
+      "source-layer": "mapeak_lines",
       "minzoom": 9,
       "filter": ["all", ["in", "class", "arete"]],
       "layout": {
@@ -3492,7 +3492,7 @@
       "id": "barrier-cliff-icon",
       "type": "symbol",
       "source": "mapeak-schema",
-      "source-layer": "ihm_lines",
+      "source-layer": "mapeak_lines",
       "minzoom": 10,
       "filter": ["all", ["in", "class", "cliff", "earth_bank", "arete"]],
       "layout": {
@@ -3509,7 +3509,7 @@
       "id": "barrier-fence-x",
       "type": "symbol",
       "source": "mapeak-schema",
-      "source-layer": "ihm_lines",
+      "source-layer": "mapeak_lines",
       "minzoom": 11,
       "filter": ["==", "class", "fence"],
       "layout": {
@@ -3579,7 +3579,7 @@
       "id": "power-tower",
       "type": "circle",
       "source": "mapeak-schema",
-      "source-layer": "ihm_lines",
+      "source-layer": "mapeak_lines",
       "minzoom": 14,
       "filter": ["==", "class", "tower"],
       "paint": {
@@ -4907,7 +4907,7 @@
       "id": "name-natural",
       "type": "symbol",
       "source": "mapeak-schema",
-      "source-layer": "ihm_natural",
+      "source-layer": "mapeak_natural",
       "filter": [
         "<",
         ["to-number", ["get", "pixels"]],
