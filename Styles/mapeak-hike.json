@@ -192,27 +192,7 @@
       "source": "Contour",
       "source-layer": "contours",
       "minzoom": 9,
-      "filter": [
-        "let",
-        "ele",
-        ["to-number", ["get", "ele"]],
-        [
-          "case",
-          [">=", ["zoom"], 14],
-          ["==", 0, ["%", ["var", "ele"], 10]],
-          ["==", ["zoom"], 13],
-          ["==", 0, ["%", ["var", "ele"], 20]],
-          ["==", ["zoom"], 12],
-          ["==", 0, ["%", ["var", "ele"], 50]],
-          ["==", ["zoom"], 11],
-          ["==", 0, ["%", ["var", "ele"], 100]],
-          ["==", ["zoom"], 10],
-          ["==", 0, ["%", ["var", "ele"], 200]],
-          ["==", ["zoom"], 9],
-          ["==", 0, ["%", ["var", "ele"], 500]],
-          false
-        ]
-      ],
+      "filter": ["==", ["get", "level"], 0],
       "paint": {
         "line-color": "white",
         "line-width": 2,
@@ -226,27 +206,7 @@
       "source": "Contour",
       "source-layer": "contours",
       "minzoom": 9,
-      "filter": [
-        "let",
-        "ele",
-        ["to-number", ["get", "ele"]],
-        [
-          "case",
-          [">=", ["zoom"], 14],
-          ["==", 0, ["%", ["var", "ele"], 50]],
-          ["==", ["zoom"], 13],
-          ["==", 0, ["%", ["var", "ele"], 100]],
-          ["==", ["zoom"], 12],
-          ["==", 0, ["%", ["var", "ele"], 250]],
-          ["==", ["zoom"], 11],
-          ["==", 0, ["%", ["var", "ele"], 500]],
-          ["==", ["zoom"], 10],
-          ["==", 0, ["%", ["var", "ele"], 1000]],
-          ["==", ["zoom"], 9],
-          ["==", 0, ["%", ["var", "ele"], 2500]],
-          false
-        ]
-      ],
+      "filter": ["==", ["get", "level"], 1],
       "paint": {
         "line-color": "white",
         "line-width": 3,
@@ -260,27 +220,7 @@
       "source": "Contour",
       "source-layer": "contours",
       "minzoom": 9,
-      "filter": [
-        "let",
-        "ele",
-        ["to-number", ["get", "ele"]],
-        [
-          "case",
-          [">=", ["zoom"], 14],
-          ["==", 0, ["%", ["var", "ele"], 10]],
-          ["==", ["zoom"], 13],
-          ["==", 0, ["%", ["var", "ele"], 20]],
-          ["==", ["zoom"], 12],
-          ["==", 0, ["%", ["var", "ele"], 50]],
-          ["==", ["zoom"], 11],
-          ["==", 0, ["%", ["var", "ele"], 100]],
-          ["==", ["zoom"], 10],
-          ["==", 0, ["%", ["var", "ele"], 200]],
-          ["<=", ["zoom"], 9],
-          ["==", 0, ["%", ["var", "ele"], 500]],
-          false
-        ]
-      ],
+      "filter": ["==", ["get", "level"], 0],
       "paint": {
         "line-color": "rgb(161, 127, 86)",
         "line-width": 1,
@@ -293,27 +233,7 @@
       "source": "Contour",
       "source-layer": "contours",
       "minzoom": 9,
-      "filter": [
-        "let",
-        "ele",
-        ["to-number", ["get", "ele"]],
-        [
-          "case",
-          [">=", ["zoom"], 14],
-          ["==", 0, ["%", ["var", "ele"], 50]],
-          ["==", ["zoom"], 13],
-          ["==", 0, ["%", ["var", "ele"], 100]],
-          ["==", ["zoom"], 12],
-          ["==", 0, ["%", ["var", "ele"], 250]],
-          ["==", ["zoom"], 11],
-          ["==", 0, ["%", ["var", "ele"], 500]],
-          ["==", ["zoom"], 10],
-          ["==", 0, ["%", ["var", "ele"], 1000]],
-          ["==", ["zoom"], 9],
-          ["==", 0, ["%", ["var", "ele"], 2500]],
-          false
-        ]
-      ],
+      "filter": ["==", ["get", "level"], 1],
       "paint": {
         "line-color": "rgb(161, 127, 86)",
         "line-width": 2,
@@ -3736,27 +3656,7 @@
       "type": "symbol",
       "source": "Contour",
       "source-layer": "contours",
-      "filter": [
-        "let",
-        "ele",
-        ["to-number", ["get", "ele"]],
-        [
-          "case",
-          [">=", ["zoom"], 14],
-          ["==", 0, ["%", ["var", "ele"], 50]],
-          ["==", ["zoom"], 13],
-          ["==", 0, ["%", ["var", "ele"], 100]],
-          ["==", ["zoom"], 12],
-          ["==", 0, ["%", ["var", "ele"], 250]],
-          ["==", ["zoom"], 11],
-          ["==", 0, ["%", ["var", "ele"], 500]],
-          ["==", ["zoom"], 10],
-          ["==", 0, ["%", ["var", "ele"], 1000]],
-          ["==", ["zoom"], 9],
-          ["==", 0, ["%", ["var", "ele"], 2500]],
-          false
-        ]
-      ],
+      "filter": ["==", ["get", "level"], 1],
       "layout": {
         "text-field": "{ele}",
         "symbol-placement": "line",
