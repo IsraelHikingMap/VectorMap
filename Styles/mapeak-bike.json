@@ -33,7 +33,7 @@
       "tiles": ["https://mapeak.com/vector/data/contour/{z}/{x}/{y}.mvt"],
       "minzoom": 9,
       "maxzoom": 12,
-      "attribution": "<a href=https://earth.jaxa.jp/en/data/policy/>AW3D30 (JAXA)</a>"
+      "attribution":"<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
     }
   },
   "sprite": "https://mapeak.com/content/sprite/sprite",
