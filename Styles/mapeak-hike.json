@@ -25,7 +25,7 @@
       "url": "https://mapeak.com/vector/data/raster-dem.json",
       "tiles": ["https://mapeak.com/vector/data/raster-dem/{z}/{x}/{y}.webp"],
       "minzoom": 7,
-      "maxzoom": 12,
+      "maxzoom": 11,
       "tileSize": 512,
       "encoding": "terrarium",
       "attribution":"<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
