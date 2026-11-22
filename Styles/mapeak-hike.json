@@ -28,7 +28,7 @@
       "maxzoom": 11,
       "tileSize": 512,
       "encoding": "terrarium",
-      "attribution":"<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
+      "attribution": "<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
     },
     "Contour": {
       "type": "vector",
@@ -36,7 +36,7 @@
       "tiles": ["https://mapeak.com/vector/data/contour/{z}/{x}/{y}.mvt"],
       "minzoom": 9,
       "maxzoom": 12,
-      "attribution":"<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
+      "attribution": "<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
     }
   },
   "sprite": "https://mapeak.com/content/sprite/sprite",
@@ -4722,11 +4722,7 @@
           "to-string",
           [
             "round",
-            [
-              "*",
-              1.0000000,
-              ["to-number", ["get", "ele"]]
-            ]
+            ["*", ["to-number", "1.0000000"], ["to-number", ["get", "ele"]]]
           ]
         ],
         "symbol-placement": "point",

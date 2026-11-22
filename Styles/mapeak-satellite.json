@@ -8,9 +8,7 @@
   "sources": {
     "satellite": {
       "type": "raster",
-      "tiles": [
-        "https://mapeak.com/api/satellite/{z}/{x}/{y}"
-      ],
+      "tiles": ["https://mapeak.com/api/satellite/{z}/{x}/{y}"],
       "tileSize": 256,
       "minzoom": 0,
       "maxzoom": 19,

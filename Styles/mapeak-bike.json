@@ -25,7 +25,7 @@
       "maxzoom": 11,
       "tileSize": 512,
       "encoding": "terrarium",
-      "attribution":"<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
+      "attribution": "<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
     },
     "Contour": {
       "type": "vector",
@@ -33,7 +33,7 @@
       "tiles": ["https://mapeak.com/vector/data/contour/{z}/{x}/{y}.mvt"],
       "minzoom": 9,
       "maxzoom": 12,
-      "attribution":"<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
+      "attribution": "<a href='https://mapterhorn.com/attribution'>© Mapterhorn</a>"
     }
   },
   "sprite": "https://mapeak.com/content/sprite/sprite",
@@ -2526,7 +2526,11 @@
       "source": "mapeak-schema",
       "source-layer": "barrier",
       "minzoom": 15,
-      "filter": ["all", ["in", "class", "open_gate", "other"], ["!=", "barrier", "bollard"]],
+      "filter": [
+        "all",
+        ["in", "class", "open_gate", "other"],
+        ["!=", "barrier", "bollard"]
+      ],
       "layout": {
         "icon-image": "gate_open",
         "icon-size": {"stops": [[14, 0.4], [20, 1]]}
@@ -2894,10 +2898,13 @@
           [
             "case",
             ["has", "ele"],
-            ["to-string", ["round", ["*", 
-              1.0000000,
-              ["to-number", ["get", "ele"]]
-            ]]],
+            [
+              "to-string",
+              [
+                "round",
+                ["*", ["to-number", "1.0000000"], ["to-number", ["get", "ele"]]]
+              ]
+            ],
             ""
           ],
           "\n\n",
