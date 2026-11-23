@@ -3174,7 +3174,126 @@
       "paint": {
         "line-color": "white",
         "line-width": ["+", 1, ["*", ["get", "num_colours"], 4]],
-        "line-offset": ["+", 4, ["*", ["get", "num_colours"], 2]]
+        "line-offset": [
+          "interpolate",
+          ["exponential", 2],
+          ["zoom"],
+          12,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            ["+", 3, ["*", ["get", "num_colours"], 2]],
+            ["residential", "living_street", "unclassified", "service", "road"],
+            ["+", 1.5, ["*", ["get", "num_colours"], 2]],
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            ["+", 1.6667, ["*", ["get", "num_colours"], 2]],
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            ["+", 2, ["*", ["get", "num_colours"], 2]],
+            ["steps"],
+            ["+", 1.5, ["*", ["get", "num_colours"], 2]],
+            ["+", 1.5, ["*", ["get", "num_colours"], 2]]
+          ],
+          13,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            ["+", 3, ["*", ["get", "num_colours"], 2]],
+            ["residential", "living_street", "unclassified", "service", "road"],
+            ["+", 2, ["*", ["get", "num_colours"], 2]],
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            ["+", 2, ["*", ["get", "num_colours"], 2]],
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            ["+", 2, ["*", ["get", "num_colours"], 2]],
+            ["steps"],
+            ["+", 1.5, ["*", ["get", "num_colours"], 2]],
+            ["+", 1.5, ["*", ["get", "num_colours"], 2]]
+          ],
+          14,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            ["+", 3.2143, ["*", ["get", "num_colours"], 2]],
+            ["residential", "living_street", "unclassified", "service", "road"],
+            ["+", 2.3571, ["*", ["get", "num_colours"], 2]],
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            ["+", 2.3571, ["*", ["get", "num_colours"], 2]],
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            ["+", 2.9286, ["*", ["get", "num_colours"], 2]],
+            ["steps"],
+            ["+", 3.5, ["*", ["get", "num_colours"], 2]],
+            ["+", 1.6429, ["*", ["get", "num_colours"], 2]]
+          ],
+          16,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            ["+", 4.5, ["*", ["get", "num_colours"], 2]],
+            ["residential", "living_street", "unclassified", "service", "road"],
+            ["+", 4.5, ["*", ["get", "num_colours"], 2]],
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            ["+", 4.5, ["*", ["get", "num_colours"], 2]],
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            ["+", 8.5, ["*", ["get", "num_colours"], 2]],
+            ["steps"],
+            ["+", 3.5, ["*", ["get", "num_colours"], 2]],
+            ["+", 2.5, ["*", ["get", "num_colours"], 2]]
+          ],
+          22,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            ["+", 16.5, ["*", ["get", "num_colours"], 2]],
+            ["residential", "living_street", "unclassified", "service", "road"],
+            ["+", 16.5, ["*", ["get", "num_colours"], 2]],
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            ["+", 16.5, ["*", ["get", "num_colours"], 2]],
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            ["+", 32.5, ["*", ["get", "num_colours"], 2]],
+            ["steps"],
+            ["+", 8.5, ["*", ["get", "num_colours"], 2]],
+            ["+", 8.5, ["*", ["get", "num_colours"], 2]]
+          ]
+        ]
       }
     },
     {
@@ -3188,7 +3307,126 @@
       "paint": {
         "line-color": ["get", "hike_colour5"],
         "line-width": 3,
-        "line-offset": 22
+        "line-offset": [
+          "interpolate",
+          ["exponential", 2],
+          ["zoom"],
+          12,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            21,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            19.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            19.6667,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            20,
+            ["steps"],
+            19.5,
+            19.5
+          ],
+          13,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            21,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            20,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            20,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            20,
+            ["steps"],
+            19.5,
+            19.5
+          ],
+          14,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            21.2143,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            20.3571,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            20.3571,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            20.9286,
+            ["steps"],
+            21.5,
+            19.6429
+          ],
+          16,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            22.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            22.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            22.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            26.5,
+            ["steps"],
+            21.5,
+            20.5
+          ],
+          22,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            34.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            34.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            34.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            50.5,
+            ["steps"],
+            26.5,
+            26.5
+          ]
+        ]
       }
     },
     {
@@ -3202,7 +3440,126 @@
       "paint": {
         "line-color": ["get", "hike_colour4"],
         "line-width": 3,
-        "line-offset": 18
+        "line-offset": [
+          "interpolate",
+          ["exponential", 2],
+          ["zoom"],
+          12,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            17,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            15.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            15.6667,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            16,
+            ["steps"],
+            15.5,
+            15.5
+          ],
+          13,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            17,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            16,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            16,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            16,
+            ["steps"],
+            15.5,
+            15.5
+          ],
+          14,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            17.2143,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            16.3571,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            16.3571,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            16.9286,
+            ["steps"],
+            17.5,
+            15.6429
+          ],
+          16,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            18.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            18.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            18.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            22.5,
+            ["steps"],
+            17.5,
+            16.5
+          ],
+          22,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            30.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            30.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            30.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            46.5,
+            ["steps"],
+            22.5,
+            22.5
+          ]
+        ]
       }
     },
     {
@@ -3216,7 +3573,126 @@
       "paint": {
         "line-color": ["get", "hike_colour3"],
         "line-width": 3,
-        "line-offset": 14
+        "line-offset": [
+          "interpolate",
+          ["exponential", 2],
+          ["zoom"],
+          12,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            13,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            11.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            11.6667,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            12,
+            ["steps"],
+            11.5,
+            11.5
+          ],
+          13,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            13,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            12,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            12,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            12,
+            ["steps"],
+            11.5,
+            11.5
+          ],
+          14,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            13.2143,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            12.3571,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            12.3571,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            12.9286,
+            ["steps"],
+            13.5,
+            11.6429
+          ],
+          16,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            14.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            14.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            14.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            18.5,
+            ["steps"],
+            13.5,
+            12.5
+          ],
+          22,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            26.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            26.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            26.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            42.5,
+            ["steps"],
+            18.5,
+            18.5
+          ]
+        ]
       }
     },
     {
@@ -3230,7 +3706,126 @@
       "paint": {
         "line-color": ["get", "hike_colour2"],
         "line-width": 3,
-        "line-offset": 10
+        "line-offset": [
+          "interpolate",
+          ["exponential", 2],
+          ["zoom"],
+          12,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            9,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            7.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            7.6667,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            8,
+            ["steps"],
+            7.5,
+            7.5
+          ],
+          13,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            9,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            8,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            8,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            8,
+            ["steps"],
+            7.5,
+            7.5
+          ],
+          14,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            9.2143,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            8.3571,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            8.3571,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            8.9286,
+            ["steps"],
+            9.5,
+            7.6429
+          ],
+          16,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            10.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            10.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            10.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            14.5,
+            ["steps"],
+            9.5,
+            8.5
+          ],
+          22,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            22.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            22.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            22.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            38.5,
+            ["steps"],
+            14.5,
+            14.5
+          ]
+        ]
       }
     },
     {
@@ -3244,7 +3839,126 @@
       "paint": {
         "line-color": ["get", "hike_colour1"],
         "line-width": 3,
-        "line-offset": 6
+        "line-offset": [
+          "interpolate",
+          ["exponential", 2],
+          ["zoom"],
+          12,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            3.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            3.6667,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            4,
+            ["steps"],
+            3.5,
+            3.5
+          ],
+          13,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            4,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            4,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            4,
+            ["steps"],
+            3.5,
+            3.5
+          ],
+          14,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            5.2143,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            4.3571,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            4.3571,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            4.9286,
+            ["steps"],
+            5.5,
+            3.6429
+          ],
+          16,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            6.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            6.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            6.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            10.5,
+            ["steps"],
+            5.5,
+            4.5
+          ],
+          22,
+          [
+            "match",
+            ["get", "highway"],
+            ["track"],
+            18.5,
+            ["residential", "living_street", "unclassified", "service", "road"],
+            18.5,
+            ["tertiary", "tertiary_link", "secondary", "secondary_link"],
+            18.5,
+            [
+              "primary",
+              "primary_link",
+              "trunk",
+              "trunk_link",
+              "motorway",
+              "motorway_link"
+            ],
+            34.5,
+            ["steps"],
+            10.5,
+            10.5
+          ]
+        ]
       }
     },
     {
