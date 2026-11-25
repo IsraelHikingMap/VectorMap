@@ -7,17 +7,17 @@
   "bearing": 0,
   "pitch": 30,
   "sources": {
-    "IHM": {
+    "mapeak-schema": {
       "type": "vector",
-      "url": "https://israelhiking.osm.org.il/vector/data/IHM.json"
+      "url": "https://mapeak.com/vector/data/mapeak-schema.json"
     }
   },
-  "sprite": "https://israelhiking.osm.org.il/content/sprite/sprite",
+  "sprite": "https://mapeak.com/content/sprite/sprite",
   "layers": [
     {
       "id": "playground",
       "type": "symbol",
-      "source": "IHM",
+      "source": "mapeak-schema",
       "source-layer": "poi",
       "minzoom": 15,
       "filter": ["all", ["in", "class", "playground", "pitch"]],
