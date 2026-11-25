@@ -1,0 +1,45 @@
+{
+  "version": 8,
+  "name": "Accesible Routes",
+   "id": "accessible_routes",
+  "sources": {
+    "mapeak-schema": {
+      "type": "vector",
+      "url": "https://mapeak.com/vector/data/mapeak-schema.json"
+    }
+  },
+  "sprite": "",
+  "layers": [
+    {
+      "id": "bg",
+      "type": "background",
+      "metadata": {"IHM:overlay": false},
+      "paint": {"background-color": "gray"}
+    },
+    {
+      "id": "path_paved",
+      "type": "line",
+      "source": "mapeak-schema",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "surface", "paved"],
+        [
+          "in",
+          "hike_class",
+          "path",
+          "footway",
+          "cycleway"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(0, 128, 255, 0.3)",
+        "line-width": 12
+      },
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      }
+    }
+  ]
+}
